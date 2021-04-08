@@ -6,8 +6,12 @@ import java.io.FileWriter;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
-public class JsonUtils {
+import base.BaseClass;
+
+public class JsonUtils extends BaseClass{
 
 	private static FileWriter file;
 	private static FileReader reader;
@@ -97,4 +101,21 @@ public class JsonUtils {
 		System.out.println(jsonObject.get("data1"));
 		System.out.println(jsonObject.get("data2"));
 	}
+	
+//	public static WebElement getElement(String filePath, String field) {
+//		try {
+//			reader = new FileReader(filePath);
+//			jsonParser = new JSONParser();
+//			object = jsonParser.parse(reader);
+//			jsonObject = (JSONObject) object;
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		String ele=(String) jsonObject.get(field);
+//		WebElement element=driver.findElement(By.xpath(ele));
+//		return element;
+//				
+//	}
+	
+	
 }

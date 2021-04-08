@@ -39,16 +39,16 @@ public class BaseClass {
 	public String space = "", hypen = "";
 	int invalidLinksCount = 0;
 	int invalidImageCount = 0;
-	public WebDriver driver;
+	public static WebDriver driver;
 	public ExtentTest test;
 	public static ExtentReports extent;
 	public static ExtentHtmlReporter htmlReporter;
 	public static String DownloadFilepath, folder, basefold;
 	public static int count;
 
-	@SuppressWarnings("deprecation")
-	@Parameters({ "browserType" })
-	@BeforeClass
+//	@SuppressWarnings("deprecation")
+//	@Parameters({ "browserType" })
+//	@BeforeClass
 	public void setUp(String browser) throws Exception {
 		int i = 0;
 		while (i < 45) {
@@ -105,7 +105,7 @@ public class BaseClass {
 		extent.setSystemInfo("Environment", "Testing");
 	}
 
-	public WebDriver getDriver() {
+	public static WebDriver getDriver() {
 		return driver;
 	}
 

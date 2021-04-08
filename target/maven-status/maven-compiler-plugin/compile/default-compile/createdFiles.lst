@@ -1,4 +1,5 @@
 helperMethods\Screenshots.class
+pageModules\LoginPage.class
 helperMethods\ScrollTypes.class
 base\BaseClass.class
 helperMethods\SwitchWindow.class
@@ -8,12 +9,14 @@ helperMethods\JavascriptClick.class
 helperMethods\JsonUtils.class
 config\DefineConstants.class
 helperMethods\ExcelUtils.class
+stepdefinations\LoginToAuthorUrl.class
 helperMethods\WaitTypes.class
 config\DefineProperties.class
 helperMethods\Log.class
 listeners\AnnotationTransformer.class
 helperMethods\DataGenerator.class
 helperMethods\DateUtils.class
+base\test.class
 helperMethods\DropDown.class
 listeners\RetryAnalyser.class
 helperMethods\Keyboard.class

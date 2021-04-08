@@ -4,6 +4,7 @@ C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\Keyboard.j
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\listeners\MyListeners.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\listeners\RetryAnalyser.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\SwitchWindow.java
+C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\base\test.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\base\BaseClass.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\ExcelUtils.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\config\DefineProperties.java
@@ -13,7 +14,9 @@ C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\listeners\AnnotationTran
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\ZipUtil.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\JavascriptClick.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\WaitTypes.java
+C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\stepdefinations\LoginToAuthorUrl.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\Screenshots.java
+C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\pageModules\LoginPage.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\config\DefineConstants.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\config\ExtentReports.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\JsonUtils.java
