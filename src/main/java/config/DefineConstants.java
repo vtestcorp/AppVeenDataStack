@@ -27,7 +27,9 @@ public class DefineConstants {
 
 	public static final String PROJECT_OS = System.getProperty("os.name");
 
-	public static final String TestData_Folder = "Test_Data";
+	public static final String TestData_Folder = "C:\\Users\\DELL\\eclipse-workspace\\DataStack\\Test_Data";
+	
+	public static final String Locator_Folder = "C:\\Users\\DELL\\eclipse-workspace\\DataStack\\locator";
 	
 	public static final String Authentication_TestData_Folder = "Authentication";
 	
@@ -42,10 +44,10 @@ public class DefineConstants {
 	//Set One
 	public static final String TC_01_CreateDS = TestData_Folder + "//" + Set_One_TestData_Folder + "//" + "TC_01_CreateDS.json";
 	
-	public static final String json_FilePath = "D:\\Locator.json";
+	public static final String json_FilePath = Locator_Folder + "\\" + "Locator.json";
 	
-	public static final String TC_Create_New_Data_Service = TestData_Folder +  "//" + "dataServiceInfo.json";
+//	public static final String TC_Create_New_Data_Service = TestData_Folder +  "//" + "dataServiceCredentials.json";
 	
-	public static final String TC_Create_New_Data_Service1 = TestData_Folder +  "//" + "data.json";
+	public static final String TC_Create_New_Data_Service = TestData_Folder +  "//" + "data.json";
 
 }

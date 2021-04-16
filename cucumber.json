@@ -1,0 +1,94 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "User Log in Author page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 12855289000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User Navigate to LogIn Page",
+            "match": {
+              "location": "LoginToAuthorUrl.user_Navigate_to_LogIn_Page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2661012400,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User enters username and password",
+            "match": {
+              "location": "LoginToAuthorUrl.user_enters_UserName_and_Password(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "deepak_vtest@appveen.com",
+                  "qwertyabcd"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10582684300,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Verify User Login Successfully",
+            "match": {
+              "location": "LoginToAuthorUrl.message_displayed_Login_Successfully()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "line": 11,
+        "name": "Successful Login with Valid Credentials",
+        "description": "",
+        "id": "login-to-author-url;successful-login-with-valid-credentials",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 62045915800,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Create new Data Service \"users\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"users\"",
+                  "offset": 24
+                }
+              ],
+              "location": "LoginToAuthorUrl.create_new_Data_Service(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Login to Author Url",
+    "description": "",
+    "id": "login-to-author-url",
+    "keyword": "Feature",
+    "uri": "C:/Users/DELL/eclipse-workspace/DataStack/src/test/resources/feature/login.feature",
+    "tags": []
+  }
+]

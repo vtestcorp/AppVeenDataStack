@@ -38,6 +38,7 @@ public class LoginPage extends BaseClass{
 	public DropDown dropdown;
 	public ScrollTypes scroll;
 	String dataServiceName;
+	int attributeValue;
 	
 	public LoginPage(WebDriver driver, ExtentTest test) {
 		this.driver = driver;
@@ -45,10 +46,8 @@ public class LoginPage extends BaseClass{
 		this.applyWait = new WaitTypes(driver);
 		this.test = test;
 	}
-	
-//	@FindBy(how = How.XPATH, using = JsonUtils.getData(DefineConstants.json_FilePath, "emailIDTextBox"))
+//	@FindBy(xpa JsonUtils.getData(DefineConstants.json_FilePath, "emailIDTextBox"))
 //	private WebElement emailIDTextBox;
-//	
 	
 	public void loginToPage() throws Exception {
 
@@ -86,7 +85,7 @@ public class LoginPage extends BaseClass{
 		System.out.println("User log in successfully");
 	}
 	}
-	//span[@id='serviceManagerCardTitle' and text()='Service-3']/parent::div/parent::div/parent::div/following-sibling::div[2]/div/div[@class='toggler']
+	
 	public void createNewDataServices(JSONArray jsonArray, String dataService1) throws Exception {
 		dataServiceName=dataService1;
 		List<WebElement> dataServices=driver.findElements(By.id("serviceManagerCardTitle"));
@@ -109,9 +108,13 @@ public class LoginPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "createButton"))), 30).click();
 		Thread.sleep(10000);
 			
-		
+		try {
+			jsonArray.size();
+		}
+		catch (Exception e) {
+		      System.err.println("Data Service file not found");
+		    }
 			for (int i = 0; i < jsonArray.size(); i++) {
-				
 				
 				JSONObject jsonProperties;
 				JSONObject attribute = (JSONObject) jsonArray.get(i);
@@ -122,268 +125,150 @@ public class LoginPage extends BaseClass{
 					
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "newAttributeButton"))), 30).click();
 				
-				
 			switch(attributeName) {
 			
 			case "String" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(attribute.get("key").toString());
-				if(jsonProperties.get("required").toString().equals("true")) {
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "required"))), 30).click();
-				}
-//				if(jsonProperties.get("createOnly").toString().equals(null)) {
-//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "createOnly"))), 30).click();
-//				}
-				if(jsonProperties.get("unique").toString().equals("true")) {
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "unique"))), 30).click();
-				}
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 				Thread.sleep(1000);
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "text"))), 30).click();
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customLabel"))), 30).sendKeys(jsonProperties.get("label").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customError"))), 30).sendKeys(jsonProperties.get("errorMessage").toString());
-		//		applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "defaultValue"))), 30).sendKeys(attribute.get("Default Value").toString());
-		//		applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "pattern"))), 30).sendKeys(jsonProperties.get("Default Value").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "minValue"))), 30).sendKeys(jsonProperties.get("minlength").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "maxValue"))), 30).sendKeys(jsonProperties.get("maxlength").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+				requiredAttributes(jsonProperties);
+
 				break;
 				
 			case "Long Text" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(attribute.get("key").toString());
-				if(jsonProperties.get("required").toString().equals("true")) {
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "required"))), 30).click();
-				}
-//				if(jsonProperties.get("createOnly").toString().equals(null)) {
-//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "createOnly"))), 30).click();
-//				}
-				if(jsonProperties.get("unique").toString().equals("true")) {
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "unique"))), 30).click();
-				}
-				
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 				Thread.sleep(1000);
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "longText"))), 30).click();
-				
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customLabel"))), 30).sendKeys(jsonProperties.get("label").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customError"))), 30).sendKeys(jsonProperties.get("errorMessage").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "tokens"))), 30).sendKeys(jsonProperties.get("tokens").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+				requiredAttributes(jsonProperties);
 				break;
 			
 			case "Rich Text" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(attribute.get("key").toString());
-				if(jsonProperties.get("required").toString().equals("true")) {
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "required"))), 30).click();
-				}
-//				if(jsonProperties.get("createOnly").toString().equals(null)) {
-//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "createOnly"))), 30).click();
-//				}
-				if(jsonProperties.get("unique").toString().equals("true")) {
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "unique"))), 30).click();
-				}
-				
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 				Thread.sleep(1000);
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "richText"))), 30).click();
-				
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customLabel"))), 30).sendKeys(jsonProperties.get("label").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customError"))), 30).sendKeys(jsonProperties.get("errorMessage").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "tokens"))), 30).sendKeys(jsonProperties.get("tokens").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+				requiredAttributes(jsonProperties);
 				break;
 				
 			case "Secure Text" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(attribute.get("key").toString());
-				if(jsonProperties.get("required").toString().equals("true")) {
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "required"))), 30).click();
-				}
-//				if(jsonProperties.get("createOnly").toString().equals(null)) {
-//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "createOnly"))), 30).click();
-//				}
-				if(jsonProperties.get("unique").toString().equals("true")) {
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "unique"))), 30).click();
-				}
-				
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 				Thread.sleep(1000);
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "secureText"))), 30).click();
-				
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customLabel"))), 30).sendKeys(jsonProperties.get("label").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customError"))), 30).sendKeys(jsonProperties.get("errorMessage").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "pattern"))), 30).sendKeys(jsonProperties.get("pattern").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+				requiredAttributes(jsonProperties);
 				break;
 				
 			case "Email" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(attribute.get("key").toString());
-				if(jsonProperties.get("required").toString().equals("true")) {
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "required"))), 30).click();
-				}
-//				if(jsonProperties.get("createOnly").toString().equals(null)) {
-//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "createOnly"))), 30).click();
-//				}
-				if(jsonProperties.get("unique").toString().equals("true")) {
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "unique"))), 30).click();
-				}
-				
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 				Thread.sleep(1000);
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "email"))), 30).click();
-				
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customLabel"))), 30).sendKeys(jsonProperties.get("label").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customError"))), 30).sendKeys(jsonProperties.get("errorMessage").toString());
-//				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "tokens"))), 30).sendKeys(jsonProperties.get("tokens").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+				requiredAttributes(jsonProperties);
 				break;
 				
 			case "List of values" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(attribute.get("key").toString());
-				if(jsonProperties.get("required").toString().equals("true")) {
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "required"))), 30).click();
-				}
-//				if(jsonProperties.get("createOnly").toString().equals(null)) {
-//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "createOnly"))), 30).click();
-//				}
-				if(jsonProperties.get("unique").toString().equals("true")) {
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "unique"))), 30).click();
-				}
-				
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 				Thread.sleep(1000);
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "listOfValue"))), 30).click();
-				
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customLabel"))), 30).sendKeys(jsonProperties.get("label").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customError"))), 30).sendKeys(jsonProperties.get("errorMessage").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "values"))), 30).sendKeys(jsonProperties.get("values").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+				requiredAttributes(jsonProperties);
 				break;
 			
 			case "Number" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(attribute.get("key").toString());
-//				if(jsonProperties.get("required").toString().equals("true")) {
-//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "required"))), 30).click();
-//				}
-//				if(jsonProperties.get("createOnly").toString().equals("true")) {
-//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "createOnly"))), 30).click();
-//				}
-//				if(jsonProperties.get("unique").toString().equals("true")) {
-//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "unique"))), 30).click();
-//				}
-				
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 				Thread.sleep(1000);
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "number"))), 30).click();
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "number1"))), 30).click();
-				Thread.sleep(3000);
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customLabel"))), 30).sendKeys(jsonProperties.get("label").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customError"))), 30).sendKeys(jsonProperties.get("errorMessage").toString());
-			//	applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "defaultValue"))), 30).sendKeys(attribute.get("Default Value").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "minValue"))), 30).sendKeys(jsonProperties.get("min").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "maxValueNumber"))), 30).sendKeys(jsonProperties.get("max").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+				Thread.sleep(1000);
+				requiredAttributes(jsonProperties);
 				break;
+				
 			case "Currency" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(attribute.get("key").toString());
-//				if(jsonProperties.get("required").toString().equals("true")) {
-//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "required"))), 30).click();
-//				}
-//				if(jsonProperties.get("createOnly").toString().equals("true")) {
-//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "createOnly"))), 30).click();
-//				}
-//				if(jsonProperties.get("unique").toString().equals("true")) {
-//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "unique"))), 30).click();
-//				}
-				
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 				Thread.sleep(1000);
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "number"))), 30).click();
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "currency"))), 30).click();
 				Thread.sleep(3000);
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customLabel"))), 30).sendKeys(jsonProperties.get("label").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customError"))), 30).sendKeys(jsonProperties.get("errorMessage").toString());
-			//	applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "defaultValue"))), 30).sendKeys(attribute.get("Default Value").toString());
-				dropdown.selectByVisibleText(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "currencyDropdown"))), jsonProperties.get("currency").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "minValue"))), 30).sendKeys(jsonProperties.get("min").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "maxValueNumber"))), 30).sendKeys(jsonProperties.get("max").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+				requiredAttributes(jsonProperties);
 				break;
 				
 			case "Boolean" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(attribute.get("key").toString());
-//				if(attribute.get("required").toString().equals("true")) {
-//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "required"))), 30).click();
-//				}
-//				if(attribute.get("createOnly").toString().equals("true")) {
-//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "createOnly"))), 30).click();
-//				}
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 				Thread.sleep(1000);
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "boolean"))), 30).click();
 				Thread.sleep(500);
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customLabel"))), 30).sendKeys(jsonProperties.get("label").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customError"))), 30).sendKeys(jsonProperties.get("errorMessage").toString());
-		//		applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "defaultValue"))), 30).sendKeys(attribute.get("Default Value").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+				requiredAttributes(jsonProperties);
 				break;
 				
 				case "Date" : 
 					jsonProperties = (JSONObject) attribute.get("properties");
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(attribute.get("key").toString());
-//				if(attribute.get("required").toString().equals("true")) {
-//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "required"))), 30).click();
-//				}
-//				if(attribute.get("createOnly").toString().equals("true")) {
-//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "createOnly"))), 30).click();
-//				}
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 				Thread.sleep(1000);
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "date"))), 30).click();
 				Thread.sleep(500);
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customLabel"))), 30).sendKeys(jsonProperties.get("label").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customError"))), 30).sendKeys(jsonProperties.get("errorMessage").toString());
-				
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "defaultTimezone"))), 30).sendKeys(jsonProperties.get("defaultTimezone").toString(),Keys.ENTER);
-				JSONArray array=(JSONArray) jsonProperties.get("supportedTimezones");
-				for(int j=0; j<array.size();j++) {
-					System.out.println(array.size()+"-----"+array.get(j).toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "supportedTimezones"))), 30).sendKeys(array.get(j).toString(),Keys.ENTER);
-				}
+				requiredAttributes(jsonProperties);
+//				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "defaultTimezone"))), 30).sendKeys(jsonProperties.get("defaultTimezone").toString(),Keys.ENTER);
+//				JSONArray array=(JSONArray) jsonProperties.get("supportedTimezones");
+//				for(int j=0; j<array.size();j++) {
+//					System.out.println(array.size()+"-----"+array.get(j).toString());
+//				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "supportedTimezones"))), 30).sendKeys(array.get(j).toString(),Keys.ENTER);
+//				}
 		//		applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "defaultValue"))), 30).sendKeys(attribute.get("Default Value").toString());
-				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+			//	applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
 				break;
 				
 				
-				case "Group" : 
+				case "Object" : 
 					jsonProperties = (JSONObject) attribute.get("properties");
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(attribute.get("key").toString());
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
 				
 					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 					Thread.sleep(1000);
 					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "group"))), 30).click();
 					Thread.sleep(500);
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customLabel"))), 30).sendKeys(jsonProperties.get("label").toString());
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customError"))), 30).sendKeys(jsonProperties.get("errorMessage").toString());
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+					requiredAttributes(jsonProperties);
+					JSONArray objectArray=(JSONArray) attribute.get("definition");
+					
+					for(int k=0;k<objectArray.size();k++) {
+						
+						JSONObject object = (JSONObject) objectArray.get(k);
+						String objectAttributeName = attribute.get("type").toString();
+						String objectKey = object.get("key").toString();
+					if(k!=0) {
+						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "newAttributeButton1"))), 30).click();
+					}
+					String attributeTextBox="(//input[@placeholder='Untitled Attribute'])[last()]";
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(attributeTextBox)), 30).sendKeys(object.get("key").toString());
+					groupAttributes((String) object.get("type"),object);
+
+					Thread.sleep(1000);
+					}
 					break;
 					
 					case "Geojson" : 
 						jsonProperties = (JSONObject) attribute.get("properties");
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(attribute.get("key").toString());
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
 				
 					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 					Thread.sleep(1000);
@@ -391,67 +276,78 @@ public class LoginPage extends BaseClass{
 					Thread.sleep(500);
 					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "pointOnAMap"))), 30).click();
 					Thread.sleep(500);
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customLabel"))), 30).sendKeys(jsonProperties.get("label").toString());
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customError"))), 30).sendKeys(jsonProperties.get("errorMessage").toString());
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+					requiredAttributes(jsonProperties);
+					break;
+					
+					
+					case "Array" : 
+						jsonProperties = (JSONObject) attribute.get("properties");
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
+				
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+					Thread.sleep(1000);
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "collection"))), 30).click();
+					Thread.sleep(500);
+					requiredAttributes(jsonProperties);
+					
+					JSONArray collectionArray=(JSONArray) attribute.get("definition");
+					for(int c=0;c<collectionArray.size();c++) {
+		//				System.out.println(collectionArray.size()+"===========");
+						JSONObject object = (JSONObject) collectionArray.get(c);
+						String objectAttributeName = object.get("type").toString();
+						collectionTypes(objectAttributeName,object);
+						
+					}
+					
 					break;
 					
 					case "File" : 
 						jsonProperties = (JSONObject) attribute.get("properties");
-						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(attribute.get("key").toString());
+						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
 					
 						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 						Thread.sleep(1000);
 						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "file"))), 30).click();
 						Thread.sleep(500);
-						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customLabel"))), 30).sendKeys(jsonProperties.get("label").toString());
-						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customError"))), 30).sendKeys(jsonProperties.get("errorMessage").toString());
-						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+						requiredAttributes(jsonProperties);
 						break;
 			
 					case "Library" : 
 						jsonProperties = (JSONObject) attribute.get("properties");
-						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(attribute.get("key").toString());
+						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
 					
 						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 						Thread.sleep(1000);
 						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "library"))), 30).click();
 						Thread.sleep(500);
-						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customLabel"))), 30).sendKeys(jsonProperties.get("label").toString());
-						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customError"))), 30).sendKeys(jsonProperties.get("errorMessage").toString());
-						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "linkedLibrary"))), 30).sendKeys(jsonProperties.get("Linked Library").toString());
-						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+						requiredAttributes(jsonProperties);
 						break;
 					
 					case "User" : 
 						jsonProperties = (JSONObject) attribute.get("properties");
-						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(attribute.get("key").toString());
-//						if(attribute.get("required").toString().equals("true")) {
-//							applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "required"))), 30).click();
-//						}
-//						if(attribute.get("createOnly").toString().equals("true")) {
-//							applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "createOnly"))), 30).click();
-//						}
-//						if(attribute.get("unique").toString().equals("true")) {
-//							applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "unique"))), 30).click();
-//						}
-						Thread.sleep(5000);
+						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
+						
 						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 						Thread.sleep(1000);
 						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "user"))), 30).click();
 						Thread.sleep(3000);
-						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customLabel"))), 30).sendKeys(jsonProperties.get("label").toString());
-						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customError"))), 30).sendKeys(jsonProperties.get("errorMessage").toString());
+						requiredAttributes(jsonProperties);
+						jsonProperties = (JSONObject) attribute.get("properties");
+		//				dropdown.selectByVisibleText(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "searchOnField"))), jsonProperties.get("Search On Field").toString());
+						JSONArray searchArray=(JSONArray) jsonProperties.get("relatedViewFields");
 						
-//						dropdown.selectByVisibleText(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "searchOnField"))), jsonProperties.get("Search On Field").toString());
+						for (int a = 0; a < searchArray.size(); a++) {
+							JSONObject searchObject = (JSONObject) searchArray.get(a);
+							String  field=(String) searchObject.get("name");
 						Thread.sleep(500);
-		//				dropdown.selectByVisibleText(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "viewField"))), jsonProperties.get("View Fields").toString());
-		//				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "defaultValue"))), 30).sendKeys(attribute.get("Default Value").toString());
-						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+						dropdown.selectByVisibleText(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "viewField"))), field);
+						
+						}
 						break;
 			}
 				}
 			}
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "submitAndDeploy"))), 30).click();;
 		}
 
 	public void createDataService(String dataServicName) throws Exception {
@@ -504,10 +400,450 @@ public class LoginPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "saveButton"))), 30).click();
 		
 		String service=applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dataServiceName1"))), 30).getText();
-		System.out.println(dataServiceName+"========"+service);
+//		System.out.println(dataServiceName+"========"+service);
 		if(service.contains(dataServiceName)) {
 			System.out.println("User can clone given Data Service");
 		}
 	}
+	
+	
+	public void groupAttributes(String objectAttribute,JSONObject attribute) throws Exception {
+		JSONObject jsonProperties;
+		switch(objectAttribute) {
+		
+		
+		case "String" : 
+			jsonProperties = (JSONObject) attribute.get("properties");
+			
 
+			
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+			Thread.sleep(1000);
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "text"))), 30).click();
+			requiredAttributes(jsonProperties);
+			
+			break;
+			
+		case "Long Text" : 
+			jsonProperties = (JSONObject) attribute.get("properties");
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+			Thread.sleep(1000);
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "longText"))), 30).click();
+			requiredAttributes(jsonProperties);
+			break;
+		
+		case "Rich Text" : 
+			jsonProperties = (JSONObject) attribute.get("properties");
+			
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+			Thread.sleep(1000);
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "richText"))), 30).click();
+			requiredAttributes(jsonProperties);
+			break;
+			
+		case "Secure Text" : 
+			jsonProperties = (JSONObject) attribute.get("properties");
+			
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+			Thread.sleep(1000);
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "secureText"))), 30).click();
+			requiredAttributes(jsonProperties);
+			break;
+			
+		case "Email" : 
+			jsonProperties = (JSONObject) attribute.get("properties");
+//			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
+			
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+			Thread.sleep(1000);
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "email"))), 30).click();
+			requiredAttributes(jsonProperties);
+			break;
+			
+		case "List of values" : 
+			jsonProperties = (JSONObject) attribute.get("properties");
+//			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
+			
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+			Thread.sleep(1000);
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "listOfValue"))), 30).click();
+			requiredAttributes(jsonProperties);
+			break;
+		
+		case "Number" : 
+			jsonProperties = (JSONObject) attribute.get("properties");
+			
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+			Thread.sleep(1000);
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "number"))), 30).click();
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "number1"))), 30).click();
+			Thread.sleep(3000);
+			requiredAttributes(jsonProperties);
+			break;
+			
+		case "Currency" : 
+			jsonProperties = (JSONObject) attribute.get("properties");
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+			Thread.sleep(1000);
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "number"))), 30).click();
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "currency"))), 30).click();
+			Thread.sleep(3000);
+			requiredAttributes(jsonProperties);
+			break;
+			
+		case "Boolean" : 
+			jsonProperties = (JSONObject) attribute.get("properties");
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+			Thread.sleep(1000);
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "boolean"))), 30).click();
+			Thread.sleep(500);
+			requiredAttributes(jsonProperties);
+			break;
+			
+			case "Date" : 
+				jsonProperties = (JSONObject) attribute.get("properties");
+				
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+			Thread.sleep(1000);
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "date"))), 30).click();
+			Thread.sleep(500);
+			requiredAttributes(jsonProperties);
+			break;
+			
+			
+			case "Object" : 
+				jsonProperties = (JSONObject) attribute.get("properties");
+//				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
+			
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+				Thread.sleep(1000);
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "group"))), 30).click();
+				Thread.sleep(500);
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customLabel"))), 30).sendKeys(jsonProperties.get("label").toString());
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customError"))), 30).sendKeys(jsonProperties.get("errorMessage").toString());
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+				JSONArray objectArray=(JSONArray) attribute.get("definition");
+				
+				for(int k=0;k<objectArray.size();k++) {
+					
+					JSONObject object = (JSONObject) objectArray.get(k);
+					String objectAttributeName = attribute.get("type").toString();
+					String objectKey = object.get("key").toString();
+				
+				String attributeTextBox="(//input[@placeholder='Untitled Attribute'])[last()]";
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(attributeTextBox)), 30).sendKeys(object.get("key").toString());
+				groupAttributes((String) object.get("type"),object);
+				attributeValue++;
+				}
+				break;
+				
+				case "Geojson" : 
+					jsonProperties = (JSONObject) attribute.get("properties");
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+				Thread.sleep(1000);
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "location"))), 30).click();
+				Thread.sleep(500);
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "pointOnAMap"))), 30).click();
+				Thread.sleep(500);
+				requiredAttributes(jsonProperties);
+				break;
+				
+				case "File" : 
+					jsonProperties = (JSONObject) attribute.get("properties");
+//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
+				
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+					Thread.sleep(1000);
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "file"))), 30).click();
+					Thread.sleep(500);
+					requiredAttributes(jsonProperties);
+					break;
+		
+				case "Library" : 
+					jsonProperties = (JSONObject) attribute.get("properties");
+//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
+				
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+					Thread.sleep(1000);
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "library"))), 30).click();
+					Thread.sleep(500);
+					requiredAttributes(jsonProperties);
+					break;
+				
+				case "User" : 
+					jsonProperties = (JSONObject) attribute.get("properties");
+//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
+					Thread.sleep(5000);
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+					Thread.sleep(1000);
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "user"))), 30).click();
+					Thread.sleep(3000);
+					requiredAttributes(jsonProperties);
+					break;
+		}
+	}
+		
+		public void collectionTypes(String objectAttribute,JSONObject attribute) throws Exception {
+			JSONObject jsonProperties;
+			switch(objectAttribute) {
+			
+			
+			case "String" : 
+				jsonProperties = (JSONObject) attribute.get("properties");
+//			
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdownCollection"))), 30).click();
+				Thread.sleep(1000);
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "text"))), 30).click();
+				requiredAttributes(jsonProperties);
+				break;
+				
+			case "Long Text" : 
+				jsonProperties = (JSONObject) attribute.get("properties");
+				
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+				Thread.sleep(1000);
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "longText"))), 30).click();
+				requiredAttributes(jsonProperties);
+				break;
+			
+			case "Rich Text" : 
+				jsonProperties = (JSONObject) attribute.get("properties");
+				
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+				Thread.sleep(1000);
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "richText"))), 30).click();
+				requiredAttributes(jsonProperties);
+				break;
+				
+			case "Secure Text" : 
+				jsonProperties = (JSONObject) attribute.get("properties");
+				
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+				Thread.sleep(1000);
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "secureText"))), 30).click();
+				requiredAttributes(jsonProperties);
+				break;
+				
+			case "Email" : 
+				jsonProperties = (JSONObject) attribute.get("properties");
+				
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+				Thread.sleep(1000);
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "email"))), 30).click();
+				requiredAttributes(jsonProperties);
+				break;
+				
+			case "List of values" : 
+				jsonProperties = (JSONObject) attribute.get("properties");
+				
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+				Thread.sleep(1000);
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "listOfValue"))), 30).click();
+				requiredAttributes(jsonProperties);
+				break;
+			
+			case "Number" : 
+				jsonProperties = (JSONObject) attribute.get("properties");
+//				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
+				
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+				Thread.sleep(1000);
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "number"))), 30).click();
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "number1"))), 30).click();
+				Thread.sleep(3000);
+				requiredAttributes(jsonProperties);
+				break;
+				
+			case "Currency" : 
+				jsonProperties = (JSONObject) attribute.get("properties");
+				
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+				Thread.sleep(1000);
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "number"))), 30).click();
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "currency"))), 30).click();
+				Thread.sleep(3000);
+				requiredAttributes(jsonProperties);
+				break;
+				
+			case "Boolean" : 
+				jsonProperties = (JSONObject) attribute.get("properties");
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+				Thread.sleep(1000);
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "boolean"))), 30).click();
+				Thread.sleep(500);
+				requiredAttributes(jsonProperties);
+				break;
+				
+				case "Date" : 
+					jsonProperties = (JSONObject) attribute.get("properties");
+					
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+				Thread.sleep(1000);
+				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "date"))), 30).click();
+				Thread.sleep(500);
+				requiredAttributes(jsonProperties);
+				break;
+				
+				
+				case "Object" : 
+					jsonProperties = (JSONObject) attribute.get("properties");
+//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
+				
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+					Thread.sleep(1000);
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "group"))), 30).click();
+					Thread.sleep(2000);
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+					JSONArray objectArray=(JSONArray) attribute.get("definition");
+					
+					for(int k=0;k<objectArray.size();k++) {
+						
+						JSONObject object = (JSONObject) objectArray.get(k);
+						String objectAttributeName = attribute.get("type").toString();
+						String objectKey = object.get("key").toString();
+						JSONObject object1=(JSONObject) object.get("properties") ;
+						if(k!=0){
+							applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "newAttributeButton1"))), 30).click();
+						}
+					
+					String attributeTextBox="(//input[@placeholder='Untitled Attribute'])[last()]";
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(attributeTextBox)), 30).sendKeys(object1.get("name").toString());
+					groupAttributes((String) object.get("type"),object);
+					}
+					break;
+					
+					case "Geojson" : 
+						jsonProperties = (JSONObject) attribute.get("properties");
+						if(jsonProperties.get("required").toString().equals("true")) {
+							applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "required"))), 30).click();
+						}
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+					Thread.sleep(1000);
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "location"))), 30).click();
+					Thread.sleep(500);
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "pointOnAMap"))), 30).click();
+					Thread.sleep(500);
+					requiredAttributes(jsonProperties);
+					break;
+					
+					case "File" : 
+						jsonProperties = (JSONObject) attribute.get("properties");
+//						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
+					
+						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+						Thread.sleep(1000);
+						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "file"))), 30).click();
+						Thread.sleep(500);
+						requiredAttributes(jsonProperties);
+						break;
+			
+					case "Library" : 
+						jsonProperties = (JSONObject) attribute.get("properties");
+//						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
+					
+						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+						Thread.sleep(1000);
+						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "library"))), 30).click();
+						Thread.sleep(500);
+						requiredAttributes(jsonProperties);
+						break;
+					
+					case "User" : 
+						jsonProperties = (JSONObject) attribute.get("properties");
+						Thread.sleep(5000);
+						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
+						Thread.sleep(1000);
+						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "user"))), 30).click();
+						Thread.sleep(3000);
+						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customLabel"))), 30).sendKeys(jsonProperties.get("label").toString());
+						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customError"))), 30).sendKeys(jsonProperties.get("errorMessage").toString());
+						requiredAttributes(jsonProperties);
+						break;
+			}
+		
+		
+
+	}
+						public void requiredAttributes(JSONObject jsonProperties){
+							
+							if(jsonProperties.containsKey("required")) {
+								if(jsonProperties.get("required").toString().equals("true")) {
+									applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "required"))), 30).click();
+								}
+								}
+								
+								if(jsonProperties.containsKey("createOnly")) {
+								if(jsonProperties.get("createOnly").toString().equals("true")) {
+									applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "createOnly"))), 30).click();
+								}
+								}
+								
+								if(jsonProperties.containsKey("unique")) {
+									if(jsonProperties.get("unique").toString().equals("true")) {
+										applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "unique"))), 30).click();
+									}
+								}
+								
+								if(jsonProperties.containsKey("label")) {
+									applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customLabel"))), 30).sendKeys(jsonProperties.get("label").toString());								
+									}
+								
+								if(jsonProperties.containsKey("errorMessage")) {
+										applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "customError"))), 30).sendKeys(jsonProperties.get("errorMessage").toString());
+									}
+									
+								if(jsonProperties.containsKey("defaultTimezone")) {
+									applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "defaultTimezone"))), 30).sendKeys(jsonProperties.get("defaultTimezone").toString(),Keys.ENTER);
+									JSONArray array=(JSONArray) jsonProperties.get("supportedTimezones");
+									for(int j=0; j<array.size();j++) {
+										System.out.println(array.size()+"-----"+array.get(j).toString());
+									applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "supportedTimezones"))), 30).sendKeys(array.get(j).toString(),Keys.ENTER);
+									}								}
+								
+								if(jsonProperties.containsKey("currency")) {
+									dropdown.selectByVisibleText(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "currencyDropdown"))), jsonProperties.get("currency").toString());
+								}
+								
+								if(jsonProperties.containsKey("minlength")) {
+									applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "minValue"))), 30).sendKeys(jsonProperties.get("minlength").toString());
+									}
+								
+								if(jsonProperties.containsKey("maxlength")) {
+									applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "maxValue"))), 30).sendKeys(jsonProperties.get("maxlength").toString());
+									}
+								
+								if(jsonProperties.containsKey("tokens")) {
+									applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("tokens").toString());
+									}
+								
+								if(jsonProperties.containsKey("values")) {
+									applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "values"))), 30).sendKeys(jsonProperties.get("values").toString());
+									}
+								
+								if(jsonProperties.containsKey("pattern")) {
+									applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "pattern"))), 30).sendKeys(jsonProperties.get("pattern").toString());									}
+								
+								
+								if(jsonProperties.containsKey("_description")) {
+									applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+									}
+								
+								
+								
+							
+						}
+		
+		
 }

@@ -11,7 +11,6 @@
     "validityValue" : -1
   },
   "definition" : [ {
-    "_id" : "606ab0e3fde78ab531213027",
     "key" : "_id",
     "type" : "String",
     "prefix" : "DEE",
@@ -34,7 +33,6 @@
       "dataKey" : "_id"
     }
   }, {
-    "_id" : "606ab0e3fde78a2c61213028",
     "type" : "String",
     "key" : "firstName",
     "properties" : {
@@ -46,6 +44,7 @@
       "_description" : "Text Type successful",
       "_typeChanged" : "String",
       "unique" : false,
+      "createOnly" : false,
       "minlength" : "5",
       "maxlength" : "8",
       "dataKey" : "firstName",
@@ -53,21 +52,19 @@
     }
   }, 
   {
-    "_id" : "606ab0e3fde78a2c61213028",
     "type" : "Long Text",
     "key" : "Long Text",
     "properties" : {
       "label" : "label",
       "errorMessage" : "error",
-      "name" : "FirstName",
+      "name" : "LongText",
       "tokens" : 3,
       "required" : true,
       "fieldLength" : 10,
       "_description" : "Long Text Type successful",
       "_typeChanged" : "String",
       "unique" : false,
-      "minlength" : "5",
-      "maxlength" : "8",
+      "createOnly" : false,
       "dataKey" : "firstName",
       "dataPath" : "firstName"
     }
@@ -76,94 +73,87 @@
   
   
    {
-    "_id" : "606ab0e3fde78a2c61213028",
     "type" : "Rich Text",
     "key" : "Rich Text",
     "properties" : {
       "label" : "Rich Text label",
       "errorMessage" : "Rich Text error",
-      "name" : "FirstName",
+      "name" : "Rich Text",
       "tokens" : 5,
       "required" : true,
       "fieldLength" : 10,
       "_description" : "Rich Text Type successful",
       "_typeChanged" : "String",
       "unique" : false,
-      "minlength" : "5",
-      "maxlength" : "8",
+      "createOnly" : false,
       "dataKey" : "firstName",
       "dataPath" : "firstName"
     }
   },
    {
-    "_id" : "606ab0e3fde78a2c61213028",
     "type" : "Email",
     "key" : "email",
     "properties" : {
       "label" : "Email label",
       "errorMessage" : "Email error",
-      "name" : "FirstName",
+      "name" : "Email",
       "tokens" : 3,
       "required" : true,
+      "createOnly" : false,
       "fieldLength" : 10,
       "_description" : "Email Type successful",
       "_typeChanged" : "String",
       "unique" : false,
-      "minlength" : "5",
-      "maxlength" : "8",
       "dataKey" : "firstName",
       "dataPath" : "firstName"
     }
   },
   
     {
-    "_id" : "606ab0e3fde78a2c61213028",
     "type" : "Secure Text",
     "key" : "Secure Text",
     "properties" : {
       "label" : "Secure Text label",
       "errorMessage" : "Secure Text error",
-      "name" : "FirstName",
+      "name" : "Secure Text",
       "pattern" : "A5",
       "required" : true,
       "fieldLength" : 10,
       "_description" : "Secure Text Type successful",
       "_typeChanged" : "String",
       "unique" : false,
-      "minlength" : "5",
-      "maxlength" : "8",
+       "createOnly" : false,
       "dataKey" : "firstName",
       "dataPath" : "firstName"
     }
   },
       {
-    "_id" : "606ab0e3fde78a2c61213028",
     "type" : "List of values",
     "key" : "List of values",
     "properties" : {
       "label" : "List of value label",
       "errorMessage" : "List of value error",
-      "name" : "FirstName",
+      "name" : "List",
       "values" : 5,
       "required" : true,
-      "fieldLength" : 10,
       "_description" : "List of values successful",
       "_typeChanged" : "String",
       "unique" : false,
-      "minlength" : "5",
-      "maxlength" : "8",
+      "createOnly" : false,
       "dataKey" : "firstName",
       "dataPath" : "firstName"
     }
   },
   
   {
-    "_id" : "606ab0e3fde78a5052213029",
     "type" : "Number",
     "key" : "age",
     "properties" : {
       "name" : "Age",
       "label" : "Age123",
+       "required" : false,
+       "unique" : false,
+      "createOnly" : false,
       "errorMessage" : "Age235",
       "fieldLength" : 10,
       "_description" : "Number Type Successful",
@@ -176,12 +166,14 @@
     }
   }, 
    {
-    "_id" : "606ab0e3fde78a5052213029",
     "type" : "Currency",
     "key" : "Currency",
     "properties" : {
-      "name" : "Age",
+      "name" : "Currency",
       "currency" : "USD",
+       "required" : false,
+       "unique" : false,
+      "createOnly" : false,
       "label" : "Currency Label",
       "errorMessage" : "Currency Error",
       "fieldLength" : 10,
@@ -196,7 +188,6 @@
   },
   
   {
-    "_id" : "606ab0e3fde78a362721302a",
     "type" : "Boolean",
     "key" : "gender",
     "properties" : {
@@ -204,13 +195,15 @@
       "label" : "Gender1",
       "errorMessage" : "Gender2",
       "fieldLength" : 10,
+       "required" : false,
+       "unique" : false,
+      "createOnly" : false,
       "_description" : "Gender Type Successful",
       "_typeChanged" : "Boolean",
       "dataKey" : "gender",
       "dataPath" : "gender"
     }
   }, {
-    "_id" : "606ab0e3fde78a6eb721302b",
     "type" : "Date",
     "key" : "date",
     "properties" : {
@@ -218,6 +211,9 @@
       "label" : "Date123",
       "errorMessage" : "Date235",
       "fieldLength" : 10,
+       "required" : false,
+       "unique" : false,
+      "createOnly" : false,
       "_description" : "Date Type Successful",
       "_typeChanged" : "Date",
       "dateType" : "date",
@@ -227,7 +223,6 @@
       "dataPath" : "date"
     }
   }, {
-    "_id" : "606ab0e3fde78a5ba421302c",
     "type" : "Geojson",
     "key" : "location",
     "properties" : {
@@ -242,12 +237,14 @@
       "dataPath" : "location"
     }
   }, {
-    "_id" : "606ab0e3fde78a2eb621302d",
     "type" : "File",
     "key" : "file",
     "properties" : {
       "name" : "File",
       "label" : "File123",
+       "required" : false,
+       "unique" : false,
+      "createOnly" : false,
       "errorMessage" : "File235",
       "fieldLength" : 10,
       "_description" : "File Type Successful",
@@ -256,8 +253,100 @@
       "dataKey" : "file",
       "dataPath" : "file"
     }
-  }, {
-    "_id" : "606ab0e3fde78a23cf21302e",
+  },
+   {
+    "type" : "Object",
+    "key" : "firstGroup",
+    "properties" : {
+      "name" : "First group",
+      "label" : "first value",
+      "required" : false,
+      "unique" : false,
+      "createOnly" : false,
+      "errorMessage" : "first err",
+      "fieldLength" : 10,
+      "_description" : "first description",
+      "_typeChanged" : "Object",
+      "dataKey" : "firstGroup",
+      "dataPath" : "firstGroup"
+    },
+    "definition" : [ {
+      "type" : "String",
+      "key" : "line1",
+      "properties" : {
+        "label" : "cust 1",
+        "errorMessage" : "err 1",
+        "name" : "Line 1",
+        "fieldLength" : 10,
+        "required" : false,
+        "unique" : false,
+        "createOnly" : false,
+        "_description" : "asdfghh",
+        "_typeChanged" : "String",
+        "minlength" : "11",
+        "maxlength" : "12",
+        "pattern" : "12",
+        "dataKey" : "line1",
+        "dataPath" : "firstGroup.line1"
+      }
+    }, {
+      "type" : "Date",
+      "key" : "line2",
+      "properties" : {
+        "name" : "Line 2",
+        "label" : "asdf",
+        "errorMessage" : "ased",
+        "required" : false,
+        "unique" : false,
+        "createOnly" : true,
+        "fieldLength" : 10,
+        "_description" : "asedxc",
+        "_typeChanged" : "Date",
+        "default" : "2021-04-12T11:09:57.561Z",
+        "dateType" : "date",
+        "defaultTimezone" : "Zulu",
+        "supportedTimezones" : [ "Indian/Antananarivo" ],
+        "dataKey" : "line2",
+        "dataPath" : "firstGroup.line2"
+      }
+    }, {
+      "type" : "Object",
+      "key" : "anotherGroup",
+      "properties" : {
+        "name" : "Another group",
+        "label" : "another group",
+        "errorMessage" : "anoerr",
+        "required" : false,
+        "unique" : false,
+        "createOnly" : false,
+        "fieldLength" : 10,
+        "_description" : "description err",
+        "_typeChanged" : "Object",
+        "dataKey" : "anotherGroup",
+        "dataPath" : "firstGroup.anotherGroup"
+      },
+      "definition" : [ {
+        "type" : "Geojson",
+        "key" : "line3",
+        "properties" : {
+          "name" : "line3",
+          "label" : "3 label",
+          "required" : true,
+          "unique" : false,
+          "createOnly" : false,
+          "errorMessage" : "3 error",
+          "fieldLength" : 10,
+          "_description" : "3 description",
+          "_typeChanged" : "Geojson",
+          "geoType" : "point",
+          "dataKey" : "line3",
+          "dataPath" : "firstGroup.anotherGroup.line3"
+        }
+      } ]
+    } ]
+  },
+  
+  {
     "type" : "User",
     "definition" : [ {
       "type" : "String",
@@ -272,6 +361,9 @@
       "label" : "User123",
       "errorMessage" : "User235",
       "fieldLength" : 10,
+      "required" : false,
+       "unique" : false,
+      "createOnly" : false,
       "_description" : "User Type Successful",
       "_typeChanged" : "User",
       "deleteAction" : "restrict",
@@ -283,7 +375,101 @@
       "dataKey" : "user",
       "dataPath" : "user"
     }
-  } ],
+  },
+   {
+      "_id": "6072f859fde78a35da213190",
+      "type": "Array",
+      "key": "collection1",
+      "properties": {
+        "name": "Collection-1",
+        "label": "Collection Label",
+        "errorMessage": "Collection Eror",
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "createOnly": true,
+        "dataKey": "collection1[#]",
+        "dataPath": "collection1[#]"
+      },
+      "definition": [
+        {
+          "type": "String",
+          "key": "_self",
+          "properties": {
+            "fieldLength": 10,
+            "_description": "Collection String Succesful",
+            "_typeChanged": "String",
+            "minlength": "12",
+            "maxlength": "15",
+            "pattern": "A5"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Array",
+      "key": "colle1",
+      "properties": {
+        "name": "Colle-1",
+        "label": "C Label",
+        "errorMessage": "C Error",
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "createOnly": true,
+        "dataKey": "colle1[#]",
+        "dataPath": "colle1[#]"
+      },
+      "definition": [
+        {
+          "type": "Object",
+          "key": "_self",
+          "properties": {
+            "fieldLength": 10,
+            "_description": "Collection Group",
+            "_typeChanged": "Object"
+          },
+          "definition": [
+            {
+              "type": "String",
+              "key": "attr1",
+              "properties": {
+                "label": "Collection Text Label",
+                "errorMessage": "Collection Text error",
+                "name": "Attr1",
+                "required": true,
+                "fieldLength": 10,
+                "_description": "Collection Text Successful",
+                "_typeChanged": "String",
+                "minlength": "10",
+                "maxlength": "20",
+                "dataKey": "attr1",
+                "dataPath": "colle1[#].attr1"
+              }
+            },
+            {
+              "type": "Number",
+              "key": "attr2",
+              "properties": {
+                "name": "Attr2",
+                "label": "Collection Number label",
+                "errorMessage": "Collection Number Error ",
+                "fieldLength": 10,
+                "_description": "Colllection Number Successful",
+                "_typeChanged": "Number",
+                "min": 15,
+                "max": 25,
+                "precision": 4,
+                "dataKey": "attr2",
+                "dataPath": "colle1[#].attr2"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    
+  
+  
+  ],
   "status" : "Draft",
   "relatedSchemas" : {
     "internal" : {
