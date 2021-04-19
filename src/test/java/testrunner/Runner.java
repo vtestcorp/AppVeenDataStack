@@ -8,13 +8,21 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src\\test\\resources\\feature\\login.feature",
+@CucumberOptions(features="src\\test\\resources\\feature\\loginToAppCenter.feature",
 //				dryRun=true,
 				glue="stepdefinitions",
 //				tags="@DataService",
 				plugin = { "pretty", "html:target/cucumber-reports","json:target/cucumber-reports/cucumber.json" }
 				)
 public class Runner {
+	
+	public static String testData=System.getProperty("testData");
+	
+	
+	String var="user";
+	
+	public static String browser=System.getProperty("browser");
+	
 	
 //	  private static String[] defaultOptions = {
 //	            "--glue", "stepdefinitions",
@@ -30,6 +38,7 @@ public class Runner {
 //	public static void main(String[] args) {
 //        cucumber.api.cli.Main.main(args );
 //    }
-	
+//	
 	
 }
+ 

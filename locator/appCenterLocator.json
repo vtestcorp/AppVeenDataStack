@@ -1,0 +1,12 @@
+{ 
+
+"username" : "//input[@id='username']",
+"nextButton" : "//span[normalize-space()='Next']",
+"password" : "//input[@placeholder='Password']",
+"loginButton" : "//button[@type='submit']",
+"addDataButton" : "//button[@id='addDataBtn']",
+"dataStackLogo" : "(//div[starts-with(@class,'logo')])[1]",
+"textBoxes" : "//input[contains(@class,'form-control')]",
+"saveAndCreateAnother" : "//span[normalize-space()='Save & create another']"
+
+}

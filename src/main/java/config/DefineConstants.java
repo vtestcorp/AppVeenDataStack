@@ -46,6 +46,8 @@ public class DefineConstants {
 	
 	public static final String json_FilePath = Locator_Folder + "\\" + "Locator.json";
 	
+	public static final String json_AppCenter_FilePath = Locator_Folder + "\\" + "appCenterLocator.json";
+	
 //	public static final String TC_Create_New_Data_Service = TestData_Folder +  "//" + "dataServiceCredentials.json";
 	
 	public static final String TC_Create_New_Data_Service = TestData_Folder +  "//" + "data.json";

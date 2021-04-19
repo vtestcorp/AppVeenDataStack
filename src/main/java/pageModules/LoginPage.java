@@ -75,7 +75,7 @@ public class LoginPage extends BaseClass{
 	
 	public void verifyListOfDataServices() throws Exception {
 		javascriptClick=new JavascriptClick(driver);
-		Thread.sleep(10000);
+		Thread.sleep(3000);
 		applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "listOfDataServices"))), 30);
 	if (driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "listOfDataServices"))).isDisplayed()) {
 		javascriptClick.highLighterMethod(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "listOfDataServices"))));
@@ -259,7 +259,8 @@ public class LoginPage extends BaseClass{
 						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "newAttributeButton1"))), 30).click();
 					}
 					String attributeTextBox="(//input[@placeholder='Untitled Attribute'])[last()]";
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(attributeTextBox)), 30).sendKeys(object.get("key").toString());
+					JSONObject jsonProperty = (JSONObject) object.get("properties");
+					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(attributeTextBox)), 30).sendKeys(jsonProperty.get("name").toString());
 					groupAttributes((String) object.get("type"),object);
 
 					Thread.sleep(1000);
@@ -347,7 +348,7 @@ public class LoginPage extends BaseClass{
 			}
 				}
 			}
-			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "submitAndDeploy"))), 30).click();;
+//			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "submitAndDeploy"))), 30).click();;
 		}
 
 	public void createDataService(String dataServicName) throws Exception {
@@ -823,9 +824,16 @@ public class LoginPage extends BaseClass{
 								if(jsonProperties.containsKey("maxlength")) {
 									applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "maxValue"))), 30).sendKeys(jsonProperties.get("maxlength").toString());
 									}
+								if(jsonProperties.containsKey("min")) {
+									applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "minValue"))), 30).sendKeys(jsonProperties.get("min").toString());
+									}
+								
+								if(jsonProperties.containsKey("max")) {
+									applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "maxValueNumber"))), 30).sendKeys(jsonProperties.get("max").toString());
+									}
 								
 								if(jsonProperties.containsKey("tokens")) {
-									applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("tokens").toString());
+									applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "tokens"))), 30).sendKeys(jsonProperties.get("tokens").toString());
 									}
 								
 								if(jsonProperties.containsKey("values")) {
