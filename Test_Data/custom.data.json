@@ -1,0 +1,24 @@
+{
+  "address": {
+    "road": "Gandhi Road",
+    "houseNo": "101",
+    "buildingName": "Flower Apartment"
+  },
+  "_metadata": {
+    "deleted": false,
+    "lastUpdated": "2021-04-20T11:56:22.146Z",
+    "version": {
+      "release": "1.0.0",
+      "document": 2
+    },
+    "createdAt": "2021-04-20T11:54:53.572Z"
+  },
+  "documents": [
+    "Adhar"
+  ],
+  "_id": "Dee1002",
+  "name": "Peter Parker",
+  "gender": true,
+  "location": null,
+  "__v": 1
+}

@@ -47,8 +47,6 @@ public class LoginToAuthorUrl extends BaseClass {
 
 			loginPage.enterUserNameAndPassword(e.get(0), e.get(1));
 		}
-
-
 	}
 
 	@Then("Verify User Login Successfully")
@@ -59,7 +57,8 @@ public class LoginToAuthorUrl extends BaseClass {
 	@Then("Create new Data Service {string}")
 	public void create_new_Data_Service(String dataService) throws Exception {
 		String dataName="C:\\Users\\DELL\\eclipse-workspace\\DataStack\\Test_Data" + "\\" + ""+dataService+".json";
-		loginPage.createNewDataServices(JsonUtils.getArrayValues(dataName, "definition"),dataService);
+		System.out.println(dataName);
+		loginPage.createNewDataServices(JsonUtils.getArrayValues(testData, "definition"),dataService);
 	}
 
 	@And("Create Data Service {string}")

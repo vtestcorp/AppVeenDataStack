@@ -9,7 +9,7 @@ Background: User Log in Author page
 
 #@DataService
 Scenario: Successful Login with Valid Credentials
- Then Create new Data Service "users"
+ Then Create new Data Service "custom"
  
  
 

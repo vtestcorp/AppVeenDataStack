@@ -45,21 +45,27 @@ public class LoginPage extends BaseClass{
 		PageFactory.initElements(driver, this);
 		this.applyWait = new WaitTypes(driver);
 		this.test = test;
+	//	this.driver=driver;
+	//	applyWait = new WaitTypes(driver);
+		dropdown=new DropDown(driver);
+		scroll=new ScrollTypes(driver);
 	}
 //	@FindBy(xpa JsonUtils.getData(DefineConstants.json_FilePath, "emailIDTextBox"))
 //	private WebElement emailIDTextBox;
 	
 	public void loginToPage() throws Exception {
 
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver=new ChromeDriver();
-		this.driver=driver;
+//		WebDriverManager.chromedriver().setup();
+//		WebDriver driver=new ChromeDriver();
+		
+		start();
+		this.driver=getDriver();
 		applyWait = new WaitTypes(driver);
 		dropdown=new DropDown(driver);
 		scroll=new ScrollTypes(driver);
 		driver.get(DefineConstants.AUTHOR_URL);
 		Screenshots.takeScreenshot(driver, "User opened author url ");
-		driver.manage().window().maximize();
+//		driver.manage().window().maximize();
 		
 	}
 	
@@ -75,7 +81,7 @@ public class LoginPage extends BaseClass{
 	
 	public void verifyListOfDataServices() throws Exception {
 		javascriptClick=new JavascriptClick(driver);
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 		applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "listOfDataServices"))), 30);
 	if (driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "listOfDataServices"))).isDisplayed()) {
 		javascriptClick.highLighterMethod(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "listOfDataServices"))));

@@ -15,8 +15,6 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentTest;
-import com.jayway.jsonpath.JsonPath;
-
 import base.BaseClass;
 import config.DefineConstants;
 import helperMethods.DropDown;
