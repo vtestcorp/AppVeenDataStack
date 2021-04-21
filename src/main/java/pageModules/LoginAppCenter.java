@@ -51,6 +51,7 @@ public class LoginAppCenter  extends BaseClass {
 		
 		SwitchWindow.openNewTab(driver);
 		driver.get(DefineConstants.APP_CENTER_URL);
+		driver.manage().window().maximize();
 		
 	}
 
@@ -88,24 +89,16 @@ public class LoginAppCenter  extends BaseClass {
 			
 			JSONObject jsonObject=(JSONObject) jsonArray.get(i);
 			Thread.sleep(1000);
-	//		for(WebElement textBox : textBoxes) {
-			for(int j=0;j<textBoxes.size();j++) {
-				WebElement textBox=textBoxes.get(j);
-		//		driver.navigate().refresh();
-				
-				final WebDriverWait wait = new WebDriverWait(driver, 20);
-			    wait.until(ExpectedConditions.refreshed(
-			        ExpectedConditions.elementToBeClickable(textBox)));
+			
+				for(int j=1;j<=textBoxes.size();j++) {
+				WebElement textBox=driver.findElement(By.xpath("(//input[contains(@class,'form-control')])["+j+"]"));
+		
 				String id1 =textBox.getAttribute("id");
-				System.out.println(id1);
 				
 				if(textBox.getAttribute("type").equals("text")) {
 					if(id1.contains(".")) {
-						System.out.println(id1);
 						String [] attributes=id1.trim().split("[^a-zA-Z0-9]+");
-						System.out.println(attributes.length);
-						System.out.println(attributes[0]);
-						System.out.println(attributes[1]);
+					
 						JSONObject obj=(JSONObject) jsonObject.get(attributes[0]);
 						applyWait.waitForElementToBeClickable(textBox,30).sendKeys((String)obj.get(attributes[1]));
 						

@@ -3,18 +3,19 @@
     "line": 1,
     "elements": [
       {
-        "line": 3,
-        "name": "User Log in Author page",
+        "line": 4,
+        "name": "Create Data Service in Author portal",
         "description": "",
-        "type": "background",
-        "keyword": "Background",
+        "id": "verify-data-service;create-data-service-in-author-portal",
+        "type": "scenario",
+        "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 6827504300,
+              "duration": 5739347400,
               "status": "passed"
             },
-            "line": 4,
+            "line": 5,
             "name": "User Navigate to LogIn Page",
             "match": {
               "location": "LoginToAuthorUrl.user_Navigate_to_LogIn_Page()"
@@ -23,10 +24,10 @@
           },
           {
             "result": {
-              "duration": 2634156500,
+              "duration": 2638186500,
               "status": "passed"
             },
-            "line": 5,
+            "line": 6,
             "name": "User enters username and password",
             "match": {
               "location": "LoginToAuthorUrl.user_enters_UserName_and_Password(DataTable)"
@@ -43,7 +44,7 @@
           },
           {
             "result": {
-              "duration": 7517619700,
+              "duration": 7514676100,
               "status": "passed"
             },
             "line": 8,
@@ -52,29 +53,18 @@
               "location": "LoginToAuthorUrl.message_displayed_Login_Successfully()"
             },
             "keyword": "And "
-          }
-        ]
-      },
-      {
-        "line": 11,
-        "name": "Successful Login with Valid Credentials",
-        "description": "",
-        "id": "login-to-author-url;successful-login-with-valid-credentials",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
+          },
           {
             "result": {
-              "error_message": "org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : }\n  (Session info: chrome\u003d89.0.4389.128): {Alert text : \nBuild info: version: \u0027unknown\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:24:01\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.1.171\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.128, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:59922}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 076986a83938db627fa3b9a123c71f1e\n*** Element info: {Using\u003dxpath, value\u003d(//span[contains(text(),\u0027New Attribute\u0027)])[last()]}\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginPage.createNewDataServices(LoginPage.java:132)\r\n\tat stepdefinitions.LoginToAuthorUrl.create_new_Data_Service(LoginToAuthorUrl.java:61)\r\n\tat ✽.Create new Data Service \"custom\"(C:/Users/DELL/eclipse-workspace/DataStack/src/test/resources/feature/login.feature:12)\r\n",
-              "duration": 28537268100,
-              "status": "failed"
+              "duration": 28026472900,
+              "status": "passed"
             },
-            "line": 12,
-            "name": "Create new Data Service \"custom\"",
+            "line": 9,
+            "name": "Create new Data Service \"users111\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"custom\"",
+                  "val": "\"users111\"",
                   "offset": 24
                 }
               ],
@@ -83,11 +73,100 @@
             "keyword": "Then "
           }
         ]
+      },
+      {
+        "line": 12,
+        "name": "Connect from Author to Appcenter",
+        "description": "",
+        "id": "verify-data-service;connect-from-author-to-appcenter",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 26534566400,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "User gives permission to Data Service",
+            "match": {
+              "location": "LoginToAuthorUrl.user_gives_permission_to_Data_Service()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "line": 16,
+        "name": "Verify Data Service in AppCenter portal",
+        "description": "",
+        "id": "verify-data-service;verify-data-service-in-appcenter-portal",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5905317900,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "User Navigate to AppCenter LogIn Page",
+            "match": {
+              "location": "LoginToAppCenter.user_Navigate_to_AppCenter_LogIn_Page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2538534900,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User enters username and password in AppCenter Url",
+            "match": {
+              "location": "LoginToAppCenter.user_enters_username_and_password_in_AppCenter_Url(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "vtest@appveen.com",
+                  "123123123"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5116297900,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "Verify User Login Successfully in Appcenter Url",
+            "match": {
+              "location": "LoginToAppCenter.verify_User_Login_Successfully_in_Appcenter_Url()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.ElementNotInteractableException: element not interactable\n  (Session info: chrome\u003d89.0.4389.128)\nBuild info: version: \u0027unknown\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:24:01\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.1.171\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.128, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:61086}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 233c8ece952bc0f95c82bed9c9ddc47b\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)\r\n\tat pageModules.LoginAppCenter.userEnterData(LoginAppCenter.java:103)\r\n\tat stepdefinitions.LoginToAppCenter.user_enters_data_in_Data_Service(LoginToAppCenter.java:50)\r\n\tat ✽.User enters data in Data Service(C:/Users/DELL/eclipse-workspace/DataStack/src/test/resources/feature/login.feature:22)\r\n",
+              "duration": 15971958800,
+              "status": "failed"
+            },
+            "line": 22,
+            "name": "User enters data in Data Service",
+            "match": {
+              "location": "LoginToAppCenter.user_enters_data_in_Data_Service()"
+            },
+            "keyword": "And "
+          }
+        ]
       }
     ],
-    "name": "Login to Author Url",
+    "name": "Verify Data Service",
     "description": "",
-    "id": "login-to-author-url",
+    "id": "verify-data-service",
     "keyword": "Feature",
     "uri": "C:/Users/DELL/eclipse-workspace/DataStack/src/test/resources/feature/login.feature",
     "tags": []

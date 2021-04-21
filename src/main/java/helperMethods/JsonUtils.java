@@ -61,6 +61,18 @@ public class JsonUtils extends BaseClass{
 		return (JSONArray) jsonObject.get(field);
 	}
 	
+	public static JSONArray getJSONArrayValues(String filePath, String field) {
+		try {
+			reader = new FileReader(filePath);
+			jsonParser = new JSONParser();
+			object = jsonParser.parse(reader);
+			jsonObject = (JSONObject) object;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return (JSONArray) jsonObject.get(field);
+	}
+	
 	
 	public static JSONArray getJSONArray(String filePath) {
 		try {

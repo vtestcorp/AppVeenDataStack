@@ -46,8 +46,8 @@ public class BaseClass {
 	public static String DownloadFilepath, folder, basefold;
 	public static int count;
 
-	public static String testData = System.getProperty("testData");
-
+//	public static String testData = System.getProperty("testData");
+	public static String testData = "D:\\users111.json";
 	public static String browser = System.getProperty("browser");
 
 //	@SuppressWarnings("deprecation")

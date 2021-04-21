@@ -1,5 +1,6 @@
 package pageModules;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
@@ -7,6 +8,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -354,7 +356,7 @@ public class LoginPage extends BaseClass{
 			}
 				}
 			}
-//			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "submitAndDeploy"))), 30).click();;
+			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "submitAndDeploy"))), 30).click();;
 		}
 
 	public void createDataService(String dataServicName) throws Exception {
@@ -856,6 +858,42 @@ public class LoginPage extends BaseClass{
 								
 								
 								
+							
+						}
+
+						public void connectAuthorToAppcenter() throws Exception {
+							Thread.sleep(2000);
+							String groupName="Author";
+							this.driver=getDriver();
+							applyWait = new WaitTypes(driver);
+							applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "groups"))), 30).click();
+							
+							WebElement group=driver.findElement(By.xpath("//div[normalize-space()='"+groupName+"']/parent::div"));
+							Thread.sleep(5000);
+							System.out.println("1");
+							try {
+							applyWait.waitForElementToBeClickable(group, 30).click();
+							System.out.println("2");
+							}
+							catch(StaleElementReferenceException  e) {
+								System.out.println("4");
+								group=driver.findElement(By.xpath("//div[normalize-space()='"+groupName+"']/parent::div"));
+								applyWait.waitForElementToBeClickable(group, 30).click();
+								System.out.println("5");
+							}
+							Thread.sleep(5000);
+					//		applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "groups"))), 30).click();
+							applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "appCenterRoles"))), 30).click();
+							System.out.println(dataServiceName);
+							Thread.sleep(5000);
+			//				WebElement dsArrow=driver.findElement(By.xpath("//span[normalize-space()='"+dataServiceName+"']/parent::div/following-sibling::span[2]/child::span"));
+							WebElement dsArrow=driver.findElement(By.xpath("(//span[@class='toggle text-muted text-right'])[1]/span"));
+							applyWait.waitForElementToBeClickable(dsArrow, 30).click();
+							Thread.sleep(5000);
+							WebElement manageButton=driver.findElement(By.xpath("//span[normalize-space()='Manage']/parent::div/following-sibling::span[2]/child::label/child::span[2]"));
+							applyWait.waitForElementToBeClickable(manageButton, 30).click();
+							Thread.sleep(3000);
+							applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "saveDataService"))), 30).click();
 							
 						}
 		

@@ -1,5 +1,7 @@
 package stepdefinitions;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
@@ -55,10 +57,36 @@ public class LoginToAuthorUrl extends BaseClass {
 	}
 
 	@Then("Create new Data Service {string}")
-	public void create_new_Data_Service(String dataService) throws Exception {
+	public void create_new_Data_Service(String dataService) throws Exception  {
+		
+	
 		String dataName="C:\\Users\\DELL\\eclipse-workspace\\DataStack\\Test_Data" + "\\" + ""+dataService+".json";
 		System.out.println(dataName);
-		loginPage.createNewDataServices(JsonUtils.getArrayValues(testData, "definition"),dataService);
+		
+		try {
+			System.out.println("1");
+			FileReader reader = new FileReader(dataName);
+	//		JsonUtils.getJSONArrayValues(dataName, "definition");
+		
+		}
+		catch(FileNotFoundException file) {
+			try {
+				System.out.println("2");
+				FileReader reader = new FileReader(testData);
+	//			JsonUtils.getArrayValues(testData, "definition");
+				System.out.println("3");
+				dataName=testData;
+				System.out.println("4");
+			}
+			catch(Exception file1) {
+				System.out.println("5");
+				System.err.println("Data Service file not found");
+				
+			}
+		}
+		
+		loginPage.createNewDataServices(JsonUtils.getArrayValues(dataName, "definition"),dataService);
+		
 	}
 
 	@And("Create Data Service {string}")
@@ -82,6 +110,12 @@ public class LoginToAuthorUrl extends BaseClass {
 	public void clone_Given_Data_Service() throws Exception {
 		loginPage.cloneGivenDataService();
 		
+	}
+	
+	@Given("User gives permission to Data Service")
+	public void user_gives_permission_to_Data_Service() throws Exception {
+		loginPage = new LoginPage(driver, test);
+	  loginPage.connectAuthorToAppcenter();
 	}
 
 }
