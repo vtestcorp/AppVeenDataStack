@@ -12,7 +12,7 @@
         "steps": [
           {
             "result": {
-              "duration": 5739347400,
+              "duration": 11045789900,
               "status": "passed"
             },
             "line": 5,
@@ -24,7 +24,7 @@
           },
           {
             "result": {
-              "duration": 2638186500,
+              "duration": 3113986900,
               "status": "passed"
             },
             "line": 6,
@@ -44,7 +44,7 @@
           },
           {
             "result": {
-              "duration": 7514676100,
+              "duration": 7622539700,
               "status": "passed"
             },
             "line": 8,
@@ -56,15 +56,16 @@
           },
           {
             "result": {
-              "duration": 28026472900,
-              "status": "passed"
+              "error_message": "org.openqa.selenium.NoSuchElementException: Cannot locate an element using xpath\u003d//div[@class\u003d\u0027button-grid bg-light clearfix w-100 active\u0027]//span[@class\u003d\u0027text\u0027][normalize-space()\u003d\u0027Delete\u0027]\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u0027unknown\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:24:01\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: driver.version: RemoteWebDriver\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginPage.createNewDataServices(LoginPage.java:107)\r\n\tat stepdefinitions.LoginToAuthorUrl.create_new_Data_Service(LoginToAuthorUrl.java:80)\r\n\tat ✽.Create new Data Service \"users\"(C:/Users/DELL/eclipse-workspace/DataStack/src/test/resources/feature/login.feature:9)\r\n",
+              "duration": 509609100,
+              "status": "failed"
             },
             "line": 9,
-            "name": "Create new Data Service \"users111\"",
+            "name": "Create new Data Service \"users\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"users111\"",
+                  "val": "\"users\"",
                   "offset": 24
                 }
               ],
@@ -84,8 +85,9 @@
         "steps": [
           {
             "result": {
-              "duration": 26534566400,
-              "status": "passed"
+              "error_message": "org.openqa.selenium.NoSuchWindowException: no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome\u003d90.0.4430.85)\nBuild info: version: \u0027unknown\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:24:01\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.85, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:58167}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: ff23e9de2e57e26e02f8882c460c0e89\n*** Element info: {Using\u003dxpath, value\u003d//span[normalize-space()\u003d\u0027Groups\u0027]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginPage.connectAuthorToAppcenter(LoginPage.java:869)\r\n\tat stepdefinitions.LoginToAuthorUrl.user_gives_permission_to_Data_Service(LoginToAuthorUrl.java:110)\r\n\tat ✽.User gives permission to Data Service(C:/Users/DELL/eclipse-workspace/DataStack/src/test/resources/feature/login.feature:13)\r\n",
+              "duration": 2048001500,
+              "status": "failed"
             },
             "line": 13,
             "name": "User gives permission to Data Service",
@@ -106,8 +108,9 @@
         "steps": [
           {
             "result": {
-              "duration": 5905317900,
-              "status": "passed"
+              "error_message": "org.openqa.selenium.NoSuchWindowException: no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome\u003d90.0.4430.85)\nBuild info: version: \u0027unknown\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:24:01\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.85, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:58185}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 5ca37a32bca2f30898668f864bf73dd5\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:837)\r\n\tat pageModules.LoginAppCenter.loginToAppCenterPage(LoginAppCenter.java:54)\r\n\tat stepdefinitions.LoginToAppCenter.user_Navigate_to_AppCenter_LogIn_Page(LoginToAppCenter.java:24)\r\n\tat ✽.User Navigate to AppCenter LogIn Page(C:/Users/DELL/eclipse-workspace/DataStack/src/test/resources/feature/login.feature:17)\r\n",
+              "duration": 9703531800,
+              "status": "failed"
             },
             "line": 17,
             "name": "User Navigate to AppCenter LogIn Page",
@@ -118,8 +121,8 @@
           },
           {
             "result": {
-              "duration": 2538534900,
-              "status": "passed"
+              "duration": 19000,
+              "status": "skipped"
             },
             "line": 18,
             "name": "User enters username and password in AppCenter Url",
@@ -138,8 +141,8 @@
           },
           {
             "result": {
-              "duration": 5116297900,
-              "status": "passed"
+              "duration": 3300,
+              "status": "skipped"
             },
             "line": 21,
             "name": "Verify User Login Successfully in Appcenter Url",
@@ -150,16 +153,21 @@
           },
           {
             "result": {
-              "error_message": "org.openqa.selenium.ElementNotInteractableException: element not interactable\n  (Session info: chrome\u003d89.0.4389.128)\nBuild info: version: \u0027unknown\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:24:01\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.1.171\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.128, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:61086}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 233c8ece952bc0f95c82bed9c9ddc47b\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)\r\n\tat pageModules.LoginAppCenter.userEnterData(LoginAppCenter.java:103)\r\n\tat stepdefinitions.LoginToAppCenter.user_enters_data_in_Data_Service(LoginToAppCenter.java:50)\r\n\tat ✽.User enters data in Data Service(C:/Users/DELL/eclipse-workspace/DataStack/src/test/resources/feature/login.feature:22)\r\n",
-              "duration": 15971958800,
-              "status": "failed"
+              "duration": 3200,
+              "status": "skipped"
             },
             "line": 22,
-            "name": "User enters data in Data Service",
+            "name": "Create new Data Service \"users\"",
             "match": {
-              "location": "LoginToAppCenter.user_enters_data_in_Data_Service()"
+              "arguments": [
+                {
+                  "val": "\"users\"",
+                  "offset": 24
+                }
+              ],
+              "location": "LoginToAuthorUrl.create_new_Data_Service(String)"
             },
-            "keyword": "And "
+            "keyword": "Then "
           }
         ]
       }

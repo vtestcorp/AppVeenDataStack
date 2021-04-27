@@ -1,0 +1,638 @@
+{
+  "_id" : "SRVC2079",
+  "name" : "Deepak-1",
+  "permanentDeleteData" : true,
+  "app" : "vTEST",
+  "api" : "/deepak1",
+  "wizard" : [ ],
+  "version" : 1,
+  "versionValidity" : {
+    "validityType" : "count",
+    "validityValue" : -1
+  },
+  "definition" : [ {
+    "key" : "_id",
+    "type" : "String",
+    "prefix" : "DEE",
+    "suffix" : null,
+    "padding" : null,
+    "counter" : 1001,
+    "properties" : {
+      "label" : null,
+      "readonly" : false,
+      "errorMessage" : null,
+      "name" : "ID",
+      "required" : false,
+      "fieldLength" : 10,
+      "_description" : null,
+      "_typeChanged" : "id",
+      "_isParrentArray" : null,
+      "_isGrpParentArray" : null,
+      "dataPath" : "_id",
+      "_detailedType" : "",
+      "dataKey" : "_id"
+    }
+  }, {
+    "type" : "String",
+    "key" : "firstName",
+    "properties" : {
+      "label" : "label",
+      "errorMessage" : "error",
+      "name" : "FirstName",
+      "required" : false,
+      "fieldLength" : 10,
+      "_description" : "Text Type successful",
+      "_typeChanged" : "String",
+      "unique" : false,
+      "createOnly" : false,
+      "minlength" : "5",
+      "maxlength" : "8",
+      "dataKey" : "firstName",
+      "dataPath" : "firstName"
+    }
+  }, 
+  {
+    "type" : "Long Text",
+    "key" : "Long Text",
+    "properties" : {
+      "label" : "label",
+      "errorMessage" : "error",
+      "name" : "FirstName",
+      "tokens" : 3,
+      "required" : true,
+      "fieldLength" : 10,
+      "_description" : "Long Text Type successful",
+      "_typeChanged" : "String",
+      "unique" : false,
+      "createOnly" : false,
+      "minlength" : "5",
+      "maxlength" : "8",
+      "dataKey" : "firstName",
+      "dataPath" : "firstName"
+    }
+  },
+  
+  
+  
+   {
+    "type" : "Rich Text",
+    "key" : "Rich Text",
+    "properties" : {
+      "label" : "Rich Text label",
+      "errorMessage" : "Rich Text error",
+      "name" : "FirstName",
+      "tokens" : 5,
+      "required" : true,
+      "fieldLength" : 10,
+      "_description" : "Rich Text Type successful",
+      "_typeChanged" : "String",
+      "unique" : false,
+      "createOnly" : false,
+      "minlength" : "5",
+      "maxlength" : "8",
+      "dataKey" : "firstName",
+      "dataPath" : "firstName"
+    }
+  },
+   {
+    "type" : "Email",
+    "key" : "email",
+    "properties" : {
+      "label" : "Email label",
+      "errorMessage" : "Email error",
+      "name" : "FirstName",
+      "tokens" : 3,
+      "required" : true,
+      "createOnly" : false,
+      "fieldLength" : 10,
+      "_description" : "Email Type successful",
+      "_typeChanged" : "String",
+      "unique" : false,
+      "minlength" : "5",
+      "maxlength" : "8",
+      "dataKey" : "firstName",
+      "dataPath" : "firstName"
+    }
+  },
+  
+    {
+    "type" : "Secure Text",
+    "key" : "Secure Text",
+    "properties" : {
+      "label" : "Secure Text label",
+      "errorMessage" : "Secure Text error",
+      "name" : "FirstName",
+      "pattern" : "A5",
+      "required" : true,
+      "fieldLength" : 10,
+      "_description" : "Secure Text Type successful",
+      "_typeChanged" : "String",
+      "unique" : false,
+       "createOnly" : false,
+      "minlength" : "5",
+      "maxlength" : "8",
+      "dataKey" : "firstName",
+      "dataPath" : "firstName"
+    }
+  },
+      {
+    "type" : "List of values",
+    "key" : "List of values",
+    "properties" : {
+      "label" : "List of value label",
+      "errorMessage" : "List of value error",
+      "name" : "FirstName",
+      "values" : 5,
+      "required" : true,
+      "fieldLength" : 10,
+      "_description" : "List of values successful",
+      "_typeChanged" : "String",
+      "unique" : false,
+      "createOnly" : false,
+      "minlength" : "5",
+      "maxlength" : "8",
+      "dataKey" : "firstName",
+      "dataPath" : "firstName"
+    }
+  },
+  
+  {
+    "type" : "Number",
+    "key" : "age",
+    "properties" : {
+      "name" : "Age",
+      "label" : "Age123",
+       "required" : false,
+       "unique" : false,
+      "createOnly" : false,
+      "errorMessage" : "Age235",
+      "fieldLength" : 10,
+      "_description" : "Number Type Successful",
+      "_typeChanged" : "Number",
+      "min" : 6,
+      "max" : 9,
+      "precision" : 2,
+      "dataKey" : "age",
+      "dataPath" : "age"
+    }
+  }, 
+   {
+    "type" : "Currency",
+    "key" : "Currency",
+    "properties" : {
+      "name" : "Age",
+      "currency" : "USD",
+       "required" : false,
+       "unique" : false,
+      "createOnly" : false,
+      "label" : "Currency Label",
+      "errorMessage" : "Currency Error",
+      "fieldLength" : 10,
+      "_description" : "Currency Type Successful",
+      "_typeChanged" : "Number",
+      "min" : 6,
+      "max" : 9,
+      "precision" : 2,
+      "dataKey" : "age",
+      "dataPath" : "age"
+    }
+  },
+  
+  {
+    "type" : "Boolean",
+    "key" : "gender",
+    "properties" : {
+      "name" : "Gender",
+      "label" : "Gender1",
+      "errorMessage" : "Gender2",
+      "fieldLength" : 10,
+       "required" : false,
+       "unique" : false,
+      "createOnly" : false,
+      "_description" : "Gender Type Successful",
+      "_typeChanged" : "Boolean",
+      "dataKey" : "gender",
+      "dataPath" : "gender"
+    }
+  }, {
+    "type" : "Date",
+    "key" : "date",
+    "properties" : {
+      "name" : "Date",
+      "label" : "Date123",
+      "errorMessage" : "Date235",
+      "fieldLength" : 10,
+       "required" : false,
+       "unique" : false,
+      "createOnly" : false,
+      "_description" : "Date Type Successful",
+      "_typeChanged" : "Date",
+      "dateType" : "date",
+      "defaultTimezone" : "Etc/Zulu",
+      "supportedTimezones" : [ "Africa/Algiers" ],
+      "dataKey" : "date",
+      "dataPath" : "date"
+    }
+  }, {
+    "type" : "Geojson",
+    "key" : "location",
+    "properties" : {
+      "name" : "Location",
+      "label" : "Location123",
+      "errorMessage" : "Location235",
+      "fieldLength" : 10,
+      "_description" : "Location Type Successful",
+      "_typeChanged" : "Geojson",
+      "geoType" : "point",
+      "dataKey" : "location",
+      "dataPath" : "location"
+    }
+  }, {
+    "type" : "File",
+    "key" : "file",
+    "properties" : {
+      "name" : "File",
+      "label" : "File123",
+       "required" : false,
+       "unique" : false,
+      "createOnly" : false,
+      "errorMessage" : "File235",
+      "fieldLength" : 10,
+      "_description" : "File Type Successful",
+      "_typeChanged" : "File",
+      "fileType" : "All",
+      "dataKey" : "file",
+      "dataPath" : "file"
+    }
+  },
+   {
+    "type" : "Object",
+    "key" : "firstGroup",
+    "properties" : {
+      "name" : "First group",
+      "label" : "first value",
+      "required" : false,
+      "unique" : false,
+      "createOnly" : false,
+      "errorMessage" : "first err",
+      "fieldLength" : 10,
+      "_description" : "first description",
+      "_typeChanged" : "Object",
+      "dataKey" : "firstGroup",
+      "dataPath" : "firstGroup"
+    },
+    "definition" : [ {
+      "type" : "String",
+      "key" : "line1",
+      "properties" : {
+        "label" : "cust 1",
+        "errorMessage" : "err 1",
+        "name" : "Line 1",
+        "fieldLength" : 10,
+        "required" : false,
+        "unique" : false,
+        "createOnly" : false,
+        "_description" : "asdfghh",
+        "_typeChanged" : "String",
+        "minlength" : "11",
+        "maxlength" : "12",
+        "pattern" : "12",
+        "dataKey" : "line1",
+        "dataPath" : "firstGroup.line1"
+      }
+    }, {
+      "type" : "Date",
+      "key" : "line2",
+      "properties" : {
+        "name" : "Line 2",
+        "label" : "asdf",
+        "errorMessage" : "ased",
+        "required" : false,
+        "unique" : false,
+        "createOnly" : true,
+        "fieldLength" : 10,
+        "_description" : "asedxc",
+        "_typeChanged" : "Date",
+        "default" : "2021-04-12T11:09:57.561Z",
+        "dateType" : "date",
+        "defaultTimezone" : "Zulu",
+        "supportedTimezones" : [ "Indian/Antananarivo" ],
+        "dataKey" : "line2",
+        "dataPath" : "firstGroup.line2"
+      }
+    }, {
+      "type" : "Object",
+      "key" : "anotherGroup",
+      "properties" : {
+        "name" : "Another group",
+        "label" : "another group",
+        "errorMessage" : "anoerr",
+        "required" : false,
+        "unique" : false,
+        "createOnly" : false,
+        "fieldLength" : 10,
+        "_description" : "description err",
+        "_typeChanged" : "Object",
+        "dataKey" : "anotherGroup",
+        "dataPath" : "firstGroup.anotherGroup"
+      },
+      "definition" : [ {
+        "type" : "Geojson",
+        "key" : "line3",
+        "properties" : {
+          "name" : "line3",
+          "label" : "3 label",
+          "required" : true,
+          "unique" : false,
+          "createOnly" : false,
+          "errorMessage" : "3 error",
+          "fieldLength" : 10,
+          "_description" : "3 description",
+          "_typeChanged" : "Geojson",
+          "geoType" : "point",
+          "dataKey" : "line3",
+          "dataPath" : "firstGroup.anotherGroup.line3"
+        }
+      } ]
+    } ]
+  },
+  
+  {
+    "type" : "User",
+    "definition" : [ {
+      "type" : "String",
+      "key" : "_id",
+      "properties" : {
+        "name" : "_id"
+      }
+    } ],
+    "key" : "user",
+    "properties" : {
+      "name" : "User",
+      "label" : "User123",
+      "errorMessage" : "User235",
+      "fieldLength" : 10,
+      "required" : false,
+       "unique" : false,
+      "createOnly" : false,
+      "_description" : "User Type Successful",
+      "_typeChanged" : "User",
+      "deleteAction" : "restrict",
+      "relatedSearchField" : "basicDetails.name",
+      "relatedViewFields" : [ {
+        "key" : "username",
+        "name" : "User Name"
+      } ],
+      "dataKey" : "user",
+      "dataPath" : "user"
+    }
+  },
+   {
+      "_id": "6072f859fde78a35da213190",
+      "type": "Array",
+      "key": "collection1",
+      "properties": {
+        "name": "Collection-1",
+        "label": "Collection Label",
+        "errorMessage": "Collection Eror",
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "createOnly": true,
+        "dataKey": "collection1[#]",
+        "dataPath": "collection1[#]"
+      },
+      "definition": [
+        {
+          "type": "String",
+          "key": "_self",
+          "properties": {
+            "fieldLength": 10,
+            "_description": "Collection String Succesful",
+            "_typeChanged": "String",
+            "minlength": "12",
+            "maxlength": "15",
+            "pattern": "A5"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Array",
+      "key": "colle1",
+      "properties": {
+        "name": "Colle-1",
+        "label": "C Label",
+        "errorMessage": "C Error",
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "createOnly": true,
+        "dataKey": "colle1[#]",
+        "dataPath": "colle1[#]"
+      },
+      "definition": [
+        {
+          "type": "Object",
+          "key": "_self",
+          "properties": {
+            "fieldLength": 10,
+            "_description": "Collection Group",
+            "_typeChanged": "Object"
+          },
+          "definition": [
+            {
+              "type": "String",
+              "key": "attr1",
+              "properties": {
+                "label": "Collection Text Label",
+                "errorMessage": "Collection Text error",
+                "name": "Attr1",
+                "required": true,
+                "fieldLength": 10,
+                "_description": "Collection Text Successful",
+                "_typeChanged": "String",
+                "minlength": "10",
+                "maxlength": "20",
+                "dataKey": "attr1",
+                "dataPath": "colle1[#].attr1"
+              }
+            },
+            {
+              "type": "Number",
+              "key": "attr2",
+              "properties": {
+                "name": "Attr2",
+                "label": "Collection Number label",
+                "errorMessage": "Collection Number Error ",
+                "fieldLength": 10,
+                "_description": "Colllection Number Successful",
+                "_typeChanged": "Number",
+                "min": 15,
+                "max": 25,
+                "precision": 4,
+                "dataKey": "attr2",
+                "dataPath": "colle1[#].attr2"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    
+  
+  
+  ],
+  "status" : "Draft",
+  "relatedSchemas" : {
+    "internal" : {
+      "users" : [ {
+        "path" : "{\"user\":\"User\"}",
+        "isRequired" : true,
+        "filter" : "{ \"user._id\":\"{{id}}\"}"
+      } ]
+    },
+    "outgoing" : [ ]
+  },
+  "webHooks" : [ ],
+  "preHooks" : [ ],
+  "workflowHooks" : {
+    "postHooks" : {
+      "submit" : [ ],
+      "approve" : [ ],
+      "reject" : [ ],
+      "discard" : [ ],
+      "rework" : [ ]
+    }
+  },
+  "headers" : [ ],
+  "attributeCount" : 8,
+  "_metadata" : {
+    "lastUpdated" : "2021-04-05T06:40:35.084Z",
+    "createdAt" : "2021-04-05T06:34:46.084Z",
+    "lastUpdatedBy" : "deepak_vtest@appveen.com",
+    "version" : {
+      "release" : "1.0.0",
+      "document" : 2
+    }
+  },
+  "role" : {
+    "_id" : "SRVC2079",
+    "_metadata" : {
+      "version" : {
+        "document" : 1,
+        "release" : "1.0.0"
+      },
+      "deleted" : false,
+      "lastUpdated" : "2021-04-05T06:34:46.122Z",
+      "createdAt" : "2021-04-05T06:34:46.119Z"
+    },
+    "app" : "vTEST",
+    "entity" : "SRVC2079",
+    "entityName" : "Deepak-1",
+    "roles" : [ {
+      "skipReviewRole" : true,
+      "id" : "P6583273185",
+      "name" : "Skip Review",
+      "operations" : [ {
+        "method" : "SKIP_REVIEW"
+      }, {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record and without any approval"
+    }, {
+      "manageRole" : true,
+      "id" : "P1346437037",
+      "name" : "Manage",
+      "operations" : [ {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      }, {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record"
+    }, {
+      "viewRole" : true,
+      "id" : "P4274274811",
+      "name" : "View",
+      "operations" : [ {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to view the record"
+    } ],
+    "type" : "appcenter",
+    "fields" : {
+      "_id" : {
+        "_t" : "String",
+        "_p" : {
+          "P6583273185" : "R",
+          "P1346437037" : "R",
+          "P4274274811" : "R"
+        }
+      },
+      "firstName" : {
+        "_t" : "String",
+        "_p" : {
+          "P6583273185" : "R",
+          "P1346437037" : "R",
+          "P4274274811" : "R"
+        }
+      },
+      "age" : {
+        "_t" : "Number",
+        "_p" : {
+          "P6583273185" : "R",
+          "P1346437037" : "R",
+          "P4274274811" : "R"
+        }
+      },
+      "gender" : {
+        "_t" : "Boolean",
+        "_p" : {
+          "P6583273185" : "R",
+          "P1346437037" : "R",
+          "P4274274811" : "R"
+        }
+      },
+      "date" : {
+        "_t" : "Date",
+        "_p" : {
+          "P6583273185" : "R",
+          "P1346437037" : "R",
+          "P4274274811" : "R"
+        }
+      },
+      "location" : {
+        "_t" : "String",
+        "_p" : {
+          "P6583273185" : "R",
+          "P1346437037" : "R",
+          "P4274274811" : "R"
+        }
+      },
+      "file" : {
+        "_t" : "String",
+        "_p" : {
+          "P6583273185" : "R",
+          "P1346437037" : "R",
+          "P4274274811" : "R"
+        }
+      },
+      "user" : {
+        "_t" : "String",
+        "_p" : {
+          "P6583273185" : "R",
+          "P1346437037" : "R",
+          "P4274274811" : "R"
+        }
+      }
+    },
+    "__v" : 0
+  },
+  "enableSearchIndex" : false
+}

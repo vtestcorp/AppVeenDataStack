@@ -15,6 +15,7 @@ import com.aventstack.extentreports.Status;
 
 import base.BaseClass;
 import config.DefineConstants;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -27,11 +28,17 @@ import pageModules.LoginPage;
 
 public class LoginToAuthorUrl extends BaseClass {
 
-	private WebDriver driver;
-	private WaitTypes applyWait;
-	private ExtentTest test;
-	LoginPage loginPage;
+//	public WebDriver driver;
+	public WaitTypes applyWait;
+//	public ExtentTest test;
+	public LoginPage loginPage ;
+	public static String data_Service;
 
+	@Before("@Author")
+	public void initilization() {
+		start();
+	}
+	
 	@Given("User Navigate to LogIn Page")
 	public void user_Navigate_to_LogIn_Page() throws Exception {
 		// test = extent.createTest("TC_01_CreateDS", "Create DS with attributes");
@@ -40,46 +47,36 @@ public class LoginToAuthorUrl extends BaseClass {
 		loginPage.loginToPage();
 	}
 
-	@Given("User enters username and password")
-	public void user_enters_UserName_and_Password(DataTable table) throws Exception {
-		List<List<String>> userList = table.asLists(String.class);
-		for (List<String> e : userList) {
-			System.out.println(e.get(0) + "------------");
-			System.out.println(e.get(1) + "------------");
+	@Given("User enters {string} and {string} in the Author login page")
+	public void user_enters_UserName_and_Password(String username,String password) throws Exception {
 
-			loginPage.enterUserNameAndPassword(e.get(0), e.get(1));
-		}
+
+			loginPage.enterUserNameAndPassword(username, password);
 	}
 
-	@Then("Verify User Login Successfully")
+	@Then("Verify User has Logged in Successfully")
 	public void message_displayed_Login_Successfully() throws Exception {
 		loginPage.verifyListOfDataServices();
 	}
 
 	@Then("Create new Data Service {string}")
 	public void create_new_Data_Service(String dataService) throws Exception  {
+//		if(!dataService.equals(null)) {
+			data_Service=dataService;
+//		}
 		
-	
-		String dataName="C:\\Users\\DELL\\eclipse-workspace\\DataStack\\Test_Data" + "\\" + ""+dataService+".json";
+		String dataName="C:\\Users\\DELL\\eclipse-workspace\\DataStack\\testData" + "\\" + ""+dataService+".json";
 		System.out.println(dataName);
 		
 		try {
-			System.out.println("1");
 			FileReader reader = new FileReader(dataName);
-	//		JsonUtils.getJSONArrayValues(dataName, "definition");
-		
 		}
 		catch(FileNotFoundException file) {
 			try {
-				System.out.println("2");
 				FileReader reader = new FileReader(testData);
-	//			JsonUtils.getArrayValues(testData, "definition");
-				System.out.println("3");
 				dataName=testData;
-				System.out.println("4");
 			}
 			catch(Exception file1) {
-				System.out.println("5");
 				System.err.println("Data Service file not found");
 				
 			}
@@ -112,10 +109,12 @@ public class LoginToAuthorUrl extends BaseClass {
 		
 	}
 	
+	
+	
 	@Given("User gives permission to Data Service")
 	public void user_gives_permission_to_Data_Service() throws Exception {
 		loginPage = new LoginPage(driver, test);
-	  loginPage.connectAuthorToAppcenter();
+	  loginPage.connectAuthorToAppcenter(data_Service);
 	}
 
 }

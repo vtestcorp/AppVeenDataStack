@@ -24,6 +24,7 @@ import helperMethods.ScrollTypes;
 import helperMethods.SwitchWindow;
 import helperMethods.WaitTypes;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import stepdefinitions.LoginToAuthorUrl;
 
 public class LoginAppCenter  extends BaseClass {
 	
@@ -42,9 +43,9 @@ public class LoginAppCenter  extends BaseClass {
 	}
 
 	public void loginToAppCenterPage() {
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver=new ChromeDriver();
-		this.driver=driver;
+//		WebDriverManager.chromedriver().setup();
+//		WebDriver driver=new ChromeDriver();
+		this.driver=getDriver();
 		applyWait = new WaitTypes(driver);
 		dropdown=new DropDown(driver);
 		scroll=new ScrollTypes(driver);
@@ -78,13 +79,18 @@ public class LoginAppCenter  extends BaseClass {
 		
 	}
 
-	public void userEnterData() throws Exception {
-		
+	public void userEnterData(String data_Service) throws Exception {
+		Thread.sleep(3000);
+		WebElement data=driver.findElement(By.xpath("//div[contains(text(),'"+data_Service+"')]"));
+		javascriptClick=new JavascriptClick(driver);
+	//	javascriptClick.highLighterMethod(data);
+		data.click();
+		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_AppCenter_FilePath, "addDataButton"))), 30).click();	
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		List<WebElement> textBoxes = driver.findElements(By.xpath(JsonUtils.getData(DefineConstants.json_AppCenter_FilePath, "textBoxes")));
 		
-		JSONArray jsonArray = JsonUtils.getJSONArray("C:\\Users\\DELL\\eclipse-workspace\\DataStack\\Test_Data\\users.data.json");
+		JSONArray jsonArray = JsonUtils.getJSONArray("C:\\Users\\DELL\\eclipse-workspace\\DataStack\\testData\\"+data_Service+".data.json");
 		for(int i=0;i<jsonArray.size();i++) {
 			
 			JSONObject jsonObject=(JSONObject) jsonArray.get(i);

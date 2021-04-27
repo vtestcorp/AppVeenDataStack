@@ -1,0 +1,21 @@
+{ 
+"groups"  : "//*[@class='text-truncate']",
+"newGroup" : "//span[text()='New Group']",
+"groupName" : "//input[@id='name']",
+"createButton" : "//button[normalize-space()='Create']",
+ "appCenterRoles" : "//span[normalize-space()='App Center Roles']",
+"skipReviewToggler" : "//span[normalize-space()='Skip Review']/parent::div/following-sibling::span[2]/child::label/child::span[2]",
+"manageToggler" : "//span[normalize-space()='Manage']/parent::div/following-sibling::span[2]/child::label/child::span[2]",
+"viewToggler" : "//span[normalize-space()='View']/parent::div/following-sibling::span[2]/child::label/child::span[2]",
+"saveDataService" : "//button[normalize-space()='Save']",
+"members" : "//span[normalize-space()='Members']",
+"users" : "//span[normalize-space()='Users']",
+"userList" : "//odp-user-list-cell-renderer[@class='ng-star-inserted']",
+"addUser" : "//span[text()='Add User']",
+"userName" : "//input[@placeholder='Enter Username']",
+"name" : "//input[@placeholder='Enter Name']",
+"password" : "//input[@placeholder='Password']",
+"confirmPassword" : "//input[@placeholder='Confirm Password']",
+"add" : "//button[normalize-space()='Add']"
+
+}

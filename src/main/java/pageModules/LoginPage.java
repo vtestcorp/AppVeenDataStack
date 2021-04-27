@@ -2,6 +2,7 @@ package pageModules;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.json.simple.JSONArray;
@@ -26,6 +27,7 @@ import helperMethods.DropDown;
 import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
 import helperMethods.Log;
+import helperMethods.Property;
 import helperMethods.Screenshots;
 import helperMethods.ScrollTypes;
 import helperMethods.WaitTypes;
@@ -47,8 +49,6 @@ public class LoginPage extends BaseClass{
 		PageFactory.initElements(driver, this);
 		this.applyWait = new WaitTypes(driver);
 		this.test = test;
-	//	this.driver=driver;
-	//	applyWait = new WaitTypes(driver);
 		dropdown=new DropDown(driver);
 		scroll=new ScrollTypes(driver);
 	}
@@ -57,17 +57,13 @@ public class LoginPage extends BaseClass{
 	
 	public void loginToPage() throws Exception {
 
-//		WebDriverManager.chromedriver().setup();
-//		WebDriver driver=new ChromeDriver();
-		
-		start();
-		this.driver=getDriver();
-		applyWait = new WaitTypes(driver);
-		dropdown=new DropDown(driver);
-		scroll=new ScrollTypes(driver);
+	//	start();
+//		this.driver=getDriver();
+//		applyWait = new WaitTypes(driver);
+//		dropdown=new DropDown(driver);
+//		scroll=new ScrollTypes(driver);
 		driver.get(DefineConstants.AUTHOR_URL);
 		Screenshots.takeScreenshot(driver, "User opened author url ");
-//		driver.manage().window().maximize();
 		
 	}
 	
@@ -84,7 +80,7 @@ public class LoginPage extends BaseClass{
 	public void verifyListOfDataServices() throws Exception {
 		javascriptClick=new JavascriptClick(driver);
 		Thread.sleep(7000);
-		applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "listOfDataServices"))), 30);
+		applyWait.waitforElementToBeDisplayed(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "listOfDataServices"))), 30);
 	if (driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "listOfDataServices"))).isDisplayed()) {
 		javascriptClick.highLighterMethod(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "listOfDataServices"))));
 		Screenshots.takeScreenshot(driver, "User successfully signed up");
@@ -99,10 +95,11 @@ public class LoginPage extends BaseClass{
 		List<WebElement> dataServices=driver.findElements(By.id("serviceManagerCardTitle"));
 		System.out.println(dataServices.size());
 		for(WebElement dataService : dataServices) {
+			Thread.sleep(1000);
 			String data=dataService.getText();
-			if(data.equals(dataServiceName)) {
+			if(data.equalsIgnoreCase(dataServiceName)) {
 				System.out.println("Data Service already present  with name of "+dataServiceName);
-				WebElement element=driver.findElement(By.xpath("//span[@id='serviceManagerCardTitle' and text()='"+dataServiceName+"']/parent::div/parent::div/parent::div/following-sibling::div[2]/div/div[@class='toggler']"));
+				WebElement element=driver.findElement(By.xpath("//span[@id='serviceManagerCardTitle' and text()='"+data+"']/parent::div/parent::div/parent::div/following-sibling::div[2]/div/div[@class='toggler']"));
 				element.click();
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "delete"))), 30).click();
 				Thread.sleep(2000);
@@ -605,7 +602,6 @@ public class LoginPage extends BaseClass{
 			
 			case "String" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
-//			
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdownCollection"))), 30).click();
 				Thread.sleep(1000);
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "abc"))), 30).click();
@@ -665,7 +661,6 @@ public class LoginPage extends BaseClass{
 			
 			case "Number" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
-//				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
 				
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 				Thread.sleep(1000);
@@ -679,19 +674,15 @@ public class LoginPage extends BaseClass{
 				jsonProperties = (JSONObject) attribute.get("properties");
 				
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
-				Thread.sleep(1000);
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "number"))), 30).click();
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "currency"))), 30).click();
-				Thread.sleep(3000);
 				requiredAttributes(jsonProperties);
 				break;
 				
 			case "Boolean" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
-				Thread.sleep(1000);
 				applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "boolean"))), 30).click();
-				Thread.sleep(500);
 				requiredAttributes(jsonProperties);
 				break;
 				
@@ -708,13 +699,14 @@ public class LoginPage extends BaseClass{
 				
 				case "Object" : 
 					jsonProperties = (JSONObject) attribute.get("properties");
-//					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
 				
 					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 					Thread.sleep(1000);
 					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "group"))), 30).click();
-					Thread.sleep(2000);
+					Thread.sleep(1000);
+					if(jsonProperties.containsKey("_description")) {
 					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "description"))), 30).sendKeys(jsonProperties.get("_description").toString());
+					}
 					JSONArray objectArray=(JSONArray) attribute.get("definition");
 					
 					for(int k=0;k<objectArray.size();k++) {
@@ -749,7 +741,6 @@ public class LoginPage extends BaseClass{
 					
 					case "File" : 
 						jsonProperties = (JSONObject) attribute.get("properties");
-//						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
 					
 						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 						Thread.sleep(1000);
@@ -760,7 +751,6 @@ public class LoginPage extends BaseClass{
 			
 					case "Library" : 
 						jsonProperties = (JSONObject) attribute.get("properties");
-//						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "attributeNameTextbox"))), 30).sendKeys(jsonProperties.get("name").toString());
 					
 						applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "dropdown"))), 30).click();
 						Thread.sleep(1000);
@@ -861,39 +851,91 @@ public class LoginPage extends BaseClass{
 							
 						}
 
-						public void connectAuthorToAppcenter() throws Exception {
+						public void connectAuthorToAppcenter(String data_Service) throws Exception {
 							Thread.sleep(2000);
-							String groupName="Author";
 							this.driver=getDriver();
 							applyWait = new WaitTypes(driver);
-							applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "groups"))), 30).click();
 							
-							WebElement group=driver.findElement(By.xpath("//div[normalize-space()='"+groupName+"']/parent::div"));
+//							applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_GroupPage_FilePath, "users"))), 30).click();
+//							Thread.sleep(2000);
+//							String userName=Property.getProperty("userEmail");
+//							System.out.println(userName);
+//							List<WebElement> userList=driver.findElements(By.xpath(JsonUtils.getData(DefineConstants.json_GroupPage_FilePath, "userList")));
+//							System.out.println(userList.size());
+//							ArrayList<String> users=new ArrayList<String>();
+//							for(WebElement user : userList) {
+//								String user1=user.getText();
+//								users.add(user1);
+//						}
+//							if(!users.contains(userName)) {
+//								System.out.println(userName+" not contain");
+//								Thread.sleep(2000);
+//								applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_GroupPage_FilePath, "addUser"))), 30).click();
+//								Thread.sleep(1000);
+//								applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_GroupPage_FilePath, "userName"))), 30).sendKeys(Property.getProperty("userEmail"));;
+//								Thread.sleep(1000);
+//								System.out.println(Property.getProperty("userName"));
+//								applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_GroupPage_FilePath, "name"))), 30).sendKeys(Property.getProperty("userName"));;
+//								Thread.sleep(1000);
+//								
+//								applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_GroupPage_FilePath, "password"))), 30).sendKeys(Property.getProperty("password"));;
+//								applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_GroupPage_FilePath, "confirmPassword"))), 30).sendKeys(Property.getProperty("password"));;
+//
+//								applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_GroupPage_FilePath, "add"))), 30).click();
+//							}
+//							else {
+//								System.out.println(userName+" user contain");
+//							}
+							
+							applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "groups"))), 30).click();
 							Thread.sleep(5000);
-							System.out.println("1");
+							List<WebElement> groupNames=driver.findElements(By.xpath(JsonUtils.getData(DefineConstants.json_GroupPage_FilePath, "groups")));
+						String groupName=Property.getProperty("group");
+						ArrayList<String> groups=new ArrayList<String>();
+							for(WebElement group : groupNames) {
+								String group1=group.getText();
+								groups.add(group1);
+						}
+							if(!groups.contains(groupName)) {
+								System.out.println(groupName+" group not contain");
+								System.out.println("Creating "+groupName+" group");
+								applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_GroupPage_FilePath, "newGroup"))), 30).click();
+								applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_GroupPage_FilePath, "groupName"))), 30).sendKeys(groupName);;
+								applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_GroupPage_FilePath, "createButton"))), 30).click();
+								
+							}
+							else {
+								System.out.println(groupName+" group contain");
+							}
+							Thread.sleep(2000);
+							WebElement group=driver.findElement(By.xpath("//div[normalize-space()='"+groupName+"']/parent::div"));
+							Thread.sleep(2000);
 							try {
 							applyWait.waitForElementToBeClickable(group, 30).click();
-							System.out.println("2");
 							}
 							catch(StaleElementReferenceException  e) {
-								System.out.println("4");
 								group=driver.findElement(By.xpath("//div[normalize-space()='"+groupName+"']/parent::div"));
 								applyWait.waitForElementToBeClickable(group, 30).click();
-								System.out.println("5");
 							}
-							Thread.sleep(5000);
-					//		applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "groups"))), 30).click();
-							applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "appCenterRoles"))), 30).click();
-							System.out.println(dataServiceName);
-							Thread.sleep(5000);
-			//				WebElement dsArrow=driver.findElement(By.xpath("//span[normalize-space()='"+dataServiceName+"']/parent::div/following-sibling::span[2]/child::span"));
-							WebElement dsArrow=driver.findElement(By.xpath("(//span[@class='toggle text-muted text-right'])[1]/span"));
-							applyWait.waitForElementToBeClickable(dsArrow, 30).click();
-							Thread.sleep(5000);
-							WebElement manageButton=driver.findElement(By.xpath("//span[normalize-space()='Manage']/parent::div/following-sibling::span[2]/child::label/child::span[2]"));
-							applyWait.waitForElementToBeClickable(manageButton, 30).click();
 							Thread.sleep(3000);
-							applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, "saveDataService"))), 30).click();
+							applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_GroupPage_FilePath, "appCenterRoles"))), 30).click();
+							Thread.sleep(3000);
+							WebElement dsArrow=driver.findElement(By.xpath("//span[normalize-space()='"+data_Service+"']/parent::div/following-sibling::span[2]/child::span"));
+							applyWait.waitForElementToBeClickable(dsArrow, 30).click();
+							Thread.sleep(3000);
+							if(Property.getProperty("skip").equalsIgnoreCase("yes")) {
+								applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_GroupPage_FilePath, "skipReviewToggler"))), 30).click();
+								}
+							if(Property.getProperty("manage").equalsIgnoreCase("yes")) {
+								applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_GroupPage_FilePath, "manageToggler"))), 30).click();
+							}
+							
+							if(Property.getProperty("view").equalsIgnoreCase("yes")) {
+								applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_GroupPage_FilePath, "viewToggler"))), 30).click();
+								}
+							
+							applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_GroupPage_FilePath, "members"))), 30).click();
+							applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_GroupPage_FilePath, "saveDataService"))), 30).click();
 							
 						}
 		
