@@ -16,6 +16,15 @@
 "name" : "//input[@placeholder='Enter Name']",
 "password" : "//input[@placeholder='Password']",
 "confirmPassword" : "//input[@placeholder='Confirm Password']",
-"add" : "//button[normalize-space()='Add']"
+"add" : "//button[normalize-space()='Add']",
+"you" : "//span[normalize-space()='(You)']",
+"deleteGroup" : "//span[normalize-space()='Delete Group']",
+"delete" : "//span[normalize-space()='Delete']",
+"addUsers" : "//span[normalize-space()='Add User(s)']",
+"done" : "//button[normalize-space()='Done']",
+"profileIcon" : "//div[starts-with(@class,'profile-icon')]",
+"logout" : "//button[normalize-space()='Logout']",
+"save" : "//button[normalize-space()='Save']"
+
 
 }

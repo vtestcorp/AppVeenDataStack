@@ -35,31 +35,56 @@ public class LoginToAuthorUrl extends BaseClass {
 	public static String data_Service;
 
 	@Before("@Author")
-	public void initilization() {
+	public void setUp() {
 		start();
+		loginPage = new LoginPage(driver, test);
 	}
 	
-	@Given("User Navigate to LogIn Page")
+	@Before
+	public void initilization() {
+		loginPage = new LoginPage(driver, test);
+	}
+	
+	
+	@Given("User navigate to Author login page")
 	public void user_Navigate_to_LogIn_Page() throws Exception {
 		// test = extent.createTest("TC_01_CreateDS", "Create DS with attributes");
-
-		loginPage = new LoginPage(driver, test);
+		
 		loginPage.loginToPage();
 	}
 
-	@Given("User enters {string} and {string} in the Author login page")
+	@Given("User enters {string} and {string} in Author login page")
 	public void user_enters_UserName_and_Password(String username,String password) throws Exception {
 
 
 			loginPage.enterUserNameAndPassword(username, password);
 	}
 
-	@Then("Verify User has Logged in Successfully")
+	@Then("Verify User has Logged in successfully in Author Url")
 	public void message_displayed_Login_Successfully() throws Exception {
 		loginPage.verifyListOfDataServices();
 	}
+	
+	@Given("Data service {string} exists")
+	public void data_service_exists(String dataService) throws Exception {
+		 loginPage.verifyDataServiceExist(dataService);
+	}
 
-	@Then("Create new Data Service {string}")
+	@Then("Remove the data service")
+	public void remove_the_data_service() throws Exception {
+	    loginPage.deleteGivenDataService();
+	}
+
+
+
+	@Given("Data service {string} does not exist")
+	public void data_service_does_not_exist(String string) {
+		loginPage.verifyDataServiceDoesNotExist();
+	  
+	}
+
+
+	@Then("Create new data service {string}")
 	public void create_new_Data_Service(String dataService) throws Exception  {
 //		if(!dataService.equals(null)) {
 			data_Service=dataService;
@@ -85,7 +110,70 @@ public class LoginToAuthorUrl extends BaseClass {
 		loginPage.createNewDataServices(JsonUtils.getArrayValues(dataName, "definition"),dataService);
 		
 	}
+	
+	@Given("Group sampleGroup {string} exists")
+	public void group_sampleGroup_exists(String groupName) throws Exception {
+		loginPage.verifyGroupExists(groupName);
+	    
+	}
 
+	@Then("Remove group {string}")
+	public void remove_group(String groupName) throws Exception {
+	   loginPage.removeGroup(groupName);
+	}
+	
+	@Given("Group sampleGroup {string} does not exists")
+	public void group_sampleGroup_does_not_exists(String groupName) throws Exception {
+	   loginPage.verifyGroupDoesNotExist(groupName);
+	}
+	
+	@Given("Data service {string}  exists")
+	public void data_service_exists1(String dataService) {
+	    loginPage.dataServiceExists(dataService);
+	}
+	
+	@Then("Create group {string} and enable role {string} of {string}")
+	public void create_group_and_enable_role_of(String groupName, String role, String dataservice) throws Exception {
+		loginPage.createGroupAndEnableRole(groupName,role,dataservice);
+	  
+	}
+	
+	
+	@Given("Group {string} exists")
+	public void group_exists(String groupName) {
+		loginPage.groupExists(groupName);
+	   
+	}
+
+	@Given("User {string} exists")
+	public void user_exists(String userEmail) throws Exception {
+	   loginPage.VerifyUserExists(userEmail);
+	}
+
+	@Then("Add {string} to {string}")
+	public void add_to(String userEmail, String group) throws Exception {
+	    loginPage.addUserToGroup(userEmail,group);
+	}
+
+	@Given("User logged into Author")
+	public void user_logged_into_Author() {
+	    loginPage.logOutFromAuthor();
+	}
+
+	@Then("User logs out of Author")
+	public void user_logs_out_of_Author() throws Exception {
+	   loginPage.logsOutOfAuthor();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	@And("Create Data Service {string}")
 	public void create_new_Data_service(String dataServiceName) throws Exception {
 		loginPage.createDataService(dataServiceName);
@@ -109,12 +197,5 @@ public class LoginToAuthorUrl extends BaseClass {
 		
 	}
 	
-	
-	
-	@Given("User gives permission to Data Service")
-	public void user_gives_permission_to_Data_Service() throws Exception {
-		loginPage = new LoginPage(driver, test);
-	  loginPage.connectAuthorToAppcenter(data_Service);
-	}
 
 }

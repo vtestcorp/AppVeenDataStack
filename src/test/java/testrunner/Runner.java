@@ -1,17 +1,17 @@
 package testrunner;
 
 import java.util.stream.Stream;
-
 import org.junit.runner.RunWith;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src\\test\\resources\\feature\\login.feature",
-//				dryRun=true,
+@CucumberOptions(features=".\\testcases\\dataservice.user.feature",
+		//		dryRun=true,
+//				tags="@AppCenter",
 				glue="stepdefinitions",
-//				tags="@DataService",
+				monochrome=true,
 				plugin = { "pretty", "html:target/cucumber-reports","json:target/cucumber-reports/cucumber.json" }
 				)
 public class Runner {

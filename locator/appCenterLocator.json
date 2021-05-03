@@ -7,6 +7,12 @@
 "addDataButton" : "//button[@id='addDataBtn']",
 "dataStackLogo" : "(//div[starts-with(@class,'logo')])[1]",
 "textBoxes" : "//input[contains(@class,'form-control')]",
-"saveAndCreateAnother" : "//span[normalize-space()='Save & create another']"
+"saveAndCreateAnother" : "//span[normalize-space()='Save & create another']",
+"save" : "//span[normalize-space()='Save']",
+"documentList" : "//label[contains(text(),'Showing')]",
+"checkbox" : "//div/div[starts-with(@class,'round-check')]",
+"delete" :  "//*[@id='deleteRecordBtn']/span[2]",
+"yes" : "//button[normalize-space()='Yes']"
+
 
 }

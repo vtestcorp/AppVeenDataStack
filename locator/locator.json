@@ -1,4 +1,5 @@
 {
+"signIn" : "//div[normalize-space()='Sign in with your credentials']",
   "emailIDTextBox" : "//input[@id='username']",
   "signInButton" : "//span[contains(text(),'Login')]",
   "nextButton" : "//span[contains(text(),'Next')]",
