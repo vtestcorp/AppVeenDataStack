@@ -9,14 +9,15 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features=".\\testcases\\dataservice.user.feature",
 		//		dryRun=true,
-//				tags="@AppCenter",
+		//		tags="@AppCenter",
 				glue="stepdefinitions",
 				monochrome=true,
-				plugin = { "pretty", "html:target/cucumber-reports","json:target/cucumber-reports/cucumber.json" }
+				plugin = { "pretty", "html:target/cucumber-reports"       ,"json:target/cucumber-reports/cucumber.json" }
 				)
+
 public class Runner {
 	
-	
+
 	  private static String[] defaultOptions = {
 	            "--glue", "stepdefinitions",
 	            "--plugin", "pretty",

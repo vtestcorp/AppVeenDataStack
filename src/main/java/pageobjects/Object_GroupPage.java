@@ -30,13 +30,13 @@ public WebElement createButton;
 @FindBy(xpath="//span[normalize-space()='App Center Roles']")
 public WebElement appCenterRoles;
 
-@FindBy(xpath="//span[normalize-space()='Skip Review']/parent::div/following-sibling::span[2]/child::label/child::span[2]")
+@FindBy(xpath="//span[contains(text(),'Skip Review')]/parent::div/following-sibling::span[2]/child::label/child::span[2]")
 public WebElement skipReviewToggler;
 
-@FindBy(xpath="//span[normalize-space()='Manage']/parent::div/following-sibling::span[2]/child::label/child::span[2]")
+@FindBy(xpath="//span[contains(text(),'Manage')]/parent::div/following-sibling::span[2]/child::label/child::span[2]")
 public WebElement manageToggler;
 
-@FindBy(xpath="//span[normalize-space()='View']/parent::div/following-sibling::span[2]/child::label/child::span[2]")
+@FindBy(xpath="//span[contains(text(),'View')]/parent::div/following-sibling::span[2]/child::label/child::span[2]")
 public WebElement viewToggler;
 
 @FindBy(xpath="//button[normalize-space()='Save']")

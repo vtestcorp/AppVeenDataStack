@@ -30,7 +30,6 @@ public class LoginToAuthorUrl extends BaseClass {
 
 //	public WebDriver driver;
 	public WaitTypes applyWait;
-//	public ExtentTest test;
 	public LoginPage loginPage ;
 	public static String data_Service;
 
@@ -48,14 +47,12 @@ public class LoginToAuthorUrl extends BaseClass {
 	
 	@Given("User navigate to Author login page")
 	public void user_Navigate_to_LogIn_Page() throws Exception {
-		// test = extent.createTest("TC_01_CreateDS", "Create DS with attributes");
 		
 		loginPage.loginToPage();
 	}
 
 	@Given("User enters {string} and {string} in Author login page")
 	public void user_enters_UserName_and_Password(String username,String password) throws Exception {
-
 
 			loginPage.enterUserNameAndPassword(username, password);
 	}

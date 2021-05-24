@@ -5,6 +5,7 @@ C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\Property.j
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\stepdefinitions\LoginToAppCenter.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\config\DefineProperties.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\DateUtils.java
+C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\pageobjects\Object_GroupPage.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\pageModules\LoginPage.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\config\ExtentReports.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\pageModules\LoginAppCenter.java
@@ -14,6 +15,7 @@ C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\listeners\RetryAnalyser.
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\stepdefinitions\LoginToAuthorUrl.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\SeekBar.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\SwitchWindow.java
+C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\pageobjects\Object_AppCenterPage.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\base\BaseClass.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\ExcelUtils.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\ScrollTypes.java

@@ -210,9 +210,50 @@ public class Object_AuthorPage extends BaseClass{
 	
 	@FindBy(xpath="(//input[@placeholder='Untitled Attribute'])[last()]")
 	public WebElement attributeTextBox;
-//	(//input[@placeholder='Untitled Attribute'])[last()]
 	
-//	(//input[@placeholder='Untitled Attribute'])[last()]
+	@FindBy(xpath="//span[normalize-space()='Experience']")
+	public WebElement experienceTab;
+	
+	@FindBy(xpath="//button[normalize-space()='Customize']")
+	public WebElement customize;
+	
+	@FindBy(xpath="//input[@id='stepName']")
+	public WebElement stepNameTextBox;
+	
+	@FindBy(xpath="//div[@id='addStep']")
+	public WebElement addStep;
+	
+	@FindBy(xpath="//div[starts-with(@class,'text-dark')]/span[normalize-space()='Roles']")
+	public WebElement roles;
+	
+	@FindBy(xpath="//span[contains(text(),'Add New')]")
+	public WebElement addNew;
+	
+	@FindBy(xpath="//span[normalize-space()='Name']/following-sibling::input")
+	public WebElement roleNameTextBox;
+	
+	@FindBy(xpath="//div[@class='enable-review d-flex w-100 mb-3 ng-star-inserted']//span[@class='toggler']/parent::label/following-sibling::span")
+	public WebElement enabledReviewText;
+	
+	@FindBy(xpath="//div[@class='enable-review d-flex w-100 mb-3 ng-star-inserted']//span[@class='toggler']")
+	public WebElement enabledReviewToggler;
+	
+	@FindBy(xpath="//div[text()='Create']/parent::div")
+	public WebElement createButton1;
+	
+	@FindBy(xpath="//div[text()='Edit']/parent::div")
+	public WebElement editButton;
+	
+	@FindBy(xpath="//div[text()='Delete']/parent::div")
+	public WebElement deleteButton;
+	
+	@FindBy(xpath="//div[@class='text ng-star-inserted']")
+	public WebElement viewTab;
+	
+	@FindBy(xpath="//div[@class='text'][normalize-space()='Manage']")
+	public WebElement manageTab;
+	
+	
 	
 	
 

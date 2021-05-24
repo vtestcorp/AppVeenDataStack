@@ -84,6 +84,13 @@ public class LoginAppCenter  extends BaseClass {
 	public void userEnterData() throws Exception {
 		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
+		Thread.sleep(3000);
+		List<WebElement> stepNames=driver.findElements(By.xpath("//div[@class='step-name high-zIndex text-truncate']"));
+		
+		for(WebElement stepName : stepNames) {
+			System.out.println(stepName.getText());
+			stepName.click();
+		
 		List<WebElement> textBoxes = acp.textBoxes;
 		
 		JSONArray jsonArray = JsonUtils.getJSONArray("C:\\Users\\DELL\\eclipse-workspace\\DataStack\\testData\\"+data_Service+".data.json");
@@ -114,16 +121,17 @@ public class LoginAppCenter  extends BaseClass {
 				
 			}
 				if((jsonArray.size()-1) > i) {
-			applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_AppCenter_FilePath, "saveAndCreateAnother"))), 30).click();
+			applyWait.waitForElementToBeClickable(acp.saveAndCreateAnother, 30).click();
 				}
 				else {
-					applyWait.waitForElementToBeClickable(driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_AppCenter_FilePath, "save"))), 30).click();
+					applyWait.waitForElementToBeClickable(acp.save, 30).click();
 				}
 	}
+		}
 	}
 
 	public void verifyTotalCountOfDocuments(Integer documentCount) throws Exception {
-		Thread.sleep(1000);
+		applyExplicitWaitsUntilElementVisible(acp.documentList);
 		String documentList =acp.documentList.getText();
 		System.out.println(documentList);
 		Integer documentListCount=Integer.parseInt(documentList.trim().split("of")[1].trim());
@@ -134,7 +142,9 @@ public class LoginAppCenter  extends BaseClass {
 		Thread.sleep(1000);
 		for(int i=0;i<int1;i++) {
 			WebElement  checkbox=acp.checkbox;
+			applyExplicitWaitsUntilElementVisible(acp.checkbox);
 			checkbox.click();
+			Thread.sleep(3000);
 			acp.delete.click();
 			acp.yes.click();
 			

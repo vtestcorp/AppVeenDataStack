@@ -25,6 +25,8 @@ Scenario Outline: Delete group
 		| group |
 		| ManageGroup |
 		| ReadOnlyGroup |
+		| ReviewGroup |
+		| CreateGroup|
 
 Scenario Outline: Add group
 	Given Group sampleGroup "<group>" does not exists
@@ -34,6 +36,8 @@ Scenario Outline: Add group
 		| group | dataservice | role |
 		| ManageGroup | users | Manage |
 		| ReadOnlyGroup | users | View |
+		| ReviewGroup | users | Reviewer |
+		| CreateGroup|users|Maker|
 
 Scenario Outline: Assign permissions
 	Given Data service "<dataservice>"  exists
@@ -44,6 +48,8 @@ Scenario Outline: Assign permissions
 		| group | dataservice | user |
 		| ManageGroup | users | test_manage@appveen.com |
 		| ReadOnlyGroup | users | test_readonly@appveen.com |
+		| ReviewGroup | users | reviewer@appveen.com |
+		| CreateGroup|users|maker@appveen.com|
 
 Scenario: Log out of Author
 	Given User logged into Author

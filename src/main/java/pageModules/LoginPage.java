@@ -6,6 +6,8 @@ import java.util.List;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -337,8 +339,145 @@ public class LoginPage extends BaseClass{
 			}
 				}
 			}
+			
+			function_ExperienceTab();
+			function_RolesTab();
+			
 			applyWait.waitForElementToBeClickable(ap.submitAndDeploy, 30).click();;
+			
 		}
+
+
+
+
+
+
+
+	private void function_ExperienceTab() {
+		applyWait.waitForElementToBeClickable(ap.experienceTab, 30).click();
+		applyWait.waitForElementToBeClickable(ap.customize, 30).click();
+		String path=System.getProperty("user.dir");
+		String dataName=path+"\\testData" + "\\" + ""+dataServiceName+".json";
+		JSONArray array =JsonUtils.getArrayValues(dataName, "wizard");
+		for(int i=0;i<array.size();i++) {
+			JSONObject object=(JSONObject) array.get(i);
+			JSONArray fields=(JSONArray) object.get("fields");
+			String fieldName1=(String) object.get("name");
+			applyWait.waitForElementToBeClickable(ap.stepNameTextBox, 30).sendKeys(fieldName1);;
+
+			for(int j=0;j<fields.size();j++) {
+				String fieldName=((String) fields.get(j)).replace("_", "").toLowerCase();
+				System.out.println(fieldName);
+				List<WebElement> addAttribute=driver.findElements(By.id("addAtribute"));
+				for(WebElement add : addAttribute) {
+					 WebElement p = add.findElement(By.xpath("./.."));
+					
+					 WebElement q=p.findElement(By.xpath("./child::div/child::span"));
+					 String text1=q.getText();
+					 String[] t=text1.split(" ");
+					 StringBuilder builder=new StringBuilder();
+					 
+					 for(String t1 : t) {
+						 builder=builder.append(t1);
+					 }
+					 System.out.println(builder.toString().toLowerCase()+"1");
+					 
+					 if(builder.toString().toLowerCase().contains(fieldName)) {
+						 WebElement field1=driver.findElement(By.xpath("//span[normalize-space()='"+text1+"']/parent::div/parent::div/child::span[2]"));
+						 field1.click();
+					 }
+				}
+			}
+			if(i<array.size()-1) {
+			applyWait.waitForElementToBeClickable(ap.addStep, 30).click();
+			
+			}
+		}
+		
+	}
+
+
+
+	private void function_RolesTab() throws Exception {
+		String dataName="C:\\Users\\DELL\\eclipse-workspace\\DataStack\\testData" + "\\" + ""+dataServiceName+".json";
+		applyWait.waitForElementToBeClickable(ap.roles, 30).click();
+		applyWait.waitForElementToBeClickable(ap.addNew, 30).click();
+		JSONObject role=(JSONObject) JsonUtils.getData1(dataName).get("role");
+		System.out.println(role.get("_id"));
+		JSONArray roles=(JSONArray) role.get("roles");
+		for (int i = 0; i < roles.size(); i++) {
+			if(i>2) {
+			JSONObject jsonObject= (JSONObject) roles.get(i);
+			String roleName=(String) jsonObject.get("name");
+			System.out.println(roleName);
+			applyWait.waitForElementToBeClickable(ap.roleNameTextBox, 30).sendKeys(roleName);;
+			JSONArray operations=(JSONArray) jsonObject.get("operations");
+			ArrayList<String> operationList=new ArrayList<String>();
+				for (int j = 0; j < operations.size(); j++) {
+					JSONObject operation= (JSONObject) operations.get(j);
+					String operationName=(String) operation.get("method");
+					operationList.add(operationName);
+				}
+			
+				if(operationList.contains("REVIEW")) {
+					String input=applyWait.waitForElementToBeClickable(ap.enabledReviewText, 30).getText();
+					if(input.equalsIgnoreCase("No")) {
+						applyWait.waitForElementToBeClickable(ap.enabledReviewToggler, 30).click();
+					}
+				}
+				applyWait.waitForElementToBeClickable(ap.viewTab, 30).click();
+				Thread.sleep(500);
+				applyWait.waitForElementToBeClickable(ap.manageTab, 30).click();
+				
+				if(operationList.contains("POST")) {
+					String input=applyWait.waitForElementToBeClickable(ap.createButton1, 30).getAttribute("class");
+					if(!input.contains("checked")) {
+						applyWait.waitForElementToBeClickable(ap.createButton1, 30).click();
+					}
+				}
+				else {
+					String input=applyWait.waitForElementToBeClickable(ap.createButton1, 30).getAttribute("class");
+					if(input.contains("checked")) {
+						applyWait.waitForElementToBeClickable(ap.createButton1, 30).click();
+					}
+				}
+				
+				if(operationList.contains("PUT")) {
+					String input=applyWait.waitForElementToBeClickable(ap.editButton, 30).getAttribute("class");
+					if(!input.contains("checked")) {
+						applyWait.waitForElementToBeClickable(ap.editButton, 30).click();
+					}
+				}
+				else {
+					String input=applyWait.waitForElementToBeClickable(ap.editButton, 30).getAttribute("class");
+					if(input.contains("checked")) {
+						applyWait.waitForElementToBeClickable(ap.editButton, 30).click();
+					}
+				}
+				
+				if(operationList.contains("DELETE")) {
+					String input=applyWait.waitForElementToBeClickable(ap.deleteButton, 30).getAttribute("class");
+					if(!input.contains("checked")) {
+						applyWait.waitForElementToBeClickable(ap.deleteButton, 30).click();
+					}
+				}
+				else {
+					String input=applyWait.waitForElementToBeClickable(ap.deleteButton, 30).getAttribute("class");
+					if(input.contains("checked")) {
+						applyWait.waitForElementToBeClickable(ap.deleteButton, 30).click();
+					}
+				}
+				
+				if(i < roles.size()-1) {
+				applyWait.waitForElementToBeClickable(ap.addNew, 30).click();
+				}
+			}
+		}
+		
+		
+	}
+
+
 
 	public void createDataService(String dataServicName) throws Exception {
 		dataServiceName=dataServicName;
@@ -776,9 +915,9 @@ public class LoginPage extends BaseClass{
 						
 
 						public void verifyGroupExists(String groupName) throws Exception {
-							
+							Thread.sleep(2000);
 							applyWait.waitForElementToBeClickable(ap.groups, 30).click();
-							Thread.sleep(1000);
+							Thread.sleep(2000);
 							List<WebElement> groupNames=gp.groups;
 						
 						groups=new ArrayList<String>();
@@ -787,7 +926,7 @@ public class LoginPage extends BaseClass{
 								groups.add(group1);
 						}
 							if(groups.contains(groupName)) {
-								System.out.println(groupName+" group exists");
+								System.out.println(groupName+" group exists 121121");
 							
 						}
 						}
@@ -860,6 +999,11 @@ public class LoginPage extends BaseClass{
 										applyWait.waitForElementToBeClickable(gp.viewToggler, 30).click();
 										}
 									
+									if(role.equalsIgnoreCase("All")) {
+										WebElement toggler=driver.findElement(By.xpath("//span[contains(text(),'All')]/parent::div/following-sibling::span[2]/child::label/child::span[2]"));
+										applyWait.waitForElementToBeClickable(toggler, 30).click();
+										}
+									
 									applyWait.waitForElementToBeClickable(gp.saveDataService, 30).click();
 								}
 							
@@ -903,7 +1047,7 @@ public class LoginPage extends BaseClass{
 						public void addUserToGroup(String userEmail, String group) throws Exception {
 							
 							applyWait.waitForElementToBeClickable(ap.groups, 30).click();
-							Thread.sleep(1000);
+							Thread.sleep(2000);
 							WebElement groupName=driver.findElement(By.xpath("//div[normalize-space()='"+group+"']/parent::div"));
 							try {
 							applyWait.waitForElementToBeClickable(groupName, 30).click();
@@ -915,9 +1059,17 @@ public class LoginPage extends BaseClass{
 							Thread.sleep(1000);
 							applyWait.waitForElementToBeClickable(gp.members, 30).click();
 							applyWait.waitForElementToBeClickable(gp.addUsers, 30).click();
-							Thread.sleep(1000);
+							Thread.sleep(2000);
 							WebElement user=driver.findElement(By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']"));
+							applyExplicitWaitsUntilElementVisible(user);
+							try {
 							user.click();
+							}
+							catch(ElementClickInterceptedException e) {
+								Thread.sleep(1000);
+								user=driver.findElement(By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']"));
+								user.click();
+							}
 							applyWait.waitForElementToBeClickable(gp.you, 30).click();
 							applyWait.waitForElementToBeClickable(gp.done, 30).click();
 							applyWait.waitForElementToBeClickable(gp.save, 30).click();
