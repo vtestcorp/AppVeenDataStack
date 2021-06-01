@@ -85,18 +85,18 @@ public class LoginAppCenter  extends BaseClass {
 		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 		Thread.sleep(3000);
-		List<WebElement> stepNames=driver.findElements(By.xpath("//div[@class='step-name high-zIndex text-truncate']"));
-		
-		for(WebElement stepName : stepNames) {
-			System.out.println(stepName.getText());
-			stepName.click();
-		
 		List<WebElement> textBoxes = acp.textBoxes;
-		
-		JSONArray jsonArray = JsonUtils.getJSONArray("C:\\Users\\DELL\\eclipse-workspace\\DataStack\\testData\\"+data_Service+".data.json");
+		String path= System.getProperty("user.dir");
+		JSONArray jsonArray = JsonUtils.getJSONArray(path+"\\testData\\"+data_Service+".data.json");
 		for(int i=0;i<jsonArray.size();i++) {
 			Thread.sleep(1000);
 			JSONObject jsonObject=(JSONObject) jsonArray.get(i);
+			
+			List<WebElement> stepNames=driver.findElements(By.xpath("//div[@class='step-name high-zIndex text-truncate']"));
+			for(WebElement stepName : stepNames) {
+				System.out.println(stepName.getText());
+				stepName.click();
+			
 			
 				for(int j=1;j<=textBoxes.size();j++) {
 				WebElement textBox=driver.findElement(By.xpath("(//input[contains(@class,'form-control')])["+j+"]"));
@@ -120,22 +120,46 @@ public class LoginAppCenter  extends BaseClass {
 					}
 				
 			}
-				if((jsonArray.size()-1) > i) {
-			applyWait.waitForElementToBeClickable(acp.saveAndCreateAnother, 30).click();
+				
+			}
+			if((jsonArray.size()-1) > i) {
+			applyWait.waitForElementToBeClickable(acp.proceedAndCreateAnother, 30).click();
 				}
 				else {
-					applyWait.waitForElementToBeClickable(acp.save, 30).click();
+					applyWait.waitForElementToBeClickable(acp.proceed, 30).click();
 				}
-	}
+				applyWait.waitForElementToBeClickable(acp.comments, 30).sendKeys("Check");;
+				applyWait.waitForElementToBeClickable(acp.submit, 30).click();
+				applyWait.waitForElementToBeClickable(acp.userDetails, 30).click();
+				applyWait.waitForElementToBeClickable(acp.logout, 30).click();
+				
+				workflow();
+				
 		}
+	}
+
+	public void workflow() {
+		applyWait.waitForElementToBeClickable(acp.username, 30).sendKeys("reviewer@appveen.com");
+		applyWait.waitForElementToBeClickable(acp.nextButton, 30).click();
+		applyWait.waitforElementToBeDisplayed(acp.password, 30).sendKeys("123123123");;
+		applyWait.waitforElementToBeDisplayed(acp.login, 30).click();
+		applyWait.waitforElementToBeDisplayed(acp.workflowTab, 30).click();
+		for(WebElement workflow : acp.workflowsId) {
+			workflow.click();
+			applyWait.waitforElementToBeDisplayed(acp.respond, 30).click();
+			applyWait.waitforElementToBeDisplayed(acp.approve, 30).click();
+			applyWait.waitforElementToBeDisplayed(acp.enterApproveComment, 30).sendKeys("Approved");;
+			applyWait.waitforElementToBeDisplayed(acp.approve, 30).click();
+			
+		}
+		
+		
 	}
 
 	public void verifyTotalCountOfDocuments(Integer documentCount) throws Exception {
 		applyExplicitWaitsUntilElementVisible(acp.documentList);
 		String documentList =acp.documentList.getText();
-		System.out.println(documentList);
 		Integer documentListCount=Integer.parseInt(documentList.trim().split("of")[1].trim());
-		System.out.println(documentListCount);
 	}
 
 	public void removeRecords(Integer int1) throws Exception {
@@ -151,7 +175,14 @@ public class LoginAppCenter  extends BaseClass {
 		}
 		
 	}
-
+private void method() {
+//	if((jsonArray.size()-1) > i) {
+//		applyWait.waitForElementToBeClickable(acp.saveAndCreateAnother, 30).click();
+//			}
+//			else {
+//				applyWait.waitForElementToBeClickable(acp.save, 30).click();
+//			}
+}
 	
 	
 	

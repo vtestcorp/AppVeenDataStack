@@ -93,7 +93,6 @@ public class LoginPage extends BaseClass{
 		
 		dataServiceName=dataService;
 		List<WebElement> dataServices=driver.findElements(By.id("serviceManagerCardTitle"));
-		System.out.println(dataServices.size());
 		for(WebElement dataService1 : dataServices) {
 			String data=dataService1.getText();
 			if(data.equalsIgnoreCase(dataServiceName)) {
@@ -367,7 +366,6 @@ public class LoginPage extends BaseClass{
 
 			for(int j=0;j<fields.size();j++) {
 				String fieldName=((String) fields.get(j)).replace("_", "").toLowerCase();
-				System.out.println(fieldName);
 				List<WebElement> addAttribute=driver.findElements(By.id("addAtribute"));
 				for(WebElement add : addAttribute) {
 					 WebElement p = add.findElement(By.xpath("./.."));
@@ -380,7 +378,6 @@ public class LoginPage extends BaseClass{
 					 for(String t1 : t) {
 						 builder=builder.append(t1);
 					 }
-					 System.out.println(builder.toString().toLowerCase()+"1");
 					 
 					 if(builder.toString().toLowerCase().contains(fieldName)) {
 						 WebElement field1=driver.findElement(By.xpath("//span[normalize-space()='"+text1+"']/parent::div/parent::div/child::span[2]"));
@@ -403,13 +400,11 @@ public class LoginPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(ap.roles, 30).click();
 		applyWait.waitForElementToBeClickable(ap.addNew, 30).click();
 		JSONObject role=(JSONObject) JsonUtils.getData1(dataName).get("role");
-		System.out.println(role.get("_id"));
 		JSONArray roles=(JSONArray) role.get("roles");
 		for (int i = 0; i < roles.size(); i++) {
 			if(i>2) {
 			JSONObject jsonObject= (JSONObject) roles.get(i);
 			String roleName=(String) jsonObject.get("name");
-			System.out.println(roleName);
 			applyWait.waitForElementToBeClickable(ap.roleNameTextBox, 30).sendKeys(roleName);;
 			JSONArray operations=(JSONArray) jsonObject.get("operations");
 			ArrayList<String> operationList=new ArrayList<String>();
@@ -500,7 +495,6 @@ public class LoginPage extends BaseClass{
 
 	public void deleteDataService() throws Exception {
 		List<WebElement> dataServices=driver.findElements(By.id("serviceManagerCardTitle"));
-		System.out.println(dataServices.size());
 		for(WebElement dataService : dataServices) {
 			String data=dataService.getText();
 			if(data.equals(dataServiceName)) {
@@ -522,7 +516,6 @@ public class LoginPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(ap.saveButton, 30).click();
 		
 		String service=applyWait.waitForElementToBeClickable(ap.dataServiceName1, 30).getText();
-//		System.out.println(dataServiceName+"========"+service);
 		if(service.contains(dataServiceName)) {
 			System.out.println("User can clone given Data Service");
 		}
@@ -536,9 +529,6 @@ public class LoginPage extends BaseClass{
 		
 		case "String" : 
 			jsonProperties = (JSONObject) attribute.get("properties");
-			
-
-			
 			applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
 			applyWait.waitForElementToBeClickable(ap.abc, 30).click();
 			applyWait.waitForElementToBeClickable(ap.text, 30).click();
@@ -868,7 +858,6 @@ public class LoginPage extends BaseClass{
 									applyWait.waitForElementToBeClickable(ap.defaultTimezone, 30).sendKeys(jsonProperties.get("defaultTimezone").toString(),Keys.ENTER);
 									JSONArray array=(JSONArray) jsonProperties.get("supportedTimezones");
 									for(int j=0; j<array.size();j++) {
-										System.out.println(array.size()+"-----"+array.get(j).toString());
 									applyWait.waitForElementToBeClickable(ap.supportedTimezones, 30).sendKeys(array.get(j).toString(),Keys.ENTER);
 									}								}
 								
@@ -926,7 +915,7 @@ public class LoginPage extends BaseClass{
 								groups.add(group1);
 						}
 							if(groups.contains(groupName)) {
-								System.out.println(groupName+" group exists 121121");
+								System.out.println(groupName+" group exists");
 							
 						}
 						}
@@ -991,16 +980,16 @@ public class LoginPage extends BaseClass{
 									if(role.equalsIgnoreCase("SkipReview")) {
 										applyWait.waitForElementToBeClickable(gp.skipReviewToggler, 30).click();
 										}
-									if(role.equalsIgnoreCase("Manage")) {
+									else if(role.equalsIgnoreCase("Manage")) {
 										applyWait.waitForElementToBeClickable(gp.manageToggler, 30).click();
 									}
 									
-									if(role.equalsIgnoreCase("View")) {
+									else if(role.equalsIgnoreCase("View")) {
 										applyWait.waitForElementToBeClickable(gp.viewToggler, 30).click();
 										}
 									
-									if(role.equalsIgnoreCase("All")) {
-										WebElement toggler=driver.findElement(By.xpath("//span[contains(text(),'All')]/parent::div/following-sibling::span[2]/child::label/child::span[2]"));
+									else {
+										WebElement toggler=driver.findElement(By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[2]/child::label/child::span[2]"));
 										applyWait.waitForElementToBeClickable(toggler, 30).click();
 										}
 									
@@ -1070,7 +1059,7 @@ public class LoginPage extends BaseClass{
 								user=driver.findElement(By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']"));
 								user.click();
 							}
-							applyWait.waitForElementToBeClickable(gp.you, 30).click();
+//							applyWait.waitForElementToBeClickable(gp.you, 30).click();
 							applyWait.waitForElementToBeClickable(gp.done, 30).click();
 							applyWait.waitForElementToBeClickable(gp.save, 30).click();
 
@@ -1088,7 +1077,6 @@ public class LoginPage extends BaseClass{
 						public void logsOutOfAuthor() throws Exception {
 							Thread.sleep(1000);
 							WebElement signInText=ap.signIn;
-							System.out.println(signInText.getText());
 							Boolean verify=signInText.isDisplayed();
 							if(verify) {
 								System.out.println("User logs out of Author");

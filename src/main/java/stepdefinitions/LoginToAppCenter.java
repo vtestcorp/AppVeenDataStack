@@ -26,12 +26,16 @@ public class LoginToAppCenter extends BaseClass{
 		loginAppCenter = new LoginAppCenter(driver, test);
 	}
 	
-	
-	@Given("User navigate to AppCenter login page")
-	public void user_Navigate_to_AppCenter_LogIn_Page() {
+	@Given("User navigate to AppCenter loginpage")
+	public void user_navigate_to_AppCenter_loginpage() {
 		loginAppCenter.loginToAppCenterPage();
-	    
 	}
+	
+//	@Given("User navigate to AppCenter login page")
+//	public void user_Navigate_to_AppCenter_LogIn_Page() {
+//		loginAppCenter.loginToAppCenterPage();
+//	    
+//	}
 
 	@Given("User enters {string} and {string} in AppCenter login page")
 	public void user_enters_username_and_password_in_AppCenter_Url(String userName,String password) throws Exception {

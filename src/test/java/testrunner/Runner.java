@@ -7,8 +7,8 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features=".\\testcases\\dataservice.user.feature",
-		//		dryRun=true,
+@CucumberOptions(features="./testcases/dataservice.feature",
+//				dryRun=true,
 		//		tags="@AppCenter",
 				glue="stepdefinitions",
 				monochrome=true,

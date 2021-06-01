@@ -9,6 +9,7 @@ C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\pageobjects\Object_Group
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\pageModules\LoginPage.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\config\ExtentReports.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\pageModules\LoginAppCenter.java
+C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\stepdefinitions\AppcenterWorkflow.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\DropDown.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\listeners\MyListeners.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\listeners\RetryAnalyser.java
@@ -21,6 +22,7 @@ C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\ExcelUtils
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\ScrollTypes.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\listeners\AnnotationTransformer.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\ZipUtil.java
+C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\pageModules\WorkflowsInAppcenterPage.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\JavascriptClick.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\WaitTypes.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\pageobjects\Object_AuthorPage.java

@@ -1,244 +1,46 @@
 [ {
+  "_metadata" : {
+    "deleted" : false,
+    "lastUpdated" : "2021-05-24T16:35:05.762Z"
+  },
   "_id" : "USE1100",
-  "name" : "Maia K. Cohen",
-  "age" : 33,
+  "customerName" : {
+    "firstName" : "Maia",
+    "lastName" : "Cohen"
+  },
   "phoneNumber" : "1-384-227-9334",
-  "email" : "semper@duiFuscediam.co.uk",
-  "address" : {
-    "line1" : "8387 Est. Avenue",
-    "line2" : "P.O. Box 279, 5543 Elit, St.",
-    "city" : "Geelong",
-    "state" : "VIC",
-    "pin" : "16468"
+  "address" : null,
+  "test" : {
+    "attr1" : null,
+    "attr2" : null
   },
-  "accountDetails" : {
-    "accountNumber" : "%B676315960184^BasiaValentine^3412177323?2",
-    "bankName" : "metus vitae",
-    "ifsc" : ";6304212119483346=33066954229?"
-  },
-  "_metadata" : {
-    "createdAt" : "2021-04-14T05:40:28.867Z",
-    "lastUpdated" : "2021-04-14T05:40:28.867Z"
+  "accountNumber" : "%B676315960184^BasiaValentine^3412177323?2",
+  "kyc" : {
+    "documentType" : "ID",
+    "documentId" : "Adhar",
+    "documentUpload" : null
   }
-}, {
-  "_id" : "USE1099",
-  "name" : "Anastasia F. Hill",
-  "age" : 28,
-  "phoneNumber" : "1-779-375-1592",
-  "email" : "metus.vitae@porttitor.net",
-  "address" : {
-    "line1" : "555-5136 Eu, Ave",
-    "line2" : "Ap #227-7489 Ipsum. St.",
-    "city" : "Gwangyang",
-    "state" : "South Jeolla",
-    "pin" : "28256-775"
-  },
-  "accountDetails" : {
-    "accountNumber" : "%B503817430534^AileenHuff^06041505?1",
-    "bankName" : "tellus faucibus",
-    "ifsc" : ";36256886455878=91072462?"
-  },
+},
+{
   "_metadata" : {
-    "createdAt" : "2021-04-14T05:40:28.865Z",
-    "lastUpdated" : "2021-04-14T05:40:28.865Z"
+    "deleted" : false,
+    "lastUpdated" : "2021-05-24T16:35:05.762Z"
+  },
+  "_id" : "USE1111",
+  "customerName" : {
+    "firstName" : "Peter",
+    "lastName" : "Cohen"
+  },
+  "phoneNumber" : "1-384-227-9",
+  "address" : null,
+  "test" : {
+    "attr1" : null,
+    "attr2" : null
+  },
+  "accountNumber" : "%B676315960184^BasiaValentine^34323?2",
+  "kyc" : {
+    "documentType" : "ID",
+    "documentId" : "Voter",
+    "documentUpload" : null
   }
-}, {
-  "_id" : "USE1098",
-  "name" : "Marny K. Phelps",
-  "age" : 39,
-  "phoneNumber" : "757-5789",
-  "email" : "malesuada@milorem.com",
-  "address" : {
-    "line1" : "Ap #408-9486 Non, Road",
-    "line2" : "P.O. Box 361, 839 Sed, Av.",
-    "city" : "Anseong",
-    "state" : "Gyeonggi",
-    "pin" : "47-369"
-  },
-  "accountDetails" : {
-    "accountNumber" : "%B6334887305363396^QuonThornton^78094292?",
-    "bankName" : "mollis. Phasellus",
-    "ifsc" : ";6011723756351657=35116439052?"
-  },
-  "_metadata" : {
-    "createdAt" : "2021-04-14T05:40:28.839Z",
-    "lastUpdated" : "2021-04-14T05:40:28.839Z"
-  }
-}, {
-  "_id" : "USE1097",
-  "name" : "Glenna N. Bird",
-  "age" : 31,
-  "phoneNumber" : "1-468-370-4009",
-  "email" : "augue.porttitor.interdum@eleifendnon.co.uk",
-  "address" : {
-    "line1" : "241-6512 Nec Ave",
-    "line2" : "388-3413 Nulla. Rd.",
-    "city" : "Meridian",
-    "state" : "ID",
-    "pin" : "57164"
-  },
-  "accountDetails" : {
-    "accountNumber" : "%B180056964057990^PalomaGreene^29029225025?",
-    "bankName" : "Nullam enim.",
-    "ifsc" : ";6767680835260950=2601508136?7"
-  },
-  "_metadata" : {
-    "createdAt" : "2021-04-14T05:40:28.837Z",
-    "lastUpdated" : "2021-04-14T05:40:28.837Z"
-  }
-}, {
-  "_id" : "USE1096",
-  "name" : "Pearl V. Lewis",
-  "age" : 33,
-  "phoneNumber" : "1-394-583-7064",
-  "email" : "massa.Mauris@mattisornare.net",
-  "address" : {
-    "line1" : "P.O. Box 678, 3797 Nam Av.",
-    "line2" : "2180 At St.",
-    "city" : "Abeokuta",
-    "state" : "OG",
-    "pin" : "964808"
-  },
-  "accountDetails" : {
-    "accountNumber" : "%B5406382348061616^MayaNelson^06094162?9",
-    "bankName" : "libero. Proin",
-    "ifsc" : ";6489589456610061=23055536133?"
-  },
-  "_metadata" : {
-    "createdAt" : "2021-04-14T05:40:28.835Z",
-    "lastUpdated" : "2021-04-14T05:40:28.835Z"
-  }
-}, {
-  "_id" : "USE1095",
-  "name" : "Cedric W. Lambert",
-  "age" : 70,
-  "phoneNumber" : "195-6437",
-  "email" : "est@Donecnonjusto.ca",
-  "address" : {
-    "line1" : "168-6170 Ornare Road",
-    "line2" : "P.O. Box 277, 6335 Aenean Road",
-    "city" : "Cambridge",
-    "state" : "Massachusetts",
-    "pin" : "37193-82068"
-  },
-  "accountDetails" : {
-    "accountNumber" : "%B675974161589^BrunoHebert^89016498781?",
-    "bankName" : "odio. Phasellus",
-    "ifsc" : ";6767283769915572=84068313?5"
-  },
-  "_metadata" : {
-    "createdAt" : "2021-04-14T05:40:28.833Z",
-    "lastUpdated" : "2021-04-14T05:40:28.833Z"
-  }
-}, {
-  "_id" : "USE1094",
-  "name" : "Haley E. Barnett",
-  "age" : 44,
-  "phoneNumber" : "483-4325",
-  "email" : "Morbi.sit.amet@anteiaculis.co.uk",
-  "address" : {
-    "line1" : "8581 Dui Street",
-    "line2" : "P.O. Box 821, 2095 Suspendisse Rd.",
-    "city" : "Guadalupe",
-    "state" : "La Libertad",
-    "pin" : "9580"
-  },
-  "accountDetails" : {
-    "accountNumber" : "%B30115388144065^HowardVega^85059981?",
-    "bankName" : "semper tellus",
-    "ifsc" : ";4532429233966=8309219992?7"
-  },
-  "_metadata" : {
-    "createdAt" : "2021-04-14T05:40:28.831Z",
-    "lastUpdated" : "2021-04-14T05:40:28.831Z"
-  }
-}, {
-  "_id" : "USE1093",
-  "name" : "Grant D. Golden",
-  "age" : 26,
-  "phoneNumber" : "1-301-628-0349",
-  "email" : "interdum@sedpedeCum.com",
-  "address" : {
-    "line1" : "3246 Enim. Ave",
-    "line2" : "P.O. Box 650, 9568 Enim. Rd.",
-    "city" : "Dutse",
-    "state" : "Jigawa",
-    "pin" : "781368"
-  },
-  "accountDetails" : {
-    "accountNumber" : "%B36572654425525^BaxterWilkerson^21119393?",
-    "bankName" : "nunc est,",
-    "ifsc" : ";6490715330673077=33095481?1"
-  },
-  "_metadata" : {
-    "createdAt" : "2021-04-14T05:40:28.822Z",
-    "lastUpdated" : "2021-04-14T05:40:28.822Z"
-  }
-}, {
-  "_id" : "USE1092",
-  "name" : "Owen G. Atkinson",
-  "age" : 33,
-  "phoneNumber" : "1-521-313-2062",
-  "email" : "tincidunt.congue@quisurna.com",
-  "address" : {
-    "line1" : "5426 Libero. St.",
-    "line2" : "408-3487 Nulla Road",
-    "city" : "Ijebu Ode",
-    "state" : "Ogun",
-    "pin" : "79-831"
-  },
-  "accountDetails" : {
-    "accountNumber" : "%B6767878206252750^BaxterGallagher^01074423737?",
-    "bankName" : "dictum ultricies",
-    "ifsc" : ";575096174777=8309375505?"
-  },
-  "_metadata" : {
-    "createdAt" : "2021-04-14T05:40:28.819Z",
-    "lastUpdated" : "2021-04-14T05:40:28.819Z"
-  }
-}, {
-  "_id" : "USE1091",
-  "name" : "Cameran W. Lucas",
-  "age" : 46,
-  "phoneNumber" : "1-315-360-6750",
-  "email" : "tempus.lorem.fringilla@nislarcu.co.uk",
-  "address" : {
-    "line1" : "Ap #694-3442 A Rd.",
-    "line2" : "968-7149 Neque. Avenue",
-    "city" : "Fort Worth",
-    "state" : "TX",
-    "pin" : "QX8R 0BY"
-  },
-  "accountDetails" : {
-    "accountNumber" : "%B6304394229050015^GuyGilbert^86105387?5",
-    "bankName" : "ligula eu",
-    "ifsc" : ";214944095842879=3509738813?"
-  },
-  "_metadata" : {
-    "createdAt" : "2021-04-14T05:40:28.817Z",
-    "lastUpdated" : "2021-04-14T05:40:28.817Z"
-  }
-}, {
-  "_id" : "USE1090",
-  "name" : "Clarke G. Kramer",
-  "age" : 31,
-  "phoneNumber" : "1-211-224-5053",
-  "email" : "Sed@laoreet.com",
-  "address" : {
-    "line1" : "P.O. Box 349, 501 Erat Avenue",
-    "line2" : "P.O. Box 870, 3952 Aliquet. Road",
-    "city" : "Abingdon",
-    "state" : "Berkshire",
-    "pin" : "78129"
-  },
-  "accountDetails" : {
-    "accountNumber" : "%B30596761559740^MerrittAlvarez^7002710523?",
-    "bankName" : "quam dignissim",
-    "ifsc" : ";6767325282070615=90129706?6"
-  },
-  "_metadata" : {
-    "createdAt" : "2021-04-14T05:40:28.814Z",
-    "lastUpdated" : "2021-04-14T05:40:28.814Z"
-  }
-
-} ]
+}]
