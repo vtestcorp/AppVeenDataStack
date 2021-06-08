@@ -57,10 +57,6 @@ public class LoginPage extends BaseClass{
 	}
 	
 	
-
-
-
-	
 	public void loginToPage() throws Exception {
 
 		driver.get(DefineConstants.AUTHOR_URL);
@@ -85,7 +81,6 @@ public class LoginPage extends BaseClass{
 		Screenshots.takeScreenshot(driver, "User successfully signed up");
 //		test.log(Status.INFO, "User successfully signed up");
 		Log.info("User successfully signed up");
-		System.out.println("User log in successfully");
 	}
 	}
 	
@@ -96,7 +91,6 @@ public class LoginPage extends BaseClass{
 		for(WebElement dataService1 : dataServices) {
 			String data=dataService1.getText();
 			if(data.equalsIgnoreCase(dataServiceName)) {
-				System.out.println("Data Service already present  with name of "+dataServiceName);
 				 data_serviceToggler=driver.findElement(By.xpath("//span[@id='serviceManagerCardTitle' and text()='"+data+"']/parent::div/parent::div/parent::div/following-sibling::div[2]/div/div[@class='toggler']"));
 				flag=true;
 				break;
@@ -116,7 +110,6 @@ public class LoginPage extends BaseClass{
 
 	public void verifyDataServiceDoesNotExist() {
 		if(flag==false) {
-			System.out.println("Data service doesn't exist");
 		}
 	}
 	
@@ -356,7 +349,7 @@ public class LoginPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(ap.experienceTab, 30).click();
 		applyWait.waitForElementToBeClickable(ap.customize, 30).click();
 		String path=System.getProperty("user.dir");
-		String dataName=path+"\\testData" + "\\" + ""+dataServiceName+".json";
+		String dataName="C:\\Users\\DELL\\eclipse-workspace\\DataStack\\testData"+ "\\" + ""+dataServiceName+".json";
 		JSONArray array =JsonUtils.getArrayValues(dataName, "wizard");
 		for(int i=0;i<array.size();i++) {
 			JSONObject object=(JSONObject) array.get(i);
@@ -487,7 +480,6 @@ public class LoginPage extends BaseClass{
 		Boolean dataService=applyWait.waitForElementToBeClickable(ap.dataServiceName1, 30).isDisplayed();
 		String dataServiceActualName=applyWait.waitForElementToBeClickable(ap.dataServiceName1, 30).getText();
 		if(dataService) {
-			System.out.println("Given Data Service searched successfully");
 		}
 		javascriptClick.highLighterMethod(ap.dataServiceName1);
 		Assert.assertEquals(dataServiceName, dataServiceActualName);
@@ -517,7 +509,6 @@ public class LoginPage extends BaseClass{
 		
 		String service=applyWait.waitForElementToBeClickable(ap.dataServiceName1, 30).getText();
 		if(service.contains(dataServiceName)) {
-			System.out.println("User can clone given Data Service");
 		}
 	}
 	
@@ -915,7 +906,6 @@ public class LoginPage extends BaseClass{
 								groups.add(group1);
 						}
 							if(groups.contains(groupName)) {
-								System.out.println(groupName+" group exists");
 							
 						}
 						}
@@ -943,7 +933,6 @@ public class LoginPage extends BaseClass{
 									groups.add(group1);
 							}
 								if(!groups.contains(groupName)) {
-									System.out.println(groupName+" group does not exists");
 							}
 							
 						}
@@ -951,7 +940,6 @@ public class LoginPage extends BaseClass{
 						public void dataServiceExists(String dataService) {
 							
 							if(data_Services.contains(dataService)) {
-								System.out.println(dataService+" Data service exists");
 						}
 							
 						}
@@ -965,8 +953,6 @@ public class LoginPage extends BaseClass{
 									groups.add(group1);
 							}
 								if(!groups.contains(groupName)) {
-									System.out.println(groupName+" group not contain");
-									System.out.println("Creating "+groupName+" group");
 									applyWait.waitForElementToBeClickable(gp.newGroup, 30).click();
 									applyWait.waitForElementToBeClickable(gp.groupName, 30).sendKeys(groupName);;
 									applyWait.waitForElementToBeClickable(gp.createButton, 30).click();
@@ -1000,7 +986,6 @@ public class LoginPage extends BaseClass{
 
 						public void groupExists(String groupName) {
 							if(groups.contains(groupName)) {
-								System.out.println(groupName+" group exists");
 							
 						}							
 						}
@@ -1015,20 +1000,16 @@ public class LoginPage extends BaseClass{
 								users.add(user1);
 						}
 							if(!users.contains(userEmail)) {
-								System.out.println(userEmail+" not contain");
 								applyWait.waitForElementToBeClickable(gp.addUser, 30).click();
 								applyWait.waitForElementToBeClickable(gp.userName, 30).sendKeys(userEmail);;
 								applyWait.waitForElementToBeClickable(gp.password, 30).sendKeys(Property.getProperty("password"));;
 								applyWait.waitForElementToBeClickable(gp.confirmPassword, 30).sendKeys(Property.getProperty("password"));;
 								Thread.sleep(1000);
 								applyWait.waitForElementToBeClickable(gp.name, 30).sendKeys("Test");;
-								
-								
 
 								applyWait.waitForElementToBeClickable(gp.add, 30).click();
 							}
 							else {
-								System.out.println(userEmail+" user contain");
 							}
 							
 						}
@@ -1079,14 +1060,10 @@ public class LoginPage extends BaseClass{
 							WebElement signInText=ap.signIn;
 							Boolean verify=signInText.isDisplayed();
 							if(verify) {
-								System.out.println("User logs out of Author");
 							}
 						}
 
 						public void navigateToAppcenterLoginPage() {
-							
-							
-							
 							
 						}
 							

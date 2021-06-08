@@ -5,6 +5,7 @@ import java.util.List;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -57,7 +58,7 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 		Thread.sleep(3000);
 		List<WebElement> textBoxes = acp.textBoxes;
 		String path= System.getProperty("user.dir");
-		JSONArray jsonArray = JsonUtils.getJSONArray(path+"\\testData\\"+data_Service+".data.json");
+		JSONArray jsonArray = JsonUtils.getJSONArray("C:\\Users\\DELL\\eclipse-workspace\\DataStack"+"\\testData\\"+data_Service+".data.json");
 		for(int i=0;i<jsonArray.size();i++) {
 			Thread.sleep(1000);
 			JSONObject jsonObject=(JSONObject) jsonArray.get(i);
@@ -116,7 +117,6 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 
 
 	public void userNavigateToAppCenter() {
-		//	System.out.println("User navigate to App center page");		
 	}
 
 
@@ -125,7 +125,6 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(acp.newRecordsTab, 30).click();
 		Boolean verify=applyWait.waitForElementToBeClickable(acp.workflowList, 30).isDisplayed();
 		if(verify) {
-			System.out.println("Data is available in the workflow listing page under New Records with status Pending Review");
 		}
 		
 	}
@@ -300,8 +299,9 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 	}
 
 
-	public void editDataService() {
+	public void editDataService() throws Exception {
 		applyWait.waitForElementToBeClickable(acp.dataServiceList, 30).click();
+		Thread.sleep(3000);
 		applyWait.waitForElementToBeClickable(acp.edit, 30).click();
 		applyWait.waitForElementToBeClickable(acp.firstNameTextBox, 30).clear();;
 //		applyWait.waitForElementToBeClickable(acp.idTextBox, 30).sendKeys("USE1232");
@@ -317,5 +317,75 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 
 	public void approveTheRecordFromUpdateRecordTab() {
 		
+		applyWait.waitForElementToBeClickable(acp.dataService, 30).click();
+		applyWait.waitForElementToBeClickable(acp.review, 30).click();
+		applyWait.waitForElementToBeClickable(acp.respond1, 30).click();
+		applyWait.waitForElementToBeClickable(acp.approve, 30).click();
+		applyWait.waitForElementToBeClickable(acp.enterApproveComment, 30).sendKeys("Approved");
+		applyWait.waitForElementToBeClickable(acp.approveButton, 30).click();
+
+		
+	}
+
+
+	public void rejectTheRecord() throws Exception {
+		
+
+		Thread.sleep(2000);
+		applyWait.waitForElementToBeClickable(acp.workflowTab, 30).click();
+		Thread.sleep(3000);
+		List <WebElement> workflows=acp.respondWorkflows;
+		int i=1;
+		for(WebElement workflow : workflows) {
+			applyExplicitWaitsUntilElementVisible(acp.respond1);
+			Thread.sleep(1000);
+			try {
+				acp.respond1.click();
+			}
+			catch(StaleElementReferenceException e) {
+				applyExplicitWaitsUntilElementVisible(acp.respond1);
+				WebElement workFlow=driver.findElement(By.xpath("//span[normalize-space()='Respond']"));
+				workFlow.click();
+			}
+			applyWait.waitForElementToBeClickable(acp.reject, 30).click();
+			applyWait.waitForElementToBeClickable(acp.enterRejectComment, 30).sendKeys("Rejected");;
+			applyWait.waitForElementToBeClickable(acp.rejectButton, 30).click();;
+		}
+		
+		
+		
+	
+		
+	}
+
+
+	public void reworkTheRecord() throws Exception {
+		
+		Thread.sleep(2000);
+		applyWait.waitForElementToBeClickable(acp.workflowTab, 30).click();
+		Thread.sleep(3000);
+		List <WebElement> workflows=acp.respondWorkflows;
+		int i=1;
+		for(WebElement workflow : workflows) {
+			applyExplicitWaitsUntilElementVisible(acp.respond1);
+			Thread.sleep(1000);
+			try {
+				applyWait.waitForElementToBeClickable(acp.respond1, 30).click();;
+			//	acp.respond1.click();
+				
+			}
+			
+			catch(StaleElementReferenceException e) {
+				applyExplicitWaitsUntilElementVisible(acp.respond1);
+				WebElement workFlow=driver.findElement(By.xpath("//span[normalize-space()='Respond']"));
+				workFlow.click();
+			}
+			Thread.sleep(2000);
+			applyWait.waitForElementToBeClickable(acp.rework1, 30).click();
+	//		((JavascriptExecutor) driver).executeScript("arguments[0].click();", acp.rework);
+			applyWait.waitForElementToBeClickable(acp.enterRejectComment, 30).sendKeys("Send for Rework");;
+			applyWait.waitForElementToBeClickable(acp.reworkButton, 30).click();;
+			
+		}
 	}
 }

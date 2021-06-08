@@ -77,7 +77,7 @@ public class AppcenterWorkflow extends BaseClass{
 	    workflow.updateDraftRecord();
 	}
 	@Then("Add data to the data service and save as drafts")
-	public void add_data_to_the_data_service_and_save_as_drafts() {
+	public void add_data_to_the_data_service_and_save_as_drafts() throws Exception {
 	    workflow.editDataService();
 	}
 	
@@ -85,5 +85,24 @@ public class AppcenterWorkflow extends BaseClass{
 	public void approve_the_Record_updated_in_previous_step_from_Update_Record_tab() {
 	    workflow.approveTheRecordFromUpdateRecordTab();
 	}
+	
+	@Then("Add data to the data service workflow for Rejection")
+	public void add_data_to_the_data_service_workflow_for_Rejection() throws Exception {
+		workflow.addDataToDataService();
+	}
+	
+	@Then("Reject the Record created in previous step")
+	public void reject_the_Record_created_in_previous_step() throws Exception {
+	   workflow.rejectTheRecord();
+	}
+	
+	@Then("Add data to the data service workflow for Rework")
+	public void add_data_to_the_data_service_workflow_for_Rework() throws Exception {
+	   workflow.addDataToDataService();
+	}
 
+	@Then("Rework the Record created in previous step")
+	public void rework_the_Record_created_in_previous_step() throws Exception {
+	    workflow.reworkTheRecord();
+	}
 }

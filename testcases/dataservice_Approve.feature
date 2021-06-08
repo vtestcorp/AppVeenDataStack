@@ -1,5 +1,4 @@
-Feature: Validate CRUD operations on data service users 
-
+Feature: Approve the dataservice in appcenter page 
 
 @Author
 Scenario Outline: Log into Author
@@ -120,7 +119,7 @@ Examples:
 |username|password|
 |reviewer@appveen.com|123123123|
 
-Scenario: Approve the data created 
+Scenario: Approve the data created
 	Given Data service "users"
 	Then Approve the Record created in previous step
 	And Verify data is available in the workflow listing page under New Records with status Approved
@@ -151,7 +150,7 @@ Examples:
 
 
 
-Scenario: Approve the data created 
+Scenario: Approve the data created1
 	Given Data service "users"
 	Then Approve the Record updated in previous step from Update Record tab
 	And Verify data is available in the workflow listing page under New Records with status Approved

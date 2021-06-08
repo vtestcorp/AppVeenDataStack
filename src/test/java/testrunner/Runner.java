@@ -7,12 +7,12 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="./testcases/dataservice.feature",
-//				dryRun=true,
+@CucumberOptions(features="./testcases/dataService_Rework.feature",
+		//		dryRun=true,
 		//		tags="@AppCenter",
 				glue="stepdefinitions",
 				monochrome=true,
-				plugin = { "pretty", "html:target/cucumber-reports"       ,"json:target/cucumber-reports/cucumber.json" }
+				plugin = { "pretty", "html:target/cucumber-reports" ,"json:target/cucumber-reports/cucumber.json" }
 				)
 
 public class Runner {
@@ -29,8 +29,6 @@ public class Runner {
 	        cucumber.api.cli.Main.main(cucumberOptions.toArray(String[]::new));
 	    }
 
-//	public static void main(String[] args) {
-//        cucumber.api.cli.Main.main(args );
-//    }
+
 }
  

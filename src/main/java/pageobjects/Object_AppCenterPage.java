@@ -98,11 +98,25 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//span[normalize-space()='Reject']")
 	public WebElement reject;
 	
+	@FindBy(xpath="//button[normalize-space()='Reject']")
+	public WebElement rejectButton;
+			
 	@FindBy(xpath="//span[normalize-space()='Rework']")
 	public WebElement rework;
 	
+	@FindBy(xpath="//button[normalize-space()='Rework']")
+	public WebElement reworkButton;
+	
+	@FindBy(xpath="//button[starts-with(@class,'btn respond-btn rework')]/span")
+	public WebElement rework1;
+	
+	
 	@FindBy(xpath="//textarea[@placeholder='Enter comments to justify your response. Attach document if necessary']")
 	public WebElement enterApproveComment;
+	
+	@FindBy(xpath="//textarea[@placeholder='Comments are required to justify your response. Attach document if necessary.']")
+	public WebElement enterRejectComment;
+	
 	
 	@FindBy(xpath="//span[@class='font-bold text-dark ml-2 ng-star-inserted']")
 	public WebElement workflowList;
@@ -149,8 +163,14 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//input[@id='customerName.firstName']")
 	public WebElement firstNameTextBox;
 	
-	//input[@id='customerName.firstName']
+	@FindBy(xpath="//a[@class='ng-star-inserted']")
+	public WebElement dataService;
 	
+	@FindBy(xpath="//button[normalize-space()='Review']")
+	public WebElement review;
+	
+	
+
 	
 	
 	
