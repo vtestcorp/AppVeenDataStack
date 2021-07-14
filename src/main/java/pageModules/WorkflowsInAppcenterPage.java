@@ -17,8 +17,9 @@ import helperMethods.DropDown;
 import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
 import helperMethods.ScrollTypes;
+import helperMethods.SwitchWindow;
 import helperMethods.WaitTypes;
-import pageobjects.Object_AppCenterPage;
+import pageObjects.Object_AppCenterPage;
 
 public class WorkflowsInAppcenterPage extends BaseClass{
 	
@@ -117,6 +118,11 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 
 
 	public void userNavigateToAppCenter() {
+		
+		
+		SwitchWindow.openNewTab(driver);
+		driver.get(app_center_URL);
+		driver.manage().window().maximize();
 	}
 
 

@@ -7,7 +7,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|vtest@appveen.com|123123123|
+|deepak@appveen.com|123123123|
 
 Scenario: Delete data service
 	Given Data service "users" exists

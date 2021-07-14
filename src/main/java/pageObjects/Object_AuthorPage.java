@@ -1,4 +1,4 @@
-package pageobjects;
+package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -54,9 +54,15 @@ public class Object_AuthorPage extends BaseClass{
 
 	@FindBy(xpath="//button[@id='newServiceModalYes']")
 	public WebElement createButton;
-
+	
+	@FindBy(xpath="//textarea[@id='description']")
+	public WebElement descriptionTextBox;
+	
 	@FindBy(xpath="//label[@for='reqAttr']//span[@class='checkmark']")
 	public WebElement required;
+	
+	@FindBy(xpath="(//div[starts-with(@class,'readonly')])[last()]")
+	public WebElement readOnly;
 
 	@FindBy(xpath="//label[@for='createAttr']//span[@class='checkmark']")
 	public WebElement createOnly;
@@ -252,6 +258,13 @@ public class Object_AuthorPage extends BaseClass{
 	
 	@FindBy(xpath="//div[@class='text'][normalize-space()='Manage']")
 	public WebElement manageTab;
+	
+	
+	
+	
+
+
+
 	
 	
 	

@@ -1,0 +1,35 @@
+[ {
+  "_metadata" : {
+    "deleted" : false,
+    "lastUpdated" : "2021-06-27T16:31:30.095Z",
+    "version" : {
+      "release" : "1.0.0",
+      "document" : 1
+    },
+    "createdAt" : "2021-06-27T16:31:30.095Z"
+  },
+  "_id" : "STR1001",
+  "name" : "Author",
+  "company" : "a",
+  "employeeId" : "123",
+  "address" : "Pune",
+  "uid" : "123123",
+  "familyMember" : null,
+  "employeeDetails" : "Mr",
+  "birthDate" : "27 June",
+  "dateOfJoining" : "1 August",
+  "employeeForm" : null,
+  "employeeDesignation" : "Tester",
+  "employeeType" : "Manager",
+  "employeeAge" : "Tester",
+  "info" : null,
+  "gender" : "Male",
+  "maleFemale" : null,
+  "personal" : "a",
+  "user" : "Employeeee",
+  "application" : "Valid",
+  "module" : "Module check",
+  "environment" : "Environment check",
+  "__v" : 0
+}
+]

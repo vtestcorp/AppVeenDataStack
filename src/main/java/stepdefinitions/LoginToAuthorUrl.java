@@ -87,8 +87,7 @@ public class LoginToAuthorUrl extends BaseClass {
 			data_Service=dataService;
 //		}
 		
-		String dataName="C:\\Users\\DELL\\eclipse-workspace\\DataStack\\testData" + "\\" + ""+dataService+".json";
-		System.out.println(dataName);
+		String dataName=path+"\\testData" + "\\" + ""+dataService+".json";
 		
 		try {
 			FileReader reader = new FileReader(dataName);
@@ -192,6 +191,31 @@ public class LoginToAuthorUrl extends BaseClass {
 	public void clone_Given_Data_Service() throws Exception {
 		loginPage.cloneGivenDataService();
 		
+	}
+	
+	
+	@Then("Expect error “Unique check validation failed for dsStringText{int}” on save")
+	public void expect_error_Unique_check_validation_failed_for_dsStringText_on_save(Integer int1) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new cucumber.api.PendingException();
+	}
+
+	@Then("Expect error “asdasd” on key “dsStringText{int}”")
+	public void expect_error_asdasd_on_key_dsStringText(Integer int1) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new cucumber.api.PendingException();
+	}
+
+	@Then("Expect error “ajkdhakshd” on key “dsStringText{int}”")
+	public void expect_error_ajkdhakshd_on_key_dsStringText(Integer int1) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new cucumber.api.PendingException();
+	}
+
+	@Then("Expect error “ID STR{int} already exists” on save")
+	public void expect_error_ID_STR_already_exists_on_save(Integer int1) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new cucumber.api.PendingException();
 	}
 	
 

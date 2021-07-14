@@ -24,7 +24,7 @@ import helperMethods.ScrollTypes;
 import helperMethods.SwitchWindow;
 import helperMethods.WaitTypes;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import pageobjects.Object_AppCenterPage;
+import pageObjects.Object_AppCenterPage;
 import stepdefinitions.LoginToAuthorUrl;
 
 public class LoginAppCenter  extends BaseClass {
@@ -50,7 +50,7 @@ public class LoginAppCenter  extends BaseClass {
 	public void loginToAppCenterPage() {
 		
 		SwitchWindow.openNewTab(driver);
-		driver.get(DefineConstants.APP_CENTER_URL);
+		driver.get(app_center_URL);
 		driver.manage().window().maximize();
 		
 	}
@@ -69,71 +69,111 @@ public class LoginAppCenter  extends BaseClass {
 		Thread.sleep(2000);
 		Boolean status=	applyWait.waitforElementToBeDisplayed(acp.dataStackLogo, 80).isDisplayed();
 		if(status) {
-			System.out.println("User log in succesfully to AppCenter Successfully");
 		}
 	}
 	
 	public void dataService(String dataService) throws Exception {
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		data_Service=dataService;
+		Thread.sleep(3000);
 		WebElement data=driver.findElement(By.xpath("//div[contains(text(),'"+dataService+"')]"));
 		javascriptClick=new JavascriptClick(driver);
 		data.click();
 	}
 
 	public void userEnterData() throws Exception {
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		List<WebElement> textBoxes = acp.textBoxes;
 		String path= System.getProperty("user.dir");
 		JSONArray jsonArray = JsonUtils.getJSONArray(path+"\\testData\\"+data_Service+".data.json");
 		for(int i=0;i<jsonArray.size();i++) {
 			Thread.sleep(1000);
 			JSONObject jsonObject=(JSONObject) jsonArray.get(i);
-			
+/**
+ * Code for Experience tab
+ */
 			List<WebElement> stepNames=driver.findElements(By.xpath("//div[@class='step-name high-zIndex text-truncate']"));
+			
+			if(stepNames.size()>0) {
 			for(WebElement stepName : stepNames) {
 				System.out.println(stepName.getText());
 				stepName.click();
 			
 			
 				for(int j=1;j<=textBoxes.size();j++) {
-				WebElement textBox=driver.findElement(By.xpath("(//input[contains(@class,'form-control')])["+j+"]"));
-		
-				String id1 =textBox.getAttribute("id");
-				
-				if(textBox.getAttribute("type").equals("text")) {
-					if(id1.contains(".")) {
-						String [] attributes=id1.trim().split("[^a-zA-Z0-9]+");
 					
-						JSONObject obj=(JSONObject) jsonObject.get(attributes[0]);
-						applyWait.waitForElementToBeClickable(textBox,30).sendKeys((String)obj.get(attributes[1]));
+					WebElement textBox=driver.findElement(By.xpath("(//input[contains(@class,'ng-valid ng-star-inserted') or contains(@class,'ng-invalid')])["+j+"]"));
+			
+					String id1 =textBox.getAttribute("id");
+					
+					if(textBox.getAttribute("type").equals("text")) {
+						if(id1.contains(".")) {
+							String [] attributes=id1.trim().split("[^a-zA-Z0-9]+");
 						
+							JSONObject obj=(JSONObject) jsonObject.get(attributes[0]);
+							applyWait.waitForElementToBeClickable(textBox,30).sendKeys((String)obj.get(attributes[1]));
+							
+						}
+						else {
+						applyWait.waitForElementToBeClickable(textBox,30).sendKeys(((String)jsonObject.get(id1)).toString());;
 					}
-					else {
-					applyWait.waitForElementToBeClickable(textBox,30).sendKeys(((String)jsonObject.get(id1)).toString());;
-				}
-				}
-				if(textBox.getAttribute("type").equals("number")) {
-					applyWait.waitForElementToBeClickable(textBox,30).sendKeys(((Long)jsonObject.get(id1)).toString());;
 					}
+					if(textBox.getAttribute("type").equals("number")) {
+						applyWait.waitForElementToBeClickable(textBox,30).sendKeys(((Long)jsonObject.get(id1)).toString());;
+						}
+					
+				}
 				
 			}
+			}
+			
+			else {
+				for(int j=1;j<=textBoxes.size();j++) {
+					
+				//	WebElement textBox=driver.findElement(By.xpath("(//input[contains(@class,'ng-valid ng-star-inserted') or contains(@class,'ng-invalid')])["+j+"]"));
+				//	WebElement textBox=driver.findElement(By.xpath("(//input[@class='form-control form-control-sm rounded ng-untouched ng-pristine ng-valid ng-star-inserted' or @class='form-control form-control-sm rounded ng-untouched ng-pristine ng-invalid ng-star-inserted' or @class='form-control form-control-sm rounded ng-pristine ng-valid ng-star-inserted ng-touched'])[1]"));
+					WebElement textBox=driver.findElement(By.xpath("(//input[contains(@class,'form')])["+j+"]"));
+					if(textBox.isEnabled()) {
+					String id1 =textBox.getAttribute("id");
+					
+					if((String)jsonObject.get(id1)!=null) {
+					
+					if(textBox.getAttribute("type").equals("text")) {
+						if(id1.contains(".")) {
+							String [] attributes=id1.trim().split("[^a-zA-Z0-9]+");
+						
+							JSONObject obj=(JSONObject) jsonObject.get(attributes[0]);
+							applyWait.waitForElementToBeClickable(textBox,30).sendKeys((String)obj.get(attributes[1]));
+							
+						}
+						else {
+						applyWait.waitForElementToBeClickable(textBox,30).sendKeys(((String)jsonObject.get(id1)).toString());;
+					}
+					}
+					if(textBox.getAttribute("type").equals("number")) {
+						applyWait.waitForElementToBeClickable(textBox,30).sendKeys(((Long)jsonObject.get(id1)).toString());;
+						}
+					}
+				}
+				}
 				
 			}
+			
+			
 			if((jsonArray.size()-1) > i) {
 			applyWait.waitForElementToBeClickable(acp.proceedAndCreateAnother, 30).click();
 				}
 				else {
-					applyWait.waitForElementToBeClickable(acp.proceed, 30).click();
+					applyWait.waitForElementToBeClickable(acp.save, 30).click();
 				}
-				applyWait.waitForElementToBeClickable(acp.comments, 30).sendKeys("Check");;
-				applyWait.waitForElementToBeClickable(acp.submit, 30).click();
-				applyWait.waitForElementToBeClickable(acp.userDetails, 30).click();
-				applyWait.waitForElementToBeClickable(acp.logout, 30).click();
-				
-				workflow();
+//				applyWait.waitForElementToBeClickable(acp.comments, 30).sendKeys("Check");;
+//				applyWait.waitForElementToBeClickable(acp.submit, 30).click();
+//				applyWait.waitForElementToBeClickable(acp.userDetails, 30).click();
+//				applyWait.waitForElementToBeClickable(acp.logout, 30).click();
+//				
+//				workflow();
 				
 		}
 	}

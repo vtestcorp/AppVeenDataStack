@@ -276,7 +276,7 @@
       "description" : "This role entitles an authorized user to view the record"
     }, {
       "id" : "P9396381523",
-      "name" : "Checker",
+      "name" : "Employee Admin",
       "operations" : [ {
         "method" : "GET"
       }, {
@@ -315,6 +315,8 @@
       "name" : "Reviewer",
       "operations" : [ {
         "method" : "GET"
+      } , {
+        "method" : "REVIEW"
       } ]
     }, {
       "id" : "P8057636362",

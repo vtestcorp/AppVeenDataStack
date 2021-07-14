@@ -1,13 +1,18 @@
 package helperMethods;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.Map;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import base.BaseClass;
 
@@ -86,6 +91,30 @@ public class JsonUtils extends BaseClass{
 		JSONArray a = (JSONArray) object;
 		return a;
 	}
+	
+	public static JSONArray fetchJSONArray(String jsonArray) {
+		try {
+			jsonParser = new JSONParser();
+			object = jsonParser.parse(jsonArray);
+		//	jsonObject = (JSONObject) object;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		JSONArray a = (JSONArray) object;
+		return a;
+	}
+	
+	public static JSONObject fetchJSONObject(String jsonObject) {
+		try {
+			jsonParser = new JSONParser();
+			object = jsonParser.parse(jsonObject);
+		//	jsonObject = (JSONObject) object;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		JSONObject a = (JSONObject) object;
+		return a;
+	}
 
 	public static JSONObject getData1(String filePath) {
 		try {
@@ -99,51 +128,27 @@ public class JsonUtils extends BaseClass{
 		return jsonObject;
 
 	}
-
 	
+	 /**
+     *This method will convert json file into map
+     */
 	
-	public static void main(String[] ar) throws Exception {
-		/*
-		 * System.out.println("started"); // JsonUtils.getArrayValues(
-		 * "C:\\Users\\Admin\\workspace\\Plumb5\\Test_Data\\Contacts\\Contact_Import2.json"
-		 * ,"data"); JSONParser parser = new JSONParser(); FileReader reader =
-		 * new FileReader(
-		 * "C:\\Users\\Admin\\workspace\\Plumb5\\Test_Data\\Contacts\\Contact_Import3.json"
-		 * );
-		 * 
-		 * Object object = parser.parse(reader);
-		 * 
-		 * JSONArray array = (JSONArray) object; System.out.println(array);
-		 */
+	public static Map getMapFromJSON(String jsonFile) {
+		Map<String, String> carMap = null;
 
-		JSONParser parser = new JSONParser();
-		FileReader reader = new FileReader(
-				"C:\\Users\\Admin\\workspace\\Plumb5\\Test_Data\\Contacts\\Contact_Import3.json");
-
-		Object object = parser.parse(reader);
-
-		JSONObject jsonObject = (JSONObject) object;
-
-		JSONObject val=(JSONObject)jsonObject.get("data2");
-		System.out.println(val.get("name"));
-		System.out.println(jsonObject.get("data1"));
-		System.out.println(jsonObject.get("data2"));
+		ObjectMapper mapper = new ObjectMapper();
+       
+        try {
+             carMap = mapper.readValue(
+            		 jsonFile, new TypeReference<Map<String, String>>() {
+            });
 	}
-	
-//	public static WebElement getElement(String filePath, String field) {
-//		try {
-//			reader = new FileReader(filePath);
-//			jsonParser = new JSONParser();
-//			object = jsonParser.parse(reader);
-//			jsonObject = (JSONObject) object;
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		String ele=(String) jsonObject.get(field);
-//		WebElement element=driver.findElement(By.xpath(ele));
-//		return element;
-//				
-//	}
-	
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+		return carMap;
+		
+	}
+
 	
 }

@@ -1,0 +1,489 @@
+{
+  "workflowHooks": {
+    "postHooks": {
+      "submit": [],
+      "rework": [],
+      "discard": [],
+      "approve": [],
+      "reject": []
+    }
+  },
+  "_metadata": {
+    "version": {
+      "document": 2,
+      "release": "dev"
+    },
+    "deleted": false,
+    "lastUpdated": "2021-07-14T05:48:18.860Z",
+    "createdAt": "2021-07-14T05:44:01.240Z",
+    "lastUpdatedBy": "deepak@appveen.com"
+  },
+  "allowedFileTypes": [
+    "jpeg",
+    "ppt",
+    "xls",
+    "csv",
+    "doc",
+    "jpg",
+    "png",
+    "gif",
+    "zip",
+    "tar",
+    "rar",
+    "gz",
+    "bz2",
+    "7z",
+    "mp4",
+    "mp3",
+    "pdf",
+    "ico",
+    "docx",
+    "pptx",
+    "xlsx",
+    "ods",
+    "xml",
+    "txt"
+  ],
+  "version": 1,
+  "instances": 1,
+  "versionValidity": {
+    "validityType": "count",
+    "validityValue": -1
+  },
+  "permanentDeleteData": true,
+  "disableInsights": false,
+  "status": "Draft",
+  "enableSearchIndex": false,
+  "attributeCount": 15,
+  "type": null,
+  "_id": "SRVC4391",
+  "name": "Sample",
+  "description": null,
+  "app": "vTest",
+  "api": "/sample",
+  "port": 20035,
+  "wizard": [],
+  "webHooks": [],
+  "preHooks": [],
+  "collectionName": "sample",
+  "__v": 1,
+  "definition": [
+    {
+      "_id": "60ee7aa2b262410cebb0a624",
+      "key": "_id",
+      "type": "String",
+      "prefix": "SAM",
+      "suffix": null,
+      "padding": null,
+      "counter": 1001,
+      "properties": {
+        "label": null,
+        "readonly": false,
+        "errorMessage": null,
+        "name": "ID",
+        "required": false,
+        "fieldLength": 10,
+        "_description": null,
+        "_typeChanged": "id",
+        "_isParrentArray": null,
+        "_isGrpParentArray": null,
+        "dataPath": "_id",
+        "_detailedType": "",
+        "dataKey": "_id"
+      }
+    },
+    {
+      "_id": "60ee7aa2b26241da97b0a625",
+      "type": "String",
+      "key": "string",
+      "properties": {
+        "name": "String",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "dataKey": "string",
+        "dataPath": "string"
+      }
+    },
+    {
+      "_id": "60ee7aa2b26241e662b0a626",
+      "type": "String",
+      "key": "long",
+      "properties": {
+        "name": "Long",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "longText": true,
+        "dataKey": "long",
+        "dataPath": "long"
+      }
+    },
+    {
+      "_id": "60ee7aa2b262415997b0a627",
+      "type": "String",
+      "key": "rich",
+      "properties": {
+        "name": "Rich",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "richText": true,
+        "dataKey": "rich",
+        "dataPath": "rich"
+      }
+    },
+    {
+      "_id": "60ee7aa2b26241467cb0a628",
+      "type": "String",
+      "key": "email1",
+      "properties": {
+        "name": "Email-1",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "email": true,
+        "dataKey": "email1",
+        "dataPath": "email1"
+      }
+    },
+    {
+      "_id": "60ee7aa2b262413b28b0a629",
+      "type": "Object",
+      "definition": [
+        {
+          "type": "String",
+          "key": "value",
+          "properties": {
+            "name": "value",
+            "_typeChanged": "String"
+          }
+        },
+        {
+          "type": "String",
+          "key": "checksum",
+          "properties": {
+            "name": "checksum",
+            "_typeChanged": "String"
+          }
+        }
+      ],
+      "key": "secure",
+      "properties": {
+        "name": "Secure",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "password": true,
+        "dataKey": "secure",
+        "dataPath": "secure"
+      }
+    },
+    {
+      "_id": "60ee7aa2b262410afab0a62a",
+      "type": "String",
+      "key": "stringList",
+      "properties": {
+        "name": "String-List",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "dataKey": "stringList",
+        "dataPath": "stringList"
+      }
+    },
+    {
+      "_id": "60ee7aa2b262414506b0a62b",
+      "type": "Number",
+      "key": "number1",
+      "properties": {
+        "name": "Number-1",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "dataKey": "number1",
+        "dataPath": "number1"
+      }
+    },
+    {
+      "_id": "60ee7aa2b262412f49b0a62c",
+      "type": "Number",
+      "key": "numberList",
+      "properties": {
+        "name": "Number-List",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "dataKey": "numberList",
+        "dataPath": "numberList"
+      }
+    },
+    {
+      "_id": "60ee7aa2b26241514ab0a62d",
+      "type": "Number",
+      "key": "numberCurrency",
+      "properties": {
+        "name": "Number-Currency",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "currency": "INR",
+        "precision": 2,
+        "dataKey": "numberCurrency",
+        "dataPath": "numberCurrency"
+      }
+    },
+    {
+      "_id": "60ee7aa2b262415e53b0a62e",
+      "type": "Date",
+      "key": "date1",
+      "properties": {
+        "name": "Date-1",
+        "fieldLength": 10,
+        "_typeChanged": "Date",
+        "dateType": "date",
+        "defaultTimezone": "Zulu",
+        "supportedTimezones": [],
+        "dataKey": "date1",
+        "dataPath": "date1"
+      }
+    },
+    {
+      "_id": "60ee7aa2b262417a3db0a62f",
+      "type": "Date",
+      "key": "dateTime1",
+      "properties": {
+        "name": "DateTime-1",
+        "fieldLength": 10,
+        "_typeChanged": "Date",
+        "dateType": "datetime-local",
+        "defaultTimezone": "Zulu",
+        "supportedTimezones": [],
+        "dataKey": "dateTime1",
+        "dataPath": "dateTime1"
+      }
+    },
+    {
+      "_id": "60ee7aa2b26241a3a2b0a630",
+      "type": "Object",
+      "key": "gRoup1",
+      "properties": {
+        "name": "GRoup-1",
+        "fieldLength": 10,
+        "_typeChanged": "Object",
+        "dataKey": "gRoup1",
+        "dataPath": "gRoup1"
+      },
+      "definition": [
+        {
+          "type": "Object",
+          "definition": [
+            {
+              "type": "String",
+              "key": "value",
+              "properties": {
+                "name": "value",
+                "_typeChanged": "String"
+              }
+            },
+            {
+              "type": "String",
+              "key": "checksum",
+              "properties": {
+                "name": "checksum",
+                "_typeChanged": "String"
+              }
+            }
+          ],
+          "key": "name",
+          "properties": {
+            "name": "Name",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "password": true,
+            "dataKey": "name",
+            "dataPath": "gRoup1.name"
+          }
+        }
+      ]
+    }
+  ],
+  "headers": [],
+  "role": {
+    "_id": "SRVC4391",
+    "_metadata": {
+      "version": {
+        "document": 1,
+        "release": "dev"
+      },
+      "deleted": false,
+      "lastUpdated": "2021-07-14T05:44:01.271Z",
+      "createdAt": "2021-07-14T05:44:01.268Z"
+    },
+    "app": "vTest",
+    "entity": "SRVC4391",
+    "entityName": "Sample",
+    "roles": [
+      {
+        "skipReviewRole": true,
+        "id": "P7307698849",
+        "name": "Skip Review",
+        "operations": [
+          {
+            "method": "SKIP_REVIEW"
+          },
+          {
+            "method": "POST"
+          },
+          {
+            "method": "PUT"
+          },
+          {
+            "method": "DELETE"
+          }
+        ],
+        "description": "This role entitles an authorized user to create, update or delete a record and without any approval"
+      },
+      {
+        "manageRole": true,
+        "id": "P7868941584",
+        "name": "Manage",
+        "operations": [
+          {
+            "method": "POST"
+          },
+          {
+            "method": "PUT"
+          },
+          {
+            "method": "DELETE"
+          },
+          {
+            "method": "GET"
+          }
+        ],
+        "description": "This role entitles an authorized user to create, update or delete a record"
+      },
+      {
+        "viewRole": true,
+        "id": "P1092584470",
+        "name": "View",
+        "operations": [
+          {
+            "method": "GET"
+          }
+        ],
+        "description": "This role entitles an authorized user to view the record"
+      }
+    ],
+    "type": "appcenter",
+    "fields": {
+      "_id": {
+        "_t": "String",
+        "_p": {
+          "P7307698849": "R",
+          "P7868941584": "R",
+          "P1092584470": "R"
+        }
+      },
+      "string": {
+        "_t": "String",
+        "_p": {
+          "P7307698849": "R",
+          "P7868941584": "R",
+          "P1092584470": "R"
+        }
+      },
+      "long": {
+        "_t": "String",
+        "_p": {
+          "P7307698849": "R",
+          "P7868941584": "R",
+          "P1092584470": "R"
+        }
+      },
+      "rich": {
+        "_t": "String",
+        "_p": {
+          "P7307698849": "R",
+          "P7868941584": "R",
+          "P1092584470": "R"
+        }
+      },
+      "email1": {
+        "_t": "String",
+        "_p": {
+          "P7307698849": "R",
+          "P7868941584": "R",
+          "P1092584470": "R"
+        }
+      },
+      "secure": {
+        "_t": "String",
+        "_p": {
+          "P7307698849": "R",
+          "P7868941584": "R",
+          "P1092584470": "R"
+        }
+      },
+      "stringList": {
+        "_t": "String",
+        "_p": {
+          "P7307698849": "R",
+          "P7868941584": "R",
+          "P1092584470": "R"
+        }
+      },
+      "number1": {
+        "_t": "Number",
+        "_p": {
+          "P7307698849": "R",
+          "P7868941584": "R",
+          "P1092584470": "R"
+        }
+      },
+      "numberList": {
+        "_t": "Number",
+        "_p": {
+          "P7307698849": "R",
+          "P7868941584": "R",
+          "P1092584470": "R"
+        }
+      },
+      "numberCurrency": {
+        "_t": "Number",
+        "_p": {
+          "P7307698849": "R",
+          "P7868941584": "R",
+          "P1092584470": "R"
+        }
+      },
+      "date1": {
+        "_t": "Date",
+        "_p": {
+          "P7307698849": "R",
+          "P7868941584": "R",
+          "P1092584470": "R"
+        }
+      },
+      "dateTime1": {
+        "_t": "Date",
+        "_p": {
+          "P7307698849": "R",
+          "P7868941584": "R",
+          "P1092584470": "R"
+        }
+      },
+      "gRoup1": {
+        "name": {
+          "_t": "String",
+          "_p": {
+            "P7307698849": "R",
+            "P7868941584": "R",
+            "P1092584470": "R"
+          }
+        }
+      }
+    },
+    "__v": 0
+  },
+  "relatedSchemas": {
+    "internal": {
+      "users": []
+    },
+    "outgoing": []
+  }
+}

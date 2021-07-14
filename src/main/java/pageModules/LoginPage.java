@@ -12,6 +12,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -27,8 +28,8 @@ import helperMethods.Screenshots;
 import helperMethods.ScrollTypes;
 import helperMethods.WaitTypes;
 import junit.framework.Assert;
-import pageobjects.Object_AuthorPage;
-import pageobjects.Object_GroupPage;
+import pageObjects.Object_AuthorPage;
+import pageObjects.Object_GroupPage;
 
 public class LoginPage extends BaseClass{
 //	private WebDriver driver;
@@ -59,7 +60,7 @@ public class LoginPage extends BaseClass{
 	
 	public void loginToPage() throws Exception {
 
-		driver.get(DefineConstants.AUTHOR_URL);
+		driver.get(author_URL);
 		Screenshots.takeScreenshot(driver, "User opened author url ");
 		
 	}
@@ -124,7 +125,8 @@ public class LoginPage extends BaseClass{
 			data_Services.add(data);
 		}
 		if(flag==false) {
-			
+		Actions action=new Actions(driver);
+		action.moveToElement(ap.newDataService).perform();
 		applyWait.waitForElementToBeClickable(ap.newDataService, 30).click();
 		applyWait.waitForElementToBeClickable(ap.dataServiceName, 30).sendKeys(dataServiceName);;
 		applyWait.waitForElementToBeClickable(ap.createButton, 30).click();
@@ -134,7 +136,6 @@ public class LoginPage extends BaseClass{
 			jsonArray.size();
 		}
 		catch (Exception e) {
-		      System.err.println("Data Service file not found");
 		    }
 			for (int i = 0; i < jsonArray.size(); i++) {
 				
@@ -154,28 +155,43 @@ public class LoginPage extends BaseClass{
 				applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
 				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
 				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
-				applyWait.waitForElementToBeClickable(ap.text, 30).click();
-				requiredAttributes(jsonProperties);
+							
+						if(	jsonProperties.containsKey("longText")){
+							applyWait.waitForElementToBeClickable(ap.longText, 30).click();
+							}
+						
+						else if(	jsonProperties.containsKey("richText")) {
+							applyWait.waitForElementToBeClickable(ap.richText, 30).click();
+						}
+						
+						else if(	jsonProperties.containsKey("email")) {
+							applyWait.waitForElementToBeClickable(ap.email, 30).click();
+						}
+						
+						else {
+							applyWait.waitForElementToBeClickable(ap.text, 30).click();
+						}
+							requiredAttributes(jsonProperties);
 
 				break;
 				
-			case "Long Text" : 
-				jsonProperties = (JSONObject) attribute.get("properties");
-				applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
-				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
-				applyWait.waitForElementToBeClickable(ap.longText, 30).click();
-				requiredAttributes(jsonProperties);
-				break;
-			
-			case "Rich Text" : 
-				jsonProperties = (JSONObject) attribute.get("properties");
-				applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
-				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
-				applyWait.waitForElementToBeClickable(ap.richText, 30).click();
-				requiredAttributes(jsonProperties);
-				break;
+//			case "Long Text" : 
+//				jsonProperties = (JSONObject) attribute.get("properties");
+//				applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
+//				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+//				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
+//				applyWait.waitForElementToBeClickable(ap.longText, 30).click();
+//				requiredAttributes(jsonProperties);
+//				break;
+//			
+//			case "Rich Text" : 
+//				jsonProperties = (JSONObject) attribute.get("properties");
+//				applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
+//				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+//				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
+//				applyWait.waitForElementToBeClickable(ap.richText, 30).click();
+//				requiredAttributes(jsonProperties);
+//				break;
 				
 			case "Secure Text" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
@@ -185,15 +201,15 @@ public class LoginPage extends BaseClass{
 				applyWait.waitForElementToBeClickable(ap.secureText, 30).click();
 				requiredAttributes(jsonProperties);
 				break;
-				
-			case "Email" : 
-				jsonProperties = (JSONObject) attribute.get("properties");
-				applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
-				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
-				applyWait.waitForElementToBeClickable(ap.email, 30).click();
-				requiredAttributes(jsonProperties);
-				break;
+//				
+//			case "Email" : 
+//				jsonProperties = (JSONObject) attribute.get("properties");
+//				applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
+//				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+//				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
+//				applyWait.waitForElementToBeClickable(ap.email, 30).click();
+//				requiredAttributes(jsonProperties);
+//				break;
 				
 			case "List of values" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
@@ -346,11 +362,14 @@ public class LoginPage extends BaseClass{
 
 
 	private void function_ExperienceTab() {
+		String path=System.getProperty("user.dir");
+		String dataName=path+"\\testData"+ "\\" + ""+dataServiceName+".json";
+		JSONArray array =JsonUtils.getArrayValues(dataName, "wizard");
+		if(array.size()>0) {
 		applyWait.waitForElementToBeClickable(ap.experienceTab, 30).click();
 		applyWait.waitForElementToBeClickable(ap.customize, 30).click();
-		String path=System.getProperty("user.dir");
-		String dataName="C:\\Users\\DELL\\eclipse-workspace\\DataStack\\testData"+ "\\" + ""+dataServiceName+".json";
-		JSONArray array =JsonUtils.getArrayValues(dataName, "wizard");
+		
+		
 		for(int i=0;i<array.size();i++) {
 			JSONObject object=(JSONObject) array.get(i);
 			JSONArray fields=(JSONArray) object.get("fields");
@@ -383,19 +402,25 @@ public class LoginPage extends BaseClass{
 			
 			}
 		}
+		}
 		
 	}
 
 
 
 	private void function_RolesTab() throws Exception {
-		String dataName="C:\\Users\\DELL\\eclipse-workspace\\DataStack\\testData" + "\\" + ""+dataServiceName+".json";
-		applyWait.waitForElementToBeClickable(ap.roles, 30).click();
-		applyWait.waitForElementToBeClickable(ap.addNew, 30).click();
+		String path=System.getProperty("user.dir");
+		String dataName=path+"\\testData" + "\\" + ""+dataServiceName+".json";
 		JSONObject role=(JSONObject) JsonUtils.getData1(dataName).get("role");
 		JSONArray roles=(JSONArray) role.get("roles");
+	if(roles.size()>3) {
+		applyWait.waitForElementToBeClickable(ap.roles, 30).click();
+		applyWait.waitForElementToBeClickable(ap.addNew, 30).click();
+	}
+		
 		for (int i = 0; i < roles.size(); i++) {
 			if(i>2) {
+				
 			JSONObject jsonObject= (JSONObject) roles.get(i);
 			String roleName=(String) jsonObject.get("name");
 			applyWait.waitForElementToBeClickable(ap.roleNameTextBox, 30).sendKeys(roleName);;
@@ -824,6 +849,15 @@ public class LoginPage extends BaseClass{
 									applyWait.waitForElementToBeClickable(ap.required, 30).click();
 								}
 								}
+							
+							if(jsonProperties.containsKey("readonly")) {
+								if(jsonProperties.get("readonly").toString().equals("true")) {
+									Actions action=new Actions(driver);
+									action.moveToElement(ap.readOnly).perform();;
+									applyWait.waitForElementToBeClickable(ap.readOnly, 30).click();
+								}
+								}
+							
 								
 								if(jsonProperties.containsKey("createOnly")) {
 								if(jsonProperties.get("createOnly").toString().equals("true")) {

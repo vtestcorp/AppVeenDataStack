@@ -8,15 +8,15 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|vtest@appveen.com|123123123|
+|deepak@appveen.com|123123123|
 
 Scenario: Delete data service
-	Given Data service "users" exists
+	Given Data service "Sample-String" exists
 	Then Remove the data service
 
 Scenario: Create data service
-	Given Data service "users" does not exist
-	Then Create new data service "users"
+	Given Data service "Sample-String" does not exist
+	Then Create new data service "Sample-String"
 
 Scenario Outline: Delete group
 	Given Group sampleGroup "<group>" exists
@@ -39,6 +39,8 @@ Scenario Outline: Add group
 		| ReviewGroup | users | Reviewer |
 		| CreateGroup|users|Maker|
 
+
+
 Scenario Outline: Assign permissions
 	Given Data service "<dataservice>"  exists
 	And Group "<group>" exists
@@ -50,6 +52,8 @@ Scenario Outline: Assign permissions
 		| ReadOnlyGroup | users | test_readonly@appveen.com |
 		| ReviewGroup | users | reviewer@appveen.com |
 		| CreateGroup|users|maker@appveen.com|
+
+
 
 Scenario: Log out of Author
 	Given User logged into Author
@@ -63,11 +67,19 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|vtest@appveen.com|123123123|
+|maker@appveen.com|123123123|
+
 
 Scenario: Add data to data service
 	Given Data service "users"
 	Then Add data to the data service
+	
+	
+Scenario: Add data to data service
+	Given Data service "users"
+	Then Add data to the data service
+	And Expect error “ID STR1001 already exists” on save
+	
 
 Scenario: Data listing of data service
 	Given Data service "users"

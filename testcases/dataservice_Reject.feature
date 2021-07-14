@@ -81,4 +81,4 @@ Scenario: Reject the data created
 	Then Reject the Record created in previous step
 #	And Verify data is available in the workflow listing page under New Records with status Approved
 #	And Verify data is available in the listing page
-	Then User logs out of AppCenter
+#	Then User logs out of AppCenter

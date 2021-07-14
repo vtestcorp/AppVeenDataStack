@@ -1,0 +1,637 @@
+{
+  "workflowHooks": {
+    "postHooks": {
+      "submit": [],
+      "rework": [],
+      "discard": [],
+      "approve": [],
+      "reject": []
+    }
+  },
+  "_metadata": {
+    "version": {
+      "document": 6,
+      "release": "dev"
+    },
+    "deleted": false,
+    "lastUpdated": "2021-06-29T08:38:07.783Z",
+    "createdAt": "2021-06-29T08:14:21.494Z",
+    "lastUpdatedBy": "deepak@appveen.com"
+  },
+  "version": 2,
+  "instances": 1,
+  "versionValidity": {
+    "validityType": "count",
+    "validityValue": -1
+  },
+  "permanentDeleteData": true,
+  "disableInsights": false,
+  "status": "Active",
+  "enableSearchIndex": false,
+  "attributeCount": 23,
+  "type": null,
+  "_id": "SRVC3758",
+  "name": "String-text1",
+  "description": null,
+  "app": "vTest",
+  "api": "/stringText1",
+  "port": 20153,
+  "wizard": [],
+  "webHooks": [],
+  "preHooks": [],
+  "collectionName": "stringText1",
+  "__v": 1,
+  "definition": [
+    {
+      "_id": "60dadbefc8e5a457066d6b6d",
+      "key": "_id",
+      "type": "String",
+      "prefix": "STR",
+      "suffix": null,
+      "padding": null,
+      "counter": 1001,
+      "properties": {
+        "label": null,
+        "readonly": false,
+        "errorMessage": null,
+        "name": "ID",
+        "required": false,
+        "fieldLength": 10,
+        "_description": null,
+        "_typeChanged": "id",
+        "_isParrentArray": null,
+        "_isGrpParentArray": null,
+        "dataPath": "_id",
+        "_detailedType": "",
+        "dataKey": "_id"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a45d956d6b6e",
+      "type": "String",
+      "key": "dsStringText1001",
+      "properties": {
+        "name": "DS STRING TEXT 1001",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "dataKey": "dsStringText1001",
+        "dataPath": "dsStringText1001"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a4b7b26d6b6f",
+      "type": "String",
+      "key": "dsStringText1002",
+      "properties": {
+        "label": "DS STRING TEXT 1002 Label",
+        "errorMessage": "DS STRING TEXT 1002 Error",
+        "name": "DS STRING TEXT 1002",
+        "required": true,
+        "fieldLength": 10,
+        "_description": "DS STRING TEXT 1002",
+        "_typeChanged": "String",
+        "createOnly": true,
+        "unique": true,
+        "minlength": "1",
+        "maxlength": "25",
+        "pattern": "[a-z]",
+        "dataKey": "dsStringText1002",
+        "dataPath": "dsStringText1002"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a4754f6d6b70",
+      "type": "String",
+      "key": "dsStringText1003",
+      "properties": {
+        "name": "DS STRING TEXT 1003",
+        "required": true,
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "dataKey": "dsStringText1003",
+        "dataPath": "dsStringText1003"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a437216d6b71",
+      "type": "String",
+      "key": "dsStringText1004",
+      "properties": {
+        "name": "DS STRING TEXT 1004",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "createOnly": true,
+        "dataKey": "dsStringText1004",
+        "dataPath": "dsStringText1004"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a419a66d6b72",
+      "type": "String",
+      "key": "dsStringText1005",
+      "properties": {
+        "name": "DS STRING TEXT 1005",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "unique": true,
+        "dataKey": "dsStringText1005",
+        "dataPath": "dsStringText1005"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a49e836d6b73",
+      "type": "String",
+      "key": "dsStringText1006",
+      "properties": {
+        "readonly": true,
+        "name": "DS STRING TEXT 1006",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "dataKey": "dsStringText1006",
+        "dataPath": "dsStringText1006"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a43eb36d6b74",
+      "type": "String",
+      "key": "dsStringText1007",
+      "properties": {
+        "name": "DS STRING TEXT 1007",
+        "required": true,
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "createOnly": true,
+        "dataKey": "dsStringText1007",
+        "dataPath": "dsStringText1007"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a442e96d6b75",
+      "type": "String",
+      "key": "dsStringText1008",
+      "properties": {
+        "name": "DS STRING TEXT 1008",
+        "required": true,
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "unique": true,
+        "dataKey": "dsStringText1008",
+        "dataPath": "dsStringText1008"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a498856d6b76",
+      "type": "String",
+      "key": "dsStringText1010",
+      "properties": {
+        "name": "DS STRING TEXT 1010",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "createOnly": true,
+        "unique": true,
+        "dataKey": "dsStringText1010",
+        "dataPath": "dsStringText1010"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a49a666d6b77",
+      "type": "String",
+      "key": "dsStringText1011",
+      "properties": {
+        "readonly": true,
+        "name": "DS STRING TEXT 1011",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "createOnly": true,
+        "dataKey": "dsStringText1011",
+        "dataPath": "dsStringText1011"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a4bab76d6b78",
+      "type": "String",
+      "key": "dsStringText1012",
+      "properties": {
+        "readonly": true,
+        "name": "DS STRING TEXT 1012",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "unique": true,
+        "dataKey": "dsStringText1012",
+        "dataPath": "dsStringText1012"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a4ed156d6b79",
+      "type": "String",
+      "key": "dsStringText1013",
+      "properties": {
+        "label": "DS STRING TEXT 1013 Label",
+        "name": "DS STRING TEXT 1013",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "dataKey": "dsStringText1013",
+        "dataPath": "dsStringText1013"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a41e366d6b7a",
+      "type": "String",
+      "key": "dsStringText1014",
+      "properties": {
+        "errorMessage": "DS STRING TEXT 1014 Error",
+        "name": "DS STRING TEXT 1014",
+        "required": true,
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "dataKey": "dsStringText1014",
+        "dataPath": "dsStringText1014"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a4a9de6d6b7b",
+      "type": "String",
+      "key": "dsStringText1015",
+      "properties": {
+        "label": "DS STRING TEXT 1015 Label",
+        "errorMessage": "DS STRING TEXT 1015 Error",
+        "name": "DS STRING TEXT 1015",
+        "required": true,
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "dataKey": "dsStringText1015",
+        "dataPath": "dsStringText1015"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a403176d6b7c",
+      "type": "String",
+      "key": "dsStringText1016",
+      "properties": {
+        "label": "DS STRING TEXT 1016 Label",
+        "readonly": true,
+        "name": "DS STRING TEXT 1016",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "dataKey": "dsStringText1016",
+        "dataPath": "dsStringText1016"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a4c3516d6b7d",
+      "type": "String",
+      "key": "dsStringText1018",
+      "properties": {
+        "name": "DS STRING TEXT 1018",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "default": "Default value",
+        "dataKey": "dsStringText1018",
+        "dataPath": "dsStringText1018"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a4f1ce6d6b7e",
+      "type": "String",
+      "key": "dsStringText1019",
+      "properties": {
+        "readonly": true,
+        "name": "DS STRING TEXT 1019",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "default": "Default Value",
+        "dataKey": "dsStringText1019",
+        "dataPath": "dsStringText1019"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a43b986d6b7f",
+      "type": "String",
+      "key": "dsStringText1020",
+      "properties": {
+        "name": "DS STRING TEXT 1020",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "pattern": "[A-Z]",
+        "dataKey": "dsStringText1020",
+        "dataPath": "dsStringText1020"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a4e58c6d6b80",
+      "type": "String",
+      "key": "dsStringText1021",
+      "properties": {
+        "name": "DS STRING TEXT 1021",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "minlength": "1",
+        "dataKey": "dsStringText1021",
+        "dataPath": "dsStringText1021"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a48f9e6d6b81",
+      "type": "String",
+      "key": "dsStringText1022",
+      "properties": {
+        "name": "DS STRING TEXT 1022",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "maxlength": "25",
+        "dataKey": "dsStringText1022",
+        "dataPath": "dsStringText1022"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a45a5b6d6b82",
+      "type": "String",
+      "key": "dsStringText1023",
+      "properties": {
+        "name": "DS STRING TEXT 1023",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "minlength": "1",
+        "maxlength": "25",
+        "dataKey": "dsStringText1023",
+        "dataPath": "dsStringText1023"
+      }
+    },
+    {
+      "_id": "60dadbefc8e5a4060d6d6b83",
+      "type": "String",
+      "key": "dsStringText1024",
+      "properties": {
+        "name": "DS STRING TEXT 1024",
+        "fieldLength": 10,
+        "_description": "DS STRING TEXT 1024",
+        "_typeChanged": "String",
+        "dataKey": "dsStringText1024",
+        "dataPath": "dsStringText1024"
+      }
+    }
+  ],
+  "headers": [],
+  "relatedSchemas": {
+    "internal": {
+      "users": []
+    },
+    "outgoing": []
+  },
+  "role": {
+    "_id": "SRVC3758",
+    "_metadata": {
+      "version": {
+        "document": 1,
+        "release": "dev"
+      },
+      "deleted": false,
+      "lastUpdated": "2021-06-29T08:14:21.512Z",
+      "createdAt": "2021-06-29T08:14:21.511Z"
+    },
+    "app": "vTest",
+    "entity": "SRVC3758",
+    "entityName": "String-text1",
+    "roles": [
+      {
+        "skipReviewRole": true,
+        "id": "P6963402282",
+        "name": "Skip Review",
+        "operations": [
+          {
+            "method": "SKIP_REVIEW"
+          },
+          {
+            "method": "POST"
+          },
+          {
+            "method": "PUT"
+          },
+          {
+            "method": "DELETE"
+          }
+        ],
+        "description": "This role entitles an authorized user to create, update or delete a record and without any approval"
+      },
+      {
+        "manageRole": true,
+        "id": "P6032050911",
+        "name": "Manage",
+        "operations": [
+          {
+            "method": "POST"
+          },
+          {
+            "method": "PUT"
+          },
+          {
+            "method": "DELETE"
+          },
+          {
+            "method": "GET"
+          }
+        ],
+        "description": "This role entitles an authorized user to create, update or delete a record"
+      },
+      {
+        "viewRole": true,
+        "id": "P9417034031",
+        "name": "View",
+        "operations": [
+          {
+            "method": "GET"
+          }
+        ],
+        "description": "This role entitles an authorized user to view the record"
+      }
+    ],
+    "type": "appcenter",
+    "fields": {
+      "_id": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1001": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1002": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1003": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1004": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1005": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1006": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1007": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1008": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1010": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1011": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1012": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1013": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1014": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1015": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1016": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1018": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1019": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1020": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1021": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1022": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1023": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      },
+      "dsStringText1024": {
+        "_t": "String",
+        "_p": {
+          "P6963402282": "R",
+          "P6032050911": "R",
+          "P9417034031": "R"
+        }
+      }
+    },
+    "__v": 0
+  }
+}

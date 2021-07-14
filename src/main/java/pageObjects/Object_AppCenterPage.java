@@ -1,4 +1,4 @@
-package pageobjects;
+package pageObjects;
 
 import java.util.List;
 
@@ -37,7 +37,7 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="(//div[starts-with(@class,'logo')])[1]")
 	public WebElement dataStackLogo;
 
-	@FindBy(xpath="//input[contains(@class,'form-control')]")
+	@FindBy(xpath="//input[contains(@class,'form')]")
 	public List<WebElement> textBoxes;
 
 	@FindBy(xpath="//span[normalize-space()='Save & create another']")
@@ -168,6 +168,56 @@ public class Object_AppCenterPage extends BaseClass{
 	
 	@FindBy(xpath="//button[normalize-space()='Review']")
 	public WebElement review;
+	
+	@FindBy(xpath="//button[@id='saveBtn']")
+	public WebElement saveButton;
+	
+//	@FindBy(xpath="//span[normalize-space()='ID']/ancestor::div[@class='ag-header-row']/following-sibling::div//input[contains(@class,'border rounded bg-white w-100 ng-pristine')]")
+//	public WebElement idTab;
+	@FindBy(xpath="//span[normalize-space()='ID']/ancestor::div[@class='ag-header-row']/following-sibling::div//input[contains(@class,'border rounded bg-white w-100 ng')]")
+	public WebElement idTab;
+	
+	@FindBy(xpath="//span[text()='No records to display']")
+	public WebElement noRecordDisplay;
+	
+	@FindBy(xpath="//label[starts-with(@class,'label-width d-flex')]")
+	public List<WebElement> attributesOnViewPage;
+	
+	@FindBy(xpath = "//button[@class='btn btn-link px-3 ng-star-inserted']/parent::div")
+	public WebElement deleteButton;
+	
+	@FindBy(xpath = "//a[@class='ng-star-inserted']")
+	public WebElement searchID;
+	
+	@FindBy(xpath = "//span[text()='Delete']")
+	public WebElement deleteBtn;
+	
+	@FindBy(xpath = "//button[text()='Yes']")
+	public WebElement deleteRecord;
+	
+	
+	@FindBy(xpath = "(//input[@class='border rounded bg-white w-100 ng-untouched ng-pristine ng-valid ng-star-inserted'])[2]")
+	public WebElement dsSTRINGTEXT1001;
+	
+	
+	@FindBy(xpath = "(//input[@class='border rounded bg-white w-100 ng-untouched ng-pristine ng-valid ng-star-inserted'])[3]")
+	public WebElement dsSTRINGTEXT1002;
+	
+	@FindBy(xpath = "//div[starts-with(@class,'ag-row')]/div[@col-id='_checkbox']")
+	public WebElement click_On_Checkbox;
+	
+	@FindBy(xpath = "//button[@id='deleteRecordBtn']")
+	public WebElement click_On_Delete;
+	
+	@FindBy(xpath = "//button[text()='Yes']")
+	public WebElement delete_Record;
+
+	@FindBy(xpath = "//a[@class='ng-star-inserted']")
+	public WebElement str1001;
+	
+	@FindBy(xpath = "//span[text()='Delete']")
+	public WebElement delete_ViewRecord;
+	
 	
 	
 

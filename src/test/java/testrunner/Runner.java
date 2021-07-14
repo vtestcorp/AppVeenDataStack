@@ -7,8 +7,8 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="./testcases/dataService_Rework.feature",
-		//		dryRun=true,
+@CucumberOptions(features="./testcases/strings.feature",
+//				dryRun=true,
 		//		tags="@AppCenter",
 				glue="stepdefinitions",
 				monochrome=true,
@@ -28,7 +28,6 @@ public class Runner {
 	        Stream<String> cucumberOptions = Stream.concat(Stream.of(defaultOptions), Stream.of(args));
 	        cucumber.api.cli.Main.main(cucumberOptions.toArray(String[]::new));
 	    }
-
-
+	    
 }
  

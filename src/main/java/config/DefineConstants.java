@@ -5,11 +5,14 @@ public class DefineConstants {
 	public static final String Path_TestData = "";
 
 	// Application URL
-	public static final String AUTHOR_URL = "https://staging.appveen.com/author";
-	public static final String APP_CENTER_URL = "https://staging.appveen.com/appcenter";
+//	public static final String staging_AUTHOR_URL = "https://staging.appveen.com/author";
+//	public static final String staging_APP_CENTER_URL = "https://staging.appveen.com/appcenter";
+//	
+//	public static final String bifrost_AUTHOR_URL = "https://bifrost.ds.appveen.com/author/#/auth";
+//	public static final String bifrost_APP_CENTER_URL = "https://bifrost.ds.appveen.com/appcenter/#/auth";
 	
-	public static final String User_Email_Id="deepak_vtest@appveen.com";
-	
+//	public static final String User_Email_Id="vtest@appveen.com";
+	public static final String User_Email_Id="deepak@appveen.com";
 	public static final String User_Password="123123123";
 
 //	 http://p5beta.plumb5.com/p5-newdesign/manage-campaigns.html

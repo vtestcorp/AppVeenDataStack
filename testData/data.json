@@ -71,7 +71,18 @@
     }
   },
   
-  
+  {
+      "_id": "60ed6ff9d1a198ed89f9bf4d",
+      "type": "String",
+      "key": "rich",
+      "properties": {
+        "name": "Rich",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "longText": true,
+        "dataKey": "rich",
+        "dataPath": "rich"
+      }
   
    {
     "type" : "Rich Text",
