@@ -21,8 +21,8 @@ Scenario: Create data service
  #Under testData, picks up strings.json create the JSON
 
 Scenario Outline: Assign to Appcenter Group
- 	Then Group "Number-Group" does not exist
-	Then Create new group "Number-Group" 
+ 	Then Group "Number-Group1" does not exist
+	Then Create new group "Number-Group1" 
 	And Assign appcenter permissions for "string_ListOfValue" dataservice to "<user>"
 	
 	Examples:

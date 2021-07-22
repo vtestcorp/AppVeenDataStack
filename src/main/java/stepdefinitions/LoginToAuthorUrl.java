@@ -158,7 +158,8 @@ public class LoginToAuthorUrl extends BaseClass {
 
 	@Then("User logs out of Author")
 	public void user_logs_out_of_Author() throws Exception {
-	   loginPage.logsOutOfAuthor();
+		Thread.sleep(120000);	 
+		loginPage.logsOutOfAuthor();
 	}
 	
 	@And("Create Data Service {string}")
