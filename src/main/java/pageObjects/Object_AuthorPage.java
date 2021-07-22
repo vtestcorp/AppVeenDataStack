@@ -168,9 +168,16 @@ public class Object_AuthorPage extends BaseClass{
 
 	@FindBy(xpath="//div[contains(text(),'Tokens')]/following-sibling::div/input")
 	public WebElement tokens;
+	
+	@FindBy(xpath = "//button[starts-with(@class,'list-add-button')]")
+	public WebElement plusIcon;
 
 	@FindBy(xpath="//div[contains(text(),'Values')]/following-sibling::div/input")
 	public WebElement values;
+	
+	@FindBy(xpath="//select[@formcontrolname='default']")
+	public WebElement defaultDropDown;
+	
 
 	@FindBy(xpath="//label[normalize-space()='Currency']")
 	public WebElement currency;

@@ -116,7 +116,7 @@ public class JsonUtils extends BaseClass{
 		return a;
 	}
 
-	public static JSONObject getData1(String filePath) {
+	public static JSONObject getJSONObject(String filePath) {
 		try {
 			reader = new FileReader(filePath);
 			jsonParser = new JSONParser();

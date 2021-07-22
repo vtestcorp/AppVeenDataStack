@@ -71,9 +71,9 @@ public class DesignTestCases extends BaseClass{
 	 design.createGroup(groupName);
 	}
 
-	@Then("assign appcenter permissions for {string} dataservice")
-	public void assign_appcenter_permissions_for_strings_text_dataservice(String dataServiceName) throws Exception {
-	    design.assignPermission(dataServiceName);
+	@Then("Assign appcenter permissions for {string} dataservice to {string}")
+	public void assign_appcenter_permissions_for_strings_text_dataservice(String dataServiceName,String user) throws Exception {
+	    design.assignPermission(dataServiceName,user);
 	}
 	
 	@Then("Add record {string} to the data service")
@@ -130,6 +130,11 @@ public class DesignTestCases extends BaseClass{
 	@Then("Fetch record {string} from the data service")
 	public void fetch_record_from_the_data_service(String id) throws Exception {
 	    design.fetchRecord(id);
+	}
+	
+	@Then("Match this Currency data to \"(.*?)\"")
+	public void match_this_Currency_data(String jsonFile) throws Exception {
+	 design.matchDataCurrency(jsonFile);
 	}
 	
 	@And("Record must not exist")

@@ -94,7 +94,7 @@
         "unique": true,
         "minlength": "1",
         "maxlength": "25",
-        "pattern": "[a-z]",
+        "pattern": "[a-z]+",
         "dataKey": "dsStringText1002",
         "dataPath": "dsStringText1002"
       }
@@ -312,7 +312,7 @@
         "name": "DS STRING TEXT 1020",
         "fieldLength": 10,
         "_typeChanged": "String",
-        "pattern": "[A-Z]",
+        "pattern": "[A-Z]+",
         "dataKey": "dsStringText1020",
         "dataPath": "dsStringText1020"
       }

@@ -1,0 +1,645 @@
+{
+  "workflowHooks": {
+    "postHooks": {
+      "submit": [],
+      "rework": [],
+      "discard": [],
+      "approve": [],
+      "reject": []
+    }
+  },
+  "_metadata": {
+    "version": {
+      "document": 5,
+      "release": "dev"
+    },
+    "deleted": false,
+    "lastUpdated": "2021-07-18T15:47:59.922Z",
+    "createdAt": "2021-07-18T15:36:04.543Z",
+    "lastUpdatedBy": "deepak@appveen.com"
+  },
+  "_id": "SRVC4606",
+  "allowedFileTypes": [
+    "jpeg",
+    "ppt",
+    "xls",
+    "csv",
+    "doc",
+    "jpg",
+    "png",
+    "gif",
+    "zip",
+    "tar",
+    "rar",
+    "gz",
+    "bz2",
+    "7z",
+    "mp4",
+    "mp3",
+    "pdf",
+    "ico",
+    "docx",
+    "pptx",
+    "xlsx",
+    "ods",
+    "xml",
+    "txt"
+  ],
+  "version": 2,
+  "instances": 1,
+  "versionValidity": {
+    "validityType": "count",
+    "validityValue": -1
+  },
+  "permanentDeleteData": true,
+  "disableInsights": false,
+  "status": "Active",
+  "enableSearchIndex": false,
+  "attributeCount": 19,
+  "type": null,
+  "name": "number_Currency",
+  "description": null,
+  "app": "vTest",
+  "api": "/numberCurrency",
+  "port": 20125,
+  "wizard": [],
+  "webHooks": [],
+  "preHooks": [],
+  "collectionName": "numberCurrency",
+  "__v": 0,
+  "definition": [
+    {
+      "_id": "60f44d2f52fb6db819b5b634",
+      "key": "_id",
+      "type": "String",
+      "prefix": "NUM",
+      "suffix": null,
+      "padding": null,
+      "counter": 1001,
+      "properties": {
+        "label": null,
+        "readonly": false,
+        "errorMessage": null,
+        "name": "ID",
+        "required": false,
+        "fieldLength": 10,
+        "_description": null,
+        "_typeChanged": "id",
+        "_isParrentArray": null,
+        "_isGrpParentArray": null,
+        "dataPath": "_id",
+        "_detailedType": "",
+        "dataKey": "_id"
+      }
+    },
+    {
+      "_id": "60f44d2f52fb6d4654b5b635",
+      "type": "Number",
+      "key": "dsNumberListOfValue1001",
+      "properties": {
+        "name": "DS NUMBER LIST OF VALUES 1001",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "enum": [
+          123,
+          4569
+        ],
+        "dataKey": "dsNumberListOfValue1001",
+        "dataPath": "dsNumberListOfValue1001"
+      }
+    },
+    {
+      "_id": "60f44d2f52fb6d0b6eb5b636",
+      "type": "Number",
+      "key": "dsNumberCurrency1002",
+      "properties": {
+        "name": "DS NUMBER LIST OF VALUES 1002",
+        "label": "DS NUMBER LIST OF VALUES 1002 LABEL",
+        "errorMessage": "DS NUMBER LIST OF VALUES 1002 ERROR",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+         "enum": [
+          123,
+          4569
+        ],
+        "dataKey": "dsNumberCurrency1002",
+        "dataPath": "dsNumberCurrency1002"
+      }
+    },
+    {
+      "_id": "60f44d2f52fb6d725ab5b637",
+      "type": "Number",
+      "key": "dsNumberCurrency1003",
+      "properties": {
+        "name": "DS NUMBER LIST OF VALUES 1003",
+        "required": true,
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+         "enum": [
+          123,
+          4569
+        ],
+        "dataKey": "dsNumberCurrency1003",
+        "dataPath": "dsNumberCurrency1003"
+      }
+    },
+    {
+      "_id": "60f44d2f52fb6de2d4b5b638",
+      "type": "Number",
+      "key": "dsNumberCurrency1004",
+      "properties": {
+        "name": "DS NUMBER LIST OF VALUES 1004",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "createOnly": true,
+        "precision": 2,
+         "enum": [
+          123,
+          4569
+        ],
+        "dataKey": "dsNumberCurrency1004",
+        "dataPath": "dsNumberCurrency1004"
+      }
+    },
+    {
+      "_id": "60f44d2f52fb6d247eb5b639",
+      "type": "Number",
+      "key": "dsNumberCurrency1005",
+      "properties": {
+        "name": "DS NUMBER LIST OF VALUES 1005",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "unique": true,
+        "precision": 2,
+         "enum": [
+          123
+        ],
+        "dataKey": "dsNumberCurrency1005",
+        "dataPath": "dsNumberCurrency1005"
+      }
+    },
+    {
+      "_id": "60f44d2f52fb6db26db5b63a",
+      "type": "Number",
+      "key": "dsNumberCurrency1006",
+      "properties": {
+        "name": "DS NUMBER LIST OF VALUES 1006",
+        "readonly": true,
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "enum": [
+          1234
+        ],
+        "dataKey": "dsNumberCurrency1006",
+        "dataPath": "dsNumberCurrency1006"
+      }
+    },
+    {
+      "_id": "60f44d2f52fb6d78a1b5b63b",
+      "type": "Number",
+      "key": "dsNumberCurrency1007",
+      "properties": {
+        "name": "DS NUMBER LIST OF VALUES 1007",
+        "required": true,
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "createOnly": true,
+        "precision": 2,
+        "enum": [
+          123
+        ],
+        "dataKey": "dsNumberCurrency1007",
+        "dataPath": "dsNumberCurrency1007"
+      }
+    },
+    {
+      "_id": "60f44d2f52fb6d13d5b5b63c",
+      "type": "Number",
+      "key": "dsNumberCurrency1008",
+      "properties": {
+        "name": "DS NUMBER LIST OF VALUES 1008",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "enum": [
+          123
+        ],
+        "dataKey": "dsNumberCurrency1008",
+        "dataPath": "dsNumberCurrency1008"
+      }
+    },
+    {
+      "_id": "60f44d2f52fb6d0c1bb5b63d",
+      "type": "Number",
+      "key": "dsNumberCurrency1010",
+      "properties": {
+        "name": "DS NUMBER LIST OF VALUES 1010",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "createOnly": true,
+        "unique": true,
+        "precision": 2,
+        "enum": [
+          123
+        ],
+        "dataKey": "dsNumberCurrency1010",
+        "dataPath": "dsNumberCurrency1010"
+      }
+    },
+    {
+      "_id": "60f44d2f52fb6db495b5b63e",
+      "type": "Number",
+      "key": "dsNumberCurrency1011",
+      "properties": {
+        "name": "DS NUMBER LIST OF VALUES 1011",
+        "readonly": true,
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "createOnly": true,
+        "precision": 2,
+        "enum": [
+          123
+        ],
+        "dataKey": "dsNumberCurrency1011",
+        "dataPath": "dsNumberCurrency1011"
+      }
+    },
+    {
+      "_id": "60f44d2f52fb6d819ab5b63f",
+      "type": "Number",
+      "key": "dsNumberCurrency1012",
+      "properties": {
+        "readonly": true,
+        "name": "DS NUMBER LIST OF VALUES 1012",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "unique": true,
+        "enum": [
+          123
+        ],
+        "precision": 2,
+        "dataKey": "dsNumberCurrency1012",
+        "dataPath": "dsNumberCurrency1012"
+      }
+    },
+    {
+      "_id": "60f44d2f52fb6d1dc6b5b640",
+      "type": "Number",
+      "key": "dsNumberCurrency1013",
+      "properties": {
+        "label": "DS NUMBER LIST OF VALUES 1013 LABEL",
+        "name": "DS NUMBER LIST OF VALUES 1013",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "enum": [
+          123
+        ],
+        "dataKey": "dsNumberCurrency1013",
+        "dataPath": "dsNumberCurrency1013"
+      }
+    },
+    {
+      "_id": "60f44d2f52fb6d6b9cb5b641",
+      "type": "Number",
+      "key": "dsNumberCurrency1014",
+      "properties": {
+        "errorMessage": "DS NUMBER LIST OF VALUES 1014 ERROR",
+        "name": "DS NUMBER LIST OF VALUES 1014",
+        "required": true,
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "enum": [
+          123
+        ],
+        "dataKey": "dsNumberCurrency1014",
+        "dataPath": "dsNumberCurrency1014"
+      }
+    },
+    {
+      "_id": "60f44d2f52fb6dd2b1b5b642",
+      "type": "Number",
+      "key": "dsNumberCurrency1015",
+      "properties": {
+        "label": "DS NUMBER LIST OF VALUES 1015 LABEL",
+        "errorMessage": "DS NUMBER LIST OF VALUES 1015 ERROR",
+        "name": "DS NUMBER LIST OF VALUES 1015",
+        "required": true,
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "enum": [
+          123
+        ],
+        "dataKey": "dsNumberCurrency1015",
+        "dataPath": "dsNumberCurrency1015"
+      }
+    },
+    {
+      "_id": "60f44d2f52fb6d3762b5b643",
+      "type": "Number",
+      "key": "dsNumberCurrency1016",
+      "properties": {
+        "label": "DS NUMBER LIST OF VALUES 1016  LABEL",
+        "readonly": true,
+        "name": "DS NUMBER LIST OF VALUES 1016",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "enum": [
+          123
+        ],
+        "dataKey": "dsNumberCurrency1016",
+        "dataPath": "dsNumberCurrency1016"
+      }
+    },
+    {
+      "_id": "60f44d2f52fb6d695ab5b644",
+      "type": "Number",
+      "key": "dsNumberCurrency1018",
+      "properties": {
+        "name": "DS NUMBER LIST OF VALUES 1018",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "default": 456,
+        "precision": 2,
+        "enum": [
+          456
+        ],
+        "dataKey": "dsNumberCurrency1018",
+        "dataPath": "dsNumberCurrency1018"
+      }
+    },
+    {
+      "_id": "60f44d2f52fb6d2764b5b645",
+      "type": "Number",
+      "key": "dsNumberCurrency1019",
+      "properties": {
+        "readonly": true,
+        "name": "DS NUMBER LIST OF VALUES 1019",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "default": 3652,
+        "precision": 2,
+        "enum": [
+          3652
+        ],
+        "dataKey": "dsNumberCurrency1019",
+        "dataPath": "dsNumberCurrency1019"
+      }
+    },
+    {
+      "_id": "60f44d2f52fb6d82b2b5b646",
+      "type": "Number",
+      "key": "dsNumberCurrency1020",
+      "properties": {
+        "name": "DS NUMBER LIST OF VALUES 1020",
+        "fieldLength": 10,
+        "_description": "DS NUMBER LIST OF VALUES 1020 DESCRIPTION",
+        "_typeChanged": "Number",
+        "precision": 2,
+        "enum": [
+          123
+        ],
+        "dataKey": "dsNumberCurrency1020",
+        "dataPath": "dsNumberCurrency1020"
+      }
+    }
+  ],
+  "headers": [],
+  "relatedSchemas": {
+    "internal": {
+      "users": []
+    },
+    "outgoing": []
+  },
+  "role": {
+    "_id": "SRVC4606",
+    "_metadata": {
+      "version": {
+        "document": 1,
+        "release": "dev"
+      },
+      "deleted": false,
+      "lastUpdated": "2021-07-18T15:36:04.561Z",
+      "createdAt": "2021-07-18T15:36:04.559Z"
+    },
+    "app": "vTest",
+    "entity": "SRVC4606",
+    "entityName": "number_Currency",
+    "roles": [
+      {
+        "skipReviewRole": true,
+        "id": "P5751204682",
+        "name": "Skip Review",
+        "operations": [
+          {
+            "method": "SKIP_REVIEW"
+          },
+          {
+            "method": "POST"
+          },
+          {
+            "method": "PUT"
+          },
+          {
+            "method": "DELETE"
+          }
+        ],
+        "description": "This role entitles an authorized user to create, update or delete a record and without any approval"
+      },
+      {
+        "manageRole": true,
+        "id": "P5144528979",
+        "name": "Manage",
+        "operations": [
+          {
+            "method": "POST"
+          },
+          {
+            "method": "PUT"
+          },
+          {
+            "method": "DELETE"
+          },
+          {
+            "method": "GET"
+          }
+        ],
+        "description": "This role entitles an authorized user to create, update or delete a record"
+      },
+      {
+        "viewRole": true,
+        "id": "P3770038691",
+        "name": "View",
+        "operations": [
+          {
+            "method": "GET"
+          }
+        ],
+        "description": "This role entitles an authorized user to view the record"
+      }
+    ],
+    "type": "appcenter",
+    "fields": {
+      "_id": {
+        "_t": "String",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      },
+      "dsNumberCurrency1002": {
+        "_t": "Number",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      },
+      "dsNumberCurrency1003": {
+        "_t": "Number",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      },
+      "dsNumberCurrency1004": {
+        "_t": "Number",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      },
+      "dsNumberCurrency1005": {
+        "_t": "Number",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      },
+      "dsNumberCurrency1006": {
+        "_t": "Number",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      },
+      "dsNumberCurrency1007": {
+        "_t": "Number",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      },
+      "dsNumberCurrency1008": {
+        "_t": "Number",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      },
+      "dsNumberCurrency1010": {
+        "_t": "Number",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      },
+      "dsNumberCurrency1011": {
+        "_t": "Number",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      },
+      "dsNumberCurrency1012": {
+        "_t": "Number",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      },
+      "dsNumberCurrency1013": {
+        "_t": "Number",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      },
+      "dsNumberCurrency1014": {
+        "_t": "Number",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      },
+      "dsNumberCurrency1015": {
+        "_t": "Number",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      },
+      "dsNumberCurrency1016": {
+        "_t": "Number",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      },
+      "dsNumberCurrency1018": {
+        "_t": "Number",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      },
+      "dsNumberCurrency1019": {
+        "_t": "Number",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      },
+      "dsNumberCurrency1020": {
+        "_t": "Number",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      },
+      "dsNumberListOfValue1001": {
+        "_t": "Number",
+        "_p": {
+          "P5751204682": "R",
+          "P5144528979": "R",
+          "P3770038691": "R"
+        }
+      }
+    },
+    "__v": 0
+  }
+}

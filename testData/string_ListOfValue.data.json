@@ -1,0 +1,30 @@
+{
+  "_metadata" : {
+    "deleted" : false,
+    "lastUpdated" : "2021-07-18T13:42:57.801Z",
+    "version" : {
+      "release" : "dev",
+      "document" : 1
+    },
+    "createdAt" : "2021-07-18T13:42:57.801Z"
+  },
+  "dsStringListOfValues1018" : "LIST 2",
+  "dsStringListOfValues1019" : "LIST 1",
+  "_id" : "STR1001",
+  "dsStringListOfValues1001" : "LIST 1",
+  "dsStringListOfValues1002" : "LIST 1",
+  "dsStringListOfValues1003" : "LIST1",
+  "dsStringListOfValues1004" : "LIST1",
+  "dsStringListOfValues1005" : "LIST1",
+  "dsStringListOfValues1006" : null,
+  "dsStringListOfValues1007" : "LIST 1",
+  "dsStringListOfValues1008" : "LIST 1",
+  "dsStringListOfValues1010" : "LIST 1",
+  "dsStringListOfValues1011" : null,
+  "dsStringListOfValues1013" : "LIST1",
+  "dsStringListOfValues1014" : "LIST 1",
+  "dsStringListOfValues1015" : "LIST1",
+  "dsStringListOfValues1016" : null,
+  "dsStringListOfValues1020" : "LIST1",
+  "__v" : 0
+}

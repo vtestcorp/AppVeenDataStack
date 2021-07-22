@@ -1,0 +1,30 @@
+{
+  "_metadata" : {
+    "deleted" : false,
+    "lastUpdated" : "2021-07-18T16:02:44.382Z",
+    "version" : {
+      "release" : "dev",
+      "document" : 1
+    },
+    "createdAt" : "2021-07-18T16:02:44.382Z"
+  },
+  "dsNumberListOfValues1018" : 456,
+  "dsNumberListOfValues1019" : 3652,
+  "_id" : "SRVC4606",
+  "dsNumberListOfValues1001" : 4569,
+  "dsNumberListOfValues1002" : 4569,
+  "dsNumberListOfValues1003" : 123,
+  "dsNumberListOfValues1004" : 123,
+  "dsNumberListOfValues1005" : 123,
+  "dsNumberListOfValues1006" : null,
+  "dsNumberListOfValues1007" : 123,
+  "dsNumberListOfValues1008" : 123,
+  "dsNumberListOfValues1010" : 123,
+  "dsNumberListOfValues1011" : null,
+  "dsNumberListOfValues1013" : 123,
+  "dsNumberListOfValues1014" : 123,
+  "dsNumberListOfValues1015" : 123,
+  "dsNumberListOfValues1016" : null,
+  "dsNumberListOfValues1020" : 123,
+  "__v" : 0
+}

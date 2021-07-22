@@ -56,10 +56,10 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 
 		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		List<WebElement> textBoxes = acp.textBoxes;
 		String path= System.getProperty("user.dir");
-		JSONArray jsonArray = JsonUtils.getJSONArray("C:\\Users\\DELL\\eclipse-workspace\\DataStack"+"\\testData\\"+data_Service+".data.json");
+		JSONArray jsonArray = JsonUtils.getJSONArray(path+"\\testData\\"+data_Service+".data.json");
 		for(int i=0;i<jsonArray.size();i++) {
 			Thread.sleep(1000);
 			JSONObject jsonObject=(JSONObject) jsonArray.get(i);
@@ -139,7 +139,7 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 	public void approveTheRecord() throws Exception {
 		Thread.sleep(2000);
 		applyWait.waitForElementToBeClickable(acp.workflowTab, 30).click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		List <WebElement> workflows=acp.respondWorkflows;
 		int i=1;
 		for(WebElement workflow : workflows) {
@@ -182,7 +182,7 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 		
 		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		List<WebElement> textBoxes = acp.textBoxes;
 		String path= System.getProperty("user.dir");
 		JSONArray jsonArray = JsonUtils.getJSONArray(path+"\\testData\\"+data_Service+".data.json");
@@ -307,7 +307,7 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 
 	public void editDataService() throws Exception {
 		applyWait.waitForElementToBeClickable(acp.dataServiceList, 30).click();
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.edit, 30).click();
 		applyWait.waitForElementToBeClickable(acp.firstNameTextBox, 30).clear();;
 //		applyWait.waitForElementToBeClickable(acp.idTextBox, 30).sendKeys("USE1232");
@@ -337,9 +337,9 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 	public void rejectTheRecord() throws Exception {
 		
 
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.workflowTab, 30).click();
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		List <WebElement> workflows=acp.respondWorkflows;
 		int i=1;
 		for(WebElement workflow : workflows) {
@@ -367,9 +367,9 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 
 	public void reworkTheRecord() throws Exception {
 		
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.workflowTab, 30).click();
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		List <WebElement> workflows=acp.respondWorkflows;
 		int i=1;
 		for(WebElement workflow : workflows) {
@@ -386,7 +386,6 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 				WebElement workFlow=driver.findElement(By.xpath("//span[normalize-space()='Respond']"));
 				workFlow.click();
 			}
-			Thread.sleep(2000);
 			applyWait.waitForElementToBeClickable(acp.rework1, 30).click();
 	//		((JavascriptExecutor) driver).executeScript("arguments[0].click();", acp.rework);
 			applyWait.waitForElementToBeClickable(acp.enterRejectComment, 30).sendKeys("Send for Rework");;

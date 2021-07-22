@@ -1,0 +1,532 @@
+{
+  "workflowHooks" : {
+    "postHooks" : {
+      "submit" : [ ],
+      "rework" : [ ],
+      "discard" : [ ],
+      "approve" : [ ],
+      "reject" : [ ]
+    }
+  },
+  "_metadata" : {
+    "version" : {
+      "document" : 5,
+      "release" : "dev"
+    },
+    "deleted" : false,
+    "lastUpdated" : "2021-07-18T13:16:09.532Z",
+    "createdAt" : "2021-07-18T12:52:55.270Z",
+    "lastUpdatedBy" : "deepak@appveen.com"
+  },
+  "_id" : "SRVC4592",
+  "allowedFileTypes" : [ "jpeg", "ppt", "xls", "csv", "doc", "jpg", "png", "gif", "zip", "tar", "rar", "gz", "bz2", "7z", "mp4", "mp3", "pdf", "ico", "docx", "pptx", "xlsx", "ods", "xml", "txt" ],
+  "version" : 2,
+  "instances" : 1,
+  "versionValidity" : {
+    "validityType" : "count",
+    "validityValue" : -1
+  },
+  "permanentDeleteData" : true,
+  "disableInsights" : false,
+  "status" : "Active",
+  "enableSearchIndex" : false,
+  "attributeCount" : 19,
+  "type" : null,
+  "name" : "string_ListOfValue",
+  "description" : null,
+  "app" : "vTest",
+  "api" : "/stringListOfValue",
+  "port" : 20036,
+  "wizard" : [ ],
+  "webHooks" : [ ],
+  "preHooks" : [ ],
+  "collectionName" : "stringListOfValue",
+  "__v" : 0,
+  "definition" : [ {
+    "_id" : "60f4299952fb6d09ceb5add3",
+    "key" : "_id",
+    "type" : "String",
+    "prefix" : "STR",
+    "suffix" : null,
+    "padding" : null,
+    "counter" : 1001,
+    "properties" : {
+      "label" : null,
+      "readonly" : false,
+      "errorMessage" : null,
+      "name" : "ID",
+      "required" : false,
+      "fieldLength" : 10,
+      "_description" : null,
+      "_typeChanged" : "id",
+      "_isParrentArray" : null,
+      "_isGrpParentArray" : null,
+      "dataPath" : "_id",
+      "_detailedType" : "",
+      "dataKey" : "_id"
+    }
+  }, {
+    "_id" : "60f4299952fb6d3861b5add4",
+    "type" : "String",
+    "key" : "dsStringListOfValues1001",
+    "properties" : {
+      "name" : "DS STRING LIST OF VALUES 1001",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "enum" : [ "LIST 1" ],
+      "dataKey" : "dsStringListOfValues1001",
+      "dataPath" : "dsStringListOfValues1001"
+    }
+  }, {
+    "_id" : "60f4299952fb6d708eb5add5",
+    "type" : "String",
+    "key" : "dsStringListOfValues1002",
+    "properties" : {
+      "label" : "DS-STRING-LIST-OF-VALUES-1002 label",
+      "errorMessage" : "DS-STRING-LIST-OF-VALUES-1002 error",
+      "name" : "DS STRING LIST OF VALUES 1002",
+      "required" : true,
+      "fieldLength" : 10,
+      "_description" : "DS-STRING-LIST-OF-VALUES-1002 SUCCESSFUL",
+      "_typeChanged" : "String",
+      "createOnly" : true,
+      "unique" : true,
+      "enum" : [ "LIST 1" ],
+      "dataKey" : "dsStringListOfValues1002",
+      "dataPath" : "dsStringListOfValues1002"
+    }
+  }, {
+    "_id" : "60f4299952fb6d2148b5add6",
+    "type" : "String",
+    "key" : "dsStringListOfValues1003",
+    "properties" : {
+      "name" : "DS STRING LIST OF VALUES 1003",
+      "required" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "enum" : [ "LIST1" ],
+      "dataKey" : "dsStringListOfValues1003",
+      "dataPath" : "dsStringListOfValues1003"
+    }
+  }, {
+    "_id" : "60f4299952fb6d5653b5add7",
+    "type" : "String",
+    "key" : "dsStringListOfValues1004",
+    "properties" : {
+      "name" : "DS STRING LIST OF VALUES 1004",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "createOnly" : true,
+      "enum" : [ "LIST1" ],
+      "dataKey" : "dsStringListOfValues1004",
+      "dataPath" : "dsStringListOfValues1004"
+    }
+  }, {
+    "_id" : "60f4299952fb6df580b5add8",
+    "type" : "String",
+    "key" : "dsStringListOfValues1005",
+    "properties" : {
+      "name" : "DS STRING LIST OF VALUES 1005",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "unique" : true,
+       "enum" : [ "LIST1" ],
+      "dataKey" : "dsStringListOfValues1005",
+      "dataPath" : "dsStringListOfValues1005"
+    }
+  }, {
+    "_id" : "60f4299952fb6db341b5add9",
+    "type" : "String",
+    "key" : "dsStringListOfValues1006",
+    "properties" : {
+      "readonly" : true,
+      "name" : "DS STRING LIST OF VALUES  1006",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "enum" : [ "LIST1" ],
+      "dataKey" : "dsStringListOfValues1006",
+      "dataPath" : "dsStringListOfValues1006"
+    }
+  }, {
+    "_id" : "60f4299952fb6da444b5adda",
+    "type" : "String",
+    "key" : "dsStringListOfValues1007",
+    "properties" : {
+      "name" : "DS STRING LIST OF VALUES 1007",
+      "required" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "createOnly" : true,
+      "enum" : [ "LIST 1" ],
+      "dataKey" : "dsStringListOfValues1007",
+      "dataPath" : "dsStringListOfValues1007"
+    }
+  }, {
+    "_id" : "60f4299952fb6dfbf3b5addb",
+    "type" : "String",
+    "key" : "dsStringListOfValues1008",
+    "properties" : {
+      "name" : "DS STRING LIST OF VALUES 1008",
+      "required" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "unique" : true,
+      "enum" : [ "LIST 1" ],
+      "dataKey" : "dsStringListOfValues1008",
+      "dataPath" : "dsStringListOfValues1008"
+    }
+  }, {
+    "_id" : "60f4299952fb6d21a6b5addc",
+    "type" : "String",
+    "key" : "dsStringListOfValues1010",
+    "properties" : {
+      "name" : "DS STRING LIST OF VALUES 1010",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "createOnly" : true,
+      "unique" : true,
+      "enum" : [ "LIST 1" ],
+      "dataKey" : "dsStringListOfValues1010",
+      "dataPath" : "dsStringListOfValues1010"
+    }
+  }, {
+    "_id" : "60f4299952fb6dc2efb5addd",
+    "type" : "String",
+    "key" : "dsStringListOfValues1011",
+    "properties" : {
+      "readonly" : true,
+      "name" : "DS STRING LIST OF VALUES  1011",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "createOnly" : true,
+      "enum" : [ "LIST 1" ],
+      "dataKey" : "dsStringListOfValues1011",
+      "dataPath" : "dsStringListOfValues1011"
+    }
+  }, {
+    "_id" : "60f4299952fb6db2cbb5adde",
+    "type" : "String",
+    "key" : "dsStringListOfValues1012",
+    "properties" : {
+      "readonly" : true,
+      "name" : "DS STRING LIST OF VALUES 1012",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+       "enum" : [ "LIST1" ],
+      "unique" : true,
+      "dataKey" : "dsStringListOfValues1012",
+      "dataPath" : "dsStringListOfValues1012"
+    }
+  }, {
+    "_id" : "60f4299952fb6d2abcb5addf",
+    "type" : "String",
+    "key" : "dsStringListOfValues1013",
+    "properties" : {
+      "label" : "DS-STRING-LIST-OF-VALUES-1013 label",
+      "name" : "DS STRING LIST OF VALUES 1013",
+      "fieldLength" : 10,
+       "enum" : [ "LIST1" ],
+      "_typeChanged" : "String",
+      "dataKey" : "dsStringListOfValues1013",
+      "dataPath" : "dsStringListOfValues1013"
+    }
+  }, {
+    "_id" : "60f4299952fb6d73a5b5ade0",
+    "type" : "String",
+    "key" : "dsStringListOfValues1014",
+    "properties" : {
+      "errorMessage" : "DS-STRING-LIST-OF-VALUES-1014 error",
+      "name" : "DS STRING LIST OF VALUES 1014",
+      "required" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "enum" : [ "LIST 1" ],
+      "dataKey" : "dsStringListOfValues1014",
+      "dataPath" : "dsStringListOfValues1014"
+    }
+  }, {
+    "_id" : "60f4299952fb6d72eab5ade1",
+    "type" : "String",
+    "key" : "dsStringListOfValues1015",
+    "properties" : {
+      "label" : "DS-STRING-LIST-OF-VALUES-1015 label",
+      "errorMessage" : "DS-STRING-LIST-OF-VALUES-1015  error",
+      "name" : "DS STRING LIST OF VALUES 1015",
+      "required" : true,
+      "fieldLength" : 10,
+       "enum" : [ "LIST1" ],
+      "_typeChanged" : "String",
+      "dataKey" : "dsStringListOfValues1015",
+      "dataPath" : "dsStringListOfValues1015"
+    }
+  }, {
+    "_id" : "60f4299952fb6dc90eb5ade2",
+    "type" : "String",
+    "key" : "dsStringListOfValues1016",
+    "properties" : {
+      "label" : "DS-STRING-LIST-OF-VALUES-1016 label",
+      "readonly" : true,
+      "name" : "DS STRING LIST OF VALUES 1016",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "enum" : [ "LIST 1" ],
+      "dataKey" : "dsStringListOfValues1016",
+      "dataPath" : "dsStringListOfValues1016"
+    }
+  }, {
+    "_id" : "60f4299952fb6d1c1cb5ade3",
+    "type" : "String",
+    "key" : "dsStringListOfValues1018",
+    "properties" : {
+      "name" : "DS STRING LIST OF VALUES 1018",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "default" : "LIST 2",
+      "enum" : [ "LIST 1", "LIST 2" ],
+      "dataKey" : "dsStringListOfValues1018",
+      "dataPath" : "dsStringListOfValues1018"
+    }
+  }, {
+    "_id" : "60f4299952fb6dc9c6b5ade4",
+    "type" : "String",
+    "key" : "dsStringListOfValues1019",
+    "properties" : {
+      "readonly" : true,
+      "name" : "DS STRING LIST OF VALUES 1019",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "default" : "LIST 1",
+      "enum" : [ "LIST 1", "LIST 2" ],
+      "dataKey" : "dsStringListOfValues1019",
+      "dataPath" : "dsStringListOfValues1019"
+    }
+  }, {
+    "_id" : "60f4299952fb6d746ab5ade5",
+    "type" : "String",
+    "key" : "dsStringListOfValues1020",
+    "properties" : {
+      "name" : "DS STRING LIST OF VALUES 1020",
+      "fieldLength" : 10,
+      "_description" : "DS-STRING-LIST-OF-VALUES-1020 SUCCESSFUL",
+      "_typeChanged" : "String",
+       "enum" : [ "LIST1" ],
+      "dataKey" : "dsStringListOfValues1020",
+      "dataPath" : "dsStringListOfValues1020"
+    }
+  } ],
+  "headers" : [ ],
+  "relatedSchemas" : {
+    "internal" : {
+      "users" : [ ]
+    },
+    "outgoing" : [ ]
+  },
+  "role" : {
+    "_id" : "SRVC4592",
+    "_metadata" : {
+      "version" : {
+        "document" : 1,
+        "release" : "dev"
+      },
+      "deleted" : false,
+      "lastUpdated" : "2021-07-18T12:52:55.293Z",
+      "createdAt" : "2021-07-18T12:52:55.290Z"
+    },
+    "app" : "vTest",
+    "entity" : "SRVC4592",
+    "entityName" : "string_ListOfValue",
+    "roles" : [ {
+      "skipReviewRole" : true,
+      "id" : "P4684332028",
+      "name" : "Skip Review",
+      "operations" : [ {
+        "method" : "SKIP_REVIEW"
+      }, {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record and without any approval"
+    }, {
+      "manageRole" : true,
+      "id" : "P8540844934",
+      "name" : "Manage",
+      "operations" : [ {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      }, {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record"
+    }, {
+      "viewRole" : true,
+      "id" : "P9144196829",
+      "name" : "View",
+      "operations" : [ {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to view the record"
+    } ],
+    "type" : "appcenter",
+    "fields" : {
+      "_id" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      },
+      "dsStringListOfValues1001" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      },
+      "dsStringListOfValues1002" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      },
+      "dsStringListOfValues1003" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      },
+      "dsStringListOfValues1004" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      },
+      "dsStringListOfValues1005" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      },
+      "dsStringListOfValues1006" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      },
+      "dsStringListOfValues1007" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      },
+      "dsStringListOfValues1008" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      },
+      "dsStringListOfValues1010" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      },
+      "dsStringListOfValues1011" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      },
+      "dsStringListOfValues1012" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      },
+      "dsStringListOfValues1013" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      },
+      "dsStringListOfValues1014" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      },
+      "dsStringListOfValues1015" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      },
+      "dsStringListOfValues1016" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      },
+      "dsStringListOfValues1018" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      },
+      "dsStringListOfValues1019" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      },
+      "dsStringListOfValues1020" : {
+        "_t" : "String",
+        "_p" : {
+          "P4684332028" : "R",
+          "P8540844934" : "R",
+          "P9144196829" : "R"
+        }
+      }
+    },
+    "__v" : 0
+  }
+}

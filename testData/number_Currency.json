@@ -1,0 +1,640 @@
+{
+  "workflowHooks" : {
+    "postHooks" : {
+      "submit" : [ ],
+      "rework" : [ ],
+      "discard" : [ ],
+      "approve" : [ ],
+      "reject" : [ ]
+    }
+  },
+  "_metadata" : {
+    "version" : {
+      "document" : 2,
+      "release" : "dev"
+    },
+    "deleted" : false,
+    "lastUpdated" : "2021-07-18T14:44:24.222Z",
+    "createdAt" : "2021-07-18T14:27:21.465Z",
+    "lastUpdatedBy" : "deepak@appveen.com"
+  },
+  "allowedFileTypes" : [ "jpeg", "ppt", "xls", "csv", "doc", "jpg", "png", "gif", "zip", "tar", "rar", "gz", "bz2", "7z", "mp4", "mp3", "pdf", "ico", "docx", "pptx", "xlsx", "ods", "xml", "txt" ],
+  "version" : 1,
+  "instances" : 1,
+  "versionValidity" : {
+    "validityType" : "count",
+    "validityValue" : -1
+  },
+  "permanentDeleteData" : true,
+  "disableInsights" : false,
+  "status" : "Draft",
+  "enableSearchIndex" : false,
+  "attributeCount" : 23,
+  "type" : null,
+  "_id" : "SRVC4598",
+  "name" : "number_Currency",
+  "description" : null,
+  "app" : "vTest",
+  "api" : "/numberCurrency",
+  "port" : 20125,
+  "wizard" : [ ],
+  "webHooks" : [ ],
+  "preHooks" : [ ],
+  "collectionName" : "numberCurrency",
+  "__v" : 1,
+  "definition" : [ {
+    "_id" : "60f43e4852fb6dbd23b5b176",
+    "key" : "_id",
+    "type" : "String",
+    "prefix" : "NUM",
+    "suffix" : null,
+    "padding" : null,
+    "counter" : 1001,
+    "properties" : {
+      "label" : null,
+      "readonly" : false,
+      "errorMessage" : null,
+      "name" : "ID",
+      "required" : false,
+      "fieldLength" : 10,
+      "_description" : null,
+      "_typeChanged" : "id",
+      "_isParrentArray" : null,
+      "_isGrpParentArray" : null,
+      "dataPath" : "_id",
+      "_detailedType" : "",
+      "dataKey" : "_id"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d0e56b5b177",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1001",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1001",
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1001",
+      "dataPath" : "dsNumberCurrency1001"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d99fbb5b178",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1002",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1002",
+      "label" : "DS NUMBER CURRENCY 1002 LABEL",
+      "errorMessage" : "DS NUMBER CURRENCY 1002 ERROR",
+      "required" : true,
+      "fieldLength" : 10,
+      "_description" : "DS NUMBER CURRENCY 1002 DESCRIPTION",
+      "_typeChanged" : "Number",
+      "createOnly" : true,
+      "unique" : true,
+      "min" : 1,
+      "max" : 3,
+      "currency" : "USD",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1002",
+      "dataPath" : "dsNumberCurrency1002"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d1b61b5b179",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1003",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1003",
+      "required" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "currency" : "EUR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1003",
+      "dataPath" : "dsNumberCurrency1003"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d5ad6b5b17a",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1004",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1004",
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "createOnly" : true,
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1004",
+      "dataPath" : "dsNumberCurrency1004"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d93f5b5b17b",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1005",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1005",
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "unique" : true,
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1005",
+      "dataPath" : "dsNumberCurrency1005"
+    }
+  }, {
+    "_id" : "60f43e4852fb6de9abb5b17c",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1006",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1006",
+      "readonly" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1006",
+      "dataPath" : "dsNumberCurrency1006"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d240ab5b17d",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1007",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1007",
+      "required" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "createOnly" : true,
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1007",
+      "dataPath" : "dsNumberCurrency1007"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d3898b5b17e",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1008",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1008",
+      "required" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "unique" : true,
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1008",
+      "dataPath" : "dsNumberCurrency1008"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d6657b5b17f",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1010",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1010",
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "createOnly" : true,
+      "unique" : true,
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1010",
+      "dataPath" : "dsNumberCurrency1010"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d5ccbb5b180",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1011",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1011",
+      "readonly" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "createOnly" : true,
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1011",
+      "dataPath" : "dsNumberCurrency1011"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d6013b5b181",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1012",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1012",
+      "readonly" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "unique" : true,
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1012",
+      "dataPath" : "dsNumberCurrency1012"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d5085b5b182",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1013",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1013",
+      "label" : "DS NUMBER CURRENCY 1013 LABEL",
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1013",
+      "dataPath" : "dsNumberCurrency1013"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d25c6b5b183",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1014",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1014",
+      "errorMessage" : "DS NUMBER CURRENCY 1014 ERROR",
+      "required" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1014",
+      "dataPath" : "dsNumberCurrency1014"
+    }
+  }, {
+    "_id" : "60f43e4852fb6de1c6b5b184",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1015",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1015",
+      "label" : "DS NUMBER CURRENCY 1015 LABEL",
+      "errorMessage" : "DS NUMBER CURRENCY 1015 ERROR",
+      "required" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1015",
+      "dataPath" : "dsNumberCurrency1015"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d71bcb5b185",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1016",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1016",
+      "label" : "DS NUMBER CURRENCY 1016  LABEL",
+      "readonly" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1016",
+      "dataPath" : "dsNumberCurrency1016"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d06f4b5b186",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1018",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1018",
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "default" : 5,
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1018",
+      "dataPath" : "dsNumberCurrency1018"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d5aeeb5b187",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1019",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1019",
+      "readonly" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "default" : 5.5,
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1019",
+      "dataPath" : "dsNumberCurrency1019"
+    }
+  }, {
+    "_id" : "60f43e4852fb6dabe4b5b188",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1020",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1020",
+      "fieldLength" : 10,
+      "_description" : "DS NUMBER CURRENCY 1020 DESCRIPTION",
+      "_typeChanged" : "Number",
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1020",
+      "dataPath" : "dsNumberCurrency1020"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d91f2b5b189",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1021",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1021",
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "currency" : "INR",
+      "precision" : 3,
+      "dataKey" : "dsNumberCurrency1021",
+      "dataPath" : "dsNumberCurrency1021"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d1396b5b18a",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1022",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1022",
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "min" : 2,
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1022",
+      "dataPath" : "dsNumberCurrency1022"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d0d5cb5b18b",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1023",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1023",
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "max" : 8,
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1023",
+      "dataPath" : "dsNumberCurrency1023"
+    }
+  }, {
+    "_id" : "60f43e4852fb6d44cfb5b18c",
+    "type" : "Number",
+    "key" : "dsNumberCurrency1024",
+    "properties" : {
+      "name" : "DS NUMBER CURRENCY 1024",
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "min" : 3,
+      "max" : 8,
+      "currency" : "INR",
+      "precision" : 2,
+      "dataKey" : "dsNumberCurrency1024",
+      "dataPath" : "dsNumberCurrency1024"
+    }
+  } ],
+  "headers" : [ ],
+  "role" : {
+    "_id" : "SRVC4598",
+    "_metadata" : {
+      "version" : {
+        "document" : 1,
+        "release" : "dev"
+      },
+      "deleted" : false,
+      "lastUpdated" : "2021-07-18T14:27:21.487Z",
+      "createdAt" : "2021-07-18T14:27:21.484Z"
+    },
+    "app" : "vTest",
+    "entity" : "SRVC4598",
+    "entityName" : "number_Currency",
+    "roles" : [ {
+      "skipReviewRole" : true,
+      "id" : "P3396180623",
+      "name" : "Skip Review",
+      "operations" : [ {
+        "method" : "SKIP_REVIEW"
+      }, {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record and without any approval"
+    }, {
+      "manageRole" : true,
+      "id" : "P8542147159",
+      "name" : "Manage",
+      "operations" : [ {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      }, {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record"
+    }, {
+      "viewRole" : true,
+      "id" : "P6827393946",
+      "name" : "View",
+      "operations" : [ {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to view the record"
+    } ],
+    "type" : "appcenter",
+    "fields" : {
+      "_id" : {
+        "_t" : "String",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1001" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1002" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1003" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1004" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1005" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1006" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1007" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1008" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1010" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1011" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1012" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1013" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1014" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1015" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1016" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1018" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1019" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1020" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1021" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1022" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1023" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      },
+      "dsNumberCurrency1024" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3396180623" : "R",
+          "P8542147159" : "R",
+          "P6827393946" : "R"
+        }
+      }
+    },
+    "__v" : 0
+  },
+  "relatedSchemas" : {
+    "internal" : {
+      "users" : [ ]
+    },
+    "outgoing" : [ ]
+  }
+}

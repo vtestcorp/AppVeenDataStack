@@ -7,7 +7,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="./testcases/strings.feature",
+@CucumberOptions(features="./testcases/string_ListOfValue.feature",
 //				dryRun=true,
 		//		tags="@AppCenter",
 				glue="stepdefinitions",

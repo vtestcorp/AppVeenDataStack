@@ -61,6 +61,7 @@ public class LoginToAppCenter extends BaseClass{
 	public void add_data_to_the_data_service() throws Exception {
 		
 		loginAppCenter.userEnterData();
+//		loginAppCenter.userEnterData1();
 	  
 	}
 	

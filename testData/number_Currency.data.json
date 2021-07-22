@@ -1,0 +1,34 @@
+{
+  "_metadata" : {
+    "deleted" : false,
+    "lastUpdated" : "2021-07-18T14:59:19.766Z",
+    "version" : {
+      "release" : "dev",
+      "document" : 1
+    },
+    "createdAt" : "2021-07-18T14:59:19.766Z"
+  },
+  "_id" : "NUM1001",
+  "dsNumberCurrency1001" : 3,
+  "dsNumberCurrency1002" : 3,
+  "dsNumberCurrency1003" : 5,
+  "dsNumberCurrency1004" : 2,
+  "dsNumberCurrency1005" : 3,
+  "dsNumberCurrency1006" : null,
+  "dsNumberCurrency1007" : 4.5,
+  "dsNumberCurrency1008" : 6.22,
+  "dsNumberCurrency1010" : 5.55,
+  "dsNumberCurrency1011" : null,
+  "dsNumberCurrency1013" : 8,
+  "dsNumberCurrency1014" : 7,
+  "dsNumberCurrency1015" : 3,
+  "dsNumberCurrency1016" : null,
+  "dsNumberCurrency1018" : 2,
+  "dsNumberCurrency1019" : null,
+  "dsNumberCurrency1020" : 5,
+  "dsNumberCurrency1021" : 2,
+  "dsNumberCurrency1022" : 3,
+  "dsNumberCurrency1023" : 5,
+  "dsNumberCurrency1024" : 5,
+  "__v" : 0
+}
