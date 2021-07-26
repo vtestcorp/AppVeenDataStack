@@ -84,6 +84,7 @@ public class Module_DesignTestCases extends BaseClass{
 	public void groupexist(String groupName) throws Exception {
 		
 		applyWait.waitForElementToBeClickable(ap.groups, 30).click();
+		Thread.sleep(2000);
 		List<WebElement> groupNames=gp.groups;
 		groups=new ArrayList<String>();
 		for(WebElement group : groupNames) {
@@ -106,7 +107,7 @@ public class Module_DesignTestCases extends BaseClass{
 
 
 	public void createGroup(String groupName) throws Exception {
-		
+		Thread.sleep(2000);
 		List<WebElement> groupNames=gp.groups;
 		ArrayList<String> groups=new ArrayList<String>();
 			for(WebElement group : groupNames) {
@@ -129,6 +130,7 @@ public class Module_DesignTestCases extends BaseClass{
 		String role="Manage";
 		String userEmail=user1;
 		applyWait.waitForElementToBeClickable(gp.appCenterRoles, 30).click();
+		Thread.sleep(3000);
 		WebElement dsArrow=driver.findElement(By.xpath("//span[normalize-space()='"+dataServiceName+"']/parent::div/following-sibling::span[2]/child::span"));
 		applyWait.waitForElementToBeClickable(dsArrow, 30).click();
 		
@@ -150,6 +152,7 @@ public class Module_DesignTestCases extends BaseClass{
 		
 		applyWait.waitForElementToBeClickable(gp.members, 30).click();
 		applyWait.waitForElementToBeClickable(gp.addUsers, 30).click();
+		Thread.sleep(2000);
 		WebElement user=driver.findElement(By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']"));
 		applyExplicitWaitsUntilElementVisible(user);
 		try {
@@ -168,10 +171,11 @@ public class Module_DesignTestCases extends BaseClass{
 
 
 	public void addRecord(String string) throws Exception {
-		
+		Thread.sleep(3000);
 		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
 			acp.yes.click();
 	    }
+		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
@@ -231,28 +235,25 @@ public class Module_DesignTestCases extends BaseClass{
 					
 					if (textBox.isEnabled()) {
 						String id1 = textBox.getAttribute("id");
-	
+//						System.out.println(id1+"      "+textBox.getAttribute("type"));
 						if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")||textBox.getAttribute("type").equals("select-one")) {
 							if ((String) jsonObject.get(id1) != null) {
 	
-								if (textBox.getAttribute("type").equals("text")
-												|| textBox.getAttribute("type").equals("textarea")) {
+								if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
 											if (id1.contains(".")) {
 												String[] attributes = id1.trim().split("[^a-zA-Z0-9]+");
 			
 												JSONObject obj = (JSONObject) jsonObject.get(attributes[0]);
-												applyWait.waitForElementToBeClickable(textBox, 30)
-														.sendKeys((String) obj.get(attributes[1]));
+												applyWait.waitForElementToBeClickable(textBox, 30).sendKeys((String) obj.get(attributes[1]));
 			
 											} else {
-												applyWait.waitForElementToBeClickable(textBox, 30)
-														.sendKeys(((String) jsonObject.get(id1)).toString());
+												applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(((String) jsonObject.get(id1)).toString());
 												;
 											}
 										}
 	
 								if (textBox.getAttribute("type").equals("select-one")) {
-	
+									System.out.println(id1+"     "+jsonObject.get(id1).toString());
 									dropdown.selectByVisibleText(textBox, ((String) jsonObject.get(id1)).toString());
 	
 								}

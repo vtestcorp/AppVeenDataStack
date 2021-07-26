@@ -73,7 +73,7 @@
       "name" : "DS STRING LIST OF VALUES 1001",
       "fieldLength" : 10,
       "_typeChanged" : "String",
-      "enum" : [ "LIST 1" ],
+      "enum" : [ "LIST 1" ,"LIST 2"],
       "dataKey" : "dsStringListOfValues1001",
       "dataPath" : "dsStringListOfValues1001"
     }
@@ -91,7 +91,7 @@
       "_typeChanged" : "String",
       "createOnly" : true,
       "unique" : true,
-      "enum" : [ "LIST 1" ],
+      "enum" : [ "LIST 1","LIST 2","LIST 3" ],
       "dataKey" : "dsStringListOfValues1002",
       "dataPath" : "dsStringListOfValues1002"
     }
@@ -104,7 +104,7 @@
       "required" : true,
       "fieldLength" : 10,
       "_typeChanged" : "String",
-      "enum" : [ "LIST1" ],
+      "enum" : [ "LIST 1","LIST 2" ],
       "dataKey" : "dsStringListOfValues1003",
       "dataPath" : "dsStringListOfValues1003"
     }
@@ -117,7 +117,7 @@
       "fieldLength" : 10,
       "_typeChanged" : "String",
       "createOnly" : true,
-      "enum" : [ "LIST1" ],
+      "enum" : [ "LIST 1" ,"LIST 2"],
       "dataKey" : "dsStringListOfValues1004",
       "dataPath" : "dsStringListOfValues1004"
     }
@@ -130,7 +130,7 @@
       "fieldLength" : 10,
       "_typeChanged" : "String",
       "unique" : true,
-       "enum" : [ "LIST1" ],
+       "enum" : [ "LIST 1" ,"LIST 2"],
       "dataKey" : "dsStringListOfValues1005",
       "dataPath" : "dsStringListOfValues1005"
     }
@@ -143,7 +143,7 @@
       "name" : "DS STRING LIST OF VALUES  1006",
       "fieldLength" : 10,
       "_typeChanged" : "String",
-      "enum" : [ "LIST1" ],
+      "enum" : [ "LIST 1","LIST 2" ],
       "dataKey" : "dsStringListOfValues1006",
       "dataPath" : "dsStringListOfValues1006"
     }
@@ -157,7 +157,7 @@
       "fieldLength" : 10,
       "_typeChanged" : "String",
       "createOnly" : true,
-      "enum" : [ "LIST 1" ],
+      "enum" : [ "LIST 1" ,"LIST 2"],
       "dataKey" : "dsStringListOfValues1007",
       "dataPath" : "dsStringListOfValues1007"
     }
@@ -171,7 +171,7 @@
       "fieldLength" : 10,
       "_typeChanged" : "String",
       "unique" : true,
-      "enum" : [ "LIST 1" ],
+      "enum" : [ "LIST 1" ,"LIST 2"],
       "dataKey" : "dsStringListOfValues1008",
       "dataPath" : "dsStringListOfValues1008"
     }
@@ -185,7 +185,7 @@
       "_typeChanged" : "String",
       "createOnly" : true,
       "unique" : true,
-      "enum" : [ "LIST 1" ],
+      "enum" : [ "LIST 1","LIST 2" ],
       "dataKey" : "dsStringListOfValues1010",
       "dataPath" : "dsStringListOfValues1010"
     }
@@ -199,7 +199,7 @@
       "fieldLength" : 10,
       "_typeChanged" : "String",
       "createOnly" : true,
-      "enum" : [ "LIST 1" ],
+      "enum" : [ "LIST 1" ,"LIST 2"],
       "dataKey" : "dsStringListOfValues1011",
       "dataPath" : "dsStringListOfValues1011"
     }
@@ -212,7 +212,7 @@
       "name" : "DS STRING LIST OF VALUES 1012",
       "fieldLength" : 10,
       "_typeChanged" : "String",
-       "enum" : [ "LIST1" ],
+       "enum" : [ "LIST 1" ,"LIST 2"],
       "unique" : true,
       "dataKey" : "dsStringListOfValues1012",
       "dataPath" : "dsStringListOfValues1012"
@@ -225,7 +225,7 @@
       "label" : "DS-STRING-LIST-OF-VALUES-1013 label",
       "name" : "DS STRING LIST OF VALUES 1013",
       "fieldLength" : 10,
-       "enum" : [ "LIST1" ],
+       "enum" : [ "LIST 1" ,"LIST 2"],
       "_typeChanged" : "String",
       "dataKey" : "dsStringListOfValues1013",
       "dataPath" : "dsStringListOfValues1013"
@@ -240,7 +240,7 @@
       "required" : true,
       "fieldLength" : 10,
       "_typeChanged" : "String",
-      "enum" : [ "LIST 1" ],
+      "enum" : [ "LIST 1","LIST 2" ],
       "dataKey" : "dsStringListOfValues1014",
       "dataPath" : "dsStringListOfValues1014"
     }
@@ -254,7 +254,7 @@
       "name" : "DS STRING LIST OF VALUES 1015",
       "required" : true,
       "fieldLength" : 10,
-       "enum" : [ "LIST1" ],
+       "enum" : [ "LIST 1","LIST 2" ],
       "_typeChanged" : "String",
       "dataKey" : "dsStringListOfValues1015",
       "dataPath" : "dsStringListOfValues1015"
@@ -269,7 +269,7 @@
       "name" : "DS STRING LIST OF VALUES 1016",
       "fieldLength" : 10,
       "_typeChanged" : "String",
-      "enum" : [ "LIST 1" ],
+      "enum" : [ "LIST 1" ,"LIST 2"],
       "dataKey" : "dsStringListOfValues1016",
       "dataPath" : "dsStringListOfValues1016"
     }
@@ -309,7 +309,7 @@
       "fieldLength" : 10,
       "_description" : "DS-STRING-LIST-OF-VALUES-1020 SUCCESSFUL",
       "_typeChanged" : "String",
-       "enum" : [ "LIST1" ],
+       "enum" : [ "LIST 1" ,"LIST 2"],
       "dataKey" : "dsStringListOfValues1020",
       "dataPath" : "dsStringListOfValues1020"
     }

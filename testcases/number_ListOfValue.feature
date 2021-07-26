@@ -23,7 +23,7 @@ Scenario: Create data service
 Scenario Outline: Assign to Appcenter Group
  	Then Group "Number-Group" does not exist
 	Then Create new group "Number-Group" 
-	And Assign appcenter permissions for "number_Currency" dataservice to "<user>"
+	And Assign appcenter permissions for "number_ListOfValue" dataservice to "<user>"
 	
 	Examples:
 	|user|

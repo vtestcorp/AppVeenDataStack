@@ -62,7 +62,6 @@ public class DesignTestCases extends BaseClass{
 	
 	@Given("Group {string} does not exist")
 	public void group_does_not_exist(String groupName) throws Exception {
-		Thread.sleep(3000);
 	    design.groupexist(groupName);
 	}
 

@@ -859,12 +859,22 @@ public class LoginPage extends BaseClass{
 										applyWait.waitForElementToBeClickable(ap.customError, 30).sendKeys(jsonProperties.get("errorMessage").toString());
 									}
 									
-								if(jsonProperties.containsKey("defaultTimezone")) {
-									applyWait.waitForElementToBeClickable(ap.defaultTimezone, 30).sendKeys(jsonProperties.get("defaultTimezone").toString(),Keys.ENTER);
+								
+								if(jsonProperties.containsKey("supportedTimezones")) {
+									
 									JSONArray array=(JSONArray) jsonProperties.get("supportedTimezones");
 									for(int j=0; j<array.size();j++) {
-									applyWait.waitForElementToBeClickable(ap.supportedTimezones, 30).sendKeys(array.get(j).toString(),Keys.ENTER);
-									}								}
+									applyWait.waitForElementToBeClickable(ap.supportedTimezones, 30).clear();
+									applyWait.waitForElementToBeClickable(ap.supportedTimezones, 30).sendKeys(array.get(j).toString());
+									Thread.sleep(500);
+									applyWait.waitForElementToBeClickable(ap.supportedTimezones, 30).sendKeys(Keys.ENTER);
+								
+									}
+								}
+								if(jsonProperties.containsKey("defaultTimezone")) {
+									applyWait.waitForElementToBeClickable(ap.defaultTimezone, 30).sendKeys(jsonProperties.get("defaultTimezone").toString(),Keys.ENTER);
+								
+									}			
 								
 								if(jsonProperties.containsKey("currency")) {
 									dropdown.selectByVisibleText(ap.currencyDropdown, jsonProperties.get("currency").toString());
