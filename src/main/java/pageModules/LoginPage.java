@@ -918,7 +918,41 @@ public class LoginPage extends BaseClass{
 									}
 								
 								if(jsonProperties.containsKey("default")) {
-									dropdown.selectByValue(ap.defaultDropDown, jsonProperties.get("default").toString());
+//									dropdown.selectByValue(ap.defaultDropDown, jsonProperties.get("default").toString());
+									
+			//						2021-07-30T10:31:03.936Z
+									applyWait.waitForElementToBeClickable(ap.selectDate, 30).click();
+									Thread.sleep(1000);
+									scroll.scrollInToView(ap.done);
+									Thread.sleep(1000);
+									
+									String fullDate[]=jsonProperties.get("default").toString().split("T")[0].split("-");
+									String fullTime[]=jsonProperties.get("default").toString().split("T")[1].split(":");
+//									for(String a : fullTime) {
+//										System.out.println(a);
+//									}
+									String date=fullDate[2];
+									String month=fullDate[1];
+									String year=fullDate[0];
+									String hour=fullTime[0];
+									String minute=fullTime[1];
+									String[] second=fullTime[2].trim().split(".");
+									System.out.println(hour+"()"+minute+"()");
+									System.out.println(fullTime[2]);
+									
+									
+									dropdown.selectByIndex(ap.monthDropDown, Integer.parseInt(month)-1);
+									
+									dropdown.selectByValue(ap.yearDropDown, year);
+									
+									WebElement date1=driver.findElement(By.xpath("//span[@class='date float-left text-secondary ng-star-inserted']/small[normalize-space()='"+date+"']"));
+									date1.click();
+									
+									dropdown.selectByValue(ap.hourDropDown, hour);
+									dropdown.selectByValue(ap.minuteDropDown, minute);
+//									dropdown.selectByValue(ap.secondDropDown, second);
+									
+									applyWait.waitForElementToBeClickable(ap.done, 30).click();
 									
 									}
 								

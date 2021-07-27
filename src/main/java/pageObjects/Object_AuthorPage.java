@@ -145,6 +145,27 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(xpath="//span[@class='odp-location']")
 	public WebElement location;
 	
+	@FindBy(xpath="//button[normalize-space()='Select Date']")
+	public WebElement selectDate;
+	
+	@FindBy(xpath="//div[@class='calender ng-star-inserted']//select[1]")
+	public WebElement monthDropDown;
+	
+	@FindBy(xpath="//div[@class='calender ng-star-inserted']//select[2]")
+	public WebElement yearDropDown;
+	
+	@FindBy(xpath="//div[@class='time clearfix px-3 py-2 ng-star-inserted']//select[1]")
+	public WebElement hourDropDown;
+	
+	@FindBy(xpath="//div[@class='time clearfix px-3 py-2 ng-star-inserted']//select[2]")
+	public WebElement minuteDropDown;
+	
+	@FindBy(xpath="//div[@class='time clearfix px-3 py-2 ng-star-inserted']//select[3]")
+	public WebElement secondDropDown;
+	
+	@FindBy(xpath="//button[normalize-space()='Done']")
+	public WebElement done;
+	
 	@FindBy(xpath="//label[normalize-space()='Point on a map']")
 	public WebElement pointOnAMap;
 
