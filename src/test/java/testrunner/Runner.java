@@ -7,7 +7,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="./testcases/date.feature",
+@CucumberOptions(features="./testcases/ds_Collection.feature",
 //				dryRun=true,
 		//		tags="@AppCenter",
 				glue="stepdefinitions",

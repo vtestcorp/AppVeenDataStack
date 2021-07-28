@@ -7,18 +7,15 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.aventstack.extentreports.ExtentTest;
 import base.BaseClass;
-import config.DefineConstants;
 import helperMethods.DropDown;
 import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
@@ -748,8 +745,7 @@ public class LoginPage extends BaseClass{
 				break;
 				
 				case "Date" : 
-					jsonProperties = (JSONObject) attribute.get("properties");
-					
+				jsonProperties = (JSONObject) attribute.get("properties");
 				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
 				applyWait.waitForElementToBeClickable(ap.date, 30).click();
 				requiredAttributes(jsonProperties);
@@ -784,9 +780,9 @@ public class LoginPage extends BaseClass{
 					
 					case "Geojson" : 
 						jsonProperties = (JSONObject) attribute.get("properties");
-						if(jsonProperties.get("required").toString().equals("true")) {
-							applyWait.waitForElementToBeClickable(ap.required, 30).click();
-						}
+//						if(jsonProperties.get("required").toString().equals("true")) {
+//							applyWait.waitForElementToBeClickable(ap.required, 30).click();
+//						}
 					applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
 					applyWait.waitForElementToBeClickable(ap.location, 30).click();
 					applyWait.waitForElementToBeClickable(ap.pointOnAMap, 30).click();
@@ -813,8 +809,8 @@ public class LoginPage extends BaseClass{
 						jsonProperties = (JSONObject) attribute.get("properties");
 						applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
 						applyWait.waitForElementToBeClickable(ap.user, 30).click();
-						applyWait.waitForElementToBeClickable(ap.customLabel, 30).sendKeys(jsonProperties.get("label").toString());
-						applyWait.waitForElementToBeClickable(ap.customError, 30).sendKeys(jsonProperties.get("errorMessage").toString());
+					//	applyWait.waitForElementToBeClickable(ap.customLabel, 30).sendKeys(jsonProperties.get("label").toString());
+					//	applyWait.waitForElementToBeClickable(ap.customError, 30).sendKeys(jsonProperties.get("errorMessage").toString());
 						requiredAttributes(jsonProperties);
 						break;
 			}

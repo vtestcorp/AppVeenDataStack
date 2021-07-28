@@ -205,9 +205,13 @@ public class LoginAppCenter extends BaseClass {
 									dropdown.selectByVisibleText(textBox, ((Long) jsonObject.get(id1)).toString());
 
 								}
-							}
-							}
-
+							  }
+						}
+					}
+						else if(textBox.getAttribute("type").equals("email")) {
+							System.out.println(jsonObject.get(id1).toString() + " : Email value");
+							applyWait.waitForElementToBeClickable(textBox,30).sendKeys(((String)jsonObject.get(id1)).toString());
+							
 					}
 				}
 			}

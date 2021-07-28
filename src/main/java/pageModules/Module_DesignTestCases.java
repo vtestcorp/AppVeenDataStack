@@ -298,12 +298,17 @@ public class Module_DesignTestCases extends BaseClass{
 										}
 									}
 	                   			}
+							else if(textBox.getAttribute("type").equals("email")) {
+								if ( jsonObject.get(id1) != null) {
+								applyWait.waitForElementToBeClickable(textBox,30).sendKeys(((String)jsonObject.get(id1)).toString());
 							}
+							}
+						
 						}
 					}
 				}
-
-//				}
+				applyWait.waitForElementToBeClickable(acp.save, 30).click();
+				}
 			
 			
 //			
@@ -311,7 +316,7 @@ public class Module_DesignTestCases extends BaseClass{
 //			applyWait.waitForElementToBeClickable(acp.proceedAndCreateAnother, 30).click();
 //				}
 //				else {
-					applyWait.waitForElementToBeClickable(acp.save, 30).click();
+//					applyWait.waitForElementToBeClickable(acp.save, 30).click();
 //				}
 		
 //	}

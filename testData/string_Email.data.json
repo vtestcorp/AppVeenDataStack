@@ -1,0 +1,30 @@
+{
+  "_metadata": {
+    "deleted": false,
+    "lastUpdated": "2021-07-16T04:02:56.514Z",
+    "version": {
+      "release": "dev",
+      "document": 1
+    },
+    "createdAt": "2021-07-16T04:02:56.514Z"
+  },
+  "_id": "RC101",
+  "dsStringEmail1001": "abc@gmail.com",
+  "dsStringEmail1002": "ac@gmail.com",
+  "dsStringEmail1003": "xyz@gamil.com",
+  "dsStringEmail1004": "xyz@gamil.com",
+  "dsStringEmail1005": "xyz@gamil.com",
+  "dsStringEmail1006": null,
+  "dsStringEmail1007": "xyz@gamil.com",
+  "dsStringEmail1008": "xyz@gamil.com",
+  "dsStringEmail1010": "xyz@gamil.com",
+  "dsStringEmail1011": null,
+  "dsStringEmail1013": "xyz@gamil.com",
+  "dsStringEmail1014": "x@gamil.com",
+  "dsStringEmail1015": "xyz@gamil.com",
+  "dsStringEmail1016": null,
+  "dsStringEmail1018": "xyz@gamil.com",
+  "dsStringEmail1019": null,
+  "dsStringEmail1020": "xyz@gamil.com",
+  "__v": 0
+}
