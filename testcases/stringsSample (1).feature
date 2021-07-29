@@ -12,38 +12,38 @@ Examples:
 |deepak@appveen.com|123123123|
 
 Scenario: Delete data service
-	Given Data service "Rich-text" exists
+	Given Data service "Sample1" exists
 	Then Remove the data service
 
 Scenario: Create data service
-	Given Data service "Rich-text" does not exist
-	Then Create new data service "Rich-text"
+	Given Data service "Sample1" does not exist
+	Then Create new data service "Sample1"
  #Under testData, picks up strings.json create the JSON
 
-Scenario: Assign to Appcenter Group
- Then Group "Rich-text-Group" does not exist
- Then Create new group "Rich-text-Group" 
- And assign appcenter permissions for "Rich-text" dataservice
-
-
-Scenario: Log out of Author
-	Given User logged into Author
-	Then User logs out of Author
-	
-
+#Scenario: Assign to Appcenter Group
+ #Then Group "Rich-text-Group" does not exist
+ #Then Create new group "Rich-text-Group" 
+ #And assign appcenter permissions for "Rich-text" dataservice
+#
+#
+#Scenario: Log out of Author
+#	Given User logged into Author
+#	Then User logs out of Author
+#	
+#
 #@AppCenter
-Scenario Outline: Log into AppCenter
-	Given User navigate to AppCenter login page
-	And User enters "<username>" and "<password>" in AppCenter login page
-	And Verify User has Logged in Successfully 
-Examples:
-|username|password|
-|maker@appveen.com|123123123|
-
-
+#Scenario Outline: Log into AppCenter
+#	Given User navigate to AppCenter login page
+#	And User enters "<username>" and "<password>" in AppCenter login page
+#	And Verify User has Logged in Successfully 
+#Examples:
+#|username|password|
+#|maker@appveen.com|123123123|
+#
+#
  #INSERT/UPDATE
-Scenario: Add data to data service
-	Given Data service "Rich-text"
+#Scenario: Add data to data service
+#	Given Data service "Rich-text"
 #	Then Add data to the data service
 #	
 #	
