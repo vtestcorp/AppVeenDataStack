@@ -1,6 +1,6 @@
-Feature: Functions on Strings
+Feature: DS NUMBER CURRENCY
 
-# Scenarios - TS.., ..., ..
+# Scenarios - DS NUMBER CURRENCY 1001 - DS NUMBER CURRENCY 1024
 
 @Author
 Scenario Outline: Log into Author

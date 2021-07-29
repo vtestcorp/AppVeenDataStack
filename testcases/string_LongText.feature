@@ -1,6 +1,6 @@
-Feature: Functions on Strings
+Feature: DS STRING LONG TEXT
 
-# Scenarios - TS.., ..., ..
+# Scenarios - DS STRING LONG TEXT 1001 - DS STRING LONG TEXT 1018
 
 @Author
 Scenario Outline: Log into Author

@@ -1,0 +1,340 @@
+{
+  "workflowHooks" : {
+    "postHooks" : {
+      "submit" : [ ],
+      "rework" : [ ],
+      "discard" : [ ],
+      "approve" : [ ],
+      "reject" : [ ]
+    }
+  },
+  "_metadata" : {
+    "version" : {
+      "document" : 2,
+      "release" : "dev"
+    },
+    "deleted" : false,
+    "lastUpdated" : "2021-07-29T06:39:00.215Z",
+    "createdAt" : "2021-07-28T10:56:13.754Z",
+    "lastUpdatedBy" : "deepak@appveen.com"
+  },
+  "allowedFileTypes" : [ "jpeg", "ppt", "xls", "csv", "doc", "jpg", "png", "gif", "zip", "tar", "rar", "gz", "bz2", "7z", "mp4", "mp3", "pdf", "ico", "docx", "pptx", "xlsx", "ods", "xml", "txt" ],
+  "version" : 1,
+  "instances" : 1,
+  "versionValidity" : {
+    "validityType" : "count",
+    "validityValue" : -1
+  },
+  "permanentDeleteData" : true,
+  "disableInsights" : false,
+  "status" : "Draft",
+  "enableSearchIndex" : false,
+  "attributeCount" : 7,
+  "type" : null,
+  "_id" : "SRVC5156",
+  "name" : "group",
+  "description" : null,
+  "app" : "vTest",
+  "api" : "/group",
+  "port" : 20171,
+  "wizard" : [ ],
+  "webHooks" : [ ],
+  "preHooks" : [ ],
+  "collectionName" : "group",
+  "__v" : 1,
+  "definition" : [ {
+    "_id" : "61024d0436c2ee965cee8ef8",
+    "key" : "_id",
+    "type" : "String",
+    "prefix" : "GRO",
+    "suffix" : null,
+    "padding" : null,
+    "counter" : 1001,
+    "properties" : {
+      "label" : null,
+      "readonly" : false,
+      "errorMessage" : null,
+      "name" : "ID",
+      "required" : false,
+      "fieldLength" : 10,
+      "_description" : null,
+      "_typeChanged" : "id",
+      "_isParrentArray" : null,
+      "_isGrpParentArray" : null,
+      "dataPath" : "_id",
+      "_detailedType" : "",
+      "dataKey" : "_id"
+    }
+  }, {
+    "_id" : "61024d0436c2eef0feee8ef9",
+    "type" : "Object",
+    "key" : "dsGroup1001",
+    "properties" : {
+      "name" : "DS GROUP 1001",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroup1001",
+      "dataPath" : "dsGroup1001"
+    },
+    "definition" : [ {
+      "type" : "String",
+      "key" : "dsString",
+      "properties" : {
+        "name" : "DS STRING",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "dsString",
+        "dataPath" : "dsGroup1001.dsString"
+      }
+    } ]
+  }, {
+    "_id" : "61024d0436c2eee6b5ee8efa",
+    "type" : "Object",
+    "key" : "dsGroup1002",
+    "properties" : {
+      "name" : "DS GROUP 1002",
+      "label" : "DS GROUP 1002 LABEL",
+      "errorMessage" : "DS GROUP 1002 ERROR",
+      "fieldLength" : 10,
+      "_description" : "DS GROUP 1002 DESCRIPTION",
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroup1002",
+      "dataPath" : "dsGroup1002"
+    },
+    "definition" : [ {
+      "type" : "String",
+      "key" : "dsString",
+      "properties" : {
+        "name" : "DS STRING",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "dsString",
+        "dataPath" : "dsGroup1002.dsString"
+      }
+    } ]
+  }, {
+    "_id" : "61024d0436c2ee508cee8efb",
+    "type" : "Object",
+    "key" : "dsGroup1003",
+    "properties" : {
+      "name" : "DS GROUP 1003",
+      "label" : "DS GROUP 1003  LABEL",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroup1003",
+      "dataPath" : "dsGroup1003"
+    },
+    "definition" : [ {
+      "type" : "String",
+      "key" : "dsString",
+      "properties" : {
+        "name" : "DS STRING",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "dsString",
+        "dataPath" : "dsGroup1003.dsString"
+      }
+    } ]
+  }, {
+    "_id" : "61024d0436c2eecc90ee8efc",
+    "type" : "Object",
+    "key" : "dsGroup1004",
+    "properties" : {
+      "name" : "DS GROUP 1004",
+      "errorMessage" : "DS GROUP 1004 ERROR",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroup1004",
+      "dataPath" : "dsGroup1004"
+    },
+    "definition" : [ {
+      "type" : "String",
+      "key" : "dsString",
+      "properties" : {
+        "name" : "DS STRING",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "dsString",
+        "dataPath" : "dsGroup1004.dsString"
+      }
+    } ]
+  }, {
+    "_id" : "61024d0436c2ee03ceee8efd",
+    "type" : "Object",
+    "key" : "dsGroup1005",
+    "properties" : {
+      "name" : "DS GROUP 1005",
+      "label" : "DS GROUP 1005 LABEL",
+      "errorMessage" : "DS GROUP 1006 ERROR",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroup1005",
+      "dataPath" : "dsGroup1005"
+    },
+    "definition" : [ {
+      "type" : "String",
+      "key" : "dsString",
+      "properties" : {
+        "name" : "DS STRING",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "dsString",
+        "dataPath" : "dsGroup1005.dsString"
+      }
+    } ]
+  }, {
+    "_id" : "61024d0436c2ee2d3bee8efe",
+    "type" : "Object",
+    "key" : "dsGroup1006",
+    "properties" : {
+      "name" : "DS GROUP 1006",
+      "fieldLength" : 10,
+      "_description" : "DS GROUP 1006 DESCRIPTION",
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroup1006",
+      "dataPath" : "dsGroup1006"
+    },
+    "definition" : [ {
+      "type" : "String",
+      "key" : "dsString",
+      "properties" : {
+        "name" : "DS STRING",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "dsString",
+        "dataPath" : "dsGroup1006.dsString"
+      }
+    } ]
+  } ],
+  "headers" : [ ],
+  "role" : {
+    "_id" : "SRVC5156",
+    "_metadata" : {
+      "version" : {
+        "document" : 1,
+        "release" : "dev"
+      },
+      "deleted" : false,
+      "lastUpdated" : "2021-07-28T10:56:13.776Z",
+      "createdAt" : "2021-07-28T10:56:13.773Z"
+    },
+    "app" : "vTest",
+    "entity" : "SRVC5156",
+    "entityName" : "group",
+    "roles" : [ {
+      "skipReviewRole" : true,
+      "id" : "P8765694391",
+      "name" : "Skip Review",
+      "operations" : [ {
+        "method" : "SKIP_REVIEW"
+      }, {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record and without any approval"
+    }, {
+      "manageRole" : true,
+      "id" : "P6812160239",
+      "name" : "Manage",
+      "operations" : [ {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      }, {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record"
+    }, {
+      "viewRole" : true,
+      "id" : "P7317996538",
+      "name" : "View",
+      "operations" : [ {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to view the record"
+    } ],
+    "type" : "appcenter",
+    "fields" : {
+      "_id" : {
+        "_t" : "String",
+        "_p" : {
+          "P8765694391" : "R",
+          "P6812160239" : "R",
+          "P7317996538" : "R"
+        }
+      },
+      "dsGroup1001" : {
+        "dsString" : {
+          "_t" : "String",
+          "_p" : {
+            "P8765694391" : "R",
+            "P6812160239" : "R",
+            "P7317996538" : "R"
+          }
+        }
+      },
+      "dsGroup1002" : {
+        "dsString" : {
+          "_t" : "String",
+          "_p" : {
+            "P8765694391" : "R",
+            "P6812160239" : "R",
+            "P7317996538" : "R"
+          }
+        }
+      },
+      "dsGroup1003" : {
+        "dsString" : {
+          "_t" : "String",
+          "_p" : {
+            "P8765694391" : "R",
+            "P6812160239" : "R",
+            "P7317996538" : "R"
+          }
+        }
+      },
+      "dsGroup1004" : {
+        "dsString" : {
+          "_t" : "String",
+          "_p" : {
+            "P8765694391" : "R",
+            "P6812160239" : "R",
+            "P7317996538" : "R"
+          }
+        }
+      },
+      "dsGroup1005" : {
+        "dsString" : {
+          "_t" : "String",
+          "_p" : {
+            "P8765694391" : "R",
+            "P6812160239" : "R",
+            "P7317996538" : "R"
+          }
+        }
+      },
+      "dsGroup1006" : {
+        "dsString" : {
+          "_t" : "String",
+          "_p" : {
+            "P8765694391" : "R",
+            "P6812160239" : "R",
+            "P7317996538" : "R"
+          }
+        }
+      }
+    },
+    "__v" : 0
+  },
+  "relatedSchemas" : {
+    "internal" : {
+      "users" : [ ]
+    },
+    "outgoing" : [ ]
+  }
+}

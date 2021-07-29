@@ -1,6 +1,6 @@
-Feature: Functions on Strings
+Feature: DS NUMBER LIST OF VALUES
 
-# Scenarios - TS.., ..., ..
+# Scenarios - DS NUMBER LIST OF VALUES 1001-DS NUMBER LIST OF VALUES 1020
 
 @Author
 Scenario Outline: Log into Author

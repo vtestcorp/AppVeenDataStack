@@ -1,6 +1,5 @@
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\DataGenerator.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\Keyboard.java
-C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\base\Test.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\Property.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\stepdefinitions\LoginToAppCenter.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\config\DefineProperties.java
@@ -12,7 +11,6 @@ C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\stepdefinitions\DesignTe
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\pageModules\LoginAppCenter.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\stepdefinitions\AppcenterWorkflow.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\helperMethods\DropDown.java
-C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\base\JsonJacksonMapMappingDemo.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\listeners\MyListeners.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\pageModules\Module_DesignTestCases.java
 C:\Users\DELL\eclipse-workspace\DataStack\src\main\java\listeners\RetryAnalyser.java

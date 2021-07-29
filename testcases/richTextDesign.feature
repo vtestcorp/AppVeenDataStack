@@ -1,6 +1,6 @@
-Feature: Functions on Strings
+Feature: DS STRING RICH TEXT
 
-# Scenarios - TS.., ..., ..
+# Scenarios - DS STRING RICH TEXT 1001 - DS STRING RICH TEXT 1018
 
 @Author
 Scenario Outline: Log into Author

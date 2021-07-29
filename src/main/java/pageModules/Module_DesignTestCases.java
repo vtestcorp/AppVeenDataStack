@@ -83,6 +83,7 @@ public class Module_DesignTestCases extends BaseClass{
 
 	public void groupexist(String groupName) throws Exception {
 		
+		Thread.sleep(3000);
 		applyWait.waitForElementToBeClickable(ap.groups, 30).click();
 		Thread.sleep(2000);
 		List<WebElement> groupNames=gp.groups;
@@ -247,6 +248,7 @@ public class Module_DesignTestCases extends BaseClass{
 												applyWait.waitForElementToBeClickable(textBox, 30).sendKeys((String) obj.get(attributes[1]));
 			
 											} else {
+												applyWait.waitForElementToBeClickable(textBox, 30).clear();
 												applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(((String) jsonObject.get(id1)).toString());
 												;
 											}

@@ -1,8 +1,6 @@
 helperMethods\Property.class
 base\BaseClass.class
 pageModules\Module_DesignTestCases.class
-base\JsonJacksonMapMappingDemo.class
-base\Test.class
 listeners\MyListeners.class
 helperMethods\JavascriptClick.class
 helperMethods\JsonUtils.class
@@ -28,7 +26,7 @@ helperMethods\ScrollTypes.class
 helperMethods\SwitchWindow.class
 helperMethods\ZipUtil.class
 stepdefinitions\LoginToAppCenter.class
-base\Test$1.class
+helperMethods\JsonUtils$1.class
 stepdefinitions\DesignTestCases.class
 helperMethods\DataGenerator.class
 helperMethods\DateUtils.class

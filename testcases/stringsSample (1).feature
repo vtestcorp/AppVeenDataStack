@@ -12,18 +12,18 @@ Examples:
 |deepak@appveen.com|123123123|
 
 Scenario: Delete data service
-	Given Data service "Rich-text" exists
+	Given Data service "sample" exists
 	Then Remove the data service
 
 Scenario: Create data service
-	Given Data service "Rich-text" does not exist
-	Then Create new data service "Rich-text"
+	Given Data service "sample" does not exist
+	Then Create new data service "sample"
  #Under testData, picks up strings.json create the JSON
 
 Scenario: Assign to Appcenter Group
  Then Group "Rich-text-Group" does not exist
  Then Create new group "Rich-text-Group" 
- And assign appcenter permissions for "Rich-text" dataservice
+ And assign appcenter permissions for "sample" dataservice
 
 
 Scenario: Log out of Author
@@ -43,10 +43,10 @@ Examples:
 
  #INSERT/UPDATE
 Scenario: Add data to data service
-	Given Data service "Rich-text"
-#	Then Add data to the data service
-#	
-#	
+	Given Data service "sample"
+	Then Add data to the data service
+	
+	
 #	Scenario Outline: Fetch record from the data service
 #	Given Data service "Design-String"
 #	Then Fetch record "<id>" from the data service

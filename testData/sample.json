@@ -14,11 +14,11 @@
       "release": "dev"
     },
     "deleted": false,
-    "lastUpdated": "2021-07-17T09:56:01.020Z",
-    "createdAt": "2021-07-17T09:40:15.885Z",
+    "lastUpdated": "2021-07-27T17:52:29.559Z",
+    "createdAt": "2021-07-27T10:33:04.444Z",
     "lastUpdatedBy": "deepak@appveen.com"
   },
-  "_id": "SRVC4551",
+  "_id": "SRVC5114",
   "allowedFileTypes": [
     "jpeg",
     "ppt",
@@ -55,24 +55,24 @@
   "disableInsights": false,
   "status": "Active",
   "enableSearchIndex": false,
-  "attributeCount": 16,
+  "attributeCount": 19,
   "type": null,
-  "name": "sample",
+  "name": "Collection",
   "description": null,
   "app": "vTest",
-  "api": "/sample",
-  "port": 20035,
+  "api": "/collection",
+  "port": 20163,
   "wizard": [],
   "webHooks": [],
   "preHooks": [],
-  "collectionName": "sample",
+  "collectionName": "collection",
   "__v": 0,
   "definition": [
     {
-      "_id": "60f2a93052fb6d5162b58d65",
+      "_id": "610047ddc2d26b37b1c7b8af",
       "key": "_id",
       "type": "String",
-      "prefix": "SAM",
+      "prefix": "COL",
       "suffix": null,
       "padding": null,
       "counter": 1001,
@@ -93,268 +93,467 @@
       }
     },
     {
-      "_id": "60f2a93052fb6d1f10b58d66",
-      "type": "String",
-      "key": "firstName",
+      "_id": "610047ddc2d26b7a62c7b8b0",
+      "type": "Array",
+      "key": "collection1001",
       "properties": {
-        "label": "label",
-        "errorMessage": "error",
-        "name": "firstName",
+        "name": "COLLECTION 1001",
         "fieldLength": 10,
-        "_description": "Text Type successful",
-        "_typeChanged": "String",
-        "minlength": "1",
-        "maxlength": "8",
-        "pattern": "[a-z]",
-        "dataKey": "firstName",
-        "dataPath": "firstName"
-      }
-    },
-    {
-      "_id": "60f2a93052fb6d8b45b58d67",
-      "type": "String",
-      "key": "longText",
-      "properties": {
-        "label": "label",
-        "errorMessage": "error",
-        "name": "Long Text",
-        "fieldLength": 10,
-        "_description": "Long Text Type successful",
-        "_typeChanged": "String",
-        "longText": true,
-        "dataKey": "longText",
-        "dataPath": "longText"
-      }
-    },
-    {
-      "_id": "60f2a93052fb6d8525b58d68",
-      "type": "String",
-      "key": "richText",
-      "properties": {
-        "label": "Rich Text label",
-        "errorMessage": "Rich Text error",
-        "name": "Rich Text",
-        "fieldLength": 10,
-        "_description": "Rich Text Type successful",
-        "_typeChanged": "String",
-        "richText": true,
-        "dataKey": "richText",
-        "dataPath": "richText"
-      }
-    },
-    {
-      "_id": "60f2a93052fb6dd0a6b58d69",
-      "type": "String",
-      "key": "email",
-      "properties": {
-        "label": "Email label",
-        "errorMessage": "Email error",
-        "name": "email",
-        "fieldLength": 10,
-        "_description": "Email Type successful",
-        "_typeChanged": "String",
-         "default": "abc@gmail.com",
-        "email": true,
-        "dataKey": "email",
-        "dataPath": "email"
-      }
-    },
-    {
-      "_id": "60f2a93052fb6d36d6b58d6a",
-      "type": "Object",
-      "definition": [
-        {
-          "type": "String",
-          "key": "value",
-          "properties": {
-            "name": "value",
-            "_typeChanged": "String"
-          }
-        },
-        {
-          "type": "String",
-          "key": "checksum",
-          "properties": {
-            "name": "checksum",
-            "_typeChanged": "String"
-          }
-        }
-      ],
-      "key": "secureText",
-      "properties": {
-        "label": "Secure Text label",
-        "errorMessage": "Secure Text error",
-        "name": "Secure Text",
-        "fieldLength": 10,
-        "_description": "Secure Text Type successful",
-        "_typeChanged": "String",
-        "pattern": "A5",
-        "password": true,
-        "dataKey": "secureText",
-        "dataPath": "secureText"
-      }
-    },
-    {
-      "_id": "60f2a93052fb6d9f57b58d6b",
-      "type": "Number",
-      "key": "listOfValues",
-      "properties": {
-        "name": "List of values",
-        "label": "List of value label",
-        "errorMessage": "List of value error",
-        "fieldLength": 10,
-        "_typeChanged": "Number",
-        "default": 3652,
-        "precision": 2,
-        "enum": [
-          123,
-          3652,
-          987456
-        ],
-        "dataKey": "listOfValues",
-        "dataPath": "listOfValues"
-      }
-    },
-    {
-      "_id": "60f2a93052fb6dca36b58d6c",
-      "type": "Number",
-      "key": "age",
-      "properties": {
-        "label": "Age123",
-        "errorMessage": "Age235",
-        "name": "age",
-        "fieldLength": 10,
-        "_description": "Number Type Successful",
-        "_typeChanged": "Number",
-        "default": 5,
-        "min": 3,
-        "max": 6,
-        "precision": 1,
-        "dataKey": "age",
-        "dataPath": "age"
-      }
-    },
-    {
-      "_id": "60f2a93052fb6d685cb58d6d",
-      "type": "Number",
-      "key": "currency",
-      "properties": {
-        "label": "Currency Label",
-        "errorMessage": "Currency Error",
-        "name": "Currency",
-        "fieldLength": 10,
-        "_description": "Currency Type Successful",
-        "_typeChanged": "Number",
-        "default": 3,
-        "min": 2,
-        "max": 4,
-        "currency": "INR",
-        "precision": 1,
-        "dataKey": "currency",
-        "dataPath": "currency"
-      }
-    },
-    {
-      "_id": "60f2a93052fb6d1d79b58d6e",
-      "type": "Boolean",
-      "key": "gender",
-      "properties": {
-        "label": "Gender1",
-        "errorMessage": "Gender2",
-        "name": "gender",
-        "fieldLength": 10,
-        "_description": "Gender Type Successful",
-        "_typeChanged": "Boolean",
-        "dataKey": "gender",
-        "dataPath": "gender"
-      }
-    },
-    {
-      "_id": "60f2a93052fb6d9737b58d6f",
-      "type": "Date",
-      "key": "date",
-      "properties": {
-        "label": "Date123",
-        "errorMessage": "Date235",
-        "name": "date",
-        "fieldLength": 10,
-        "_description": "Date Type Successful",
-        "_typeChanged": "Date",
-        "dateType": "date",
-        "defaultTimezone": "Etc/Zulu",
-        "supportedTimezones": [
-          "Africa/Algiers"
-        ],
-        "dataKey": "date",
-        "dataPath": "date"
-      }
-    },
-    {
-      "_id": "60f2a93052fb6d5984b58d70",
-      "type": "Geojson",
-      "key": "location",
-      "properties": {
-        "label": "Location123",
-        "errorMessage": "Location235",
-        "name": "location",
-        "fieldLength": 10,
-        "_description": "Location Type Successful",
-        "_typeChanged": "Geojson",
-        "geoType": "point",
-        "dataKey": "location",
-        "dataPath": "location"
-      }
-    },
-    {
-      "_id": "60f2a93052fb6d96a5b58d71",
-      "type": "File",
-      "key": "file",
-      "properties": {
-        "label": "File123",
-        "errorMessage": "File235",
-        "name": "file",
-        "fieldLength": 10,
-        "_description": "File Type Successful",
-        "_typeChanged": "File",
-        "fileType": "All",
-        "dataKey": "file",
-        "dataPath": "file"
-      }
-    },
-    {
-      "_id": "60f2a93052fb6d2a27b58d72",
-      "type": "Object",
-      "key": "group1",
-      "properties": {
-        "label": "123",
-        "errorMessage": "User235",
-        "name": "Group1",
-        "fieldLength": 10,
-        "_typeChanged": "Object",
-        "dataKey": "group1",
-        "dataPath": "group1"
+        "_typeChanged": "Array",
+        "createOnly": true,
+        "dataKey": "collection1001[#]",
+        "dataPath": "collection1001[#]"
       },
       "definition": [
         {
           "type": "String",
-          "key": "line1",
+          "key": "_self",
           "properties": {
-            "name": "Line1",
             "fieldLength": 10,
-            "_typeChanged": "String",
-            "dataKey": "line1",
-            "dataPath": "group1.line1"
+            "_typeChanged": "String"
           }
-        },
+        }
+      ]
+    },
+    {
+      "_id": "610047ddc2d26b0bb5c7b8b1",
+      "type": "Array",
+      "key": "collectionText1002",
+      "properties": {
+        "name": "COLLECTION TEXT 1002",
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "dataKey": "collectionText1002[#]",
+        "dataPath": "collectionText1002[#]"
+      },
+      "definition": [
         {
           "type": "String",
-          "key": "line2",
+          "key": "_self",
           "properties": {
-            "name": "Line2",
+            "name": "_self",
             "fieldLength": 10,
-            "_typeChanged": "String",
-            "dataKey": "line2",
-            "dataPath": "group1.line2"
+            "_typeChanged": "String"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "610047ddc2d26b720dc7b8b2",
+      "type": "Array",
+      "key": "collectionText1003",
+      "properties": {
+        "name": "COLLECTION TEXT 1003",
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "createOnly": true,
+        "dataKey": "collectionText1003[#]",
+        "dataPath": "collectionText1003[#]"
+      },
+      "definition": [
+        {
+          "type": "String",
+          "key": "_self",
+          "properties": {
+            "name": "_self",
+            "fieldLength": 10,
+            "_typeChanged": "String"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "610047ddc2d26b3e4ac7b8b3",
+      "type": "Array",
+      "key": "collectionText1004",
+      "properties": {
+        "readonly": true,
+        "name": "COLLECTION TEXT 1004",
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "dataKey": "collectionText1004[#]",
+        "dataPath": "collectionText1004[#]"
+      },
+      "definition": [
+        {
+          "type": "String",
+          "key": "_self",
+          "properties": {
+            "readonly": true,
+            "name": "_self",
+            "fieldLength": 10,
+            "_typeChanged": "String"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "610047ddc2d26bd4cdc7b8b4",
+      "type": "Array",
+      "key": "collectionText1005",
+      "properties": {
+        "readonly": true,
+        "name": "COLLECTION TEXT 1005",
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "createOnly": true,
+        "dataKey": "collectionText1005[#]",
+        "dataPath": "collectionText1005[#]"
+      },
+      "definition": [
+        {
+          "type": "String",
+          "key": "_self",
+          "properties": {
+            "readonly": true,
+            "name": "_self",
+            "fieldLength": 10,
+            "_typeChanged": "String"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "610047ddc2d26b544dc7b8b5",
+      "type": "Array",
+      "key": "collectionNumber1006",
+      "properties": {
+        "name": "COLLECTION NUMBER 1006",
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "dataKey": "collectionNumber1006[#]",
+        "dataPath": "collectionNumber1006[#]"
+      },
+      "definition": [
+        {
+          "type": "Number",
+          "key": "_self",
+          "properties": {
+            "fieldLength": 10,
+            "_typeChanged": "Number",
+            "precision": 2
+          }
+        }
+      ]
+    },
+    {
+      "_id": "610047ddc2d26ba79bc7b8b6",
+      "type": "Array",
+      "key": "collectionNumber1007",
+      "properties": {
+        "name": "COLLECTION NUMBER 1007",
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "createOnly": true,
+        "dataKey": "collectionNumber1007[#]",
+        "dataPath": "collectionNumber1007[#]"
+      },
+      "definition": [
+        {
+          "type": "Number",
+          "key": "_self",
+          "properties": {
+            "fieldLength": 10,
+            "_typeChanged": "Number",
+            "precision": 2
+          }
+        }
+      ]
+    },
+    {
+      "_id": "610047ddc2d26b43c3c7b8b7",
+      "type": "Array",
+      "key": "collectionNumber1008",
+      "properties": {
+        "name": "COLLECTION NUMBER 1008",
+        "readonly": true,
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "dataKey": "collectionNumber1008[#]",
+        "dataPath": "collectionNumber1008[#]"
+      },
+      "definition": [
+        {
+          "type": "Number",
+          "key": "_self",
+          "properties": {
+            "fieldLength": 10,
+            "_typeChanged": "Number",
+            "precision": 2
+          }
+        }
+      ]
+    },
+    {
+      "_id": "610047ddc2d26bab15c7b8b8",
+      "type": "Array",
+      "key": "collectionNumber1009",
+      "properties": {
+        "name": "COLLECTION NUMBER 1009",
+        "readonly": true,
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "createOnly": true,
+        "dataKey": "collectionNumber1009[#]",
+        "dataPath": "collectionNumber1009[#]"
+      },
+      "definition": [
+        {
+          "type": "Number",
+          "key": "_self",
+          "properties": {
+            "fieldLength": 10,
+            "_typeChanged": "Number",
+            "precision": 2
+          }
+        }
+      ]
+    },
+    {
+      "_id": "610047ddc2d26b674fc7b8b9",
+      "type": "Array",
+      "key": "collectionBoolean1010",
+      "properties": {
+        "name": "COLLECTION BOOLEAN 1010",
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "dataKey": "collectionBoolean1010[#]",
+        "dataPath": "collectionBoolean1010[#]"
+      },
+      "definition": [
+        {
+          "type": "Boolean",
+          "key": "_self",
+          "properties": {
+            "fieldLength": 10,
+            "_typeChanged": "Boolean"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "610047ddc2d26ba8dfc7b8ba",
+      "type": "Array",
+      "key": "collectionBoolean1011",
+      "properties": {
+        "name": "COLLECTION BOOLEAN 1011",
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "createOnly": true,
+        "dataKey": "collectionBoolean1011[#]",
+        "dataPath": "collectionBoolean1011[#]"
+      },
+      "definition": [
+        {
+          "type": "Boolean",
+          "key": "_self",
+          "properties": {
+            "fieldLength": 10,
+            "_typeChanged": "Boolean"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "610047ddc2d26b7f1cc7b8bb",
+      "type": "Array",
+      "key": "collectionBoolean1012",
+      "properties": {
+        "name": "COLLECTION BOOLEAN 1012",
+        "readonly": true,
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "dataKey": "collectionBoolean1012[#]",
+        "dataPath": "collectionBoolean1012[#]"
+      },
+      "definition": [
+        {
+          "type": "Boolean",
+          "key": "_self",
+          "properties": {
+            "fieldLength": 10,
+            "_typeChanged": "Boolean"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "610047ddc2d26b6e9dc7b8bc",
+      "type": "Array",
+      "key": "collectionBoolean1013",
+      "properties": {
+        "name": "COLLECTION BOOLEAN 1013",
+        "readonly": true,
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "createOnly": true,
+        "dataKey": "collectionBoolean1013[#]",
+        "dataPath": "collectionBoolean1013[#]"
+      },
+      "definition": [
+        {
+          "type": "Boolean",
+          "key": "_self",
+          "properties": {
+            "fieldLength": 10,
+            "_typeChanged": "Boolean"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "610047ddc2d26bce43c7b8bd",
+      "type": "Array",
+      "key": "collectionGroup1014",
+      "properties": {
+        "name": "COLLECTION GROUP 1014",
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "createOnly": true,
+        "dataKey": "collectionGroup1014[#]",
+        "dataPath": "collectionGroup1014[#]"
+      },
+      "definition": [
+        {
+          "type": "Object",
+          "key": "_self",
+          "properties": {
+            "name": "_self",
+            "fieldLength": 10,
+            "_typeChanged": "Object"
+          },
+          "definition": [
+            {
+              "type": "String",
+              "key": "label",
+              "properties": {
+                "readonly": true,
+                "name": "label",
+                "fieldLength": 10,
+                "_typeChanged": "String",
+                "dataKey": "label",
+                "dataPath": "collectionGroup1014[#].label"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_id": "610047ddc2d26b1ea5c7b8be",
+      "type": "Array",
+      "key": "collectionLocaton1015",
+      "properties": {
+        "readonly": true,
+        "name": "COLLECTION LOCATON 1015",
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "createOnly": true,
+        "dataKey": "collectionLocaton1015[#]",
+        "dataPath": "collectionLocaton1015[#]"
+      },
+      "definition": [
+        {
+          "type": "Geojson",
+          "key": "_self",
+          "properties": {
+            "readonly": true,
+            "name": "_self",
+            "fieldLength": 10,
+            "_typeChanged": "Geojson",
+            "geoType": "point"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "610047ddc2d26b5ee7c7b8bf",
+      "type": "Array",
+      "key": "collectionFile1016",
+      "properties": {
+        "readonly": true,
+        "name": "COLLECTION FILE 1016",
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "createOnly": true,
+        "dataKey": "collectionFile1016[#]",
+        "dataPath": "collectionFile1016[#]"
+      },
+      "definition": [
+        {
+          "type": "File",
+          "key": "_self",
+          "properties": {
+            "name": "_self",
+            "fieldLength": 10,
+            "_typeChanged": "File",
+            "fileType": "All"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "610047ddc2d26b77d6c7b8c0",
+      "type": "Array",
+      "key": "collectionUser1019",
+      "properties": {
+        "readonly": true,
+        "name": "COLLECTION USER 1019",
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "createOnly": true,
+        "dataKey": "collectionUser1019[#]",
+        "dataPath": "collectionUser1019[#]"
+      },
+      "definition": [
+        {
+          "type": "User",
+          "definition": [
+            {
+              "type": "String",
+              "key": "_id",
+              "properties": {
+                "name": "_id"
+              }
+            }
+          ],
+          "key": "_self",
+          "properties": {
+            "name": "_self",
+            "fieldLength": 10,
+            "_typeChanged": "User",
+            "deleteAction": "restrict",
+            "relatedSearchField": "_id",
+            "relatedViewFields": []
+          }
+        }
+      ]
+    },
+    {
+      "_id": "610047ddc2d26b2666c7b8c1",
+      "type": "Array",
+      "key": "collectionDate1020",
+      "properties": {
+        "readonly": true,
+        "name": "COLLECTION DATE 1020",
+        "fieldLength": 10,
+        "_typeChanged": "Array",
+        "createOnly": true,
+        "dataKey": "collectionDate1020[#]",
+        "dataPath": "collectionDate1020[#]"
+      },
+      "definition": [
+        {
+          "type": "Date",
+          "key": "_self",
+          "properties": {
+            "readonly": true,
+            "name": "_self",
+            "fieldLength": 10,
+            "_typeChanged": "Date",
+            "dateType": "date",
+            "defaultTimezone": "Zulu",
+            "supportedTimezones": []
           }
         }
       ]
@@ -363,28 +562,34 @@
   "headers": [],
   "relatedSchemas": {
     "internal": {
-      "users": []
+      "users": [
+        {
+          "path": "{\"collectionUser1019\":{\"_self\":\"User\"}}",
+          "isRequired": true,
+          "filter": "{ \"collectionUser1019\":{\"$elemMatch\":{\"_id\":\"{{id}}\"}}}"
+        }
+      ]
     },
     "outgoing": []
   },
   "role": {
-    "_id": "SRVC4551",
+    "_id": "SRVC5114",
     "_metadata": {
       "version": {
         "document": 1,
         "release": "dev"
       },
       "deleted": false,
-      "lastUpdated": "2021-07-17T09:40:15.906Z",
-      "createdAt": "2021-07-17T09:40:15.904Z"
+      "lastUpdated": "2021-07-27T10:33:04.472Z",
+      "createdAt": "2021-07-27T10:33:04.469Z"
     },
     "app": "vTest",
-    "entity": "SRVC4551",
-    "entityName": "sample",
+    "entity": "SRVC5114",
+    "entityName": "Collection",
     "roles": [
       {
         "skipReviewRole": true,
-        "id": "P5953588774",
+        "id": "P9362357461",
         "name": "Skip Review",
         "operations": [
           {
@@ -404,7 +609,7 @@
       },
       {
         "manageRole": true,
-        "id": "P7654000165",
+        "id": "P3487267476",
         "name": "Manage",
         "operations": [
           {
@@ -424,7 +629,7 @@
       },
       {
         "viewRole": true,
-        "id": "P3843494347",
+        "id": "P7494101788",
         "name": "View",
         "operations": [
           {
@@ -439,123 +644,153 @@
       "_id": {
         "_t": "String",
         "_p": {
-          "P5953588774": "R",
-          "P7654000165": "R",
-          "P3843494347": "R"
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
         }
       },
-      "firstName": {
-        "_t": "String",
+      "collection1001": {
+        "_t": "Array",
         "_p": {
-          "P5953588774": "R",
-          "P7654000165": "R",
-          "P3843494347": "R"
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
         }
       },
-      "longText": {
-        "_t": "String",
+      "collectionText1002": {
+        "_t": "Array",
         "_p": {
-          "P5953588774": "R",
-          "P7654000165": "R",
-          "P3843494347": "R"
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
         }
       },
-      "richText": {
-        "_t": "String",
+      "collectionText1003": {
+        "_t": "Array",
         "_p": {
-          "P5953588774": "R",
-          "P7654000165": "R",
-          "P3843494347": "R"
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
         }
       },
-      "email": {
-        "_t": "String",
+      "collectionText1004": {
+        "_t": "Array",
         "_p": {
-          "P5953588774": "R",
-          "P7654000165": "R",
-          "P3843494347": "R"
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
         }
       },
-      "secureText": {
-        "_t": "String",
+      "collectionText1005": {
+        "_t": "Array",
         "_p": {
-          "P5953588774": "R",
-          "P7654000165": "R",
-          "P3843494347": "R"
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
         }
       },
-      "listOfValues": {
-        "_t": "Number",
+      "collectionGroup1014": {
+        "_t": "Array",
         "_p": {
-          "P5953588774": "R",
-          "P7654000165": "R",
-          "P3843494347": "R"
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
         }
       },
-      "age": {
-        "_t": "Number",
+      "collectionLocaton1015": {
+        "_t": "Array",
         "_p": {
-          "P5953588774": "R",
-          "P7654000165": "R",
-          "P3843494347": "R"
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
         }
       },
-      "currency": {
-        "_t": "Number",
+      "collectionFile1016": {
+        "_t": "Array",
         "_p": {
-          "P5953588774": "R",
-          "P7654000165": "R",
-          "P3843494347": "R"
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
         }
       },
-      "gender": {
-        "_t": "Boolean",
+      "collectionUser1019": {
+        "_t": "Array",
         "_p": {
-          "P5953588774": "R",
-          "P7654000165": "R",
-          "P3843494347": "R"
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
         }
       },
-      "date": {
-        "_t": "Date",
+      "collectionDate1020": {
+        "_t": "Array",
         "_p": {
-          "P5953588774": "R",
-          "P7654000165": "R",
-          "P3843494347": "R"
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
         }
       },
-      "location": {
-        "_t": "String",
+      "collectionNumber1006": {
+        "_t": "Array",
         "_p": {
-          "P5953588774": "R",
-          "P7654000165": "R",
-          "P3843494347": "R"
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
         }
       },
-      "file": {
-        "_t": "String",
+      "collectionNumber1007": {
+        "_t": "Array",
         "_p": {
-          "P5953588774": "R",
-          "P7654000165": "R",
-          "P3843494347": "R"
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
         }
       },
-      "group1": {
-        "line1": {
-          "_t": "String",
-          "_p": {
-            "P5953588774": "R",
-            "P7654000165": "R",
-            "P3843494347": "R"
-          }
-        },
-        "line2": {
-          "_t": "String",
-          "_p": {
-            "P5953588774": "R",
-            "P7654000165": "R",
-            "P3843494347": "R"
-          }
+      "collectionNumber1008": {
+        "_t": "Array",
+        "_p": {
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
+        }
+      },
+      "collectionNumber1009": {
+        "_t": "Array",
+        "_p": {
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
+        }
+      },
+      "collectionBoolean1010": {
+        "_t": "Array",
+        "_p": {
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
+        }
+      },
+      "collectionBoolean1011": {
+        "_t": "Array",
+        "_p": {
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
+        }
+      },
+      "collectionBoolean1012": {
+        "_t": "Array",
+        "_p": {
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
+        }
+      },
+      "collectionBoolean1013": {
+        "_t": "Array",
+        "_p": {
+          "P9362357461": "R",
+          "P3487267476": "R",
+          "P7494101788": "R"
         }
       }
     },

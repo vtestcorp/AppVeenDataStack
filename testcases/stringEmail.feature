@@ -1,6 +1,6 @@
-Feature: This is the string-Email feature file
+Feature: DS STRING EMAIL
 
-# Scenarios - TS.., ..., ..
+# Scenarios - TDS STRING EMAIL 1001 - DS STRING EMAIL 1020
 
 @Author
 Scenario Outline: Log into Author
