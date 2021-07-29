@@ -178,7 +178,7 @@ public class LoginPage extends BaseClass{
 			case "Number" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
 				applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+				applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 				applyWait.waitForElementToBeClickable(ap.number, 30).click();
 				
 				if(	jsonProperties.containsKey("currency")){
@@ -208,7 +208,7 @@ public class LoginPage extends BaseClass{
 			case "Boolean" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
 				applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+				applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 				applyWait.waitForElementToBeClickable(ap.booleanData, 30).click();
 				requiredAttributes(jsonProperties);
 				break;
@@ -216,7 +216,7 @@ public class LoginPage extends BaseClass{
 				case "Date" : 
 					jsonProperties = (JSONObject) attribute.get("properties");
 				applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+				applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 				Thread.sleep(1000);
 				applyWait.waitForElementToBeClickable(ap.date, 30).click();
 				requiredAttributes(jsonProperties);
@@ -228,7 +228,7 @@ public class LoginPage extends BaseClass{
 					applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
 					if(jsonProperties.containsKey("password")) {
 						
-						applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+						applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 						applyWait.waitForElementToBeClickable(ap.abc, 30).click();
 						applyWait.waitForElementToBeClickable(ap.secureText, 30).click();
 						requiredAttributes(jsonProperties);
@@ -262,7 +262,7 @@ public class LoginPage extends BaseClass{
 						jsonProperties = (JSONObject) attribute.get("properties");
 					applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
 				
-					applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+					applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 					applyWait.waitForElementToBeClickable(ap.location, 30).click();
 					applyWait.waitForElementToBeClickable(ap.pointOnAMap, 30).click();
 					requiredAttributes(jsonProperties);
@@ -291,7 +291,7 @@ public class LoginPage extends BaseClass{
 						jsonProperties = (JSONObject) attribute.get("properties");
 						applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
 					
-						applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+						applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 						applyWait.waitForElementToBeClickable(ap.file, 30).click();
 						requiredAttributes(jsonProperties);
 						break;
@@ -300,7 +300,7 @@ public class LoginPage extends BaseClass{
 						jsonProperties = (JSONObject) attribute.get("properties");
 						applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
 					
-						applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+						applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 						applyWait.waitForElementToBeClickable(ap.library, 30).click();
 						requiredAttributes(jsonProperties);
 						break;
@@ -309,7 +309,7 @@ public class LoginPage extends BaseClass{
 						jsonProperties = (JSONObject) attribute.get("properties");
 						applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
 						
-						applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+						applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 						applyWait.waitForElementToBeClickable(ap.user, 30).click();
 						requiredAttributes(jsonProperties);
 						jsonProperties = (JSONObject) attribute.get("properties");
@@ -576,7 +576,7 @@ public class LoginPage extends BaseClass{
 		case "Number" : 
 			jsonProperties = (JSONObject) attribute.get("properties");
 			
-			applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+			applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 			applyWait.waitForElementToBeClickable(ap.number, 30).click();
 			applyWait.waitForElementToBeClickable(ap.number1, 30).click();
 			requiredAttributes(jsonProperties);
@@ -592,7 +592,7 @@ public class LoginPage extends BaseClass{
 			
 		case "Boolean" : 
 			jsonProperties = (JSONObject) attribute.get("properties");
-			applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+			applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 			applyWait.waitForElementToBeClickable(ap.booleanData, 30).click();
 			requiredAttributes(jsonProperties);
 			break;
@@ -600,7 +600,7 @@ public class LoginPage extends BaseClass{
 			case "Date" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
 				
-			applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+			applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 			applyWait.waitForElementToBeClickable(ap.date, 30).click();
 			requiredAttributes(jsonProperties);
 			break;
@@ -609,7 +609,7 @@ public class LoginPage extends BaseClass{
 			case "Object" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
 			
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+				applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 				applyWait.waitForElementToBeClickable(ap.group, 30).click();
 				applyWait.waitForElementToBeClickable(ap.customLabel, 30).sendKeys(jsonProperties.get("label").toString());
 				applyWait.waitForElementToBeClickable(ap.customError, 30).sendKeys(jsonProperties.get("errorMessage").toString());
@@ -630,7 +630,7 @@ public class LoginPage extends BaseClass{
 				
 				case "Geojson" : 
 					jsonProperties = (JSONObject) attribute.get("properties");
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+				applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 				applyWait.waitForElementToBeClickable(ap.location, 30).click();
 				applyWait.waitForElementToBeClickable(ap.pointOnAMap, 30).click();
 				requiredAttributes(jsonProperties);
@@ -639,7 +639,7 @@ public class LoginPage extends BaseClass{
 				case "File" : 
 					jsonProperties = (JSONObject) attribute.get("properties");
 				
-					applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+					applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 					applyWait.waitForElementToBeClickable(ap.file, 30).click();
 					requiredAttributes(jsonProperties);
 					break;
@@ -647,14 +647,14 @@ public class LoginPage extends BaseClass{
 				case "Library" : 
 					jsonProperties = (JSONObject) attribute.get("properties");
 				
-					applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+					applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 					applyWait.waitForElementToBeClickable(ap.library, 30).click();
 					requiredAttributes(jsonProperties);
 					break;
 				
 				case "User" : 
 					jsonProperties = (JSONObject) attribute.get("properties");
-					applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+					applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 					applyWait.waitForElementToBeClickable(ap.user, 30).click();
 					requiredAttributes(jsonProperties);
 					break;
@@ -722,7 +722,7 @@ public class LoginPage extends BaseClass{
 			case "Number" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
 				
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+				applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 				applyWait.waitForElementToBeClickable(ap.number, 30).click();
 				applyWait.waitForElementToBeClickable(ap.number1, 30).click();
 				requiredAttributes(jsonProperties);
@@ -739,14 +739,14 @@ public class LoginPage extends BaseClass{
 				
 			case "Boolean" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+				applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 				applyWait.waitForElementToBeClickable(ap.booleanData, 30).click();
 				requiredAttributes(jsonProperties);
 				break;
 				
 				case "Date" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+				applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 				applyWait.waitForElementToBeClickable(ap.date, 30).click();
 				requiredAttributes(jsonProperties);
 				break;
@@ -755,7 +755,7 @@ public class LoginPage extends BaseClass{
 				case "Object" : 
 					jsonProperties = (JSONObject) attribute.get("properties");
 				
-					applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+					applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 					applyWait.waitForElementToBeClickable(ap.group, 30).click();
 					if(jsonProperties.containsKey("_description")) {
 					applyWait.waitForElementToBeClickable(ap.description, 30).sendKeys(jsonProperties.get("_description").toString());
@@ -783,7 +783,7 @@ public class LoginPage extends BaseClass{
 //						if(jsonProperties.get("required").toString().equals("true")) {
 //							applyWait.waitForElementToBeClickable(ap.required, 30).click();
 //						}
-					applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+					applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 					applyWait.waitForElementToBeClickable(ap.location, 30).click();
 					applyWait.waitForElementToBeClickable(ap.pointOnAMap, 30).click();
 					requiredAttributes(jsonProperties);
@@ -792,7 +792,7 @@ public class LoginPage extends BaseClass{
 					case "File" : 
 						jsonProperties = (JSONObject) attribute.get("properties");
 					
-						applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+						applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 						applyWait.waitForElementToBeClickable(ap.file, 30).click();
 						requiredAttributes(jsonProperties);
 						break;
@@ -807,7 +807,7 @@ public class LoginPage extends BaseClass{
 					
 					case "User" : 
 						jsonProperties = (JSONObject) attribute.get("properties");
-						applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+						applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
 						applyWait.waitForElementToBeClickable(ap.user, 30).click();
 					//	applyWait.waitForElementToBeClickable(ap.customLabel, 30).sendKeys(jsonProperties.get("label").toString());
 					//	applyWait.waitForElementToBeClickable(ap.customError, 30).sendKeys(jsonProperties.get("errorMessage").toString());

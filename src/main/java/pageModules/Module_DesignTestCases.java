@@ -95,6 +95,7 @@ public class Module_DesignTestCases extends BaseClass{
 		if(groups.contains(groupName)) {
 			WebElement group=driver.findElement(By.xpath("//div[normalize-space()='"+groupName+"']/parent::div"));
 			group.click();
+			Thread.sleep(500);
 			applyWait.waitForElementToBeClickable(gp.deleteGroup, 30).click();
 			Thread.sleep(500);
 			applyWait.waitForElementToBeClickable(gp.delete, 30).click();

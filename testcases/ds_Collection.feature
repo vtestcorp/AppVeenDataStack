@@ -33,21 +33,21 @@ Scenario: Log out of Author
 	Then User logs out of Author
 	
 
-#@AppCenter
-#Scenario Outline: Log into AppCenter
-#	Given User navigate to AppCenter login page
-#	And User enters "<username>" and "<password>" in AppCenter login page
-#	And Verify User has Logged in Successfully 
-#Examples:
-#|username|password|
-#|maker@appveen.com|123123123|
-#
-#
- #INSERT/UPDATE
-#Scenario: Add data to data service
-#	Given Data service "number_Number"
-#	Then Add data to the data service
-#	
+@AppCenter
+Scenario Outline: Log into AppCenter
+	Given User navigate to AppCenter login page
+	And User enters "<username>" and "<password>" in AppCenter login page
+	And Verify User has Logged in Successfully 
+Examples:
+|username|password|
+|maker@appveen.com|123123123|
+
+
+# INSERT/UPDATE
+Scenario: Add data to data service
+	Given Data service "number_Number"
+	Then Add data to the data service
+	
 #	
 #	Scenario Outline: Add record to data service
 #	Given Data service "number_Number"
