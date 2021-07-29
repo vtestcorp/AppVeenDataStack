@@ -228,6 +228,8 @@ public class LoginPage extends BaseClass{
 				case "Object" : 
 					jsonProperties = (JSONObject) attribute.get("properties");
 					applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
+					
+													
 					if(jsonProperties.containsKey("password")) {
 						
 						applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
@@ -272,8 +274,18 @@ public class LoginPage extends BaseClass{
 					groupAttributes((String) object.get("type"),object);
 
 					}
-				
+					if(jsonProperties.containsKey("Relation"))
+					{
+					  applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
+					   applyWait.waitForElementToBeClickable(ap.relation, 30).click();
+					  requiredAttributes(jsonProperties);
 					}
+					else if (jsonProperties.containsKey("Library"))
+						 applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
+					     applyWait.waitForElementToBeClickable(ap.library, 30).click();
+					     requiredAttributes(jsonProperties);
+					}
+			
 					break;
 					
 					case "Geojson" : 
@@ -778,6 +790,22 @@ public class LoginPage extends BaseClass{
 //					if(jsonProperties.containsKey("_description")) {
 //					applyWait.waitForElementToBeClickable(ap.description, 30).sendKeys(jsonProperties.get("_description").toString());
 //					}
+					if(	jsonProperties.containsKey("Relation")){
+						jsonProperties = (JSONObject) attribute.get("properties");
+						applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
+						applyWait.waitForElementToBeClickable(ap.relation, 30).click();
+						requiredAttributes(jsonProperties);
+						}
+					
+					else if(jsonProperties.containsKey("Library")) {
+					//	applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
+						//applyWait.waitForElementToBeClickable(ap.library, 30).click();
+						jsonProperties = (JSONObject) attribute.get("properties");
+						applyWait.waitForElementToBeClickable(ap.dropdown1, 30).click();
+						applyWait.waitForElementToBeClickable(ap.library, 30).click();
+						requiredAttributes(jsonProperties);
+					}
+
 					JSONArray objectArray=(JSONArray) attribute.get("definition");
 					
 					for(int k=0;k<objectArray.size();k++) {
@@ -795,7 +823,7 @@ public class LoginPage extends BaseClass{
 					   groupAttributes((String) object.get("type"),object);
 					   
 					}
-								break;
+						break;
 					
 					case "Geojson" : 
 						jsonProperties = (JSONObject) attribute.get("properties");
@@ -943,6 +971,9 @@ public class LoginPage extends BaseClass{
 								
 								if(jsonProperties.containsKey("schema")) {
 								     dropdown.selectByVisibleText(ap.linkedLibrary, jsonProperties.get("schema").toString());
+								     Thread.sleep(1000);
+									applyWait.waitForElementToBeClickable(ap.linkedLibrary, 30).sendKeys(Keys.ENTER);
+								     Thread.sleep(2000);
 									}	
 								
 								

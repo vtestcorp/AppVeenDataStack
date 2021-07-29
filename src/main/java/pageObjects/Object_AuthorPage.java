@@ -181,6 +181,9 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(xpath="//span[@class='odp-library']")
 	public WebElement library;
 
+	@FindBy(xpath = "//span[@class='odp-references']")
+	public WebElement relation; 
+	
 	@FindBy(xpath="//div[text()='Linked Library']/following-sibling::div/select")
 	public WebElement linkedLibrary;
 
@@ -227,9 +230,7 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(xpath="//div[@class='card-container pt-3']//div[1]//div[3]//div[1]//div[1]")
 	public WebElement toggler;
 	
-	@FindBy(xpath = "//span[@class='odp-references']")
-	public WebElement relation;
-
+	
 	@FindBy(xpath="//div[@class='button-grid bg-light clearfix w-100 active']//span[@class='text'][normalize-space()='Delete']")
 	public WebElement delete;
 
