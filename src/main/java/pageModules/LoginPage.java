@@ -120,7 +120,6 @@ public class LoginPage extends BaseClass{
 		List<WebElement> dataServices=driver.findElements(By.id("serviceManagerCardTitle"));
 		data_Services=new ArrayList<String>();
 		for(WebElement dataService : dataServices) {
-			Thread.sleep(2000);
 			String data=dataService.getText();
 			data_Services.add(data);
 		}

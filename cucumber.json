@@ -1,0 +1,1358 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 63061200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 45881200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 6858539400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.setUp()"
+            }
+          },
+          {
+            "result": {
+              "duration": 3191500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 5997500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          }
+        ],
+        "line": 12,
+        "name": "Log into Author",
+        "description": "",
+        "id": "ds-string-text;log-into-author;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5565039499,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User navigate to Author login page",
+            "match": {
+              "location": "LoginToAuthorUrl.user_Navigate_to_LogIn_Page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1969529400,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User enters \"deepak@appveen.com\" and \"123123123\" in Author login page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"deepak@appveen.com\"",
+                  "offset": 12
+                },
+                {
+                  "val": "\"123123123\"",
+                  "offset": 37
+                }
+              ],
+              "location": "LoginToAuthorUrl.user_enters_UserName_and_Password(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5153370200,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Verify User has Logged in successfully in Author Url",
+            "match": {
+              "location": "LoginToAuthorUrl.message_displayed_Login_Successfully()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Author"
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 1602699,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 5175700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 2166701,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1032800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          }
+        ],
+        "line": 14,
+        "name": "Delete data service",
+        "description": "",
+        "id": "ds-string-text;delete-data-service",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 116688300,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "Data service \"string_Text\" exists",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAuthorUrl.data_service_exists(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1949922900,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "Remove the data service",
+            "match": {
+              "location": "LoginToAuthorUrl.remove_the_data_service()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4543201,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 9044599,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 2679801,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 2460700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          }
+        ],
+        "line": 18,
+        "name": "Create data service",
+        "description": "",
+        "id": "ds-string-text;create-data-service",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 131501,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "Data service \"string_Text\" does not exist",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAuthorUrl.data_service_does_not_exist(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 98622409201,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "Create new data service \"string_Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 24
+                }
+              ],
+              "location": "LoginToAuthorUrl.create_new_Data_Service(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3610300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 7252901,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 6110700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 4627000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          }
+        ],
+        "line": 30,
+        "name": "Assign to Appcenter Group",
+        "description": "",
+        "id": "ds-string-text;assign-to-appcenter-group;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5291700700,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "Group \"String-Group\" does not exist",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"String-Group\"",
+                  "offset": 6
+                }
+              ],
+              "location": "DesignTestCases.group_does_not_exist(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2162005701,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "Create new group \"String-Group\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"String-Group\"",
+                  "offset": 17
+                }
+              ],
+              "location": "DesignTestCases.create_new_group(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//span[normalize-space()\u003d\u0027App Center Roles\u0027]\"}\n  (Session info: chrome\u003d92.0.4515.107)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d//span[normalize-space()\u003d\u0027App Center Roles\u0027]}\r\n\tat jdk.internal.reflect.GeneratedConstructorAccessor19.newInstance(Unknown Source)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy13.click(Unknown Source)\r\n\tat pageModules.Module_DesignTestCases.assignPermission(Module_DesignTestCases.java:134)\r\n\tat stepdefinitions.DesignTestCases.assign_appcenter_permissions_for_strings_text_dataservice(DesignTestCases.java:75)\r\n\tat ✽.Assign appcenter permissions for \"string_Text\" dataservice to \"maker@appveen.com\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:26)\r\n",
+              "duration": 33264975100,
+              "status": "failed"
+            },
+            "line": 26,
+            "name": "Assign appcenter permissions for \"string_Text\" dataservice to \"maker@appveen.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 33
+                },
+                {
+                  "val": "\"maker@appveen.com\"",
+                  "offset": 62
+                }
+              ],
+              "location": "DesignTestCases.assign_appcenter_permissions_for_strings_text_dataservice(String,String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 756500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 2391801,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 2212199,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 906701,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          }
+        ],
+        "line": 33,
+        "name": "Log out of Author",
+        "description": "",
+        "id": "ds-string-text;log-out-of-author",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1153346800,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "User logged into Author",
+            "match": {
+              "location": "LoginToAuthorUrl.user_logged_into_Author()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1118233301,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "User logs out of Author",
+            "match": {
+              "location": "LoginToAuthorUrl.user_logs_out_of_Author()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 1448600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 6200600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 4443200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1315299,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          }
+        ],
+        "line": 45,
+        "name": "Log into AppCenter",
+        "description": "",
+        "id": "ds-string-text;log-into-appcenter;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 4797904401,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "User navigate to AppCenter login page",
+            "match": {
+              "location": "AppcenterWorkflow.user_navigate_to_AppCenter_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1571992000,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "User enters \"maker@appveen.com\" and \"123123123\" in AppCenter login page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"maker@appveen.com\"",
+                  "offset": 12
+                },
+                {
+                  "val": "\"123123123\"",
+                  "offset": 36
+                }
+              ],
+              "location": "LoginToAppCenter.user_enters_username_and_password_in_AppCenter_Url(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d92.0.4515.107)\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d(//div[starts-with(@class,\u0027logo\u0027)])[1]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy13.isDisplayed(Unknown Source)\r\n\tat pageModules.LoginAppCenter.verifyUserLoginSuccesfullyToAppCenter(LoginAppCenter.java:71)\r\n\tat stepdefinitions.LoginToAppCenter.verify_User_Login_Successfully_in_Appcenter_Url(LoginToAppCenter.java:50)\r\n\tat ✽.Verify User has Logged in Successfully(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:42)\r\n",
+              "duration": 47688938301,
+              "status": "failed"
+            },
+            "line": 42,
+            "name": "Verify User has Logged in Successfully",
+            "match": {
+              "location": "LoginToAppCenter.verify_User_Login_Successfully_in_Appcenter_Url()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@AppCenter"
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 909700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 2522799,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1375800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1000500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          }
+        ],
+        "line": 49,
+        "name": "Add data to data service",
+        "description": "",
+        "id": "ds-string-text;add-data-to-data-service",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d92.0.4515.107)\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d//div[contains(text(),\u0027string_Text\u0027)]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginAppCenter.dataService(LoginAppCenter.java:80)\r\n\tat stepdefinitions.LoginToAppCenter.data_service(LoginToAppCenter.java:56)\r\n\tat ✽.Data service \"string_Text\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:50)\r\n",
+              "duration": 17193525300,
+              "status": "failed"
+            },
+            "line": 50,
+            "name": "Data service \"string_Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAppCenter.data_service(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 23000,
+              "status": "skipped"
+            },
+            "line": 51,
+            "name": "Add data to the data service",
+            "match": {
+              "location": "LoginToAppCenter.add_data_to_the_data_service()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 1097000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 3836300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1657099,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 947200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          }
+        ],
+        "line": 61,
+        "name": "Add record to data service",
+        "description": "",
+        "id": "ds-string-text;add-record-to-data-service;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d92.0.4515.107)\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d//div[contains(text(),\u0027string_Text\u0027)]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginAppCenter.dataService(LoginAppCenter.java:80)\r\n\tat stepdefinitions.LoginToAppCenter.data_service(LoginToAppCenter.java:56)\r\n\tat ✽.Data service \"string_Text\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:55)\r\n",
+              "duration": 17224094700,
+              "status": "failed"
+            },
+            "line": 55,
+            "name": "Data service \"string_Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAppCenter.data_service(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5000,
+              "status": "skipped"
+            },
+            "line": 56,
+            "name": "Add record \"{\"_id\":\"STR1002\", \"dsStringText1002\":\"\", \"dsStringText1014\":\"\",\"dsStringText1015\":\"\",\"dsStringText1017\":\"\",\"dsStringText1018\":\"\"}\" to the data service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "{\"_id\":\"STR1002\", \"dsStringText1002\":\"\", \"dsStringText1014\":\"\",\"dsStringText1015\":\"\",\"dsStringText1017\":\"\",\"dsStringText1018\":\"\"}",
+                  "offset": 12
+                }
+              ],
+              "location": "DesignTestCases.add_record(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3600,
+              "status": "skipped"
+            },
+            "line": 57,
+            "name": "Expect error \"DS STRING TEXT Error\" on label \"DS STRING TEXT Label\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"DS STRING TEXT Error\"",
+                  "offset": 13
+                },
+                {
+                  "val": "\"DS STRING TEXT Label\"",
+                  "offset": 45
+                }
+              ],
+              "location": "DesignTestCases.expect_error_on_label(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3400,
+              "status": "skipped"
+            },
+            "line": 58,
+            "name": "Save button is disabled",
+            "match": {
+              "location": "DesignTestCases.save_button_is_disabled()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 915699,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 6129201,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 2154000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1206200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          }
+        ],
+        "line": 70,
+        "name": "Add record to data service",
+        "description": "",
+        "id": "ds-string-text;add-record-to-data-service;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d92.0.4515.107)\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d//div[contains(text(),\u0027string_Text\u0027)]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginAppCenter.dataService(LoginAppCenter.java:80)\r\n\tat stepdefinitions.LoginToAppCenter.data_service(LoginToAppCenter.java:56)\r\n\tat ✽.Data service \"string_Text\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:65)\r\n",
+              "duration": 17226676501,
+              "status": "failed"
+            },
+            "line": 65,
+            "name": "Data service \"string_Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAppCenter.data_service(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5900,
+              "status": "skipped"
+            },
+            "line": 66,
+            "name": "Add record \"{ \"_id\" : \"STR1001\",\"dsStringText1001\" : \"1001\",\"dsStringText1002\" : \"c\",\"dsStringText1003\" : \"3\",\"dsStringText1007\" : \"7\",\"dsStringText1008\" : \"18\",\"dsStringText1014\" : \"14\",\"dsStringText1015\" : \"15\"}\" to the data service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "{ \"_id\" : \"STR1001\",\"dsStringText1001\" : \"1001\",\"dsStringText1002\" : \"c\",\"dsStringText1003\" : \"3\",\"dsStringText1007\" : \"7\",\"dsStringText1008\" : \"18\",\"dsStringText1014\" : \"14\",\"dsStringText1015\" : \"15\"}",
+                  "offset": 12
+                }
+              ],
+              "location": "DesignTestCases.add_record(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2500,
+              "status": "skipped"
+            },
+            "line": 67,
+            "name": "Expect error \"ID STR1001 already exists\" on save",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"ID STR1001 already exists\"",
+                  "offset": 13
+                }
+              ],
+              "location": "DesignTestCases.expect_error_on_save(String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 1540099,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 5584999,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1880600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1276800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          }
+        ],
+        "line": 79,
+        "name": "Add record to data service",
+        "description": "",
+        "id": "ds-string-text;add-record-to-data-service;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d92.0.4515.107)\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d//div[contains(text(),\u0027string_Text\u0027)]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginAppCenter.dataService(LoginAppCenter.java:80)\r\n\tat stepdefinitions.LoginToAppCenter.data_service(LoginToAppCenter.java:56)\r\n\tat ✽.Data service \"string_Text\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:74)\r\n",
+              "duration": 17206594600,
+              "status": "failed"
+            },
+            "line": 74,
+            "name": "Data service \"string_Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAppCenter.data_service(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4300,
+              "status": "skipped"
+            },
+            "line": 75,
+            "name": "Add record \"{ \"_id\" : \"STR1003\",\"dsStringText1001\" : \"1001\",\"dsStringText1002\" : \"a\",\"dsStringText1003\" : \"3\",\"dsStringText1007\" : \"7\",\"dsStringText1008\" : \"18\",\"dsStringText1014\" : \"14\",\"dsStringText1015\" : \"15\"}\" to the data service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "{ \"_id\" : \"STR1003\",\"dsStringText1001\" : \"1001\",\"dsStringText1002\" : \"a\",\"dsStringText1003\" : \"3\",\"dsStringText1007\" : \"7\",\"dsStringText1008\" : \"18\",\"dsStringText1014\" : \"14\",\"dsStringText1015\" : \"15\"}",
+                  "offset": 12
+                }
+              ],
+              "location": "DesignTestCases.add_record(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3300,
+              "status": "skipped"
+            },
+            "line": 76,
+            "name": "Expect error \"Unique check validation failed for dsStringText1002\" on save",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Unique check validation failed for dsStringText1002\"",
+                  "offset": 13
+                }
+              ],
+              "location": "DesignTestCases.expect_error_on_save(String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 941300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 3803701,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1545100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1479700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          }
+        ],
+        "line": 89,
+        "name": "Fetch record from the data service",
+        "description": "",
+        "id": "ds-string-text;fetch-record-from-the-data-service;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d92.0.4515.107)\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d//div[contains(text(),\u0027string_Text\u0027)]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginAppCenter.dataService(LoginAppCenter.java:80)\r\n\tat stepdefinitions.LoginToAppCenter.data_service(LoginToAppCenter.java:56)\r\n\tat ✽.Data service \"string_Text\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:84)\r\n",
+              "duration": 17235785201,
+              "status": "failed"
+            },
+            "line": 84,
+            "name": "Data service \"string_Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAppCenter.data_service(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 17200,
+              "status": "skipped"
+            },
+            "line": 85,
+            "name": "Fetch record \"STR1001\" from the data service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"STR1001\"",
+                  "offset": 13
+                }
+              ],
+              "location": "DesignTestCases.fetch_record_from_the_data_service(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 13800,
+              "status": "skipped"
+            },
+            "line": 86,
+            "name": "Match it to \"{\"_id\": \"STR1001\",\"dsStringText1001\": \"1001\",\"dsStringText1002\": \"a\",\"dsStringText1003\": \"1003\",\"dsStringText1004\": \"1004\",\"dsStringText1005\": \"1005\",\"dsStringText1007\": \"1007\", \"dsStringText1008\": \"1008\", \"dsStringText1010\": \"1010\",  \"dsStringText1013\": \"1013\", \"dsStringText1014\": \"1014\", \"dsStringText1015\": \"1015\",  \"dsStringText1018\": \"A\",  \"dsStringText1020\": \"ABCD\", \"dsStringText1021\": \"1021\", \"dsStringText1022\": \"1022\", \"dsStringText1023\": \"1023\", \"dsStringText1024\": \"1024\"}\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "{\"_id\": \"STR1001\",\"dsStringText1001\": \"1001\",\"dsStringText1002\": \"a\",\"dsStringText1003\": \"1003\",\"dsStringText1004\": \"1004\",\"dsStringText1005\": \"1005\",\"dsStringText1007\": \"1007\", \"dsStringText1008\": \"1008\", \"dsStringText1010\": \"1010\",  \"dsStringText1013\": \"1013\", \"dsStringText1014\": \"1014\", \"dsStringText1015\": \"1015\",  \"dsStringText1018\": \"A\",  \"dsStringText1020\": \"ABCD\", \"dsStringText1021\": \"1021\", \"dsStringText1022\": \"1022\", \"dsStringText1023\": \"1023\", \"dsStringText1024\": \"1024\"}",
+                  "offset": 13
+                }
+              ],
+              "location": "DesignTestCases.match_it_to(String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 2923399,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 11742500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 2706400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1662999,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          }
+        ],
+        "line": 98,
+        "name": "Update record to data service",
+        "description": "",
+        "id": "ds-string-text;update-record-to-data-service;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d92.0.4515.107)\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d//div[contains(text(),\u0027string_Text\u0027)]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginAppCenter.dataService(LoginAppCenter.java:80)\r\n\tat stepdefinitions.LoginToAppCenter.data_service(LoginToAppCenter.java:56)\r\n\tat ✽.Data service \"string_Text\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:93)\r\n",
+              "duration": 17215267401,
+              "status": "failed"
+            },
+            "line": 93,
+            "name": "Data service \"string_Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAppCenter.data_service(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 11400,
+              "status": "skipped"
+            },
+            "line": 94,
+            "name": "Update record \"STR1001\" with \"{\"dsStringText1001\": \"1111\",\"dsStringText1002\": \"b\",\"dsStringText1003\": \"1333\",\"dsStringText1004\": \"1444\",\"dsStringText1005\": \"1555\",\"dsStringText1007\": \"1777\", \"dsStringText1008\": \"1888\", \"dsStringText1010\": \"101010\",  \"dsStringText1013\": \"101313\", \"dsStringText1014\": \"101414\", \"dsStringText1015\": \"101515\", \"dsStringText1018\": \"101818\", \"dsStringText1020\": \"ABCDEFGH\", \"dsStringText1021\": \"102121\", \"dsStringText1022\": \"102222\", \"dsStringText1023\": \"102323\", \"dsStringText1024\": \"102424\"}\" to the data service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "STR1001",
+                  "offset": 15
+                },
+                {
+                  "val": "{\"dsStringText1001\": \"1111\",\"dsStringText1002\": \"b\",\"dsStringText1003\": \"1333\",\"dsStringText1004\": \"1444\",\"dsStringText1005\": \"1555\",\"dsStringText1007\": \"1777\", \"dsStringText1008\": \"1888\", \"dsStringText1010\": \"101010\",  \"dsStringText1013\": \"101313\", \"dsStringText1014\": \"101414\", \"dsStringText1015\": \"101515\", \"dsStringText1018\": \"101818\", \"dsStringText1020\": \"ABCDEFGH\", \"dsStringText1021\": \"102121\", \"dsStringText1022\": \"102222\", \"dsStringText1023\": \"102323\", \"dsStringText1024\": \"102424\"}",
+                  "offset": 30
+                }
+              ],
+              "location": "DesignTestCases.update_record_with_to_the_data_service(String,String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 1912400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 3829199,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 2043801,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1155499,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          }
+        ],
+        "line": 106,
+        "name": "Fetch record from the data service",
+        "description": "",
+        "id": "ds-string-text;fetch-record-from-the-data-service;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d92.0.4515.107)\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d//div[contains(text(),\u0027string_Text\u0027)]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginAppCenter.dataService(LoginAppCenter.java:80)\r\n\tat stepdefinitions.LoginToAppCenter.data_service(LoginToAppCenter.java:56)\r\n\tat ✽.Data service \"string_Text\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:101)\r\n",
+              "duration": 17231051100,
+              "status": "failed"
+            },
+            "line": 101,
+            "name": "Data service \"string_Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAppCenter.data_service(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4599,
+              "status": "skipped"
+            },
+            "line": 102,
+            "name": "Fetch record \"STR1001\" from the data service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"STR1001\"",
+                  "offset": 13
+                }
+              ],
+              "location": "DesignTestCases.fetch_record_from_the_data_service(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2599,
+              "status": "skipped"
+            },
+            "line": 103,
+            "name": "Match it to \"{\"_id\": \"STR1001\",\"dsStringText1001\": \"1111\",\"dsStringText1002\": \"a\",\"dsStringText1003\": \"1333\",\"dsStringText1004\": \"1004\",\"dsStringText1005\": \"1555\",\"dsStringText1007\": \"1007\", \"dsStringText1008\": \"1888\", \"dsStringText1010\": \"1010\",  \"dsStringText1013\": \"101313\", \"dsStringText1014\": \"101414\", \"dsStringText1015\": \"101515\", \"dsStringText1018\": \"101818\", \"dsStringText1020\": \"ABCDEFGH\", \"dsStringText1021\": \"102121\", \"dsStringText1022\": \"102222\", \"dsStringText1023\": \"102323\", \"dsStringText1024\": \"102424\"}\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "{\"_id\": \"STR1001\",\"dsStringText1001\": \"1111\",\"dsStringText1002\": \"a\",\"dsStringText1003\": \"1333\",\"dsStringText1004\": \"1004\",\"dsStringText1005\": \"1555\",\"dsStringText1007\": \"1007\", \"dsStringText1008\": \"1888\", \"dsStringText1010\": \"1010\",  \"dsStringText1013\": \"101313\", \"dsStringText1014\": \"101414\", \"dsStringText1015\": \"101515\", \"dsStringText1018\": \"101818\", \"dsStringText1020\": \"ABCDEFGH\", \"dsStringText1021\": \"102121\", \"dsStringText1022\": \"102222\", \"dsStringText1023\": \"102323\", \"dsStringText1024\": \"102424\"}",
+                  "offset": 13
+                }
+              ],
+              "location": "DesignTestCases.match_it_to(String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 562799,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 4445300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 496600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 350400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          }
+        ],
+        "line": 114,
+        "name": "Delete record from the data service",
+        "description": "",
+        "id": "ds-string-text;delete-record-from-the-data-service;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d92.0.4515.107)\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d//div[contains(text(),\u0027string_Text\u0027)]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginAppCenter.dataService(LoginAppCenter.java:80)\r\n\tat stepdefinitions.LoginToAppCenter.data_service(LoginToAppCenter.java:56)\r\n\tat ✽.Data service \"string_Text\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:109)\r\n",
+              "duration": 17193750101,
+              "status": "failed"
+            },
+            "line": 109,
+            "name": "Data service \"string_Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAppCenter.data_service(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3100,
+              "status": "skipped"
+            },
+            "line": 110,
+            "name": "Delete record \"STR1001\" from the data service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"STR1001\"",
+                  "offset": 14
+                }
+              ],
+              "location": "DesignTestCases.delete_record_from_the_data_service(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1700,
+              "status": "skipped"
+            },
+            "line": 111,
+            "name": "deleting from listing page",
+            "match": {
+              "location": "DesignTestCases.deleting_from_listing_page()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "DS STRING TEXT",
+    "description": "",
+    "id": "ds-string-text",
+    "keyword": "Feature",
+    "uri": "C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature",
+    "tags": []
+  }
+]

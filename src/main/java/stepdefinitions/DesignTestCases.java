@@ -75,11 +75,6 @@ public class DesignTestCases extends BaseClass{
 	    design.assignPermission(dataServiceName,user);
 	}
 	
-	@Then("Add record {string} to the data service")
-	public void add_record_to_the_data_service(String string) {
-		
-		System.out.println(string);
-	}
 
 	@Then("^Add record \"(.*?)\" to the data service$")
 	public void add_record(String string) throws Exception {
@@ -135,6 +130,12 @@ public class DesignTestCases extends BaseClass{
 	public void match_this_Currency_data(String jsonFile) throws Exception {
 	 design.matchDataCurrency(jsonFile);
 	}
+	
+	@Then("Match this GROUP data to \"(.*?)\"")
+	public void match_this_GROUP_data(String jsonFile) throws Exception {
+	   design.matchGroupData(jsonFile);
+	}
+	
 	
 	@And("Record must not exist")
 	public void record_must_not_exist() throws Exception {

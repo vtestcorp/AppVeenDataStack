@@ -3,8 +3,11 @@ package helperMethods;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
+import org.apache.commons.io.FileUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -13,6 +16,7 @@ import org.openqa.selenium.WebElement;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jayway.jsonpath.JsonPath;
 
 import base.BaseClass;
 
@@ -148,6 +152,22 @@ public class JsonUtils extends BaseClass{
         }
 		return carMap;
 		
+	}
+	
+	
+	public static String getJsonValue(String filePath,String jsonPath) {
+		String exampleRequest = null;
+		
+	try {
+		exampleRequest = FileUtils.readFileToString(new File(filePath), StandardCharsets.UTF_8);
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
+		
+		String authors = JsonPath.read(exampleRequest, "$."+jsonPath+"").toString();
+		
+		return authors;
+
 	}
 
 	

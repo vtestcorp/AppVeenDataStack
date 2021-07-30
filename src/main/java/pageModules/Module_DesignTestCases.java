@@ -19,6 +19,7 @@ import org.openqa.selenium.interactions.Actions;
 import com.aventstack.extentreports.ExtentTest;
 import com.google.common.collect.MapDifference;
 import com.google.common.collect.MapDifference.ValueDifference;
+import com.jayway.jsonpath.JsonPath;
 import com.google.common.collect.Maps;
 
 import base.BaseClass;
@@ -130,6 +131,7 @@ public class Module_DesignTestCases extends BaseClass{
 	public void assignPermission(String dataServiceName,String user1) throws Exception {
 		String role="Manage";
 		String userEmail=user1;
+		Thread.sleep(3000);
 		applyWait.waitForElementToBeClickable(gp.appCenterRoles, 30).click();
 		Thread.sleep(3000);
 		WebElement dsArrow=driver.findElement(By.xpath("//span[normalize-space()='"+dataServiceName+"']/parent::div/following-sibling::span[2]/child::span"));
@@ -181,7 +183,7 @@ public class Module_DesignTestCases extends BaseClass{
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
 		List<WebElement> textBoxes = acp.textBoxes;
-		String path= System.getProperty("user.dir");
+		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
 //		for(int i=0;i<jsonArray.size();i++) {
 //			Thread.sleep(1000);
@@ -236,22 +238,26 @@ public class Module_DesignTestCases extends BaseClass{
 					
 					if (textBox.isEnabled()) {
 						String id1 = textBox.getAttribute("id");
-//						System.out.println(id1+"      "+textBox.getAttribute("type"));
+//						String value1=JsonUtils.getJsonValue(filePath,id1);
+						String jsonValue = JsonPath.read(string, "$."+id1+"").toString();
 						if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")||textBox.getAttribute("type").equals("select-one")) {
-							if ((String) jsonObject.get(id1) != null) {
+							if (!jsonValue.equals(null)) {
 	
 								if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
-											if (id1.contains(".")) {
-												String[] attributes = id1.trim().split("[^a-zA-Z0-9]+");
-			
-												JSONObject obj = (JSONObject) jsonObject.get(attributes[0]);
-												applyWait.waitForElementToBeClickable(textBox, 30).sendKeys((String) obj.get(attributes[1]));
-			
-											} else {
-												applyWait.waitForElementToBeClickable(textBox, 30).clear();
-												applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(((String) jsonObject.get(id1)).toString());
-												;
-											}
+//											if (id1.contains(".")) {
+//												String[] attributes = id1.trim().split("[^a-zA-Z0-9]+");
+//			
+//												JSONObject obj = (JSONObject) jsonObject.get(attributes[0]);
+//												applyWait.waitForElementToBeClickable(textBox, 30).sendKeys((String) obj.get(attributes[1]));
+//			
+//											} else {
+//												applyWait.waitForElementToBeClickable(textBox, 30).clear();
+//												applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(((String) jsonObject.get(id1)).toString());
+//												;
+//											}
+									applyWait.waitForElementToBeClickable(textBox, 30).clear();
+									applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(jsonValue);
+									
 										}
 	
 								if (textBox.getAttribute("type").equals("select-one")) {
@@ -760,6 +766,46 @@ public class Module_DesignTestCases extends BaseClass{
 	}
 	
 	
+		
+	}
+
+
+
+	public void matchGroupData(String jsonFile) throws Exception {
+		
+		LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
+		Thread.sleep(2000);
+		WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
+		record.click();
+		Thread.sleep(2000);
+		int q=1;
+		for(WebElement attribute : acp.attributesOnViewPageForGroups) {
+			WebElement t=driver.findElement(By.xpath("(//label[starts-with(@class,'label-width d-flex')])["+q+"]/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()]"));
+			String a=attribute.getAttribute("for");
+			String w=t.getText();
+			if(!w.equals("N.A.")) {
+				actualData.put(a, w);
+		}
+			q+=2;;
+		}
+		
+	LinkedHashMap<String, String> expectedData =(LinkedHashMap<String, String>) JsonUtils.getMapFromJSON(jsonFile);
+	
+
+	
+	if(actualData.equals(expectedData)) {
+		System.out.println("Data is matching");
+	}
+	else {
+		
+		System.err.println("Data is not matching.Unmatched data are as follows :");
+	  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
+	    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
+	    System.err.println(entriesDiffering);
+	    System.out.println(actualData);
+	    System.out.println(expectedData);
+	    Assert.assertTrue(actualData.equals(expectedData));
+	}
 		
 	}
 

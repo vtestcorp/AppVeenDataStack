@@ -1,6 +1,6 @@
 Feature: DS GROUP
 
-# Scenarios - DS GROUP 1001-DS GROUP COLLECTION
+# Scenarios - DS GROUP 1001-DS GROUP 1006
 
 @Author
 Scenario Outline: Log into Author
@@ -61,50 +61,40 @@ Scenario: Add data to data service
 #|{"_id":"STR1002", "dsStringText1002":"", "dsStringText1014":"","dsStringText1015":"","dsStringText1017":"","dsStringText1018":""}|
 #
 #
-#Scenario Outline: Add record to data service
-#	Given Data service "ds_Group"
-#	Then Add record "<data>" to the data service	
-#	And Expect error "ID STR1001 already exists" on save
-#	Examples:
-#		|data|
-#	  |{ "_id" : "STR1001","dsStringText1001" : "1001","dsStringText1002" : "c","dsStringText1003" : "3","dsStringText1007" : "7","dsStringText1008" : "18","dsStringText1014" : "14","dsStringText1015" : "15"}|
-#
-#
-#Scenario Outline: Add record to data service
-#	Given Data service "ds_Group"
-#	Then Add record "<data>" to the data service		
-#	And Expect error "Unique check validation failed for dsStringText1002" on save
-#Examples:
-#|data|
-#|{ "_id" : "STR1003","dsStringText1001" : "1001","dsStringText1002" : "a","dsStringText1003" : "3","dsStringText1007" : "7","dsStringText1008" : "18","dsStringText1014" : "14","dsStringText1015" : "15"}|
-#	
-#	
-#	
-#	Scenario Outline: Fetch record from the data service
-#	Given Data service "ds_Group"
-#	Then Fetch record "<id>" from the data service
-#	And Match it to "<data>"
-#Examples:
-#|id|data|
-#|STR1001|{"_id": "STR1001","dsStringText1001": "1001","dsStringText1002": "a","dsStringText1003": "1003","dsStringText1004": "1004","dsStringText1005": "1005","dsStringText1007": "1007", "dsStringText1008": "1008", "dsStringText1010": "1010",  "dsStringText1013": "1013", "dsStringText1014": "1014", "dsStringText1015": "1015",  "dsStringText1018": "A",  "dsStringText1020": "ABCD", "dsStringText1021": "1021", "dsStringText1022": "1022", "dsStringText1023": "1023", "dsStringText1024": "1024"}|
-#	
-#	
-#	Scenario Outline: Update record to data service
-#	Given Data service "ds_Group"
-#	Then Update record "<id>" with "<data>" to the data service
-#Examples:
-#
-#|id|data|
-#|STR1001|{"dsStringText1001": "1111","dsStringText1002": "b","dsStringText1003": "1333","dsStringText1004": "1444","dsStringText1005": "1555","dsStringText1007": "1777", "dsStringText1008": "1888", "dsStringText1010": "101010",  "dsStringText1013": "101313", "dsStringText1014": "101414", "dsStringText1015": "101515", "dsStringText1018": "101818", "dsStringText1020": "ABCDEFGH", "dsStringText1021": "102121", "dsStringText1022": "102222", "dsStringText1023": "102323", "dsStringText1024": "102424"}|
-#
-#Scenario Outline: Fetch record from the data service
-#	Given Data service "ds_Group"
-#	Then Fetch record "<id>" from the data service
-#	And Match it to "<data>"
-#Examples:
-#|id|data|
-#|STR1001|{"_id": "STR1001","dsStringText1001": "1111","dsStringText1002": "a","dsStringText1003": "1333","dsStringText1004": "1004","dsStringText1005": "1555","dsStringText1007": "1007", "dsStringText1008": "1888", "dsStringText1010": "1010",  "dsStringText1013": "101313", "dsStringText1014": "101414", "dsStringText1015": "101515", "dsStringText1018": "101818", "dsStringText1020": "ABCDEFGH", "dsStringText1021": "102121", "dsStringText1022": "102222", "dsStringText1023": "102323", "dsStringText1024": "102424"}|
-#	
+Scenario Outline: Add record to data service
+	Given Data service "ds_Group"
+	Then Add record "<data>" to the data service	
+	And Expect error "ID STR1001 already exists" on save
+	Examples:
+		|data|
+	  |{  "_id" : "DS1002", "dsGroup1001" : { "dsString" : "String 1111" }, "dsGroup1002" : { "dsString" : "String 122" }, "dsGroup1003" : { "dsString" : "String 1333" }, "dsGroup1004" : { "dsString" : "String 1444" }, "dsGroup1005" : { "dsString" : "String 1555" }, "dsGroup1006" : { "dsString" : "String 1666" }}|
+	
+	Scenario Outline: Fetch record from the data service
+	Given Data service "ds_Group"
+	Then Fetch record "<id>" from the data service
+	And Match this GROUP data to "<data>"
+Examples:
+|id|data|
+|DS1002|{  "_id" : "DS1002", "dsGroup1001" : { "dsString" : "String 1001" }, "dsGroup1002" : { "dsString" : "String 1002" }, "dsGroup1003" : { "dsString" : "String 1003" }, "dsGroup1004" : { "dsString" : "String 1004" }, "dsGroup1005" : { "dsString" : "String 1005" }, "dsGroup1006" : { "dsString" : "String 1006" }}|
+	
+	
+	Scenario Outline: Update record to data service
+	Given Data service "ds_Group"
+	Then Update record "<id>" with "<data>" to the data service
+Examples:
+
+|id|data|
+|DS1002|{  "_id" : "DS1002", "dsGroup1001" : { "dsString" : "String 1111" }, "dsGroup1002" : { "dsString" : "String 2222" }, "dsGroup1003" : { "dsString" : "String 3333" }, "dsGroup1004" : { "dsString" : "String 4444" }, "dsGroup1005" : { "dsString" : "String 5555" }, "dsGroup1006" : { "dsString" : "String 6666" }}|
+
+
+Scenario Outline: Fetch record from the data service
+	Given Data service "ds_Group"
+	Then Fetch record "<id>" from the data service
+	And Match this GROUP data to "<data>"
+Examples:
+|id|data|
+|DS1002|{  "_id" : "DS1002", "dsGroup1001" : { "dsString" : "String 1111" }, "dsGroup1002" : { "dsString" : "String 2222" }, "dsGroup1003" : { "dsString" : "String 3333" }, "dsGroup1004" : { "dsString" : "String 4444" }, "dsGroup1005" : { "dsString" : "String 5555" }, "dsGroup1006" : { "dsString" : "String 6666" }}|
+	
 #Scenario Outline: Delete record from the data service
 #	Given Data service "ds_Group"
 #	Then Delete record "<id>" from the data service
