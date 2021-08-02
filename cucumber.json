@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 63061200,
+              "duration": 45715600,
               "status": "passed"
             },
             "match": {
@@ -15,7 +15,7 @@
           },
           {
             "result": {
-              "duration": 45881200,
+              "duration": 29540500,
               "status": "passed"
             },
             "match": {
@@ -24,16 +24,7 @@
           },
           {
             "result": {
-              "duration": 6858539400,
-              "status": "passed"
-            },
-            "match": {
-              "location": "LoginToAuthorUrl.setUp()"
-            }
-          },
-          {
-            "result": {
-              "duration": 3191500,
+              "duration": 5590900,
               "status": "passed"
             },
             "match": {
@@ -42,7 +33,16 @@
           },
           {
             "result": {
-              "duration": 5997500,
+              "duration": 4133250500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.setUp()"
+            }
+          },
+          {
+            "result": {
+              "duration": 2667300,
               "status": "passed"
             },
             "match": {
@@ -53,13 +53,13 @@
         "line": 12,
         "name": "Log into Author",
         "description": "",
-        "id": "ds-string-text;log-into-author;;2",
+        "id": "ds-number-currency;log-into-author;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 5565039499,
+              "duration": 1218288000,
               "status": "passed"
             },
             "line": 7,
@@ -71,7 +71,7 @@
           },
           {
             "result": {
-              "duration": 1969529400,
+              "duration": 813007000,
               "status": "passed"
             },
             "line": 8,
@@ -93,7 +93,7 @@
           },
           {
             "result": {
-              "duration": 5153370200,
+              "duration": 1423054200,
               "status": "passed"
             },
             "line": 9,
@@ -114,7 +114,7 @@
         "before": [
           {
             "result": {
-              "duration": 1602699,
+              "duration": 2425600,
               "status": "passed"
             },
             "match": {
@@ -123,7 +123,7 @@
           },
           {
             "result": {
-              "duration": 5175700,
+              "duration": 5367500,
               "status": "passed"
             },
             "match": {
@@ -132,7 +132,7 @@
           },
           {
             "result": {
-              "duration": 2166701,
+              "duration": 1830700,
               "status": "passed"
             },
             "match": {
@@ -141,7 +141,7 @@
           },
           {
             "result": {
-              "duration": 1032800,
+              "duration": 956100,
               "status": "passed"
             },
             "match": {
@@ -152,21 +152,21 @@
         "line": 14,
         "name": "Delete data service",
         "description": "",
-        "id": "ds-string-text;delete-data-service",
+        "id": "ds-number-currency;delete-data-service",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 116688300,
+              "duration": 220570800,
               "status": "passed"
             },
             "line": 15,
-            "name": "Data service \"string_Text\" exists",
+            "name": "Data service \"number_Currency\" exists",
             "match": {
               "arguments": [
                 {
-                  "val": "\"string_Text\"",
+                  "val": "\"number_Currency\"",
                   "offset": 13
                 }
               ],
@@ -176,7 +176,7 @@
           },
           {
             "result": {
-              "duration": 1949922900,
+              "duration": 1992671100,
               "status": "passed"
             },
             "line": 16,
@@ -192,7 +192,7 @@
         "before": [
           {
             "result": {
-              "duration": 4543201,
+              "duration": 2741800,
               "status": "passed"
             },
             "match": {
@@ -201,7 +201,7 @@
           },
           {
             "result": {
-              "duration": 9044599,
+              "duration": 7008300,
               "status": "passed"
             },
             "match": {
@@ -210,7 +210,7 @@
           },
           {
             "result": {
-              "duration": 2679801,
+              "duration": 5557700,
               "status": "passed"
             },
             "match": {
@@ -219,7 +219,7 @@
           },
           {
             "result": {
-              "duration": 2460700,
+              "duration": 2000200,
               "status": "passed"
             },
             "match": {
@@ -230,21 +230,21 @@
         "line": 18,
         "name": "Create data service",
         "description": "",
-        "id": "ds-string-text;create-data-service",
+        "id": "ds-number-currency;create-data-service",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 131501,
+              "duration": 166600,
               "status": "passed"
             },
             "line": 19,
-            "name": "Data service \"string_Text\" does not exist",
+            "name": "Data service \"number_Currency\" does not exist",
             "match": {
               "arguments": [
                 {
-                  "val": "\"string_Text\"",
+                  "val": "\"number_Currency\"",
                   "offset": 13
                 }
               ],
@@ -254,15 +254,15 @@
           },
           {
             "result": {
-              "duration": 98622409201,
+              "duration": 64621266800,
               "status": "passed"
             },
             "line": 20,
-            "name": "Create new data service \"string_Text\"",
+            "name": "Create new data service \"number_Currency\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"string_Text\"",
+                  "val": "\"number_Currency\"",
                   "offset": 24
                 }
               ],
@@ -276,7 +276,7 @@
         "before": [
           {
             "result": {
-              "duration": 3610300,
+              "duration": 1324700,
               "status": "passed"
             },
             "match": {
@@ -285,7 +285,7 @@
           },
           {
             "result": {
-              "duration": 7252901,
+              "duration": 4131300,
               "status": "passed"
             },
             "match": {
@@ -294,7 +294,7 @@
           },
           {
             "result": {
-              "duration": 6110700,
+              "duration": 1874900,
               "status": "passed"
             },
             "match": {
@@ -303,7 +303,7 @@
           },
           {
             "result": {
-              "duration": 4627000,
+              "duration": 1871800,
               "status": "passed"
             },
             "match": {
@@ -314,21 +314,21 @@
         "line": 30,
         "name": "Assign to Appcenter Group",
         "description": "",
-        "id": "ds-string-text;assign-to-appcenter-group;;2",
+        "id": "ds-number-currency;assign-to-appcenter-group;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 5291700700,
+              "duration": 5720942200,
               "status": "passed"
             },
             "line": 24,
-            "name": "Group \"String-Group\" does not exist",
+            "name": "Group \"Number-Group\" does not exist",
             "match": {
               "arguments": [
                 {
-                  "val": "\"String-Group\"",
+                  "val": "\"Number-Group\"",
                   "offset": 6
                 }
               ],
@@ -338,15 +338,15 @@
           },
           {
             "result": {
-              "duration": 2162005701,
+              "duration": 3198704000,
               "status": "passed"
             },
             "line": 25,
-            "name": "Create new group \"String-Group\"",
+            "name": "Create new group \"Number-Group\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"String-Group\"",
+                  "val": "\"Number-Group\"",
                   "offset": 17
                 }
               ],
@@ -356,21 +356,20 @@
           },
           {
             "result": {
-              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//span[normalize-space()\u003d\u0027App Center Roles\u0027]\"}\n  (Session info: chrome\u003d92.0.4515.107)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d//span[normalize-space()\u003d\u0027App Center Roles\u0027]}\r\n\tat jdk.internal.reflect.GeneratedConstructorAccessor19.newInstance(Unknown Source)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy13.click(Unknown Source)\r\n\tat pageModules.Module_DesignTestCases.assignPermission(Module_DesignTestCases.java:134)\r\n\tat stepdefinitions.DesignTestCases.assign_appcenter_permissions_for_strings_text_dataservice(DesignTestCases.java:75)\r\n\tat ✽.Assign appcenter permissions for \"string_Text\" dataservice to \"maker@appveen.com\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:26)\r\n",
-              "duration": 33264975100,
-              "status": "failed"
+              "duration": 8079291800,
+              "status": "passed"
             },
             "line": 26,
-            "name": "Assign appcenter permissions for \"string_Text\" dataservice to \"maker@appveen.com\"",
+            "name": "Assign appcenter permissions for \"number_Currency\" dataservice to \"maker@appveen.com\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"string_Text\"",
+                  "val": "\"number_Currency\"",
                   "offset": 33
                 },
                 {
                   "val": "\"maker@appveen.com\"",
-                  "offset": 62
+                  "offset": 66
                 }
               ],
               "location": "DesignTestCases.assign_appcenter_permissions_for_strings_text_dataservice(String,String)"
@@ -383,7 +382,7 @@
         "before": [
           {
             "result": {
-              "duration": 756500,
+              "duration": 1876600,
               "status": "passed"
             },
             "match": {
@@ -392,7 +391,7 @@
           },
           {
             "result": {
-              "duration": 2391801,
+              "duration": 4244100,
               "status": "passed"
             },
             "match": {
@@ -401,7 +400,7 @@
           },
           {
             "result": {
-              "duration": 2212199,
+              "duration": 979200,
               "status": "passed"
             },
             "match": {
@@ -410,7 +409,7 @@
           },
           {
             "result": {
-              "duration": 906701,
+              "duration": 1081400,
               "status": "passed"
             },
             "match": {
@@ -421,13 +420,13 @@
         "line": 33,
         "name": "Log out of Author",
         "description": "",
-        "id": "ds-string-text;log-out-of-author",
+        "id": "ds-number-currency;log-out-of-author",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 1153346800,
+              "duration": 1159417100,
               "status": "passed"
             },
             "line": 34,
@@ -439,7 +438,7 @@
           },
           {
             "result": {
-              "duration": 1118233301,
+              "duration": 1120934200,
               "status": "passed"
             },
             "line": 35,
@@ -455,7 +454,7 @@
         "before": [
           {
             "result": {
-              "duration": 1448600,
+              "duration": 3473600,
               "status": "passed"
             },
             "match": {
@@ -464,7 +463,7 @@
           },
           {
             "result": {
-              "duration": 6200600,
+              "duration": 9106300,
               "status": "passed"
             },
             "match": {
@@ -473,7 +472,7 @@
           },
           {
             "result": {
-              "duration": 4443200,
+              "duration": 5110100,
               "status": "passed"
             },
             "match": {
@@ -482,7 +481,7 @@
           },
           {
             "result": {
-              "duration": 1315299,
+              "duration": 2888600,
               "status": "passed"
             },
             "match": {
@@ -493,13 +492,13 @@
         "line": 45,
         "name": "Log into AppCenter",
         "description": "",
-        "id": "ds-string-text;log-into-appcenter;;2",
+        "id": "ds-number-currency;log-into-appcenter;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 4797904401,
+              "duration": 742420600,
               "status": "passed"
             },
             "line": 40,
@@ -511,7 +510,7 @@
           },
           {
             "result": {
-              "duration": 1571992000,
+              "duration": 764308600,
               "status": "passed"
             },
             "line": 41,
@@ -533,9 +532,8 @@
           },
           {
             "result": {
-              "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d92.0.4515.107)\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d(//div[starts-with(@class,\u0027logo\u0027)])[1]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy13.isDisplayed(Unknown Source)\r\n\tat pageModules.LoginAppCenter.verifyUserLoginSuccesfullyToAppCenter(LoginAppCenter.java:71)\r\n\tat stepdefinitions.LoginToAppCenter.verify_User_Login_Successfully_in_Appcenter_Url(LoginToAppCenter.java:50)\r\n\tat ✽.Verify User has Logged in Successfully(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:42)\r\n",
-              "duration": 47688938301,
-              "status": "failed"
+              "duration": 2144650000,
+              "status": "passed"
             },
             "line": 42,
             "name": "Verify User has Logged in Successfully",
@@ -555,7 +553,7 @@
         "before": [
           {
             "result": {
-              "duration": 909700,
+              "duration": 1909100,
               "status": "passed"
             },
             "match": {
@@ -564,7 +562,7 @@
           },
           {
             "result": {
-              "duration": 2522799,
+              "duration": 9078400,
               "status": "passed"
             },
             "match": {
@@ -573,7 +571,7 @@
           },
           {
             "result": {
-              "duration": 1375800,
+              "duration": 3520600,
               "status": "passed"
             },
             "match": {
@@ -582,7 +580,7 @@
           },
           {
             "result": {
-              "duration": 1000500,
+              "duration": 2052100,
               "status": "passed"
             },
             "match": {
@@ -593,22 +591,21 @@
         "line": 49,
         "name": "Add data to data service",
         "description": "",
-        "id": "ds-string-text;add-data-to-data-service",
+        "id": "ds-number-currency;add-data-to-data-service",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d92.0.4515.107)\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d//div[contains(text(),\u0027string_Text\u0027)]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginAppCenter.dataService(LoginAppCenter.java:80)\r\n\tat stepdefinitions.LoginToAppCenter.data_service(LoginToAppCenter.java:56)\r\n\tat ✽.Data service \"string_Text\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:50)\r\n",
-              "duration": 17193525300,
-              "status": "failed"
+              "duration": 5292969600,
+              "status": "passed"
             },
             "line": 50,
-            "name": "Data service \"string_Text\"",
+            "name": "Data service \"number_Currency\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"string_Text\"",
+                  "val": "\"number_Currency\"",
                   "offset": 13
                 }
               ],
@@ -618,8 +615,8 @@
           },
           {
             "result": {
-              "duration": 23000,
-              "status": "skipped"
+              "duration": 13225074600,
+              "status": "passed"
             },
             "line": 51,
             "name": "Add data to the data service",
@@ -634,7 +631,7 @@
         "before": [
           {
             "result": {
-              "duration": 1097000,
+              "duration": 4209000,
               "status": "passed"
             },
             "match": {
@@ -643,7 +640,7 @@
           },
           {
             "result": {
-              "duration": 3836300,
+              "duration": 16941100,
               "status": "passed"
             },
             "match": {
@@ -652,7 +649,7 @@
           },
           {
             "result": {
-              "duration": 1657099,
+              "duration": 4027100,
               "status": "passed"
             },
             "match": {
@@ -661,7 +658,7 @@
           },
           {
             "result": {
-              "duration": 947200,
+              "duration": 2453100,
               "status": "passed"
             },
             "match": {
@@ -672,22 +669,21 @@
         "line": 61,
         "name": "Add record to data service",
         "description": "",
-        "id": "ds-string-text;add-record-to-data-service;;2",
+        "id": "ds-number-currency;add-record-to-data-service;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d92.0.4515.107)\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d//div[contains(text(),\u0027string_Text\u0027)]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginAppCenter.dataService(LoginAppCenter.java:80)\r\n\tat stepdefinitions.LoginToAppCenter.data_service(LoginToAppCenter.java:56)\r\n\tat ✽.Data service \"string_Text\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:55)\r\n",
-              "duration": 17224094700,
-              "status": "failed"
+              "duration": 5192118400,
+              "status": "passed"
             },
             "line": 55,
-            "name": "Data service \"string_Text\"",
+            "name": "Data service \"number_Currency\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"string_Text\"",
+                  "val": "\"number_Currency\"",
                   "offset": 13
                 }
               ],
@@ -697,15 +693,15 @@
           },
           {
             "result": {
-              "duration": 5000,
-              "status": "skipped"
+              "duration": 8967154700,
+              "status": "passed"
             },
             "line": 56,
-            "name": "Add record \"{\"_id\":\"STR1002\", \"dsStringText1002\":\"\", \"dsStringText1014\":\"\",\"dsStringText1015\":\"\",\"dsStringText1017\":\"\",\"dsStringText1018\":\"\"}\" to the data service",
+            "name": "Add record \"{\"_id\":\"NUM1001\", \"dsNumberCurrency1002\":\"\", \"dsNumberCurrency1014\":\"\",\"dsNumberCurrency1015\":\"\",\"dsNumberCurrency1017\":\"\",\"dsNumberCurrency1018\":\"\"}\" to the data service",
             "match": {
               "arguments": [
                 {
-                  "val": "{\"_id\":\"STR1002\", \"dsStringText1002\":\"\", \"dsStringText1014\":\"\",\"dsStringText1015\":\"\",\"dsStringText1017\":\"\",\"dsStringText1018\":\"\"}",
+                  "val": "{\"_id\":\"NUM1001\", \"dsNumberCurrency1002\":\"\", \"dsNumberCurrency1014\":\"\",\"dsNumberCurrency1015\":\"\",\"dsNumberCurrency1017\":\"\",\"dsNumberCurrency1018\":\"\"}",
                   "offset": 12
                 }
               ],
@@ -715,8 +711,9 @@
           },
           {
             "result": {
-              "duration": 3600,
-              "status": "skipped"
+              "error_message": "java.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:86)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat org.junit.Assert.assertTrue(Assert.java:52)\r\n\tat pageModules.Module_DesignTestCases.expectError(Module_DesignTestCases.java:360)\r\n\tat stepdefinitions.DesignTestCases.expect_error_on_label(DesignTestCases.java:91)\r\n\tat ✽.Expect error \"DS STRING TEXT Error\" on label \"DS STRING TEXT Label\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/number_Currency.feature:57)\r\n",
+              "duration": 52666300,
+              "status": "failed"
             },
             "line": 57,
             "name": "Expect error \"DS STRING TEXT Error\" on label \"DS STRING TEXT Label\"",
@@ -737,7 +734,7 @@
           },
           {
             "result": {
-              "duration": 3400,
+              "duration": 10600,
               "status": "skipped"
             },
             "line": 58,
@@ -753,7 +750,7 @@
         "before": [
           {
             "result": {
-              "duration": 915699,
+              "duration": 2500400,
               "status": "passed"
             },
             "match": {
@@ -762,7 +759,7 @@
           },
           {
             "result": {
-              "duration": 6129201,
+              "duration": 7925300,
               "status": "passed"
             },
             "match": {
@@ -771,7 +768,7 @@
           },
           {
             "result": {
-              "duration": 2154000,
+              "duration": 1927100,
               "status": "passed"
             },
             "match": {
@@ -780,7 +777,7 @@
           },
           {
             "result": {
-              "duration": 1206200,
+              "duration": 1451300,
               "status": "passed"
             },
             "match": {
@@ -791,22 +788,21 @@
         "line": 70,
         "name": "Add record to data service",
         "description": "",
-        "id": "ds-string-text;add-record-to-data-service;;2",
+        "id": "ds-number-currency;add-record-to-data-service;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d92.0.4515.107)\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d//div[contains(text(),\u0027string_Text\u0027)]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginAppCenter.dataService(LoginAppCenter.java:80)\r\n\tat stepdefinitions.LoginToAppCenter.data_service(LoginToAppCenter.java:56)\r\n\tat ✽.Data service \"string_Text\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:65)\r\n",
-              "duration": 17226676501,
-              "status": "failed"
+              "duration": 5266183000,
+              "status": "passed"
             },
             "line": 65,
-            "name": "Data service \"string_Text\"",
+            "name": "Data service \"number_Currency\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"string_Text\"",
+                  "val": "\"number_Currency\"",
                   "offset": 13
                 }
               ],
@@ -816,15 +812,15 @@
           },
           {
             "result": {
-              "duration": 5900,
-              "status": "skipped"
+              "duration": 5828550400,
+              "status": "passed"
             },
             "line": 66,
-            "name": "Add record \"{ \"_id\" : \"STR1001\",\"dsStringText1001\" : \"1001\",\"dsStringText1002\" : \"c\",\"dsStringText1003\" : \"3\",\"dsStringText1007\" : \"7\",\"dsStringText1008\" : \"18\",\"dsStringText1014\" : \"14\",\"dsStringText1015\" : \"15\"}\" to the data service",
+            "name": "Add record \"{ \"_id\" : \"NUM1001\",\"dsNumberCurrency1001\" : 1,\"dsNumberCurrency1002\" : 2,\"dsNumberCurrency1003\" : 3,\"dsNumberCurrency1007\" : 4,\"dsNumberCurrency1008\" : 5,\"dsNumberCurrency1014\" : 4,\"dsNumberCurrency1015\" : 5}\" to the data service",
             "match": {
               "arguments": [
                 {
-                  "val": "{ \"_id\" : \"STR1001\",\"dsStringText1001\" : \"1001\",\"dsStringText1002\" : \"c\",\"dsStringText1003\" : \"3\",\"dsStringText1007\" : \"7\",\"dsStringText1008\" : \"18\",\"dsStringText1014\" : \"14\",\"dsStringText1015\" : \"15\"}",
+                  "val": "{ \"_id\" : \"NUM1001\",\"dsNumberCurrency1001\" : 1,\"dsNumberCurrency1002\" : 2,\"dsNumberCurrency1003\" : 3,\"dsNumberCurrency1007\" : 4,\"dsNumberCurrency1008\" : 5,\"dsNumberCurrency1014\" : 4,\"dsNumberCurrency1015\" : 5}",
                   "offset": 12
                 }
               ],
@@ -834,15 +830,15 @@
           },
           {
             "result": {
-              "duration": 2500,
-              "status": "skipped"
+              "duration": 91700,
+              "status": "passed"
             },
             "line": 67,
-            "name": "Expect error \"ID STR1001 already exists\" on save",
+            "name": "Expect error \"ID NUM1001 already exists\" on save",
             "match": {
               "arguments": [
                 {
-                  "val": "\"ID STR1001 already exists\"",
+                  "val": "\"ID NUM1001 already exists\"",
                   "offset": 13
                 }
               ],
@@ -856,7 +852,7 @@
         "before": [
           {
             "result": {
-              "duration": 1540099,
+              "duration": 1220100,
               "status": "passed"
             },
             "match": {
@@ -865,7 +861,7 @@
           },
           {
             "result": {
-              "duration": 5584999,
+              "duration": 4009000,
               "status": "passed"
             },
             "match": {
@@ -874,7 +870,7 @@
           },
           {
             "result": {
-              "duration": 1880600,
+              "duration": 1659800,
               "status": "passed"
             },
             "match": {
@@ -883,7 +879,7 @@
           },
           {
             "result": {
-              "duration": 1276800,
+              "duration": 1000600,
               "status": "passed"
             },
             "match": {
@@ -894,22 +890,21 @@
         "line": 79,
         "name": "Add record to data service",
         "description": "",
-        "id": "ds-string-text;add-record-to-data-service;;2",
+        "id": "ds-number-currency;add-record-to-data-service;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d92.0.4515.107)\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d//div[contains(text(),\u0027string_Text\u0027)]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginAppCenter.dataService(LoginAppCenter.java:80)\r\n\tat stepdefinitions.LoginToAppCenter.data_service(LoginToAppCenter.java:56)\r\n\tat ✽.Data service \"string_Text\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:74)\r\n",
-              "duration": 17206594600,
-              "status": "failed"
+              "duration": 5183481900,
+              "status": "passed"
             },
             "line": 74,
-            "name": "Data service \"string_Text\"",
+            "name": "Data service \"number_Currency\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"string_Text\"",
+                  "val": "\"number_Currency\"",
                   "offset": 13
                 }
               ],
@@ -919,15 +914,15 @@
           },
           {
             "result": {
-              "duration": 4300,
-              "status": "skipped"
+              "duration": 11333095400,
+              "status": "passed"
             },
             "line": 75,
-            "name": "Add record \"{ \"_id\" : \"STR1003\",\"dsStringText1001\" : \"1001\",\"dsStringText1002\" : \"a\",\"dsStringText1003\" : \"3\",\"dsStringText1007\" : \"7\",\"dsStringText1008\" : \"18\",\"dsStringText1014\" : \"14\",\"dsStringText1015\" : \"15\"}\" to the data service",
+            "name": "Add record \"{ \"_id\" : \"NUM1002\",\"dsNumberCurrency1001\" : 10,\"dsNumberCurrency1002\" : 3,\"dsNumberCurrency1003\" : 3,\"dsNumberCurrency1007\" : 7,\"dsNumberCurrency1008\" : 8,\"dsNumberCurrency1014\" : 14,\"dsNumberCurrency1015\" : 15}\" to the data service",
             "match": {
               "arguments": [
                 {
-                  "val": "{ \"_id\" : \"STR1003\",\"dsStringText1001\" : \"1001\",\"dsStringText1002\" : \"a\",\"dsStringText1003\" : \"3\",\"dsStringText1007\" : \"7\",\"dsStringText1008\" : \"18\",\"dsStringText1014\" : \"14\",\"dsStringText1015\" : \"15\"}",
+                  "val": "{ \"_id\" : \"NUM1002\",\"dsNumberCurrency1001\" : 10,\"dsNumberCurrency1002\" : 3,\"dsNumberCurrency1003\" : 3,\"dsNumberCurrency1007\" : 7,\"dsNumberCurrency1008\" : 8,\"dsNumberCurrency1014\" : 14,\"dsNumberCurrency1015\" : 15}",
                   "offset": 12
                 }
               ],
@@ -937,8 +932,8 @@
           },
           {
             "result": {
-              "duration": 3300,
-              "status": "skipped"
+              "duration": 232100,
+              "status": "passed"
             },
             "line": 76,
             "name": "Expect error \"Unique check validation failed for dsStringText1002\" on save",
@@ -959,7 +954,7 @@
         "before": [
           {
             "result": {
-              "duration": 941300,
+              "duration": 4351000,
               "status": "passed"
             },
             "match": {
@@ -968,7 +963,7 @@
           },
           {
             "result": {
-              "duration": 3803701,
+              "duration": 14819700,
               "status": "passed"
             },
             "match": {
@@ -977,7 +972,7 @@
           },
           {
             "result": {
-              "duration": 1545100,
+              "duration": 4437600,
               "status": "passed"
             },
             "match": {
@@ -986,7 +981,7 @@
           },
           {
             "result": {
-              "duration": 1479700,
+              "duration": 2939900,
               "status": "passed"
             },
             "match": {
@@ -997,22 +992,21 @@
         "line": 89,
         "name": "Fetch record from the data service",
         "description": "",
-        "id": "ds-string-text;fetch-record-from-the-data-service;;2",
+        "id": "ds-number-currency;fetch-record-from-the-data-service;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d92.0.4515.107)\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d//div[contains(text(),\u0027string_Text\u0027)]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginAppCenter.dataService(LoginAppCenter.java:80)\r\n\tat stepdefinitions.LoginToAppCenter.data_service(LoginToAppCenter.java:56)\r\n\tat ✽.Data service \"string_Text\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:84)\r\n",
-              "duration": 17235785201,
-              "status": "failed"
+              "duration": 5220172600,
+              "status": "passed"
             },
             "line": 84,
-            "name": "Data service \"string_Text\"",
+            "name": "Data service \"number_Currency\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"string_Text\"",
+                  "val": "\"number_Currency\"",
                   "offset": 13
                 }
               ],
@@ -1022,15 +1016,15 @@
           },
           {
             "result": {
-              "duration": 17200,
-              "status": "skipped"
+              "duration": 2472552700,
+              "status": "passed"
             },
             "line": 85,
-            "name": "Fetch record \"STR1001\" from the data service",
+            "name": "Fetch record \"NUM1001\" from the data service",
             "match": {
               "arguments": [
                 {
-                  "val": "\"STR1001\"",
+                  "val": "\"NUM1001\"",
                   "offset": 13
                 }
               ],
@@ -1040,19 +1034,20 @@
           },
           {
             "result": {
-              "duration": 13800,
-              "status": "skipped"
+              "error_message": "java.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:86)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat org.junit.Assert.assertTrue(Assert.java:52)\r\n\tat pageModules.Module_DesignTestCases.matchDataCurrency(Module_DesignTestCases.java:775)\r\n\tat stepdefinitions.DesignTestCases.match_this_Currency_data(DesignTestCases.java:131)\r\n\tat ✽.Match this Currency data to \"{\"_id\": \"NUM1001\",\"dsNumberCurrency1001\": 3.00,\"dsNumberCurrency1002\": 3.00,\"dsNumberCurrency1003\": 5.00,\"dsNumberCurrency1004\": 2.00,\"dsNumberCurrency1005\": 3.00,\"dsNumberCurrency1007\": 4.50, \"dsNumberCurrency1008\": 6.22, \"dsNumberCurrency1010\": 5.55,  \"dsNumberCurrency1013\": 8.00, \"dsNumberCurrency1014\": 7.00, \"dsNumberCurrency1015\": 3.00,  \"dsNumberCurrency1016\": 3,  \"dsNumberCurrency1020\": 5.00, \"dsNumberCurrency1021\": 2.00, \"dsNumberCurrency1022\": 3.00, \"dsNumberCurrency1023\": 5.00, \"dsNumberCurrency1024\": 5.00}\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/number_Currency.feature:86)\r\n",
+              "duration": 6806442400,
+              "status": "failed"
             },
             "line": 86,
-            "name": "Match it to \"{\"_id\": \"STR1001\",\"dsStringText1001\": \"1001\",\"dsStringText1002\": \"a\",\"dsStringText1003\": \"1003\",\"dsStringText1004\": \"1004\",\"dsStringText1005\": \"1005\",\"dsStringText1007\": \"1007\", \"dsStringText1008\": \"1008\", \"dsStringText1010\": \"1010\",  \"dsStringText1013\": \"1013\", \"dsStringText1014\": \"1014\", \"dsStringText1015\": \"1015\",  \"dsStringText1018\": \"A\",  \"dsStringText1020\": \"ABCD\", \"dsStringText1021\": \"1021\", \"dsStringText1022\": \"1022\", \"dsStringText1023\": \"1023\", \"dsStringText1024\": \"1024\"}\"",
+            "name": "Match this Currency data to \"{\"_id\": \"NUM1001\",\"dsNumberCurrency1001\": 3.00,\"dsNumberCurrency1002\": 3.00,\"dsNumberCurrency1003\": 5.00,\"dsNumberCurrency1004\": 2.00,\"dsNumberCurrency1005\": 3.00,\"dsNumberCurrency1007\": 4.50, \"dsNumberCurrency1008\": 6.22, \"dsNumberCurrency1010\": 5.55,  \"dsNumberCurrency1013\": 8.00, \"dsNumberCurrency1014\": 7.00, \"dsNumberCurrency1015\": 3.00,  \"dsNumberCurrency1016\": 3,  \"dsNumberCurrency1020\": 5.00, \"dsNumberCurrency1021\": 2.00, \"dsNumberCurrency1022\": 3.00, \"dsNumberCurrency1023\": 5.00, \"dsNumberCurrency1024\": 5.00}\"",
             "match": {
               "arguments": [
                 {
-                  "val": "{\"_id\": \"STR1001\",\"dsStringText1001\": \"1001\",\"dsStringText1002\": \"a\",\"dsStringText1003\": \"1003\",\"dsStringText1004\": \"1004\",\"dsStringText1005\": \"1005\",\"dsStringText1007\": \"1007\", \"dsStringText1008\": \"1008\", \"dsStringText1010\": \"1010\",  \"dsStringText1013\": \"1013\", \"dsStringText1014\": \"1014\", \"dsStringText1015\": \"1015\",  \"dsStringText1018\": \"A\",  \"dsStringText1020\": \"ABCD\", \"dsStringText1021\": \"1021\", \"dsStringText1022\": \"1022\", \"dsStringText1023\": \"1023\", \"dsStringText1024\": \"1024\"}",
-                  "offset": 13
+                  "val": "{\"_id\": \"NUM1001\",\"dsNumberCurrency1001\": 3.00,\"dsNumberCurrency1002\": 3.00,\"dsNumberCurrency1003\": 5.00,\"dsNumberCurrency1004\": 2.00,\"dsNumberCurrency1005\": 3.00,\"dsNumberCurrency1007\": 4.50, \"dsNumberCurrency1008\": 6.22, \"dsNumberCurrency1010\": 5.55,  \"dsNumberCurrency1013\": 8.00, \"dsNumberCurrency1014\": 7.00, \"dsNumberCurrency1015\": 3.00,  \"dsNumberCurrency1016\": 3,  \"dsNumberCurrency1020\": 5.00, \"dsNumberCurrency1021\": 2.00, \"dsNumberCurrency1022\": 3.00, \"dsNumberCurrency1023\": 5.00, \"dsNumberCurrency1024\": 5.00}",
+                  "offset": 29
                 }
               ],
-              "location": "DesignTestCases.match_it_to(String)"
+              "location": "DesignTestCases.match_this_Currency_data(String)"
             },
             "keyword": "And "
           }
@@ -1062,7 +1057,7 @@
         "before": [
           {
             "result": {
-              "duration": 2923399,
+              "duration": 1010000,
               "status": "passed"
             },
             "match": {
@@ -1071,7 +1066,7 @@
           },
           {
             "result": {
-              "duration": 11742500,
+              "duration": 1738800,
               "status": "passed"
             },
             "match": {
@@ -1080,7 +1075,7 @@
           },
           {
             "result": {
-              "duration": 2706400,
+              "duration": 573200,
               "status": "passed"
             },
             "match": {
@@ -1089,7 +1084,7 @@
           },
           {
             "result": {
-              "duration": 1662999,
+              "duration": 427800,
               "status": "passed"
             },
             "match": {
@@ -1100,22 +1095,21 @@
         "line": 98,
         "name": "Update record to data service",
         "description": "",
-        "id": "ds-string-text;update-record-to-data-service;;2",
+        "id": "ds-number-currency;update-record-to-data-service;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d92.0.4515.107)\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d//div[contains(text(),\u0027string_Text\u0027)]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginAppCenter.dataService(LoginAppCenter.java:80)\r\n\tat stepdefinitions.LoginToAppCenter.data_service(LoginToAppCenter.java:56)\r\n\tat ✽.Data service \"string_Text\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:93)\r\n",
-              "duration": 17215267401,
-              "status": "failed"
+              "duration": 5254988200,
+              "status": "passed"
             },
             "line": 93,
-            "name": "Data service \"string_Text\"",
+            "name": "Data service \"number_Currency\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"string_Text\"",
+                  "val": "\"number_Currency\"",
                   "offset": 13
                 }
               ],
@@ -1125,19 +1119,19 @@
           },
           {
             "result": {
-              "duration": 11400,
-              "status": "skipped"
+              "duration": 16798714200,
+              "status": "passed"
             },
             "line": 94,
-            "name": "Update record \"STR1001\" with \"{\"dsStringText1001\": \"1111\",\"dsStringText1002\": \"b\",\"dsStringText1003\": \"1333\",\"dsStringText1004\": \"1444\",\"dsStringText1005\": \"1555\",\"dsStringText1007\": \"1777\", \"dsStringText1008\": \"1888\", \"dsStringText1010\": \"101010\",  \"dsStringText1013\": \"101313\", \"dsStringText1014\": \"101414\", \"dsStringText1015\": \"101515\", \"dsStringText1018\": \"101818\", \"dsStringText1020\": \"ABCDEFGH\", \"dsStringText1021\": \"102121\", \"dsStringText1022\": \"102222\", \"dsStringText1023\": \"102323\", \"dsStringText1024\": \"102424\"}\" to the data service",
+            "name": "Update record \"NUM1001\" with \"{\"dsNumberCurrency1001\": 1,\"dsNumberCurrency1002\": 2,\"dsNumberCurrency1003\": 3,\"dsNumberCurrency1004\": 3,\"dsNumberCurrency1005\": 5,\"dsNumberCurrency1007\": 5, \"dsNumberCurrency1008\": 4, \"dsNumberCurrency1010\": 4,  \"dsNumberCurrency1013\": 3, \"dsNumberCurrency1014\": 1, \"dsNumberCurrency1015\": 5,  \"dsNumberCurrency1016\": 3,  \"dsNumberCurrency1020\": 4, \"dsNumberCurrency1021\": 1, \"dsNumberCurrency1022\": 5, \"dsNumberCurrency1023\": 4, \"dsNumberCurrency1024\": 2}\" to the data service",
             "match": {
               "arguments": [
                 {
-                  "val": "STR1001",
+                  "val": "NUM1001",
                   "offset": 15
                 },
                 {
-                  "val": "{\"dsStringText1001\": \"1111\",\"dsStringText1002\": \"b\",\"dsStringText1003\": \"1333\",\"dsStringText1004\": \"1444\",\"dsStringText1005\": \"1555\",\"dsStringText1007\": \"1777\", \"dsStringText1008\": \"1888\", \"dsStringText1010\": \"101010\",  \"dsStringText1013\": \"101313\", \"dsStringText1014\": \"101414\", \"dsStringText1015\": \"101515\", \"dsStringText1018\": \"101818\", \"dsStringText1020\": \"ABCDEFGH\", \"dsStringText1021\": \"102121\", \"dsStringText1022\": \"102222\", \"dsStringText1023\": \"102323\", \"dsStringText1024\": \"102424\"}",
+                  "val": "{\"dsNumberCurrency1001\": 1,\"dsNumberCurrency1002\": 2,\"dsNumberCurrency1003\": 3,\"dsNumberCurrency1004\": 3,\"dsNumberCurrency1005\": 5,\"dsNumberCurrency1007\": 5, \"dsNumberCurrency1008\": 4, \"dsNumberCurrency1010\": 4,  \"dsNumberCurrency1013\": 3, \"dsNumberCurrency1014\": 1, \"dsNumberCurrency1015\": 5,  \"dsNumberCurrency1016\": 3,  \"dsNumberCurrency1020\": 4, \"dsNumberCurrency1021\": 1, \"dsNumberCurrency1022\": 5, \"dsNumberCurrency1023\": 4, \"dsNumberCurrency1024\": 2}",
                   "offset": 30
                 }
               ],
@@ -1151,7 +1145,7 @@
         "before": [
           {
             "result": {
-              "duration": 1912400,
+              "duration": 481300,
               "status": "passed"
             },
             "match": {
@@ -1160,7 +1154,7 @@
           },
           {
             "result": {
-              "duration": 3829199,
+              "duration": 2746000,
               "status": "passed"
             },
             "match": {
@@ -1169,7 +1163,7 @@
           },
           {
             "result": {
-              "duration": 2043801,
+              "duration": 616000,
               "status": "passed"
             },
             "match": {
@@ -1178,7 +1172,7 @@
           },
           {
             "result": {
-              "duration": 1155499,
+              "duration": 388400,
               "status": "passed"
             },
             "match": {
@@ -1189,22 +1183,21 @@
         "line": 106,
         "name": "Fetch record from the data service",
         "description": "",
-        "id": "ds-string-text;fetch-record-from-the-data-service;;2",
+        "id": "ds-number-currency;fetch-record-from-the-data-service;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d92.0.4515.107)\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d//div[contains(text(),\u0027string_Text\u0027)]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginAppCenter.dataService(LoginAppCenter.java:80)\r\n\tat stepdefinitions.LoginToAppCenter.data_service(LoginToAppCenter.java:56)\r\n\tat ✽.Data service \"string_Text\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:101)\r\n",
-              "duration": 17231051100,
-              "status": "failed"
+              "duration": 5235734300,
+              "status": "passed"
             },
             "line": 101,
-            "name": "Data service \"string_Text\"",
+            "name": "Data service \"number_Currency\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"string_Text\"",
+                  "val": "\"number_Currency\"",
                   "offset": 13
                 }
               ],
@@ -1214,15 +1207,15 @@
           },
           {
             "result": {
-              "duration": 4599,
-              "status": "skipped"
+              "duration": 2314660300,
+              "status": "passed"
             },
             "line": 102,
-            "name": "Fetch record \"STR1001\" from the data service",
+            "name": "Fetch record \"NUM1001\" from the data service",
             "match": {
               "arguments": [
                 {
-                  "val": "\"STR1001\"",
+                  "val": "\"NUM1001\"",
                   "offset": 13
                 }
               ],
@@ -1232,19 +1225,20 @@
           },
           {
             "result": {
-              "duration": 2599,
-              "status": "skipped"
+              "error_message": "java.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:86)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat org.junit.Assert.assertTrue(Assert.java:52)\r\n\tat pageModules.Module_DesignTestCases.matchDataCurrency(Module_DesignTestCases.java:775)\r\n\tat stepdefinitions.DesignTestCases.match_this_Currency_data(DesignTestCases.java:131)\r\n\tat ✽.Match this Currency data to \"{\"_id\": \"NUM1001\",\"dsNumberCurrency1001\": 1,\"dsNumberCurrency1002\": 2,\"dsNumberCurrency1003\": 3,\"dsNumberCurrency1004\": 3,\"dsNumberCurrency1005\": 5,\"dsNumberCurrency1007\": 5, \"dsNumberCurrency1008\": 4, \"dsNumberCurrency1010\": 4,  \"dsNumberCurrency1013\": 3, \"dsNumberCurrency1014\": 1, \"dsNumberCurrency1015\": 5,  \"dsNumberCurrency1016\": 3,  \"dsNumberCurrency1020\": 4, \"dsNumberCurrency1021\": 1, \"dsNumberCurrency1022\": 5, \"dsNumberCurrency1023\": 4, \"dsNumberCurrency1024\": 2}\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/number_Currency.feature:103)\r\n",
+              "duration": 5915291600,
+              "status": "failed"
             },
             "line": 103,
-            "name": "Match it to \"{\"_id\": \"STR1001\",\"dsStringText1001\": \"1111\",\"dsStringText1002\": \"a\",\"dsStringText1003\": \"1333\",\"dsStringText1004\": \"1004\",\"dsStringText1005\": \"1555\",\"dsStringText1007\": \"1007\", \"dsStringText1008\": \"1888\", \"dsStringText1010\": \"1010\",  \"dsStringText1013\": \"101313\", \"dsStringText1014\": \"101414\", \"dsStringText1015\": \"101515\", \"dsStringText1018\": \"101818\", \"dsStringText1020\": \"ABCDEFGH\", \"dsStringText1021\": \"102121\", \"dsStringText1022\": \"102222\", \"dsStringText1023\": \"102323\", \"dsStringText1024\": \"102424\"}\"",
+            "name": "Match this Currency data to \"{\"_id\": \"NUM1001\",\"dsNumberCurrency1001\": 1,\"dsNumberCurrency1002\": 2,\"dsNumberCurrency1003\": 3,\"dsNumberCurrency1004\": 3,\"dsNumberCurrency1005\": 5,\"dsNumberCurrency1007\": 5, \"dsNumberCurrency1008\": 4, \"dsNumberCurrency1010\": 4,  \"dsNumberCurrency1013\": 3, \"dsNumberCurrency1014\": 1, \"dsNumberCurrency1015\": 5,  \"dsNumberCurrency1016\": 3,  \"dsNumberCurrency1020\": 4, \"dsNumberCurrency1021\": 1, \"dsNumberCurrency1022\": 5, \"dsNumberCurrency1023\": 4, \"dsNumberCurrency1024\": 2}\"",
             "match": {
               "arguments": [
                 {
-                  "val": "{\"_id\": \"STR1001\",\"dsStringText1001\": \"1111\",\"dsStringText1002\": \"a\",\"dsStringText1003\": \"1333\",\"dsStringText1004\": \"1004\",\"dsStringText1005\": \"1555\",\"dsStringText1007\": \"1007\", \"dsStringText1008\": \"1888\", \"dsStringText1010\": \"1010\",  \"dsStringText1013\": \"101313\", \"dsStringText1014\": \"101414\", \"dsStringText1015\": \"101515\", \"dsStringText1018\": \"101818\", \"dsStringText1020\": \"ABCDEFGH\", \"dsStringText1021\": \"102121\", \"dsStringText1022\": \"102222\", \"dsStringText1023\": \"102323\", \"dsStringText1024\": \"102424\"}",
-                  "offset": 13
+                  "val": "{\"_id\": \"NUM1001\",\"dsNumberCurrency1001\": 1,\"dsNumberCurrency1002\": 2,\"dsNumberCurrency1003\": 3,\"dsNumberCurrency1004\": 3,\"dsNumberCurrency1005\": 5,\"dsNumberCurrency1007\": 5, \"dsNumberCurrency1008\": 4, \"dsNumberCurrency1010\": 4,  \"dsNumberCurrency1013\": 3, \"dsNumberCurrency1014\": 1, \"dsNumberCurrency1015\": 5,  \"dsNumberCurrency1016\": 3,  \"dsNumberCurrency1020\": 4, \"dsNumberCurrency1021\": 1, \"dsNumberCurrency1022\": 5, \"dsNumberCurrency1023\": 4, \"dsNumberCurrency1024\": 2}",
+                  "offset": 29
                 }
               ],
-              "location": "DesignTestCases.match_it_to(String)"
+              "location": "DesignTestCases.match_this_Currency_data(String)"
             },
             "keyword": "And "
           }
@@ -1254,7 +1248,7 @@
         "before": [
           {
             "result": {
-              "duration": 562799,
+              "duration": 1004200,
               "status": "passed"
             },
             "match": {
@@ -1263,7 +1257,7 @@
           },
           {
             "result": {
-              "duration": 4445300,
+              "duration": 2002400,
               "status": "passed"
             },
             "match": {
@@ -1272,7 +1266,7 @@
           },
           {
             "result": {
-              "duration": 496600,
+              "duration": 919200,
               "status": "passed"
             },
             "match": {
@@ -1281,7 +1275,7 @@
           },
           {
             "result": {
-              "duration": 350400,
+              "duration": 873600,
               "status": "passed"
             },
             "match": {
@@ -1292,22 +1286,21 @@
         "line": 114,
         "name": "Delete record from the data service",
         "description": "",
-        "id": "ds-string-text;delete-record-from-the-data-service;;2",
+        "id": "ds-number-currency;delete-record-from-the-data-service;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d92.0.4515.107)\nBuild info: version: \u0027unknown\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DESKTOP-J666QAI\u0027, ip: \u0027192.168.43.67\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.9\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\DELL\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3da5f0ccba7f8140f9d1b54f59f5a33b\n*** Element info: {Using\u003dxpath, value\u003d//div[contains(text(),\u0027string_Text\u0027)]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageModules.LoginAppCenter.dataService(LoginAppCenter.java:80)\r\n\tat stepdefinitions.LoginToAppCenter.data_service(LoginToAppCenter.java:56)\r\n\tat ✽.Data service \"string_Text\"(C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature:109)\r\n",
-              "duration": 17193750101,
-              "status": "failed"
+              "duration": 5280040500,
+              "status": "passed"
             },
             "line": 109,
-            "name": "Data service \"string_Text\"",
+            "name": "Data service \"number_Currency\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"string_Text\"",
+                  "val": "\"number_Currency\"",
                   "offset": 13
                 }
               ],
@@ -1317,8 +1310,8 @@
           },
           {
             "result": {
-              "duration": 3100,
-              "status": "skipped"
+              "duration": 2410799100,
+              "status": "passed"
             },
             "line": 110,
             "name": "Delete record \"STR1001\" from the data service",
@@ -1335,8 +1328,8 @@
           },
           {
             "result": {
-              "duration": 1700,
-              "status": "skipped"
+              "duration": 57000,
+              "status": "passed"
             },
             "line": 111,
             "name": "deleting from listing page",
@@ -1348,11 +1341,11 @@
         ]
       }
     ],
-    "name": "DS STRING TEXT",
+    "name": "DS NUMBER CURRENCY",
     "description": "",
-    "id": "ds-string-text",
+    "id": "ds-number-currency",
     "keyword": "Feature",
-    "uri": "C:/Users/DELL/eclipse-workspace/DataStack/testcases/string_Text.feature",
+    "uri": "C:/Users/DELL/eclipse-workspace/DataStack/testcases/number_Currency.feature",
     "tags": []
   }
 ]

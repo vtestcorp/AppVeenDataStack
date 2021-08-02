@@ -110,68 +110,7 @@
         "dataPath" : "dsGroupStringLongText.longText"
       }
     } ]
-  }, {
-    "_id" : "61043bdce53e2b250e6735b9",
-    "type" : "Object",
-    "key" : "dsGroupStringRichText",
-    "properties" : {
-      "name" : "DS GROUP STRING RICH TEXT",
-      "fieldLength" : 10,
-      "_typeChanged" : "Object",
-      "dataKey" : "dsGroupStringRichText",
-      "dataPath" : "dsGroupStringRichText"
-    },
-    "definition" : [ {
-      "type" : "String",
-      "key" : "richText",
-      "properties" : {
-        "name" : "RICH TEXT",
-        "fieldLength" : 10,
-        "_typeChanged" : "String",
-        "richText" : true,
-        "dataKey" : "richText",
-        "dataPath" : "dsGroupStringRichText.richText"
-      }
-    } ]
-  }, {
-    "_id" : "61043bdce53e2bb4656735ba",
-    "type" : "Object",
-    "key" : "dsGroupStringSecureText",
-    "properties" : {
-      "name" : "DS GROUP STRING SECURE TEXT",
-      "fieldLength" : 10,
-      "_typeChanged" : "Object",
-      "dataKey" : "dsGroupStringSecureText",
-      "dataPath" : "dsGroupStringSecureText"
-    },
-    "definition" : [ {
-      "type" : "Object",
-      "definition" : [ {
-        "type" : "String",
-        "key" : "value",
-        "properties" : {
-          "name" : "value",
-          "_typeChanged" : "String"
-        }
-      }, {
-        "type" : "String",
-        "key" : "checksum",
-        "properties" : {
-          "name" : "checksum",
-          "_typeChanged" : "String"
-        }
-      } ],
-      "key" : "secureText",
-      "properties" : {
-        "name" : "SECURE TEXT",
-        "fieldLength" : 10,
-        "_typeChanged" : "String",
-        "password" : true,
-        "dataKey" : "secureText",
-        "dataPath" : "dsGroupStringSecureText.secureText"
-      }
-    } ]
-  }, {
+  },  {
     "_id" : "61043bdce53e2bb4496735bb",
     "type" : "Object",
     "key" : "dsGroupStringEmail",
@@ -467,7 +406,7 @@
         "name" : "LIBRARY",
         "fieldLength" : 10,
         "_typeChanged" : "Global",
-        "schema" : "SCHM2424",
+        "schema" : "Address",
         "dataKey" : "library",
         "dataPath" : "dsGroupLibrary.library"
       }
@@ -538,7 +477,7 @@
         "fieldLength" : 10,
         "_typeChanged" : "Relation",
         "deleteAction" : "restrict",
-        "relatedTo" : "SRVC5203",
+        "relatedTo" : "Simple",
         "relatedSearchField" : "_id",
         "relatedViewFields" : [ {
           "_id" : "6102655b36c2eeaf8aee9463",

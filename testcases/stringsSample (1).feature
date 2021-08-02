@@ -20,32 +20,36 @@ Scenario: Create data service
 	Then Create new data service "sample"
  #Under testData, picks up strings.json create the JSON
 
-Scenario: Assign to Appcenter Group
- Then Group "Rich-text-Group" does not exist
- Then Create new group "Rich-text-Group" 
- And assign appcenter permissions for "sample" dataservice
-
-
-Scenario: Log out of Author
-	Given User logged into Author
-	Then User logs out of Author
+Scenario Outline: Assign to Appcenter Group
+ 	Then Group "String-Group" does not exist
+	Then Create new group "String-Group" 
+	And Assign appcenter permissions for "ds_Group-2" dataservice to "<user>"
 	
-
+	Examples:
+	|user|
+	|maker@appveen.com|
+#
+#
+#Scenario: Log out of Author
+#	Given User logged into Author
+#	Then User logs out of Author
+#	
+#
 #@AppCenter
-Scenario Outline: Log into AppCenter
-	Given User navigate to AppCenter login page
-	And User enters "<username>" and "<password>" in AppCenter login page
-	And Verify User has Logged in Successfully 
-Examples:
-|username|password|
-|maker@appveen.com|123123123|
-
-
+#Scenario Outline: Log into AppCenter
+#	Given User navigate to AppCenter login page
+#	And User enters "<username>" and "<password>" in AppCenter login page
+#	And Verify User has Logged in Successfully 
+#Examples:
+#|username|password|
+#|maker@appveen.com|123123123|
+#
+#
  #INSERT/UPDATE
-Scenario: Add data to data service
-	Given Data service "sample"
-	Then Add data to the data service
-	
+#Scenario: Add data to data service
+#	Given Data service "sample"
+#	Then Add data to the data service
+#	
 	
 #	Scenario Outline: Fetch record from the data service
 #	Given Data service "Design-String"

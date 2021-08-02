@@ -93,6 +93,9 @@ public class Object_AuthorPage extends BaseClass{
 
 	@FindBy(xpath="//span[@class='fas fa-angle-down text-accent ng-star-inserted']")
 	public WebElement dropdown;
+	
+	@FindBy(xpath = "//span[@class='odp-references']")
+	public WebElement relation; 
 
 	@FindBy(xpath="//span[@class='odp-123']")
 	public WebElement number;
@@ -128,11 +131,14 @@ public class Object_AuthorPage extends BaseClass{
 	public WebElement booleanData;
 
 	@FindBy(xpath="//span[@class='odp-calendar']")
-	public WebElement date;
+	public WebElement calender;
 
 	@FindBy(xpath="//label[normalize-space()='Date']")
-	public WebElement date1;
-
+	public WebElement date;
+	
+	@FindBy(xpath="//label[normalize-space()='Date & Time']")
+	public WebElement dateAndTime;
+	
 	@FindBy(xpath="//div[text()='Default Timezone']/following-sibling::div/*/input")
 	public WebElement defaultTimezone;
 
@@ -175,7 +181,7 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(xpath="//span[@class='odp-library']")
 	public WebElement library;
 
-	@FindBy(xpath="//div[text()='Linked Library']/following-sibling::div/input")
+	@FindBy(xpath="//div[text()='Linked Library']/following-sibling::div/select")
 	public WebElement linkedLibrary;
 
 	@FindBy(xpath="//span[@class='fa-user-circle far']")
@@ -183,6 +189,12 @@ public class Object_AuthorPage extends BaseClass{
 
 	@FindBy(xpath="//select[@id='searchOnField']")
 	public WebElement searchOnField;
+	
+	@FindBy(xpath = "//div[text()='Relates To']/following-sibling::div/input")
+	public WebElement relatesTo;
+	
+	@FindBy(xpath = "//div[text()='View Fields']/following-sibling::div/select")
+	public WebElement viewFields;
 
 	@FindBy(xpath="//select[@formcontrolname='_listInput']")
 	public WebElement viewField;
@@ -241,6 +253,9 @@ public class Object_AuthorPage extends BaseClass{
 
 	@FindBy(xpath="//span[normalize-space()='Groups']")
 	public WebElement groups;
+	
+	@FindBy(xpath="//span[normalize-space()='Groups']")
+	public WebElement groups1;
 	
 	@FindBy(xpath="(//input[@placeholder='Untitled Attribute'])[last()]")
 	public WebElement attributeTextBox;

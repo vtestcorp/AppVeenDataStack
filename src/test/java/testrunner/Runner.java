@@ -7,7 +7,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="./testcases/ds_group.feature",
+@CucumberOptions(features="./testcases/string_Text.feature",
 //				dryRun=true,
 		//		tags="@AppCenter",
 				glue="stepdefinitions",
