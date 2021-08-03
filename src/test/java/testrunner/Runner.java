@@ -9,7 +9,8 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features="./testcases/number_Number.feature",
 			//	dryRun=true,
-		//		tags="@AppCenter",
+
+           //		tags="@AppCenter",
 				glue="stepdefinitions",
 				monochrome=true,
 				plugin = { "pretty", "html:target/cucumber-reports" ,"json:target/cucumber-reports/cucumber.json" }

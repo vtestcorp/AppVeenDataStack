@@ -89,6 +89,7 @@ public class LoginAppCenter extends BaseClass {
 		List<WebElement> textBoxes = acp.textBoxes;
 		System.out.println(textBoxes.size());
 		String path = System.getProperty("user.dir");
+		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
 
 		/**
@@ -139,21 +140,29 @@ public class LoginAppCenter extends BaseClass {
 				WebElement textBox = driver.findElement(By.xpath("(//*[contains(@class,'form-control')])[" + j + "]"));
 				if (textBox.isEnabled()) {
 					String id1 = textBox.getAttribute("id");
+<<<<<<< HEAD
+=======
+					String value1=JsonUtils.getJsonValue(filePath,id1);
+
+//					dsGroup1001.dsString
+>>>>>>> deepak
 					
 					if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")||textBox.getAttribute("type").equals("select-one")) {
-						if ((String) jsonObject.get(id1) != null) {
+//						if ((String) jsonObject.get(id1) != null) {
+							if (value1 != null) {
 
 							if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
-								if (id1.contains(".")) {
-									String[] attributes = id1.trim().split("[^a-zA-Z0-9]+");
-
-									JSONObject obj = (JSONObject) jsonObject.get(attributes[0]);
-									applyWait.waitForElementToBeClickable(textBox, 30).sendKeys((String) obj.get(attributes[1]));
-
-								} else {
-									applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(((String) jsonObject.get(id1)).toString());
-									
-								}
+//								if (id1.contains(".")) {
+//									String[] attributes = id1.trim().split("[^a-zA-Z0-9]+");
+//
+//									JSONObject obj = (JSONObject) jsonObject.get(attributes[0]);
+//									applyWait.waitForElementToBeClickable(textBox, 30).sendKeys((String) obj.get(attributes[1]));
+//
+//								} else {
+//									applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(((String) jsonObject.get(id1)).toString());
+//									
+//								}
+								applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1);
 							}
 
 							if (textBox.getAttribute("type").equals("select-one")) {

@@ -1,6 +1,6 @@
-Feature: Functions on Strings
+Feature: DS STRING TEXT
 
-# Scenarios - TS.., ..., ..
+# Scenarios - DS STRING TEXT 1001-DS STRING TEXT 1024
 
 @Author
 Scenario Outline: Log into Author
@@ -58,7 +58,7 @@ Scenario: Add data to data service
 	And Save button is disabled
 Examples:
 |data|
-|{"_id":"STR1002", "dsStringText1002":"", "dsStringText1014":"","dsStringText1015":"","dsStringText1017":"","dsStringText1018":""}|
+|{"_id":"STR1002","dsStringText1001":"amazon", "dsStringText1002":"","dsStringText1014":"","dsStringText1015":"","dsStringText1018":""}|
 
 
 Scenario Outline: Add record to data service
@@ -76,7 +76,7 @@ Scenario Outline: Add record to data service
 	And Expect error "Unique check validation failed for dsStringText1002" on save
 Examples:
 |data|
-|{ "_id" : "STR1003","dsStringText1001" : "1001","dsStringText1002" : "a","dsStringText1003" : "3","dsStringText1007" : "7","dsStringText1008" : "18","dsStringText1014" : "14","dsStringText1015" : "15"}|
+|{ "_id" : "STR1003","dsStringText1001" : "flipcart","dsStringText1002" : "a","dsStringText1003" : "3","dsStringText1007" : "7","dsStringText1008" : "18","dsStringText1014" : "14","dsStringText1015" : "15"}|
 	
 	
 	

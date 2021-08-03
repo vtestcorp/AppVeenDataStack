@@ -18,6 +18,9 @@ public class Object_GroupPage extends BaseClass{
 @FindBy(xpath="//*[@class='text-truncate']")
 public List<WebElement> groups;
 
+@FindBy(xpath="//*[@class='text-truncate']")
+public WebElement group1;
+
 @FindBy(xpath="//span[text()='New Group']")
 public WebElement newGroup;
 

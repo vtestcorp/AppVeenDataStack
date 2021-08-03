@@ -49,7 +49,7 @@ Scenario: Add data to data service
 	Given Data service "Sample1"
 	Then Add data to the data service for Collection
 	
-	
+
 #	Scenario Outline: Fetch record from the data service
 #	Given Data service "Design-String"
 #	Then Fetch record "<id>" from the data service

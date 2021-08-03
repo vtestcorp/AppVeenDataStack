@@ -1,7 +1,6 @@
 helperMethods\Property.class
 base\BaseClass.class
 pageModules\Module_DesignTestCases.class
-base\Test.class
 listeners\MyListeners.class
 helperMethods\JavascriptClick.class
 helperMethods\JsonUtils.class

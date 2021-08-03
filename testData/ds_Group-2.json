@@ -1,0 +1,760 @@
+{
+  "workflowHooks" : {
+    "postHooks" : {
+      "submit" : [ ],
+      "rework" : [ ],
+      "discard" : [ ],
+      "approve" : [ ],
+      "reject" : [ ]
+    }
+  },
+  "_metadata" : {
+    "version" : {
+      "document" : 2,
+      "release" : "dev"
+    },
+    "deleted" : false,
+    "lastUpdated" : "2021-07-30T17:50:20.742Z",
+    "createdAt" : "2021-07-30T17:15:47.143Z",
+    "lastUpdatedBy" : "deepak@appveen.com"
+  },
+  "allowedFileTypes" : [ "jpeg", "ppt", "xls", "csv", "doc", "jpg", "png", "gif", "zip", "tar", "rar", "gz", "bz2", "7z", "mp4", "mp3", "pdf", "ico", "docx", "pptx", "xlsx", "ods", "xml", "txt" ],
+  "version" : 1,
+  "instances" : 1,
+  "versionValidity" : {
+    "validityType" : "count",
+    "validityValue" : -1
+  },
+  "permanentDeleteData" : true,
+  "disableInsights" : false,
+  "status" : "Draft",
+  "enableSearchIndex" : false,
+  "attributeCount" : 22,
+  "type" : null,
+  "_id" : "SRVC5327",
+  "name" : "ds_Group-2",
+  "description" : null,
+  "app" : "vTest",
+  "api" : "/dsGroup2",
+  "port" : 20173,
+  "wizard" : [ ],
+  "webHooks" : [ ],
+  "preHooks" : [ ],
+  "collectionName" : "dsGroup2",
+  "__v" : 1,
+  "definition" : [ {
+    "_id" : "61043bdce53e2ba1a66735b6",
+    "key" : "_id",
+    "type" : "String",
+    "prefix" : "DS",
+    "suffix" : null,
+    "padding" : null,
+    "counter" : 1001,
+    "properties" : {
+      "label" : null,
+      "readonly" : false,
+      "errorMessage" : null,
+      "name" : "ID",
+      "required" : false,
+      "fieldLength" : 10,
+      "_description" : null,
+      "_typeChanged" : "id",
+      "_isParrentArray" : null,
+      "_isGrpParentArray" : null,
+      "dataPath" : "_id",
+      "_detailedType" : "",
+      "dataKey" : "_id"
+    }
+  }, {
+    "_id" : "61043bdce53e2b43c36735b7",
+    "type" : "Object",
+    "key" : "dsGroupStringText",
+    "properties" : {
+      "name" : "DS GROUP STRING TEXT",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroupStringText",
+      "dataPath" : "dsGroupStringText"
+    },
+    "definition" : [ {
+      "type" : "String",
+      "key" : "stringText",
+      "properties" : {
+        "name" : "STRING TEXT",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "stringText",
+        "dataPath" : "dsGroupStringText.stringText"
+      }
+    } ]
+  }, {
+    "_id" : "61043bdce53e2beb076735b8",
+    "type" : "Object",
+    "key" : "dsGroupStringLongText",
+    "properties" : {
+      "name" : "DS GROUP STRING LONG TEXT",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroupStringLongText",
+      "dataPath" : "dsGroupStringLongText"
+    },
+    "definition" : [ {
+      "type" : "String",
+      "key" : "longText",
+      "properties" : {
+        "name" : "LONG TEXT",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "longText" : true,
+        "dataKey" : "longText",
+        "dataPath" : "dsGroupStringLongText.longText"
+      }
+    } ]
+  },  {
+    "_id" : "61043bdce53e2bb4496735bb",
+    "type" : "Object",
+    "key" : "dsGroupStringEmail",
+    "properties" : {
+      "name" : "DS GROUP STRING EMAIL",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroupStringEmail",
+      "dataPath" : "dsGroupStringEmail"
+    },
+    "definition" : [ {
+      "type" : "String",
+      "key" : "email",
+      "properties" : {
+        "name" : "EMAIL",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "email" : true,
+        "dataKey" : "email",
+        "dataPath" : "dsGroupStringEmail.email"
+      }
+    } ]
+  }, {
+    "_id" : "61043bdce53e2b20b76735bc",
+    "type" : "Object",
+    "key" : "dsGroupStringListOfValues",
+    "properties" : {
+      "name" : "DS GROUP STRING LIST OF VALUES",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroupStringListOfValues",
+      "dataPath" : "dsGroupStringListOfValues"
+    },
+    "definition" : [ {
+      "type" : "String",
+      "key" : "listOfValues",
+      "properties" : {
+        "name" : "LIST OF VALUES",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "enum" : [ "ABC" ],
+        "dataKey" : "listOfValues",
+        "dataPath" : "dsGroupStringListOfValues.listOfValues"
+      }
+    } ]
+  }, {
+    "_id" : "61043bdce53e2b00316735bd",
+    "type" : "Object",
+    "key" : "dsGroupNumberNumber",
+    "properties" : {
+      "name" : "DS GROUP NUMBER NUMBER",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroupNumberNumber",
+      "dataPath" : "dsGroupNumberNumber"
+    },
+    "definition" : [ {
+      "type" : "Number",
+      "key" : "number",
+      "properties" : {
+        "name" : "NUMBER",
+        "fieldLength" : 10,
+        "_typeChanged" : "Number",
+        "precision" : 2,
+        "dataKey" : "number",
+        "dataPath" : "dsGroupNumberNumber.number"
+      }
+    } ]
+  }, {
+    "_id" : "61043bdce53e2be6f06735be",
+    "type" : "Object",
+    "key" : "dsGroupNumberCurrency",
+    "properties" : {
+      "name" : "DS GROUP NUMBER CURRENCY",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroupNumberCurrency",
+      "dataPath" : "dsGroupNumberCurrency"
+    },
+    "definition" : [ {
+      "type" : "Number",
+      "key" : "currency",
+      "properties" : {
+        "name" : "CURRENCY",
+        "fieldLength" : 10,
+        "_typeChanged" : "Number",
+        "currency" : "INR",
+        "precision" : 2,
+        "dataKey" : "currency",
+        "dataPath" : "dsGroupNumberCurrency.currency"
+      }
+    } ]
+  }, {
+    "_id" : "61043bdce53e2bda136735bf",
+    "type" : "Object",
+    "key" : "dsGroupNumberListOfValues",
+    "properties" : {
+      "name" : "DS GROUP NUMBER LIST OF VALUES",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroupNumberListOfValues",
+      "dataPath" : "dsGroupNumberListOfValues"
+    },
+    "definition" : [ {
+      "type" : "Number",
+      "key" : "listOfValues",
+      "properties" : {
+        "name" : "LIST OF VALUES",
+        "fieldLength" : 10,
+        "_typeChanged" : "Number",
+        "precision" : 2,
+        "enum" : [ 123 ],
+        "dataKey" : "listOfValues",
+        "dataPath" : "dsGroupNumberListOfValues.listOfValues"
+      }
+    } ]
+  }, {
+    "_id" : "61043bdce53e2b9db26735c0",
+    "type" : "Object",
+    "key" : "dsGroupBoolean",
+    "properties" : {
+      "name" : "DS GROUP BOOLEAN",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroupBoolean",
+      "dataPath" : "dsGroupBoolean"
+    },
+    "definition" : [ {
+      "type" : "Boolean",
+      "key" : "boolean",
+      "properties" : {
+        "name" : "BOOLEAN",
+        "fieldLength" : 10,
+        "_typeChanged" : "Boolean",
+        "dataKey" : "boolean",
+        "dataPath" : "dsGroupBoolean.boolean"
+      }
+    } ]
+  }, {
+    "_id" : "61043bdce53e2b1f076735c1",
+    "type" : "Object",
+    "key" : "dsGroupDate",
+    "properties" : {
+      "name" : "DS GROUP DATE",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroupDate",
+      "dataPath" : "dsGroupDate"
+    },
+    "definition" : [ {
+      "type" : "Date",
+      "key" : "date",
+      "properties" : {
+        "name" : "DATE",
+        "fieldLength" : 10,
+        "_typeChanged" : "Date",
+        "dateType" : "date",
+        "defaultTimezone" : "Zulu",
+        "supportedTimezones" : [ ],
+        "dataKey" : "date",
+        "dataPath" : "dsGroupDate.date"
+      }
+    } ]
+  }, {
+    "_id" : "61043bdce53e2bcb556735c2",
+    "type" : "Object",
+    "key" : "dsGroupDateTime",
+    "properties" : {
+      "name" : "DS GROUP DATE TIME",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroupDateTime",
+      "dataPath" : "dsGroupDateTime"
+    },
+    "definition" : [ {
+      "type" : "Date",
+      "key" : "dateTime",
+      "properties" : {
+        "name" : "DATE TIME",
+        "fieldLength" : 10,
+        "_typeChanged" : "Date",
+        "dateType" : "datetime-local",
+        "defaultTimezone" : "Zulu",
+        "supportedTimezones" : [ ],
+        "dataKey" : "dateTime",
+        "dataPath" : "dsGroupDateTime.dateTime"
+      }
+    } ]
+  }, {
+    "_id" : "61043bdce53e2b55226735c3",
+    "type" : "Object",
+    "key" : "dsGroupLocation",
+    "properties" : {
+      "name" : "DS GROUP LOCATION",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroupLocation",
+      "dataPath" : "dsGroupLocation"
+    },
+    "definition" : [ {
+      "type" : "Geojson",
+      "key" : "location",
+      "properties" : {
+        "name" : "LOCATION",
+        "fieldLength" : 10,
+        "_typeChanged" : "Geojson",
+        "geoType" : "point",
+        "dataKey" : "location",
+        "dataPath" : "dsGroupLocation.location"
+      }
+    } ]
+  }, {
+    "_id" : "61043bdce53e2b20cb6735c4",
+    "type" : "Object",
+    "key" : "dsGroupFile",
+    "properties" : {
+      "name" : "DS GROUP FILE",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroupFile",
+      "dataPath" : "dsGroupFile"
+    },
+    "definition" : [ {
+      "type" : "File",
+      "key" : "file",
+      "properties" : {
+        "name" : "FILE",
+        "fieldLength" : 10,
+        "_typeChanged" : "File",
+        "fileType" : "All",
+        "dataKey" : "file",
+        "dataPath" : "dsGroupFile.file"
+      }
+    } ]
+  }, {
+    "_id" : "61043bdce53e2b46776735c5",
+    "type" : "Object",
+    "key" : "dsGroupLibrary",
+    "properties" : {
+      "name" : "DS GROUP LIBRARY",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroupLibrary",
+      "dataPath" : "dsGroupLibrary"
+    },
+    "definition" : [ {
+      "definition" : [ {
+        "_fieldId" : "75c9b8a0-efb7-11eb-b0f5-cbceb1a0d0c9",
+        "type" : "Array",
+        "key" : "line1",
+        "properties" : {
+          "name" : "Line 1",
+          "fieldLength" : 10,
+          "_typeChanged" : "Array",
+          "dataKey" : "line1[#]",
+          "dataPath" : "line1[#]"
+        },
+        "definition" : [ {
+          "_fieldId" : "7f7aa5d0-efb7-11eb-b0f5-cbceb1a0d0c9",
+          "type" : "String",
+          "key" : "_self",
+          "properties" : {
+            "fieldLength" : 10,
+            "_typeChanged" : "String"
+          }
+        } ]
+      }, {
+        "_fieldId" : "75c9dfb0-efb7-11eb-b0f5-cbceb1a0d0c9",
+        "type" : "String",
+        "key" : "line2",
+        "properties" : {
+          "name" : "Line 2",
+          "fieldLength" : 10,
+          "_typeChanged" : "String",
+          "dataKey" : "line2",
+          "dataPath" : "line2"
+        }
+      }, {
+        "_fieldId" : "75c9dfb1-efb7-11eb-b0f5-cbceb1a0d0c9",
+        "type" : "String",
+        "key" : "pInCode",
+        "properties" : {
+          "name" : "PIn code",
+          "fieldLength" : 10,
+          "_typeChanged" : "String",
+          "dataKey" : "pInCode",
+          "dataPath" : "pInCode"
+        }
+      } ],
+      "type" : "Object",
+      "key" : "library",
+      "properties" : {
+        "name" : "LIBRARY",
+        "fieldLength" : 10,
+        "_typeChanged" : "Global",
+        "schema" : "Address",
+        "dataKey" : "library",
+        "dataPath" : "dsGroupLibrary.library"
+      }
+    } ]
+  }, {
+    "_id" : "61043bdce53e2b9ab16735c6",
+    "type" : "Object",
+    "key" : "dsGroupUser",
+    "properties" : {
+      "name" : "DS GROUP USER",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroupUser",
+      "dataPath" : "dsGroupUser"
+    },
+    "definition" : [ {
+      "type" : "User",
+      "definition" : [ {
+        "type" : "String",
+        "key" : "_id",
+        "properties" : {
+          "name" : "_id"
+        }
+      } ],
+      "key" : "user",
+      "properties" : {
+        "name" : "USER",
+        "fieldLength" : 10,
+        "_typeChanged" : "User",
+        "deleteAction" : "restrict",
+        "relatedSearchField" : "_id",
+        "relatedViewFields" : [ ],
+        "dataKey" : "user",
+        "dataPath" : "dsGroupUser.user"
+      }
+    } ]
+  }, {
+    "_id" : "61043bdce53e2b78f46735c7",
+    "type" : "Object",
+    "key" : "dsGroupRelation",
+    "properties" : {
+      "name" : "DS GROUP RELATION",
+      "fieldLength" : 10,
+      "_typeChanged" : "Object",
+      "dataKey" : "dsGroupRelation",
+      "dataPath" : "dsGroupRelation"
+    },
+    "definition" : [ {
+      "type" : "Object",
+      "definition" : [ {
+        "type" : "String",
+        "key" : "_id",
+        "properties" : {
+          "name" : "_id",
+          "_typeChanged" : "String"
+        }
+      }, {
+        "type" : "String",
+        "key" : "_href",
+        "properties" : {
+          "name" : "_href",
+          "_typeChanged" : "String"
+        }
+      } ],
+      "key" : "relation",
+      "properties" : {
+        "name" : "RELATION",
+        "fieldLength" : 10,
+        "_typeChanged" : "Relation",
+        "deleteAction" : "restrict",
+        "relatedTo" : "Simple",
+        "relatedSearchField" : "_id",
+        "relatedViewFields" : [ {
+          "_id" : "6102655b36c2eeaf8aee9463",
+          "key" : "_id",
+          "type" : "String",
+          "prefix" : "SIM",
+          "suffix" : null,
+          "padding" : null,
+          "counter" : 1001,
+          "properties" : {
+            "label" : null,
+            "readonly" : false,
+            "errorMessage" : null,
+            "name" : "ID",
+            "required" : false,
+            "fieldLength" : 10,
+            "_description" : null,
+            "_typeChanged" : "id",
+            "_isParrentArray" : null,
+            "_isGrpParentArray" : null,
+            "dataPath" : "_id",
+            "_detailedType" : "",
+            "dataKey" : "_id"
+          }
+        } ],
+        "dataKey" : "relation",
+        "dataPath" : "dsGroupRelation.relation"
+      }
+    } ]
+  } ],
+  "headers" : [ ],
+  "role" : {
+    "_id" : "SRVC5327",
+    "_metadata" : {
+      "version" : {
+        "document" : 1,
+        "release" : "dev"
+      },
+      "deleted" : false,
+      "lastUpdated" : "2021-07-30T17:15:47.166Z",
+      "createdAt" : "2021-07-30T17:15:47.162Z"
+    },
+    "app" : "vTest",
+    "entity" : "SRVC5327",
+    "entityName" : "ds_Group-2",
+    "roles" : [ {
+      "skipReviewRole" : true,
+      "id" : "P6161790070",
+      "name" : "Skip Review",
+      "operations" : [ {
+        "method" : "SKIP_REVIEW"
+      }, {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record and without any approval"
+    }, {
+      "manageRole" : true,
+      "id" : "P3548553620",
+      "name" : "Manage",
+      "operations" : [ {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      }, {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record"
+    }, {
+      "viewRole" : true,
+      "id" : "P8566513619",
+      "name" : "View",
+      "operations" : [ {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to view the record"
+    } ],
+    "type" : "appcenter",
+    "fields" : {
+      "_id" : {
+        "_t" : "String",
+        "_p" : {
+          "P6161790070" : "R",
+          "P3548553620" : "R",
+          "P8566513619" : "R"
+        }
+      },
+      "dsGroupStringText" : {
+        "stringText" : {
+          "_t" : "String",
+          "_p" : {
+            "P6161790070" : "R",
+            "P3548553620" : "R",
+            "P8566513619" : "R"
+          }
+        }
+      },
+      "dsGroupStringLongText" : {
+        "longText" : {
+          "_t" : "String",
+          "_p" : {
+            "P6161790070" : "R",
+            "P3548553620" : "R",
+            "P8566513619" : "R"
+          }
+        }
+      },
+      "dsGroupStringRichText" : {
+        "richText" : {
+          "_t" : "String",
+          "_p" : {
+            "P6161790070" : "R",
+            "P3548553620" : "R",
+            "P8566513619" : "R"
+          }
+        }
+      },
+      "dsGroupStringSecureText" : {
+        "secureText" : {
+          "_t" : "String",
+          "_p" : {
+            "P6161790070" : "R",
+            "P3548553620" : "R",
+            "P8566513619" : "R"
+          }
+        }
+      },
+      "dsGroupStringEmail" : {
+        "email" : {
+          "_t" : "String",
+          "_p" : {
+            "P6161790070" : "R",
+            "P3548553620" : "R",
+            "P8566513619" : "R"
+          }
+        }
+      },
+      "dsGroupStringListOfValues" : {
+        "listOfValues" : {
+          "_t" : "String",
+          "_p" : {
+            "P6161790070" : "R",
+            "P3548553620" : "R",
+            "P8566513619" : "R"
+          }
+        }
+      },
+      "dsGroupNumberNumber" : {
+        "number" : {
+          "_t" : "Number",
+          "_p" : {
+            "P6161790070" : "R",
+            "P3548553620" : "R",
+            "P8566513619" : "R"
+          }
+        }
+      },
+      "dsGroupNumberCurrency" : {
+        "currency" : {
+          "_t" : "Number",
+          "_p" : {
+            "P6161790070" : "R",
+            "P3548553620" : "R",
+            "P8566513619" : "R"
+          }
+        }
+      },
+      "dsGroupNumberListOfValues" : {
+        "listOfValues" : {
+          "_t" : "Number",
+          "_p" : {
+            "P6161790070" : "R",
+            "P3548553620" : "R",
+            "P8566513619" : "R"
+          }
+        }
+      },
+      "dsGroupBoolean" : {
+        "boolean" : {
+          "_t" : "Boolean",
+          "_p" : {
+            "P6161790070" : "R",
+            "P3548553620" : "R",
+            "P8566513619" : "R"
+          }
+        }
+      },
+      "dsGroupDate" : {
+        "date" : {
+          "_t" : "Date",
+          "_p" : {
+            "P6161790070" : "R",
+            "P3548553620" : "R",
+            "P8566513619" : "R"
+          }
+        }
+      },
+      "dsGroupDateTime" : {
+        "dateTime" : {
+          "_t" : "Date",
+          "_p" : {
+            "P6161790070" : "R",
+            "P3548553620" : "R",
+            "P8566513619" : "R"
+          }
+        }
+      },
+      "dsGroupLocation" : {
+        "location" : {
+          "_t" : "String",
+          "_p" : {
+            "P6161790070" : "R",
+            "P3548553620" : "R",
+            "P8566513619" : "R"
+          }
+        }
+      },
+      "dsGroupFile" : {
+        "file" : {
+          "_t" : "String",
+          "_p" : {
+            "P6161790070" : "R",
+            "P3548553620" : "R",
+            "P8566513619" : "R"
+          }
+        }
+      },
+      "dsGroupLibrary" : {
+        "library" : {
+          "_t" : "String",
+          "_p" : {
+            "P6161790070" : "R",
+            "P3548553620" : "R",
+            "P8566513619" : "R"
+          }
+        }
+      },
+      "dsGroupUser" : {
+        "user" : {
+          "_t" : "String",
+          "_p" : {
+            "P6161790070" : "R",
+            "P3548553620" : "R",
+            "P8566513619" : "R"
+          }
+        }
+      },
+      "dsGroupRelation" : {
+        "relation" : {
+          "_t" : "String",
+          "_p" : {
+            "P6161790070" : "R",
+            "P3548553620" : "R",
+            "P8566513619" : "R"
+          }
+        }
+      }
+    },
+    "__v" : 0
+  },
+  "relatedSchemas" : {
+    "internal" : {
+      "users" : [ {
+        "path" : "{\"dsGroupUser\":{\"user\":\"User\"}}",
+        "isRequired" : true,
+        "filter" : "{ \"dsGroupUser.user._id\":\"{{id}}\"}"
+      } ]
+    },
+    "outgoing" : [ {
+      "service" : "SRVC5203",
+      "path" : "{\"dsGroupRelation\":{\"relation\":\"Object\"}}",
+      "isRequired" : true
+    } ]
+  }
+}

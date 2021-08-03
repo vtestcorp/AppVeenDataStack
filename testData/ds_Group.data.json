@@ -1,0 +1,31 @@
+{
+  "_metadata" : {
+    "deleted" : false,
+    "lastUpdated" : "2021-07-29T15:00:14.606Z",
+    "version" : {
+      "release" : "dev",
+      "document" : 1
+    },
+    "createdAt" : "2021-07-29T15:00:14.606Z"
+  },
+  "_id" : "DS1002",
+  "dsGroup1001" : {
+    "dsString" : "String 1001"
+  },
+  "dsGroup1002" : {
+    "dsString" : "String 1002"
+  },
+  "dsGroup1003" : {
+    "dsString" : "String 1003"
+  },
+  "dsGroup1004" : {
+    "dsString" : "String 1004"
+  },
+  "dsGroup1005" : {
+    "dsString" : "String 1005"
+  },
+  "dsGroup1006" : {
+    "dsString" : "String 1006"
+  },
+  "__v" : 0
+}

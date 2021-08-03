@@ -1,6 +1,5 @@
 Feature: This is the string_Email feature file
 
-
 @Author
 Scenario Outline: Log into Author
 	Given User navigate to Author login page
