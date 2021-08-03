@@ -74,7 +74,6 @@ public class LoginAppCenter extends BaseClass {
 	}
 
 	public void dataService(String dataService) throws Exception {
-		Thread.sleep(2000);
 		data_Service = dataService;
 		Thread.sleep(3000);
 		WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
@@ -178,8 +177,6 @@ public class LoginAppCenter extends BaseClass {
 					}
 
 					else if (textBox.getAttribute("type").equals("number") ||textBox.getAttribute("type").equals("select-one")) {
-						System.out.println(jsonObject.get(id1).getClass());
-						
 							if(jsonObject.get(id1).getClass().toString().contains("Double")) {
 								if ((Double) jsonObject.get(id1) != null) {
 		

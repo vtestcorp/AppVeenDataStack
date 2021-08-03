@@ -7,7 +7,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="./testcases/string_Text.feature",
+@CucumberOptions(features="./testcases/number_ListOfValue.feature",
 //				dryRun=true,
 		//		tags="@AppCenter",
 				glue="stepdefinitions",
@@ -28,6 +28,5 @@ public class Runner {
 	        Stream<String> cucumberOptions = Stream.concat(Stream.of(defaultOptions), Stream.of(args));
 	        cucumber.api.cli.Main.main(cucumberOptions.toArray(String[]::new));
 	    }
-	    
 }
  
