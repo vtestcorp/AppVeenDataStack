@@ -32,8 +32,8 @@ Scenario: Log out of Author
 	Given User logged into Author
 	Then User logs out of Author
 	
-
-@AppCenter
+#
+#@AppCenter
 Scenario Outline: Log into AppCenter
 	Given User navigate to AppCenter login page
 	And User enters "<username>" and "<password>" in AppCenter login page
@@ -45,10 +45,10 @@ Examples:
 
 # INSERT/UPDATE
 Scenario: Add data to data service
-	Given Data service "number_Number"
-	Then Add data to the data service
+	Given Data service "ds_Collection"
+	Then Add data to the data service for Collection
 	
-#	
+	
 #	Scenario Outline: Add record to data service
 #	Given Data service "number_Number"
 #	Then Add record "<data>" to the data service

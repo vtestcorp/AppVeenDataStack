@@ -97,8 +97,8 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(xpath="//span[@class='fas fa-angle-down text-accent ng-star-inserted']")
 	public WebElement dropdown;
 	
-	@FindBy(xpath = "//div[@class='px-3 schemaProperties-body ng-untouched ng-pristine ng-valid ng-star-inserted']//span[@class='fas fa-angle-down text-accent ng-star-inserted']")
-	public WebElement dropdown1;
+//	@FindBy(xpath = "//div[@class='px-3 schemaProperties-body ng-untouched ng-pristine ng-valid ng-star-inserted']//span[@class='fas fa-angle-down text-accent ng-star-inserted']")
+//	public WebElement dropdown1;
 
 	@FindBy(xpath="//span[@class='odp-123']")
 	public WebElement number;
@@ -184,7 +184,7 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(xpath = "//span[@class='odp-references']")
 	public WebElement relation; 
 	
-	@FindBy(xpath="//div[text()='Linked Library']/following-sibling::div/select")
+	@FindBy(xpath="//div[text()='Linked Library']/following-sibling::div//select")
 	public WebElement linkedLibrary;
 
 	@FindBy(xpath = "//div[text()='View Fields']/following-sibling::div/select")

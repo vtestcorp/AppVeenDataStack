@@ -1,0 +1,1349 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 83572900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 7592300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 3620474300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.setUp()"
+            }
+          },
+          {
+            "result": {
+              "duration": 3791400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 4587800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          }
+        ],
+        "line": 12,
+        "name": "Log into Author",
+        "description": "",
+        "id": "functions-on-strings;log-into-author;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1903026400,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User navigate to Author login page",
+            "match": {
+              "location": "LoginToAuthorUrl.user_Navigate_to_LogIn_Page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1230916000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User enters \"deepak@appveen.com\" and \"123123123\" in Author login page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"deepak@appveen.com\"",
+                  "offset": 12
+                },
+                {
+                  "val": "\"123123123\"",
+                  "offset": 37
+                }
+              ],
+              "location": "LoginToAuthorUrl.user_enters_UserName_and_Password(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1950296000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Verify User has Logged in successfully in Author Url",
+            "match": {
+              "location": "LoginToAuthorUrl.message_displayed_Login_Successfully()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Author"
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4558900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1094900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 2084700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1432000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          }
+        ],
+        "line": 14,
+        "name": "Delete data service",
+        "description": "",
+        "id": "functions-on-strings;delete-data-service",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 65994700,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "Data service \"string_Text\" exists",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAuthorUrl.data_service_exists(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1743685000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "Remove the data service",
+            "match": {
+              "location": "LoginToAuthorUrl.remove_the_data_service()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 6246700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1843000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 2878000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1429200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          }
+        ],
+        "line": 18,
+        "name": "Create data service",
+        "description": "",
+        "id": "functions-on-strings;create-data-service",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 113100,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "Data service \"string_Text\" does not exist",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAuthorUrl.data_service_does_not_exist(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 47941539200,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "Create new data service \"string_Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 24
+                }
+              ],
+              "location": "LoginToAuthorUrl.create_new_Data_Service(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 6514700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1152400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 4511700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 752200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          }
+        ],
+        "line": 30,
+        "name": "Assign to Appcenter Group",
+        "description": "",
+        "id": "functions-on-strings;assign-to-appcenter-group;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5689801500,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "Group \"String-Group\" does not exist",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"String-Group\"",
+                  "offset": 6
+                }
+              ],
+              "location": "DesignTestCases.group_does_not_exist(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2732620100,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "Create new group \"String-Group\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"String-Group\"",
+                  "offset": 17
+                }
+              ],
+              "location": "DesignTestCases.create_new_group(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7879924000,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "Assign appcenter permissions for \"string_Text\" dataservice to \"maker@appveen.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 33
+                },
+                {
+                  "val": "\"maker@appveen.com\"",
+                  "offset": 62
+                }
+              ],
+              "location": "DesignTestCases.assign_appcenter_permissions_for_strings_text_dataservice(String,String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 8582700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1830100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 2280200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1855500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          }
+        ],
+        "line": 33,
+        "name": "Log out of Author",
+        "description": "",
+        "id": "functions-on-strings;log-out-of-author",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 971951700,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "User logged into Author",
+            "match": {
+              "location": "LoginToAuthorUrl.user_logged_into_Author()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1088230500,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "User logs out of Author",
+            "match": {
+              "location": "LoginToAuthorUrl.user_logs_out_of_Author()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 5072200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1576700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 2107900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1221700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          }
+        ],
+        "line": 45,
+        "name": "Log into AppCenter",
+        "description": "",
+        "id": "functions-on-strings;log-into-appcenter;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 785676300,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "User navigate to AppCenter login page",
+            "match": {
+              "location": "AppcenterWorkflow.user_navigate_to_AppCenter_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1263190100,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "User enters \"maker@appveen.com\" and \"123123123\" in AppCenter login page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"maker@appveen.com\"",
+                  "offset": 12
+                },
+                {
+                  "val": "\"123123123\"",
+                  "offset": 36
+                }
+              ],
+              "location": "LoginToAppCenter.user_enters_username_and_password_in_AppCenter_Url(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2143814500,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "Verify User has Logged in Successfully",
+            "match": {
+              "location": "LoginToAppCenter.verify_User_Login_Successfully_in_Appcenter_Url()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@AppCenter"
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4707200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1961100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 3665500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 3576800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          }
+        ],
+        "line": 49,
+        "name": "Add data to data service",
+        "description": "",
+        "id": "functions-on-strings;add-data-to-data-service",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5348566700,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "Data service \"string_Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAppCenter.data_service(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 10593198100,
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "Add data to the data service",
+            "match": {
+              "location": "LoginToAppCenter.add_data_to_the_data_service()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 7949600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 3176500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1766500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 2518200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          }
+        ],
+        "line": 61,
+        "name": "Add record to data service",
+        "description": "",
+        "id": "functions-on-strings;add-record-to-data-service;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5175123500,
+              "status": "passed"
+            },
+            "line": 55,
+            "name": "Data service \"string_Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAppCenter.data_service(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5676388900,
+              "status": "passed"
+            },
+            "line": 56,
+            "name": "Add record \"{\"_id\":\"STR1002\", \"dsStringText1002\":\"\", \"dsStringText1014\":\"\",\"dsStringText1015\":\"\",\"dsStringText1017\":\"\",\"dsStringText1018\":\"\"}\" to the data service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "{\"_id\":\"STR1002\", \"dsStringText1002\":\"\", \"dsStringText1014\":\"\",\"dsStringText1015\":\"\",\"dsStringText1017\":\"\",\"dsStringText1018\":\"\"}",
+                  "offset": 12
+                }
+              ],
+              "location": "DesignTestCases.add_record(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:86)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat org.junit.Assert.assertTrue(Assert.java:52)\r\n\tat pageModules.Module_DesignTestCases.expectError(Module_DesignTestCases.java:387)\r\n\tat stepdefinitions.DesignTestCases.expect_error_on_label(DesignTestCases.java:91)\r\n\tat ✽.Expect error \"DS STRING TEXT Error\" on label \"DS STRING TEXT Label\"(C:/Data-Stack/ds-dev-ui-automation-framework/testcases/string_Text.feature:57)\r\n",
+              "duration": 36407100,
+              "status": "failed"
+            },
+            "line": 57,
+            "name": "Expect error \"DS STRING TEXT Error\" on label \"DS STRING TEXT Label\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"DS STRING TEXT Error\"",
+                  "offset": 13
+                },
+                {
+                  "val": "\"DS STRING TEXT Label\"",
+                  "offset": 45
+                }
+              ],
+              "location": "DesignTestCases.expect_error_on_label(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15800,
+              "status": "skipped"
+            },
+            "line": 58,
+            "name": "Save button is disabled",
+            "match": {
+              "location": "DesignTestCases.save_button_is_disabled()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 7332700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1170200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1602600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1247100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          }
+        ],
+        "line": 70,
+        "name": "Add record to data service",
+        "description": "",
+        "id": "functions-on-strings;add-record-to-data-service;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5155341200,
+              "status": "passed"
+            },
+            "line": 65,
+            "name": "Data service \"string_Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAppCenter.data_service(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5763277600,
+              "status": "passed"
+            },
+            "line": 66,
+            "name": "Add record \"{ \"_id\" : \"STR1001\",\"dsStringText1001\" : \"1001\",\"dsStringText1002\" : \"c\",\"dsStringText1003\" : \"3\",\"dsStringText1007\" : \"7\",\"dsStringText1008\" : \"18\",\"dsStringText1014\" : \"14\",\"dsStringText1015\" : \"15\"}\" to the data service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "{ \"_id\" : \"STR1001\",\"dsStringText1001\" : \"1001\",\"dsStringText1002\" : \"c\",\"dsStringText1003\" : \"3\",\"dsStringText1007\" : \"7\",\"dsStringText1008\" : \"18\",\"dsStringText1014\" : \"14\",\"dsStringText1015\" : \"15\"}",
+                  "offset": 12
+                }
+              ],
+              "location": "DesignTestCases.add_record(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 80100,
+              "status": "passed"
+            },
+            "line": 67,
+            "name": "Expect error \"ID STR1001 already exists\" on save",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"ID STR1001 already exists\"",
+                  "offset": 13
+                }
+              ],
+              "location": "DesignTestCases.expect_error_on_save(String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 1933100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1405500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1441700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 510900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          }
+        ],
+        "line": 79,
+        "name": "Add record to data service",
+        "description": "",
+        "id": "functions-on-strings;add-record-to-data-service;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5169087400,
+              "status": "passed"
+            },
+            "line": 74,
+            "name": "Data service \"string_Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAppCenter.data_service(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5659976000,
+              "status": "passed"
+            },
+            "line": 75,
+            "name": "Add record \"{ \"_id\" : \"STR1003\",\"dsStringText1001\" : \"1001\",\"dsStringText1002\" : \"a\",\"dsStringText1003\" : \"3\",\"dsStringText1007\" : \"7\",\"dsStringText1008\" : \"18\",\"dsStringText1014\" : \"14\",\"dsStringText1015\" : \"15\"}\" to the data service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "{ \"_id\" : \"STR1003\",\"dsStringText1001\" : \"1001\",\"dsStringText1002\" : \"a\",\"dsStringText1003\" : \"3\",\"dsStringText1007\" : \"7\",\"dsStringText1008\" : \"18\",\"dsStringText1014\" : \"14\",\"dsStringText1015\" : \"15\"}",
+                  "offset": 12
+                }
+              ],
+              "location": "DesignTestCases.add_record(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 58500,
+              "status": "passed"
+            },
+            "line": 76,
+            "name": "Expect error \"Unique check validation failed for dsStringText1002\" on save",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Unique check validation failed for dsStringText1002\"",
+                  "offset": 13
+                }
+              ],
+              "location": "DesignTestCases.expect_error_on_save(String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 1879600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 491900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 493100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 389600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          }
+        ],
+        "line": 89,
+        "name": "Fetch record from the data service",
+        "description": "",
+        "id": "functions-on-strings;fetch-record-from-the-data-service;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5141736800,
+              "status": "passed"
+            },
+            "line": 84,
+            "name": "Data service \"string_Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAppCenter.data_service(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2066800600,
+              "status": "passed"
+            },
+            "line": 85,
+            "name": "Fetch record \"STR1001\" from the data service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"STR1001\"",
+                  "offset": 13
+                }
+              ],
+              "location": "DesignTestCases.fetch_record_from_the_data_service(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5797850800,
+              "status": "passed"
+            },
+            "line": 86,
+            "name": "Match it to \"{\"_id\": \"STR1001\",\"dsStringText1001\": \"1001\",\"dsStringText1002\": \"a\",\"dsStringText1003\": \"1003\",\"dsStringText1004\": \"1004\",\"dsStringText1005\": \"1005\",\"dsStringText1007\": \"1007\", \"dsStringText1008\": \"1008\", \"dsStringText1010\": \"1010\",  \"dsStringText1013\": \"1013\", \"dsStringText1014\": \"1014\", \"dsStringText1015\": \"1015\",  \"dsStringText1018\": \"A\",  \"dsStringText1020\": \"ABCD\", \"dsStringText1021\": \"1021\", \"dsStringText1022\": \"1022\", \"dsStringText1023\": \"1023\", \"dsStringText1024\": \"1024\"}\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "{\"_id\": \"STR1001\",\"dsStringText1001\": \"1001\",\"dsStringText1002\": \"a\",\"dsStringText1003\": \"1003\",\"dsStringText1004\": \"1004\",\"dsStringText1005\": \"1005\",\"dsStringText1007\": \"1007\", \"dsStringText1008\": \"1008\", \"dsStringText1010\": \"1010\",  \"dsStringText1013\": \"1013\", \"dsStringText1014\": \"1014\", \"dsStringText1015\": \"1015\",  \"dsStringText1018\": \"A\",  \"dsStringText1020\": \"ABCD\", \"dsStringText1021\": \"1021\", \"dsStringText1022\": \"1022\", \"dsStringText1023\": \"1023\", \"dsStringText1024\": \"1024\"}",
+                  "offset": 13
+                }
+              ],
+              "location": "DesignTestCases.match_it_to(String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 1125300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 399100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 457300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 414500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          }
+        ],
+        "line": 98,
+        "name": "Update record to data service",
+        "description": "",
+        "id": "functions-on-strings;update-record-to-data-service;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5227077500,
+              "status": "passed"
+            },
+            "line": 93,
+            "name": "Data service \"string_Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAppCenter.data_service(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 15978258100,
+              "status": "passed"
+            },
+            "line": 94,
+            "name": "Update record \"STR1001\" with \"{\"dsStringText1001\": \"1111\",\"dsStringText1002\": \"b\",\"dsStringText1003\": \"1333\",\"dsStringText1004\": \"1444\",\"dsStringText1005\": \"1555\",\"dsStringText1007\": \"1777\", \"dsStringText1008\": \"1888\", \"dsStringText1010\": \"101010\",  \"dsStringText1013\": \"101313\", \"dsStringText1014\": \"101414\", \"dsStringText1015\": \"101515\", \"dsStringText1018\": \"101818\", \"dsStringText1020\": \"ABCDEFGH\", \"dsStringText1021\": \"102121\", \"dsStringText1022\": \"102222\", \"dsStringText1023\": \"102323\", \"dsStringText1024\": \"102424\"}\" to the data service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "STR1001",
+                  "offset": 15
+                },
+                {
+                  "val": "{\"dsStringText1001\": \"1111\",\"dsStringText1002\": \"b\",\"dsStringText1003\": \"1333\",\"dsStringText1004\": \"1444\",\"dsStringText1005\": \"1555\",\"dsStringText1007\": \"1777\", \"dsStringText1008\": \"1888\", \"dsStringText1010\": \"101010\",  \"dsStringText1013\": \"101313\", \"dsStringText1014\": \"101414\", \"dsStringText1015\": \"101515\", \"dsStringText1018\": \"101818\", \"dsStringText1020\": \"ABCDEFGH\", \"dsStringText1021\": \"102121\", \"dsStringText1022\": \"102222\", \"dsStringText1023\": \"102323\", \"dsStringText1024\": \"102424\"}",
+                  "offset": 30
+                }
+              ],
+              "location": "DesignTestCases.update_record_with_to_the_data_service(String,String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 675500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 205600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 440900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 342800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          }
+        ],
+        "line": 106,
+        "name": "Fetch record from the data service",
+        "description": "",
+        "id": "functions-on-strings;fetch-record-from-the-data-service;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5177798200,
+              "status": "passed"
+            },
+            "line": 101,
+            "name": "Data service \"string_Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAppCenter.data_service(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1375164700,
+              "status": "passed"
+            },
+            "line": 102,
+            "name": "Fetch record \"STR1001\" from the data service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"STR1001\"",
+                  "offset": 13
+                }
+              ],
+              "location": "DesignTestCases.fetch_record_from_the_data_service(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5334470900,
+              "status": "passed"
+            },
+            "line": 103,
+            "name": "Match it to \"{\"_id\": \"STR1001\",\"dsStringText1001\": \"1111\",\"dsStringText1002\": \"a\",\"dsStringText1003\": \"1333\",\"dsStringText1004\": \"1004\",\"dsStringText1005\": \"1555\",\"dsStringText1007\": \"1007\", \"dsStringText1008\": \"1888\", \"dsStringText1010\": \"1010\",  \"dsStringText1013\": \"101313\", \"dsStringText1014\": \"101414\", \"dsStringText1015\": \"101515\", \"dsStringText1018\": \"101818\", \"dsStringText1020\": \"ABCDEFGH\", \"dsStringText1021\": \"102121\", \"dsStringText1022\": \"102222\", \"dsStringText1023\": \"102323\", \"dsStringText1024\": \"102424\"}\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "{\"_id\": \"STR1001\",\"dsStringText1001\": \"1111\",\"dsStringText1002\": \"a\",\"dsStringText1003\": \"1333\",\"dsStringText1004\": \"1004\",\"dsStringText1005\": \"1555\",\"dsStringText1007\": \"1007\", \"dsStringText1008\": \"1888\", \"dsStringText1010\": \"1010\",  \"dsStringText1013\": \"101313\", \"dsStringText1014\": \"101414\", \"dsStringText1015\": \"101515\", \"dsStringText1018\": \"101818\", \"dsStringText1020\": \"ABCDEFGH\", \"dsStringText1021\": \"102121\", \"dsStringText1022\": \"102222\", \"dsStringText1023\": \"102323\", \"dsStringText1024\": \"102424\"}",
+                  "offset": 13
+                }
+              ],
+              "location": "DesignTestCases.match_it_to(String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 667900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DesignTestCases.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 199100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAppCenter.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 234300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginToAuthorUrl.initilization()"
+            }
+          },
+          {
+            "result": {
+              "duration": 226600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppcenterWorkflow.initilization()"
+            }
+          }
+        ],
+        "line": 114,
+        "name": "Delete record from the data service",
+        "description": "",
+        "id": "functions-on-strings;delete-record-from-the-data-service;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5145861000,
+              "status": "passed"
+            },
+            "line": 109,
+            "name": "Data service \"string_Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string_Text\"",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginToAppCenter.data_service(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2625038800,
+              "status": "passed"
+            },
+            "line": 110,
+            "name": "Delete record \"STR1001\" from the data service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"STR1001\"",
+                  "offset": 14
+                }
+              ],
+              "location": "DesignTestCases.delete_record_from_the_data_service(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 49100,
+              "status": "passed"
+            },
+            "line": 111,
+            "name": "deleting from listing page",
+            "match": {
+              "location": "DesignTestCases.deleting_from_listing_page()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Functions on Strings",
+    "description": "",
+    "id": "functions-on-strings",
+    "keyword": "Feature",
+    "uri": "C:/Data-Stack/ds-dev-ui-automation-framework/testcases/string_Text.feature",
+    "tags": []
+  }
+]

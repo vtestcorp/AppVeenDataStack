@@ -20,6 +20,8 @@ import com.aventstack.extentreports.ExtentTest;
 import com.google.common.collect.MapDifference;
 import com.google.common.collect.MapDifference.ValueDifference;
 import com.google.common.collect.Maps;
+import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.PathNotFoundException;
 
 import base.BaseClass;
 import config.DefineConstants;
@@ -232,11 +234,13 @@ public class Module_DesignTestCases extends BaseClass{
 //				
 				else {
 				for (int j = 1; j <= textBoxes.size(); j++) {
+					 String jsonValue = null;
 					WebElement textBox = driver.findElement(By.xpath("(//*[contains(@class,'form-control')])[" + j + "]"));
 					
 					if (textBox.isEnabled()) {
 						String id1 = textBox.getAttribute("id");
 //						System.out.println(id1+"      "+textBox.getAttribute("type"));
+						
 						if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")||textBox.getAttribute("type").equals("select-one")) {
 							if ((String) jsonObject.get(id1) != null) {
 	
@@ -345,6 +349,7 @@ public class Module_DesignTestCases extends BaseClass{
 		System.err.println(errorMessage);
 	}
 		if(acp.errorMessages.isEmpty()) {
+		
 			Assert.assertTrue(false);
 		}
 	}
