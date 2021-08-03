@@ -103,7 +103,7 @@ Scenario Outline: Fetch record from the data service
 	And Match it to "<data>"
 Examples:
 |id|data|
-|STR1001|{"_id": "STR1001","dsStringLongText1001": "Long 1001","dsStringLongText1002": "Long 1002","dsStringLongText1003": "Long 1003","dsStringLongText1004": "Long 1004","dsStringLongText1005": "Long 1005","dsStringLongText1007": "Long 1007", "dsStringLongText1008": "Long 1008", "dsStringLongText1010": "Long 1010",  "dsStringLongText1013": "Long 1013", "dsStringText1014": "Long 1014", "dsStringLongText1015": "Long 1015",  "dsStringLongText1018": "Long 1018"}|
+|STR1001|{"_id": "STR1001","dsStringLongText1001": "Long 1001","dsStringLongText1002": "Long Text 1002","dsStringLongText1003": "Long 1003","dsStringLongText1004": "Long Text 1004","dsStringLongText1005": "Long 1005","dsStringLongText1007": "Long Text 1007", "dsStringLongText1008": "Long 1008", "dsStringLongText1010": "Long Text 1010",  "dsStringLongText1013": "Long 1013", "dsStringText1014": "Long 1014", "dsStringLongText1015": "Long 1015",  "dsStringLongText1018": "Long 1018"}|
 	
 Scenario Outline: Delete record from the data service
 	Given Data service "string_Long-Text"

@@ -103,12 +103,12 @@ Scenario Outline: Fetch record from the data service
 	And Match it to "<data>"
 Examples:
 |id|data|
-|STR1001|{"_id": "STR1001","dsStringListOfValues1001": "Long 1001","dsStringListOfValues1002": "Long 1002","dsStringListOfValues1003": "Long 1003","dsStringLongText1004": "Long 1004","dsStringListOfValues1005": "Long 1005","dsStringListOfValues1007": "Long 1007", "dsStringListOfValues1008": "Long 1008", "dsStringListOfValues1010": "Long 1010",  "dsStringListOfValues1013": "Long 1013", "dsStringText1014": "Long 1014", "dsStringListOfValues1015": "Long 1015",  "dsStringListOfValues1018": "Long 1018"}|
+|STR1001|{"_id": "STR1001","dsStringListOfValues1001": "LIST 2","dsStringListOfValues1002": "LIST 1","dsStringListOfValues1003": "LIST 2","dsStringLongText1004": "LIST 2","dsStringListOfValues1005": "LIST 2","dsStringListOfValues1007": "LIST 1", "dsStringListOfValues1008": "LIST 2", "dsStringListOfValues1010": "LIST 1",  "dsStringListOfValues1013": "LIST 2", "dsStringText1014": "Long 1014", "dsStringListOfValues1015": "LIST 2",  "dsStringListOfValues1018": "LIST 2"}|
 	
-#Scenario Outline: Delete record from the data service
-#	Given Data service "string_ListOfValue"
-#	Then Delete record "<id>" from the data service
-#	And deleting from listing page
-#Examples:
-#|id|
-#|STR1001|
+Scenario Outline: Delete record from the data service
+	Given Data service "string_ListOfValue"
+	Then Delete record "<id>" from the data service
+	And deleting from listing page
+Examples:
+|id|
+|STR1001|

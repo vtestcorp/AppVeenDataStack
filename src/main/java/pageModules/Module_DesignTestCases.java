@@ -179,7 +179,7 @@ public class Module_DesignTestCases extends BaseClass{
 
 
 	public void addRecord(String string) throws Exception {
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
 			acp.yes.click();
 	    }
@@ -187,6 +187,7 @@ public class Module_DesignTestCases extends BaseClass{
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
+		Thread.sleep(1000);
 		List<WebElement> textBoxes = acp.textBoxes;
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
@@ -244,11 +245,14 @@ public class Module_DesignTestCases extends BaseClass{
 					
 					if (textBox.isEnabled()) {
 						String id1 = textBox.getAttribute("id");
+
 //						System.out.println(id1+"      "+textBox.getAttribute("type"));
 						
 //						String value1=JsonUtils.getJsonValue(filePath,id1);
+
 						try {
 						jsonValue = JsonPath.read(string, "$."+id1+"").toString();
+						System.out.println(JsonPath.read(string, "$."+id1+"").getClass());
 						}
 						catch(PathNotFoundException e) {
 							continue;
@@ -268,6 +272,7 @@ public class Module_DesignTestCases extends BaseClass{
 //												applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(((String) jsonObject.get(id1)).toString());
 //												;
 //											}
+									Thread.sleep(50);
 									applyWait.waitForElementToBeClickable(textBox, 30).click();
 									applyWait.waitForElementToBeClickable(textBox, 30).clear();
 									applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(jsonValue);
@@ -290,9 +295,9 @@ public class Module_DesignTestCases extends BaseClass{
 			
 										if (textBox.getAttribute("type").equals("number")) {
 											Double value = (Double) JsonPath.read(string, "$."+id1+"");
+											Thread.sleep(50);
 											applyWait.waitForElementToBeClickable(textBox, 30).click();
 											applyWait.waitForElementToBeClickable(textBox, 30).clear();
-											Thread.sleep(500);
 											applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value.toString());
 											
 										}
@@ -308,7 +313,8 @@ public class Module_DesignTestCases extends BaseClass{
 								else if(JsonPath.read(string, "$."+id1+"").getClass().toString().contains("Long")) {
 		
 										if (textBox.getAttribute("type").equals("number")) {
-											Long value = (Long) jsonObject.get(id1);
+											Long value = (Long) JsonPath.read(string, "$."+id1+"");
+											Thread.sleep(50);
 											applyWait.waitForElementToBeClickable(textBox, 30).click();
 											applyWait.waitForElementToBeClickable(textBox, 30).clear();
 											applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value.toString());
@@ -316,7 +322,7 @@ public class Module_DesignTestCases extends BaseClass{
 										}
 										
 										if (textBox.getAttribute("type").equals("select-one")) {
-		
+											Thread.sleep(50);
 											dropdown.selectByVisibleText(textBox, (JsonPath.read(string, "$."+id1+"").toString()));
 		
 										}
@@ -325,23 +331,26 @@ public class Module_DesignTestCases extends BaseClass{
 								else if(JsonPath.read(string, "$."+id1+"").getClass().toString().contains("Integer")) {
 									
 									if (textBox.getAttribute("type").equals("number")) {
-										Integer value = (Integer) jsonObject.get(id1);
+										Integer value = (Integer) JsonPath.read(string, "$."+id1+"");
+//										Thread.sleep(50);
 										applyWait.waitForElementToBeClickable(textBox, 30).click();
-										applyWait.waitForElementToBeClickable(textBox, 30).clear();
+//										applyWait.waitForElementToBeClickable(textBox, 30).clear();
+										textBox.sendKeys(Keys.CONTROL, Keys.chord("a")); //select all text in textbox
+										textBox.sendKeys(Keys.BACK_SPACE); //delete it
 										applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value.toString());
 										
 									}
 									
 									if (textBox.getAttribute("type").equals("select-one")) {
-	
+										Thread.sleep(50);
 										dropdown.selectByVisibleText(textBox, (JsonPath.read(string, "$."+id1+"").toString()));
 	
 									}
 								}
 								
 								else if(JsonPath.read(string, "$."+id1+"").equals("")) {
+									Thread.sleep(50);
 									applyWait.waitForElementToBeClickable(textBox, 30).click();
-									Thread.sleep(300);
 									applyWait.waitForElementToBeClickable(textBox, 30).clear();
 								 }
 	                   			}
@@ -697,8 +706,6 @@ public class Module_DesignTestCases extends BaseClass{
 	  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
 	    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
 	    System.err.println(entriesDiffering);
-	    System.out.println(actualData);
-	    System.out.println(expectedData);
 	    Assert.assertTrue(actualData.equals(expectedData));
 	}
 	

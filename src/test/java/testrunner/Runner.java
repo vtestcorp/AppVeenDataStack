@@ -7,10 +7,12 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
+
 @CucumberOptions(features="./testcases/number_Number.feature",
 			//	dryRun=true,
 
            //		tags="@AppCenter",
+
 				glue="stepdefinitions",
 				monochrome=true,
 				plugin = { "pretty", "html:target/cucumber-reports" ,"json:target/cucumber-reports/cucumber.json" }
@@ -29,6 +31,5 @@ public class Runner {
 	        Stream<String> cucumberOptions = Stream.concat(Stream.of(defaultOptions), Stream.of(args));
 	        cucumber.api.cli.Main.main(cucumberOptions.toArray(String[]::new));
 	    }
-	    
 }
  
