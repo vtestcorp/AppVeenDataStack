@@ -48,33 +48,32 @@ Scenario: Add data to data service
 	Given Data service "string_Email"
 	Then Add data to the data service
 
-#Scenario Outline: Add record to data service
-#	Given Data service "string_Email"
-#	Then Add record "<data>" to the data service
-#	And Expect error "DS-string-Email error" on label "DS-string-Email-label"
-#	And Save button is disabled
-#Examples:
-#|data|
-#|{"_id":"RC102", "dsStringEmail1002":"", "dsStringEmail1014":"","dsStringEmail1015":"","dsStringEmail1017":"","dsStringEmail1018":""}|
+Scenario Outline: Add record to data service
+	Given Data service "string_Email"
+	Then Add record "<data>" to the data service
+	And Expect error "DS-string-Email error" on label "DS-string-Email-label"
+	And Save button is disabled
+Examples:
+|data|
+|{"_id":"RC102", "dsStringEmail1002":"", "dsStringEmail1014":"","dsStringEmail1015":"","dsStringEmail1017":"","dsStringEmail1018":""}|
 
-#Scenario Outline: Add record to data service
-#	Given Data service "string_Email"
-#	Then Add record "<data>" to the data service	
-#	And Expect error "ID RC101 already exists" on save
-#	Examples:
-#		|data|
-#	  |{ "_id" : "RC101","dsStringEmail1001" : "abc@gmail.com","dsStringEmail1002" : "xyz@gmail.com","dsStringEmail1003" : "pqr@gamil.com","dsStringEmail1007" : "uvw@gamil.com","dsStringEmail1008" : "mno@gamil.com","dsStringEmail1014" : "hij@gamil.com","dsStringEmail1015" : "lmn@gamil.com"}|
-#	  
-#
-#Scenario Outline: Add record to data service
-#	Given Data service "string_Email"
-#	Then Add record "<data>" to the data service		
-#	And Expect error "Unique check validation failed for dsStringText1002" on save
-#Examples:
-#|data|
-#|{ "_id" : "RC103","dsStringEmail1001" : "abc@gmail.com","dsStringEmail1002" : "ac@gmail.com","dsStringText1003" : "xyz@gamil.com","dsStringEmail1007" : "7","dsStringEmail1008" : "xyz@gamil.com","dsStringEmail1014" : "x@gamil.com","dsStringEmail1015" : "xyz@gamil.com}|
-#		  
+Scenario Outline: Add record to data service
+	Given Data service "string_Email"
+	Then Add record "<data>" to the data service	
+	And Expect error "ID RC101 already exists" on save
+	Examples:
+		|data|
+	  |{ "_id" : "RC101","dsStringEmail1001" : "abc@gmail.com","dsStringEmail1002" : "xyz@gmail.com","dsStringEmail1003" : "pqr@gamil.com","dsStringEmail1007" : "uvw@gamil.com","dsStringEmail1008" : "mno@gamil.com","dsStringEmail1014" : "hij@gamil.com","dsStringEmail1015" : "lmn@gamil.com"}|
+	  
 
+Scenario Outline: Add record to data service
+	Given Data service "string_Email"
+	Then Add record "<data>" to the data service		
+	And Expect error "Unique check validation failed for dsStringText1002" on save
+Examples:
+|data|
+|{ "_id" : "RC103","dsStringEmail1001" : "abc@gmail.com","dsStringEmail1002" : "ac@gmail.com","dsStringEmail1003" : "xyz@gamil.com","dsStringEmail1007" : "wxy@gmail.com","dsStringEmail1008" : "xyz@gamil.com","dsStringEmail1014" : "x@gamil.com","dsStringEmail1015" : "xyz@gamil.com"}|
+  
 
 	
 	Scenario Outline: Fetch record from the data service
@@ -92,7 +91,7 @@ Examples:
 Examples:
 
 |id|data|
-|RC101|{"dsStringEmail1001": "abc@gmail.com","dsStringEmail1002": "atc@gmail.com","dsStringEmail1003": "wxy@gamil.com","dsStringEmail1004": "xyz@gamil.com","dsStringEmail1005": "xyz@gamil.com","dsStringEmail1007": "xy0z@gamil.com", "dsStringEmail1008": "x99@gamil.com","dsStringEmail1010": "xyz@gamil.com", "dsStringEmail1013": "xyz@gamil.com","dsStringEmail1014": "x123y@gamil.com", "dsStringEmail1015": "yz06@gamil.com""dsStringEmail1018": "xyz@gamil.com", "dsStringEmail1020": "xyz@gamil.com"}|
+|RC101|{"dsStringEmail1001": "abc@gmail.com","dsStringEmail1002": "atc@gmail.com","dsStringEmail1003": "wxy@gamil.com","dsStringEmail1004": "xyz@gamil.com","dsStringEmail1005": "xyz@gamil.com","dsStringEmail1007": "xy0z@gamil.com", "dsStringEmail1008": "x99@gamil.com","dsStringEmail1010": "xyz@gamil.com", "dsStringEmail1013": "xyz@gamil.com","dsStringEmail1014": "x123y@gamil.com", "dsStringEmail1015": "yz06@gamil.com", "dsStringEmail1018": "xyz@gamil.com", "dsStringEmail1020": "xyz@gamil.com"}|
 
 Scenario Outline: Fetch record from the data service
 	Given Data service "string_Email"

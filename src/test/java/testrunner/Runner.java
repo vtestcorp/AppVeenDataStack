@@ -8,10 +8,9 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 
-@CucumberOptions(features="./testcases/number_Number.feature",
+@CucumberOptions(features="./testcases/ds_Location.feature",
 			//	dryRun=true,
-
-           //		tags="@AppCenter",
+           //	tags="@AppCenter",
 
 				glue="stepdefinitions",
 				monochrome=true,
