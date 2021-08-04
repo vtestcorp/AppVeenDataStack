@@ -54,7 +54,7 @@ Scenario: Add data to data service
 	Scenario Outline: Add record to data service
 	Given Data service "number_Currency"
 	Then Add record "<data>" to the data service
-	And Expect error "DS STRING TEXT Error" on label "DS STRING TEXT Label"
+	And Expect error "DS NUMBER CURRENCY 1002 ERROR" on label "DS NUMBER CURRENCY 1002 LABEL"
 	And Save button is disabled
 Examples:
 |data|
@@ -73,7 +73,7 @@ Scenario Outline: Add record to data service
 Scenario Outline: Add record to data service
 	Given Data service "number_Currency"
 	Then Add record "<data>" to the data service		
-	And Expect error "Unique check validation failed for dsStringText1002" on save
+	And Expect error "Unique check validation failed for dsNumberCurrency1002" on save
 Examples:
 |data|
 |{ "_id" : "NUM1002","dsNumberCurrency1001" : 10,"dsNumberCurrency1002" : 3,"dsNumberCurrency1003" : 3,"dsNumberCurrency1007" : 7,"dsNumberCurrency1008" : 8,"dsNumberCurrency1014" : 14,"dsNumberCurrency1015" : 15}|

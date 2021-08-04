@@ -51,16 +51,7 @@ Scenario: Add data to data service
 	Then Add data to the data service
 	
 	
-#	Scenario Outline: Add record to data service
-#	Given Data service "ds_Group"
-#	Then Add record "<data>" to the data service
-#	And Expect error "DS STRING TEXT Error" on label "DS STRING TEXT Label"
-#	And Save button is disabled
-#Examples:
-#|data|
-#|{"_id":"STR1002", "dsStringText1002":"", "dsStringText1014":"","dsStringText1015":"","dsStringText1017":"","dsStringText1018":""}|
-#
-#
+
 Scenario Outline: Add record to data service
 	Given Data service "ds_Group"
 	Then Add record "<data>" to the data service	

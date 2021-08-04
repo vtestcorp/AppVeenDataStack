@@ -54,11 +54,11 @@ Scenario: Add data to data service
 	Scenario Outline: Add record to data service
 	Given Data service "number_ListOfValue"
 	Then Add record "<data>" to the data service
-	And Expect error "DS STRING TEXT Error" on label "DS STRING TEXT Label"
+	And Expect error "DS NUMBER LIST OF VALUES 1002 ERROR" on label "DS NUMBER LIST OF VALUES 1002 LABEL"
 	And Save button is disabled
 Examples:
 |data|
-|{"_id":"NUM1002", "dsNumberListOfValues1002":"", "dsNumberListOfValues1014":"","dsNumberListOfValues1015":"","dsNumberListOfValues1017":"","dsNumberListOfValues1018":""}|
+|{"_id":"NUM1002","dsNumberListOfValues1001":123, "dsNumberListOfValues1002":4569,"dsNumberListOfValues1003":4569, "dsNumberListOfValues1014":"","dsNumberListOfValues1015":"","dsNumberListOfValues1017":"","dsNumberListOfValues1018":""}|
 
 
 Scenario Outline: Add record to data service
@@ -67,7 +67,7 @@ Scenario Outline: Add record to data service
 	And Expect error "ID NUM1001 already exists" on save
 	Examples:
 		|data|
-	  |{ "_id" : "NUM1001",,"dsNumberListOfValues1001" : 1,"dsNumberListOfValues1002" : 2,"dsNumberListOfValues1003" : 3,"dsNumberListOfValues1007" : 4,"dsNumberListOfValues1008" : 5,"dsNumberListOfValues1014" : 4,"dsNumberListOfValues1015" : 5}|
+	  |{ "_id" : "NUM1001",,"dsNumberListOfValues1001" : 123,"dsNumberListOfValues1002" : 123,"dsNumberListOfValues1003" : 123,"dsNumberListOfValues1007" : 123,"dsNumberListOfValues1008" : 123,"dsNumberListOfValues1014" : 123,"dsNumberListOfValues1015" : 123}|
 
 
 Scenario Outline: Add record to data service
@@ -76,7 +76,7 @@ Scenario Outline: Add record to data service
 	And Expect error "Unique check validation failed for dsNumberListOfValues1002" on save
 Examples:
 |data|
-|{ "_id" : "NUM1002","dsNumberListOfValues1001" : 10,"dsNumberListOfValues1002" : 3,"dsNumberListOfValues1003" : 3,"dsNumberListOfValues1007" : 7,"dsNumberListOfValues1008" : 8,"dsNumberListOfValues1014" : 14,"dsNumberListOfValues1015" : 15}|
+|{ "_id" : "NUM1002","dsNumberListOfValues1001" : 123,"dsNumberListOfValues1002" : 4569,"dsNumberListOfValues1003" : 123,"dsNumberListOfValues1007" : 123,"dsNumberListOfValues1008" : 123,"dsNumberListOfValues1014" : 123,"dsNumberListOfValues1015" : 123}|
 	
 	
 	

@@ -12,18 +12,22 @@ Examples:
 |deepak@appveen.com|123123123|
 
 Scenario: Delete data service
-	Given Data service "string-Email" exists
+	Given Data service "string_Email" exists
 	Then Remove the data service
 
 Scenario: Create data service
-	Given Data service "string-Email" does not exist
-	Then Create new data service "string-Email"
+	Given Data service "string_Email" does not exist
+	Then Create new data service "string_Email"
  #Under testData, picks up strings.json create the JSON
 
-Scenario: Assign to Appcenter Group
- Then Group "string-Email-Group" does not exist
- Then Create new group "string-Email-Group" 
- And assign appcenter permissions for "string-Email" dataservice
+ Scenario Outline: Assign to Appcenter Group
+ 	Then Group "String-Group" does not exist
+	Then Create new group "String-Group" 
+	And Assign appcenter permissions for "string_Email" dataservice to "<user>"
+	
+	Examples:
+	|user|
+	|maker@appveen.com|
 
 
 Scenario: Log out of Author
@@ -43,20 +47,20 @@ Examples:
 
  #INSERT/UPDATE
 Scenario: Add data to data service
-	Given Data service "string-Email"
+	Given Data service "string_Email"
 	Then Add data to the data service
 
 Scenario Outline: Add record to data service
-	Given Data service "string-Email"
+	Given Data service "string_Email"
 	Then Add record "<data>" to the data service
-	And Expect error "DS-STRING-EMAIL error" on label "DS-STRING-EMAIL-label"
+	And Expect error "DS-string_Email error" on label "DS-string_Email-label"
 	And Save button is disabled
 Examples:
 |data|
 |{"_id":"RC102", "dsStringEmail1002":"", "dsStringEmail1014":"","dsStringEmail1015":"","dsStringEmail1017":"","dsStringEmail1018":""}|
 
 Scenario Outline: Add record to data service
-	Given Data service "string-Email"
+	Given Data service "string_Email"
 	Then Add record "<data>" to the data service	
 	And Expect error "ID RC101 already exists" on save
 	Examples:
@@ -65,7 +69,7 @@ Scenario Outline: Add record to data service
 	  
 
 Scenario Outline: Add record to data service
-	Given Data service "string-Email"
+	Given Data service "string_Email"
 	Then Add record "<data>" to the data service		
 	And Expect error "Unique check validation failed for dsStringText1002" on save
 Examples:
@@ -76,7 +80,7 @@ Examples:
 
 	
 	Scenario Outline: Fetch record from the data service
-	Given Data service "string-Email"
+	Given Data service "string_Email"
 	Then Fetch record "<id>" from the data service
 	And Match it to "<data>"
 Examples:
@@ -85,7 +89,7 @@ Examples:
 
 	
 	Scenario Outline: Update record to data service
-	Given Data service "string-Email"
+	Given Data service "string_Email"
 	Then Update record "<id>" with "<data>" to the data service
 Examples:
 
@@ -93,7 +97,7 @@ Examples:
 |RC101|{"dsStringEmail1001": "abc@gmail.com","dsStringEmail1002": "atc@gmail.com","dsStringEmail1003": "wxy@gamil.com","dsStringEmail1004": "xyz@gamil.com","dsStringEmail1005": "xyz@gamil.com","dsStringEmail1007": "xy0z@gamil.com", "dsStringEmail1008": "x99@gamil.com","dsStringEmail1010": "xyz@gamil.com", "dsStringEmail1013": "xyz@gamil.com","dsStringEmail1014": "x123y@gamil.com", "dsStringEmail1015": "yz06@gamil.com""dsStringEmail1018": "xyz@gamil.com", "dsStringEmail1020": "xyz@gamil.com"}|
 
 Scenario Outline: Fetch record from the data service
-	Given Data service "string-Email"
+	Given Data service "string_Email"
 	Then Fetch record "<id>" from the data service
 	And Match it to "<data>"
 Examples:
@@ -102,7 +106,7 @@ Examples:
 
 	
 Scenario Outline: Delete record from the data service
-	Given Data service "string-Email"
+	Given Data service "string_Email"
 	Then Delete record "<id>" from the data service
 	And deleting from listing page
 Examples:

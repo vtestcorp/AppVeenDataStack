@@ -245,7 +245,6 @@ public class Module_DesignTestCases extends BaseClass{
 						
 						try {
 						jsonValue = JsonPath.read(string, "$."+id1+"").toString();
-						System.out.println(JsonPath.read(string, "$."+id1+"").getClass());
 						}
 						catch(PathNotFoundException e) {
 							continue;
@@ -273,7 +272,7 @@ public class Module_DesignTestCases extends BaseClass{
 										}
 	
 								if (textBox.getAttribute("type").equals("select-one")) {
-									dropdown.selectByVisibleText(textBox, ((String) jsonObject.get(id1)).toString());
+									dropdown.selectByVisibleText(textBox, (jsonValue));
 	
 								}
 							}
@@ -328,8 +327,8 @@ public class Module_DesignTestCases extends BaseClass{
 //										Thread.sleep(50);
 										applyWait.waitForElementToBeClickable(textBox, 30).click();
 //										applyWait.waitForElementToBeClickable(textBox, 30).clear();
-										textBox.sendKeys(Keys.CONTROL, Keys.chord("a")); //select all text in textbox
-										textBox.sendKeys(Keys.BACK_SPACE); //delete it
+										textBox.sendKeys(Keys.CONTROL, Keys.chord("a")); 
+										textBox.sendKeys(Keys.BACK_SPACE); 
 										applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value.toString());
 										
 									}

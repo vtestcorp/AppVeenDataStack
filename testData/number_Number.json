@@ -1,0 +1,679 @@
+{
+  "workflowHooks": {
+    "postHooks": {
+      "submit": [],
+      "rework": [],
+      "discard": [],
+      "approve": [],
+      "reject": []
+    }
+  },
+  "_metadata": {
+    "version": {
+      "document": 5,
+      "release": "dev"
+    },
+    "deleted": false,
+    "lastUpdated": "2021-07-17T11:07:58.697Z",
+    "createdAt": "2021-07-16T13:07:44.823Z",
+    "lastUpdatedBy": "deepak@appveen.com"
+  },
+  "_id": "SRVC4542",
+  "allowedFileTypes": [
+    "jpeg",
+    "ppt",
+    "xls",
+    "csv",
+    "doc",
+    "jpg",
+    "png",
+    "gif",
+    "zip",
+    "tar",
+    "rar",
+    "gz",
+    "bz2",
+    "7z",
+    "mp4",
+    "mp3",
+    "pdf",
+    "ico",
+    "docx",
+    "pptx",
+    "xlsx",
+    "ods",
+    "xml",
+    "txt"
+  ],
+  "version": 2,
+  "instances": 1,
+  "versionValidity": {
+    "validityType": "count",
+    "validityValue": -1
+  },
+  "permanentDeleteData": true,
+  "disableInsights": false,
+  "status": "Active",
+  "enableSearchIndex": false,
+  "attributeCount": 23,
+  "type": null,
+  "name": "DS-Number",
+  "description": null,
+  "app": "vTest",
+  "api": "/dsNumber",
+  "port": 20134,
+  "wizard": [],
+  "webHooks": [],
+  "preHooks": [],
+  "collectionName": "dsNumber",
+  "__v": 0,
+  "definition": [
+    {
+      "_id": "60f2ba0e52fb6dacb5b58e5b",
+      "key": "_id",
+      "type": "String",
+      "prefix": "DS",
+      "suffix": null,
+      "padding": null,
+      "counter": 1001,
+      "properties": {
+        "label": null,
+        "readonly": false,
+        "errorMessage": null,
+        "name": "ID",
+        "required": false,
+        "fieldLength": 10,
+        "_description": null,
+        "_typeChanged": "id",
+        "_isParrentArray": null,
+        "_isGrpParentArray": null,
+        "dataPath": "_id",
+        "_detailedType": "",
+        "dataKey": "_id"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6da3dcb58e5c",
+      "type": "Number",
+      "key": "dsNumberNumber1001",
+      "properties": {
+        "name": "DS NUMBER NUMBER 1001",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "dataKey": "dsNumberNumber1001",
+        "dataPath": "dsNumberNumber1001"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6dfd6bb58e5d",
+      "type": "Number",
+      "key": "dsNumberNumber1002",
+      "properties": {
+        "label": "DS-NUMBER-NUMBER-1002 label",
+        "errorMessage": "DS-NUMBER-NUMBER-1002 error",
+        "name": "DS NUMBER NUMBER 1002",
+        "required": true,
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "createOnly": true,
+        "unique": true,
+        "min": 5,
+        "max": 25,
+        "precision": 3,
+        "dataKey": "dsNumberNumber1002",
+        "dataPath": "dsNumberNumber1002"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6d0e44b58e5e",
+      "type": "Number",
+      "key": "dsNumberNumber1003",
+      "properties": {
+        "name": "DS NUMBER NUMBER 1003",
+        "required": true,
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "dataKey": "dsNumberNumber1003",
+        "dataPath": "dsNumberNumber1003"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6d4384b58e5f",
+      "type": "Number",
+      "key": "dsNumberNumber1004",
+      "properties": {
+        "name": "DS NUMBER NUMBER 1004",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "createOnly": true,
+        "precision": 2,
+        "dataKey": "dsNumberNumber1004",
+        "dataPath": "dsNumberNumber1004"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6d5684b58e60",
+      "type": "Number",
+      "key": "dsNumberNumber1005",
+      "properties": {
+        "name": "DS NUMBER NUMBER 1005",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "unique": true,
+        "precision": 2,
+        "dataKey": "dsNumberNumber1005",
+        "dataPath": "dsNumberNumber1005"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6d7e3bb58e61",
+      "type": "Number",
+      "key": "dsNumberNumber1006",
+      "properties": {
+        "readonly": true,
+        "name": "DS NUMBER NUMBER 1006",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "dataKey": "dsNumberNumber1006",
+        "dataPath": "dsNumberNumber1006"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6d656ab58e62",
+      "type": "Number",
+      "key": "dsNumberNumber1007",
+      "properties": {
+        "name": "DS NUMBER NUMBER 1007",
+        "required": true,
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "createOnly": true,
+        "precision": 2,
+        "dataKey": "dsNumberNumber1007",
+        "dataPath": "dsNumberNumber1007"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6d2f4bb58e63",
+      "type": "Number",
+      "key": "dsNumberNumber1008",
+      "properties": {
+        "name": "DS NUMBER NUMBER 1008",
+        "required": true,
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "unique": true,
+        "precision": 2,
+        "dataKey": "dsNumberNumber1008",
+        "dataPath": "dsNumberNumber1008"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6d464cb58e64",
+      "type": "Number",
+      "key": "dsNumberNumber1010",
+      "properties": {
+        "name": "DS NUMBER NUMBER 1010",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "createOnly": true,
+        "unique": true,
+        "precision": 2,
+        "dataKey": "dsNumberNumber1010",
+        "dataPath": "dsNumberNumber1010"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6d0340b58e65",
+      "type": "Number",
+      "key": "dsNumberNumber1011",
+      "properties": {
+        "readonly": true,
+        "name": "DS NUMBER NUMBER 1011",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "createOnly": true,
+        "precision": 2,
+        "dataKey": "dsNumberNumber1011",
+        "dataPath": "dsNumberNumber1011"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6d7b74b58e66",
+      "type": "Number",
+      "key": "dsNumberNumber1012",
+      "properties": {
+        "readonly": true,
+        "name": "DS NUMBER NUMBER 1012",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "unique": true,
+        "precision": 2,
+        "dataKey": "dsNumberNumber1012",
+        "dataPath": "dsNumberNumber1012"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6d3b5db58e67",
+      "type": "Number",
+      "key": "dsNumberNumber1013",
+      "properties": {
+        "label": "DS-NUMBER-NUMBER-1013 label",
+        "name": "DS NUMBER NUMBER 1013",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "dataKey": "dsNumberNumber1013",
+        "dataPath": "dsNumberNumber1013"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6df52bb58e68",
+      "type": "Number",
+      "key": "dsNumberNumber1014",
+      "properties": {
+        "errorMessage": "DS-NUMBER-NUMBER-1014 error",
+        "name": "DS NUMBER NUMBER 1014",
+        "required": true,
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "dataKey": "dsNumberNumber1014",
+        "dataPath": "dsNumberNumber1014"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6d1ffab58e69",
+      "type": "Number",
+      "key": "dsNumberNumber1015",
+      "properties": {
+        "label": "DS-NUMBER-NUMBER-1015 label",
+        "errorMessage": "DS-NUMBER-NUMBER-1015 error",
+        "name": "DS NUMBER NUMBER 1015",
+        "required": true,
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "dataKey": "dsNumberNumber1015",
+        "dataPath": "dsNumberNumber1015"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6d3328b58e6a",
+      "type": "Number",
+      "key": "dsNumberNumber1016",
+      "properties": {
+        "label": "DS-NUMBER-NUMBER-1016 label",
+        "readonly": true,
+        "name": "DS NUMBER NUMBER 1016",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "dataKey": "dsNumberNumber1016",
+        "dataPath": "dsNumberNumber1016"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6d6587b58e6b",
+      "type": "Number",
+      "key": "dsNumberNumber1018",
+      "properties": {
+        "name": "DS NUMBER NUMBER 1018",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "dataKey": "dsNumberNumber1018",
+        "dataPath": "dsNumberNumber1018"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6dcd90b58e6c",
+      "type": "Number",
+      "key": "dsNumberNumber1019",
+      "properties": {
+        "readonly": true,
+        "name": "DS NUMBER NUMBER 1019",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "dataKey": "dsNumberNumber1019",
+        "dataPath": "dsNumberNumber1019"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6d0374b58e6d",
+      "type": "Number",
+      "key": "dsNumberNumber1020",
+      "properties": {
+        "name": "DS NUMBER NUMBER 1020",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "dataKey": "dsNumberNumber1020",
+        "dataPath": "dsNumberNumber1020"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6d7573b58e6e",
+      "type": "Number",
+      "key": "dsNumberNumber1021",
+      "properties": {
+        "name": "DS NUMBER NUMBER 1021",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "dataKey": "dsNumberNumber1021",
+        "dataPath": "dsNumberNumber1021"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6debd0b58e6f",
+      "type": "Number",
+      "key": "dsNumberNumber1022",
+      "properties": {
+        "name": "DS NUMBER NUMBER 1022",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "min": 1,
+        "precision": 2,
+        "dataKey": "dsNumberNumber1022",
+        "dataPath": "dsNumberNumber1022"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6d4819b58e70",
+      "type": "Number",
+      "key": "dsNumberNumber1023",
+      "properties": {
+        "name": "DS NUMBER NUMBER 1023",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "max": 25,
+        "precision": 2,
+        "dataKey": "dsNumberNumber1023",
+        "dataPath": "dsNumberNumber1023"
+      }
+    },
+    {
+      "_id": "60f2ba0e52fb6d79e6b58e71",
+      "type": "Number",
+      "key": "dsNumberNumber1024",
+      "properties": {
+        "name": "DS NUMBER NUMBER 1024",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "min": 1,
+        "max": 25,
+        "precision": 2,
+        "dataKey": "dsNumberNumber1024",
+        "dataPath": "dsNumberNumber1024"
+      }
+    }
+  ],
+  "headers": [],
+  "relatedSchemas": {
+    "internal": {
+      "users": []
+    },
+    "outgoing": []
+  },
+  "role": {
+    "_id": "SRVC4542",
+    "_metadata": {
+      "version": {
+        "document": 1,
+        "release": "dev"
+      },
+      "deleted": false,
+      "lastUpdated": "2021-07-16T13:07:44.847Z",
+      "createdAt": "2021-07-16T13:07:44.844Z"
+    },
+    "app": "vTest",
+    "entity": "SRVC4542",
+    "entityName": "DS-Number",
+    "roles": [
+      {
+        "skipReviewRole": true,
+        "id": "P1979992253",
+        "name": "Skip Review",
+        "operations": [
+          {
+            "method": "SKIP_REVIEW"
+          },
+          {
+            "method": "POST"
+          },
+          {
+            "method": "PUT"
+          },
+          {
+            "method": "DELETE"
+          }
+        ],
+        "description": "This role entitles an authorized user to create, update or delete a record and without any approval"
+      },
+      {
+        "manageRole": true,
+        "id": "P1423739150",
+        "name": "Manage",
+        "operations": [
+          {
+            "method": "POST"
+          },
+          {
+            "method": "PUT"
+          },
+          {
+            "method": "DELETE"
+          },
+          {
+            "method": "GET"
+          }
+        ],
+        "description": "This role entitles an authorized user to create, update or delete a record"
+      },
+      {
+        "viewRole": true,
+        "id": "P9298795206",
+        "name": "View",
+        "operations": [
+          {
+            "method": "GET"
+          }
+        ],
+        "description": "This role entitles an authorized user to view the record"
+      }
+    ],
+    "type": "appcenter",
+    "fields": {
+      "_id": {
+        "_t": "String",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1001": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1002": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1003": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1004": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1005": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1006": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1007": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1008": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1010": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1011": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1012": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1013": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1014": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1015": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1016": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1018": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1019": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1020": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1021": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1022": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1023": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      },
+      "dsNumberNumber1024": {
+        "_t": "Number",
+        "_p": {
+          "P1979992253": "R",
+          "P1423739150": "R",
+          "P9298795206": "R"
+        }
+      }
+    },
+    "__v": 0
+  }
+}

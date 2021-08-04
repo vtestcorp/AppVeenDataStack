@@ -141,23 +141,11 @@ public class LoginAppCenter extends BaseClass {
 					String id1 = textBox.getAttribute("id");
 					String value1=JsonUtils.getJsonValue(filePath,id1);
 
-//					dsGroup1001.dsString
 					
 					if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")||textBox.getAttribute("type").equals("select-one")) {
-//						if ((String) jsonObject.get(id1) != null) {
 							if (value1 != null) {
 
 							if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
-//								if (id1.contains(".")) {
-//									String[] attributes = id1.trim().split("[^a-zA-Z0-9]+");
-//
-//									JSONObject obj = (JSONObject) jsonObject.get(attributes[0]);
-//									applyWait.waitForElementToBeClickable(textBox, 30).sendKeys((String) obj.get(attributes[1]));
-//
-//								} else {
-//									applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(((String) jsonObject.get(id1)).toString());
-//									
-//								}
 								applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1);
 							}
 
@@ -166,8 +154,13 @@ public class LoginAppCenter extends BaseClass {
 									textBox.click();
 								}
 								else {
-
-								dropdown.selectByVisibleText(textBox, ((String) jsonObject.get(id1)).toString());
+									
+										if(jsonObject.get(id1).getClass().toString().contains("Long")) {
+											dropdown.selectByVisibleText(textBox, ( jsonObject.get(id1).toString()));
+										}
+										else {
+											dropdown.selectByVisibleText(textBox, ((String) jsonObject.get(id1)).toString());
+										}
 								
 								}
 
