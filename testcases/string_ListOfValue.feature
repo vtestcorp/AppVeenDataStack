@@ -54,7 +54,7 @@ Scenario: Add data to data service
 Scenario Outline: Add record to data service
 	Given Data service "string_ListOfValue"
 	Then Add record "<data>" to the data service
-	And Expect error "DS STRING TEXT Error" on label "DS STRING TEXT Label"
+	And Expect error "DS-STRING-LIST-OF-VALUES-1002 error" on label "DS-STRING-LIST-OF-VALUES-1002 label"
 	And Save button is disabled
 Examples:
 |data|
@@ -73,7 +73,7 @@ Scenario Outline: Add record to data service
 Scenario Outline: Add record to data service
 	Given Data service "string_ListOfValue"
 	Then Add record "<data>" to the data service		
-	And Expect error "Unique check validation failed for dsStringLongText1002" on save
+	And Expect error "Unique check validation failed for dsStringListOfValues1002" on save
 Examples:
 |data|
 |{ "_id" : "STR1003","dsStringListOfValues1001" : "LIST 1","dsStringListOfValues1002" : "LIST 1","dsStringListOfValues1003" : "LIST 1","dsStringListOfValues1007" : "LIST 1","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1014" : "LIST 1","dsStringListOfValues1015" : "LIST 1"}|
