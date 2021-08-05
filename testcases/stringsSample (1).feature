@@ -12,44 +12,45 @@ Examples:
 |deepak@appveen.com|123123123|
 
 Scenario: Delete data service
-	Given Data service "Sample1" exists
+	Given Data service "sample" exists
 	Then Remove the data service
 
 Scenario: Create data service
-	Given Data service "Sample1" does not exist
-	Then Create new data service "Sample1"
+	Given Data service "sample" does not exist
+	Then Create new data service "sample"
  #Under testData, picks up strings.json create the JSON
 
 Scenario Outline: Assign to Appcenter Group
- Then Group "String-Group" does not exist
- Then Create new group "String-Group" 
-	And Assign appcenter permissions for "Sample1" dataservice to "<user>"
+ 	Then Group "String-Group" does not exist
+	Then Create new group "String-Group" 
+	And Assign appcenter permissions for "ds_Group-2" dataservice to "<user>"
 	
 	Examples:
 	|user|
 	|maker@appveen.com|
+#
+#
+#Scenario: Log out of Author
+#	Given User logged into Author
+#	Then User logs out of Author
+#	
+#
+#@AppCenter
+#Scenario Outline: Log into AppCenter
+#	Given User navigate to AppCenter login page
+#	And User enters "<username>" and "<password>" in AppCenter login page
+#	And Verify User has Logged in Successfully 
+#Examples:
+#|username|password|
+#|maker@appveen.com|123123123|
+#
+#
+ #INSERT/UPDATE
+#Scenario: Add data to data service
+#	Given Data service "sample"
+#	Then Add data to the data service
+#	
 	
-Scenario: Log out of Author
-	Given User logged into Author
-	Then User logs out of Author
-	
-
-@AppCenter
-Scenario Outline: Log into AppCenter
-	Given User navigate to AppCenter login page
-	And User enters "<username>" and "<password>" in AppCenter login page
-	And Verify User has Logged in Successfully 
-Examples:
-|username|password|
-|maker@appveen.com|123123123|
-
-
-# INSERT/UPDATE
-Scenario: Add data to data service
-	Given Data service "Sample1"
-	Then Add data to the data service for Collection
-	
-
 #	Scenario Outline: Fetch record from the data service
 #	Given Data service "Design-String"
 #	Then Fetch record "<id>" from the data service
