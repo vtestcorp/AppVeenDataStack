@@ -10,16 +10,16 @@
   },
   "_metadata" : {
     "version" : {
-      "document" : 2,
+      "document" : 6,
       "release" : "dev"
     },
     "deleted" : false,
-    "lastUpdated" : "2021-08-04T13:45:46.751Z",
-    "createdAt" : "2021-08-04T13:38:12.561Z",
+    "lastUpdated" : "2021-08-05T16:35:05.936Z",
+    "createdAt" : "2021-08-05T14:00:09.377Z",
     "lastUpdatedBy" : "deepak@appveen.com"
   },
   "allowedFileTypes" : [ "jpeg", "ppt", "xls", "csv", "doc", "jpg", "png", "gif", "zip", "tar", "rar", "gz", "bz2", "7z", "mp4", "mp3", "pdf", "ico", "docx", "pptx", "xlsx", "ods", "xml", "txt" ],
-  "version" : 1,
+  "version" : 2,
   "instances" : 1,
   "versionValidity" : {
     "validityType" : "count",
@@ -27,11 +27,11 @@
   },
   "permanentDeleteData" : true,
   "disableInsights" : false,
-  "status" : "Draft",
+  "status" : "Active",
   "enableSearchIndex" : false,
-  "attributeCount" : 10,
+  "attributeCount" : 9,
   "type" : null,
-  "_id" : "SRVC5659",
+  "_id" : "SRVC5737",
   "name" : "ds_Location",
   "description" : null,
   "app" : "vTest",
@@ -43,7 +43,7 @@
   "collectionName" : "dsLocation",
   "__v" : 1,
   "definition" : [ {
-    "_id" : "610a9a0a34fab2dd094268a9",
+    "_id" : "610c1339d89b9b2d1b16d3c4",
     "key" : "_id",
     "type" : "String",
     "prefix" : "DS",
@@ -66,7 +66,7 @@
       "dataKey" : "_id"
     }
   }, {
-    "_id" : "610a9a0a34fab2c89f4268aa",
+    "_id" : "610c1339d89b9b0bd216d3c5",
     "type" : "Geojson",
     "key" : "dsLocation1001",
     "properties" : {
@@ -78,14 +78,13 @@
       "dataPath" : "dsLocation1001"
     }
   }, {
-    "_id" : "610a9a0a34fab20c004268ab",
+    "_id" : "610c1339d89b9b7d1a16d3c6",
     "type" : "Geojson",
     "key" : "dsLocation1002",
     "properties" : {
-      "name" : "DS LOCATION 1002",
       "label" : "DS-LOCATION-1002 Label",
-      "readonly" : true,
       "errorMessage" : "DS-LOCATION-1002 Error",
+      "name" : "DS LOCATION 1002",
       "required" : true,
       "fieldLength" : 10,
       "_description" : "DS-LOCATION-1002 Enable",
@@ -95,7 +94,7 @@
       "dataPath" : "dsLocation1002"
     }
   }, {
-    "_id" : "610a9a0a34fab261464268ac",
+    "_id" : "610c1339d89b9b16e816d3c7",
     "type" : "Geojson",
     "key" : "dsLocation1003",
     "properties" : {
@@ -108,12 +107,12 @@
       "dataPath" : "dsLocation1003"
     }
   }, {
-    "_id" : "610a9a0a34fab2331e4268ad",
+    "_id" : "610c1339d89b9b0fb016d3c8",
     "type" : "Geojson",
     "key" : "dsLocation1004",
     "properties" : {
-      "name" : "DS LOCATION 1004",
       "readonly" : true,
+      "name" : "DS LOCATION 1004",
       "fieldLength" : 10,
       "_typeChanged" : "Geojson",
       "geoType" : "point",
@@ -121,26 +120,12 @@
       "dataPath" : "dsLocation1004"
     }
   }, {
-    "_id" : "610a9a0a34fab2338b4268ae",
-    "type" : "Geojson",
-    "key" : "dsLocation1005",
-    "properties" : {
-      "name" : "DS LOCATION 1005",
-      "readonly" : true,
-      "required" : true,
-      "fieldLength" : 10,
-      "_typeChanged" : "Geojson",
-      "geoType" : "point",
-      "dataKey" : "dsLocation1005",
-      "dataPath" : "dsLocation1005"
-    }
-  }, {
-    "_id" : "610a9a0a34fab20ddf4268af",
+    "_id" : "610c1339d89b9b04df16d3c9",
     "type" : "Geojson",
     "key" : "dsLocation1006",
     "properties" : {
-      "name" : "DS LOCATION 1006",
       "label" : "DS-LOCATION-1006 Label",
+      "name" : "DS LOCATION 1006",
       "fieldLength" : 10,
       "_typeChanged" : "Geojson",
       "geoType" : "point",
@@ -148,12 +133,12 @@
       "dataPath" : "dsLocation1006"
     }
   }, {
-    "_id" : "610a9a0a34fab286f84268b0",
+    "_id" : "610c1339d89b9b710016d3ca",
     "type" : "Geojson",
     "key" : "dsLocation1007",
     "properties" : {
-      "name" : "DS LOCATION 1007",
       "errorMessage" : "DS-LOCATION-1007 Error",
+      "name" : "DS LOCATION 1007",
       "required" : true,
       "fieldLength" : 10,
       "_typeChanged" : "Geojson",
@@ -162,13 +147,13 @@
       "dataPath" : "dsLocation1007"
     }
   }, {
-    "_id" : "610a9a0a34fab2ff794268b1",
+    "_id" : "610c1339d89b9b1e1c16d3cb",
     "type" : "Geojson",
     "key" : "dsLocation1008",
     "properties" : {
-      "name" : "DS LOCATION 1008",
       "label" : "DS-LOCATION-1008 Label",
       "errorMessage" : "DS-LOCATION-1008 Error",
+      "name" : "DS LOCATION 1008",
       "required" : true,
       "fieldLength" : 10,
       "_typeChanged" : "Geojson",
@@ -177,7 +162,7 @@
       "dataPath" : "dsLocation1008"
     }
   }, {
-    "_id" : "610a9a0a34fab2000c4268b2",
+    "_id" : "610c1339d89b9bcf4f16d3cc",
     "type" : "Geojson",
     "key" : "dsLocation1009",
     "properties" : {
@@ -191,23 +176,29 @@
     }
   } ],
   "headers" : [ ],
+  "relatedSchemas" : {
+    "internal" : {
+      "users" : [ ]
+    },
+    "outgoing" : [ ]
+  },
   "role" : {
-    "_id" : "SRVC5659",
+    "_id" : "SRVC5737",
     "_metadata" : {
       "version" : {
         "document" : 1,
         "release" : "dev"
       },
       "deleted" : false,
-      "lastUpdated" : "2021-08-04T13:38:12.634Z",
-      "createdAt" : "2021-08-04T13:38:12.622Z"
+      "lastUpdated" : "2021-08-05T14:00:09.407Z",
+      "createdAt" : "2021-08-05T14:00:09.404Z"
     },
     "app" : "vTest",
-    "entity" : "SRVC5659",
+    "entity" : "SRVC5737",
     "entityName" : "ds_Location",
     "roles" : [ {
       "skipReviewRole" : true,
-      "id" : "P7873885695",
+      "id" : "P2514392799",
       "name" : "Skip Review",
       "operations" : [ {
         "method" : "SKIP_REVIEW"
@@ -221,7 +212,7 @@
       "description" : "This role entitles an authorized user to create, update or delete a record and without any approval"
     }, {
       "manageRole" : true,
-      "id" : "P2199000712",
+      "id" : "P2749901789",
       "name" : "Manage",
       "operations" : [ {
         "method" : "POST"
@@ -235,7 +226,7 @@
       "description" : "This role entitles an authorized user to create, update or delete a record"
     }, {
       "viewRole" : true,
-      "id" : "P5552434952",
+      "id" : "P5499867870",
       "name" : "View",
       "operations" : [ {
         "method" : "GET"
@@ -247,90 +238,76 @@
       "_id" : {
         "_t" : "String",
         "_p" : {
-          "P7873885695" : "R",
-          "P2199000712" : "R",
-          "P5552434952" : "R"
+          "P2514392799" : "R",
+          "P2749901789" : "R",
+          "P5499867870" : "R"
         }
       },
       "dsLocation1001" : {
         "_t" : "String",
         "_p" : {
-          "P7873885695" : "R",
-          "P2199000712" : "R",
-          "P5552434952" : "R"
+          "P2514392799" : "R",
+          "P2749901789" : "R",
+          "P5499867870" : "R"
         }
       },
       "dsLocation1002" : {
         "_t" : "String",
         "_p" : {
-          "P7873885695" : "R",
-          "P2199000712" : "R",
-          "P5552434952" : "R"
+          "P2514392799" : "R",
+          "P2749901789" : "R",
+          "P5499867870" : "R"
         }
       },
       "dsLocation1003" : {
         "_t" : "String",
         "_p" : {
-          "P7873885695" : "R",
-          "P2199000712" : "R",
-          "P5552434952" : "R"
-        }
-      },
-      "dsLocation1004" : {
-        "_t" : "String",
-        "_p" : {
-          "P7873885695" : "R",
-          "P2199000712" : "R",
-          "P5552434952" : "R"
-        }
-      },
-      "dsLocation1005" : {
-        "_t" : "String",
-        "_p" : {
-          "P7873885695" : "R",
-          "P2199000712" : "R",
-          "P5552434952" : "R"
+          "P2514392799" : "R",
+          "P2749901789" : "R",
+          "P5499867870" : "R"
         }
       },
       "dsLocation1006" : {
         "_t" : "String",
         "_p" : {
-          "P7873885695" : "R",
-          "P2199000712" : "R",
-          "P5552434952" : "R"
+          "P2514392799" : "R",
+          "P2749901789" : "R",
+          "P5499867870" : "R"
         }
       },
       "dsLocation1007" : {
         "_t" : "String",
         "_p" : {
-          "P7873885695" : "R",
-          "P2199000712" : "R",
-          "P5552434952" : "R"
+          "P2514392799" : "R",
+          "P2749901789" : "R",
+          "P5499867870" : "R"
         }
       },
       "dsLocation1008" : {
         "_t" : "String",
         "_p" : {
-          "P7873885695" : "R",
-          "P2199000712" : "R",
-          "P5552434952" : "R"
+          "P2514392799" : "R",
+          "P2749901789" : "R",
+          "P5499867870" : "R"
         }
       },
       "dsLocation1009" : {
         "_t" : "String",
         "_p" : {
-          "P7873885695" : "R",
-          "P2199000712" : "R",
-          "P5552434952" : "R"
+          "P2514392799" : "R",
+          "P2749901789" : "R",
+          "P5499867870" : "R"
+        }
+      },
+      "dsLocation1004" : {
+        "_t" : "String",
+        "_p" : {
+          "P2514392799" : "R",
+          "P2749901789" : "R",
+          "P5499867870" : "R"
         }
       }
     },
     "__v" : 0
-  },
-  "relatedSchemas" : {
-    "internal" : {
-      "users" : [ ]
-    },
-    "outgoing" : [ ]
   }
 }

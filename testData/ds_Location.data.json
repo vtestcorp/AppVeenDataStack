@@ -1,0 +1,98 @@
+{
+  "_metadata" : {
+    "deleted" : false,
+    "lastUpdated" : "2021-08-05T16:38:47.837Z",
+    "version" : {
+      "release" : "dev",
+      "document" : 1
+    },
+    "createdAt" : "2021-08-05T16:38:47.837Z"
+  },
+  "_id" : "DS1001",
+  "dsLocation1001" : {
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 73.8567437, 18.5204303 ]
+    },
+    "userInput" : "Pune, Maharashtra, India",
+    "town" : "Pune",
+    "district" : "Pune",
+    "state" : "Maharashtra",
+    "country" : "India",
+    "formattedAddress" : "Pune, Maharashtra, India"
+  },
+  "dsLocation1002" : {
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 73.7997094, 18.6297811 ]
+    },
+    "userInput" : "Pimpri-Chinchwad, Maharashtra, India",
+    "town" : "Pimpri-Chinchwad",
+    "district" : "Pune",
+    "state" : "Maharashtra",
+    "country" : "India",
+    "formattedAddress" : "Pimpri-Chinchwad, Maharashtra, India"
+  },
+  "dsLocation1003" : {
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 77.5945627, 12.9715987 ]
+    },
+    "userInput" : "Bangalore, Karnataka, India",
+    "town" : "Bengaluru",
+    "district" : "Bangalore Urban",
+    "state" : "Karnataka",
+    "country" : "India",
+    "formattedAddress" : "Bengaluru, Karnataka, India"
+  },
+  "dsLocation1004" : null,
+  "dsLocation1006" : {
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 80.2707184, 13.0826802 ]
+    },
+    "userInput" : "Chennai, Tamil Nadu, India",
+    "town" : "Chennai",
+    "district" : "Chennai",
+    "state" : "Tamil Nadu",
+    "country" : "India",
+    "formattedAddress" : "Chennai, Tamil Nadu, India"
+  },
+  "dsLocation1007" : {
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 74.10050439999999, 32.57307249999999 ]
+    },
+    "userInput" : "Gujrat, Pakistan",
+    "town" : "Gujrat",
+    "district" : "Gujrat",
+    "state" : "Punjab",
+    "country" : "Pakistan",
+    "formattedAddress" : "Gujrat, Punjab, Pakistan"
+  },
+  "dsLocation1008" : {
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 74.018261, 17.6804639 ]
+    },
+    "userInput" : "Satara, Maharashtra, India",
+    "town" : "Satara",
+    "district" : "Satara",
+    "state" : "Maharashtra",
+    "country" : "India",
+    "formattedAddress" : "Satara, Maharashtra, India"
+  },
+  "dsLocation1009" : {
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 72.8776559, 19.0759837 ]
+    },
+    "userInput" : "Mumbai, Maharashtra, India",
+    "town" : "Mumbai",
+    "district" : "Mumbai",
+    "state" : "Maharashtra",
+    "country" : "India",
+    "formattedAddress" : "Mumbai, Maharashtra, India"
+  },
+  "__v" : 0
+}

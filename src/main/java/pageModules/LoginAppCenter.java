@@ -2,33 +2,22 @@ package pageModules;
 
 import java.util.List;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.jayway.jsonpath.JsonPath;
 
 import base.BaseClass;
-import config.DefineConstants;
 import helperMethods.DropDown;
 import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
 import helperMethods.ScrollTypes;
 import helperMethods.SwitchWindow;
 import helperMethods.WaitTypes;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObjects.Object_AppCenterPage;
-import stepdefinitions.LoginToAuthorUrl;
 
 public class LoginAppCenter extends BaseClass {
 
@@ -222,8 +211,11 @@ public class LoginAppCenter extends BaseClass {
 					}
 				}
 			}
-
+     
+			
 		}
+		
+		
 
 //			if((jsonArray.size()-1) > i) {
 //			applyWait.waitForElementToBeClickable(acp.proceedAndCreateAnother, 30).click();
@@ -241,6 +233,56 @@ public class LoginAppCenter extends BaseClass {
 //		}
 //	}
 
+	public void userEnterDataInLocationField() throws InterruptedException {
+		Thread.sleep(2000);
+		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		Thread.sleep(3000);
+		List<WebElement> textBoxes = acp.textBoxesLocation;
+		String filePath=path + "\\testData\\" + data_Service + ".data.json";
+		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
+		//JSONObject value= JsonUtils.getJSONObject(filePath);
+		
+		
+		for (int j = 2; j <= textBoxes.size(); j++) {
+		WebElement textBox = driver.findElement(By.xpath("(//input[@class='form-control form-control-sm rounded ng-pristine ng-valid ng-star-inserted ng-touched' or 'searchInput pac-target-input'])["+j+"]"));
+			if (textBox.isEnabled()) {
+				String id1 = textBox.getAttribute("id");
+				String v1 =  jsonObject.get(id1).toString();
+				System.out.println(v1);
+				String v2= null;
+				if(!id1.equals("_id"))
+				{
+					JSONObject value1= JsonUtils.fetchJSONObject(v1);
+					 v2 = (String) value1.get("userInput");
+					  
+					System.out.println(v2);
+					
+				}
+				
+				
+				if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
+				//	applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(((String) jsonObject.get(id1)).toString());
+					if(id1.equals("_id"))
+					{
+						applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(v1);
+					}
+						else {
+								applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(v2);
+								  textBox.sendKeys(Keys.ENTER);
+								  Thread.sleep(1000);
+						}
+				}
+			}
+		}
+				applyWait.waitForElementToBeClickable(acp.save, 30).click();
+					
+	}
+				
+					
+			
+		
+
+	
 	public void workflow() {
 		applyWait.waitForElementToBeClickable(acp.username, 30).sendKeys("reviewer@appveen.com");
 		applyWait.waitForElementToBeClickable(acp.nextButton, 30).click();

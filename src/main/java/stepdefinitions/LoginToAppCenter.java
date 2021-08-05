@@ -70,9 +70,15 @@ public class LoginToAppCenter extends BaseClass{
 	public void add_data_to_the_data_service() throws Exception {
 		
 		loginAppCenter.userEnterData();
-//		loginAppCenter.userEnterData1();
+		
 	  
 	}
+	@Then("Add data to the data service for Location")
+	public void add_data_to_the_data_service_for_Location() throws InterruptedException {
+		loginAppCenter.userEnterDataInLocationField();
+	}
+
+
 	
 	@Then("On the listing page it should show the total count of documents as {int}")
 	public void on_the_listing_page_it_should_show_the_total_count_of_documents_as(Integer documentCount) throws Exception {
