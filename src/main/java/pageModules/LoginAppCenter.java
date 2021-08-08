@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -267,9 +268,24 @@ public class LoginAppCenter extends BaseClass {
 						applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(v1);
 					}
 						else {
-								applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(v2);
-								  textBox.sendKeys(Keys.ENTER);
-								  Thread.sleep(1000);
+//								applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(v2);
+//								  textBox.sendKeys(Keys.ENTER);
+//								  Thread.sleep(1000);
+								driver.findElement(By.xpath("textBox")).sendKeys("Pimpri-Chinchwad, Maharashtra, India");
+								Thread.sleep(2000);
+								driver.findElement(By.xpath("textBox")).sendKeys(Keys.DOWN);
+								driver.findElement(By.xpath("textBox")).sendKeys(Keys.ENTER);
+								driver.findElement(By.xpath("textBox")).getText();
+								JavascriptClick js=(JavascriptClick)driver;
+								String script="return document.getElementById(\"Pimpri-Chinchwad, Maharashtra, India\").value;";
+								String text=(String)js.execteScript(script);
+								System.out.println(text);
+								while(!text.equalsIgnoreCase("Pimpri-Chinchwad, Maharashtra, India"))
+								{
+									driver.findElement(By.xpath("textBox")).sendKeys(Keys.DOWN);
+									 text=(String)js.execteScript(script);
+									 System.out.println(text);
+								}
 						}
 				}
 			}

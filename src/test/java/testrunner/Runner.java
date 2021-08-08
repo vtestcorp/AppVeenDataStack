@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 
-@CucumberOptions(features="./testcases/ds_Location.feature",
+@CucumberOptions(features="./testcases/stringsSample (1).feature",
 			//	dryRun=true,
            //	tags="@AppCenter",
 

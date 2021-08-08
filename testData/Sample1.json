@@ -10,14 +10,15 @@
   },
   "_metadata" : {
     "version" : {
-      "document" : 6,
+      "document" : 5,
       "release" : "dev"
     },
     "deleted" : false,
-    "lastUpdated" : "2021-08-03T05:53:37.596Z",
-    "createdAt" : "2021-08-03T05:49:08.175Z",
+    "lastUpdated" : "2021-08-06T11:19:44.768Z",
+    "createdAt" : "2021-08-06T11:16:34.251Z",
     "lastUpdatedBy" : "deepak@appveen.com"
   },
+  "_id" : "SRVC5776",
   "allowedFileTypes" : [ "jpeg", "ppt", "xls", "csv", "doc", "jpg", "png", "gif", "zip", "tar", "rar", "gz", "bz2", "7z", "mp4", "mp3", "pdf", "ico", "docx", "pptx", "xlsx", "ods", "xml", "txt" ],
   "version" : 2,
   "instances" : 1,
@@ -31,7 +32,6 @@
   "enableSearchIndex" : false,
   "attributeCount" : 2,
   "type" : null,
-  "_id" : "SRVC5532",
   "name" : "Sample1",
   "description" : null,
   "app" : "vTest",
@@ -41,9 +41,9 @@
   "webHooks" : [ ],
   "preHooks" : [ ],
   "collectionName" : "sample1",
-  "__v" : 1,
+  "__v" : 0,
   "definition" : [ {
-    "_id" : "6108d9e1bc74ac32dcd75e9e",
+    "_id" : "610d1ad0b7f7f59d3518666c",
     "key" : "_id",
     "type" : "String",
     "prefix" : "SAM",
@@ -66,25 +66,18 @@
       "dataKey" : "_id"
     }
   }, {
-    "_id" : "6108d9e1bc74acf3ffd75e9f",
-    "type" : "Array",
-    "key" : "collection1001",
+    "_id" : "610d1ad0b7f7f5096a18666d",
+    "type" : "Geojson",
+    "key" : "dsLocation1001",
     "properties" : {
-      "name" : "COLLECTION 1001",
+      "name" : "DS LOCATION 1001",
+      "required" : true,
       "fieldLength" : 10,
-      "_typeChanged" : "Array",
-      "dataKey" : "collection1001[#]",
-      "dataPath" : "collection1001[#]"
-    },
-    "definition" : [ {
-      "type" : "String",
-      "key" : "_self",
-      "properties" : {
-        "name" : "_self",
-        "fieldLength" : 10,
-        "_typeChanged" : "String"
-      }
-    } ]
+      "_typeChanged" : "Geojson",
+      "geoType" : "point",
+      "dataKey" : "dsLocation1001",
+      "dataPath" : "dsLocation1001"
+    }
   } ],
   "headers" : [ ],
   "relatedSchemas" : {
@@ -94,22 +87,22 @@
     "outgoing" : [ ]
   },
   "role" : {
-    "_id" : "SRVC5532",
+    "_id" : "SRVC5776",
     "_metadata" : {
       "version" : {
         "document" : 1,
         "release" : "dev"
       },
       "deleted" : false,
-      "lastUpdated" : "2021-08-03T05:49:08.199Z",
-      "createdAt" : "2021-08-03T05:49:08.195Z"
+      "lastUpdated" : "2021-08-06T11:16:34.276Z",
+      "createdAt" : "2021-08-06T11:16:34.272Z"
     },
     "app" : "vTest",
-    "entity" : "SRVC5532",
+    "entity" : "SRVC5776",
     "entityName" : "Sample1",
     "roles" : [ {
       "skipReviewRole" : true,
-      "id" : "P6771527604",
+      "id" : "P4696992897",
       "name" : "Skip Review",
       "operations" : [ {
         "method" : "SKIP_REVIEW"
@@ -123,7 +116,7 @@
       "description" : "This role entitles an authorized user to create, update or delete a record and without any approval"
     }, {
       "manageRole" : true,
-      "id" : "P9712180814",
+      "id" : "P5324749241",
       "name" : "Manage",
       "operations" : [ {
         "method" : "POST"
@@ -137,7 +130,7 @@
       "description" : "This role entitles an authorized user to create, update or delete a record"
     }, {
       "viewRole" : true,
-      "id" : "P9570206888",
+      "id" : "P2819964536",
       "name" : "View",
       "operations" : [ {
         "method" : "GET"
@@ -149,17 +142,17 @@
       "_id" : {
         "_t" : "String",
         "_p" : {
-          "P6771527604" : "R",
-          "P9712180814" : "R",
-          "P9570206888" : "R"
+          "P4696992897" : "R",
+          "P5324749241" : "R",
+          "P2819964536" : "R"
         }
       },
-      "collection1001" : {
-        "_t" : "Array",
+      "dsLocation1001" : {
+        "_t" : "String",
         "_p" : {
-          "P6771527604" : "R",
-          "P9712180814" : "R",
-          "P9570206888" : "R"
+          "P4696992897" : "R",
+          "P5324749241" : "R",
+          "P2819964536" : "R"
         }
       }
     },

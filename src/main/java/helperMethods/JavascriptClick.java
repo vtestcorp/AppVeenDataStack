@@ -35,4 +35,9 @@ public class JavascriptClick {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].setAttribute('style', 'background: yellow;');", element);
 	}
+
+	public String execteScript(String script) {
+		return script;
+		
+	}
 }
