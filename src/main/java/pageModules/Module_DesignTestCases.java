@@ -22,6 +22,8 @@ import com.google.common.collect.MapDifference.ValueDifference;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.PathNotFoundException;
 import com.google.common.collect.Maps;
+import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.PathNotFoundException;
 
 import base.BaseClass;
 import config.DefineConstants;
@@ -98,6 +100,7 @@ public class Module_DesignTestCases extends BaseClass{
 		if(groups.contains(groupName)) {
 			WebElement group=driver.findElement(By.xpath("//div[normalize-space()='"+groupName+"']/parent::div"));
 			group.click();
+			Thread.sleep(500);
 			applyWait.waitForElementToBeClickable(gp.deleteGroup, 30).click();
 			Thread.sleep(500);
 			applyWait.waitForElementToBeClickable(gp.delete, 30).click();
@@ -246,9 +249,14 @@ public class Module_DesignTestCases extends BaseClass{
 					
 					if (textBox.isEnabled()) {
 						String id1 = textBox.getAttribute("id");
+
+//						System.out.println(id1+"      "+textBox.getAttribute("type"));
 						
+//						String value1=JsonUtils.getJsonValue(filePath,id1);
+
 						try {
 						jsonValue = JsonPath.read(string, "$."+id1+"").toString();
+						System.out.println(JsonPath.read(string, "$."+id1+"").getClass());
 						}
 						catch(PathNotFoundException e) {
 							continue;
@@ -276,7 +284,7 @@ public class Module_DesignTestCases extends BaseClass{
 										}
 	
 								if (textBox.getAttribute("type").equals("select-one")) {
-									dropdown.selectByVisibleText(textBox, (jsonValue));
+									dropdown.selectByVisibleText(textBox, ((String) jsonObject.get(id1)).toString());
 	
 								}
 							}
@@ -293,7 +301,9 @@ public class Module_DesignTestCases extends BaseClass{
 											Double value = (Double) JsonPath.read(string, "$."+id1+"");
 											Thread.sleep(50);
 											applyWait.waitForElementToBeClickable(textBox, 30).click();
-											applyWait.waitForElementToBeClickable(textBox, 30).clear();
+										//	applyWait.waitForElementToBeClickable(textBox, 30).clear();
+											textBox.sendKeys(Keys.CONTROL, Keys.chord("a")); 
+											textBox.sendKeys(Keys.BACK_SPACE); 
 											applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value.toString());
 											
 										}
@@ -312,7 +322,9 @@ public class Module_DesignTestCases extends BaseClass{
 											Long value = (Long) JsonPath.read(string, "$."+id1+"");
 											Thread.sleep(50);
 											applyWait.waitForElementToBeClickable(textBox, 30).click();
-											applyWait.waitForElementToBeClickable(textBox, 30).clear();
+										//	applyWait.waitForElementToBeClickable(textBox, 30).clear();
+											textBox.sendKeys(Keys.CONTROL, Keys.chord("a")); 
+											textBox.sendKeys(Keys.BACK_SPACE); 
 											applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value.toString());
 											
 										}
@@ -329,10 +341,21 @@ public class Module_DesignTestCases extends BaseClass{
 									if (textBox.getAttribute("type").equals("number")) {
 										Integer value = (Integer) JsonPath.read(string, "$."+id1+"");
 //										Thread.sleep(50);
-										applyWait.waitForElementToBeClickable(textBox, 30).click();
-//										applyWait.waitForElementToBeClickable(textBox, 30).clear();
-										textBox.sendKeys(Keys.CONTROL, Keys.chord("a")); 
-										textBox.sendKeys(Keys.BACK_SPACE); 
+									//	applyWait.waitForElementToBeClickable(textBox, 30).click();
+									//	applyWait.waitForElementToBeClickable(textBox, 30).clear();
+										
+										 String inputText = textBox.getAttribute("value");
+									        if( inputText != null ) {
+									            for(int i=0; i<inputText.length();i++) { //1234
+									                textBox.sendKeys(Keys.BACK_SPACE);
+									            }
+									            System.out.println("Input Box is :" +inputText);
+									        }
+										
+									//	textBox.sendKeys(Keys.chord(Keys.CONTROL, "a"), value.toString());
+									//	textBox.sendKeys(Keys.CONTROL, Keys.chord("a")); //select all text in textbox
+									//	textBox.sendKeys(Keys.BACK_SPACE); //delete it
+									//	textBox.sendKeys(Keys.DELETE);
 										applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value.toString());
 										
 									}
@@ -348,17 +371,20 @@ public class Module_DesignTestCases extends BaseClass{
 									Thread.sleep(50);
 									applyWait.waitForElementToBeClickable(textBox, 30).click();
 									applyWait.waitForElementToBeClickable(textBox, 30).clear();
-								}
+								 }
 	                   			}
+						   }
+							else if(textBox.getAttribute("type").equals("email")) {
+								if ( jsonObject.get(id1) != null) {
+								applyWait.waitForElementToBeClickable(textBox, 30).clear();
+								applyWait.waitForElementToBeClickable(textBox,30).sendKeys(((String)jsonObject.get(id1)).toString());
 							}
-						
-						
-						
+							}
+						  }
 						}
-					}
 				}
-
-//				}
+				applyWait.waitForElementToBeClickable(acp.save, 30).click();
+				}
 			
 			
 //			
@@ -366,12 +392,11 @@ public class Module_DesignTestCases extends BaseClass{
 //			applyWait.waitForElementToBeClickable(acp.proceedAndCreateAnother, 30).click();
 //				}
 //				else {
-					applyWait.waitForElementToBeClickable(acp.save, 30).click();
+//					applyWait.waitForElementToBeClickable(acp.save, 30).click();
 //				}
 		
 //	}
 	
-	}
 
 
 
@@ -394,6 +419,7 @@ public class Module_DesignTestCases extends BaseClass{
 		System.err.println(errorMessage);
 	}
 		if(acp.errorMessages.isEmpty()) {
+		
 			Assert.assertTrue(false);
 		}
 	}
@@ -611,6 +637,7 @@ public class Module_DesignTestCases extends BaseClass{
 			acp.yes.click();
 	    }
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
+		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);;
 		
 		WebElement record=driver.findElement(By.xpath("//a[normalize-space()='"+id+"']"));
@@ -854,10 +881,4 @@ public class Module_DesignTestCases extends BaseClass{
 		
 	}
 
-	
-	
-	
-	
-	
-
-}
+	}

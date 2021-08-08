@@ -57,13 +57,28 @@ public class LoginToAppCenter extends BaseClass{
 	 
 	}
 	
+	
+	
+	@Then("Add data to the data service for Collection")
+	public void add_data_to_the_data_service_for_Collection() throws InterruptedException {
+		loginAppCenter.userEnterDataforCollection();
+	}
+
+
+	
 	@Then("Add data to the data service")
 	public void add_data_to_the_data_service() throws Exception {
 		
 		loginAppCenter.userEnterData();
-//		loginAppCenter.userEnterData1();
+		
 	  
 	}
+	@Then("Add data to the data service for Location")
+	public void add_data_to_the_data_service_for_Location() throws InterruptedException {
+		loginAppCenter.userEnterDataInLocationField();
+	}
+
+
 	
 	@Then("Add data to the data service for file")
 	public void add_data_to_the_data_service_for_file() throws Exception {

@@ -42,6 +42,7 @@ public class Object_AppCenterPage extends BaseClass{
 	
 	@FindBy(xpath="//*[contains(@class,'form-control')]")
 	public WebElement textBox1;
+
 	
 	@FindBy(xpath="//*[contains(@class,'form-control')]")
 	public List<WebElement> textBoxes;
@@ -231,8 +232,8 @@ public class Object_AppCenterPage extends BaseClass{
 	public WebElement delete_ViewRecord;
 	
 	
-	
-
+	@FindBy(xpath="//input[@class='form-control form-control-sm rounded ng-pristine ng-valid ng-star-inserted ng-touched' or 'searchInput pac-target-input']")
+	public List<WebElement> textBoxesLocation;
 	
 	
 	

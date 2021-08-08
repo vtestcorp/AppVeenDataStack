@@ -12,18 +12,18 @@ Examples:
 |deepak@appveen.com|123123123|
 
 Scenario: Delete data service
-	Given Data service "sample" exists
+	Given Data service "Sample1" exists
 	Then Remove the data service
 
 Scenario: Create data service
-	Given Data service "sample" does not exist
-	Then Create new data service "sample"
+	Given Data service "Sample1" does not exist
+	Then Create new data service "Sample1"
  #Under testData, picks up strings.json create the JSON
 
 Scenario Outline: Assign to Appcenter Group
  	Then Group "String-Group" does not exist
 	Then Create new group "String-Group" 
-	And Assign appcenter permissions for "sample" dataservice to "<user>"
+	And Assign appcenter permissions for "Sample1" dataservice to "<user>"
 	
 	Examples:
 	|user|
@@ -47,9 +47,8 @@ Examples:
 
  #INSERT/UPDATE
 Scenario: Add data to data service
-	Given Data service "sample"
+	Given Data service "Sample1"
 	Then Add data to the data service for file
-#	
 	
 #	Scenario Outline: Fetch record from the data service
 #	Given Data service "Design-String"
@@ -84,8 +83,5 @@ Scenario: Add data to data service
 #Examples:
 #|id|
 #|STR1001|
-#
-#
-#
-#
-#
+
+

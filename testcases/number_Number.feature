@@ -1,6 +1,5 @@
 Feature: This is the Feature file of DS-Number
 
-# Scenarios - TS.., ..., ..
 
 @Author
 Scenario Outline: Log into Author
@@ -60,13 +59,15 @@ Examples:
 |data|
 |{"_id":"DS1001", "dsNumberNumber1002":"", "dsNumberNumber1014":"","dsNumberNumber1015":"","dsNumberNumber1017":"","dsNumberNumber1018":""}|
 
+
 Scenario Outline: Add record to data service
 	Given Data service "number_Number"
 	Then Add record "<data>" to the data service	
 	And Expect error "ID DS1001 already exists" on save
 	Examples:
 		|data|
-	  |{ "_id" : "DS1001","dsNumberNumber1001" : 1001,"dsNumberNumber1002" : 7,"dsNumberNumber1003" : 3,"dsNumberNumber1007" : 7,"dsNumberNumber1008" : 8,"dsNumberNumber1014" : 4,"dsNumberNumber1015" : 15}|
+	  |{ "_id" : "DS1001","dsNumberNumber1001" : 11,"dsNumberNumber1002" : 	12,"dsNumberNumber1003" : 13,"dsNumberNumber1007" : 14,"dsNumberNumber1008" : 18,"dsNumberNumber1014" : 17,"dsNumberNumber1015" : 15}|
+
 
 Scenario Outline: Add record to data service
 	Given Data service "number_Number"
@@ -74,28 +75,27 @@ Scenario Outline: Add record to data service
 	And Expect error "Unique check validation failed for dsNumberNumber1002" on save
 Examples:
 |data|
-|{ "_id" : "DS1003","dsNumberNumber1001" : 1001,"dsNumberNumber1002" : 6,"dsNumberNumber1003" : 3,"dsNumberNumber1007" : 7,"dsNumberNumber1008" : 8,"dsNumberNumber1014" : 4,"dsNumberNumber1015" : 15}|
+|{ "_id" : "DS1003","dsNumberNumber1001" : 1001,"dsNumberNumber1002" : 10,"dsNumberNumber1003" : 3,"dsNumberNumber1007" : 7,"dsNumberNumber1008" : 8,"dsNumberNumber1014" : 4,"dsNumberNumber1015" : 15}|
+
 
 	
-	
-	Scenario Outline: Fetch record from the data service
+Scenario Outline: Fetch record from the data service
 	Given Data service "number_Number"
 	Then Fetch record "<id>" from the data service
 	And Match it to "<data>"
 
 Examples:
 |id|data|
-|DS1001|{"_id": "DS1001","dsNumberNumber1001": 1001,"dsNumberNumber1002": 5,"dsNumberNumber1003": 1,"dsNumberNumber1004": -1,"dsNumberNumber1005": -3,"dsNumberNumber1007": 0 ,"dsNumberNumber1008": 1, "dsNumberNumber1010": 4, "dsNumberNumber1013": -5,"dsNumberNumber1014": 6,"dsNumberNumber1015": -3, "dsNumberNumber1018": 3,"dsNumberNumber1020": -4,"dsNumberNumber1021": 3, "dsNumberNumber1022": 1, "dsNumberNumber1023": -1,"dsNumberNumber1024": 2}|
+|DS1001|{"_id": "DS1001","dsNumberNumber1001": 1001,"dsNumberNumber1002": 10,"dsNumberNumber1003": 1003,"dsNumberNumber1004": 1004,"dsNumberNumber1005": 1005,"dsNumberNumber1007": 1007 ,"dsNumberNumber1008": 1, "dsNumberNumber1010": 4, "dsNumberNumber1013": 5,"dsNumberNumber1014": 6,"dsNumberNumber1015": -3, "dsNumberNumber1018": 3,"dsNumberNumber1020": -4,"dsNumberNumber1021": 3, "dsNumberNumber1022": 1, "dsNumberNumber1023": 8,"dsNumberNumber1024": 2}|
 
-	
 
 	Scenario Outline: Update record to data service
 	Given Data service "number_Number"
 	Then Update record "<id>" with "<data>" to the data service
 Examples:
-
+<<<<<<< HEAD
 |id|data|
-|DS1001|{"dsNumberNumber1001": 1002,"dsNumberNumber1002": 7,"dsNumberNumber1003": 4,"dsNumberNumber1004": 1,"dsNumberNumber1005": 0,"dsNumberNumber1007": 3 ,"dsNumberNumber1008": 6, "dsNumberNumber1010": 7, "dsNumberNumber1013": 9,"dsNumberNumber1014": 1,"dsNumberNumber1015": -1, "dsNumberNumber1018": 3,"dsNumberNumber1020": -3,"dsNumberNumber1021": 2, "dsNumberNumber1022": 3, "dsNumberNumber1023": 2,"dsNumberNumber1024": 4}|
+|DS1001|{"dsNumberNumber1001": 1002,"dsNumberNumber1002": 7,"dsNumberNumber1003": 1004,"dsNumberNumber1004": 1005,"dsNumberNumber1005": 1006,"dsNumberNumber1007": 1008 ,"dsNumberNumber1008": 6, "dsNumberNumber1010": 7, "dsNumberNumber1013": 9,"dsNumberNumber1014": 1,"dsNumberNumber1015": 5, "dsNumberNumber1018": 30,"dsNumberNumber1020": 3,"dsNumberNumber1021": 2, "dsNumberNumber1022": 3, "dsNumberNumber1023": 2,"dsNumberNumber1024": 4}|
 
 Scenario Outline: Fetch record from the data service
 	Given Data service "number_Number"
@@ -103,8 +103,10 @@ Scenario Outline: Fetch record from the data service
 	And Match it to "<data>"
 Examples:
 |id|data|
-|DS1001|{"_id": "DS1001","dsNumberNumber1001": 1002,"dsNumberNumber1002": 8,"dsNumberNumber1003": 4, "dsNumberNumber1004": 4,"dsNumberNumber1005": 0,"dsNumberNumber1007": 7, "dsNumberNumber1008": 6, "dsNumberNumber1010":10,  "dsNumberNumber1013": 9, "dsNumberNumber1014": 1,"dsNumberNumber1015": -1, "dsNumberNumber1018": 3,"dsNumberNumber1020": -3,"dsNumberNumber1021": 2, "dsNumberNumber1022": 3, "dsNumberNumber1023": 2,"dsNumberNumber1024": 4"dsNumberNumber1014": 2, "dsNumberNumber1015": 0}|
-	
+|DS1001|{"_id": "DS1001","dsNumberNumber1001": 1001,"dsNumberNumber1002": 10,"dsNumberNumber1003": 1003, "dsNumberNumber1004": 1004,"dsNumberNumber1005": 1005,"dsNumberNumber1007": 1007, "dsNumberNumber1008": 1, "dsNumberNumber1010":4,  "dsNumberNumber1013": -5, "dsNumberNumber1014": 6,"dsNumberNumber1015": -3, "dsNumberNumber1018": 3,"dsNumberNumber1020": -4,"dsNumberNumber1021": 3, "dsNumberNumber1022": 1, "dsNumberNumber1023": -1,"dsNumberNumber1024": 2}|
+
+
+
 Scenario Outline: Delete record from the data service
 	Given Data service "number_Number"
 	Then Delete record "<id>" from the data service

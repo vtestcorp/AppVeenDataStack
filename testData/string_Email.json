@@ -1,592 +1,532 @@
 {
-  "workflowHooks": {
-    "postHooks": {
-      "submit": [],
-      "rework": [],
-      "discard": [],
-      "approve": [],
-      "reject": []
+  "workflowHooks" : {
+    "postHooks" : {
+      "submit" : [ ],
+      "rework" : [ ],
+      "discard" : [ ],
+      "approve" : [ ],
+      "reject" : [ ]
     }
   },
-  "_metadata": {
-    "version": {
-      "document": 2,
-      "release": "dev"
+  "_metadata" : {
+    "version" : {
+      "document" : 6,
+      "release" : "dev"
     },
-    "deleted": false,
-    "lastUpdated": "2021-07-15T17:58:36.042Z",
-    "createdAt": "2021-07-15T17:36:35.539Z",
-    "lastUpdatedBy": "deepak@appveen.com"
+    "deleted" : false,
+    "lastUpdated" : "2021-08-04T12:29:08.656Z",
+    "createdAt" : "2021-08-04T11:15:04.636Z",
+    "lastUpdatedBy" : "deepak@appveen.com"
   },
-  "allowedFileTypes": [
-    "jpeg",
-    "ppt",
-    "xls",
-    "csv",
-    "doc",
-    "jpg",
-    "png",
-    "gif",
-    "zip",
-    "tar",
-    "rar",
-    "gz",
-    "bz2",
-    "7z",
-    "mp4",
-    "mp3",
-    "pdf",
-    "ico",
-    "docx",
-    "pptx",
-    "xlsx",
-    "ods",
-    "xml",
-    "txt"
-  ],
-  "version": 1,
-  "instances": 1,
-  "versionValidity": {
-    "validityType": "count",
-    "validityValue": -1
+  "allowedFileTypes" : [ "jpeg", "ppt", "xls", "csv", "doc", "jpg", "png", "gif", "zip", "tar", "rar", "gz", "bz2", "7z", "mp4", "mp3", "pdf", "ico", "docx", "pptx", "xlsx", "ods", "xml", "txt" ],
+  "version" : 2,
+  "instances" : 1,
+  "versionValidity" : {
+    "validityType" : "count",
+    "validityValue" : -1
   },
-  "permanentDeleteData": true,
-  "disableInsights": false,
-  "status": "Draft",
-  "enableSearchIndex": false,
-  "attributeCount": 19,
-  "type": null,
-  "_id": "SRVC4505",
-  "name": "string_Email",
-  "description": null,
-  "app": "vTest",
-  "api": "/stringEmail",
-  "port": 20046,
-  "wizard": [],
-  "webHooks": [],
-  "preHooks": [],
-  "collectionName": "stringEmail",
-  "__v": 1,
-  "definition": [
-    {
-      "_id": "60f0774ce3a1e5587803a36b",
-      "key": "_id",
-      "type": "String",
-      "prefix": "STR",
-      "suffix": null,
-      "padding": null,
-      "counter": 1001,
-      "properties": {
-        "label": null,
-        "readonly": false,
-        "errorMessage": null,
-        "name": "ID",
-        "required": false,
-        "fieldLength": 10,
-        "_description": null,
-        "_typeChanged": "id",
-        "_isParrentArray": null,
-        "_isGrpParentArray": null,
-        "dataPath": "_id",
-        "_detailedType": "",
-        "dataKey": "_id"
-      }
-    },
-    {
-      "_id": "60f0774ce3a1e527ed03a36c",
-      "type": "String",
-      "key": "dsStringEmail1001",
-      "properties": {
-        "name": "DS STRING EMAIL 1001",
-        "fieldLength": 10,
-        "_typeChanged": "String",
-        "email": true,
-        "dataKey": "dsStringEmail1001",
-        "dataPath": "dsStringEmail1001"
-      }
-    },
-    {
-      "_id": "60f0774ce3a1e54e6903a36d",
-      "type": "String",
-      "key": "dsStringEmail1002",
-      "properties": {
-        "label": "DS-STRING-EMAIL-1002 label",
-        "errorMessage": "DS-STRING-EMAIL-1002 error",
-        "name": "DS STRING EMAIL 1002",
-        "required": true,
-        "fieldLength": 10,
-        "_description": "DS-STRING-EMAIL-1002 Enable",
-        "_typeChanged": "String",
-        "createOnly": true,
-        "unique": true,
-        "email": true,
-        "dataKey": "dsStringEmail1002",
-        "dataPath": "dsStringEmail1002"
-      }
-    },
-    {
-      "_id": "60f0774ce3a1e5c92003a36e",
-      "type": "String",
-      "key": "dsStringEmail1003",
-      "properties": {
-        "name": "DS STRING EMAIL 1003",
-        "required": true,
-        "fieldLength": 10,
-        "_typeChanged": "String",
-        "email": true,
-        "dataKey": "dsStringEmail1003",
-        "dataPath": "dsStringEmail1003"
-      }
-    },
-    {
-      "_id": "60f0774ce3a1e54a1a03a36f",
-      "type": "String",
-      "key": "dsStringEmail1004",
-      "properties": {
-        "name": "DS STRING EMAIL 1004",
-        "fieldLength": 10,
-        "_typeChanged": "String",
-        "createOnly": true,
-        "email": true,
-        "dataKey": "dsStringEmail1004",
-        "dataPath": "dsStringEmail1004"
-      }
-    },
-    {
-      "_id": "60f0774ce3a1e5715c03a370",
-      "type": "String",
-      "key": "dsStringEmail1005",
-      "properties": {
-        "name": "DS STRING EMAIL 1005",
-        "fieldLength": 10,
-        "_typeChanged": "String",
-        "unique": true,
-        "email": true,
-        "dataKey": "dsStringEmail1005",
-        "dataPath": "dsStringEmail1005"
-      }
-    },
-    {
-      "_id": "60f0774ce3a1e5ec1b03a371",
-      "type": "String",
-      "key": "dsStringEmail1006",
-      "properties": {
-        "readonly": true,
-        "name": "DS STRING EMAIL 1006",
-        "fieldLength": 10,
-        "_typeChanged": "String",
-        "email": true,
-        "dataKey": "dsStringEmail1006",
-        "dataPath": "dsStringEmail1006"
-      }
-    },
-    {
-      "_id": "60f0774ce3a1e5d17d03a372",
-      "type": "String",
-      "key": "dsStringEmail1007",
-      "properties": {
-        "name": "DS STRING EMAIL 1007",
-        "required": true,
-        "fieldLength": 10,
-        "_typeChanged": "String",
-        "createOnly": true,
-        "email": true,
-        "dataKey": "dsStringEmail1007",
-        "dataPath": "dsStringEmail1007"
-      }
-    },
-    {
-      "_id": "60f0774ce3a1e5db0703a373",
-      "type": "String",
-      "key": "dsStringEmail1008",
-      "properties": {
-        "name": "DS STRING EMAIL 1008",
-        "required": true,
-        "fieldLength": 10,
-        "_typeChanged": "String",
-        "unique": true,
-        "email": true,
-        "dataKey": "dsStringEmail1008",
-        "dataPath": "dsStringEmail1008"
-      }
-    },
-    {
-      "_id": "60f0774ce3a1e52ec103a374",
-      "type": "String",
-      "key": "dsStringEmail1010",
-      "properties": {
-        "name": "DS STRING EMAIL 1010",
-        "fieldLength": 10,
-        "_typeChanged": "String",
-        "createOnly": true,
-        "unique": true,
-        "email": true,
-        "dataKey": "dsStringEmail1010",
-        "dataPath": "dsStringEmail1010"
-      }
-    },
-    {
-      "_id": "60f0774ce3a1e5454803a375",
-      "type": "String",
-      "key": "dsStringEmail1011",
-      "properties": {
-        "readonly": true,
-        "name": "DS STRING EMAIL 1011",
-        "fieldLength": 10,
-        "_typeChanged": "String",
-        "createOnly": true,
-        "email": true,
-        "dataKey": "dsStringEmail1011",
-        "dataPath": "dsStringEmail1011"
-      }
-    },
-    {
-      "_id": "60f0774ce3a1e5bf6803a376",
-      "type": "String",
-      "key": "dsStringEmail1012",
-      "properties": {
-        "readonly": true,
-        "name": "DS STRING EMAIL 1012",
-        "fieldLength": 10,
-        "_typeChanged": "String",
-        "unique": true,
-        "email": true,
-        "dataKey": "dsStringEmail1012",
-        "dataPath": "dsStringEmail1012"
-      }
-    },
-    {
-      "_id": "60f0774ce3a1e57ad203a377",
-      "type": "String",
-      "key": "dsStringEmail1013",
-      "properties": {
-        "label": "DS-STRING-EMAIL-1013 label",
-        "name": "DS STRING EMAIL 1013",
-        "fieldLength": 10,
-        "_typeChanged": "String",
-        "email": true,
-        "dataKey": "dsStringEmail1013",
-        "dataPath": "dsStringEmail1013"
-      }
-    },
-    {
-      "_id": "60f0774ce3a1e571f303a378",
-      "type": "String",
-      "key": "dsStringEmail1014",
-      "properties": {
-        "errorMessage": "DS-STRING-EMAIL-1014 error",
-        "name": "DS STRING EMAIL 1014",
-        "required": true,
-        "fieldLength": 10,
-        "_typeChanged": "String",
-        "email": true,
-        "dataKey": "dsStringEmail1014",
-        "dataPath": "dsStringEmail1014"
-      }
-    },
-    {
-      "_id": "60f0774ce3a1e511f803a379",
-      "type": "String",
-      "key": "dsStringEmail1015",
-      "properties": {
-        "label": "DS-STRING-EMAIL-1015 label",
-        "errorMessage": "DS-STRING-EMAIL-1015 error",
-        "name": "DS STRING EMAIL 1015",
-        "required": true,
-        "fieldLength": 10,
-        "_typeChanged": "String",
-        "email": true,
-        "dataKey": "dsStringEmail1015",
-        "dataPath": "dsStringEmail1015"
-      }
-    },
-    {
-      "_id": "60f0774ce3a1e5f1f103a37a",
-      "type": "String",
-      "key": "dsStringEmail1016",
-      "properties": {
-        "label": "DS-STRING-EMAIL-1016 label",
-        "readonly": true,
-        "name": "DS STRING EMAIL 1016",
-        "fieldLength": 10,
-        "_typeChanged": "String",
-        "email": true,
-        "dataKey": "dsStringEmail1016",
-        "dataPath": "dsStringEmail1016"
-      }
-    },
-    {
-      "_id": "60f0774ce3a1e57f1a03a37b",
-      "type": "String",
-      "key": "dsStringEmail1018",
-      "properties": {
-        "name": "DS STRING EMAIL 1018",
-        "fieldLength": 10,
-        "_typeChanged": "String",
-        "default": "abc@gmail.com",
-        "email": true,
-        "dataKey": "dsStringEmail1018",
-        "dataPath": "dsStringEmail1018"
-      }
-    },
-    {
-      "_id": "60f0774ce3a1e5b1e303a37c",
-      "type": "String",
-      "key": "dsStringEmail1019",
-      "properties": {
-        "readonly": true,
-        "name": "DS STRING EMAIL 1019",
-        "fieldLength": 10,
-        "_typeChanged": "String",
-        "default": "abc@gmail.com",
-        "email": true,
-        "dataKey": "dsStringEmail1019",
-        "dataPath": "dsStringEmail1019"
-      }
-    },
-    {
-      "_id": "60f0774ce3a1e555a203a37d",
-      "type": "String",
-      "key": "dsStringEmail1020",
-      "properties": {
-        "name": "DS STRING EMAIL 1020",
-        "fieldLength": 10,
-        "_description": "DS-STRING-EMAIL-1020 Enable",
-        "_typeChanged": "String",
-        "dataKey": "dsStringEmail1020",
-        "dataPath": "dsStringEmail1020"
-      }
+  "permanentDeleteData" : true,
+  "disableInsights" : false,
+  "status" : "Active",
+  "enableSearchIndex" : false,
+  "attributeCount" : 19,
+  "type" : null,
+  "_id" : "SRVC5655",
+  "name" : "string_Email",
+  "description" : null,
+  "app" : "vTest",
+  "api" : "/stringEmail",
+  "port" : 20036,
+  "wizard" : [ ],
+  "webHooks" : [ ],
+  "preHooks" : [ ],
+  "collectionName" : "stringEmail",
+  "__v" : 1,
+  "definition" : [ {
+    "_id" : "610a88144a01117f8ce98667",
+    "key" : "_id",
+    "type" : "String",
+    "prefix" : "STR",
+    "suffix" : null,
+    "padding" : null,
+    "counter" : 1001,
+    "properties" : {
+      "label" : null,
+      "readonly" : false,
+      "errorMessage" : null,
+      "name" : "ID",
+      "required" : false,
+      "fieldLength" : 10,
+      "_description" : null,
+      "_typeChanged" : "id",
+      "_isParrentArray" : null,
+      "_isGrpParentArray" : null,
+      "dataPath" : "_id",
+      "_detailedType" : "",
+      "dataKey" : "_id"
     }
-  ],
-  "headers": [],
-  "role": {
-    "_id": "SRVC4505",
-    "_metadata": {
-      "version": {
-        "document": 1,
-        "release": "dev"
-      },
-      "deleted": false,
-      "lastUpdated": "2021-07-15T17:36:35.581Z",
-      "createdAt": "2021-07-15T17:36:35.578Z"
+  }, {
+    "_id" : "610a88144a01114234e98668",
+    "type" : "String",
+    "key" : "dsStringEmail1001",
+    "properties" : {
+      "name" : "DS STRING EMAIL 1001",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "email" : true,
+      "dataKey" : "dsStringEmail1001",
+      "dataPath" : "dsStringEmail1001"
+    }
+  }, {
+    "_id" : "610a88144a011104f1e98669",
+    "type" : "String",
+    "key" : "dsStringEmail1002",
+    "properties" : {
+      "label" : "DS-STRING-EMAIL-1002 label",
+      "errorMessage" : "DS-STRING-EMAIL-1002 error",
+      "name" : "DS STRING EMAIL 1002",
+      "required" : true,
+      "fieldLength" : 10,
+      "_description" : "DS-STRING-EMAIL-1002 Enable",
+      "_typeChanged" : "String",
+      "createOnly" : true,
+      "unique" : true,
+      "email" : true,
+      "dataKey" : "dsStringEmail1002",
+      "dataPath" : "dsStringEmail1002"
+    }
+  }, {
+    "_id" : "610a88144a01116953e9866a",
+    "type" : "String",
+    "key" : "dsStringEmail1003",
+    "properties" : {
+      "name" : "DS STRING EMAIL 1003",
+      "required" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "email" : true,
+      "dataKey" : "dsStringEmail1003",
+      "dataPath" : "dsStringEmail1003"
+    }
+  }, {
+    "_id" : "610a88144a0111f62be9866b",
+    "type" : "String",
+    "key" : "dsStringEmail1004",
+    "properties" : {
+      "name" : "DS STRING EMAIL 1004",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "createOnly" : true,
+      "email" : true,
+      "dataKey" : "dsStringEmail1004",
+      "dataPath" : "dsStringEmail1004"
+    }
+  }, {
+    "_id" : "610a88144a01116e01e9866c",
+    "type" : "String",
+    "key" : "dsStringEmail1005",
+    "properties" : {
+      "name" : "DS STRING EMAIL 1005",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "unique" : true,
+      "email" : true,
+      "dataKey" : "dsStringEmail1005",
+      "dataPath" : "dsStringEmail1005"
+    }
+  }, {
+    "_id" : "610a88144a011131d2e9866d",
+    "type" : "String",
+    "key" : "dsStringEmail1006",
+    "properties" : {
+      "readonly" : true,
+      "name" : "DS STRING EMAIL 1006",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "email" : true,
+      "dataKey" : "dsStringEmail1006",
+      "dataPath" : "dsStringEmail1006"
+    }
+  }, {
+    "_id" : "610a88144a01114895e9866e",
+    "type" : "String",
+    "key" : "dsStringEmail1007",
+    "properties" : {
+      "name" : "DS STRING EMAIL 1007",
+      "required" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "createOnly" : true,
+      "email" : true,
+      "dataKey" : "dsStringEmail1007",
+      "dataPath" : "dsStringEmail1007"
+    }
+  }, {
+    "_id" : "610a88144a01110dfde9866f",
+    "type" : "String",
+    "key" : "dsStringEmail1008",
+    "properties" : {
+      "name" : "DS STRING EMAIL 1008",
+      "required" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "unique" : true,
+      "email" : true,
+      "dataKey" : "dsStringEmail1008",
+      "dataPath" : "dsStringEmail1008"
+    }
+  }, {
+    "_id" : "610a88144a011145b1e98670",
+    "type" : "String",
+    "key" : "dsStringEmail1010",
+    "properties" : {
+      "name" : "DS STRING EMAIL 1010",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "createOnly" : true,
+      "unique" : true,
+      "email" : true,
+      "dataKey" : "dsStringEmail1010",
+      "dataPath" : "dsStringEmail1010"
+    }
+  }, {
+    "_id" : "610a88144a0111c077e98671",
+    "type" : "String",
+    "key" : "dsStringEmail1011",
+    "properties" : {
+      "readonly" : true,
+      "name" : "DS STRING EMAIL 1011",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "createOnly" : true,
+      "email" : true,
+      "dataKey" : "dsStringEmail1011",
+      "dataPath" : "dsStringEmail1011"
+    }
+  }, {
+    "_id" : "610a88144a0111da43e98672",
+    "type" : "String",
+    "key" : "dsStringEmail1012",
+    "properties" : {
+      "readonly" : true,
+      "name" : "DS STRING EMAIL 1012",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "unique" : true,
+      "email" : true,
+      "dataKey" : "dsStringEmail1012",
+      "dataPath" : "dsStringEmail1012"
+    }
+  }, {
+    "_id" : "610a88144a0111b6f3e98673",
+    "type" : "String",
+    "key" : "dsStringEmail1013",
+    "properties" : {
+      "label" : "DS-STRING-EMAIL-1013 label",
+      "name" : "DS STRING EMAIL 1013",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "email" : true,
+      "dataKey" : "dsStringEmail1013",
+      "dataPath" : "dsStringEmail1013"
+    }
+  }, {
+    "_id" : "610a88144a01117a40e98674",
+    "type" : "String",
+    "key" : "dsStringEmail1014",
+    "properties" : {
+      "errorMessage" : "DS-STRING-EMAIL-1014 error",
+      "name" : "DS STRING EMAIL 1014",
+      "required" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "email" : true,
+      "dataKey" : "dsStringEmail1014",
+      "dataPath" : "dsStringEmail1014"
+    }
+  }, {
+    "_id" : "610a88144a01111e22e98675",
+    "type" : "String",
+    "key" : "dsStringEmail1015",
+    "properties" : {
+      "label" : "DS-STRING-EMAIL-1015 label",
+      "errorMessage" : "DS-STRING-EMAIL-1015 error",
+      "name" : "DS STRING EMAIL 1015",
+      "required" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "email" : true,
+      "dataKey" : "dsStringEmail1015",
+      "dataPath" : "dsStringEmail1015"
+    }
+  }, {
+    "_id" : "610a88144a01116cd4e98676",
+    "type" : "String",
+    "key" : "dsStringEmail1016",
+    "properties" : {
+      "label" : "DS-STRING-EMAIL-1016 label",
+      "readonly" : true,
+      "name" : "DS STRING EMAIL 1016",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "email" : true,
+      "dataKey" : "dsStringEmail1016",
+      "dataPath" : "dsStringEmail1016"
+    }
+  }, {
+    "_id" : "610a88144a0111d871e98677",
+    "type" : "String",
+    "key" : "dsStringEmail1018",
+    "properties" : {
+      "name" : "DS STRING EMAIL 1018",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "default" : "abc@yahoo.com",
+      "email" : true,
+      "dataKey" : "dsStringEmail1018",
+      "dataPath" : "dsStringEmail1018"
+    }
+  }, {
+    "_id" : "610a88144a01111822e98678",
+    "type" : "String",
+    "key" : "dsStringEmail1019",
+    "properties" : {
+      "readonly" : true,
+      "name" : "DS STRING EMAIL 1019",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "default" : "abc@yahoo.com",
+      "email" : true,
+      "dataKey" : "dsStringEmail1019",
+      "dataPath" : "dsStringEmail1019"
+    }
+  }, {
+    "_id" : "610a88144a011158f7e98679",
+    "type" : "String",
+    "key" : "dsStringEmail1020",
+    "properties" : {
+      "name" : "DS STRING EMAIL 1020",
+      "fieldLength" : 10,
+      "_description" : "DS-STRING-EMAIL-1020 Enable",
+      "_typeChanged" : "String",
+      "email" : true,
+      "dataKey" : "dsStringEmail1020",
+      "dataPath" : "dsStringEmail1020"
+    }
+  } ],
+  "headers" : [ ],
+  "relatedSchemas" : {
+    "internal" : {
+      "users" : [ ]
     },
-    "app": "vTest",
-    "entity": "SRVC4505",
-    "entityName": "string_Email",
-    "roles": [
-      {
-        "skipReviewRole": true,
-        "id": "P1498627551",
-        "name": "Skip Review",
-        "operations": [
-          {
-            "method": "SKIP_REVIEW"
-          },
-          {
-            "method": "POST"
-          },
-          {
-            "method": "PUT"
-          },
-          {
-            "method": "DELETE"
-          }
-        ],
-        "description": "This role entitles an authorized user to create, update or delete a record and without any approval"
-      },
-      {
-        "manageRole": true,
-        "id": "P8748896050",
-        "name": "Manage",
-        "operations": [
-          {
-            "method": "POST"
-          },
-          {
-            "method": "PUT"
-          },
-          {
-            "method": "DELETE"
-          },
-          {
-            "method": "GET"
-          }
-        ],
-        "description": "This role entitles an authorized user to create, update or delete a record"
-      },
-      {
-        "viewRole": true,
-        "id": "P3336386049",
-        "name": "View",
-        "operations": [
-          {
-            "method": "GET"
-          }
-        ],
-        "description": "This role entitles an authorized user to view the record"
-      }
-    ],
-    "type": "appcenter",
-    "fields": {
-      "_id": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      },
-      "dsStringEmail1001": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      },
-      "dsStringEmail1002": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      },
-      "dsStringEmail1003": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      },
-      "dsStringEmail1004": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      },
-      "dsStringEmail1005": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      },
-      "dsStringEmail1006": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      },
-      "dsStringEmail1007": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      },
-      "dsStringEmail1008": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      },
-      "dsStringEmail1010": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      },
-      "dsStringEmail1011": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      },
-      "dsStringEmail1012": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      },
-      "dsStringEmail1013": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      },
-      "dsStringEmail1014": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      },
-      "dsStringEmail1015": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      },
-      "dsStringEmail1016": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      },
-      "dsStringEmail1018": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      },
-      "dsStringEmail1019": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      },
-      "dsStringEmail1020": {
-        "_t": "String",
-        "_p": {
-          "P1498627551": "R",
-          "P8748896050": "R",
-          "P3336386049": "R"
-        }
-      }
-    },
-    "__v": 0
+    "outgoing" : [ ]
   },
-  "relatedSchemas": {
-    "internal": {
-      "users": []
+  "role" : {
+    "_id" : "SRVC5655",
+    "_metadata" : {
+      "version" : {
+        "document" : 1,
+        "release" : "dev"
+      },
+      "deleted" : false,
+      "lastUpdated" : "2021-08-04T11:15:04.659Z",
+      "createdAt" : "2021-08-04T11:15:04.656Z"
     },
-    "outgoing": []
+    "app" : "vTest",
+    "entity" : "SRVC5655",
+    "entityName" : "string_Email",
+    "roles" : [ {
+      "skipReviewRole" : true,
+      "id" : "P2137584536",
+      "name" : "Skip Review",
+      "operations" : [ {
+        "method" : "SKIP_REVIEW"
+      }, {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record and without any approval"
+    }, {
+      "manageRole" : true,
+      "id" : "P5027347486",
+      "name" : "Manage",
+      "operations" : [ {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      }, {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record"
+    }, {
+      "viewRole" : true,
+      "id" : "P9497591403",
+      "name" : "View",
+      "operations" : [ {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to view the record"
+    } ],
+    "type" : "appcenter",
+    "fields" : {
+      "_id" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      },
+      "dsStringEmail1001" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      },
+      "dsStringEmail1002" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      },
+      "dsStringEmail1003" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      },
+      "dsStringEmail1004" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      },
+      "dsStringEmail1005" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      },
+      "dsStringEmail1006" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      },
+      "dsStringEmail1007" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      },
+      "dsStringEmail1008" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      },
+      "dsStringEmail1010" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      },
+      "dsStringEmail1011" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      },
+      "dsStringEmail1012" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      },
+      "dsStringEmail1013" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      },
+      "dsStringEmail1014" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      },
+      "dsStringEmail1015" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      },
+      "dsStringEmail1016" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      },
+      "dsStringEmail1018" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      },
+      "dsStringEmail1019" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      },
+      "dsStringEmail1020" : {
+        "_t" : "String",
+        "_p" : {
+          "P2137584536" : "R",
+          "P5027347486" : "R",
+          "P9497591403" : "R"
+        }
+      }
+    },
+    "__v" : 0
   }
 }

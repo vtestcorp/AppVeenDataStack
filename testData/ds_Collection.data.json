@@ -1,0 +1,169 @@
+{
+  "workflowHooks" : {
+    "postHooks" : {
+      "submit" : [ ],
+      "rework" : [ ],
+      "discard" : [ ],
+      "approve" : [ ],
+      "reject" : [ ]
+    }
+  },
+  "_metadata" : {
+    "version" : {
+      "document" : 8,
+      "release" : "dev"
+    },
+    "deleted" : false,
+    "lastUpdated" : "2021-08-03T05:36:55.194Z",
+    "createdAt" : "2021-08-03T05:18:18.939Z",
+    "lastUpdatedBy" : "deepak@appveen.com"
+  },
+  "_id" : "SRVC5529",
+  "allowedFileTypes" : [ "jpeg", "ppt", "xls", "csv", "doc", "jpg", "png", "gif", "zip", "tar", "rar", "gz", "bz2", "7z", "mp4", "mp3", "pdf", "ico", "docx", "pptx", "xlsx", "ods", "xml", "txt" ],
+  "version" : 3,
+  "instances" : 1,
+  "versionValidity" : {
+    "validityType" : "count",
+    "validityValue" : -1
+  },
+  "permanentDeleteData" : true,
+  "disableInsights" : false,
+  "status" : "Active",
+  "enableSearchIndex" : false,
+  "attributeCount" : 2,
+  "type" : null,
+  "name" : "Sample1",
+  "description" : null,
+  "app" : "vTest",
+  "api" : "/sample1",
+  "port" : 20152,
+  "wizard" : [ ],
+  "webHooks" : [ ],
+  "preHooks" : [ ],
+  "collectionName" : "sample1",
+  "__v" : 0,
+  "definition" : [ {
+    "_id" : "6108d5f7bc74ac2de1d75cbd",
+    "key" : "_id",
+    "type" : "String",
+    "prefix" : "SAM",
+    "suffix" : null,
+    "padding" : null,
+    "counter" : 1001,
+    "properties" : {
+      "label" : null,
+      "readonly" : false,
+      "errorMessage" : null,
+      "name" : "ID",
+      "required" : false,
+      "fieldLength" : 10,
+      "_description" : null,
+      "_typeChanged" : "id",
+      "_isParrentArray" : null,
+      "_isGrpParentArray" : null,
+      "dataPath" : "_id",
+      "_detailedType" : "",
+      "dataKey" : "_id"
+    }
+  }, {
+    "_id" : "6108d5f7bc74ac21e4d75cbe",
+    "type" : "Array",
+    "key" : "collection1001",
+    "properties" : {
+      "name" : "COLLECTION 1001",
+      "fieldLength" : 10,
+      "_typeChanged" : "Array",
+      "dataKey" : "collection1001[#]",
+      "dataPath" : "collection1001[#]"
+    },
+    "definition" : [ {
+      "type" : "String",
+      "key" : "_self",
+      "properties" : {
+        "name" : "_self",
+        "fieldLength" : 10,
+        "_typeChanged" : "String"
+      }
+    } ]
+  } ],
+  "headers" : [ ],
+  "relatedSchemas" : {
+    "internal" : {
+      "users" : [ ]
+    },
+    "outgoing" : [ ]
+  },
+  "role" : {
+    "_id" : "SRVC5529",
+    "_metadata" : {
+      "version" : {
+        "document" : 1,
+        "release" : "dev"
+      },
+      "deleted" : false,
+      "lastUpdated" : "2021-08-03T05:18:18.972Z",
+      "createdAt" : "2021-08-03T05:18:18.969Z"
+    },
+    "app" : "vTest",
+    "entity" : "SRVC5529",
+    "entityName" : "Sample1",
+    "roles" : [ {
+      "skipReviewRole" : true,
+      "id" : "P5486806610",
+      "name" : "Skip Review",
+      "operations" : [ {
+        "method" : "SKIP_REVIEW"
+      }, {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record and without any approval"
+    }, {
+      "manageRole" : true,
+      "id" : "P7740896192",
+      "name" : "Manage",
+      "operations" : [ {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      }, {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record"
+    }, {
+      "viewRole" : true,
+      "id" : "P2074389531",
+      "name" : "View",
+      "operations" : [ {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to view the record"
+    } ],
+    "type" : "appcenter",
+    "fields" : {
+      "_id" : {
+        "_t" : "String",
+        "_p" : {
+          "P5486806610" : "R",
+          "P7740896192" : "R",
+          "P2074389531" : "R"
+        }
+      },
+      "collection1001" : {
+        "_t" : "Array",
+        "_p" : {
+          "P5486806610" : "R",
+          "P7740896192" : "R",
+          "P2074389531" : "R"
+        }
+      }
+    },
+    "__v" : 0
+  },
+  "draftVersion" : null
+}
