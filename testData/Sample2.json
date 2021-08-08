@@ -10,16 +10,17 @@
   },
   "_metadata" : {
     "version" : {
-      "document" : 2,
+      "document" : 8,
       "release" : "dev"
     },
     "deleted" : false,
-    "lastUpdated" : "2021-08-01T18:08:18.685Z",
-    "createdAt" : "2021-08-01T17:52:47.707Z",
+    "lastUpdated" : "2021-08-07T14:12:42.226Z",
+    "createdAt" : "2021-08-06T11:16:34.251Z",
     "lastUpdatedBy" : "deepak@appveen.com"
   },
+  "_id" : "SRVC5776",
   "allowedFileTypes" : [ "jpeg", "ppt", "xls", "csv", "doc", "jpg", "png", "gif", "zip", "tar", "rar", "gz", "bz2", "7z", "mp4", "mp3", "pdf", "ico", "docx", "pptx", "xlsx", "ods", "xml", "txt" ],
-  "version" : 1,
+  "version" : 3,
   "instances" : 1,
   "versionValidity" : {
     "validityType" : "count",
@@ -27,23 +28,22 @@
   },
   "permanentDeleteData" : true,
   "disableInsights" : false,
-  "status" : "Draft",
+  "status" : "Active",
   "enableSearchIndex" : false,
-  "attributeCount" : 3,
+  "attributeCount" : 2,
   "type" : null,
-  "_id" : "SRVC5383",
-  "name" : "Sample2",
+  "name" : "Sample1",
   "description" : null,
   "app" : "vTest",
-  "api" : "/sample2",
-  "port" : 20172,
+  "api" : "/sample1",
+  "port" : 20152,
   "wizard" : [ ],
   "webHooks" : [ ],
   "preHooks" : [ ],
-  "collectionName" : "sample2",
-  "__v" : 1,
+  "collectionName" : "sample1",
+  "__v" : 0,
   "definition" : [ {
-    "_id" : "6106e312e53e2bbf08674e09",
+    "_id" : "610e94da03163d45d614758c",
     "key" : "_id",
     "type" : "String",
     "prefix" : "SAM",
@@ -66,102 +66,42 @@
       "dataKey" : "_id"
     }
   }, {
-    "_id" : "6106e312e53e2b1f02674e0a",
-    "type" : "Object",
-    "key" : "1",
+    "_id" : "610e94da03163dffdd14758d",
+    "type" : "File",
+    "key" : "dsLocation1001",
     "properties" : {
-      "name" : "1",
+      "name" : "DS LOCATION 1001",
       "fieldLength" : 10,
-      "_typeChanged" : "Object",
-      "dataKey" : "1",
-      "dataPath" : "1"
-    },
-    "definition" : [ {
-      "type" : "Object",
-      "key" : "2",
-      "properties" : {
-        "name" : "2",
-        "fieldLength" : 10,
-        "_typeChanged" : "Object",
-        "dataKey" : "2",
-        "dataPath" : "1.2"
-      },
-      "definition" : [ {
-        "type" : "String",
-        "key" : "3",
-        "properties" : {
-          "name" : "3",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "longText" : true,
-          "dataKey" : "3",
-          "dataPath" : "1.2.3"
-        }
-      } ]
-    } ]
-  }, {
-    "_id" : "6106e312e53e2b44eb674e0b",
-    "type" : "Object",
-    "key" : "5",
-    "properties" : {
-      "name" : "5",
-      "fieldLength" : 10,
-      "_typeChanged" : "Object",
-      "dataKey" : "5",
-      "dataPath" : "5"
-    },
-    "definition" : [ {
-      "type" : "Object",
-      "key" : "6",
-      "properties" : {
-        "name" : "6",
-        "fieldLength" : 10,
-        "_typeChanged" : "Object",
-        "dataKey" : "6",
-        "dataPath" : "5.6"
-      },
-      "definition" : [ {
-        "type" : "Object",
-        "key" : "7",
-        "properties" : {
-          "name" : "7",
-          "fieldLength" : 10,
-          "_typeChanged" : "Object",
-          "dataKey" : "7",
-          "dataPath" : "5.6.7"
-        },
-        "definition" : [ {
-          "type" : "Boolean",
-          "key" : "8",
-          "properties" : {
-            "name" : "8",
-            "fieldLength" : 10,
-            "_typeChanged" : "Boolean",
-            "dataKey" : "8",
-            "dataPath" : "5.6.7.8"
-          }
-        } ]
-      } ]
-    } ]
+      "_typeChanged" : "File",
+      "fileType" : "All",
+      "dataKey" : "dsLocation1001",
+      "dataPath" : "dsLocation1001"
+    }
   } ],
   "headers" : [ ],
+  "relatedSchemas" : {
+    "internal" : {
+      "users" : [ ]
+    },
+    "outgoing" : [ ]
+  },
   "role" : {
-    "_id" : "SRVC5383",
+    "_id" : "SRVC5776",
     "_metadata" : {
       "version" : {
         "document" : 1,
         "release" : "dev"
       },
       "deleted" : false,
-      "lastUpdated" : "2021-08-01T17:52:47.726Z",
-      "createdAt" : "2021-08-01T17:52:47.725Z"
+      "lastUpdated" : "2021-08-06T11:16:34.276Z",
+      "createdAt" : "2021-08-06T11:16:34.272Z"
     },
     "app" : "vTest",
-    "entity" : "SRVC5383",
-    "entityName" : "Sample2",
+    "entity" : "SRVC5776",
+    "entityName" : "Sample1",
     "roles" : [ {
       "skipReviewRole" : true,
-      "id" : "P7711756733",
+      "id" : "P4696992897",
       "name" : "Skip Review",
       "operations" : [ {
         "method" : "SKIP_REVIEW"
@@ -175,7 +115,7 @@
       "description" : "This role entitles an authorized user to create, update or delete a record and without any approval"
     }, {
       "manageRole" : true,
-      "id" : "P1414055653",
+      "id" : "P5324749241",
       "name" : "Manage",
       "operations" : [ {
         "method" : "POST"
@@ -189,7 +129,7 @@
       "description" : "This role entitles an authorized user to create, update or delete a record"
     }, {
       "viewRole" : true,
-      "id" : "P1147302610",
+      "id" : "P2819964536",
       "name" : "View",
       "operations" : [ {
         "method" : "GET"
@@ -198,47 +138,24 @@
     } ],
     "type" : "appcenter",
     "fields" : {
-      "1" : {
-        "2" : {
-          "3" : {
-            "_t" : "String",
-            "_p" : {
-              "P7711756733" : "R",
-              "P1414055653" : "R",
-              "P1147302610" : "R"
-            }
-          }
-        }
-      },
-      "5" : {
-        "6" : {
-          "7" : {
-            "8" : {
-              "_t" : "Boolean",
-              "_p" : {
-                "P7711756733" : "R",
-                "P1414055653" : "R",
-                "P1147302610" : "R"
-              }
-            }
-          }
-        }
-      },
       "_id" : {
         "_t" : "String",
         "_p" : {
-          "P7711756733" : "R",
-          "P1414055653" : "R",
-          "P1147302610" : "R"
+          "P4696992897" : "R",
+          "P5324749241" : "R",
+          "P2819964536" : "R"
+        }
+      },
+      "dsLocation1001" : {
+        "_t" : "String",
+        "_p" : {
+          "P4696992897" : "R",
+          "P5324749241" : "R",
+          "P2819964536" : "R"
         }
       }
     },
     "__v" : 0
   },
-  "relatedSchemas" : {
-    "internal" : {
-      "users" : [ ]
-    },
-    "outgoing" : [ ]
-  }
+  "draftVersion" : null
 }

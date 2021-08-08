@@ -36,9 +36,12 @@ public class Object_AppCenterPage extends BaseClass{
 
 	@FindBy(xpath="(//div[starts-with(@class,'logo')])[1]")
 	public WebElement dataStackLogo;
-
-//	@FindBy(xpath="//input[contains(@class,'form')]")
-//	public List<WebElement> textBoxes;
+	
+	@FindBy(xpath="//div[@class='list-item-label d-flex align-items-center text-truncate']")
+	public WebElement dataServiceName;
+	
+	@FindBy(xpath="//*[contains(@class,'form-control')]")
+	public WebElement textBox1;
 	
 	@FindBy(xpath="//*[contains(@class,'form-control')]")
 	public List<WebElement> textBoxes;

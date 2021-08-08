@@ -1,5 +1,6 @@
 package pageModules;
 
+import java.net.MalformedURLException;
 import java.util.List;
 
 import org.json.simple.JSONArray;
@@ -75,16 +76,17 @@ public class LoginAppCenter extends BaseClass {
 
 	public void dataService(String dataService) throws Exception {
 		data_Service = dataService;
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+		applyExplicitWaitsUntilElementVisible(acp.dataServiceName);
 		WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
 		javascriptClick = new JavascriptClick(driver);
 		data.click();
 	}
 
 	public void userEnterData() throws Exception {
-		Thread.sleep(2000);
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-		Thread.sleep(3000);
+		applyExplicitWaitsUntilElementVisible(acp.textBox1);
 		List<WebElement> textBoxes = acp.textBoxes;
 		System.out.println(textBoxes.size());
 		String path = System.getProperty("user.dir");
@@ -140,26 +142,27 @@ public class LoginAppCenter extends BaseClass {
 				if (textBox.isEnabled()) {
 					String id1 = textBox.getAttribute("id");
 					String value1=JsonUtils.getJsonValue(filePath,id1);
+				
 
 					
 					if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")||textBox.getAttribute("type").equals("select-one")) {
-							if (value1 != null) {
+							if (jsonObject.get(id1) != null) {
 
 							if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
 								applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1);
 							}
 
 							if (textBox.getAttribute("type").equals("select-one")) {
-								if( jsonObject.get(id1).equals("")) {
+								if( JsonUtils.getJsonValue(filePath,id1).equals("")) {
 									textBox.click();
 								}
 								else {
 									
 										if(jsonObject.get(id1).getClass().toString().contains("Long")) {
-											dropdown.selectByVisibleText(textBox, ( jsonObject.get(id1).toString()));
+											dropdown.selectByVisibleText(textBox, jsonObject.get(id1).toString());
 										}
 										else {
-											dropdown.selectByVisibleText(textBox, ((String) jsonObject.get(id1)).toString());
+											dropdown.selectByVisibleText(textBox, (JsonUtils.getJsonValue(filePath,id1)).toString());
 										}
 								
 								}
@@ -170,8 +173,8 @@ public class LoginAppCenter extends BaseClass {
 					}
 
 					else if (textBox.getAttribute("type").equals("number") ||textBox.getAttribute("type").equals("select-one")) {
-							if(jsonObject.get(id1).getClass().toString().contains("Double")) {
-								if ((Double) jsonObject.get(id1) != null) {
+							if(JsonUtils.getJsonValue(filePath,id1).getClass().toString().contains("Double")) {
+								if (jsonObject.get(id1) != null) {
 		
 									if (textBox.getAttribute("type").equals("number")) {
 										Double value = (Double) jsonObject.get(id1);
@@ -187,7 +190,7 @@ public class LoginAppCenter extends BaseClass {
 								}
 							}
 						
-						else if(jsonObject.get(id1).getClass().toString().contains("Long")) {
+						else if(JsonUtils.getJsonValue(filePath,id1).getClass().toString().contains("Long")) {
 							if ((Long) jsonObject.get(id1) != null) {
 
 								if (textBox.getAttribute("type").equals("number")) {
@@ -203,8 +206,34 @@ public class LoginAppCenter extends BaseClass {
 								}
 							}
 							}
+							
+						else if(JsonUtils.getJsonValue(filePath,id1).getClass().toString().contains("Integer")) {
+							if ((Integer) jsonObject.get(id1) != null) {
+
+								if (textBox.getAttribute("type").equals("number")) {
+									Integer value = (Integer) jsonObject.get(id1);
+									applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value.toString());
+									
+								}
+								
+								if (textBox.getAttribute("type").equals("select-one")) {
+
+									dropdown.selectByVisibleText(textBox, ((Integer) jsonObject.get(id1)).toString());
+
+								}
+							}
+							}
+							
+						else {
+							dropdown.selectByVisibleText(textBox, (JsonUtils.getJsonValue(filePath,id1).toString()));
+						}
 
 					}
+					
+					else if (textBox.getAttribute("type").equals("email")) {
+						applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1.toString());
+					}
+
 				}
 			}
 
@@ -262,6 +291,33 @@ public class LoginAppCenter extends BaseClass {
 			acp.yes.click();
 
 		}
+
+	}
+
+	public void addDataForFile() throws Exception {
+		//input[@class='invisible position-absolute']
+		
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton);
+		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		applyExplicitWaitsUntilElementVisible(acp.textBox1);
+		List<WebElement> textBoxes = acp.textBoxes;
+		System.out.println(textBoxes.size());
+		String path = System.getProperty("user.dir");
+		String filePath=path + "\\testData\\" + data_Service + ".data.json";
+		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
+		
+			WebElement textBox = driver.findElement(By.xpath("//input[@class='invisible position-absolute']"));
+				String id1 = textBox.getAttribute("id");
+				String value1=JsonUtils.getJsonValue(filePath,id1);
+			
+		
+		JSONObject json=(JSONObject) jsonObject.get(id1);
+		System.out.println(json);
+//		String value2=JsonUtils.getJsonValue(filePath,"$.dsLocation1001.metadata.filename");
+		String value2="C:\\Users\\DELL\\Desktop\\Date & Time.png";
+		System.out.println(value2);
+		textBox.sendKeys(value2);
+		
 
 	}
 

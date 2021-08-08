@@ -1,0 +1,90 @@
+{
+  "_metadata" : {
+    "deleted" : false,
+    "lastUpdated" : "2021-08-07T14:08:18.114Z",
+    "version" : {
+      "release" : "dev",
+      "document" : 1
+    },
+    "createdAt" : "2021-08-07T14:08:18.114Z"
+  },
+  "_id" : "DS1001",
+  "dsFile1001" : {
+    "_id" : "610e93a94a5855543350ea79",
+    "length" : 95356,
+    "chunkSize" : 261120,
+    "uploadDate" : "2021-08-07T14:07:37.518Z",
+    "filename" : "627abf6bf06edaf00adc67c445b8df56",
+    "md5" : "de35af4d283beb68e0a51d1ac8b629fe",
+    "contentType" : "image/png",
+    "metadata" : {
+      "filename" : "C:\\Users\\DELL\\Desktop\\Date & Time.png"
+    }
+  },
+  "dsFile1002" : {
+    "_id" : "610e93b04a5855e88350ea7b",
+    "length" : 95356,
+    "chunkSize" : 261120,
+    "uploadDate" : "2021-08-07T14:07:44.814Z",
+    "filename" : "4ec4c8d6fa6263cba5c6d6a12c1d5779",
+    "md5" : "de35af4d283beb68e0a51d1ac8b629fe",
+    "contentType" : "image/png",
+    "metadata" : {
+      "filename" : "C:\\Users\\DELL\\Desktop\\Date & Time.png"
+    }
+  },
+  "dsFile1003" : {
+    "_id" : "610e93c54a585559dd50ea83",
+    "length" : 95356,
+    "chunkSize" : 261120,
+    "uploadDate" : "2021-08-07T14:08:06.014Z",
+    "filename" : "7901eeee0e8b71e7978a090fbef4ce9a",
+    "md5" : "de35af4d283beb68e0a51d1ac8b629fe",
+    "contentType" : "image/png",
+    "metadata" : {
+      "filename" : "C:\\Users\\DELL\\Desktop\\Date & Time.png"
+    }
+  },
+  "dsFile1004" : null,
+  "dsFile1005" : null,
+  "dsFile1006" : {
+    "_id" : "610e93b54a5855e63850ea7d",
+    "length" : 95356,
+    "chunkSize" : 261120,
+    "uploadDate" : "2021-08-07T14:07:49.186Z",
+    "filename" : "9089130915fb9afc0f2608104c7f1d86",
+    "md5" : "de35af4d283beb68e0a51d1ac8b629fe",
+    "contentType" : "image/png",
+    "metadata" : {
+      "filename" : "C:\\Users\\DELL\\Desktop\\Date & Time.png"
+    }
+  },
+  "dsFile1008" : null,
+  "dsFile1010" : null,
+  "dsFile1011" : {
+    "_id" : "610e93b94a5855ff8650ea7f",
+    "length" : 95356,
+    "chunkSize" : 261120,
+    "uploadDate" : "2021-08-07T14:07:53.235Z",
+    "filename" : "afce8aac42dbe95e15d1d18ac139b803",
+    "md5" : "de35af4d283beb68e0a51d1ac8b629fe",
+    "contentType" : "image/png",
+    "metadata" : {
+      "filename" : "C:\\Users\\DELL\\Desktop\\Date & Time.png"
+    }
+  },
+  "dsFile1012" : {
+    "_id" : "610e93be4a58553b5750ea81",
+    "length" : 95356,
+    "chunkSize" : 261120,
+    "uploadDate" : "2021-08-07T14:07:58.811Z",
+    "filename" : "ba6e14cd3118457734261613c4b808ed",
+    "md5" : "de35af4d283beb68e0a51d1ac8b629fe",
+    "contentType" : "image/png",
+    "metadata" : {
+      "filename" : "C:\\Users\\DELL\\Desktop\\Date & Time.png"
+    }
+  },
+  "dsFile1013" : null,
+  "__v" : 0
+}
