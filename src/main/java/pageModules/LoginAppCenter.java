@@ -145,16 +145,6 @@ public class LoginAppCenter extends BaseClass {
 
 
 							if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
-//								if (id1.contains(".")) {
-//									String[] attributes = id1.trim().split("[^a-zA-Z0-9]+");
-//
-//									JSONObject obj = (JSONObject) jsonObject.get(attributes[0]);
-//									applyWait.waitForElementToBeClickable(textBox, 30).sendKeys((String) obj.get(attributes[1]));
-//
-//								} else {
-//									applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(((String) jsonObject.get(id1)).toString());
-//									
-//								}
 								applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1);
 							}
 
@@ -180,7 +170,7 @@ public class LoginAppCenter extends BaseClass {
 					}
 
 					else if (textBox.getAttribute("type").equals("number") ||textBox.getAttribute("type").equals("select-one")) {
-							if(JsonUtils.getJsonValue(filePath,id1).getClass().toString().contains("Double")) {
+							if(jsonObject.get(id1).getClass().toString().contains("Double")) {
 								if (jsonObject.get(id1) != null) {
 		
 									if (textBox.getAttribute("type").equals("number")) {
@@ -197,8 +187,8 @@ public class LoginAppCenter extends BaseClass {
 								}
 							}
 						
-						else if(JsonUtils.getJsonValue(filePath,id1).getClass().toString().contains("Long")) {
-							if ((Long) jsonObject.get(id1) != null) {
+						else if(jsonObject.get(id1).getClass().toString().contains("Long")) {
+							if (jsonObject.get(id1) != null) {
 
 								if (textBox.getAttribute("type").equals("number")) {
 									Long value = (Long) jsonObject.get(id1);
@@ -214,8 +204,8 @@ public class LoginAppCenter extends BaseClass {
 							}
 							}
 							
-						else if(JsonUtils.getJsonValue(filePath,id1).getClass().toString().contains("Integer")) {
-							if ((Integer) jsonObject.get(id1) != null) {
+						else if(jsonObject.get(id1).getClass().toString().contains("Integer")) {
+							if ( jsonObject.get(id1) != null) {
 
 								if (textBox.getAttribute("type").equals("number")) {
 									Integer value = (Integer) jsonObject.get(id1);
@@ -241,11 +231,8 @@ public class LoginAppCenter extends BaseClass {
 					else if (textBox.getAttribute("type").equals("email")) {
 						applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1.toString());
 					}
-
 				}
 			}
-     
-			
 		}
 		
 		
@@ -376,25 +363,32 @@ public class LoginAppCenter extends BaseClass {
 		applyExplicitWaitsUntilElementVisible(acp.addDataButton);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		applyExplicitWaitsUntilElementVisible(acp.textBox1);
-		List<WebElement> textBoxes = acp.textBoxes;
+		List<WebElement> textBoxes = driver.findElements(By.xpath("//input[@class='invisible position-absolute' or @id='_id']"));
 		System.out.println(textBoxes.size());
 		String path = System.getProperty("user.dir");
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
 		
-			WebElement textBox = driver.findElement(By.xpath("//input[@class='invisible position-absolute']"));
+		for(int  i=1;i<=textBoxes.size();i++) {
+		
+			WebElement textBox = driver.findElement(By.xpath("(//input[@class='invisible position-absolute' or @id='_id'])["+i+"]"));
 				String id1 = textBox.getAttribute("id");
-				String value1=JsonUtils.getJsonValue(filePath,id1);
+		if(id1.equals("_id")) {
+			String value=(String) jsonObject.get(id1);
+			textBox.sendKeys(value);
+		}
+		else {
 			
-		
 		JSONObject json=(JSONObject) jsonObject.get(id1);
-		System.out.println(json);
-//		String value2=JsonUtils.getJsonValue(filePath,"$.dsLocation1001.metadata.filename");
-		String value2="C:\\Users\\DELL\\Desktop\\Date & Time.png";
-		System.out.println(value2);
-		textBox.sendKeys(value2);
+		if(json!=null) {
+			JSONObject value2=(JSONObject) json.get("metadata");
+			String value=(String) value2.get("filename");
+			textBox.sendKeys(value);
+			Thread.sleep(1000);
+		}}
+		}
 		
-
+		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	}
 
 	

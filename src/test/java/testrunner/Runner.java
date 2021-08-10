@@ -7,9 +7,8 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="./testcases/stringsSample (1).feature",
+@CucumberOptions(features="./testcases/ds_Library.feature",
 //				dryRun=true,
-		//		tags="@AppCenter",
 				glue="stepdefinitions",
 				monochrome=true,
 				plugin = { "pretty", "html:target/cucumber-reports" ,"json:target/cucumber-reports/cucumber.json" }

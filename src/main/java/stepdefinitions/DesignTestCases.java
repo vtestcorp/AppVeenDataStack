@@ -62,7 +62,6 @@ public class DesignTestCases extends BaseClass{
 	
 	@Given("Group {string} does not exist")
 	public void group_does_not_exist(String groupName) throws Exception {
-		Thread.sleep(10000);
 	    design.groupexist(groupName);
 	}
 
@@ -86,6 +85,13 @@ public class DesignTestCases extends BaseClass{
 	public void add_record_to_the_data_service(String string, String string2) throws Exception {
 	    design.addNewRecord(string,string2);
 	}
+	
+	@Then("Add record \"(.*?)\" to the data service for File Type")
+	public void add_record_to_File_Type(String string) throws Exception {
+	    design.addNewRecordForFile(string);
+	}
+	
+	
 
 	@Then("Expect error {string} on label {string}")
 	public void expect_error_on_label(String string, String string2) throws Exception {

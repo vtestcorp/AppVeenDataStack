@@ -1,0 +1,569 @@
+{
+  "workflowHooks": {
+    "postHooks": {
+      "submit": [],
+      "rework": [],
+      "discard": [],
+      "approve": [],
+      "reject": []
+    }
+  },
+  "_metadata": {
+    "version": {
+      "document": 6,
+      "release": "dev"
+    },
+    "deleted": false,
+    "lastUpdated": "2021-08-10T15:19:08.719Z",
+    "createdAt": "2021-08-10T10:05:51.758Z",
+    "lastUpdatedBy": "deepak@appveen.com"
+  },
+  "_id": "SRVC5968",
+  "allowedFileTypes": [
+    "jpeg",
+    "ppt",
+    "xls",
+    "csv",
+    "doc",
+    "jpg",
+    "png",
+    "gif",
+    "zip",
+    "tar",
+    "rar",
+    "gz",
+    "bz2",
+    "7z",
+    "mp4",
+    "mp3",
+    "pdf",
+    "ico",
+    "docx",
+    "pptx",
+    "xlsx",
+    "ods",
+    "xml",
+    "txt"
+  ],
+  "version": 2,
+  "instances": 1,
+  "versionValidity": {
+    "validityType": "count",
+    "validityValue": -1
+  },
+  "permanentDeleteData": true,
+  "disableInsights": false,
+  "status": "Undeployed",
+  "enableSearchIndex": false,
+  "attributeCount": 17,
+  "type": null,
+  "name": "ds_Library",
+  "description": null,
+  "app": "vTest",
+  "api": "/dsLibrary",
+  "port": 20191,
+  "wizard": [],
+  "webHooks": [],
+  "preHooks": [],
+  "collectionName": "dsLibrary",
+  "__v": 0,
+  "definition": [
+    {
+      "_id": "611298ec41dcd43c948d2814",
+      "key": "_id",
+      "type": "String",
+      "prefix": "DS",
+      "suffix": null,
+      "padding": null,
+      "counter": 1001,
+      "properties": {
+        "label": null,
+        "readonly": false,
+        "errorMessage": null,
+        "name": "ID",
+        "required": false,
+        "fieldLength": 10,
+        "_description": null,
+        "_typeChanged": "id",
+        "_isParrentArray": null,
+        "_isGrpParentArray": null,
+        "dataPath": "_id",
+        "_detailedType": "",
+        "dataKey": "_id"
+      }
+    },
+    {
+      "_id": "611298ec41dcd44d6a8d2815",
+      "definition": [
+        {
+          "_fieldId": "ef4b7860-f50e-11eb-9361-09610eb02943",
+          "type": "String",
+          "key": "line1",
+          "properties": {
+            "name": "Line 1",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "line1",
+            "dataPath": "line1"
+          }
+        },
+        {
+          "_fieldId": "ef4bed90-f50e-11eb-9361-09610eb02943",
+          "type": "String",
+          "key": "line2",
+          "properties": {
+            "name": "Line 2",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "line2",
+            "dataPath": "line2"
+          }
+        }
+      ],
+      "type": "Object",
+      "key": "dsLibrary1001",
+      "properties": {
+        "name": "DS LIBRARY 1001",
+        "fieldLength": 10,
+        "_typeChanged": "Global",
+        "schema": "SCHM2424",
+        "dataKey": "dsLibrary1001",
+        "dataPath": "dsLibrary1001"
+      }
+    },
+    {
+      "_id": "611298ec41dcd46ff18d2816",
+      "definition": [
+        {
+          "_fieldId": "ef4b7860-f50e-11eb-9361-09610eb02943",
+          "type": "String",
+          "key": "line1",
+          "properties": {
+            "name": "Line 1",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "line1",
+            "dataPath": "line1"
+          }
+        },
+        {
+          "_fieldId": "ef4bed90-f50e-11eb-9361-09610eb02943",
+          "type": "String",
+          "key": "line2",
+          "properties": {
+            "name": "Line 2",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "line2",
+            "dataPath": "line2"
+          }
+        }
+      ],
+      "type": "Object",
+      "key": "dsLibrary1002",
+      "properties": {
+        "label": "DS-LIBRARY-1002 Label",
+        "readonly": true,
+        "errorMessage": "DS-LIBRARY-1002 Error",
+        "name": "DS LIBRARY 1002",
+        "fieldLength": 10,
+        "_description": "DS-LIBRARY-1002",
+        "_typeChanged": "Global",
+        "schema": "SCHM2424",
+        "dataKey": "dsLibrary1002",
+        "dataPath": "dsLibrary1002"
+      }
+    },
+    {
+      "_id": "611298ec41dcd4237b8d2817",
+      "definition": [
+        {
+          "_fieldId": "ef4b7860-f50e-11eb-9361-09610eb02943",
+          "type": "String",
+          "key": "line1",
+          "properties": {
+            "name": "Line 1",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "line1",
+            "dataPath": "line1"
+          }
+        },
+        {
+          "_fieldId": "ef4bed90-f50e-11eb-9361-09610eb02943",
+          "type": "String",
+          "key": "line2",
+          "properties": {
+            "name": "Line 2",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "line2",
+            "dataPath": "line2"
+          }
+        }
+      ],
+      "type": "Object",
+      "key": "dsLibrary1003",
+      "properties": {
+        "name": "DS LIBRARY 1003",
+        "fieldLength": 10,
+        "_typeChanged": "Global",
+        "schema": "SCHM2424",
+        "dataKey": "dsLibrary1003",
+        "dataPath": "dsLibrary1003"
+      }
+    },
+    {
+      "_id": "611298ec41dcd431098d2818",
+      "definition": [
+        {
+          "_fieldId": "ef4b7860-f50e-11eb-9361-09610eb02943",
+          "type": "String",
+          "key": "line1",
+          "properties": {
+            "name": "Line 1",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "line1",
+            "dataPath": "line1"
+          }
+        },
+        {
+          "_fieldId": "ef4bed90-f50e-11eb-9361-09610eb02943",
+          "type": "String",
+          "key": "line2",
+          "properties": {
+            "name": "Line 2",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "line2",
+            "dataPath": "line2"
+          }
+        }
+      ],
+      "type": "Object",
+      "key": "dsLibrary1004",
+      "properties": {
+        "readonly": true,
+        "name": "DS LIBRARY 1004",
+        "fieldLength": 10,
+        "_typeChanged": "Global",
+        "schema": "SCHM2424",
+        "dataKey": "dsLibrary1004",
+        "dataPath": "dsLibrary1004"
+      }
+    },
+    {
+      "_id": "611298ec41dcd4454d8d2819",
+      "definition": [
+        {
+          "_fieldId": "ef4b7860-f50e-11eb-9361-09610eb02943",
+          "type": "String",
+          "key": "line1",
+          "properties": {
+            "name": "Line 1",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "line1",
+            "dataPath": "line1"
+          }
+        },
+        {
+          "_fieldId": "ef4bed90-f50e-11eb-9361-09610eb02943",
+          "type": "String",
+          "key": "line2",
+          "properties": {
+            "name": "Line 2",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "line2",
+            "dataPath": "line2"
+          }
+        }
+      ],
+      "type": "Object",
+      "key": "dsLibrary1005",
+      "properties": {
+        "label": "DS-LIBRARY-1005 Label",
+        "name": "DS LIBRARY 1005",
+        "fieldLength": 10,
+        "_typeChanged": "Global",
+        "schema": "SCHM2424",
+        "dataKey": "dsLibrary1005",
+        "dataPath": "dsLibrary1005"
+      }
+    },
+    {
+      "_id": "611298ec41dcd4fb768d281a",
+      "definition": [
+        {
+          "_fieldId": "ef4b7860-f50e-11eb-9361-09610eb02943",
+          "type": "String",
+          "key": "line1",
+          "properties": {
+            "name": "Line 1",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "line1",
+            "dataPath": "line1"
+          }
+        },
+        {
+          "_fieldId": "ef4bed90-f50e-11eb-9361-09610eb02943",
+          "type": "String",
+          "key": "line2",
+          "properties": {
+            "name": "Line 2",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "line2",
+            "dataPath": "line2"
+          }
+        }
+      ],
+      "type": "Object",
+      "key": "dsLibrary1006",
+      "properties": {
+        "errorMessage": "DS-LIBRARY-1006 Error",
+        "name": "DS LIBRARY 1006",
+        "fieldLength": 10,
+        "_typeChanged": "Global",
+        "schema": "SCHM2424",
+        "dataKey": "dsLibrary1006",
+        "dataPath": "dsLibrary1006"
+      }
+    },
+    {
+      "_id": "611298ec41dcd42bf38d281b",
+      "definition": [
+        {
+          "_fieldId": "ef4b7860-f50e-11eb-9361-09610eb02943",
+          "type": "String",
+          "key": "line1",
+          "properties": {
+            "name": "Line 1",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "line1",
+            "dataPath": "line1"
+          }
+        },
+        {
+          "_fieldId": "ef4bed90-f50e-11eb-9361-09610eb02943",
+          "type": "String",
+          "key": "line2",
+          "properties": {
+            "name": "Line 2",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "line2",
+            "dataPath": "line2"
+          }
+        }
+      ],
+      "type": "Object",
+      "key": "dsLibrary1007",
+      "properties": {
+        "label": "DS-LIBRARY-1007 Label",
+        "errorMessage": "DS-LIBRARY-1007 Error",
+        "name": "DS LIBRARY 1007",
+        "fieldLength": 10,
+        "_typeChanged": "Global",
+        "schema": "SCHM2424",
+        "dataKey": "dsLibrary1007",
+        "dataPath": "dsLibrary1007"
+      }
+    },
+    {
+      "_id": "611298ec41dcd432e68d281c",
+      "definition": [
+        {
+          "_fieldId": "ef4b7860-f50e-11eb-9361-09610eb02943",
+          "type": "String",
+          "key": "line1",
+          "properties": {
+            "name": "Line 1",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "line1",
+            "dataPath": "line1"
+          }
+        },
+        {
+          "_fieldId": "ef4bed90-f50e-11eb-9361-09610eb02943",
+          "type": "String",
+          "key": "line2",
+          "properties": {
+            "name": "Line 2",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "line2",
+            "dataPath": "line2"
+          }
+        }
+      ],
+      "type": "Object",
+      "key": "dsLibrary1008",
+      "properties": {
+        "name": "DS LIBRARY 1008",
+        "fieldLength": 10,
+        "_description": "DS-LIBRARY-1008 Enable",
+        "_typeChanged": "Global",
+        "schema": "SCHM2424",
+        "dataKey": "dsLibrary1008",
+        "dataPath": "dsLibrary1008"
+      }
+    }
+  ],
+  "headers": [],
+  "relatedSchemas": {
+    "internal": {
+      "users": []
+    },
+    "outgoing": []
+  },
+  "role": {
+    "_id": "SRVC5968",
+    "_metadata": {
+      "version": {
+        "document": 1,
+        "release": "dev"
+      },
+      "deleted": false,
+      "lastUpdated": "2021-08-10T10:05:51.850Z",
+      "createdAt": "2021-08-10T10:05:51.847Z"
+    },
+    "app": "vTest",
+    "entity": "SRVC5968",
+    "entityName": "ds_Library",
+    "roles": [
+      {
+        "skipReviewRole": true,
+        "id": "P1960712406",
+        "name": "Skip Review",
+        "operations": [
+          {
+            "method": "SKIP_REVIEW"
+          },
+          {
+            "method": "POST"
+          },
+          {
+            "method": "PUT"
+          },
+          {
+            "method": "DELETE"
+          }
+        ],
+        "description": "This role entitles an authorized user to create, update or delete a record and without any approval"
+      },
+      {
+        "manageRole": true,
+        "id": "P6203026306",
+        "name": "Manage",
+        "operations": [
+          {
+            "method": "POST"
+          },
+          {
+            "method": "PUT"
+          },
+          {
+            "method": "DELETE"
+          },
+          {
+            "method": "GET"
+          }
+        ],
+        "description": "This role entitles an authorized user to create, update or delete a record"
+      },
+      {
+        "viewRole": true,
+        "id": "P4007261491",
+        "name": "View",
+        "operations": [
+          {
+            "method": "GET"
+          }
+        ],
+        "description": "This role entitles an authorized user to view the record"
+      }
+    ],
+    "type": "appcenter",
+    "fields": {
+      "_id": {
+        "_t": "String",
+        "_p": {
+          "P1960712406": "R",
+          "P6203026306": "R",
+          "P4007261491": "R"
+        }
+      },
+      "dsLibrary1001": {
+        "_t": "String",
+        "_p": {
+          "P1960712406": "R",
+          "P6203026306": "R",
+          "P4007261491": "R"
+        }
+      },
+      "dsLibrary1002": {
+        "_t": "String",
+        "_p": {
+          "P1960712406": "R",
+          "P6203026306": "R",
+          "P4007261491": "R"
+        }
+      },
+      "dsLibrary1003": {
+        "_t": "String",
+        "_p": {
+          "P1960712406": "R",
+          "P6203026306": "R",
+          "P4007261491": "R"
+        }
+      },
+      "dsLibrary1004": {
+        "_t": "String",
+        "_p": {
+          "P1960712406": "R",
+          "P6203026306": "R",
+          "P4007261491": "R"
+        }
+      },
+      "dsLibrary1005": {
+        "_t": "String",
+        "_p": {
+          "P1960712406": "R",
+          "P6203026306": "R",
+          "P4007261491": "R"
+        }
+      },
+      "dsLibrary1006": {
+        "_t": "String",
+        "_p": {
+          "P1960712406": "R",
+          "P6203026306": "R",
+          "P4007261491": "R"
+        }
+      },
+      "dsLibrary1007": {
+        "_t": "String",
+        "_p": {
+          "P1960712406": "R",
+          "P6203026306": "R",
+          "P4007261491": "R"
+        }
+      },
+      "dsLibrary1008": {
+        "_t": "String",
+        "_p": {
+          "P1960712406": "R",
+          "P6203026306": "R",
+          "P4007261491": "R"
+        }
+      }
+    },
+    "__v": 0
+  }
+}

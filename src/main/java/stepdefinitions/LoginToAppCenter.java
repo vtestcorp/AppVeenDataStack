@@ -80,7 +80,7 @@ public class LoginToAppCenter extends BaseClass{
 
 
 	
-	@Then("Add data to the data service for file")
+	@Then("Add data to the data service for File Type")
 	public void add_data_to_the_data_service_for_file() throws Exception {
 	    loginAppCenter.addDataForFile();
 	}

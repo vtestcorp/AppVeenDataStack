@@ -1,0 +1,45 @@
+{
+  "_metadata": {
+    "deleted": false,
+    "lastUpdated": "2021-08-10T10:42:07.154Z",
+    "version": {
+      "release": "dev",
+      "document": 1
+    },
+    "createdAt": "2021-08-10T10:42:07.154Z"
+  },
+  "_id": "DS1001",
+  "dsLibrary1001": {
+    "line1": "Library 1001",
+    "line2": "Library 1002"
+  },
+  "dsLibrary1002": {
+    "line1": null,
+    "line2": null
+  },
+  "dsLibrary1003": {
+    "line1": "Library 3001",
+    "line2": "Library 3002"
+  },
+  "dsLibrary1004": {
+    "line1": null,
+    "line2": null
+  },
+  "dsLibrary1005": {
+    "line1": null,
+    "line2": null
+  },
+  "dsLibrary1006": {
+    "line1": null,
+    "line2": null
+  },
+  "dsLibrary1007": {
+    "line1": null,
+    "line2": null
+  },
+  "dsLibrary1008": {
+    "line1": null,
+    "line2": null
+  },
+  "__v": 0
+}

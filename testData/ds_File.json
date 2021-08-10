@@ -111,8 +111,8 @@
       "key": "dsFile1002",
       "properties": {
         "name": "DS FILE 1002",
-        "label": "DS-FILE-1002 Custom Label",
-        "errorMessage": "DS-FILE-1002 Custom Error",
+        "label": "DS-FILE-1002 Label",
+        "errorMessage": "DS-FILE-1002 Error",
         "required": true,
         "fieldLength": 10,
         "_description": "DS-FILE-1002 Description",
@@ -201,7 +201,7 @@
       "key": "dsFile1010",
       "properties": {
         "name": "DS FILE 1010",
-        "label": "DS FILE 1002 Label",
+        "label": "DS FILE 1010 Label",
         "fieldLength": 10,
         "_typeChanged": "File",
         "fileType": "All",

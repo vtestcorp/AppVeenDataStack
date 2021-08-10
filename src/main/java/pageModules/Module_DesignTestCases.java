@@ -1,5 +1,6 @@
 package pageModules;
 
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -878,6 +879,49 @@ public class Module_DesignTestCases extends BaseClass{
 	    System.out.println(expectedData);
 	    Assert.assertTrue(actualData.equals(expectedData));
 	}
+		
+	}
+
+
+
+	public void addNewRecordForFile(String string) throws Exception {
+		Thread.sleep(2000);
+		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
+			acp.yes.click();
+	    }
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton);
+		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
+			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
+	    }
+		
+		applyExplicitWaitsUntilElementVisible(acp.textBox1);
+		List<WebElement> textBoxes = driver.findElements(By.xpath("//input[@class='invisible position-absolute' or @id='_id']"));
+		System.out.println(textBoxes.size());
+		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
+		System.out.println(string);
+		for(int  i=1;i<=textBoxes.size();i++) {
+		
+			WebElement textBox = driver.findElement(By.xpath("(//input[@class='invisible position-absolute' or @id='_id'])["+i+"]"));
+				String id1 = textBox.getAttribute("id");
+		if(id1.equals("_id")) {
+			
+			String value=(String) jsonObject.get(id1);
+			if(value!=null) {
+			textBox.sendKeys(value);
+			}
+		}
+		else {
+			
+//		JSONObject json=(JSONObject) jsonObject.get(id1);
+		if(jsonObject.get(id1)!=null) {
+//			JSONObject value2=(JSONObject) json.get("metadata");
+			String value=(String) jsonObject.get(id1);
+			System.out.println(value);
+			textBox.sendKeys(value);
+			Thread.sleep(2000);
+		}}
+		}
+		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 		
 	}
 

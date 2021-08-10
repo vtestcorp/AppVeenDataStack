@@ -95,7 +95,7 @@ Examples:
 Examples:
 
 |id|data|
-|NUM1001|{"dsNumberCurrency1001": 1,"dsNumberCurrency1002": 2,"dsNumberCurrency1003": 3,"dsNumberCurrency1004": 3,"dsNumberCurrency1005": 5,"dsNumberCurrency1007": 5, "dsNumberCurrency1008": 4, "dsNumberCurrency1010": 4,  "dsNumberCurrency1013": 3, "dsNumberCurrency1014": 1, "dsNumberCurrency1015": 5,  "dsNumberCurrency1016": 3,  "dsNumberCurrency1020": 4, "dsNumberCurrency1021": 1, "dsNumberCurrency1022": 5, "dsNumberCurrency1023": 4, "dsNumberCurrency1024": 2}|
+|NUM1001|{"dsNumberCurrency1001": 1,"dsNumberCurrency1002": 2,"dsNumberCurrency1003": 3,"dsNumberCurrency1004": 3,"dsNumberCurrency1005": 5,"dsNumberCurrency1007": 5, "dsNumberCurrency1008": 4, "dsNumberCurrency1010": 4,  "dsNumberCurrency1013": 3, "dsNumberCurrency1014": 1, "dsNumberCurrency1015": 5,  "dsNumberCurrency1016": 3,  "dsNumberCurrency1020": 4, "dsNumberCurrency1021": 1, "dsNumberCurrency1022": 5, "dsNumberCurrency1023": 4, "dsNumberCurrency1024": 4}|
 
 Scenario Outline: Fetch record from the data service
 	Given Data service "number_Currency"
