@@ -1,0 +1,494 @@
+{
+  "workflowHooks" : {
+    "postHooks" : {
+      "submit" : [ ],
+      "rework" : [ ],
+      "discard" : [ ],
+      "approve" : [ ],
+      "reject" : [ ]
+    }
+  },
+  "_metadata" : {
+    "version" : {
+      "document" : 2,
+      "release" : "dev"
+    },
+    "deleted" : false,
+    "lastUpdated" : "2021-08-10T10:38:03.760Z",
+    "createdAt" : "2021-08-10T10:05:51.758Z",
+    "lastUpdatedBy" : "deepak@appveen.com"
+  },
+  "allowedFileTypes" : [ "jpeg", "ppt", "xls", "csv", "doc", "jpg", "png", "gif", "zip", "tar", "rar", "gz", "bz2", "7z", "mp4", "mp3", "pdf", "ico", "docx", "pptx", "xlsx", "ods", "xml", "txt" ],
+  "version" : 1,
+  "instances" : 1,
+  "versionValidity" : {
+    "validityType" : "count",
+    "validityValue" : -1
+  },
+  "permanentDeleteData" : true,
+  "disableInsights" : false,
+  "status" : "Draft",
+  "enableSearchIndex" : false,
+  "attributeCount" : 17,
+  "type" : null,
+  "_id" : "SRVC5968",
+  "name" : "ds_Library",
+  "description" : null,
+  "app" : "vTest",
+  "api" : "/dsLibrary",
+  "port" : 20191,
+  "wizard" : [ ],
+  "webHooks" : [ ],
+  "preHooks" : [ ],
+  "collectionName" : "dsLibrary",
+  "__v" : 1,
+  "definition" : [ {
+    "_id" : "6112570be343f45139bc584a",
+    "key" : "_id",
+    "type" : "String",
+    "prefix" : "DS",
+    "suffix" : null,
+    "padding" : null,
+    "counter" : 1001,
+    "properties" : {
+      "label" : null,
+      "readonly" : false,
+      "errorMessage" : null,
+      "name" : "ID",
+      "required" : false,
+      "fieldLength" : 10,
+      "_description" : null,
+      "_typeChanged" : "id",
+      "_isParrentArray" : null,
+      "_isGrpParentArray" : null,
+      "dataPath" : "_id",
+      "_detailedType" : "",
+      "dataKey" : "_id"
+    }
+  }, {
+    "_id" : "6112570be343f4f33bbc584b",
+    "definition" : [ {
+      "_fieldId" : "ef4b7860-f50e-11eb-9361-09610eb02943",
+      "type" : "String",
+      "key" : "line1",
+      "properties" : {
+        "name" : "Line 1",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "line1",
+        "dataPath" : "line1"
+      }
+    }, {
+      "_fieldId" : "ef4bed90-f50e-11eb-9361-09610eb02943",
+      "type" : "String",
+      "key" : "line2",
+      "properties" : {
+        "name" : "Line 2",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "line2",
+        "dataPath" : "line2"
+      }
+    } ],
+    "type" : "Object",
+    "key" : "dsLibrary1001",
+    "properties" : {
+      "name" : "DS LIBRARY 1001",
+      "fieldLength" : 10,
+      "_typeChanged" : "Global",
+      "schema" : "SCHM2424",
+      "dataKey" : "dsLibrary1001",
+      "dataPath" : "dsLibrary1001"
+    }
+  }, {
+    "_id" : "6112570be343f4c172bc584c",
+    "definition" : [ {
+      "_fieldId" : "ef4b7860-f50e-11eb-9361-09610eb02943",
+      "type" : "String",
+      "key" : "line1",
+      "properties" : {
+        "name" : "Line 1",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "line1",
+        "dataPath" : "line1"
+      }
+    }, {
+      "_fieldId" : "ef4bed90-f50e-11eb-9361-09610eb02943",
+      "type" : "String",
+      "key" : "line2",
+      "properties" : {
+        "name" : "Line 2",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "line2",
+        "dataPath" : "line2"
+      }
+    } ],
+    "type" : "Object",
+    "key" : "dsLibrary1002",
+    "properties" : {
+      "name" : "DS LIBRARY 1002",
+      "label" : "DS-LIBRARY-1002 Label",
+      "readonly" : true,
+      "errorMessage" : "DS-LIBRARY-1002 Error",
+      "fieldLength" : 10,
+      "_description" : "DS-LIBRARY-1002",
+      "_typeChanged" : "Global",
+      "schema" : "SCHM2424",
+      "dataKey" : "dsLibrary1002",
+      "dataPath" : "dsLibrary1002"
+    }
+  }, {
+    "_id" : "6112570be343f476eabc584d",
+    "definition" : [ {
+      "_fieldId" : "ef4b7860-f50e-11eb-9361-09610eb02943",
+      "type" : "String",
+      "key" : "line1",
+      "properties" : {
+        "name" : "Line 1",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "line1",
+        "dataPath" : "line1"
+      }
+    }, {
+      "_fieldId" : "ef4bed90-f50e-11eb-9361-09610eb02943",
+      "type" : "String",
+      "key" : "line2",
+      "properties" : {
+        "name" : "Line 2",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "line2",
+        "dataPath" : "line2"
+      }
+    } ],
+    "type" : "Object",
+    "key" : "dsLibrary1003",
+    "properties" : {
+      "name" : "DS LIBRARY 1003",
+      "fieldLength" : 10,
+      "_typeChanged" : "Global",
+      "schema" : "SCHM2424",
+      "dataKey" : "dsLibrary1003",
+      "dataPath" : "dsLibrary1003"
+    }
+  }, {
+    "_id" : "6112570be343f44831bc584e",
+    "definition" : [ {
+      "_fieldId" : "ef4b7860-f50e-11eb-9361-09610eb02943",
+      "type" : "String",
+      "key" : "line1",
+      "properties" : {
+        "name" : "Line 1",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "line1",
+        "dataPath" : "line1"
+      }
+    }, {
+      "_fieldId" : "ef4bed90-f50e-11eb-9361-09610eb02943",
+      "type" : "String",
+      "key" : "line2",
+      "properties" : {
+        "name" : "Line 2",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "line2",
+        "dataPath" : "line2"
+      }
+    } ],
+    "type" : "Object",
+    "key" : "dsLibrary1004",
+    "properties" : {
+      "name" : "DS LIBRARY 1004",
+      "readonly" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "Global",
+      "schema" : "SCHM2424",
+      "dataKey" : "dsLibrary1004",
+      "dataPath" : "dsLibrary1004"
+    }
+  }, {
+    "_id" : "6112570be343f4fdd6bc584f",
+    "definition" : [ {
+      "_fieldId" : "ef4b7860-f50e-11eb-9361-09610eb02943",
+      "type" : "String",
+      "key" : "line1",
+      "properties" : {
+        "name" : "Line 1",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "line1",
+        "dataPath" : "line1"
+      }
+    }, {
+      "_fieldId" : "ef4bed90-f50e-11eb-9361-09610eb02943",
+      "type" : "String",
+      "key" : "line2",
+      "properties" : {
+        "name" : "Line 2",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "line2",
+        "dataPath" : "line2"
+      }
+    } ],
+    "type" : "Object",
+    "key" : "dsLibrary1005",
+    "properties" : {
+      "name" : "DS LIBRARY 1005",
+      "label" : "DS-LIBRARY-1005 Label",
+      "fieldLength" : 10,
+      "_typeChanged" : "Global",
+      "schema" : "SCHM2424",
+      "dataKey" : "dsLibrary1005",
+      "dataPath" : "dsLibrary1005"
+    }
+  }, {
+    "_id" : "6112570be343f4077dbc5850",
+    "definition" : [ {
+      "_fieldId" : "ef4b7860-f50e-11eb-9361-09610eb02943",
+      "type" : "String",
+      "key" : "line1",
+      "properties" : {
+        "name" : "Line 1",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "line1",
+        "dataPath" : "line1"
+      }
+    }, {
+      "_fieldId" : "ef4bed90-f50e-11eb-9361-09610eb02943",
+      "type" : "String",
+      "key" : "line2",
+      "properties" : {
+        "name" : "Line 2",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "line2",
+        "dataPath" : "line2"
+      }
+    } ],
+    "type" : "Object",
+    "key" : "dsLibrary1006",
+    "properties" : {
+      "name" : "DS LIBRARY 1006",
+      "errorMessage" : "DS-LIBRARY-1006 Error",
+      "fieldLength" : 10,
+      "_typeChanged" : "Global",
+      "schema" : "SCHM2424",
+      "dataKey" : "dsLibrary1006",
+      "dataPath" : "dsLibrary1006"
+    }
+  }, {
+    "_id" : "6112570be343f4738bbc5851",
+    "definition" : [ {
+      "_fieldId" : "ef4b7860-f50e-11eb-9361-09610eb02943",
+      "type" : "String",
+      "key" : "line1",
+      "properties" : {
+        "name" : "Line 1",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "line1",
+        "dataPath" : "line1"
+      }
+    }, {
+      "_fieldId" : "ef4bed90-f50e-11eb-9361-09610eb02943",
+      "type" : "String",
+      "key" : "line2",
+      "properties" : {
+        "name" : "Line 2",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "line2",
+        "dataPath" : "line2"
+      }
+    } ],
+    "type" : "Object",
+    "key" : "dsLibrary1007",
+    "properties" : {
+      "name" : "DS LIBRARY 1007",
+      "label" : "DS-LIBRARY-1007 Label",
+      "errorMessage" : "DS-LIBRARY-1007 Error",
+      "fieldLength" : 10,
+      "_typeChanged" : "Global",
+      "schema" : "SCHM2424",
+      "dataKey" : "dsLibrary1007",
+      "dataPath" : "dsLibrary1007"
+    }
+  }, {
+    "_id" : "6112570be343f4cb34bc5852",
+    "definition" : [ {
+      "_fieldId" : "ef4b7860-f50e-11eb-9361-09610eb02943",
+      "type" : "String",
+      "key" : "line1",
+      "properties" : {
+        "name" : "Line 1",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "line1",
+        "dataPath" : "line1"
+      }
+    }, {
+      "_fieldId" : "ef4bed90-f50e-11eb-9361-09610eb02943",
+      "type" : "String",
+      "key" : "line2",
+      "properties" : {
+        "name" : "Line 2",
+        "fieldLength" : 10,
+        "_typeChanged" : "String",
+        "dataKey" : "line2",
+        "dataPath" : "line2"
+      }
+    } ],
+    "type" : "Object",
+    "key" : "dsLibrary1008",
+    "properties" : {
+      "name" : "DS LIBRARY 1008",
+      "fieldLength" : 10,
+      "_description" : "DS-LIBRARY-1008 Enable",
+      "_typeChanged" : "Global",
+      "schema" : "SCHM2424",
+      "dataKey" : "dsLibrary1008",
+      "dataPath" : "dsLibrary1008"
+    }
+  } ],
+  "headers" : [ ],
+  "role" : {
+    "_id" : "SRVC5968",
+    "_metadata" : {
+      "version" : {
+        "document" : 1,
+        "release" : "dev"
+      },
+      "deleted" : false,
+      "lastUpdated" : "2021-08-10T10:05:51.850Z",
+      "createdAt" : "2021-08-10T10:05:51.847Z"
+    },
+    "app" : "vTest",
+    "entity" : "SRVC5968",
+    "entityName" : "ds_Library",
+    "roles" : [ {
+      "skipReviewRole" : true,
+      "id" : "P1960712406",
+      "name" : "Skip Review",
+      "operations" : [ {
+        "method" : "SKIP_REVIEW"
+      }, {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record and without any approval"
+    }, {
+      "manageRole" : true,
+      "id" : "P6203026306",
+      "name" : "Manage",
+      "operations" : [ {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      }, {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record"
+    }, {
+      "viewRole" : true,
+      "id" : "P4007261491",
+      "name" : "View",
+      "operations" : [ {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to view the record"
+    } ],
+    "type" : "appcenter",
+    "fields" : {
+      "_id" : {
+        "_t" : "String",
+        "_p" : {
+          "P1960712406" : "R",
+          "P6203026306" : "R",
+          "P4007261491" : "R"
+        }
+      },
+      "dsLibrary1001" : {
+        "_t" : "String",
+        "_p" : {
+          "P1960712406" : "R",
+          "P6203026306" : "R",
+          "P4007261491" : "R"
+        }
+      },
+      "dsLibrary1002" : {
+        "_t" : "String",
+        "_p" : {
+          "P1960712406" : "R",
+          "P6203026306" : "R",
+          "P4007261491" : "R"
+        }
+      },
+      "dsLibrary1003" : {
+        "_t" : "String",
+        "_p" : {
+          "P1960712406" : "R",
+          "P6203026306" : "R",
+          "P4007261491" : "R"
+        }
+      },
+      "dsLibrary1004" : {
+        "_t" : "String",
+        "_p" : {
+          "P1960712406" : "R",
+          "P6203026306" : "R",
+          "P4007261491" : "R"
+        }
+      },
+      "dsLibrary1005" : {
+        "_t" : "String",
+        "_p" : {
+          "P1960712406" : "R",
+          "P6203026306" : "R",
+          "P4007261491" : "R"
+        }
+      },
+      "dsLibrary1006" : {
+        "_t" : "String",
+        "_p" : {
+          "P1960712406" : "R",
+          "P6203026306" : "R",
+          "P4007261491" : "R"
+        }
+      },
+      "dsLibrary1007" : {
+        "_t" : "String",
+        "_p" : {
+          "P1960712406" : "R",
+          "P6203026306" : "R",
+          "P4007261491" : "R"
+        }
+      },
+      "dsLibrary1008" : {
+        "_t" : "String",
+        "_p" : {
+          "P1960712406" : "R",
+          "P6203026306" : "R",
+          "P4007261491" : "R"
+        }
+      }
+    },
+    "__v" : 0
+  },
+  "relatedSchemas" : {
+    "internal" : {
+      "users" : [ ]
+    },
+    "outgoing" : [ ]
+  }
+}

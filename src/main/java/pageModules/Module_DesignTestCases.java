@@ -22,6 +22,7 @@ import com.google.common.collect.MapDifference.ValueDifference;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.PathNotFoundException;
 import com.google.common.collect.Maps;
+import com.google.gson.JsonObject;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.PathNotFoundException;
 
@@ -439,7 +440,7 @@ public class Module_DesignTestCases extends BaseClass{
 	public void addRecordForRepeatedId() throws Exception {
 
 
-			applyWait.waitForElementToBeClickable(acp.yes, 30).click();
+		applyWait.waitForElementToBeClickable(acp.yes, 30).click();
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 		Thread.sleep(2000);
 		List<WebElement> textBoxes = acp.textBoxes;
@@ -510,7 +511,8 @@ public class Module_DesignTestCases extends BaseClass{
 						applyWait.waitForElementToBeClickable(textBox,30).sendKeys(((Long)jsonObject.get(id1)).toString());;
 						}
 					
-				}}
+				}
+					}
 				}
 				
 			}
@@ -523,20 +525,47 @@ public class Module_DesignTestCases extends BaseClass{
 					applyWait.waitForElementToBeClickable(acp.save, 30).click();
 				}
 		
-	}
-	
-	
-		
-	
-	
+	      }
 		
 	}
+	
+	public void addRecordForLocation(String string) throws InterruptedException {
+		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		Thread.sleep(3000);
+		List<WebElement> textBoxes = acp.textBoxesLocation;
+		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
+	     System.out.println(jsonObject);
+		for (int j = 2; j <= textBoxes.size(); j++) {
+			WebElement textBox = driver.findElement(By.xpath("(//input[@class='form-control form-control-sm rounded ng-pristine ng-valid ng-star-inserted ng-touched' or 'searchInput pac-target-input'])["+j+"]"));
+				if (textBox.isEnabled()) {
+					String id1 = textBox.getAttribute("id");
+						{		
+					  if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
+						  if(jsonObject.get(id1)!=null)
+						  {
+						     applyWait.waitForElementToBeClickable(textBox, 30).sendKeys((jsonObject.get(id1)).toString());
+						     Thread.sleep(2000);
+						     textBox.sendKeys(Keys.DOWN);
+						     textBox.sendKeys(Keys.ENTER);
+						     
+						  }
+					  }
+					}
+				}
+		
+				      
+		           }
+		            applyWait.waitForElementToBeClickable(acp.save, 30).click();
+		       }
+	
+					
+		
+	
 
-
-
+		
 	public void addNewRecords() throws Exception {
 		
-			applyWait.waitForElementToBeClickable(acp.yes, 30).click();
+		applyWait.waitForElementToBeClickable(acp.yes, 30).click();
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 		List<WebElement> textBoxes = acp.textBoxes;
 //		String path= System.getProperty("user.dir");
@@ -647,6 +676,24 @@ public class Module_DesignTestCases extends BaseClass{
 //		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 		
 	}
+	
+     public void updateLocationRecord(String id, String jsonFile) throws Exception {
+		
+		Thread.sleep(2000);
+		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
+			acp.yes.click();
+	    }
+		applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
+		Thread.sleep(1000);
+		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);;
+		
+		WebElement record=driver.findElement(By.xpath("//a[normalize-space()='"+id+"']"));
+		record.click();
+		applyWait.waitForElementToBeClickable(acp.edit, 30).click();
+		Thread.sleep(1000);
+		addRecordForLocation(jsonFile);
+     }
+	
 
 
 
@@ -693,6 +740,7 @@ public class Module_DesignTestCases extends BaseClass{
 
 	public void matchToRecord(String jsonFile) throws Exception {
 		LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
+		System.out.println("Actual data is:" +actualData);
 		Thread.sleep(2000);
 		WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
 		record.click();
@@ -702,7 +750,9 @@ public class Module_DesignTestCases extends BaseClass{
 //			WebElement t=driver.findElement(By.xpath("(//label[starts-with(@class,'label-width d-flex')])["+q+"]/parent::div/following-sibling::odp-view-separator/descendant::span"));
 			WebElement t=driver.findElement(By.xpath("(//label[starts-with(@class,'label-width d-flex')])["+q+"]/parent::div/following-sibling::odp-view-separator/descendant::div/child::*"));
 			String a=attribute.getAttribute("for");
+			System.out.println("Value of a is :" +a);
 			String w=t.getText();
+			System.out.println("Value of w is :" +w);
 			if(!w.equals("N.A.")) {
 				actualData.put(a, w);
 		}
@@ -711,7 +761,7 @@ public class Module_DesignTestCases extends BaseClass{
 
 		
 	LinkedHashMap<String, String> expectedData =(LinkedHashMap<String, String>) JsonUtils.getMapFromJSON(jsonFile);
-	
+	 System.out.println("Expected data is:" +expectedData);
 
 	
 	if(actualData.equals(expectedData)) {

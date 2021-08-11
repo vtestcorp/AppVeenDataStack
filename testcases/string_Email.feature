@@ -55,7 +55,7 @@ Scenario Outline: Add record to data service
 	And Save button is disabled
 Examples:
 |data|
-|{"_id":"RC102", "dsStringEmail1002":"", "dsStringEmail1014":"","dsStringEmail1015":"","dsStringEmail1017":"","dsStringEmail1018":""}|
+|{"_id":"RC102", "dsStringEmail1002":"", "dsStringEmail1014":"", "dsStringEmail1015":"", "dsStringEmail1017":"" ,"dsStringEmail1018":""}|
 
 Scenario Outline: Add record to data service
 	Given Data service "string_Email"
@@ -63,7 +63,7 @@ Scenario Outline: Add record to data service
 	And Expect error "ID RC101 already exists" on save
 	Examples:
 		|data|
-	  |{ "_id" : "RC101","dsStringEmail1001" : "abc@gmail.com","dsStringEmail1002" : "xyz@gmail.com","dsStringEmail1003" : "pqr@gamil.com","dsStringEmail1007" : "uvw@gamil.com","dsStringEmail1008" : "mno@gamil.com","dsStringEmail1014" : "hij@gamil.com","dsStringEmail1015" : "lmn@gamil.com"}|
+	  |{ "_id" : "RC101","dsStringEmail1001" : "abc@gmail.com","dsStringEmail1002" : "xyz@gmail.com","dsStringEmail1003" : "pqr@gmail.com","dsStringEmail1007" : "uvw@gmail.com","dsStringEmail1008" : "mno@gmail.com","dsStringEmail1014" : "hij@gmail.com","dsStringEmail1015" : "lmn@gmail.com"}|
 	  
 
 Scenario Outline: Add record to data service
@@ -72,7 +72,7 @@ Scenario Outline: Add record to data service
 	And Expect error "Unique check validation failed for dsStringText1002" on save
 Examples:
 |data|
-|{ "_id" : "RC103","dsStringEmail1001" : "abc@gmail.com","dsStringEmail1002" : "ac@gmail.com","dsStringEmail1003" : "xyz@gamil.com","dsStringEmail1007" : "wxy@gmail.com","dsStringEmail1008" : "xyz@gamil.com","dsStringEmail1014" : "x@gamil.com","dsStringEmail1015" : "xyz@gamil.com"}|
+|{ "_id" : "RC103","dsStringEmail1001" : "abc@gmail.com","dsStringEmail1002" : "ac@gmail.com","dsStringEmail1003" : "xyz@gmail.com","dsStringEmail1007" : "wxy@gmail.com","dsStringEmail1008" : "xyz@gmail.com","dsStringEmail1014" : "x@gmail.com","dsStringEmail1015" : "xyz@gmail.com"}|
   
 
 	
@@ -82,16 +82,16 @@ Examples:
 	And Match it to "<data>"
 Examples:
 |id|data|
-|RC101|{"_id": "RC101","dsStringEmail1001": "abc@gmail.com","dsStringEmail1002": "ac@gmail.com","dsStringEmail1003": "xyz@gamil.com","dsStringEmail1004": "xyz@gamil.com","dsStringEmail1005": "xyz@gamil.com","dsStringEmail1007": "xyz@gamil.com", "dsStringEmail1008": "xyz@gamil.com",  "dsStringEmail1010": "xyz@gamil.com", "dsStringEmail1013": "xyz@gamil.com", "dsStringEmail1014": "x@gamil.com", "dsStringEmail1015": "xyz@gamil.com", "dsStringEmail1018": "xyz@gamil.com", "dsStringEmail1020": "xyz@gamil.com"}|
+|RC101|{"_id": "RC101","dsStringEmail1001": "abc@gmail.com","dsStringEmail1002": "ac@gmail.com","dsStringEmail1003": "xyz@gmail.com","dsStringEmail1004": "xyz@gmail.com","dsStringEmail1005": "xyz@gmail.com","dsStringEmail1007": "xyz@gmail.com", "dsStringEmail1008": "xyz@gmail.com",  "dsStringEmail1010": "xyz@gmail.com", "dsStringEmail1013": "xyz@gmail.com", "dsStringEmail1014": "x@gmail.com", "dsStringEmail1015": "xyz@gmail.com", "dsStringEmail1018": "xyz@gmail.com", "dsStringEmail1020": "xyz@gmail.com"}|
 
 	
 	Scenario Outline: Update record to data service
-	Given Data service "string_Email"
+	Given Data service "string_Email
 	Then Update record "<id>" with "<data>" to the data service
 Examples:
 
 |id|data|
-|RC101|{"dsStringEmail1001": "abc@gmail.com","dsStringEmail1002": "atc@gmail.com","dsStringEmail1003": "wxy@gamil.com","dsStringEmail1004": "xyz@gamil.com","dsStringEmail1005": "xyz@gamil.com","dsStringEmail1007": "xy0z@gamil.com", "dsStringEmail1008": "x99@gamil.com","dsStringEmail1010": "xyz@gamil.com", "dsStringEmail1013": "xyz@gamil.com","dsStringEmail1014": "x123y@gamil.com", "dsStringEmail1015": "yz06@gamil.com", "dsStringEmail1018": "xyz@gamil.com", "dsStringEmail1020": "xyz@gamil.com"}|
+|RC101|{"dsStringEmail1001": "abc@gmail.com","dsStringEmail1002": "atc@gmail.com","dsStringEmail1003": "wxy@gmail.com","dsStringEmail1004": "xyz@gmail.com","dsStringEmail1005": "xyz@gmail.com","dsStringEmail1007": "xy0z@gmail.com", "dsStringEmail1008": "x99@gmail.com","dsStringEmail1010": "xyz@gmail.com", "dsStringEmail1013": "xyz@gmail.com","dsStringEmail1014": "x123y@gmail.com", "dsStringEmail1015": "yz06@gmail.com", "dsStringEmail1018": "xyz@gmail.com", "dsStringEmail1020": "xyz@gmail.com"}|
 
 Scenario Outline: Fetch record from the data service
 	Given Data service "string_Email"
@@ -99,7 +99,7 @@ Scenario Outline: Fetch record from the data service
 	And Match it to "<data>"
 Examples:
 |id|data|
-|RC101|{"_id": "RC101","dsStringEmail1001": "abc@gmail.com","dsStringEmail1002": "ac@gmail.com","dsStringEmail1003": "xyz@gamil.com","dsStringEmail1004": "xyz@gamil.com","dsStringEmail1005": "xyz@gamil.com","dsStringEmail1007": "xyz@gamil.com", "dsStringEmail1008": "xyz@gamil.com",  "dsStringEmail1010": "xyz@gamil.com", "dsStringEmail1013": "xyz@gamil.com", "dsStringEmail1014": "x@gamil.com", "dsStringEmail1015": "xyz@gamil.com", "dsStringEmail1018": "xyz@gamil.com", "dsStringEmail1020": "xyz@gamil.com"}|
+|RC101|{"_id": "RC101","dsStringEmail1001": "abc@gmail.com","dsStringEmail1002": "ac@gmail.com","dsStringEmail1003": "xyz@gmail.com","dsStringEmail1004": "xyz@gmail.com","dsStringEmail1005": "xyz@gmail.com","dsStringEmail1007": "xyz@gmail.com", "dsStringEmail1008": "xyz@gmail.com",  "dsStringEmail1010": "xyz@gmail.com", "dsStringEmail1013": "xyz@gmail.com", "dsStringEmail1014": "x@gmail.com", "dsStringEmail1015": "xyz@gmail.com", "dsStringEmail1018": "xyz@gmail.com", "dsStringEmail1020": "xyz@gmail.com"}|
 	
 Scenario Outline: Delete record from the data service
 	Given Data service "string_Email"

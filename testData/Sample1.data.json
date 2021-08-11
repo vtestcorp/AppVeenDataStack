@@ -1,80 +1,25 @@
 {
-  "_metadata": {
-    "deleted": false,
-    "lastUpdated": "2021-08-01T14:59:57.842Z",
-    "version": {
-      "release": "dev",
-      "document": 2
+  "_metadata" : {
+    "deleted" : false,
+    "lastUpdated" : "2021-08-08T13:22:28.567Z",
+    "version" : {
+      "release" : "dev",
+      "document" : 1
     },
-    "createdAt": "2021-08-01T14:58:55.483Z"
+    "createdAt" : "2021-08-08T13:22:28.567Z"
   },
-  "collection1001": [
-    "Collection String 1001",
-    "Collection String 1002",
-    "Collection String 1003",
-    "Collection String 1004"
-    
-  ],
-  "collectionText1002": null,
-  "collectionText1003": null,
-  "collectionText1004": null,
-  "collectionText1005": null,
-  "collectionNumber1006": [
-    1006
-  ],
-  "collectionNumber1007": null,
-  "collectionNumber1008": null,
-  "collectionNumber1009": null,
-  "collectionBoolean1010": [
-    true
-  ],
-  "collectionBoolean1011": [],
-  "collectionBoolean1012": [],
-  "collectionBoolean1013": [],
-  "_id": "DS1001",
-  "collectionGroup1014": [],
-  "collectionLocaton1015": [],
-  "collectionFile1016": [],
-  "collectionRelation1017": [],
-  "collectionLibrary1018": [],
-  "collectionUser1019": null,
-  "collectionDate1020": [],
-  "collectionGroup1021": [],
-  "collectionLocation1022": [
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          73.8567437,
-          18.5204303
-        ]
-      },
-      "_id": "6106b6afcf6df962458d6cd2",
-      "userInput": "Pune, Maharashtra, India",
-      "formattedAddress": "Pune, Maharashtra, India",
-      "town": "Pune",
-      "district": "Pune",
-      "state": "Maharashtra",
-      "country": "India"
-    }
-  ],
-  "collectionFile1023": [
-    {
-      "_id": "6106b5d4cf6df9f20e8d6cd0",
-      "length": 1321,
-      "chunkSize": 261120,
-      "uploadDate": "2021-08-01T14:55:16.470Z",
-      "filename": "f1e5a3414c9d870a46de982b30607eff",
-      "md5": "c1a000e92fc537a14596276790d0690f",
-      "contentType": "text/plain",
-      "metadata": {
-        "filename": "Bdd.txt"
-      }
-    }
-  ],
-  "collectionRelation1024": [],
-  "collectionLibrary1025": [],
-  "collectionUser1026": null,
-  "collectionDate1027": [],
-  "__v": 1
+  "_id" : "DS1001",
+  "dsLocation1001" : {
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 73.8567437, 18.5204303 ]
+    },
+    "userInput" : "Pune, Maharashtra, India",
+    "town" : "Pune",
+    "district" : "Pune",
+    "state" : "Maharashtra",
+    "country" : "India",
+    "formattedAddress" : "Pune, Maharashtra, India"
+  },
+  "__v" : 0
 }

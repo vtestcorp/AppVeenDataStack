@@ -239,6 +239,7 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		Thread.sleep(3000);
 		List<WebElement> textBoxes = acp.textBoxesLocation;
+		
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
 		//JSONObject value= JsonUtils.getJSONObject(filePath);
@@ -271,24 +272,14 @@ public class LoginAppCenter extends BaseClass {
 //								applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(v2);
 //								  textBox.sendKeys(Keys.ENTER);
 //								  Thread.sleep(1000);
-								driver.findElement(By.xpath("textBox")).sendKeys("Pimpri-Chinchwad, Maharashtra, India");
+								textBox.sendKeys(v2);
 								Thread.sleep(2000);
-								driver.findElement(By.xpath("textBox")).sendKeys(Keys.DOWN);
-								driver.findElement(By.xpath("textBox")).sendKeys(Keys.ENTER);
-								driver.findElement(By.xpath("textBox")).getText();
-								JavascriptClick js=(JavascriptClick)driver;
-								String script="return document.getElementById(\"Pimpri-Chinchwad, Maharashtra, India\").value;";
-								String text=(String)js.execteScript(script);
-								System.out.println(text);
-								while(!text.equalsIgnoreCase("Pimpri-Chinchwad, Maharashtra, India"))
-								{
-									driver.findElement(By.xpath("textBox")).sendKeys(Keys.DOWN);
-									 text=(String)js.execteScript(script);
-									 System.out.println(text);
-								}
-						}
+								textBox.sendKeys(Keys.DOWN);
+								textBox.sendKeys(Keys.ENTER);
+        			}
 				}
 			}
+			
 		}
 				applyWait.waitForElementToBeClickable(acp.save, 30).click();
 					
