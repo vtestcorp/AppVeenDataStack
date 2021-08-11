@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import java.net.MalformedURLException;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
@@ -70,9 +71,13 @@ public class LoginToAppCenter extends BaseClass{
 	public void add_data_to_the_data_service() throws Exception {
 		
 		loginAppCenter.userEnterData();
-		
-	  
 	}
+	
+	@Then("Add data to the data service for Group")
+	public void add_data_to_the_data_service_for_Group() throws Exception {
+	    loginAppCenter.addDataForGroups();
+	}
+	
 	@Then("Add data to the data service for Location")
 	public void add_data_to_the_data_service_for_Location() throws InterruptedException {
 		loginAppCenter.userEnterDataInLocationField();
@@ -83,6 +88,11 @@ public class LoginToAppCenter extends BaseClass{
 	@Then("Add data to the data service for File Type")
 	public void add_data_to_the_data_service_for_file() throws Exception {
 	    loginAppCenter.addDataForFile();
+	}
+	
+	@Then("Add data to the data service for Library Type")
+	public void add_data_to_the_data_service_for_Library_Type() throws Exception {
+		loginAppCenter.addDataForGroups();;
 	}
 	
 	@Then("On the listing page it should show the total count of documents as {int}")

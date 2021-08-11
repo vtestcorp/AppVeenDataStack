@@ -48,7 +48,7 @@ Examples:
 # INSERT/UPDATE
 Scenario: Add data to data service
 	Given Data service "ds_Group"
-	Then Add data to the data service
+	Then Add data to the data service for Group
 	
 	
 

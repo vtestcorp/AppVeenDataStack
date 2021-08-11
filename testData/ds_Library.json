@@ -126,7 +126,7 @@
         "name": "DS LIBRARY 1001",
         "fieldLength": 10,
         "_typeChanged": "Global",
-        "schema": "SCHM2424",
+        "schema": "Address",
         "dataKey": "dsLibrary1001",
         "dataPath": "dsLibrary1001"
       }
@@ -169,7 +169,7 @@
         "fieldLength": 10,
         "_description": "DS-LIBRARY-1002",
         "_typeChanged": "Global",
-        "schema": "SCHM2424",
+        "schema": "Address",
         "dataKey": "dsLibrary1002",
         "dataPath": "dsLibrary1002"
       }
@@ -208,7 +208,7 @@
         "name": "DS LIBRARY 1003",
         "fieldLength": 10,
         "_typeChanged": "Global",
-        "schema": "SCHM2424",
+        "schema": "Address",
         "dataKey": "dsLibrary1003",
         "dataPath": "dsLibrary1003"
       }
@@ -248,7 +248,7 @@
         "name": "DS LIBRARY 1004",
         "fieldLength": 10,
         "_typeChanged": "Global",
-        "schema": "SCHM2424",
+        "schema": "Address",
         "dataKey": "dsLibrary1004",
         "dataPath": "dsLibrary1004"
       }
@@ -288,7 +288,7 @@
         "name": "DS LIBRARY 1005",
         "fieldLength": 10,
         "_typeChanged": "Global",
-        "schema": "SCHM2424",
+        "schema": "Address",
         "dataKey": "dsLibrary1005",
         "dataPath": "dsLibrary1005"
       }
@@ -328,7 +328,7 @@
         "name": "DS LIBRARY 1006",
         "fieldLength": 10,
         "_typeChanged": "Global",
-        "schema": "SCHM2424",
+        "schema": "Address",
         "dataKey": "dsLibrary1006",
         "dataPath": "dsLibrary1006"
       }
@@ -369,7 +369,7 @@
         "name": "DS LIBRARY 1007",
         "fieldLength": 10,
         "_typeChanged": "Global",
-        "schema": "SCHM2424",
+        "schema": "Address",
         "dataKey": "dsLibrary1007",
         "dataPath": "dsLibrary1007"
       }
@@ -409,7 +409,7 @@
         "fieldLength": 10,
         "_description": "DS-LIBRARY-1008 Enable",
         "_typeChanged": "Global",
-        "schema": "SCHM2424",
+        "schema": "Address",
         "dataKey": "dsLibrary1008",
         "dataPath": "dsLibrary1008"
       }

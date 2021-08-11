@@ -123,6 +123,12 @@ public class DesignTestCases extends BaseClass{
 	    design.updateRecord(id,jsonFile);
 	}
 	
+	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the data service for File Type$")
+	public void update_data_to_the_data_service_for_file(String id, String jsonFile) throws Exception {
+		design.updateDataForFile(id,jsonFile);
+	}
+	
+	
 	@Then("Update records {string} with {string} to the data service")
 	public void update_records_with_to_the_data_service(String id, String attribute) throws Exception {
 		design.updateRecords(id,attribute);

@@ -83,22 +83,23 @@ Examples:
 |DS1001|{ "_id": "DS1001", "dsFile1001": "Date & Time.png", "dsFile1002": "Date & Time.png", "dsFile1003": "Date & Time.png", "dsFile1004": "Date & Time.png", "dsFile1006": "Date & Time.png", "dsFile1010": "Date & Time.png", "dsFile1011": "Date & Time.png", "dsFile1012": "Date & Time.png", "dsFile1013": "Date & Time.png" }|
 	
 	
-#	Scenario Outline: Update record to data service
-#	Given Data service "ds_File"
-#	Then Update record "<id>" with "<data>" to the data service
-#Examples:
-#
-#|id|data|
-#|NUM1001|{"dsNumberCurrency1001": 1,"dsNumberCurrency1002": 2,"dsNumberCurrency1003": 3,"dsNumberCurrency1004": 3,"dsNumberCurrency1005": 5,"dsNumberCurrency1007": 5, "dsNumberCurrency1008": 4, "dsNumberCurrency1010": 4,  "dsNumberCurrency1013": 3, "dsNumberCurrency1014": 1, "dsNumberCurrency1015": 5,  "dsNumberCurrency1016": 3,  "dsNumberCurrency1020": 4, "dsNumberCurrency1021": 1, "dsNumberCurrency1022": 5, "dsNumberCurrency1023": 4, "dsNumberCurrency1024": 2}|
+	Scenario Outline: Update record to data service
+	Given Data service "ds_File"
+	Then Update record "<id>" with "<data>" to the data service for File Type
+Examples:
 
-#Scenario Outline: Fetch record from the data service
-#	Given Data service "ds_File"
-#	Then Fetch record "<id>" from the data service
-#	And Match this Currency data to "<data>"
-#Examples:
-#|id|data|
-#|NUM1001|{"_id": "NUM1001","dsNumberCurrency1001": 1,"dsNumberCurrency1002": 2,"dsNumberCurrency1003": 3,"dsNumberCurrency1004": 3,"dsNumberCurrency1005": 5,"dsNumberCurrency1007": 5, "dsNumberCurrency1008": 4, "dsNumberCurrency1010": 4,  "dsNumberCurrency1013": 3, "dsNumberCurrency1014": 1, "dsNumberCurrency1015": 5,  "dsNumberCurrency1016": 3,  "dsNumberCurrency1020": 4, "dsNumberCurrency1021": 1, "dsNumberCurrency1022": 5, "dsNumberCurrency1023": 4, "dsNumberCurrency1024": 2}|
-#	
+|id|data|
+|DS1001|{"dsFile1001" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Untitled.png","dsFile1002" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Untitled.png","dsFile1003" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Untitled.png","dsFile1004" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Untitled.png","dsFile1006" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Untitled.png","dsFile1010" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Untitled.png","dsFile1011" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Untitled.png","dsFile1012" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Untitled.png","dsFile1013" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Untitled.png"}|
+
+Scenario Outline: Fetch record from the data service
+	Given Data service "ds_File"
+	Then Fetch record "<id>" from the data service
+	And Match it to "<data>"
+Examples:
+|id|data|
+|DS1001|{ "_id": "DS1001", "dsFile1001": "Untitled.png", "dsFile1002": "Date & Time.png", "dsFile1003": "Untitled.png", "dsFile1004": "Date & Time.png", "dsFile1006": "Date & Time.png", "dsFile1010": "Untitled.png", "dsFile1011": "Untitled.png", "dsFile1012": "Untitled.png", "dsFile1013": "Untitled.png" }|
+
+
 #Scenario Outline: Delete record from the data service
 #	Given Data service "ds_File"
 #	Then Delete record "<id>" from the data service

@@ -514,6 +514,130 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	}
 
+	public void addDataForLibrary() {
+		
+	}
+
+	public void addDataForGroups() throws MalformedURLException {
+		
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton);
+		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		applyExplicitWaitsUntilElementVisible(acp.textBox1);
+		List<WebElement> textBoxes = acp.textBoxes;
+		System.out.println(textBoxes.size());
+		String path = System.getProperty("user.dir");
+		String filePath=path + "\\testData\\" + data_Service + ".data.json";
+		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
+		
+
+		for (int j = 1; j <= textBoxes.size(); j++) {
+			WebElement textBox = driver.findElement(By.xpath("(//*[contains(@class,'form-control')])[" + j + "]"));
+			if (textBox.isEnabled()) {
+				String id1 = textBox.getAttribute("id");
+
+				String value1=JsonUtils.getJsonValue(filePath,id1);
+			
+
+
+//				dsGroup1001.dsString
+				
+				if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")||textBox.getAttribute("type").equals("select-one")) {
+						if (value1!= null) {
+
+
+						if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
+							applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1);
+						}
+
+						if (textBox.getAttribute("type").equals("select-one")) {
+							if( JsonUtils.getJsonValue(filePath,id1).equals("")) {
+								textBox.click();
+							}
+							else {
+								
+									if(jsonObject.get(id1).getClass().toString().contains("Long")) {
+										dropdown.selectByVisibleText(textBox, jsonObject.get(id1).toString());
+									}
+									else {
+										dropdown.selectByVisibleText(textBox, (JsonUtils.getJsonValue(filePath,id1)).toString());
+									}
+
+							
+							}
+
+						}
+					}
+
+				}
+
+				else if (textBox.getAttribute("type").equals("number") ||textBox.getAttribute("type").equals("select-one")) {
+						if(jsonObject.get(id1).getClass().toString().contains("Double")) {
+							if (value1!= null) {
+	
+								if (textBox.getAttribute("type").equals("number")) {
+									Double value = (Double) jsonObject.get(id1);
+									applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value.toString());
+									
+								}
+								
+								if (textBox.getAttribute("type").equals("select-one")) {
+
+									dropdown.selectByVisibleText(textBox, ((Double) jsonObject.get(id1)).toString());
+
+								}
+							}
+						}
+					
+					else if(jsonObject.get(id1).getClass().toString().contains("Long")) {
+						if (jsonObject.get(id1) != null) {
+
+							if (textBox.getAttribute("type").equals("number")) {
+								Long value = (Long) jsonObject.get(id1);
+								applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value.toString());
+								
+							}
+							
+							if (textBox.getAttribute("type").equals("select-one")) {
+
+								dropdown.selectByVisibleText(textBox, ((Long) jsonObject.get(id1)).toString());
+
+							}
+						}
+						}
+						
+					else if(jsonObject.get(id1).getClass().toString().contains("Integer")) {
+						if ( jsonObject.get(id1) != null) {
+
+							if (textBox.getAttribute("type").equals("number")) {
+								Integer value = (Integer) jsonObject.get(id1);
+								applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value.toString());
+								
+							}
+							
+							if (textBox.getAttribute("type").equals("select-one")) {
+
+								dropdown.selectByVisibleText(textBox, ((Integer) jsonObject.get(id1)).toString());
+
+							}
+						}
+						}
+						
+					else {
+						dropdown.selectByVisibleText(textBox, (JsonUtils.getJsonValue(filePath,id1).toString()));
+					}
+
+
+				}
+				
+				else if (textBox.getAttribute("type").equals("email")) {
+					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1.toString());
+				}
+			}
+		}
+	
+		
+	}
+
 	
 }
 	

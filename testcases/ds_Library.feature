@@ -45,12 +45,12 @@ Examples:
 |maker@appveen.com|123123123|
 
 
-# INSERT/UPDATE
-#Scenario: Add data to data service
-#	Given Data service "ds_Library"
-#	Then Add data to the data service
-#	
-#	
+ #INSERT/UPDATE
+Scenario: Add data to data service
+	Given Data service "ds_Library"
+	Then Add data to the data service for Library Type
+	
+	
 #	Scenario Outline: Add record to data service
 #	Given Data service "ds_Library"
 #	Then Add record "<data>" to the data service

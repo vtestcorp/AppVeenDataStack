@@ -647,10 +647,6 @@ public class Module_DesignTestCases extends BaseClass{
 		Thread.sleep(1000);
 		addRecord(jsonFile);
 		
-//		WebElement textBox=driver.findElement(By.xpath("//span[normalize-space()='DS STRING TEXT 1001']/parent::label/parent::div/following-sibling::odp-form-control//descendant::input"));
-//		textBox.clear();;
-//		applyWait.waitForElementToBeClickable(acp.save, 30).click();
-		
 	}
 
 
@@ -889,8 +885,8 @@ public class Module_DesignTestCases extends BaseClass{
 		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
 			acp.yes.click();
 	    }
-		applyExplicitWaitsUntilElementVisible(acp.addDataButton);
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
+			applyExplicitWaitsUntilElementVisible(acp.addDataButton);
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
 		
@@ -913,15 +909,36 @@ public class Module_DesignTestCases extends BaseClass{
 		else {
 			
 //		JSONObject json=(JSONObject) jsonObject.get(id1);
-		if(jsonObject.get(id1)!=null) {
+		if(jsonObject.get(id1)!=null && textBox.isEnabled()) {
 //			JSONObject value2=(JSONObject) json.get("metadata");
 			String value=(String) jsonObject.get(id1);
 			System.out.println(value);
+			Thread.sleep(200);
+//			textBox.clear();
 			textBox.sendKeys(value);
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 		}}
 		}
 		applyWait.waitForElementToBeClickable(acp.save, 30).click();
+		
+	}
+
+
+
+	public void updateDataForFile(String id, String jsonFile) throws Exception {
+		Thread.sleep(2000);
+		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
+			acp.yes.click();
+	    }
+		applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
+		Thread.sleep(1000);
+		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);;
+		
+		WebElement record=driver.findElement(By.xpath("//a[normalize-space()='"+id+"']"));
+		record.click();
+		applyWait.waitForElementToBeClickable(acp.edit, 30).click();
+		Thread.sleep(1000);
+		addNewRecordForFile(jsonFile);
 		
 	}
 
