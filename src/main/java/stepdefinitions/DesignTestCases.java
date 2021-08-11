@@ -62,6 +62,7 @@ public class DesignTestCases extends BaseClass{
 	
 	@Given("Group {string} does not exist")
 	public void group_does_not_exist(String groupName) throws Exception {
+		Thread.sleep(30000);
 	    design.groupexist(groupName);
 	}
 
@@ -73,6 +74,7 @@ public class DesignTestCases extends BaseClass{
 	@Then("Assign appcenter permissions for {string} dataservice to {string}")
 	public void assign_appcenter_permissions_for_strings_text_dataservice(String dataServiceName,String user) throws Exception {
 	    design.assignPermission(dataServiceName,user);
+	    
 	}
 	
 
@@ -108,6 +110,13 @@ public class DesignTestCases extends BaseClass{
 	    design.addRecordForRepeatedId();
 	}
 	
+	
+
+	@Then("Add record \"(.*?)\" to the Location data service")
+	public void add_record__toLocation(String string) throws InterruptedException {
+		design.addRecordForLocation(string);
+	}
+    
 	@Then("Expect error {string} on save")
 	public void expect_error_on_save(String string) {
 	    
@@ -123,16 +132,27 @@ public class DesignTestCases extends BaseClass{
 	    design.updateRecord(id,jsonFile);
 	}
 	
+<<<<<<< HEAD
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the data service for File Type$")
 	public void update_data_to_the_data_service_for_file(String id, String jsonFile) throws Exception {
 		design.updateDataForFile(id,jsonFile);
 	}
 	
+=======
+>>>>>>> data
 	
 	@Then("Update records {string} with {string} to the data service")
 	public void update_records_with_to_the_data_service(String id, String attribute) throws Exception {
 		design.updateRecords(id,attribute);
 	}
+	
+	
+	@Then("Update record \"(.*?)\" with \"(.*?)\" to the Location")
+	public void update_record_with_dsLocation_data_service(String id, String jsonFile) throws Exception {
+	    design.updateLocationRecord(id, jsonFile);
+	}
+
+
 	
 	@Then("Fetch record {string} from the data service")
 	public void fetch_record_from_the_data_service(String id) throws Exception {
@@ -152,7 +172,6 @@ public class DesignTestCases extends BaseClass{
 	
 	@And("Record must not exist")
 	public void record_must_not_exist() throws Exception {
-		
 		design.recordMustNotExist();
 	}
 	@Then("Match it to \"(.*?)\"")
