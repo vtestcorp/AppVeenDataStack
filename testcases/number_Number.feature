@@ -87,7 +87,6 @@ Scenario Outline: Fetch record from the data service
 Examples:
 |id|data|
 |DS1001|{"_id": "DS1001","dsNumberNumber1001": 1001,"dsNumberNumber1002": 10,"dsNumberNumber1003": 1003,"dsNumberNumber1004": 1004,"dsNumberNumber1005": 1005,"dsNumberNumber1007": 0 ,"dsNumberNumber1008": 1, "dsNumberNumber1010": 4, "dsNumberNumber1013": -5,"dsNumberNumber1014": 6,"dsNumberNumber1015": -3, "dsNumberNumber1018": 3,"dsNumberNumber1020": -4,"dsNumberNumber1021": 3, "dsNumberNumber1022": 1, "dsNumberNumber1023": -1,"dsNumberNumber1024": 2}|
-#{dsNumberNumber1001=(1001, 1002), dsNumberNumber1003=(1003, 1004), dsNumberNumber1005=(1005, 1006), dsNumberNumber1008=(1, 6), dsNumberNumber1013=(-5, 9), dsNumberNumber1014=(6, 1), dsNumberNumber1015=(-3, 5), dsNumberNumber1018=(3, 30), dsNumberNumber1020=(-4, 3), dsNumberNumber1021=(3, 2), dsNumberNumber1022=(1, 3), dsNumberNumber1023=(-1, 2), dsNumberNumber1024=(2, 4)}
 
 	Scenario Outline: Update record to data service
 	Given Data service "number_Number"

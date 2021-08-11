@@ -110,13 +110,6 @@ public class DesignTestCases extends BaseClass{
 		design.addRecordForLocation(string);
 	}
     
-	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the Location data service$")
-	public void update_record_with_dsLocation_data_service(String id, String jsonFile) throws Exception {
-	    design.updateLocationRecord(id, jsonFile);
-	}
-
-
-
 	@Then("Expect error {string} on save")
 	public void expect_error_on_save(String string) {
 	    
@@ -137,6 +130,14 @@ public class DesignTestCases extends BaseClass{
 	public void update_records_with_to_the_data_service(String id, String attribute) throws Exception {
 		design.updateRecords(id,attribute);
 	}
+	
+	
+	@Then("Update record \"(.*?)\" with \"(.*?)\" to the Location")
+	public void update_record_with_dsLocation_data_service(String id, String jsonFile) throws Exception {
+	    design.updateLocationRecord(id, jsonFile);
+	}
+
+
 	
 	@Then("Fetch record {string} from the data service")
 	public void fetch_record_from_the_data_service(String id) throws Exception {

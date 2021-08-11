@@ -59,14 +59,14 @@ Scenario: Add data to data service
 #|data|
 #|{"_id":"DS1002", "dsLocation1002": "", "dsLocation1007": "", "dsLocation1008": ""}|
 
-#Scenario Outline: Add record to data service
-#	Given Data service "ds_Location"
-#	Then Add record "<data>" to the Location data service	
-#	And Expect error "ID DS1001 already exists" on save
-#	Examples:
-#		|data|
-#	  |{ "_id": "DS1001", "dsLocation1001": "Satara, Maharashtra, India", "dsLocation1002": "Mumbai, Maharashtra, India", "dsLocation1003": "Kolhapur, Maharashtra, India", "dsLocation1006": "Sangli, Maharashtra, India", "dsLocation1007": "Nanded, Maharashtra, India", "dsLocation1008": "Dhule, Maharashtra, India", "dsLocation1009": "Ratnagiri, Maharashtra, India" }|
-#	
+Scenario Outline: Add record to data service
+	Given Data service "ds_Location"
+	Then Add record "<data>" to the Location data service	
+	And Expect error "ID DS1001 already exists" on save
+	Examples:
+		|data|
+	  |{ "_id": "DS1001", "dsLocation1001": "Satara, Maharashtra, India", "dsLocation1002": "Mumbai, Maharashtra, India", "dsLocation1003": "Kolhapur, Maharashtra, India", "dsLocation1006": "Sangli, Maharashtra, India", "dsLocation1007": "Nanded, Maharashtra, India", "dsLocation1008": "Dhule, Maharashtra, India", "dsLocation1009": "Ratnagiri, Maharashtra, India" }|
+	
 #	Scenario Outline: Fetch record from the data service
 #	Given Data service "ds_Location"
 #	Then Fetch record "<id>" from the data service
@@ -78,7 +78,7 @@ Scenario: Add data to data service
 
 	Scenario Outline: Update record to data service
 	Given Data service "ds_Location"
-	Then Update record "<id>" with "<data>" to the Location data service
+	Then Update record "<id>" with "<data>" to the Location 
 Examples:
 |id|data|
 |DS1001|{"dsLocation1001": "Aundh, Pune, Maharashtra, India","dsLocation1002": "Tamil Nadu, India","dsLocation1003": "Jammu and Kashmir","dsLocation1006": "Bihar, India","dsLocation1007": "Patna, Bihar, India","dsLocation1008": "Chandigarh, India" ,"dsLocation1009": "Himachal Pradesh, India"}|
@@ -92,10 +92,10 @@ Examples:
 #|DS1001|{"_id": "DS1001","dsLocation1001": 1002,"dsLocation1002": 10,"dsLocation1003": 1004, "dsLocation1004": 1004,"dsLocation1005": 1005,"dsLocation1007": 1007, "dsLocation1008": 1, "dsLocation1010":4,  "dsLocation1013": -5, "dsLocation1014": 6,"dsLocation1015": -3, "dsLocation1018": 3,"dsLocation1020": -4,"dsLocation1021": 3, "dsLocation1022": 1, "dsLocation1023": -1,"dsLocation1024": 2}|
 #
 #
-#Scenario Outline: Delete record from the data service
-#	Given Data service "ds_Location"
-#	Then Delete record "<id>" from the data service
-#	And deleting from listing page
-#Examples:
-#|id|
-#|DS1001|
+Scenario Outline: Delete record from the data service
+	Given Data service "ds_Location"
+	Then Delete record "<id>" from the data service
+	And deleting from listing page
+Examples:
+|id|
+|DS1001|
