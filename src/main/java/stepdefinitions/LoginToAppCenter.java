@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import com.aventstack.extentreports.ExtentTest;
 
 import base.BaseClass;
+import cucumber.api.Scenario;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -32,11 +33,6 @@ public class LoginToAppCenter extends BaseClass{
 		loginAppCenter.loginToAppCenterPage();
 	}
 	
-//	@Given("User navigate to AppCenter login page")
-//	public void user_Navigate_to_AppCenter_LogIn_Page() {
-//		loginAppCenter.loginToAppCenterPage();
-//	    
-//	}
 
 	@Given("User enters {string} and {string} in AppCenter login page")
 	public void user_enters_username_and_password_in_AppCenter_Url(String userName,String password) throws Exception {
@@ -47,7 +43,6 @@ public class LoginToAppCenter extends BaseClass{
 
 	@Given("Verify User has Logged in Successfully")
 	public void verify_User_Login_Successfully_in_Appcenter_Url() throws Exception {
-		//dataStackLogo
 		loginAppCenter.verifyUserLoginSuccesfullyToAppCenter();
 	    
 	}
@@ -112,7 +107,7 @@ public class LoginToAppCenter extends BaseClass{
 	}
 	
 	@Given("Data service users")
-	public void data_service_users() {
+	public void data_service_users(Scenario s) {
 	    
 	}
 	

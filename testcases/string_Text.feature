@@ -112,8 +112,7 @@ Scenario Outline: Delete record from the data service
 Examples:
 |id|
 |STR1001|
-#
-#
-#
-#
-#
+
+Scenario: Log out of App Center
+	Given User log out from AppCenter
+

@@ -7,7 +7,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="./testcases/ds_Library.feature",
+@CucumberOptions(features="./testcases/string_Email.feature",
 //				dryRun=true,
 				glue="stepdefinitions",
 				monochrome=true,
@@ -20,7 +20,7 @@ public class Runner {
 	  private static String[] defaultOptions = {
 	            "--glue", "stepdefinitions",
 	            "--plugin", "pretty",
-	            "--plugin", "json:cucumber.json"
+	            "--plugin", "json:cucumber1.json"
 	    };
 	 
 	    public static void main(String[] args) {

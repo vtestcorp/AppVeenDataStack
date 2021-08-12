@@ -21,8 +21,8 @@ Scenario: Create data service
  #Under testData, picks up strings.json create the JSON
 
 Scenario Outline: Assign to Appcenter Group
- 	Then Group "Number-Group" does not exist
-	Then Create new group "Number-Group" 
+ 	Then Group "Number-ListOfValue" does not exist
+	Then Create new group "Number-ListOfValue" 
 	And Assign appcenter permissions for "number_ListOfValue" dataservice to "<user>"
 	
 	Examples:
@@ -86,7 +86,7 @@ Examples:
 	And Match it to "<data>"
 Examples:
 |id|data|
-|NUM1001|{"_id": "NUM1001","dsNumberListOfValues1001": 1,"dsNumberListOfValues1002": 2,"dsNumberListOfValues1003": 3,"dsNumberListOfValues1004": 3,"dsNumberListOfValues1005": 5,"dsNumberListOfValues1007": 5, "dsNumberListOfValues1008": 4, "dsNumberListOfValues1010": 4,  "dsNumberListOfValues1013": 3, "dsNumberListOfValues1014": 1, "dsNumberListOfValues1015": 5,  "dsNumberListOfValues1016": 3,  "dsNumberListOfValues1020": 4"}|
+|NUM1001|{"_id": "NUM1001","dsNumberListOfValues1001": 4569,"dsNumberListOfValues1002": 4569,"dsNumberListOfValues1003": 123,"dsNumberListOfValues1004": 123,"dsNumberListOfValues1005": 123,"dsNumberListOfValues1007": 123, "dsNumberListOfValues1008": 123, "dsNumberListOfValues1010": 123,  "dsNumberListOfValues1013": 123, "dsNumberListOfValues1014": 123, "dsNumberListOfValues1015": 123,  "dsNumberListOfValues1018": 456,  "dsNumberListOfValues1020": 123}|
 	
 	
 	Scenario Outline: Update record to data service
@@ -103,7 +103,7 @@ Scenario Outline: Fetch record from the data service
 	And Match it to "<data>"
 Examples:
 |id|data|
-|NUM1001|{"_id": "NUM1001","dsNumberListOfValues1001": 1,"dsNumberListOfValues1002": 2,"dsNumberListOfValues1003": 3,"dsNumberListOfValues1004": 3,"dsNumberListOfValues1005": 5,"dsNumberListOfValues1007": 5, "dsNumberListOfValues1008": 4, "dsNumberListOfValues1010": 4,  "dsNumberListOfValues1013": 3, "dsNumberListOfValues1014": 1, "dsNumberListOfValues1015": 5,  "dsNumberListOfValues1016": 3,  "dsNumberListOfValues1020": 4}|
+|NUM1001|{"_id": "NUM1001","dsNumberListOfValues1001": 4569,"dsNumberListOfValues1002": 4569,"dsNumberListOfValues1003": 123,"dsNumberListOfValues1004": 123,"dsNumberListOfValues1005": 123,"dsNumberListOfValues1007": 123, "dsNumberListOfValues1008": 123, "dsNumberListOfValues1010": 123,  "dsNumberListOfValues1013": 123, "dsNumberListOfValues1014": 123, "dsNumberListOfValues1015": 123,  "dsNumberListOfValues1018": 456,  "dsNumberListOfValues1020": 123}|
 	
 Scenario Outline: Delete record from the data service
 	Given Data service "number_ListOfValue"
@@ -114,6 +114,7 @@ Examples:
 |NUM1001|
 
 
-
+Scenario: Log out of App Center
+	Given User log out from AppCenter
 
 

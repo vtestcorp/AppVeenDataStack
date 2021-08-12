@@ -21,8 +21,8 @@ Scenario: Create data service
  #Under testData, picks up strings.json create the JSON
 
 Scenario Outline: Assign to Appcenter Group
- 	Then Group "Number-Group" does not exist
-	Then Create new group "Number-Group" 
+ 	Then Group "Currency-Group" does not exist
+	Then Create new group "Currency-Group" 
 	And Assign appcenter permissions for "number_Currency" dataservice to "<user>"
 	
 	Examples:
@@ -86,7 +86,7 @@ Examples:
 	And Match this Currency data to "<data>"
 Examples:
 |id|data|
-|NUM1001|{"_id": "NUM1001","dsNumberCurrency1001": 3.00,"dsNumberCurrency1002": 3.00,"dsNumberCurrency1003": 5.00,"dsNumberCurrency1004": 2.00,"dsNumberCurrency1005": 3.00,"dsNumberCurrency1007": 4.50, "dsNumberCurrency1008": 6.22, "dsNumberCurrency1010": 5.55,  "dsNumberCurrency1013": 8.00, "dsNumberCurrency1014": 7.00, "dsNumberCurrency1015": 3.00,  "dsNumberCurrency1016": 3,  "dsNumberCurrency1020": 5.00, "dsNumberCurrency1021": 2.00, "dsNumberCurrency1022": 3.00, "dsNumberCurrency1023": 5.00, "dsNumberCurrency1024": 5.00}|
+|NUM1001|{"_id": "NUM1001","dsNumberCurrency1001": 3.00,"dsNumberCurrency1002": 3.00,"dsNumberCurrency1003": 5.00,"dsNumberCurrency1004": 2.00,"dsNumberCurrency1005": 3.00,"dsNumberCurrency1007": 4.50, "dsNumberCurrency1008": 6.22, "dsNumberCurrency1010": 5.55,  "dsNumberCurrency1013": 8.00, "dsNumberCurrency1014": 7.00, "dsNumberCurrency1015": 3.00,  "dsNumberCurrency1018": 2.00,  "dsNumberCurrency1020": 5.00, "dsNumberCurrency1021": 2.00, "dsNumberCurrency1022": 3.00, "dsNumberCurrency1023": 5.00, "dsNumberCurrency1024": 5.00}|
 	
 	
 	Scenario Outline: Update record to data service
@@ -103,7 +103,7 @@ Scenario Outline: Fetch record from the data service
 	And Match this Currency data to "<data>"
 Examples:
 |id|data|
-|NUM1001|{"_id": "NUM1001","dsNumberCurrency1001": 1,"dsNumberCurrency1002": 2,"dsNumberCurrency1003": 3,"dsNumberCurrency1004": 3,"dsNumberCurrency1005": 5,"dsNumberCurrency1007": 5, "dsNumberCurrency1008": 4, "dsNumberCurrency1010": 4,  "dsNumberCurrency1013": 3, "dsNumberCurrency1014": 1, "dsNumberCurrency1015": 5,  "dsNumberCurrency1016": 3,  "dsNumberCurrency1020": 4, "dsNumberCurrency1021": 1, "dsNumberCurrency1022": 5, "dsNumberCurrency1023": 4, "dsNumberCurrency1024": 2}|
+|NUM1001|{"_id": "NUM1001","dsNumberCurrency1001": 1.00,"dsNumberCurrency1002": 3.00,"dsNumberCurrency1003": 3.00,"dsNumberCurrency1004": 2.00,"dsNumberCurrency1005": 5.00,"dsNumberCurrency1007": 4.50, "dsNumberCurrency1008": 4.00, "dsNumberCurrency1010": 5.55,  "dsNumberCurrency1013": 3.00, "dsNumberCurrency1014": 1.00, "dsNumberCurrency1015": 5.00,  "dsNumberCurrency1018": 2.00,  "dsNumberCurrency1020": 4.00, "dsNumberCurrency1021": 1.00, "dsNumberCurrency1022": 5.00, "dsNumberCurrency1023": 4.00, "dsNumberCurrency1024": 4.00}|
 	
 Scenario Outline: Delete record from the data service
 	Given Data service "number_Currency"
@@ -114,6 +114,7 @@ Examples:
 |STR1001|
 
 
-
+Scenario: Log out of App Center
+	Given User log out from AppCenter
 
 

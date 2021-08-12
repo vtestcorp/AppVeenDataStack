@@ -21,8 +21,8 @@ Scenario: Create data service
  #Under testData, picks up strings.json create the JSON
 
 Scenario Outline: Assign to Appcenter Group
- 	Then Group "Number-Group" does not exist
-	Then Create new group "Number-Group" 
+ 	Then Group "File-Group" does not exist
+	Then Create new group "File-Group" 
 	And Assign appcenter permissions for "ds_File" dataservice to "<user>"
 	
 	Examples:
@@ -59,6 +59,8 @@ Examples:
 |data|
 
 |{"_id" : "DS1004","dsFile1001" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1002" : "C:\Users\DELL\OneDrive\Desktop\File.txt","dsFile1003" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1004" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1006" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1010" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1011" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1012" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1013" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png"}|
+
+|{"_id" : "DS1004","dsFile1001" : "Date & Time.png","dsFile1002" : "File.txt","dsFile1003" : "Date & Time.png","dsFile1004" : "Date & Time.png","dsFile1006" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1010" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1011" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1012" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1013" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png"}|
 
 
 
@@ -109,6 +111,7 @@ Examples:
 #|STR1001|
 
 
-
+Scenario: Log out of App Center
+	Given User log out from AppCenter
 
 

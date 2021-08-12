@@ -21,8 +21,8 @@ Scenario: Create data service
  #Under testData, picks up strings.json create the JSON
 
 Scenario Outline: Assign to Appcenter Group
- 	Then Group "Number-Group" does not exist
-	Then Create new group "Number-Group" 
+ 	Then Group "Library-Group" does not exist
+	Then Create new group "Library-Group" 
 	And Assign appcenter permissions for "ds_Library" dataservice to "<user>"
 	
 	Examples:
