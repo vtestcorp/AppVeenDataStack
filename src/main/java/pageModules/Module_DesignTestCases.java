@@ -908,8 +908,6 @@ public class Module_DesignTestCases extends BaseClass{
 	  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
 	    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
 	    System.err.println(entriesDiffering);
-	    System.out.println(actualData);
-	    System.out.println(expectedData);
 	    Assert.assertTrue(actualData.equals(expectedData));
 	}
 		

@@ -683,17 +683,7 @@ public class LoginPage extends BaseClass{
 				}
 				
 				
-//				JSONArray objectArray=(JSONArray) attribute.get("definition");
-//				
-//				for(int k=0;k<objectArray.size();k++) {
-//					
-//					JSONObject object = (JSONObject) objectArray.get(k);
-//					String objectAttributeName = attribute.get("type").toString();
-//					String objectKey = object.get("key").toString();
-//				
-//				applyWait.waitForElementToBeClickable(ap.attributeTextBox, 30).sendKeys(object.get("key").toString());
-//				groupAttributes((String) object.get("type"),object);
-//				}
+
 				break;
 				
 				case "Geojson" : 
@@ -823,11 +813,6 @@ public class LoginPage extends BaseClass{
 				case "Object" : 
 					jsonProperties = (JSONObject) attribute.get("properties");
 				
-//					applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
-//	        		applyWait.waitForElementToBeClickable(ap.group, 30).click();
-//					if(jsonProperties.containsKey("_description")) {
-//					applyWait.waitForElementToBeClickable(ap.description, 30).sendKeys(jsonProperties.get("_description").toString());
-//					}
                        if(jsonProperties.containsKey("password")) {
 						
 						applyWait.waitForElementToBeClickable(ap.dropdownCollection, 30).click();
@@ -869,26 +854,6 @@ public class LoginPage extends BaseClass{
 						}
 	        		 }
 	 	        		 
-//	 	        		if(jsonProperties.containsKey("relatedViewFields")) {
-//							JSONArray array=(JSONArray) jsonProperties.get("relatedViewFields");
-//							
-//							if(jsonProperties.get("_typeChanged").equals("Relation"))
-//							{
-//							   for(int j=0; j<array.size();j++) {
-//								JSONObject object = (JSONObject) array.get(j);
-//								JSONObject obj = (JSONObject) object.get("properties");
-//								String value = (String) obj.get("name");
-//								dropdown.selectByVisibleText(ap.viewFields, value);
-//							 }
-//						  }
-//							else if(jsonProperties.get("_typeChanged").equals("User"))
-//							{
-//							   for(int j=0; j<array.size();j++) {
-//								JSONObject object = (JSONObject) array.get(j);
-//							//	JSONObject obj = (JSONObject) object.get("properties");
-//								String value = (String) object.get("name");
-//								dropdown.selectByVisibleText(ap.viewFields, value);
-//							 }
 						  
 		  
 					
@@ -896,9 +861,6 @@ public class LoginPage extends BaseClass{
 
 					case "Geojson" : 
 						jsonProperties = (JSONObject) attribute.get("properties");
-//						if(jsonProperties.get("required").toString().equals("true")) {
-//							applyWait.waitForElementToBeClickable(ap.required, 30).click();
-//						}
 					applyWait.waitForElementToBeClickable(ap.dropdownCollection, 30).click();
 					applyWait.waitForElementToBeClickable(ap.location, 30).click();
 					applyWait.waitForElementToBeClickable(ap.pointOnAMap, 30).click();
@@ -913,12 +875,6 @@ public class LoginPage extends BaseClass{
 						requiredAttributes(jsonProperties);
 						break;
 			
-//					case "Library" : 
-//						jsonProperties = (JSONObject) attribute.get("properties");
-//						applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
-//						applyWait.waitForElementToBeClickable(ap.library, 30).click();
-//						requiredAttributes(jsonProperties);
-//						break;
 					
 					case "User" : 
 						jsonProperties = (JSONObject) attribute.get("properties");
