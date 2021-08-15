@@ -548,9 +548,9 @@ public class LoginAppCenter extends BaseClass {
 			}
 		}
 	
-		
+		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	}
-
+	
 	
 }
 	

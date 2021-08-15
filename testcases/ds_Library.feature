@@ -61,41 +61,32 @@ Scenario: Add data to data service
 #|{"_id":"STR1002", "dsStringText1002":"", "dsStringText1014":"","dsStringText1015":"","dsStringText1017":"","dsStringText1018":""}|
 #
 #
-#Scenario Outline: Add record to data service
-#	Given Data service "ds_Library"
-#	Then Add record "<data>" to the data service	
-#	And Expect error "ID STR1001 already exists" on save
-#	Examples:
-#		|data|
-#	  |{ "_id" : "STR1001","dsStringText1001" : "1001","dsStringText1002" : "c","dsStringText1003" : "3","dsStringText1007" : "7","dsStringText1008" : "18","dsStringText1014" : "14","dsStringText1015" : "15"}|
-#
-#
-#Scenario Outline: Add record to data service
-#	Given Data service "ds_Library"
-#	Then Add record "<data>" to the data service		
-#	And Expect error "Unique check validation failed for dsStringText1002" on save
-#Examples:
-#|data|
-#|{ "_id" : "STR1003","dsStringText1001" : "1001","dsStringText1002" : "a","dsStringText1003" : "3","dsStringText1007" : "7","dsStringText1008" : "18","dsStringText1014" : "14","dsStringText1015" : "15"}|
-#	
-#	
-#	
-#	Scenario Outline: Fetch record from the data service
-#	Given Data service "ds_Library"
-#	Then Fetch record "<id>" from the data service
-#	And Match it to "<data>"
-#Examples:
-#|id|data|
-#|STR1001|{"_id": "STR1001","dsStringText1001": "1001","dsStringText1002": "a","dsStringText1003": "1003","dsStringText1004": "1004","dsStringText1005": "1005","dsStringText1007": "1007", "dsStringText1008": "1008", "dsStringText1010": "1010",  "dsStringText1013": "1013", "dsStringText1014": "1014", "dsStringText1015": "1015",  "dsStringText1018": "A",  "dsStringText1020": "ABCD", "dsStringText1021": "1021", "dsStringText1022": "1022", "dsStringText1023": "1023", "dsStringText1024": "1024"}|
-#	
-#	
-#	Scenario Outline: Update record to data service
-#	Given Data service "ds_Library"
-#	Then Update record "<id>" with "<data>" to the data service
-#Examples:
-#
-#|id|data|
-#|STR1001|{"dsStringText1001": "1111","dsStringText1002": "b","dsStringText1003": "1333","dsStringText1004": "1444","dsStringText1005": "1555","dsStringText1007": "1777", "dsStringText1008": "1888", "dsStringText1010": "101010",  "dsStringText1013": "101313", "dsStringText1014": "101414", "dsStringText1015": "101515", "dsStringText1018": "101818", "dsStringText1020": "ABCDEFGH", "dsStringText1021": "102121", "dsStringText1022": "102222", "dsStringText1023": "102323", "dsStringText1024": "102424"}|
+Scenario Outline: Add record to data service
+	Given Data service "ds_Library"
+	Then Add record "<data>" to the data service	
+	And Expect error "ID DS1001 already exists" on save
+	Examples:
+		|data|
+	  |{ "_id" : "DS1001", "dsLibrary1001" : { "line1" : "1001", "line2" : "1002" }, "dsLibrary1002" : { "line1" : null, "line2" : null }, "dsLibrary1003" : { "line1" : "3001", "line2" : "3002" }, "dsLibrary1004" : { "line1" : "4001", "line2" : "4002" }, "dsLibrary1005" : { "line1" : "5001", "line2" : "5002" }, "dsLibrary1006" : { "line1" : "6001", "line2" : "6002" }, "dsLibrary1007" : { "line1" : "7001", "line2" : "7002" }, "dsLibrary1008" : { "line1" : "8001", "line2" : "8002" } }|
+
+
+
+	Scenario Outline: Fetch record from the data service
+	Given Data service "ds_Library"
+	Then Fetch record "<id>" from the data service
+	And Match it to "<data>"
+Examples:
+|id|data|
+|DS1001|{ "_id" : "DS1001", "dsLibrary1001" : { "line1" : "Library 1001", "line2" : "Library 1002" }, "dsLibrary1002" : { "line1" : null, "line2" : null }, "dsLibrary1003" : { "line1" : "Library 3001", "line2" : "Library 3002" }, "dsLibrary1004" : { "line1" : "Library 4001", "line2" : "Library 4002" }, "dsLibrary1005" : { "line1" : "Library 5001", "line2" : "Library 5002" }, "dsLibrary1006" : { "line1" : "Library 6001", "line2" : "Library 6002" }, "dsLibrary1007" : { "line1" : "Library 7001", "line2" : "Library 7002" }, "dsLibrary1008" : { "line1" : "Library 8001", "line2" : "Library 8002" } }|
+	
+	
+	Scenario Outline: Update record to data service
+	Given Data service "ds_Library"
+	Then Update record "<id>" with "<data>" to the data service
+Examples:
+
+|id|data|
+|DS1001|{ "_id" : "DS1001", "dsLibrary1001" : { "line1" : "Library 11", "line2" : "Library 12" }, "dsLibrary1002" : { "line1" : null, "line2" : null }, "dsLibrary1003" : { "line1" : "Library 31", "line2" : "Library 32" }, "dsLibrary1004" : { "line1" : "Library 41", "line2" : "Library 42" }, "dsLibrary1005" : { "line1" : "Library 51", "line2" : "Library 52" }, "dsLibrary1006" : { "line1" : "Library 61", "line2" : "Library 62" }, "dsLibrary1007" : { "line1" : "Library 71", "line2" : "Library 72" }, "dsLibrary1008" : { "line1" : "Library 81", "line2" : "Library 82" } }|
 #
 #Scenario Outline: Fetch record from the data service
 #	Given Data service "ds_Library"

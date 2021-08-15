@@ -56,7 +56,6 @@ public class BaseClass {
 	public static  String app_center_URL ;
 
 	public static String testData = System.getProperty("testData");
-//	public static String testData = "D:\\users111.json";
 	public static String browser = System.getProperty("browser");
 	public static String url = System.getProperty("url");
 	public static String path = System.getProperty("user.dir");

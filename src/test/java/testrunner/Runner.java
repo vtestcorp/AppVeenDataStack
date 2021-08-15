@@ -7,7 +7,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="./testcases/ds_date.feature",
+@CucumberOptions(features="./testcases/string_Email.feature",
 //				dryRun=true,
 				glue="stepdefinitions",
 				monochrome=true,

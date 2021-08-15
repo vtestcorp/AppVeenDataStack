@@ -758,12 +758,9 @@ public class Module_DesignTestCases extends BaseClass{
 	  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
 	    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
 	    System.err.println(entriesDiffering);
-	    System.out.println(actualData);
-		System.out.println(expectedData);
+	   
 	    Assert.assertTrue(actualData.equals(expectedData));
 	}
-	System.out.println(actualData);
-	System.out.println(expectedData);
 	}
 	public void deleteRecord(String id) {
 		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
