@@ -181,9 +181,7 @@ public class Object_AppCenterPage extends BaseClass{
 	
 	@FindBy(xpath="//button[@id='saveBtn']")
 	public WebElement saveButton;
-	
-//	@FindBy(xpath="//span[normalize-space()='ID']/ancestor::div[@class='ag-header-row']/following-sibling::div//input[contains(@class,'border rounded bg-white w-100 ng-pristine')]")
-//	public WebElement idTab;
+
 	@FindBy(xpath="//span[normalize-space()='ID']/ancestor::div[@class='ag-header-row']/following-sibling::div//input[contains(@class,'border rounded bg-white w-100 ng')]")
 	public WebElement idTab;
 	
@@ -234,11 +232,6 @@ public class Object_AppCenterPage extends BaseClass{
 	
 	@FindBy(xpath="//input[@class='form-control form-control-sm rounded ng-pristine ng-valid ng-star-inserted ng-touched' or 'searchInput pac-target-input']")
 	public List<WebElement> textBoxesLocation;
-	
-	
-	
-	
-	
 	
 
 }

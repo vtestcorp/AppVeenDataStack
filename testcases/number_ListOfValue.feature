@@ -58,7 +58,7 @@ Scenario: Add data to data service
 	And Save button is disabled
 Examples:
 |data|
-|{"_id":"NUM1002","dsNumberListOfValues1001":123, "dsNumberListOfValues1002":4569,"dsNumberListOfValues1003":4569, "dsNumberListOfValues1014":"","dsNumberListOfValues1015":"","dsNumberListOfValues1017":"","dsNumberListOfValues1018":""}|
+|{"_id":"NUM1002","dsNumberListOfValues1001":123,"dsNumberListOfValues1003":4569, "dsNumberListOfValues1014":"","dsNumberListOfValues1015":"","dsNumberListOfValues1017":"","dsNumberListOfValues1018":""}|
 
 
 Scenario Outline: Add record to data service

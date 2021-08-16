@@ -244,7 +244,6 @@ public class Module_DesignTestCases extends BaseClass{
 				}
 			
 
-//				
 				else {
 				for (int j = 1; j <= textBoxes.size(); j++) {
 					String jsonValue=null;
@@ -252,10 +251,6 @@ public class Module_DesignTestCases extends BaseClass{
 					
 					if (textBox.isEnabled()) {
 						String id1 = textBox.getAttribute("id");
-
-//						System.out.println(id1+"      "+textBox.getAttribute("type"));
-						
-//						String value1=JsonUtils.getJsonValue(filePath,id1);
 
 						try {
 						jsonValue = JsonPath.read(string, "$."+id1+"").toString();
@@ -275,7 +270,12 @@ public class Module_DesignTestCases extends BaseClass{
 										}
 	
 								if (textBox.getAttribute("type").equals("select-one")) {
+									if( jsonObject.get(id1).toString().equals("")){
+										applyWait.waitForElementToBeClickable(textBox, 30).click();
+									}
+									else {
 									dropdown.selectByVisibleText(textBox, ( jsonObject.get(id1)).toString());
+									}
 	
 								}
 							}
@@ -344,7 +344,12 @@ public class Module_DesignTestCases extends BaseClass{
 									
 									if (textBox.getAttribute("type").equals("select-one")) {
 										Thread.sleep(50);
+										if(JsonPath.read(string, "$."+id1+"").toString().equals("")) {
+											applyWait.waitForElementToBeClickable(textBox, 30).click();
+										}
+										else {
 										dropdown.selectByVisibleText(textBox, (JsonPath.read(string, "$."+id1+"").toString()));
+										}
 	
 									}
 								}
@@ -431,7 +436,7 @@ public class Module_DesignTestCases extends BaseClass{
 		Thread.sleep(2000);
 		List<WebElement> textBoxes = acp.textBoxes;
 		String path= System.getProperty("user.dir");
-		JSONArray jsonArray = JsonUtils.getJSONArray("C:\\Users\\DELL\\eclipse-workspace\\DataStack\\testData\\string2.json");
+		JSONArray jsonArray = JsonUtils.getJSONArray(path+"\\testData\\string2.json");
 		for(int i=0;i<jsonArray.size();i++) {
 			Thread.sleep(1000);
 			JSONObject jsonObject=(JSONObject) jsonArray.get(i);
@@ -924,9 +929,7 @@ public class Module_DesignTestCases extends BaseClass{
 		
 		applyExplicitWaitsUntilElementVisible(acp.textBox1);
 		List<WebElement> textBoxes = driver.findElements(By.xpath("//input[@class='invisible position-absolute' or @id='_id']"));
-		System.out.println(textBoxes.size());
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
-		System.out.println(string);
 		for(int  i=1;i<=textBoxes.size();i++) {
 		
 			WebElement textBox = driver.findElement(By.xpath("(//input[@class='invisible position-absolute' or @id='_id'])["+i+"]"));
@@ -944,7 +947,6 @@ public class Module_DesignTestCases extends BaseClass{
 		if(jsonObject.get(id1)!=null && textBox.isEnabled()) {
 //			JSONObject value2=(JSONObject) json.get("metadata");
 			String value=(String) jsonObject.get(id1);
-			System.out.println(value);
 			Thread.sleep(200);
 //			textBox.clear();
 			textBox.sendKeys(value);

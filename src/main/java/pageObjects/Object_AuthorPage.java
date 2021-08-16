@@ -307,19 +307,4 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(xpath="//div[@class='text'][normalize-space()='Manage']")
 	public WebElement manageTab;
 	
-	
-	
-	
-
-
-
-	
-	
-	
-	
-
-
-	
-	
-
 }

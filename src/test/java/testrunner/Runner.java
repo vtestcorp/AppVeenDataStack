@@ -7,11 +7,11 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="./testcases/string_Email.feature",
+@CucumberOptions(features="./testcases/string_ListOfValue.feature",
 //				dryRun=true,
 				glue="stepdefinitions",
-				monochrome=true,
-				plugin = { "pretty", "html:target/cucumber-reports" ,"json:target/cucumber-reports/cucumber.json" }
+				monochrome=true
+//				plugin = { "pretty", "html:target/cucumber-reports" ,"json:target/cucumber-reports/cucumber.json" }
 				)
 
 public class Runner {
@@ -20,6 +20,7 @@ public class Runner {
 	  private static String[] defaultOptions = {
 	            "--glue", "stepdefinitions",
 	            "--plugin", "pretty",
+	            "--plugin", "html:report"
 	           
 	    };
 	 

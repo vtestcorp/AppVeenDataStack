@@ -80,7 +80,6 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		applyExplicitWaitsUntilElementVisible(acp.textBox1);
 		List<WebElement> textBoxes = acp.textBoxes;
-		System.out.println(textBoxes.size());
 		String path = System.getProperty("user.dir");
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
@@ -437,7 +436,6 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		applyExplicitWaitsUntilElementVisible(acp.textBox1);
 		List<WebElement> textBoxes = acp.textBoxes;
-		System.out.println(textBoxes.size());
 		String path = System.getProperty("user.dir");
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
