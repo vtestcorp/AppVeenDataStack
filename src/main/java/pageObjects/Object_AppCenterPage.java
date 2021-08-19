@@ -10,6 +10,8 @@ import base.BaseClass;
 
 public class Object_AppCenterPage extends BaseClass{
 	
+
+
 	public Object_AppCenterPage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -21,7 +23,16 @@ public class Object_AppCenterPage extends BaseClass{
 
 	@FindBy(xpath="//span[normalize-space()='Next']")
 	public WebElement nextButton;
+	
+	@FindBy(xpath="//*[@class='btn btn-link mr-2 p-0' or @id='_id']")
+	public List <WebElement> dateFields;
 
+	@FindBy(xpath="//select[@class='text-primary time-select font-weight-bold'][1]")
+	public WebElement monthDropDown;
+	
+	@FindBy(xpath="//select[@class='text-primary time-select font-weight-bold'][2]")
+	public WebElement yearDropDown;
+	
 	@FindBy(xpath="//input[@placeholder='Password']")
 	public WebElement password;
 
@@ -229,9 +240,18 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath = "//span[text()='Delete']")
 	public WebElement delete_ViewRecord;
 	
-	
 	@FindBy(xpath="//input[@class='form-control form-control-sm rounded ng-pristine ng-valid ng-star-inserted ng-touched' or 'searchInput pac-target-input']")
 	public List<WebElement> textBoxesLocation;
+	
+	@FindBy(id = "doneBtn")
+	public WebElement doneButton;
+	
+	@FindBy(id = "_day")
+	public WebElement day;
+	
+	
+	
+	
 	
 
 }

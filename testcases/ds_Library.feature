@@ -87,7 +87,7 @@ Examples:
 
 |id|data|
 |DS1001|{ "_id" : "DS1001", "dsLibrary1001" : { "line1" : "Library 11", "line2" : "Library 12" }, "dsLibrary1002" : { "line1" : null, "line2" : null }, "dsLibrary1003" : { "line1" : "Library 31", "line2" : "Library 32" }, "dsLibrary1004" : { "line1" : "Library 41", "line2" : "Library 42" }, "dsLibrary1005" : { "line1" : "Library 51", "line2" : "Library 52" }, "dsLibrary1006" : { "line1" : "Library 61", "line2" : "Library 62" }, "dsLibrary1007" : { "line1" : "Library 71", "line2" : "Library 72" }, "dsLibrary1008" : { "line1" : "Library 81", "line2" : "Library 82" } }|
-#
+
 #Scenario Outline: Fetch record from the data service
 #	Given Data service "ds_Library"
 #	Then Fetch record "<id>" from the data service
@@ -95,7 +95,7 @@ Examples:
 #Examples:
 #|id|data|
 #|STR1001|{"_id": "STR1001","dsStringText1001": "1111","dsStringText1002": "a","dsStringText1003": "1333","dsStringText1004": "1004","dsStringText1005": "1555","dsStringText1007": "1007", "dsStringText1008": "1888", "dsStringText1010": "1010",  "dsStringText1013": "101313", "dsStringText1014": "101414", "dsStringText1015": "101515", "dsStringText1018": "101818", "dsStringText1020": "ABCDEFGH", "dsStringText1021": "102121", "dsStringText1022": "102222", "dsStringText1023": "102323", "dsStringText1024": "102424"}|
-#	
+
 #Scenario Outline: Delete record from the data service
 #	Given Data service "ds_Library"
 #	Then Delete record "<id>" from the data service
@@ -103,8 +103,8 @@ Examples:
 #Examples:
 #|id|
 #|STR1001|
-#
-#
-#
-#
-#
+
+
+
+
+

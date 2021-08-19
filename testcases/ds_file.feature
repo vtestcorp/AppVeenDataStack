@@ -58,9 +58,7 @@ Scenario: Add data to data service
 Examples:
 |data|
 
-|{"_id" : "DS1004","dsFile1001" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1002" : "C:\Users\DELL\OneDrive\Desktop\File.txt","dsFile1003" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1004" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1006" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1010" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1011" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1012" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1013" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png"}|
-
-|{"_id" : "DS1004","dsFile1001" : "Date & Time.png","dsFile1002" : "File.txt","dsFile1003" : "Date & Time.png","dsFile1004" : "Date & Time.png","dsFile1006" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1010" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1011" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1012" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1013" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png"}|
+|{"_id" : "DS1004","dsFile1001" : "Date & Time.png","dsFile1002" : "File.txt","dsFile1003" : "Date & Time.png","dsFile1004" : "Date & Time.png","dsFile1006" : "Date & Time.png","dsFile1010" : "Date & Time.png","dsFile1011" : "Date & Time.png","dsFile1012" : "Date & Time.png","dsFile1013" : "Date & Time.png"}|
 
 
 
@@ -71,7 +69,7 @@ Scenario Outline: Add record to data service
 	And Expect error "ID NUM1001 already exists" on save
 	Examples:
 		|data|
-|{"_id" : "DS1001","dsFile1001" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1002" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1003" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1004" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1006" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1010" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1011" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1012" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png","dsFile1013" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Date & Time.png"}|
+|{"_id" : "DS1001","dsFile1001" : "Date & Time.png","dsFile1002" : "Date & Time.png","dsFile1003" : "Date & Time.png","dsFile1004" : "Date & Time.png","dsFile1006" : "Date & Time.png","dsFile1010" : "Date & Time.png","dsFile1011" : "Date & Time.png","dsFile1012" : "Date & Time.png","dsFile1013" : "Date & Time.png"}|
 
 
 	
@@ -91,7 +89,7 @@ Examples:
 Examples:
 
 |id|data|
-|DS1001|{"dsFile1001" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Untitled.png","dsFile1002" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Untitled.png","dsFile1003" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Untitled.png","dsFile1004" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Untitled.png","dsFile1006" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Untitled.png","dsFile1010" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Untitled.png","dsFile1011" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Untitled.png","dsFile1012" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Untitled.png","dsFile1013" : "C:\\Users\\DELL\\OneDrive\\Desktop\\Untitled.png"}|
+|DS1001|{"dsFile1001" : "Untitled.png","dsFile1002" : "Untitled.png","dsFile1003" : "Untitled.png","dsFile1004" : "Untitled.png","dsFile1006" : "Untitled.png","dsFile1010" : "Untitled.png","dsFile1011" : "Untitled.png","dsFile1012" : "Untitled.png","dsFile1013" : "Untitled.png"}|
 
 Scenario Outline: Fetch record from the data service
 	Given Data service "ds_File"

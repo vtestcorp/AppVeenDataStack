@@ -7,11 +7,15 @@ import org.json.simple.parser.ParseException;
 import com.aventstack.extentreports.ExtentTest;
 
 import base.BaseClass;
-import cucumber.api.java.Before;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
+//import cucumber.api.java.Before;
+//import cucumber.api.java.en.And;
+//import cucumber.api.java.en.Given;
+//import cucumber.api.java.en.Then;
 import helperMethods.WaitTypes;
+import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import pageModules.Module_DesignTestCases;
 import pageModules.WorkflowsInAppcenterPage;
 
@@ -48,18 +52,6 @@ public class DesignTestCases extends BaseClass{
 	public void service_should_be_deployed_with_newlt_added_attribute() {
 	    
 	}
-	@Given("Service should be deployed with newly added attribute")
-	public void service_should_be_deployed_with_newly_added_attribute() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
-	}
-
-	@Given("Record should be displayed in view mode with user entered values")
-	public void record_should_be_displayed_in_view_mode_with_user_entered_values() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
-	}
-	
 	@Given("Group {string} does not exist")
 	public void group_does_not_exist(String groupName) throws Exception {
 	    design.groupexist(groupName);
@@ -87,7 +79,7 @@ public class DesignTestCases extends BaseClass{
 	    design.addNewRecord(string,string2);
 	}
 	
-	@Then("Add record \"(.*?)\" to the data service for File Type")
+	@Then("^Add record \"(.*?)\" to the data service for File Type$")
 	public void add_record_to_File_Type(String string) throws Exception {
 	    design.addNewRecordForFile(string);
 	}
@@ -157,12 +149,12 @@ public class DesignTestCases extends BaseClass{
 	    design.fetchRecord(id);
 	}
 	
-	@Then("Match this Currency data to \"(.*?)\"")
+	@Then("^Match this Currency data to \"(.*?)\"$S")
 	public void match_this_Currency_data(String jsonFile) throws Exception {
 	 design.matchDataCurrency(jsonFile);
 	}
 	
-	@Then("Match this GROUP data to \"(.*?)\"")
+	@Then("^Match this GROUP data to \"(.*?)\"$")
 	public void match_this_GROUP_data(String jsonFile) throws Exception {
 	   design.matchGroupData(jsonFile);
 	}
@@ -172,7 +164,7 @@ public class DesignTestCases extends BaseClass{
 	public void record_must_not_exist() throws Exception {
 		design.recordMustNotExist();
 	}
-	@Then("Match it to \"(.*?)\"")
+	@Then("^Match it to \"(.*?)\"$")
 	public void match_it_to(String jsonFile) throws Exception {
 		design.matchToRecord(jsonFile);	
 }

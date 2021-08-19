@@ -1,5 +1,6 @@
 package pageModules;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.util.List;
 
@@ -9,6 +10,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
 import com.aventstack.extentreports.ExtentTest;
 import com.jayway.jsonpath.JsonPath;
 
@@ -69,10 +72,27 @@ public class LoginAppCenter extends BaseClass {
 	public void dataService(String dataService) throws Exception {
 		data_Service = dataService;
 		Thread.sleep(2000);
-		applyExplicitWaitsUntilElementVisible(acp.dataServiceName);
-		WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
-		javascriptClick = new JavascriptClick(driver);
-		data.click();
+//		applyExplicitWaitsUntilElementVisible(acp.dataServiceName);
+		try {
+			WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
+			data.click();
+		} catch (Exception e) {
+			Thread.sleep(10000);
+			driver.navigate().refresh();
+			Thread.sleep(2000);
+					try {
+						WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
+						data.click();
+					} catch (Exception e1) {
+						Thread.sleep(10000);
+						driver.navigate().refresh();
+						Thread.sleep(2000);
+						WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
+						data.click();
+					}
+			
+			
+		}
 	}
 
 	public void userEnterData() throws Exception {
@@ -367,12 +387,13 @@ public class LoginAppCenter extends BaseClass {
 			textBox.sendKeys(value);
 		}
 		else {
-			
+//			C:\Users\DELL\eclipse-workspace\ds-dev-ui-automation-framework\\files\\Date & Time.png
 		JSONObject json=(JSONObject) jsonObject.get(id1);
 		if(json!=null) {
 			JSONObject value2=(JSONObject) json.get("metadata");
 			String value=(String) value2.get("filename");
-			textBox.sendKeys(value);
+			String absolutePath=new File("files\\"+value).getAbsolutePath();
+			textBox.sendKeys(absolutePath);
 			Thread.sleep(1000);
 		}}
 		}
@@ -547,6 +568,62 @@ public class LoginAppCenter extends BaseClass {
 		}
 	
 		applyWait.waitForElementToBeClickable(acp.save, 30).click();
+	}
+
+	public void addDataForDate() throws Exception {
+		
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton);
+		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		applyExplicitWaitsUntilElementVisible(acp.textBox1);
+		List<WebElement> textBoxes = acp.dateFields;
+		String path = System.getProperty("user.dir");
+		String filePath=path + "\\testData\\" + data_Service + ".data.json";
+		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
+		
+		for (int j = 1; j <= textBoxes.size(); j++) {
+			WebElement textBox = driver.findElement(By.xpath("(//*[@class='btn btn-link mr-2 p-0' or @id='_id'])[" + j + "]"));
+			if (textBox.isEnabled()) {
+				String id1 = textBox.getAttribute("id");
+
+				String value1=JsonUtils.getJsonValue(filePath,id1);
+				
+				if(id1.equals("_id")) {
+					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1.toString());
+				}
+				else {
+					
+					JSONObject json=(JSONObject) jsonObject.get(id1);
+					String dateValue=json.get("rawData").toString();
+					String fullDate[]=dateValue.split("T")[0].split("-");
+					String fullTime[]=dateValue.split("T")[1].split(":");
+					String date=fullDate[2];
+					String month=fullDate[1];
+					String year=fullDate[0];
+					String hour=fullTime[0];
+					String minute=fullTime[1];
+					String[] second=fullTime[2].trim().split(".");
+					
+					WebElement selectDate=driver.findElement(By.id(id1));
+					selectDate.click();
+					dropdown.selectByIndex(acp.monthDropDown, Integer.parseInt(month)-1);
+					dropdown.selectByValue(acp.yearDropDown, year);
+					applyExplicitWaitsUntilElementVisible(acp.day);
+					WebElement date1=driver.findElement(By.xpath("//span[contains(@class,'disabled')=false and @id='_day']["+date+"]"));
+					date1.click();
+					applyWait.waitForElementToBeClickable(acp.doneButton, 30).click();
+					Thread.sleep(500);
+					
+				
+					
+				}
+			}
+			}
+		
+		
+
+		
+		
+		
 	}
 	
 	

@@ -8,12 +8,16 @@ import org.openqa.selenium.WebDriver;
 import com.aventstack.extentreports.ExtentTest;
 
 import base.BaseClass;
-import cucumber.api.Scenario;
-import cucumber.api.java.Before;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
+//import cucumber.api.Scenario;
+//import cucumber.api.java.Before;
+//import cucumber.api.java.en.Given;
+//import cucumber.api.java.en.Then;
 import helperMethods.WaitTypes;
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import pageModules.LoginAppCenter;
 import pageModules.LoginPage;
 
@@ -60,7 +64,10 @@ public class LoginToAppCenter extends BaseClass{
 		loginAppCenter.userEnterDataforCollection();
 	}
 
-
+	@Then("Add data to the data service for Date")
+	public void add_data_to_the_data_service_for_Date() throws Exception {
+	    loginAppCenter.addDataForDate();
+	}
 	
 	@Then("Add data to the data service")
 	public void add_data_to_the_data_service() throws Exception {

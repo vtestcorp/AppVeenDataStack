@@ -12,7 +12,7 @@ Examples:
 |deepak@appveen.com|123123123|
 
 Scenario: Delete data service
-	Given Data service "date" exists
+	Given Data service "date&Time" exists
 	Then Remove the data service
 
 Scenario: Create data service

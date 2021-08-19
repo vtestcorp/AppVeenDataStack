@@ -1,5 +1,6 @@
 package pageModules;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -30,7 +31,7 @@ import com.jayway.jsonpath.PathNotFoundException;
 
 import base.BaseClass;
 import config.DefineConstants;
-import cucumber.api.java.en.Then;
+//import cucumber.api.java.en.Then;
 import helperMethods.DropDown;
 import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
@@ -109,7 +110,6 @@ public class Module_DesignTestCases extends BaseClass{
 			applyWait.waitForElementToBeClickable(gp.delete, 30).click();
 
 		}
-		
 		
 	}
 
@@ -666,6 +666,7 @@ public class Module_DesignTestCases extends BaseClass{
 		
 		WebElement record=driver.findElement(By.xpath("//a[normalize-space()='"+id+"']"));
 		record.click();
+		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.edit, 30).click();
 		Thread.sleep(1000);
 		addRecord(jsonFile);
@@ -922,12 +923,13 @@ public class Module_DesignTestCases extends BaseClass{
 		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
 			acp.yes.click();
 	    }
+		Thread.sleep(1000);
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
 			applyExplicitWaitsUntilElementVisible(acp.addDataButton);
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
-		
-		applyExplicitWaitsUntilElementVisible(acp.textBox1);
+		Thread.sleep(1000);
+//		applyExplicitWaitsUntilElementVisible(acp.textBox1);
 		List<WebElement> textBoxes = driver.findElements(By.xpath("//input[@class='invisible position-absolute' or @id='_id']"));
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
 		for(int  i=1;i<=textBoxes.size();i++) {
@@ -938,18 +940,18 @@ public class Module_DesignTestCases extends BaseClass{
 			
 			String value=(String) jsonObject.get(id1);
 			if(value!=null) {
+				
+		
 			textBox.sendKeys(value);
 			}
 		}
 		else {
 			
-//		JSONObject json=(JSONObject) jsonObject.get(id1);
 		if(jsonObject.get(id1)!=null && textBox.isEnabled()) {
-//			JSONObject value2=(JSONObject) json.get("metadata");
 			String value=(String) jsonObject.get(id1);
 			Thread.sleep(200);
-//			textBox.clear();
-			textBox.sendKeys(value);
+			String absolutePath=new File("files\\"+value).getAbsolutePath();
+			textBox.sendKeys(absolutePath);
 			Thread.sleep(1000);
 		}}
 		}

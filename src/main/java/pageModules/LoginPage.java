@@ -1050,9 +1050,6 @@ public class LoginPage extends BaseClass{
 											String hour=fullTime[0];
 											String minute=fullTime[1];
 											String[] second=fullTime[2].trim().split(".");
-											System.out.println(hour+"()"+minute+"()");
-											System.out.println(fullTime[2]);
-											
 											
 											dropdown.selectByIndex(ap.monthDropDown, Integer.parseInt(month)-1);
 											
@@ -1243,8 +1240,6 @@ public class LoginPage extends BaseClass{
 						public void logOutFromAuthor() {
 							applyWait.waitForElementToBeClickable(gp.profileIcon, 30).click();
 							applyWait.waitForElementToBeClickable(gp.logout, 30).click();
-
-							
 
 						}
 

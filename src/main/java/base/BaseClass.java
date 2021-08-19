@@ -48,7 +48,7 @@ public class BaseClass {
 	public static WebDriver driver;
 	public ExtentTest test;
 	public static ExtentReports extent;
-	public static ExtentHtmlReporter htmlReporter;
+//	public static ExtentHtmlReporter htmlReporter;
 	public static String DownloadFilepath, folder, basefold;
 	public static int count;
 	
@@ -67,10 +67,10 @@ public class BaseClass {
 		if(browser==null) {
 			browser="chrome";
 		}
-		htmlReporter = config.ExtentReports.createInstance("report/extent.html");
+//		htmlReporter = config.ExtentReports.createInstance("report/extent.html");
 
-		extent = new ExtentReports();
-		extent.attachReporter(htmlReporter);
+//		extent = new ExtentReports();
+//		extent.attachReporter(htmlReporter);
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
@@ -113,8 +113,8 @@ public class BaseClass {
 			app_center_URL = "https://bifrost.ds.appveen.com/appcenter";
 			
 		}
-		extent.setSystemInfo("Selenium Version", "3");
-		extent.setSystemInfo("Environment", "Testing");
+//		extent.setSystemInfo("Selenium Version", "3");
+//		extent.setSystemInfo("Environment", "Testing");
 	}
 
 	public static WebDriver getDriver() {
