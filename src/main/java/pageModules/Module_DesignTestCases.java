@@ -91,9 +91,8 @@ public class Module_DesignTestCases extends BaseClass{
 
 	public void groupexist(String groupName) throws Exception {
 		
-		Thread.sleep(3000);
 		applyWait.waitForElementToBeClickable(ap.groups, 30).click();
-		applyExplicitWaitsUntilElementVisible(gp.group1);
+		applyExplicitWaitsUntilElementVisible(gp.group1,10);
 		List<WebElement> groupNames=gp.groups;
 		groups=new ArrayList<String>();
 		for(WebElement group : groupNames) {
@@ -120,8 +119,7 @@ public class Module_DesignTestCases extends BaseClass{
 
 
 	public void createGroup(String groupName) throws Exception {
-		Thread.sleep(2000);
-		applyExplicitWaitsUntilElementVisible(gp.group1);
+		applyExplicitWaitsUntilElementVisible(gp.group1,10);
 		List<WebElement> groupNames=gp.groups;
 		ArrayList<String> groups=new ArrayList<String>();
 			for(WebElement group : groupNames) {
@@ -143,9 +141,8 @@ public class Module_DesignTestCases extends BaseClass{
 	public void assignPermission(String dataServiceName,String user1) throws Exception {
 		String role="Manage";
 		String userEmail=user1;
-		Thread.sleep(2000);
 		applyWait.waitForElementToBeClickable(gp.appCenterRoles, 30).click();
-		Thread.sleep(2000);
+		applyExplicitWaitsUntilElementVisible(gp.dsArrow, 10);
 		WebElement dsArrow=driver.findElement(By.xpath("//span[normalize-space()='"+dataServiceName+"']/parent::div/following-sibling::span[2]/child::span"));
 		applyWait.waitForElementToBeClickable(dsArrow, 30).click();
 		
@@ -167,9 +164,8 @@ public class Module_DesignTestCases extends BaseClass{
 		
 		applyWait.waitForElementToBeClickable(gp.members, 30).click();
 		applyWait.waitForElementToBeClickable(gp.addUsers, 30).click();
-		Thread.sleep(2000);
 		WebElement user=driver.findElement(By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']"));
-		applyExplicitWaitsUntilElementVisible(user);
+		applyExplicitWaitsUntilElementVisible(user,10);
 		try {
 		user.click();
 		}
@@ -179,31 +175,23 @@ public class Module_DesignTestCases extends BaseClass{
 		}
 		applyWait.waitForElementToBeClickable(gp.done, 30).click();
 		applyWait.waitForElementToBeClickable(gp.save, 30).click();
-//		applyWait.waitForElementToBeClickable(gp.saveDataService, 30).click();
 		
 	}
 
 
 
 	public void addRecord(String string) throws Exception {
-		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
 			acp.yes.click();
 	    }
-		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
-		Thread.sleep(1000);
 		List<WebElement> textBoxes = acp.textBoxes;
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
-//		for(int i=0;i<jsonArray.size();i++) {
-//			Thread.sleep(1000);
-//			JSONObject jsonObject=(JSONObject) jsonArray.get(i);
-/**
- * Code for Experience tab
- */
+
+
 		
 			List<WebElement> stepNames=driver.findElements(By.xpath("//div[@class='step-name high-zIndex text-truncate']"));
 			
@@ -373,19 +361,6 @@ public class Module_DesignTestCases extends BaseClass{
 				applyWait.waitForElementToBeClickable(acp.save, 30).click();
 				}
 			
-			
-//			
-//			if((jsonArray.size()-1) > i) {
-//			applyWait.waitForElementToBeClickable(acp.proceedAndCreateAnother, 30).click();
-//				}
-//				else {
-//					applyWait.waitForElementToBeClickable(acp.save, 30).click();
-//				}
-		
-//	}
-	
-
-
 
 	public void addNewRecord(String string, String string2) throws Exception {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
@@ -521,15 +496,12 @@ public class Module_DesignTestCases extends BaseClass{
 	}
 	
 	public void addRecordForLocation(String string) throws InterruptedException {
-		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
 			acp.yes.click();
 	    }
-		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
-		Thread.sleep(1000);
 		List<WebElement> textBoxes = acp.textBoxesLocation;
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
 	   	for (int j = 2; j <= textBoxes.size(); j++) {
@@ -542,7 +514,6 @@ public class Module_DesignTestCases extends BaseClass{
 						  {
 							 applyWait.waitForElementToBeClickable(textBox,30).clear();
 						     applyWait.waitForElementToBeClickable(textBox, 30).sendKeys((jsonObject.get(id1)).toString());
-						     Thread.sleep(2000);
 						     applyWait.waitForElementToBeClickable(textBox,30).clear();
 						     textBox.sendKeys(Keys.DOWN);
 						     textBox.sendKeys(Keys.ENTER);
@@ -551,7 +522,6 @@ public class Module_DesignTestCases extends BaseClass{
 					  }
 					}
 				}
-		
 				      
 		           }
 		            applyWait.waitForElementToBeClickable(acp.save, 30).click();
@@ -567,7 +537,6 @@ public class Module_DesignTestCases extends BaseClass{
 		applyWait.waitForElementToBeClickable(acp.yes, 30).click();
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 		List<WebElement> textBoxes = acp.textBoxes;
-//		String path= System.getProperty("user.dir");
 		JSONArray jsonArray = JsonUtils.getJSONArray(path +"\\testData\\string3.json");
 		for(int i=0;i<jsonArray.size();i++) {
 			JSONObject jsonObject=(JSONObject) jsonArray.get(i);
@@ -641,17 +610,8 @@ public class Module_DesignTestCases extends BaseClass{
 				else {
 					applyWait.waitForElementToBeClickable(acp.save, 30).click();
 				}
+		}
 	}
-	
-	
-		
-	
-	
-		
-	
-		
-	}
-
 
 
 	public void updateRecord(String id, String jsonFile) throws Exception {
@@ -666,28 +626,22 @@ public class Module_DesignTestCases extends BaseClass{
 		
 		WebElement record=driver.findElement(By.xpath("//a[normalize-space()='"+id+"']"));
 		record.click();
-		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.edit, 30).click();
-		Thread.sleep(1000);
 		addRecord(jsonFile);
 		
 	}
 	
      public void updateLocationRecord(String id, String jsonFile) throws Exception {
 		
-		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
 			acp.yes.click();
 	    }
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
-		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);;
 		
 		WebElement record=driver.findElement(By.xpath("//a[normalize-space()='"+id+"']"));
 		record.click();
-		Thread.sleep(1000);
 		 applyWait.waitForElementToBeClickable(acp.edit, 30).click();
-		Thread.sleep(1000);
 		addRecordForLocation(jsonFile);
      }
 	
@@ -700,9 +654,7 @@ public class Module_DesignTestCases extends BaseClass{
 		
 		WebElement record=driver.findElement(By.xpath("//a[normalize-space()='"+id+"']"));
 		record.click();
-		Thread.sleep(2000);
 		applyWait.waitForElementToBeClickable(acp.edit, 30).click();
-		Thread.sleep(2000);
 		WebElement textBox=driver.findElement(By.xpath("//span[normalize-space()='DS STRING TEXT 1008']/parent::label/parent::div/following-sibling::odp-form-control//descendant::input"));
 		textBox.clear();;
 		textBox.sendKeys(attribute);
@@ -713,7 +665,6 @@ public class Module_DesignTestCases extends BaseClass{
 
 
 	public void fetchRecord(String id) throws Exception {
-		Thread.sleep(1000);
 		this.id=id;
 		
 		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
@@ -737,10 +688,9 @@ public class Module_DesignTestCases extends BaseClass{
 
 	public void matchToRecord(String jsonFile) throws Exception {
 		LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
-		Thread.sleep(2000);
+		applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
 		WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
 		record.click();
-		Thread.sleep(2000);
 		int q=1;
 		for(WebElement attribute : acp.attributesOnViewPage) {
 			WebElement t=driver.findElement(By.xpath("(//label[starts-with(@class,'label-width d-flex')])["+q+"]/parent::div/following-sibling::odp-view-separator/descendant::div/child::*"));
@@ -785,9 +735,7 @@ public class Module_DesignTestCases extends BaseClass{
 	    }
 		
 			 applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
-			 Thread.sleep(2000);
 			 javascriptClick.sendKeys(acp.dsSTRINGTEXT1001, dsStringText1001);
-			 Thread.sleep(2000);
 			 javascriptClick.sendKeys(acp.dsSTRINGTEXT1002, dsStringText1002);
 			 javascriptClick.click(acp.click_On_Checkbox);
 			 javascriptClick.click(acp.click_On_Delete);
@@ -798,7 +746,6 @@ public class Module_DesignTestCases extends BaseClass{
 	public void deleteRecordFromViewPage(String dsStringText1001 , String dsStringText1002) throws Exception {
 		 applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
 		 javascriptClick.sendKeys(acp.dsSTRINGTEXT1001, dsStringText1001);
-		 Thread.sleep(2000);
 		 javascriptClick.sendKeys(acp.dsSTRINGTEXT1002, dsStringText1002);
 
 		 WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
@@ -824,26 +771,20 @@ public class Module_DesignTestCases extends BaseClass{
 		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
 			acp.yes.click();
 	    }
-		
 			 applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
-			 Thread.sleep(2000);
 			 javascriptClick.sendKeys(acp.dsSTRINGTEXT1001, dsStringText1001);
-			 Thread.sleep(2000);
 			 javascriptClick.sendKeys(acp.dsSTRINGTEXT1002, dsStringText1002);
 			 acp.dsSTRINGTEXT1002.sendKeys(Keys.ENTER);
-		
 	}
 
 
 
 	public void matchDataCurrency(String jsonFile) throws Exception {
-		
 
 		LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
-		Thread.sleep(2000);
+		applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
 		WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
 		record.click();
-		Thread.sleep(2000);
 		int q=1;
 		for(WebElement attribute : acp.attributesOnViewPage) {
 			WebElement t=driver.findElement(By.xpath("(//label[starts-with(@class,'label-width d-flex')])["+q+"]/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()]"));
@@ -883,10 +824,9 @@ public class Module_DesignTestCases extends BaseClass{
 	public void matchGroupData(String jsonFile) throws Exception {
 		
 		LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
-		Thread.sleep(2000);
+		applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
 		WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
 		record.click();
-		Thread.sleep(2000);
 		int q=1;
 		for(WebElement attribute : acp.attributesOnViewPageForGroups) {
 			WebElement t=driver.findElement(By.xpath("(//label[starts-with(@class,'label-width d-flex')])["+q+"]/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()]"));
@@ -925,11 +865,9 @@ public class Module_DesignTestCases extends BaseClass{
 	    }
 		Thread.sleep(1000);
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
-			applyExplicitWaitsUntilElementVisible(acp.addDataButton);
+			applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
-		Thread.sleep(1000);
-//		applyExplicitWaitsUntilElementVisible(acp.textBox1);
 		List<WebElement> textBoxes = driver.findElements(By.xpath("//input[@class='invisible position-absolute' or @id='_id']"));
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
 		for(int  i=1;i<=textBoxes.size();i++) {
@@ -940,7 +878,6 @@ public class Module_DesignTestCases extends BaseClass{
 			
 			String value=(String) jsonObject.get(id1);
 			if(value!=null) {
-				
 		
 			textBox.sendKeys(value);
 			}
@@ -961,18 +898,16 @@ public class Module_DesignTestCases extends BaseClass{
 
 
 	public void updateDataForFile(String id, String jsonFile) throws Exception {
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
 			acp.yes.click();
 	    }
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
-		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);;
 		
 		WebElement record=driver.findElement(By.xpath("//a[normalize-space()='"+id+"']"));
 		record.click();
 		applyWait.waitForElementToBeClickable(acp.edit, 30).click();
-		Thread.sleep(1000);
 		addNewRecordForFile(jsonFile);
 		
 	}

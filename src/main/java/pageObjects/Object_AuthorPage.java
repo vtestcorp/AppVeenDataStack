@@ -234,7 +234,6 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(xpath="//div[@class='card-container pt-3']//div[1]//div[3]//div[1]//div[1]")
 	public WebElement toggler;
 	
-	
 	@FindBy(xpath="//div[@class='button-grid bg-light clearfix w-100 active']//span[@class='text'][normalize-space()='Delete']")
 	public WebElement delete;
 
@@ -258,6 +257,9 @@ public class Object_AuthorPage extends BaseClass{
 
 	@FindBy(xpath="//span[normalize-space()='Groups']")
 	public WebElement groups;
+	
+	@FindBy(xpath="//div[@class='text-truncate']")
+	public WebElement groupNames;
 	
 	@FindBy(xpath="//span[normalize-space()='Groups']")
 	public WebElement groups1;

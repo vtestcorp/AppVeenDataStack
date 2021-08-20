@@ -1,6 +1,8 @@
 package config;
 
-public class DefineConstants {
+import base.BaseClass;
+
+public class DefineConstants extends BaseClass{
 	// Test data file Path
 	public static final String Path_TestData = "";
 
@@ -15,7 +17,6 @@ public class DefineConstants {
 	public static final String User_Email_Id="deepak@appveen.com";
 	public static final String User_Password="123123123";
 
-//	 http://p5beta.plumb5.com/p5-newdesign/manage-campaigns.html
 	
 	// Explicit Wait Time
 	public static final int explicitWait_10 = 10;
@@ -30,9 +31,9 @@ public class DefineConstants {
 
 	public static final String PROJECT_OS = System.getProperty("os.name");
 
-	public static final String TestData_Folder = "C:\\Users\\DELL\\eclipse-workspace\\DataStack\\Test_Data";
+	public static final String TestData_Folder = path+"\\Test_Data";
 	
-	public static final String Locator_Folder = "C:\\Users\\DELL\\eclipse-workspace\\DataStack\\locator";
+	public static final String Locator_Folder = path+"\\locator";
 	
 	public static final String Authentication_TestData_Folder = "Authentication";
 	
@@ -53,7 +54,6 @@ public class DefineConstants {
 	
 	public static final String json_AppCenter_FilePath = Locator_Folder + "\\" + "appCenterLocator.json";
 	
-//	public static final String TC_Create_New_Data_Service = TestData_Folder +  "//" + "dataServiceCredentials.json";
 	
 	public static final String TC_Create_New_Data_Service = TestData_Folder +  "//" + "data.json";
 

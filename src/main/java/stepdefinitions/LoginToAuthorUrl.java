@@ -87,9 +87,7 @@ public class LoginToAuthorUrl extends BaseClass {
 
 	@Then("Create new data service {string}")
 	public void create_new_Data_Service(String dataService) throws Exception  {
-//		if(!dataService.equals(null)) {
 			data_Service=dataService;
-//		}
 		
 		String dataName=path+"\\testData" + "\\" + ""+dataService+".json";
 		

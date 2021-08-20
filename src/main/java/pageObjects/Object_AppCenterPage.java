@@ -248,10 +248,5 @@ public class Object_AppCenterPage extends BaseClass{
 	
 	@FindBy(id = "_day")
 	public WebElement day;
-	
-	
-	
-	
-	
 
 }

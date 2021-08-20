@@ -57,37 +57,32 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.username, 30).sendKeys(username);
 		applyWait.waitForElementToBeClickable(acp.nextButton, 30).click();
 		applyWait.waitforElementToBeDisplayed(acp.password, 30).sendKeys(password);
-		;
 		applyWait.waitforElementToBeDisplayed(acp.loginButton, 30).click();
 
 	}
 
 	public void verifyUserLoginSuccesfullyToAppCenter() throws InterruptedException {
-		Thread.sleep(2000);
 		Boolean status = applyWait.waitforElementToBeDisplayed(acp.dataStackLogo, 80).isDisplayed();
 		if (status) {
 		}
 	}
 
 	public void dataService(String dataService) throws Exception {
-		data_Service = dataService;
-		Thread.sleep(2000);
-//		applyExplicitWaitsUntilElementVisible(acp.dataServiceName);
+		WebElement data = null;
 		try {
-			WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
+		 data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
 			data.click();
 		} catch (Exception e) {
 			Thread.sleep(10000);
 			driver.navigate().refresh();
-			Thread.sleep(2000);
+			applyExplicitWaitsUntilElementVisible(data,5);
 					try {
-						WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
 						data.click();
 					} catch (Exception e1) {
 						Thread.sleep(10000);
 						driver.navigate().refresh();
-						Thread.sleep(2000);
-						WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
+						applyExplicitWaitsUntilElementVisible(data,5);
+						data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
 						data.click();
 					}
 			
@@ -96,9 +91,9 @@ public class LoginAppCenter extends BaseClass {
 	}
 
 	public void userEnterData() throws Exception {
-		applyExplicitWaitsUntilElementVisible(acp.addDataButton);
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-		applyExplicitWaitsUntilElementVisible(acp.textBox1);
+		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
 		List<WebElement> textBoxes = acp.textBoxes;
 		String path = System.getProperty("user.dir");
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
@@ -127,23 +122,18 @@ public class LoginAppCenter extends BaseClass {
 							String[] attributes = id1.trim().split("[^a-zA-Z0-9]+");
 
 							JSONObject obj = (JSONObject) jsonObject.get(attributes[0]);
-							applyWait.waitForElementToBeClickable(textBox, 30)
-									.sendKeys((String) obj.get(attributes[1]));
+							applyWait.waitForElementToBeClickable(textBox, 30).sendKeys((String) obj.get(attributes[1]));
 
 						} else {
-							applyWait.waitForElementToBeClickable(textBox, 30)
-									.sendKeys(((String) jsonObject.get(id1)).toString());
-							;
+							applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(((String) jsonObject.get(id1)).toString());
+							
 						}
 					}
 					if (textBox.getAttribute("type").equals("number")) {
-						applyWait.waitForElementToBeClickable(textBox, 30)
-								.sendKeys(((Long) jsonObject.get(id1)).toString());
-						;
+						applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(((Long) jsonObject.get(id1)).toString());
+						
 					}
-
 				}
-
 			}
 		}
 
@@ -155,8 +145,6 @@ public class LoginAppCenter extends BaseClass {
 
 					String value1=JsonUtils.getJsonValue(filePath,id1);
 				
-
-
 					
 					if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")||textBox.getAttribute("type").equals("select-one")) {
 							if (jsonObject.get(id1) != null) {
@@ -252,24 +240,9 @@ public class LoginAppCenter extends BaseClass {
 				}
 			}
 		}
-		
-		
-
-//			if((jsonArray.size()-1) > i) {
-//			applyWait.waitForElementToBeClickable(acp.proceedAndCreateAnother, 30).click();
-//				}
-//				else {
 		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	}
-//				applyWait.waitForElementToBeClickable(acp.comments, 30).sendKeys("Check");;
-//				applyWait.waitForElementToBeClickable(acp.submit, 30).click();
-//				applyWait.waitForElementToBeClickable(acp.userDetails, 30).click();
-//				applyWait.waitForElementToBeClickable(acp.logout, 30).click();
-//				
-//				workflow();
 
-//		}
-//	}
 
 	public void userEnterDataInLocationField() throws InterruptedException {
 		Thread.sleep(2000);
@@ -278,8 +251,7 @@ public class LoginAppCenter extends BaseClass {
 		List<WebElement> textBoxes = acp.textBoxesLocation;
 		
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
-		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
-		//JSONObject value= JsonUtils.getJSONObject(filePath);
+		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 		
 		
 		for (int j = 2; j <= textBoxes.size(); j++) {
@@ -293,24 +265,16 @@ public class LoginAppCenter extends BaseClass {
 				{
 					JSONObject value1= JsonUtils.fetchJSONObject(v1);
 					 v2 = (String) value1.get("userInput");
-					  
-					System.out.println(v2);
-					
 				}
 				
 				
 				if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
-				//	applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(((String) jsonObject.get(id1)).toString());
 					if(id1.equals("_id"))
 					{
 						applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(v1);
 					}
 						else {
-//								applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(v2);
-//								  textBox.sendKeys(Keys.ENTER);
-//								  Thread.sleep(1000);
 								textBox.sendKeys(v2);
-								Thread.sleep(2000);
 								textBox.sendKeys(Keys.DOWN);
 								textBox.sendKeys(Keys.ENTER);
         			}
@@ -331,7 +295,6 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.username, 30).sendKeys("reviewer@appveen.com");
 		applyWait.waitForElementToBeClickable(acp.nextButton, 30).click();
 		applyWait.waitforElementToBeDisplayed(acp.password, 30).sendKeys("123123123");
-		;
 		applyWait.waitforElementToBeDisplayed(acp.login, 30).click();
 		applyWait.waitforElementToBeDisplayed(acp.workflowTab, 30).click();
 		for (WebElement workflow : acp.workflowsId) {
@@ -339,7 +302,6 @@ public class LoginAppCenter extends BaseClass {
 			applyWait.waitforElementToBeDisplayed(acp.respond, 30).click();
 			applyWait.waitforElementToBeDisplayed(acp.approve, 30).click();
 			applyWait.waitforElementToBeDisplayed(acp.enterApproveComment, 30).sendKeys("Approved");
-			;
 			applyWait.waitforElementToBeDisplayed(acp.approve, 30).click();
 
 		}
@@ -347,7 +309,7 @@ public class LoginAppCenter extends BaseClass {
 	}
 
 	public void verifyTotalCountOfDocuments(Integer documentCount) throws Exception {
-		applyExplicitWaitsUntilElementVisible(acp.documentList);
+		applyExplicitWaitsUntilElementVisible(acp.documentList,10);
 		String documentList = acp.documentList.getText();
 		Integer documentListCount = Integer.parseInt(documentList.trim().split("of")[1].trim());
 	}
@@ -356,9 +318,8 @@ public class LoginAppCenter extends BaseClass {
 		Thread.sleep(1000);
 		for (int i = 0; i < int1; i++) {
 			WebElement checkbox = acp.checkbox;
-			applyExplicitWaitsUntilElementVisible(acp.checkbox);
+			applyExplicitWaitsUntilElementVisible(acp.checkbox,10);
 			checkbox.click();
-			Thread.sleep(2000);
 			acp.delete.click();
 			acp.yes.click();
 
@@ -367,16 +328,15 @@ public class LoginAppCenter extends BaseClass {
 	}
 
 	public void addDataForFile() throws Exception {
-		//input[@class='invisible position-absolute']
 		
-		applyExplicitWaitsUntilElementVisible(acp.addDataButton);
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-		applyExplicitWaitsUntilElementVisible(acp.textBox1);
+		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
 		List<WebElement> textBoxes = driver.findElements(By.xpath("//input[@class='invisible position-absolute' or @id='_id']"));
 		System.out.println(textBoxes.size());
 		String path = System.getProperty("user.dir");
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
-		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
+		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 		
 		for(int  i=1;i<=textBoxes.size();i++) {
 		
@@ -387,7 +347,6 @@ public class LoginAppCenter extends BaseClass {
 			textBox.sendKeys(value);
 		}
 		else {
-//			C:\Users\DELL\eclipse-workspace\ds-dev-ui-automation-framework\\files\\Date & Time.png
 		JSONObject json=(JSONObject) jsonObject.get(id1);
 		if(json!=null) {
 			JSONObject value2=(JSONObject) json.get("metadata");
@@ -403,17 +362,10 @@ public class LoginAppCenter extends BaseClass {
 
 	
 	public void userEnterDataforCollection() throws InterruptedException {
-		Thread.sleep(2000);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-		Thread.sleep(3000);
-	//	List<WebElement> textBoxes = acp.textBoxes;
-	//	System.out.println(textBoxes.size());
 		String path = System.getProperty("user.dir");
 		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
 
-		/**
-		 * Code for Experience tab
-		 */
 		List<WebElement> addNew = driver.findElements(By.xpath("//span[text()='Add new']"));
 		int k=1, m=2;
 			for (int j = 1; j <= addNew.size(); j++) {
@@ -424,26 +376,16 @@ public class LoginAppCenter extends BaseClass {
 					for(int i=1;i<4;i++)
 					{
 						textBox.click();
-						Thread.sleep(8000);
-				//		WebElement textBox1 = driver.findElement(By.xpath("(//input[@class='form-control form-control-sm rounded ng-pristine ng-valid ng-star-inserted ng-touched'])["+i+"]"));
 						WebElement textBox1 = driver.findElement(By.xpath("(//input[contains(@id,'collection')])["+i+"]"));
-						Thread.sleep(500);
-						
 						String value = JsonUtils.getJsonValue(path + "\\testData\\" + data_Service + ".data.json", id1);	
 						applyWait.waitForElementToBeClickable(textBox1, 30).sendKeys(value);
 					}
 					
-					
 					k++;
-//			
 			}
 
 		}
 
-//			if((jsonArray.size()-1) > i) {
-//			applyWait.waitForElementToBeClickable(acp.proceedAndCreateAnother, 30).click();
-//				}
-//				else {
 		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	}
 
@@ -453,13 +395,13 @@ public class LoginAppCenter extends BaseClass {
 
 	public void addDataForGroups() throws MalformedURLException {
 		
-		applyExplicitWaitsUntilElementVisible(acp.addDataButton);
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton,20);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-		applyExplicitWaitsUntilElementVisible(acp.textBox1);
+		applyExplicitWaitsUntilElementVisible(acp.textBox1,20);
 		List<WebElement> textBoxes = acp.textBoxes;
 		String path = System.getProperty("user.dir");
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
-		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
+		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 		
 
 		for (int j = 1; j <= textBoxes.size(); j++) {
@@ -468,10 +410,6 @@ public class LoginAppCenter extends BaseClass {
 				String id1 = textBox.getAttribute("id");
 
 				String value1=JsonUtils.getJsonValue(filePath,id1);
-			
-
-
-//				dsGroup1001.dsString
 				
 				if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")||textBox.getAttribute("type").equals("select-one")) {
 						if (value1!= null) {
@@ -493,13 +431,9 @@ public class LoginAppCenter extends BaseClass {
 									else {
 										dropdown.selectByVisibleText(textBox, (JsonUtils.getJsonValue(filePath,id1)).toString());
 									}
-
-							
 							}
-
 						}
 					}
-
 				}
 
 				else if (textBox.getAttribute("type").equals("number") ||textBox.getAttribute("type").equals("select-one")) {
@@ -572,13 +506,13 @@ public class LoginAppCenter extends BaseClass {
 
 	public void addDataForDate() throws Exception {
 		
-		applyExplicitWaitsUntilElementVisible(acp.addDataButton);
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-		applyExplicitWaitsUntilElementVisible(acp.textBox1);
+		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
 		List<WebElement> textBoxes = acp.dateFields;
 		String path = System.getProperty("user.dir");
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
-		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
+		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 		
 		for (int j = 1; j <= textBoxes.size(); j++) {
 			WebElement textBox = driver.findElement(By.xpath("(//*[@class='btn btn-link mr-2 p-0' or @id='_id'])[" + j + "]"));
@@ -605,31 +539,19 @@ public class LoginAppCenter extends BaseClass {
 					
 					WebElement selectDate=driver.findElement(By.id(id1));
 					selectDate.click();
-					dropdown.selectByIndex(acp.monthDropDown, Integer.parseInt(month)-1);
 					dropdown.selectByValue(acp.yearDropDown, year);
-					applyExplicitWaitsUntilElementVisible(acp.day);
+					dropdown.selectByIndex(acp.monthDropDown, Integer.parseInt(month)-1);
+					applyExplicitWaitsUntilElementVisible(acp.day,10);
 					WebElement date1=driver.findElement(By.xpath("//span[contains(@class,'disabled')=false and @id='_day']["+date+"]"));
 					date1.click();
 					applyWait.waitForElementToBeClickable(acp.doneButton, 30).click();
 					Thread.sleep(500);
 					
-				
-					
 				}
 			}
 			}
 		
-		
-
-		
-		
-		
 	}
 	
-	
 }
-	
-
-	
-
 

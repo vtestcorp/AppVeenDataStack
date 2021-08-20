@@ -22,7 +22,6 @@ import pageModules.LoginAppCenter;
 import pageModules.LoginPage;
 
 public class LoginToAppCenter extends BaseClass{
-//	private WebDriver driver;
 	private WaitTypes applyWait;
 	private ExtentTest test;
 	public LoginAppCenter loginAppCenter;
@@ -56,8 +55,6 @@ public class LoginToAppCenter extends BaseClass{
 		loginAppCenter.dataService(dataService);
 	 
 	}
-	
-	
 	
 	@Then("Add data to the data service for Collection")
 	public void add_data_to_the_data_service_for_Collection() throws InterruptedException {
@@ -118,11 +115,4 @@ public class LoginToAppCenter extends BaseClass{
 	    
 	}
 	
-	
-	
-//	@Given("User enters data in Data Service")
-//	public void user_enters_data_in_Data_Service() throws Exception {
-//		loginAppCenter.userEnterData(LoginToAuthorUrl.data_Service);
-//	}
-
 }
