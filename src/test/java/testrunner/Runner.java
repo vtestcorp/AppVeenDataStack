@@ -6,8 +6,8 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="./testcases/date.feature",
-//				dryRun=true,
+@CucumberOptions(features="./testcases/string_Text.feature",
+				dryRun=false,
 				glue="stepdefinitions",
 				monochrome=true,
 				strict = true,
@@ -21,9 +21,12 @@ public class Runner {
 
 	  private static String[] defaultOptions = {
 	            "--glue", "stepdefinitions",
-	            "--plugin", "pretty",
+	            
 	            "--strict",
-	            "--plugin", "html:report"
+	            "--plugin", "pretty",
+	            "--plugin", "html:target/cucumber-reports",
+	            "--plugin", "json:target/cucumber-reports/data1.json",
+	            "--plugin", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:Report"
 	           
 	    };
 	 

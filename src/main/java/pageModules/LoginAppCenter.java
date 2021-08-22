@@ -68,21 +68,25 @@ public class LoginAppCenter extends BaseClass {
 	}
 
 	public void dataService(String dataService) throws Exception {
-		WebElement data = null;
+		data_Service=dataService;
+//		Thread.sleep(2000);
 		try {
-		 data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
+			By ds=By.xpath("//div[contains(text(),'" + dataService + "')]");
+			applyWaitForDynamicWebElement(ds, 5);
+			WebElement data = driver.findElement(ds);
 			data.click();
 		} catch (Exception e) {
 			Thread.sleep(10000);
 			driver.navigate().refresh();
-			applyExplicitWaitsUntilElementVisible(data,5);
+			Thread.sleep(3000);
 					try {
+						WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
 						data.click();
 					} catch (Exception e1) {
 						Thread.sleep(10000);
 						driver.navigate().refresh();
-						applyExplicitWaitsUntilElementVisible(data,5);
-						data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
+						Thread.sleep(3000);
+						WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
 						data.click();
 					}
 			
@@ -97,7 +101,7 @@ public class LoginAppCenter extends BaseClass {
 		List<WebElement> textBoxes = acp.textBoxes;
 		String path = System.getProperty("user.dir");
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
-		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
+		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 
 		/**
 		 * Code for Experience tab
@@ -333,7 +337,6 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
 		List<WebElement> textBoxes = driver.findElements(By.xpath("//input[@class='invisible position-absolute' or @id='_id']"));
-		System.out.println(textBoxes.size());
 		String path = System.getProperty("user.dir");
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
@@ -550,8 +553,9 @@ public class LoginAppCenter extends BaseClass {
 				}
 			}
 			}
-		
+		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	}
+	
 	
 }
 

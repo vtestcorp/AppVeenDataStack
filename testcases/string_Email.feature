@@ -1,4 +1,4 @@
-Feature: This is the string_Email feature file
+Feature: DS STRING EMAIL
 
 @Author
 Scenario Outline: Log into Author

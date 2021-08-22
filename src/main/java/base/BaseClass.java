@@ -5,8 +5,10 @@ import java.net.MalformedURLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.TimeZone;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -125,7 +127,19 @@ public class BaseClass {
 		
 		WebDriverWait wait = new WebDriverWait(driver, time);
 		wait.until(ExpectedConditions.visibilityOf(element));
+	
 
+	}
+	
+	public void applyWaitForDynamicWebElement(By locator,int time) {
+		
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	}
+	
+	public void applyExplicitWaitsUntilElementVisible(List<WebElement> element, int time) {
+	WebDriverWait wait = new WebDriverWait(driver, time);
+	wait.until(ExpectedConditions.visibilityOfAllElements(element));
 	}
 	
 

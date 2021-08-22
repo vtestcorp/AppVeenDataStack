@@ -114,9 +114,11 @@ public class LoginPage extends BaseClass{
 	
 	public void createNewDataServices(JSONArray jsonArray, String dataService1) throws Exception {
 		dataServiceName=dataService1;
+		Thread.sleep(2000);
 		applyExplicitWaitsUntilElementVisible(ap.dataServiceName1, 10);
 		List<WebElement> dataServices=driver.findElements(By.id("serviceManagerCardTitle"));
 		data_Services=new ArrayList<String>();
+		
 		for(WebElement dataService : dataServices) {
 			String data=dataService.getText();
 			data_Services.add(data);
@@ -1006,7 +1008,6 @@ public class LoginPage extends BaseClass{
 									}
 								
 								if(jsonProperties.containsKey("default")) {
-//									dropdown.selectByValue(ap.defaultDropDown, jsonProperties.get("default").toString());
 									
 										if(!driver.findElements(By.xpath("//button[normalize-space()='Select Date']")).isEmpty()) {
 											applyWait.waitForElementToBeClickable(ap.selectDate, 30).click();
@@ -1038,7 +1039,7 @@ public class LoginPage extends BaseClass{
 										}
 										
 										else {
-											applyWait.waitForElementToBeClickable(ap.defaultValue, 30).sendKeys(jsonProperties.get("default").toString());
+//											applyWait.waitForElementToBeClickable(ap.defaultValue, 30).sendKeys(jsonProperties.get("default").toString());
 										}
 								}
 								

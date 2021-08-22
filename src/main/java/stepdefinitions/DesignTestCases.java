@@ -54,6 +54,7 @@ public class DesignTestCases extends BaseClass{
 	}
 	@Given("Group {string} does not exist")
 	public void group_does_not_exist(String groupName) throws Exception {
+//		Thread.sleep(30000);
 	    design.groupexist(groupName);
 	}
 
@@ -66,6 +67,11 @@ public class DesignTestCases extends BaseClass{
 	public void assign_appcenter_permissions_for_strings_text_dataservice(String dataServiceName,String user) throws Exception {
 	    design.assignPermission(dataServiceName,user);
 	    
+	}
+	
+	@Then("^Add record \"(.*?)\" to the data service for Date$")
+	public void add_record_to_the_data_service_for_Date(String jsonFile) throws Exception {
+		design.addRecordForDate(jsonFile);
 	}
 	
 
@@ -123,6 +129,13 @@ public class DesignTestCases extends BaseClass{
 	    design.updateRecord(id,jsonFile);
 	}
 	
+	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the data service for Date Type$")
+	public void update_record_with_to_the_data_service_for_Date_Type(String id, String jsonFile) throws Exception {
+	    design.updateRecordForDate(id,jsonFile);
+	}
+	
+	
+	
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the data service for File Type$")
 	public void update_data_to_the_data_service_for_file(String id, String jsonFile) throws Exception {
 		design.updateDataForFile(id,jsonFile);
@@ -141,15 +154,13 @@ public class DesignTestCases extends BaseClass{
 	    design.updateLocationRecord(id, jsonFile);
 	    
 	}
-
-
 	
 	@Then("Fetch record {string} from the data service")
 	public void fetch_record_from_the_data_service(String id) throws Exception {
 	    design.fetchRecord(id);
 	}
 	
-	@Then("^Match this Currency data to \"(.*?)\"$S")
+	@Then("^Match this Currency data to \"(.*?)\"$")
 	public void match_this_Currency_data(String jsonFile) throws Exception {
 	 design.matchDataCurrency(jsonFile);
 	}
@@ -159,6 +170,10 @@ public class DesignTestCases extends BaseClass{
 	   design.matchGroupData(jsonFile);
 	}
 	
+	@Then("^Match it to \"(.*?)\" Date Type$")
+	public void match_this_Date_data(String jsonFile) throws Exception {
+	   design.matchDateData(jsonFile);
+	}
 	
 	@And("Record must not exist")
 	public void record_must_not_exist() throws Exception {
@@ -169,6 +184,12 @@ public class DesignTestCases extends BaseClass{
 		design.matchToRecord(jsonFile);	
 }
 	
+	@Then("^Match it to \"(.*?)\" for File type$")
+	public void match_it_to_for_File_type(String jsonFile) throws Exception {
+		design.matchToRecordForFileType(jsonFile);	
+}
+	
+		
 	@Then("Fetch record by searching {string} with {string} from the data service")
 	public void fetch_record_by_searching_with_from_the_data_service(String string, String string2) throws Exception {
 		design.fetchRecordBySearchingData(string,string2);

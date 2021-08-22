@@ -53,7 +53,6 @@ public class Object_AppCenterPage extends BaseClass{
 	
 	@FindBy(xpath="//*[contains(@class,'form-control')]")
 	public WebElement textBox1;
-
 	
 	@FindBy(xpath="//*[contains(@class,'form-control')]")
 	public List<WebElement> textBoxes;
@@ -114,7 +113,6 @@ public class Object_AppCenterPage extends BaseClass{
 	
 	@FindBy(xpath="//span[normalize-space()='Respond']")
 	public WebElement respond1;
-	
 	
 	@FindBy(xpath="//span[normalize-space()='Reject']")
 	public WebElement reject;
@@ -196,6 +194,9 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//span[normalize-space()='ID']/ancestor::div[@class='ag-header-row']/following-sibling::div//input[contains(@class,'border rounded bg-white w-100 ng')]")
 	public WebElement idTab;
 	
+	@FindBy(xpath="//a[@class='ng-star-inserted']")
+	public WebElement record;
+	
 	@FindBy(xpath="//span[text()='No records to display']")
 	public WebElement noRecordDisplay;
 	
@@ -217,10 +218,8 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath = "//button[text()='Yes']")
 	public WebElement deleteRecord;
 	
-	
 	@FindBy(xpath = "(//input[@class='border rounded bg-white w-100 ng-untouched ng-pristine ng-valid ng-star-inserted'])[2]")
 	public WebElement dsSTRINGTEXT1001;
-	
 	
 	@FindBy(xpath = "(//input[@class='border rounded bg-white w-100 ng-untouched ng-pristine ng-valid ng-star-inserted'])[3]")
 	public WebElement dsSTRINGTEXT1002;
