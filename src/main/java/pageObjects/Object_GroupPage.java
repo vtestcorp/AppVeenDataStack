@@ -107,7 +107,7 @@ public WebElement save;
 @FindBy(xpath = "//span[normalize-space()='Author Roles']")
 public WebElement authorRole;
 
-<<<<<<< HEAD
+
 @FindBy(xpath = "//div[@class='d-flex py-2 w-100 pl-3 hover justify-content-between ng-star-inserted']/span[normalize-space()='Users']")
 public WebElement user;
 
@@ -116,6 +116,5 @@ public WebElement blocked;
 
 @FindBy(xpath = "(//div[@class='rounded-dropdown ng-star-inserted']//div[normalize-space()='View'])[2]")
 public WebElement view;
-=======
->>>>>>> deepak
+
 }

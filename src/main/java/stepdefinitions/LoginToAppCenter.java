@@ -61,22 +61,20 @@ public class LoginToAppCenter extends BaseClass{
 		loginAppCenter.userEnterDataforCollection();
 	}
 
-<<<<<<< HEAD
+
     
 	@Then("Add data to the data service for boolean")
 	public void add_data_to_the_data_service_for_boolean() throws InterruptedException {
 		loginAppCenter.userEnterDataforBoolean();
 	    
 	}
-=======
+
 	@Then("Add data to the data service for Date")
 	public void add_data_to_the_data_service_for_Date() throws Exception {
 	    loginAppCenter.addDataForDate();
 	}
 	
-	
->>>>>>> deepak
-	
+
 	@Then("Add data to the data service")
 	public void add_data_to_the_data_service() throws Exception {
 		

@@ -68,48 +68,31 @@ public class LoginAppCenter extends BaseClass {
 	}
 
 	public void dataService(String dataService) throws Exception {
-<<<<<<< HEAD
-		data_Service = dataService;
-		try {
-			WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
-=======
 		data_Service=dataService;
 //		Thread.sleep(2000);
 		try {
 			By ds=By.xpath("//div[contains(text(),'" + dataService + "')]");
 			applyWaitForDynamicWebElement(ds, 5);
 			WebElement data = driver.findElement(ds);
->>>>>>> deepak
 			data.click();
 		} catch (Exception e) {
 			Thread.sleep(10000);
 			driver.navigate().refresh();
-<<<<<<< HEAD
 			Thread.sleep(4000);
-=======
-			Thread.sleep(3000);
->>>>>>> deepak
-					try {
+				try {
 						WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
 						data.click();
 					} catch (Exception e1) {
 						Thread.sleep(10000);
 						driver.navigate().refresh();
-<<<<<<< HEAD
 						Thread.sleep(4000);
-=======
-						Thread.sleep(3000);
->>>>>>> deepak
-						WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
+     					WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
 						data.click();
 					}
 			
 			
 		}
-<<<<<<< HEAD
-		
-=======
->>>>>>> deepak
+
 	}
 //		int data = driver.findElements(By.xpath("//div[contains(text(),'" + dataService + "')]")).size();
 //		while(data==1)
@@ -306,12 +289,8 @@ public class LoginAppCenter extends BaseClass {
 						applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(v1);
 					}
 						else {
-<<<<<<< HEAD
      							textBox.sendKeys(v2);
 								Thread.sleep(2000);
-=======
-								textBox.sendKeys(v2);
->>>>>>> deepak
 								textBox.sendKeys(Keys.DOWN);
 								textBox.sendKeys(Keys.ENTER);
         			}
@@ -485,10 +464,7 @@ public class LoginAppCenter extends BaseClass {
 					for(int i=1;i<4;i++)
 					{
 						textBox.click();
-<<<<<<< HEAD
-						Thread.sleep(8000);
-=======
->>>>>>> deepak
+    					Thread.sleep(8000);
 						WebElement textBox1 = driver.findElement(By.xpath("(//input[contains(@id,'collection')])["+i+"]"));
 						String value = JsonUtils.getJsonValue(path + "\\testData\\" + data_Service + ".data.json", id1);	
 						applyWait.waitForElementToBeClickable(textBox1, 30).sendKeys(value);

@@ -245,15 +245,11 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(id = "doneBtn")
 	public WebElement doneButton;
 	
-<<<<<<< HEAD
-	
 	@FindBy(xpath= "//input[@type='checkbox' or @id='_id' ]")
 	public List<WebElement> buttons;
 	
-	
-=======
 	@FindBy(id = "_day")
 	public WebElement day;
->>>>>>> deepak
+
 
 }
