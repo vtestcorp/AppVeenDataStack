@@ -95,7 +95,10 @@ public class DesignTestCases extends BaseClass{
 	public void add_record_to_File_Type(String string) throws Exception {
 	    design.addNewRecordForFile(string);
 	}
-	
+	@Then("^Add record \"(.*?)\" to the boolean data service$")
+	public void add_record_to_the_boolean_data_service(String string) throws InterruptedException {
+	    design.addRecordInBooelan(string);
+	}
 	
 
 	@Then("Expect error {string} on label {string}")

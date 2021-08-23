@@ -59,14 +59,13 @@ Scenario: Add data to data service
 
 Scenario Outline: Add record to data service
 	Given Data service "boolean"
-	Then Add record "<data>" to the data service	
+	Then Add record "<data>" to the boolean data service	
 	And Expect error "ID DS1003 already exists" on save
 	Examples:
 		|data|
-	  |{"_id" : "DS1003", "dsBoolean1001" : false, "dsBoolean1002" : null, "dsBoolean1003" : true, "dsBoolean1004" : false, "dsBoolean1005" : true, "dsBoolean1006" : true, "dsBoolean1008" : false, "dsBoolean1010" : true, "dsBoolean1011" : null, "dsBoolean1012" : null,"dsBoolean1013" : false, "dsBoolean1014" : true, "dsBoolean1015" : false}|
+	  |{"_id" : "DS1003", "dsBoolean1001" : false, "dsBoolean1002" : true, "dsBoolean1003" : false, "dsBoolean1004" : false, "dsBoolean1005" : true, "dsBoolean1006" : true, "dsBoolean1008" : false, "dsBoolean1010" : true, "dsBoolean1011" : false, "dsBoolean1012" : true,"dsBoolean1013" : false, "dsBoolean1014" : true, "dsBoolean1015" : false}|
 	  
-#
-#
+
 #	Scenario Outline: Fetch record from the data service
 #	Given Data service "boolean"
 #	Then Fetch record "<id>" from the data service

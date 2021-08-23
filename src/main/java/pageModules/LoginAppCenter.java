@@ -363,7 +363,7 @@ public class LoginAppCenter extends BaseClass {
 					Thread.sleep(1000);
 					if (button.getAttribute("type").equals("text"))
 					   	 {
-						    String value = (String) jsonObject.get(id1);
+						     String value = (String) jsonObject.get(id1);
 						     applyWait.waitForElementToBeClickable(button, 30).sendKeys(value);
 					   	 }
 					else if (button.getAttribute("type").equals("checkbox")) {

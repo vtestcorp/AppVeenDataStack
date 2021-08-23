@@ -196,7 +196,7 @@ public class Module_DesignTestCases extends BaseClass{
 	    }
 		Thread.sleep(1000);
 		System.out.println(acp.textBoxes.size());
-		applyExplicitWaitsUntilElementVisible(acp.textBoxes, 10);
+		applyExplicitWaitsUntilElementVisible(acp.textBoxes, 20);
 		List<WebElement> textBoxes = acp.textBoxes;
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
@@ -367,6 +367,8 @@ public class Module_DesignTestCases extends BaseClass{
 				applyWait.waitForElementToBeClickable(acp.save, 30).click();
 				}
 			
+	
+	
 
 	public void addNewRecord(String string, String string2) throws Exception {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
@@ -668,6 +670,43 @@ public class Module_DesignTestCases extends BaseClass{
 				}
 		}
 	}
+	
+	   public void addRecordInBooelan(String string) throws InterruptedException {
+		   Thread.sleep(2000);
+		   if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
+				acp.yes.click();
+		    }
+		   applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+			Thread.sleep(5000);
+			List<WebElement> buttons = acp.buttons;
+			JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
+			for (int j = 1; j <= buttons.size(); j++) {
+				WebElement button = driver.findElement(By.xpath("(//input[@type='checkbox' or @id='_id' ])["+j+"]"));
+				String id1 = button.getAttribute("id");
+				Thread.sleep(1000);
+				if(button.isEnabled())
+				   {
+							
+				   if (button.getAttribute("type").equals("text"))
+				   	 {
+					    String value = (String) jsonObject.get(id1);
+					     applyWait.waitForElementToBeClickable(button, 30).sendKeys(value);
+				   	 }
+				else if (button.getAttribute("type").equals("checkbox")) {
+					      WebElement parent = button.findElement(By.xpath("./.."));
+					      if(jsonObject.get(id1).equals(true))
+					      {
+					         applyWait.waitForElementToBeClickable(parent, 30).click();
+	              		   }
+					      else if(jsonObject.get(id1).equals(false))
+					      {
+					    	   
+					      }
+				      }
+				   	}
+			}
+			applyWait.waitForElementToBeClickable(acp.save, 30).click();
+	    }
 
 
 	public void updateRecord(String id, String jsonFile) throws Exception {
