@@ -118,6 +118,7 @@
         "label": "DS NUMBER LIST OF VALUES 1002 LABEL",
         "errorMessage": "DS NUMBER LIST OF VALUES 1002 ERROR",
         "fieldLength": 10,
+        "required": true,
         "_typeChanged": "Number",
         "precision": 2,
          "enum": [
@@ -135,6 +136,8 @@
       "properties": {
         "name": "DS NUMBER LIST OF VALUES 1003",
         "required": true,
+        "createOnly": true,
+        "unique": true,
         "fieldLength": 10,
         "_typeChanged": "Number",
         "precision": 2,

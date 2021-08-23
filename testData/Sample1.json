@@ -10,17 +10,17 @@
   },
   "_metadata" : {
     "version" : {
-      "document" : 5,
+      "document" : 29,
       "release" : "dev"
     },
     "deleted" : false,
-    "lastUpdated" : "2021-08-06T11:19:44.768Z",
-    "createdAt" : "2021-08-06T11:16:34.251Z",
+    "lastUpdated" : "2021-08-21T15:03:20.095Z",
+    "createdAt" : "2021-08-10T10:34:05.122Z",
     "lastUpdatedBy" : "deepak@appveen.com"
   },
-  "_id" : "SRVC5776",
+  "_id" : "SRVC5969",
   "allowedFileTypes" : [ "jpeg", "ppt", "xls", "csv", "doc", "jpg", "png", "gif", "zip", "tar", "rar", "gz", "bz2", "7z", "mp4", "mp3", "pdf", "ico", "docx", "pptx", "xlsx", "ods", "xml", "txt" ],
-  "version" : 2,
+  "version" : 10,
   "instances" : 1,
   "versionValidity" : {
     "validityType" : "count",
@@ -28,25 +28,25 @@
   },
   "permanentDeleteData" : true,
   "disableInsights" : false,
-  "status" : "Active",
+  "status" : "Undeployed",
   "enableSearchIndex" : false,
-  "attributeCount" : 2,
+  "attributeCount" : 3,
   "type" : null,
-  "name" : "Sample1",
+  "name" : "Example",
   "description" : null,
   "app" : "vTest",
-  "api" : "/sample1",
-  "port" : 20152,
+  "api" : "/example",
+  "port" : 20192,
   "wizard" : [ ],
   "webHooks" : [ ],
   "preHooks" : [ ],
-  "collectionName" : "sample1",
+  "collectionName" : "example",
   "__v" : 0,
   "definition" : [ {
-    "_id" : "610d1ad0b7f7f59d3518666c",
+    "_id" : "612115b8305243afa061e515",
     "key" : "_id",
     "type" : "String",
-    "prefix" : "SAM",
+    "prefix" : "EXA",
     "suffix" : null,
     "padding" : null,
     "counter" : 1001,
@@ -66,17 +66,28 @@
       "dataKey" : "_id"
     }
   }, {
-    "_id" : "610d1ad0b7f7f5096a18666d",
-    "type" : "Geojson",
-    "key" : "dsLocation1001",
+    "_id" : "612115b830524301e861e516",
+    "type" : "String",
+    "key" : "user1",
     "properties" : {
-      "name" : "DS LOCATION 1001",
-      "required" : true,
+      "name" : "User 1",
       "fieldLength" : 10,
-      "_typeChanged" : "Geojson",
-      "geoType" : "point",
-      "dataKey" : "dsLocation1001",
-      "dataPath" : "dsLocation1001"
+      "_typeChanged" : "String",
+      "dataKey" : "user1",
+      "dataPath" : "user1"
+    }
+  }, {
+    "_id" : "612115b8305243673461e517",
+    "type" : "Number",
+    "key" : "user2",
+    "properties" : {
+      "name" : "User 2",
+      "label" : "label",
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "precision" : 2,
+      "dataKey" : "user2",
+      "dataPath" : "user2"
     }
   } ],
   "headers" : [ ],
@@ -87,22 +98,22 @@
     "outgoing" : [ ]
   },
   "role" : {
-    "_id" : "SRVC5776",
+    "_id" : "SRVC5969",
     "_metadata" : {
       "version" : {
         "document" : 1,
         "release" : "dev"
       },
       "deleted" : false,
-      "lastUpdated" : "2021-08-06T11:16:34.276Z",
-      "createdAt" : "2021-08-06T11:16:34.272Z"
+      "lastUpdated" : "2021-08-10T10:34:05.159Z",
+      "createdAt" : "2021-08-10T10:34:05.154Z"
     },
     "app" : "vTest",
-    "entity" : "SRVC5776",
-    "entityName" : "Sample1",
+    "entity" : "SRVC5969",
+    "entityName" : "Example",
     "roles" : [ {
       "skipReviewRole" : true,
-      "id" : "P4696992897",
+      "id" : "P3163989175",
       "name" : "Skip Review",
       "operations" : [ {
         "method" : "SKIP_REVIEW"
@@ -116,7 +127,7 @@
       "description" : "This role entitles an authorized user to create, update or delete a record and without any approval"
     }, {
       "manageRole" : true,
-      "id" : "P5324749241",
+      "id" : "P4542141905",
       "name" : "Manage",
       "operations" : [ {
         "method" : "POST"
@@ -130,7 +141,7 @@
       "description" : "This role entitles an authorized user to create, update or delete a record"
     }, {
       "viewRole" : true,
-      "id" : "P2819964536",
+      "id" : "P3274859636",
       "name" : "View",
       "operations" : [ {
         "method" : "GET"
@@ -142,20 +153,34 @@
       "_id" : {
         "_t" : "String",
         "_p" : {
-          "P4696992897" : "R",
-          "P5324749241" : "R",
-          "P2819964536" : "R"
+          "P3163989175" : "R",
+          "P4542141905" : "R",
+          "P3274859636" : "R"
         }
       },
-      "dsLocation1001" : {
+      "user1" : {
         "_t" : "String",
         "_p" : {
-          "P4696992897" : "R",
-          "P5324749241" : "R",
-          "P2819964536" : "R"
+          "P3163989175" : "R",
+          "P4542141905" : "R",
+          "P3274859636" : "R"
+        }
+      },
+      "user2" : {
+        "_t" : "Number",
+        "_p" : {
+          "P3163989175" : "R",
+          "P4542141905" : "R",
+          "P3274859636" : "R"
         }
       }
     },
     "__v" : 0
+  },
+  "draftVersion" : null,
+  "stateModel" : {
+    "attribute" : "",
+    "initialStates" : [ ],
+    "enabled" : false
   }
 }

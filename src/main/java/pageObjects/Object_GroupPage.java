@@ -33,6 +33,9 @@ public WebElement createButton;
 @FindBy(xpath="//span[normalize-space()='App Center Roles']")
 public WebElement appCenterRoles;
 
+@FindBy(xpath="//div[@class='d-flex flex-column justify-content-center py-3']//div[1]//div[1]//span[2]//span[1]")
+public WebElement dsArrow;
+
 @FindBy(xpath="//span[contains(text(),'Skip Review')]/parent::div/following-sibling::span[2]/child::label/child::span[2]")
 public WebElement skipReviewToggler;
 
@@ -84,6 +87,11 @@ public WebElement delete;
 @FindBy(xpath="//span[normalize-space()='Add User(s)']")
 public WebElement addUsers;
 
+@FindBy(xpath="//ngb-modal-window[@role='dialog']//div[@name='center']//div[@role='rowgroup']//div[1]//div[1]")
+public WebElement userEmail;
+
+
+//div[contains(@class,'ag-cell a')]
 @FindBy(xpath="//button[normalize-space()='Done']")
 public WebElement done;
 
@@ -99,6 +107,7 @@ public WebElement save;
 @FindBy(xpath = "//span[normalize-space()='Author Roles']")
 public WebElement authorRole;
 
+<<<<<<< HEAD
 @FindBy(xpath = "//div[@class='d-flex py-2 w-100 pl-3 hover justify-content-between ng-star-inserted']/span[normalize-space()='Users']")
 public WebElement user;
 
@@ -107,4 +116,6 @@ public WebElement blocked;
 
 @FindBy(xpath = "(//div[@class='rounded-dropdown ng-star-inserted']//div[normalize-space()='View'])[2]")
 public WebElement view;
+=======
+>>>>>>> deepak
 }

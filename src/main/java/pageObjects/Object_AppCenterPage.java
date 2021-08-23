@@ -10,6 +10,8 @@ import base.BaseClass;
 
 public class Object_AppCenterPage extends BaseClass{
 	
+
+
 	public Object_AppCenterPage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -21,7 +23,16 @@ public class Object_AppCenterPage extends BaseClass{
 
 	@FindBy(xpath="//span[normalize-space()='Next']")
 	public WebElement nextButton;
+	
+	@FindBy(xpath="//*[@class='btn btn-link mr-2 p-0' or @id='_id']")
+	public List <WebElement> dateFields;
 
+	@FindBy(xpath="//select[@class='text-primary time-select font-weight-bold'][1]")
+	public WebElement monthDropDown;
+	
+	@FindBy(xpath="//select[@class='text-primary time-select font-weight-bold'][2]")
+	public WebElement yearDropDown;
+	
 	@FindBy(xpath="//input[@placeholder='Password']")
 	public WebElement password;
 
@@ -36,8 +47,12 @@ public class Object_AppCenterPage extends BaseClass{
 
 	@FindBy(xpath="(//div[starts-with(@class,'logo')])[1]")
 	public WebElement dataStackLogo;
-
-
+	
+	@FindBy(xpath="//div[@class='list-item-label d-flex align-items-center text-truncate']")
+	public WebElement dataServiceName;
+	
+	@FindBy(xpath="//*[contains(@class,'form-control')]")
+	public WebElement textBox1;
 	
 	@FindBy(xpath="//*[contains(@class,'form-control')]")
 	public List<WebElement> textBoxes;
@@ -98,7 +113,6 @@ public class Object_AppCenterPage extends BaseClass{
 	
 	@FindBy(xpath="//span[normalize-space()='Respond']")
 	public WebElement respond1;
-	
 	
 	@FindBy(xpath="//span[normalize-space()='Reject']")
 	public WebElement reject;
@@ -176,11 +190,12 @@ public class Object_AppCenterPage extends BaseClass{
 	
 	@FindBy(xpath="//button[@id='saveBtn']")
 	public WebElement saveButton;
-	
-//	@FindBy(xpath="//span[normalize-space()='ID']/ancestor::div[@class='ag-header-row']/following-sibling::div//input[contains(@class,'border rounded bg-white w-100 ng-pristine')]")
-//	public WebElement idTab;
+
 	@FindBy(xpath="//span[normalize-space()='ID']/ancestor::div[@class='ag-header-row']/following-sibling::div//input[contains(@class,'border rounded bg-white w-100 ng')]")
 	public WebElement idTab;
+	
+	@FindBy(xpath="//a[@class='ng-star-inserted']")
+	public WebElement record;
 	
 	@FindBy(xpath="//span[text()='No records to display']")
 	public WebElement noRecordDisplay;
@@ -203,10 +218,8 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath = "//button[text()='Yes']")
 	public WebElement deleteRecord;
 	
-	
 	@FindBy(xpath = "(//input[@class='border rounded bg-white w-100 ng-untouched ng-pristine ng-valid ng-star-inserted'])[2]")
 	public WebElement dsSTRINGTEXT1001;
-	
 	
 	@FindBy(xpath = "(//input[@class='border rounded bg-white w-100 ng-untouched ng-pristine ng-valid ng-star-inserted'])[3]")
 	public WebElement dsSTRINGTEXT1002;
@@ -226,15 +239,21 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath = "//span[text()='Delete']")
 	public WebElement delete_ViewRecord;
 	
-	
 	@FindBy(xpath="//input[@class='form-control form-control-sm rounded ng-pristine ng-valid ng-star-inserted ng-touched' or 'searchInput pac-target-input']")
 	public List<WebElement> textBoxesLocation;
 	
+	@FindBy(id = "doneBtn")
+	public WebElement doneButton;
 	
+<<<<<<< HEAD
 	
 	@FindBy(xpath= "//input[@type='checkbox' or @id='_id' ]")
 	public List<WebElement> buttons;
 	
 	
+=======
+	@FindBy(id = "_day")
+	public WebElement day;
+>>>>>>> deepak
 
 }

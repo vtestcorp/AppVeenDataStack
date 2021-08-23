@@ -186,7 +186,7 @@
     "key" : "dsDate1010",
     "properties" : {
       "name" : "DS DATE 1010",
-      "label": "DS DATE 1002 LABEL",
+      "label": "DS DATE 1010 LABEL",
       "fieldLength" : 10,
       "_typeChanged" : "Date",
       "dateType" : "date",
@@ -201,7 +201,7 @@
     "key" : "dsDate1011",
     "properties" : {
       "name" : "DS DATE 1011",
-      "errorMessage": "DS DATE 1002 ERROR",
+      "errorMessage": "DS DATE 1011 ERROR",
       "required" : true,
       "fieldLength" : 10,
       "_typeChanged" : "Date",
@@ -217,8 +217,8 @@
     "key" : "dsDate1012",
     "properties" : {
       "name" : "DS DATE 1012",
-      "label": "DS DATE 1002 LABEL",
-        "errorMessage": "DS DATE 1002 ERROR",
+      "label": "DS DATE 1012 LABEL",
+        "errorMessage": "DS DATE 1012 ERROR",
       "required" : true,
       "fieldLength" : 10,
       "_typeChanged" : "Date",

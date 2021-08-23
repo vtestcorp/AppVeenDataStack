@@ -7,11 +7,15 @@ import org.json.simple.parser.ParseException;
 import com.aventstack.extentreports.ExtentTest;
 
 import base.BaseClass;
-import cucumber.api.java.Before;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
+//import cucumber.api.java.Before;
+//import cucumber.api.java.en.And;
+//import cucumber.api.java.en.Given;
+//import cucumber.api.java.en.Then;
 import helperMethods.WaitTypes;
+import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import pageModules.Module_DesignTestCases;
 import pageModules.WorkflowsInAppcenterPage;
 
@@ -48,21 +52,9 @@ public class DesignTestCases extends BaseClass{
 	public void service_should_be_deployed_with_newlt_added_attribute() {
 	    
 	}
-	@Given("Service should be deployed with newly added attribute")
-	public void service_should_be_deployed_with_newly_added_attribute() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
-	}
-
-	@Given("Record should be displayed in view mode with user entered values")
-	public void record_should_be_displayed_in_view_mode_with_user_entered_values() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
-	}
-	
 	@Given("Group {string} does not exist")
 	public void group_does_not_exist(String groupName) throws Exception {
-		Thread.sleep(30000);
+//		Thread.sleep(30000);
 	    design.groupexist(groupName);
 	}
 
@@ -77,6 +69,11 @@ public class DesignTestCases extends BaseClass{
 	    
 	}
 	
+	@Then("^Add record \"(.*?)\" to the data service for Date$")
+	public void add_record_to_the_data_service_for_Date(String jsonFile) throws Exception {
+		design.addRecordForDate(jsonFile);
+	}
+	
 
 	@Then("^Add record \"(.*?)\" to the data service$")
 	public void add_record(String string) throws Exception {
@@ -87,6 +84,13 @@ public class DesignTestCases extends BaseClass{
 	public void add_record_to_the_data_service(String string, String string2) throws Exception {
 	    design.addNewRecord(string,string2);
 	}
+	
+	@Then("^Add record \"(.*?)\" to the data service for File Type$")
+	public void add_record_to_File_Type(String string) throws Exception {
+	    design.addNewRecordForFile(string);
+	}
+	
+	
 
 	@Then("Expect error {string} on label {string}")
 	public void expect_error_on_label(String string, String string2) throws Exception {
@@ -131,6 +135,19 @@ public class DesignTestCases extends BaseClass{
 	    design.updateRecord(id,jsonFile);
 	}
 	
+	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the data service for Date Type$")
+	public void update_record_with_to_the_data_service_for_Date_Type(String id, String jsonFile) throws Exception {
+	    design.updateRecordForDate(id,jsonFile);
+	}
+	
+	
+	
+	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the data service for File Type$")
+	public void update_data_to_the_data_service_for_file(String id, String jsonFile) throws Exception {
+		design.updateDataForFile(id,jsonFile);
+	}
+	
+
 	
 	@Then("Update records {string} with {string} to the data service")
 	public void update_records_with_to_the_data_service(String id, String attribute) throws Exception {
@@ -146,35 +163,44 @@ public class DesignTestCases extends BaseClass{
 	@Then("Update record \"(.*?)\" with \"(.*?)\" to the Location")
 	public void update_record_with_dsLocation_data_service(String id, String jsonFile) throws Exception {
 	    design.updateLocationRecord(id, jsonFile);
+	    
 	}
-
-
 	
 	@Then("Fetch record {string} from the data service")
 	public void fetch_record_from_the_data_service(String id) throws Exception {
 	    design.fetchRecord(id);
 	}
 	
-	@Then("Match this Currency data to \"(.*?)\"")
+	@Then("^Match this Currency data to \"(.*?)\"$")
 	public void match_this_Currency_data(String jsonFile) throws Exception {
 	 design.matchDataCurrency(jsonFile);
 	}
 	
-	@Then("Match this GROUP data to \"(.*?)\"")
+	@Then("^Match this GROUP data to \"(.*?)\"$")
 	public void match_this_GROUP_data(String jsonFile) throws Exception {
 	   design.matchGroupData(jsonFile);
 	}
 	
+	@Then("^Match it to \"(.*?)\" Date Type$")
+	public void match_this_Date_data(String jsonFile) throws Exception {
+	   design.matchDateData(jsonFile);
+	}
 	
 	@And("Record must not exist")
 	public void record_must_not_exist() throws Exception {
 		design.recordMustNotExist();
 	}
-	@Then("Match it to \"(.*?)\"")
+	@Then("^Match it to \"(.*?)\"$")
 	public void match_it_to(String jsonFile) throws Exception {
 		design.matchToRecord(jsonFile);	
 }
 	
+	@Then("^Match it to \"(.*?)\" for File type$")
+	public void match_it_to_for_File_type(String jsonFile) throws Exception {
+		design.matchToRecordForFileType(jsonFile);	
+}
+	
+		
 	@Then("Fetch record by searching {string} with {string} from the data service")
 	public void fetch_record_by_searching_with_from_the_data_service(String string, String string2) throws Exception {
 		design.fetchRecordBySearchingData(string,string2);
@@ -209,7 +235,10 @@ public class DesignTestCases extends BaseClass{
 	    
 	}
 
-	
+	@Then("User log out from AppCenter")
+	public void user_logs_out_of_AppCenter() {
+	    driver.quit();
+	}
 	
 	
 

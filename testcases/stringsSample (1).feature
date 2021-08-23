@@ -45,7 +45,7 @@ Examples:
 |maker@appveen.com|123123123|
 
 
-# INSERT/UPDATE
+ #INSERT/UPDATE
 Scenario: Add data to data service
 	Given Data service "Sample1"
 	Then Add data to the data service for Location

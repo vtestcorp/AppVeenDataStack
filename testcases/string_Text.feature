@@ -108,13 +108,16 @@ Scenario Outline: Fetch record from the data service
 	And Match it to "<data>"
 Examples:
 |id|data|
-#|STR1001|{"_id": "STR1001","dsStringText1001": "1111","dsStringText1002": "a","dsStringText1003": "1333","dsStringText1004": "1004","dsStringText1005": "1555","dsStringText1007": "1007", "dsStringText1008": "1888", "dsStringText1010": "1010",  "dsStringText1013": "101313", "dsStringText1014": "101414", "dsStringText1015": "101515", "dsStringText1018": "101818", "dsStringText1020": "ABCDEFGH", "dsStringText1021": "102121", "dsStringText1022": "102222", "dsStringText1023": "102323", "dsStringText1024": "102424"}|
-|STR1001|{"_id": "STR1001","dsStringText1001": "aa","dsStringText1002": "shopify","dsStringText1003": "cc","dsStringText1004": "shopperstops","dsStringText1005": "ee","dsStringText1007": "walmart", "dsStringText1008": "gg", "dsStringText1010": "myntra",  "dsStringText1013": "ii", "dsStringText1014": "jj", "dsStringText1015": "kk",  "dsStringText1018": "ll",  "dsStringText1020": "MM", "dsStringText1021": "N", "dsStringText1022": "oo", "dsStringText1023": "pp", "dsStringText1024": "qq"}|
+|STR1001|{"_id": "STR1001","dsStringText1001": "1111","dsStringText1002": "a","dsStringText1003": "1333","dsStringText1004": "1004","dsStringText1005": "1555","dsStringText1007": "1007", "dsStringText1008": "1888", "dsStringText1010": "1010",  "dsStringText1013": "101313", "dsStringText1014": "101414", "dsStringText1015": "101515", "dsStringText1018": "101818", "dsStringText1020": "ABCDEFGH", "dsStringText1021": "102121", "dsStringText1022": "102222", "dsStringText1023": "102323", "dsStringText1024": "102424"}|
+	
+Scenario Outline: Delete record from the data service
+	Given Data service "string_Text"
+	Then Delete record "<id>" from the data service
+	And deleting from listing page
+Examples:
+|id|
+|STR1001|
 
-#Scenario Outline: Delete record from the data service
-#	Given Data service "string_Text"
-#	Then Delete record "<id>" from the data service
-#	And deleting from listing page
-#Examples:
-#|id|
-#|STR1001|
+Scenario: Log out of App Center
+	Given User log out from AppCenter
+

@@ -87,30 +87,7 @@
         "dataPath" : "dsGroupStringText.stringText"
       }
     } ]
-  }, {
-    "_id" : "61043bdce53e2beb076735b8",
-    "type" : "Object",
-    "key" : "dsGroupStringLongText",
-    "properties" : {
-      "name" : "DS GROUP STRING LONG TEXT",
-      "fieldLength" : 10,
-      "_typeChanged" : "Object",
-      "dataKey" : "dsGroupStringLongText",
-      "dataPath" : "dsGroupStringLongText"
-    },
-    "definition" : [ {
-      "type" : "String",
-      "key" : "longText",
-      "properties" : {
-        "name" : "LONG TEXT",
-        "fieldLength" : 10,
-        "_typeChanged" : "String",
-        "longText" : true,
-        "dataKey" : "longText",
-        "dataPath" : "dsGroupStringLongText.longText"
-      }
-    } ]
-  },  {
+  },   {
     "_id" : "61043bdce53e2bb4496735bb",
     "type" : "Object",
     "key" : "dsGroupStringEmail",

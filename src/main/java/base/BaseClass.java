@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.TimeZone;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -49,7 +50,6 @@ public class BaseClass {
 	public static WebDriver driver;
 	public ExtentTest test;
 	public static ExtentReports extent;
-	public static ExtentHtmlReporter htmlReporter;
 	public static String DownloadFilepath, folder, basefold;
 	public static int count;
 	
@@ -57,7 +57,6 @@ public class BaseClass {
 	public static  String app_center_URL ;
 
 	public static String testData = System.getProperty("testData");
-//	public static String testData = "D:\\users111.json";
 	public static String browser = System.getProperty("browser");
 	public static String url = System.getProperty("url");
 	public static String path = System.getProperty("user.dir");
@@ -69,10 +68,10 @@ public class BaseClass {
 		if(browser==null) {
 			browser="chrome";
 		}
-		htmlReporter = config.ExtentReports.createInstance("report/extent.html");
+//		htmlReporter = config.ExtentReports.createInstance("report/extent.html");
 
-		extent = new ExtentReports();
-		extent.attachReporter(htmlReporter);
+//		extent = new ExtentReports();
+//		extent.attachReporter(htmlReporter);
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
@@ -115,26 +114,32 @@ public class BaseClass {
 			app_center_URL = "https://bifrost.ds.appveen.com/appcenter";
 			
 		}
-		extent.setSystemInfo("Selenium Version", "3");
-		extent.setSystemInfo("Environment", "Testing");
+//		extent.setSystemInfo("Selenium Version", "3");
+//		extent.setSystemInfo("Environment", "Testing");
 	}
 
 	public static WebDriver getDriver() {
 		return driver;
 	}
 
-	public static void applyExplicitWaitsUntilElementVisible(WebElement element) throws MalformedURLException {
+	public static void applyExplicitWaitsUntilElementVisible(WebElement element,int time) throws MalformedURLException {
 		
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, time);
 		wait.until(ExpectedConditions.visibilityOf(element));
+	
 
 	}
 	
-	public void applyExplicitWaitsUntilElementVisible(List<WebElement> element, int time) {
+	public void applyWaitForDynamicWebElement(By locator,int time) {
+		
 		WebDriverWait wait = new WebDriverWait(driver, time);
-		wait.until(ExpectedConditions.visibilityOfAllElements(element));
-		}
+		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	}
 	
+	public void applyExplicitWaitsUntilElementVisible(List<WebElement> element, int time) {
+	WebDriverWait wait = new WebDriverWait(driver, time);
+	wait.until(ExpectedConditions.visibilityOfAllElements(element));
+	}
 
 	
 	@AfterClass

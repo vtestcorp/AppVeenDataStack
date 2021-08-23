@@ -1,4 +1,4 @@
-Feature: This is the string_Email feature file
+Feature: DS STRING EMAIL
 
 @Author
 Scenario Outline: Log into Author
@@ -20,8 +20,8 @@ Scenario: Create data service
 
 
 Scenario Outline: Assign to Appcenter Group
- 	Then Group "String-Group" does not exist
-	Then Create new group "String-Group" 
+ 	Then Group "Email-Group" does not exist
+	Then Create new group "Email-Group" 
 	And Assign appcenter permissions for "string_Email" dataservice to "<user>"
 	
 	Examples:
@@ -86,7 +86,7 @@ Examples:
 
 	
 	Scenario Outline: Update record to data service
-	Given Data service "string_Email
+	Given Data service "string_Email"
 	Then Update record "<id>" with "<data>" to the data service
 Examples:
 
@@ -99,7 +99,7 @@ Scenario Outline: Fetch record from the data service
 	And Match it to "<data>"
 Examples:
 |id|data|
-|RC101|{"_id": "RC101","dsStringEmail1001": "abc@gmail.com","dsStringEmail1002": "ac@gmail.com","dsStringEmail1003": "xyz@gmail.com","dsStringEmail1004": "xyz@gmail.com","dsStringEmail1005": "xyz@gmail.com","dsStringEmail1007": "xyz@gmail.com", "dsStringEmail1008": "xyz@gmail.com",  "dsStringEmail1010": "xyz@gmail.com", "dsStringEmail1013": "xyz@gmail.com", "dsStringEmail1014": "x@gmail.com", "dsStringEmail1015": "xyz@gmail.com", "dsStringEmail1018": "xyz@gmail.com", "dsStringEmail1020": "xyz@gmail.com"}|
+|RC101|{"_id": "RC101","dsStringEmail1001": "abc@gmail.com","dsStringEmail1002": "ac@gmail.com","dsStringEmail1003": "wxy@gmail.com","dsStringEmail1004": "xyz@gmail.com","dsStringEmail1005": "xyz@gmail.com","dsStringEmail1007": "xyz@gmail.com", "dsStringEmail1008": "x99@gmail.com",  "dsStringEmail1010": "xyz@gmail.com", "dsStringEmail1013": "xyz@gmail.com", "dsStringEmail1014": "x123y@gmail.com", "dsStringEmail1015": "yz06@gmail.com", "dsStringEmail1018": "xyz@gmail.com", "dsStringEmail1020": "xyz@gmail.com"}|
 	
 Scenario Outline: Delete record from the data service
 	Given Data service "string_Email"
@@ -108,4 +108,7 @@ Scenario Outline: Delete record from the data service
 Examples:
 |id|
 |RC101|
+
+Scenario: Log out of App Center
+	Given User log out from AppCenter
 

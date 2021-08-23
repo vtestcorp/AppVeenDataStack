@@ -35,7 +35,7 @@ public class WaitTypes extends BaseClass{
 			wait.until(ExpectedConditions.visibilityOf(Element));
 		} catch (Exception e) {
 			e.getMessage();
-			System.out.println("" + e.getStackTrace());
+//			System.out.println("" + e.getStackTrace());
 		}
 		return Element;
 	}
@@ -46,7 +46,7 @@ public class WaitTypes extends BaseClass{
 			wait.until(ExpectedConditions.refreshed(ExpectedConditions.stalenessOf(Element)));
 		} catch (Exception e) {
 			e.getMessage();
-			System.out.println("" + e.getStackTrace());
+//			System.out.println("" + e.getStackTrace());
 		}
 		return Element;
 	}
