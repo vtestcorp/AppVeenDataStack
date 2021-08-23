@@ -109,6 +109,12 @@ public class DesignTestCases extends BaseClass{
 	public void add_record__toLocation(String string) throws InterruptedException {
 		design.addRecordForLocation(string);
 	}
+	
+	
+	@Then("Add record \"(.*?)\" to the user data service")
+	public void add_data_to_theUser(String string) throws InterruptedException {
+		  design.addRecordForUser(string);
+	}
     
 	@Then("Expect error {string} on save")
 	public void expect_error_on_save(String string) {
@@ -131,6 +137,11 @@ public class DesignTestCases extends BaseClass{
 		design.updateRecords(id,attribute);
 	}
 	
+	
+	@Then("Update record \"(.*?)\" with \"(.*?)\" to the User")
+	public void update_record_with_User_data_service(String id, String jsonFile) throws Exception {
+	    design.updateRecordforUser(id, jsonFile);
+	}
 	
 	@Then("Update record \"(.*?)\" with \"(.*?)\" to the Location")
 	public void update_record_with_dsLocation_data_service(String id, String jsonFile) throws Exception {

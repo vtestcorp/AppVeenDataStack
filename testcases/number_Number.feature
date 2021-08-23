@@ -1,6 +1,5 @@
 Feature: This is the Feature file of DS-Number
 
-
 @Author
 Scenario Outline: Log into Author
 	Given User navigate to Author login page
@@ -57,7 +56,7 @@ Scenario: Add data to data service
 	And Save button is disabled
 Examples:
 |data|
-|{"_id":"DS1001", "dsNumberNumber1002":"", "dsNumberNumber1014":"","dsNumberNumber1015":"","dsNumberNumber1017":"","dsNumberNumber1018":""}|
+|{"_id": "DS1001","dsNumberNumber1001": 10,"dsNumberNumber1002": ,"dsNumberNumber1003": 30, "dsNumberNumber1004": 40,"dsNumberNumber1005": 50,"dsNumberNumber1007": 60, "dsNumberNumber1008": 1, "dsNumberNumber1010":4,  "dsNumberNumber1013": -5, "dsNumberNumber1014": ,"dsNumberNumber1015": , "dsNumberNumber1018": ,"dsNumberNumber1020": -4,"dsNumberNumber1021": 3, "dsNumberNumber1022": 1, "dsNumberNumber1023": 23,"dsNumberNumber1024": 24}|
 
 
 Scenario Outline: Add record to data service
@@ -66,7 +65,8 @@ Scenario Outline: Add record to data service
 	And Expect error "ID DS1001 already exists" on save
 	Examples:
 		|data|
-	  |{ "_id" : "DS1001","dsNumberNumber1001" : 11,"dsNumberNumber1002" : 	12,"dsNumberNumber1003" : 13,"dsNumberNumber1007" : 14,"dsNumberNumber1008" : 18,"dsNumberNumber1014" : 17,"dsNumberNumber1015" : 15}|
+	  |{"_id": "DS1001","dsNumberNumber1001": 11,"dsNumberNumber1002": 12,"dsNumberNumber1003": 13, "dsNumberNumber1004": 14,"dsNumberNumber1005": 15,"dsNumberNumber1007": 16, "dsNumberNumber1008": 17, "dsNumberNumber1010":18,  "dsNumberNumber1013": 19, "dsNumberNumber1014": 20,"dsNumberNumber1015": 21, "dsNumberNumber1018": 22,"dsNumberNumber1020": 23,"dsNumberNumber1021": 24, "dsNumberNumber1022": 1, "dsNumberNumber1023": 12,"dsNumberNumber1024": 24}|
+	  
 
 
 Scenario Outline: Add record to data service
@@ -75,7 +75,7 @@ Scenario Outline: Add record to data service
 	And Expect error "Unique check validation failed for dsNumberNumber1002" on save
 Examples:
 |data|
-|{ "_id" : "DS1003","dsNumberNumber1001" : 1001,"dsNumberNumber1002" : 10,"dsNumberNumber1003" : 3,"dsNumberNumber1007" : 7,"dsNumberNumber1008" : 8,"dsNumberNumber1014" : 4,"dsNumberNumber1015" : 15}|
+|{"_id": "DS1003","dsNumberNumber1001": 1,"dsNumberNumber1002": 10,"dsNumberNumber1003": 3, "dsNumberNumber1004": 4,"dsNumberNumber1005": 5,"dsNumberNumber1007": 7, "dsNumberNumber1008": 8, "dsNumberNumber1010":9,  "dsNumberNumber1013": 13, "dsNumberNumber1014": 14,"dsNumberNumber1015": 15, "dsNumberNumber1018": 18,"dsNumberNumber1020": 20,"dsNumberNumber1021": 21, "dsNumberNumber1022": 1, "dsNumberNumber1023": 23,"dsNumberNumber1024": 24}|
 
 
 	
@@ -106,10 +106,14 @@ Examples:
 
 
 
-#Scenario Outline: Delete record from the data service
-#	Given Data service "number_Number"
-#	Then Delete record "<id>" from the data service
-#	And deleting from listing page
-#Examples:
-#|id|
-#|DS1001|
+Scenario Outline: Delete record from the data service
+	Given Data service "number_Number"
+	Then Delete record "<id>" from the data service
+	And deleting from listing page
+Examples:
+|id|
+|DS1001|
+
+
+Scenario: Log out of App Center
+	Given User log out from AppCenter

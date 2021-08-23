@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.TimeZone;
 
 import org.openqa.selenium.WebDriver;
@@ -128,6 +129,11 @@ public class BaseClass {
 		wait.until(ExpectedConditions.visibilityOf(element));
 
 	}
+	
+	public void applyExplicitWaitsUntilElementVisible(List<WebElement> element, int time) {
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.until(ExpectedConditions.visibilityOfAllElements(element));
+		}
 	
 
 	

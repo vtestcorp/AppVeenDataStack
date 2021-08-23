@@ -51,51 +51,56 @@ Scenario: Add data to data service
 	Then Add data to the data service
 	
 	
-	Scenario Outline: Add record to data service
-	Given Data service "string_Text"
-	Then Add record "<data>" to the data service
-	And Expect error "DS STRING TEXT Error" on label "DS STRING TEXT Label"
-	And Save button is disabled
-Examples:
-|data|
-|{"_id":"STR1002","dsStringText1001":"amazon", "dsStringText1002":"","dsStringText1014":"","dsStringText1015":"","dsStringText1018":""}|
-
-
-Scenario Outline: Add record to data service
-	Given Data service "string_Text"
-	Then Add record "<data>" to the data service	
-	And Expect error "ID STR1001 already exists" on save
-	Examples:
-		|data|
-	  |{ "_id" : "STR1001","dsStringText1001" : "1001","dsStringText1002" : "c","dsStringText1003" : "3","dsStringText1007" : "7","dsStringText1008" : "18","dsStringText1014" : "14","dsStringText1015" : "15"}|
-
-
-Scenario Outline: Add record to data service
-	Given Data service "string_Text"
-	Then Add record "<data>" to the data service		
-	And Expect error "Unique check validation failed for dsStringText1002" on save
-Examples:
-|data|
-|{ "_id" : "STR1003","dsStringText1001" : "flipcart","dsStringText1002" : "a","dsStringText1003" : "3","dsStringText1007" : "7","dsStringText1008" : "18","dsStringText1014" : "14","dsStringText1015" : "15"}|
+#	Scenario Outline: Add record to data service
+#	Given Data service "string_Text"
+#	Then Add record "<data>" to the data service
+#	And Expect error "DS STRING TEXT Error" on label "DS STRING TEXT Label"
+#	And Save button is disabled
+#Examples:
+#|data|
+#|{"_id":"STR1002","dsStringText1001":"amazon", "dsStringText1002":"","dsStringText1014":"","dsStringText1015":"","dsStringText1018":""}|
+#|{"_id": "STR1002","dsStringText1001": "amazon","dsStringText1002": "","dsStringText1003": "flipkart","dsStringText1004": "mintra","dsStringText1005": "starbazar","dsStringText1007": "dmart", "dsStringText1008": "bigBazar", "dsStringText1010": "bigBasket",  "dsStringText1013": "online shooping", "dsStringText1014": "", "dsStringText1015": "",  "dsStringText1018": "",  "dsStringText1020": "ABCD", "dsStringText1021": "season", "dsStringText1022": "cathlon", "dsStringText1023": "shopper stop", "dsStringText1024": "snapdel"}|
+#
+#
+#Scenario Outline: Add record to data service
+#	Given Data service "string_Text"
+#	Then Add record "<data>" to the data service	
+#	And Expect error "ID STR1001 already exists" on save
+#	Examples:
+#		|data|
+#	#  |{ "_id" : "STR1001","dsStringText1001" : "1001","dsStringText1002" : "c","dsStringText1003" : "3","dsStringText1007" : "7","dsStringText1008" : "18","dsStringText1014" : "14","dsStringText1015" : "15"}|
+#	|{"_id": "STR1001","dsStringText1001": "Mango","dsStringText1002": "apple","dsStringText1003": "Banana","dsStringText1004": "Grapes","dsStringText1005": "Pineapple","dsStringText1007": "Guava", "dsStringText1008": "Apricot", "dsStringText1010": "Black Current",  "dsStringText1013": "Black Berry", "dsStringText1014": "Blue Berry", "dsStringText1015": "Custard Apple",  "dsStringText1018": "Coconut",  "dsStringText1020": "DATE", "dsStringText1021": "F", "dsStringText1022": "Gooseberry", "dsStringText1023": "Jackfruit", "dsStringText1024": "Lamon"}|
 	
-	
-	
+#
+#
+#Scenario Outline: Add record to data service
+#	Given Data service "string_Text"
+#	Then Add record "<data>" to the data service		
+#	And Expect error "Unique check validation failed for dsStringText1002" on save
+#Examples:
+#|data|
+#|{ "_id" : "STR1003","dsStringText1001" : "flipcart","dsStringText1002" : "a","dsStringText1003" : "3","dsStringText1007" : "7","dsStringText1008" : "18","dsStringText1014" : "14","dsStringText1015" : "15"}|
+#|{"_id": "STR1001","dsStringText1001": "Rose","dsStringText1002": "shopify","dsStringText1003": "Lotus","dsStringText1004": "Butterfly Pea","dsStringText1005": "Crossandra","dsStringText1007": "Golden Shower", "dsStringText1008": "Forest Ghost", "dsStringText1010": "Marigold",  "dsStringText1013": "Jasmine", "dsStringText1014": "Night Blooming", "dsStringText1015": "Sambac",  "dsStringText1018": "Sunflower",  "dsStringText1020": "XYZ", "dsStringText1021": "M", "dsStringText1022": "Peacock", "dsStringText1023": "Hibiscus", "dsStringText1024": "Daisy"}|
+#	
 	Scenario Outline: Fetch record from the data service
 	Given Data service "string_Text"
 	Then Fetch record "<id>" from the data service
 	And Match it to "<data>"
 Examples:
 |id|data|
-|STR1001|{"_id": "STR1001","dsStringText1001": "1001","dsStringText1002": "a","dsStringText1003": "1003","dsStringText1004": "1004","dsStringText1005": "1005","dsStringText1007": "1007", "dsStringText1008": "1008", "dsStringText1010": "1010",  "dsStringText1013": "1013", "dsStringText1014": "1014", "dsStringText1015": "1015",  "dsStringText1018": "A",  "dsStringText1020": "ABCD", "dsStringText1021": "1021", "dsStringText1022": "1022", "dsStringText1023": "1023", "dsStringText1024": "1024"}|
-	
-	
+#|STR1001|{"_id": "STR1001","dsStringText1001": "1001","dsStringText1002": "a","dsStringText1003": "1003","dsStringText1004": "1004","dsStringText1005": "1005","dsStringText1007": "1007", "dsStringText1008": "1008", "dsStringText1010": "1010",  "dsStringText1013": "1013", "dsStringText1014": "1014", "dsStringText1015": "1015",  "dsStringText1018": "A",  "dsStringText1020": "ABCD", "dsStringText1021": "1021", "dsStringText1022": "1022", "dsStringText1023": "1023", "dsStringText1024": "1024"}|
+|STR1001|{"_id": "STR1001","dsStringText1001": "builder","dsStringText1002": "shopify","dsStringText1003": "amazon","dsStringText1004": "shopperstops","dsStringText1005": "snapdeal","dsStringText1007": "walmart", "dsStringText1008": "pantaloon", "dsStringText1010": "myntra",  "dsStringText1013": "limeraod", "dsStringText1014": "shopclues", "dsStringText1015": "tatacliq",  "dsStringText1018": "paytmmall",  "dsStringText1020": "ABCD", "dsStringText1021": "P", "dsStringText1022": "asksly", "dsStringText1023": "wrangler", "dsStringText1024": "flipkart"}|
+#	
+#	
 	Scenario Outline: Update record to data service
 	Given Data service "string_Text"
 	Then Update record "<id>" with "<data>" to the data service
 Examples:
 
 |id|data|
-|STR1001|{"dsStringText1001": "1111","dsStringText1002": "b","dsStringText1003": "1333","dsStringText1004": "1444","dsStringText1005": "1555","dsStringText1007": "1777", "dsStringText1008": "1888", "dsStringText1010": "101010",  "dsStringText1013": "101313", "dsStringText1014": "101414", "dsStringText1015": "101515", "dsStringText1018": "101818", "dsStringText1020": "ABCDEFGH", "dsStringText1021": "102121", "dsStringText1022": "102222", "dsStringText1023": "102323", "dsStringText1024": "102424"}|
+#|STR1001|{"dsStringText1001": "1111","dsStringText1002": "b","dsStringText1003": "1333","dsStringText1004": "1444","dsStringText1005": "1555","dsStringText1007": "1777", "dsStringText1008": "1888", "dsStringText1010": "101010",  "dsStringText1013": "101313", "dsStringText1014": "101414", "dsStringText1015": "101515", "dsStringText1018": "101818", "dsStringText1020": "ABCDEFGH", "dsStringText1021": "102121", "dsStringText1022": "102222", "dsStringText1023": "102323", "dsStringText1024": "102424"}|
+|STR1001|{"_id": "STR1001","dsStringText1001": "aa","dsStringText1002": "bb","dsStringText1003": "cc","dsStringText1004": "dd","dsStringText1005": "ee","dsStringText1007": "ff", "dsStringText1008": "gg", "dsStringText1010": "hh",  "dsStringText1013": "ii", "dsStringText1014": "jj", "dsStringText1015": "kk",  "dsStringText1018": "ll",  "dsStringText1020": "MM", "dsStringText1021": "N", "dsStringText1022": "oo", "dsStringText1023": "pp", "dsStringText1024": "qq"}|
+
 
 Scenario Outline: Fetch record from the data service
 	Given Data service "string_Text"
@@ -103,17 +108,13 @@ Scenario Outline: Fetch record from the data service
 	And Match it to "<data>"
 Examples:
 |id|data|
-|STR1001|{"_id": "STR1001","dsStringText1001": "1111","dsStringText1002": "a","dsStringText1003": "1333","dsStringText1004": "1004","dsStringText1005": "1555","dsStringText1007": "1007", "dsStringText1008": "1888", "dsStringText1010": "1010",  "dsStringText1013": "101313", "dsStringText1014": "101414", "dsStringText1015": "101515", "dsStringText1018": "101818", "dsStringText1020": "ABCDEFGH", "dsStringText1021": "102121", "dsStringText1022": "102222", "dsStringText1023": "102323", "dsStringText1024": "102424"}|
-	
-Scenario Outline: Delete record from the data service
-	Given Data service "string_Text"
-	Then Delete record "<id>" from the data service
-	And deleting from listing page
-Examples:
-|id|
-|STR1001|
-#
-#
-#
-#
-#
+#|STR1001|{"_id": "STR1001","dsStringText1001": "1111","dsStringText1002": "a","dsStringText1003": "1333","dsStringText1004": "1004","dsStringText1005": "1555","dsStringText1007": "1007", "dsStringText1008": "1888", "dsStringText1010": "1010",  "dsStringText1013": "101313", "dsStringText1014": "101414", "dsStringText1015": "101515", "dsStringText1018": "101818", "dsStringText1020": "ABCDEFGH", "dsStringText1021": "102121", "dsStringText1022": "102222", "dsStringText1023": "102323", "dsStringText1024": "102424"}|
+|STR1001|{"_id": "STR1001","dsStringText1001": "aa","dsStringText1002": "shopify","dsStringText1003": "cc","dsStringText1004": "shopperstops","dsStringText1005": "ee","dsStringText1007": "walmart", "dsStringText1008": "gg", "dsStringText1010": "myntra",  "dsStringText1013": "ii", "dsStringText1014": "jj", "dsStringText1015": "kk",  "dsStringText1018": "ll",  "dsStringText1020": "MM", "dsStringText1021": "N", "dsStringText1022": "oo", "dsStringText1023": "pp", "dsStringText1024": "qq"}|
+
+#Scenario Outline: Delete record from the data service
+#	Given Data service "string_Text"
+#	Then Delete record "<id>" from the data service
+#	And deleting from listing page
+#Examples:
+#|id|
+#|STR1001|

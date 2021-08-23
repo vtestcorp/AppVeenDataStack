@@ -307,9 +307,11 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(xpath="//div[@class='text'][normalize-space()='Manage']")
 	public WebElement manageTab;
 	
+	@FindBy(xpath = "//div[normalize-space()='Allow deletion of related users']/following-sibling::div//label/span[@class='toggler']")
+	public WebElement allowdeletionToggler;
 	
-	
-	
+	@FindBy(xpath = "//div[normalize-space()='Allow deletion of related users']/following-sibling::div//span[@class='text']")
+	public WebElement allowdeletionStatus;
 
 
 

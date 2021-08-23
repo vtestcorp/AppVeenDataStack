@@ -32,7 +32,6 @@ import pageObjects.Object_AuthorPage;
 import pageObjects.Object_GroupPage;
 
 public class LoginPage extends BaseClass{
-//	private WebDriver driver;
 	private WaitTypes applyWait;
 	private ExtentTest test;
 	private JavascriptClick javascriptClick;
@@ -46,6 +45,7 @@ public class LoginPage extends BaseClass{
 	public static ArrayList<String> data_Services;
 	public Object_AuthorPage ap;
 	public Object_GroupPage gp;
+	public static boolean isType;
 	
 	public LoginPage(WebDriver driver, ExtentTest test) {
 		PageFactory.initElements(driver, this);
@@ -204,7 +204,7 @@ public class LoginPage extends BaseClass{
 			case "Boolean" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
 				applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
-				applyWait.waitForElementToBeClickable(ap.dropdownCollection, 30).click();
+				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
 				applyWait.waitForElementToBeClickable(ap.booleanData, 30).click();
 				requiredAttributes(jsonProperties);
 				break;
@@ -356,6 +356,7 @@ public class LoginPage extends BaseClass{
 							dropdown.selectByVisibleText(ap.viewField, field);
 						
 						}
+						isType=true;
 						requiredAttributes(jsonProperties);
 						break;
 			}
@@ -1058,6 +1059,7 @@ public class LoginPage extends BaseClass{
 									 }
 								  }
 									
+									
 								}
 								
 										
@@ -1136,6 +1138,26 @@ public class LoginPage extends BaseClass{
 								if(jsonProperties.containsKey("_description")) {
 									applyWait.waitForElementToBeClickable(ap.description, 30).sendKeys(jsonProperties.get("_description").toString());
 									}
+								
+								
+								if(jsonProperties.containsKey("deleteAction"))
+								{
+									String allowdeletion_Staus = "";
+															
+								if(!driver.findElements(By.xpath("//div[normalize-space()='Allow deletion of related users']/following-sibling::div//span[@class='text']")).isEmpty()){
+										
+										 allowdeletion_Staus=ap.allowdeletionStatus.getText();
+								    }
+									
+									if(jsonProperties.get("deleteAction").toString().equals("setnull") && allowdeletion_Staus.equals("No") ) {
+										
+									   ap.allowdeletionToggler.click();	
+									}
+									
+									else if(jsonProperties.get("deleteAction").toString().equals("restrict") && allowdeletion_Staus.equals("Yes") ) {
+										ap.allowdeletionToggler.click();
+									}
+								}
 						}
 
 						

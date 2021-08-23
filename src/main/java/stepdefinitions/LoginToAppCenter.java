@@ -64,7 +64,12 @@ public class LoginToAppCenter extends BaseClass{
 		loginAppCenter.userEnterDataforCollection();
 	}
 
-
+    
+	@Then("Add data to the data service for boolean")
+	public void add_data_to_the_data_service_for_boolean() throws InterruptedException {
+		loginAppCenter.userEnterDataforBoolean();
+	    
+	}
 	
 	@Then("Add data to the data service")
 	public void add_data_to_the_data_service() throws Exception {
@@ -78,7 +83,14 @@ public class LoginToAppCenter extends BaseClass{
 		loginAppCenter.userEnterDataInLocationField();
 	}
 
-
+	
+	@Then("Add data to the data service for user")
+	public void add_data_to_the_data_service_for_user() throws InterruptedException {
+	   loginAppCenter.userEnterDataInUserField();
+	}
+	  
+	
+	
 	
 	@Then("On the listing page it should show the total count of documents as {int}")
 	public void on_the_listing_page_it_should_show_the_total_count_of_documents_as(Integer documentCount) throws Exception {

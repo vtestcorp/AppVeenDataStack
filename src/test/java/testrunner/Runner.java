@@ -8,10 +8,9 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 
-@CucumberOptions(features="./testcases/ds_Location.feature",
+@CucumberOptions(features="./testcases/boolean.feature",
 			//	dryRun=true,
            //	tags="@AppCenter",
-
 				glue="stepdefinitions",
 				monochrome=true,
 				plugin = { "pretty", "html:target/cucumber-reports" ,"json:target/cucumber-reports/cucumber.json" }

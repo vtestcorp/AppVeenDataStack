@@ -67,11 +67,38 @@ public class LoginAppCenter extends BaseClass {
 
 	public void dataService(String dataService) throws Exception {
 		data_Service = dataService;
-		Thread.sleep(3000);
-		WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
-		javascriptClick = new JavascriptClick(driver);
-		data.click();
+		try {
+			WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
+			data.click();
+		} catch (Exception e) {
+			Thread.sleep(10000);
+			driver.navigate().refresh();
+			Thread.sleep(4000);
+					try {
+						WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
+						data.click();
+					} catch (Exception e1) {
+						Thread.sleep(10000);
+						driver.navigate().refresh();
+						Thread.sleep(4000);
+						WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
+						data.click();
+					}
+			
+			
+		}
+		
 	}
+//		int data = driver.findElements(By.xpath("//div[contains(text(),'" + dataService + "')]")).size();
+//		while(data==1)
+//		{
+//			Thread.sleep(5000);
+//			driver.navigate().refresh();
+//		    data = driver.findElements(By.xpath("//div[contains(text(),'" + dataService + "')]")).size();
+//		}
+//		WebElement data1 = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
+//	    data1.click();
+//	}
 
 	public void userEnterData() throws Exception {
 		Thread.sleep(2000);
@@ -269,10 +296,7 @@ public class LoginAppCenter extends BaseClass {
 						applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(v1);
 					}
 						else {
-//								applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(v2);
-//								  textBox.sendKeys(Keys.ENTER);
-//								  Thread.sleep(1000);
-								textBox.sendKeys(v2);
+     							textBox.sendKeys(v2);
 								Thread.sleep(2000);
 								textBox.sendKeys(Keys.DOWN);
 								textBox.sendKeys(Keys.ENTER);
@@ -285,7 +309,80 @@ public class LoginAppCenter extends BaseClass {
 					
 	}
 				
+	public void userEnterDataInUserField() throws InterruptedException {
+		Thread.sleep(2000);
+		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		Thread.sleep(3000);
+		List<WebElement> textBoxes = acp.textBoxes;
+		
+		String filePath=path + "\\testData\\" + data_Service + ".data.json";
+		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
+	
+		for (int j = 1; j <= textBoxes.size(); j++) {
+			String val =null;
+		WebElement textBox = driver.findElement(By.xpath("(//*[contains(@class,'form-control')])["+j+"]"));
+			if (textBox.isEnabled()) {
+				String id1 = textBox.getAttribute("id");
+				if(id1.equals("_id"))
+				{
+					val = (String) jsonObject.get(id1);
+				}
+				else {
+                        try {
+							JSONObject json  = (JSONObject) jsonObject.get(id1);
+							val = (String) json.get("_id");
+						} catch (NullPointerException e) {
+							continue;
+						}
+				}
+				
+				if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")||textBox.getAttribute("type").equals("select-one")) {
+
+					   	if (val != null) {
+
+								if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
+		                            	applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(val);
+		                            	
+		                            	applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(Keys.DOWN);
+		                            	Thread.sleep(500);
+		                            	applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(Keys.ENTER);
+								}
+		   					}
+		            	}
+	            	}
+		     }
+				applyWait.waitForElementToBeClickable(acp.save, 30).click();
 					
+	}
+				
+					
+			public void userEnterDataforBoolean() throws InterruptedException {
+				
+				applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+				//applyExplicitWaitsUntilElementVisible(acp.buttons, 10);
+				Thread.sleep(5000);
+				List<WebElement> buttons = acp.buttons;
+				String filePath=path + "\\testData\\" + data_Service + ".data.json";
+				JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
+				for (int j = 1; j <= buttons.size(); j++) {
+					WebElement button = driver.findElement(By.xpath("(//input[@type='checkbox' or @id='_id' ])["+j+"]"));
+					String id1 = button.getAttribute("id");
+					Thread.sleep(1000);
+					if (button.getAttribute("type").equals("text"))
+					   	 {
+						    String value = (String) jsonObject.get(id1);
+						     applyWait.waitForElementToBeClickable(button, 30).sendKeys(value);
+					   	 }
+					else if (button.getAttribute("type").equals("checkbox")) {
+						      WebElement parent = button.findElement(By.xpath("./.."));
+						      if(jsonObject.get(id1).equals(true))
+						      {
+						    	    
+						         applyWait.waitForElementToBeClickable(parent, 30).click();
+		              		}
+					      }
+					   	}
+				}
 			
 		
 
@@ -352,7 +449,6 @@ public class LoginAppCenter extends BaseClass {
 					{
 						textBox.click();
 						Thread.sleep(8000);
-				//		WebElement textBox1 = driver.findElement(By.xpath("(//input[@class='form-control form-control-sm rounded ng-pristine ng-valid ng-star-inserted ng-touched'])["+i+"]"));
 						WebElement textBox1 = driver.findElement(By.xpath("(//input[contains(@id,'collection')])["+i+"]"));
 						Thread.sleep(500);
 						

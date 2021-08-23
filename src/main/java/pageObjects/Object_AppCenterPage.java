@@ -232,7 +232,8 @@ public class Object_AppCenterPage extends BaseClass{
 	
 	
 	
-	
+	@FindBy(xpath= "//input[@type='checkbox' or @id='_id' ]")
+	public List<WebElement> buttons;
 	
 	
 
