@@ -55,7 +55,8 @@ Scenario Outline: Add record to data service
 	And Save button is disabled
 Examples:
 |data|
-|{"_id":"RC102", "dsStringEmail1002":"", "dsStringEmail1014":"", "dsStringEmail1015":"", "dsStringEmail1017":"" ,"dsStringEmail1018":""}|
+|{"_id": "RC101","dsStringEmail1001": "abc@gmail.com","dsStringEmail1002": " ","dsStringEmail1003": "xyz@gmail.com","dsStringEmail1004": "xyz@gmail.com","dsStringEmail1005": "xyz@gmail.com","dsStringEmail1007": "xyz@gmail.com", "dsStringEmail1008": "xyz@gmail.com",  "dsStringEmail1010": "xyz@gmail.com", "dsStringEmail1013": "xyz@gmail.com", "dsStringEmail1014": "", "dsStringEmail1015": "", "dsStringEmail1018": "", "dsStringEmail1020": "xyz@gmail.com"}|
+
 
 Scenario Outline: Add record to data service
 	Given Data service "string_Email"

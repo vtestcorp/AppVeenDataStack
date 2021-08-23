@@ -58,7 +58,8 @@ Scenario Outline: Add record to data service
 	And Save button is disabled
 Examples:
 |data|
-|{"_id":"STR1002", "dsStringLongText1002":"", "dsStringLongText1014":"","dsStringLongText1015":"","dsStringLongText1018":""}|
+|{"_id": "STR1001","dsStringLongText1001": "Long Text 1001","dsStringLongText1002": " ","dsStringLongText1003": "Long Text 1003","dsStringLongText1004": "Long Text 1004","dsStringLongText1005": "Long Text 1005","dsStringLongText1007": "Long Text 1007", "dsStringLongText1008": "Long Text 1008", "dsStringLongText1010": "Long Text 1010",  "dsStringLongText1013": "Long Text 1013", "dsStringLongText1014": " ", "dsStringLongText1015": " ",  "dsStringLongText1018": " "}|
+
 
 
 Scenario Outline: Add record to data service

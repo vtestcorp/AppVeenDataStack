@@ -58,7 +58,7 @@ Scenario Outline: Add record to data service
 	And Save button is disabled
 Examples:
 |data|
-|{"_id":"STR1002", "dsStringListOfValues1001":"LIST 1","dsStringListOfValues1002":"", "dsStringListOfValues1014":"","dsStringListOfValues1015":"","dsStringListOfValues1018":""}|
+|{"_id": "STR1001","dsStringListOfValues1001": "LIST 1","dsStringListOfValues1002": " ","dsStringListOfValues1003": "LIST 1","dsStringListOfValues1004": "LIST 1","dsStringListOfValues1005": "LIST 1","dsStringListOfValues1007": "LIST 1", "dsStringListOfValues1008": "LIST 1", "dsStringListOfValues1010": "LIST 1",  "dsStringListOfValues1013": "LIST 1", "dsStringListOfValues1014": " ", "dsStringListOfValues1015": " ",  "dsStringListOfValues1018": " ", "dsStringListOfValues1020":"LIST 1"}|
 
 
 Scenario Outline: Add record to data service
@@ -77,7 +77,7 @@ Scenario Outline: Add record to data service
 Examples:
 |data|
 |{ "_id" : "STR1003","dsStringListOfValues1001" : "LIST 1","dsStringListOfValues1002" : "LIST 1","dsStringListOfValues1003" : "LIST 1","dsStringListOfValues1007" : "LIST 1","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1014" : "LIST 1","dsStringListOfValues1015" : "LIST 1"}|
-	
+
 	
 	
 	Scenario Outline: Fetch record from the data service

@@ -62,6 +62,12 @@ public class DesignTestCases extends BaseClass{
 	public void create_new_group(String groupName) throws Exception {
 	 design.createGroup(groupName);
 	}
+	
+	@Then("assign appcenter permissions for {string} dataservice")
+	public void assign_appcenter_permissions_for_dataservice(String string) {
+	   
+	}
+
 
 	@Then("Assign appcenter permissions for {string} dataservice to {string}")
 	public void assign_appcenter_permissions_for_strings_text_dataservice(String dataServiceName,String user) throws Exception {
