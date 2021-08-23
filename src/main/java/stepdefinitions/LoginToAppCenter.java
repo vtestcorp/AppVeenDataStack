@@ -52,6 +52,7 @@ public class LoginToAppCenter extends BaseClass{
 	
 	@Given("Data service {string}")
 	public void data_service(String dataService) throws Exception {
+//		Thread.sleep(count);
 		loginAppCenter.dataService(dataService);
 	 
 	}

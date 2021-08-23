@@ -54,8 +54,13 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//*[contains(@class,'form-control')]")
 	public WebElement textBox1;
 	
+	@FindBy(xpath="//input[@type='text' and contains(@class,'form')]")
+	public WebElement idTextBox1;
+	
 	@FindBy(xpath="//*[contains(@class,'form-control')]")
 	public List<WebElement> textBoxes;
+	
+	
 	
 	@FindBy(xpath="//div[starts-with(@class,'d-flex flex-column align')]")
 	public List<WebElement> errorMessages;

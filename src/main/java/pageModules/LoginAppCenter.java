@@ -86,8 +86,16 @@ public class LoginAppCenter extends BaseClass {
 						Thread.sleep(10000);
 						driver.navigate().refresh();
 						Thread.sleep(3000);
-						WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
-						data.click();
+						try {
+								WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
+								data.click();
+							} catch (Exception e2) {
+								Thread.sleep(20000);
+								driver.navigate().refresh();
+								Thread.sleep(3000);
+								WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
+								data.click();
+						}
 					}
 			
 			

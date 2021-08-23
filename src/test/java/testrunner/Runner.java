@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="./testcases/number_Currency.feature",
+@CucumberOptions(features="./testcases/date&Time.feature",
 				dryRun=false,
 				glue="stepdefinitions",
 				monochrome=true,

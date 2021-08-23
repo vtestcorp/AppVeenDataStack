@@ -188,9 +188,10 @@ public class Module_DesignTestCases extends BaseClass{
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		System.out.println(acp.textBoxes.size());
-		applyExplicitWaitsUntilElementVisible(acp.textBoxes, 10);
+//		applyExplicitWaitsUntilElementVisible(acp.textBoxes, 10);
+		applyExplicitWaitsUntilElementVisible(acp.idTextBox1, 10);
 		List<WebElement> textBoxes = acp.textBoxes;
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);

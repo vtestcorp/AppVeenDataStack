@@ -16,14 +16,14 @@ Scenario: Delete data service
 	Then Remove the data service
 
 Scenario: Create data service
-	Given Data service "date" does not exist
-	Then Create new data service "date"
+	Given Data service "date&Time" does not exist
+	Then Create new data service "date&Time"
  #Under testData, picks up strings.json create the JSON
 
 Scenario Outline: Assign to Appcenter Group
- 	Then Group "Date-Group" does not exist
-	Then Create new group "Date-Group" 
-	And Assign appcenter permissions for "date" dataservice to "<user>"
+ 	Then Group "Date & Time-Group" does not exist
+	Then Create new group "Date & Time-Group" 
+	And Assign appcenter permissions for "date&Time" dataservice to "<user>"
 	
 	Examples:
 	|user|
@@ -47,12 +47,12 @@ Examples:
 
 # INSERT/UPDATE
 #Scenario: Add data to data service
-#	Given Data service "date"
+#	Given Data service "date&Time"
 #	Then Add data to the data service
 #	
 #	
 #	Scenario Outline: Add record to data service
-#	Given Data service "date"
+#	Given Data service "date&Time"
 #	Then Add record "<data>" to the data service
 #	And Expect error "DS STRING TEXT Error" on label "DS STRING TEXT Label"
 #	And Save button is disabled
@@ -62,7 +62,7 @@ Examples:
 #
 #
 #Scenario Outline: Add record to data service
-#	Given Data service "date"
+#	Given Data service "date&Time"
 #	Then Add record "<data>" to the data service	
 #	And Expect error "ID STR1001 already exists" on save
 #	Examples:
@@ -71,7 +71,7 @@ Examples:
 #
 #
 #Scenario Outline: Add record to data service
-#	Given Data service "date"
+#	Given Data service "date&Time"
 #	Then Add record "<data>" to the data service		
 #	And Expect error "Unique check validation failed for dsStringText1002" on save
 #Examples:
@@ -81,7 +81,7 @@ Examples:
 #	
 #	
 #	Scenario Outline: Fetch record from the data service
-#	Given Data service "date"
+#	Given Data service "date&Time"
 #	Then Fetch record "<id>" from the data service
 #	And Match it to "<data>"
 #Examples:
@@ -90,7 +90,7 @@ Examples:
 #	
 #	
 #	Scenario Outline: Update record to data service
-#	Given Data service "date"
+#	Given Data service "date&Time"
 #	Then Update record "<id>" with "<data>" to the data service
 #Examples:
 #
@@ -98,7 +98,7 @@ Examples:
 #|STR1001|{"dsStringText1001": "1111","dsStringText1002": "b","dsStringText1003": "1333","dsStringText1004": "1444","dsStringText1005": "1555","dsStringText1007": "1777", "dsStringText1008": "1888", "dsStringText1010": "101010",  "dsStringText1013": "101313", "dsStringText1014": "101414", "dsStringText1015": "101515", "dsStringText1018": "101818", "dsStringText1020": "ABCDEFGH", "dsStringText1021": "102121", "dsStringText1022": "102222", "dsStringText1023": "102323", "dsStringText1024": "102424"}|
 #
 #Scenario Outline: Fetch record from the data service
-#	Given Data service "date"
+#	Given Data service "date&Time"
 #	Then Fetch record "<id>" from the data service
 #	And Match it to "<data>"
 #Examples:
@@ -106,7 +106,7 @@ Examples:
 #|STR1001|{"_id": "STR1001","dsStringText1001": "1111","dsStringText1002": "a","dsStringText1003": "1333","dsStringText1004": "1004","dsStringText1005": "1555","dsStringText1007": "1007", "dsStringText1008": "1888", "dsStringText1010": "1010",  "dsStringText1013": "101313", "dsStringText1014": "101414", "dsStringText1015": "101515", "dsStringText1018": "101818", "dsStringText1020": "ABCDEFGH", "dsStringText1021": "102121", "dsStringText1022": "102222", "dsStringText1023": "102323", "dsStringText1024": "102424"}|
 #	
 #Scenario Outline: Delete record from the data service
-#	Given Data service "date"
+#	Given Data service "date&Time"
 #	Then Delete record "<id>" from the data service
 #	And deleting from listing page
 #Examples:
