@@ -46,7 +46,7 @@ public class LoginPage extends BaseClass{
 	public Object_AuthorPage ap;
 	public Object_GroupPage gp;
 	
-	public LoginPage(WebDriver driver, ExtentTest test) {
+	public LoginPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.applyWait = new WaitTypes(driver);
 		this.test = test;
@@ -60,8 +60,6 @@ public class LoginPage extends BaseClass{
 	public void loginToPage() throws Exception {
 
 		driver.get(author_URL);
-		Screenshots.takeScreenshot(driver, "User opened author url ");
-		
 	}
 	
 	public void enterUserNameAndPassword(String username, String password) throws Exception {
@@ -78,7 +76,7 @@ public class LoginPage extends BaseClass{
 		applyWait.waitforElementToBeDisplayed(ap.listOfDataServices, 30);
 	if (ap.listOfDataServices.isDisplayed()) {
 		javascriptClick.highLighterMethod(ap.listOfDataServices);
-		Screenshots.takeScreenshot(driver, "User successfully signed up");
+//		Screenshots.takeScreenshot(driver, "User successfully signed up");
 		Log.info("User successfully signed up");
 	}
 	}
@@ -101,10 +99,14 @@ public class LoginPage extends BaseClass{
 		if(flag==true) {
 				data_serviceToggler.click();
 				applyWait.waitForElementToBeClickable(ap.delete, 30).click();
-				Thread.sleep(1000);
-				applyWait.waitForElementToBeClickable(ap.delete1, 30).click();
+				 
+				try {
+					applyWait.waitForElementToBeClickable(ap.delete1, 30).click();
+				} catch (ElementClickInterceptedException e) {
+					Thread.sleep(1000);
+					applyWait.waitForElementToBeClickable(ap.delete1, 30).click();
+				}
 			}
-		
 	}
 
 	public void verifyDataServiceDoesNotExist() {
@@ -114,11 +116,10 @@ public class LoginPage extends BaseClass{
 	
 	public void createNewDataServices(JSONArray jsonArray, String dataService1) throws Exception {
 		dataServiceName=dataService1;
-		Thread.sleep(2000);
+		 Thread.sleep(1000); 
 		applyExplicitWaitsUntilElementVisible(ap.dataServiceName1, 10);
 		List<WebElement> dataServices=driver.findElements(By.id("serviceManagerCardTitle"));
 		data_Services=new ArrayList<String>();
-		
 		for(WebElement dataService : dataServices) {
 			String data=dataService.getText();
 			data_Services.add(data);
@@ -128,7 +129,12 @@ public class LoginPage extends BaseClass{
 		action.moveToElement(ap.newDataService).perform();
 		applyWait.waitForElementToBeClickable(ap.newDataService, 30).click();
 		applyWait.waitForElementToBeClickable(ap.dataServiceName, 30).sendKeys(dataServiceName);;
-		applyWait.waitForElementToBeClickable(ap.createButton, 30).click();
+		try {
+			applyWait.waitForElementToBeClickable(ap.createButton, 30).click();
+		} catch (Exception e) {
+			Thread.sleep(500);
+			applyWait.waitForElementToBeClickable(ap.createButton, 30).click();
+		}
 		data_Services.add(dataServiceName);
 		}
 		try {
@@ -280,7 +286,6 @@ public class LoginPage extends BaseClass{
 					case "Geojson" : 
 						jsonProperties = (JSONObject) attribute.get("properties");
 					applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
-				
 					applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
 					applyWait.waitForElementToBeClickable(ap.location, 30).click();
 					applyWait.waitForElementToBeClickable(ap.pointOnAMap, 30).click();
@@ -290,7 +295,6 @@ public class LoginPage extends BaseClass{
 					case "Array" : 
 						jsonProperties = (JSONObject) attribute.get("properties");
 					applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
-				
 					applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
 					applyWait.waitForElementToBeClickable(ap.collection, 30).click();
 					if(jsonProperties.containsKey("createOnly")) {
@@ -317,7 +321,6 @@ public class LoginPage extends BaseClass{
 					case "File" : 
 						jsonProperties = (JSONObject) attribute.get("properties");
 						applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
-					
 						applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
 						applyWait.waitForElementToBeClickable(ap.file, 30).click();
 						requiredAttributes(jsonProperties);
@@ -390,17 +393,15 @@ public class LoginPage extends BaseClass{
 			}
 			if(i<array.size()-1) {
 			applyWait.waitForElementToBeClickable(ap.addStep, 30).click();
-			
+				}
 			}
 		}
-		}
-		
 	}
 
 
 
-	private void function_RolesTab() throws Exception {
-		String path=System.getProperty("user.dir");
+	public void function_RolesTab() throws Exception {
+		
 		String dataName=path+"\\testData" + "\\" + ""+dataServiceName+".json";
 		JSONObject role=(JSONObject) JsonUtils.getJSONObject(dataName).get("role");
 		JSONArray roles=(JSONArray) role.get("roles");
@@ -1197,8 +1198,14 @@ public class LoginPage extends BaseClass{
 							
 						}
 
-						public void logOutFromAuthor() {
+						public void logOutFromAuthor() throws Exception {
+							try {
 							applyWait.waitForElementToBeClickable(gp.profileIcon, 30).click();
+							}
+							catch(ElementClickInterceptedException e) {
+								Thread.sleep(1000);
+								applyWait.waitForElementToBeClickable(gp.profileIcon, 30).click();
+							}
 							applyWait.waitForElementToBeClickable(gp.logout, 30).click();
 
 						}

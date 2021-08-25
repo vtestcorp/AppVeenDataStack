@@ -2,6 +2,7 @@ package pageModules;
 
 import java.io.File;
 import java.net.MalformedURLException;
+import java.util.Arrays;
 import java.util.List;
 
 import org.json.simple.JSONObject;
@@ -10,6 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.aventstack.extentreports.ExtentTest;
@@ -69,33 +71,39 @@ public class LoginAppCenter extends BaseClass {
 
 	public void dataService(String dataService) throws Exception {
 		data_Service=dataService;
-//		Thread.sleep(2000);
+		Actions action=new Actions(driver);
+		
+		By ds = null;
 		try {
-			By ds=By.xpath("//div[contains(text(),'" + dataService + "')]");
-			applyWaitForDynamicWebElement(ds, 5);
+			ds=By.xpath("//div[normalize-space()='"+dataService+"' and contains(@class,'text-truncate')]");
+			applyWaitForDynamicWebElement(ds, 10);
 			WebElement data = driver.findElement(ds);
+			action.moveToElement(data).perform();
 			data.click();
 		} catch (Exception e) {
 			Thread.sleep(10000);
 			driver.navigate().refresh();
 			Thread.sleep(3000);
 					try {
-						WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
+						WebElement data = driver.findElement(ds);
+						action.moveToElement(data).perform();
 						data.click();
 					} catch (Exception e1) {
 						Thread.sleep(10000);
 						driver.navigate().refresh();
 						Thread.sleep(3000);
-						try {
-								WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
-								data.click();
-							} catch (Exception e2) {
-								Thread.sleep(20000);
-								driver.navigate().refresh();
-								Thread.sleep(3000);
-								WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
-								data.click();
-						}
+							try {
+									WebElement data = driver.findElement(ds);
+									action.moveToElement(data).perform();
+									data.click();
+								} catch (Exception e2) {
+									Thread.sleep(20000);
+									driver.navigate().refresh();
+									Thread.sleep(3000);
+									WebElement data = driver.findElement(ds);
+									action.moveToElement(data).perform();
+									data.click();
+							}
 					}
 			
 			
@@ -519,7 +527,7 @@ public class LoginAppCenter extends BaseClass {
 		
 		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
+		applyExplicitWaitsUntilElementVisible(acp.textBox1,20);
 		List<WebElement> textBoxes = acp.dateFields;
 		String path = System.getProperty("user.dir");
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
@@ -530,15 +538,20 @@ public class LoginAppCenter extends BaseClass {
 			if (textBox.isEnabled()) {
 				String id1 = textBox.getAttribute("id");
 
-				String value1=JsonUtils.getJsonValue(filePath,id1);
-				
 				if(id1.equals("_id")) {
+					String value1=(String) jsonObject.get(id1);
 					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1.toString());
 				}
 				else {
-					
+					String dateValue;
+					try {
 					JSONObject json=(JSONObject) jsonObject.get(id1);
-					String dateValue=json.get("rawData").toString();
+					dateValue=json.get("rawData").toString();
+					}
+					catch(Exception e) {
+						continue;
+					}
+					String emptyArray[]= {"00","00","00Z"};
 					String fullDate[]=dateValue.split("T")[0].split("-");
 					String fullTime[]=dateValue.split("T")[1].split(":");
 					String date=fullDate[2];
@@ -546,7 +559,9 @@ public class LoginAppCenter extends BaseClass {
 					String year=fullDate[0];
 					String hour=fullTime[0];
 					String minute=fullTime[1];
-					String[] second=fullTime[2].trim().split(".");
+					String second1=fullTime[2].replace("Z", "");
+					Integer second2=(int)Float.parseFloat(second1);
+					String second=second2.toString();
 					
 					WebElement selectDate=driver.findElement(By.id(id1));
 					selectDate.click();
@@ -555,6 +570,19 @@ public class LoginAppCenter extends BaseClass {
 					applyExplicitWaitsUntilElementVisible(acp.day,10);
 					WebElement date1=driver.findElement(By.xpath("//span[contains(@class,'disabled')=false and @id='_day']["+date+"]"));
 					date1.click();
+					
+					
+					
+					System.out.println(hour+"---"+minute+"----"+second);
+					if(!Arrays.equals(fullTime, emptyArray)) {
+						
+						dropdown.selectByValue(acp.hourDropDown, hour);
+						dropdown.selectByValue(acp.minuteDropDown, minute);
+						Thread.sleep(500);
+						dropdown.selectByValue(acp.secondDropDown, second);
+						
+					}
+					
 					applyWait.waitForElementToBeClickable(acp.doneButton, 30).click();
 					Thread.sleep(500);
 					

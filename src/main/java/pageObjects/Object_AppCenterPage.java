@@ -33,6 +33,17 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//select[@class='text-primary time-select font-weight-bold'][2]")
 	public WebElement yearDropDown;
 	
+	@FindBy(xpath="//select[@class='text-primary time-select'][1]")
+	public WebElement hourDropDown;
+	
+	@FindBy(xpath="//select[@class='text-primary time-select'][2]")
+	public WebElement minuteDropDown;
+	
+	@FindBy(xpath="//select[@class='text-primary time-select'][3]")
+	public WebElement secondDropDown;
+	
+	//select[@class='text-primary time-select'][1]
+	
 	@FindBy(xpath="//input[@placeholder='Password']")
 	public WebElement password;
 
@@ -178,7 +189,7 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//a[starts-with(@class,'ng')]")
 	public WebElement dataServiceList;
 	
-	@FindBy(xpath="//span[normalize-space()='Edit']")
+	@FindBy(id="_editButton")
 	public WebElement edit;
 	
 	@FindBy(xpath="//input[@id='_id']")

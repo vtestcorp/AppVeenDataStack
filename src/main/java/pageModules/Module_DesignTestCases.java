@@ -4,6 +4,7 @@ import java.awt.Desktop.Action;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +36,6 @@ import com.jayway.jsonpath.PathNotFoundException;
 
 import base.BaseClass;
 import config.DefineConstants;
-//import cucumber.api.java.en.Then;
 import helperMethods.DropDown;
 import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
@@ -72,7 +72,7 @@ public class Module_DesignTestCases extends BaseClass{
 		acp=new Object_AppCenterPage();
 		ap=new Object_AuthorPage();
 		gp=new Object_GroupPage();
-		lp=new LoginPage(driver, test);
+		lp=new LoginPage(driver);
 		javascriptClick=new JavascriptClick(driver);
 	}
 
@@ -623,6 +623,7 @@ public class Module_DesignTestCases extends BaseClass{
 		
 		WebElement record=driver.findElement(By.xpath("//a[normalize-space()='"+id+"']"));
 		record.click();
+		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.edit, 30).click();
 		addRecord(jsonFile);
 		
@@ -665,7 +666,12 @@ public class Module_DesignTestCases extends BaseClass{
 		this.id=id;
 		
 		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
-			acp.yes.click();
+			try {
+				acp.yes.click();
+			} catch (Exception e) {
+				Thread.sleep(500);
+				acp.yes.click();
+			}
 	    }
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);;
@@ -970,7 +976,7 @@ public void addRecordForDate(String jsonFile) throws Exception {
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
 		Thread.sleep(2000);
-		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
+		applyExplicitWaitsUntilElementVisible(acp.textBox1,30);
 		List<WebElement> textBoxes = acp.dateFields;
 		String path = System.getProperty("user.dir");
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
@@ -1001,8 +1007,11 @@ public void addRecordForDate(String jsonFile) throws Exception {
 					String year=fullDate[0];
 					String hour=fullTime[0];
 					String minute=fullTime[1];
-					String[] second=fullTime[2].trim().split(".");
+					String second1=fullTime[2].replace("Z", "");
+					Integer second2=(int)Float.parseFloat(second1);
+					String second=second2.toString();
 					
+					String emptyArray[]= {"00","00","00Z"};
 					WebElement selectDate=driver.findElement(By.id(id1));
 					selectDate.click();
 					dropdown.selectByValue(acp.yearDropDown, year);
@@ -1010,6 +1019,16 @@ public void addRecordForDate(String jsonFile) throws Exception {
 					applyExplicitWaitsUntilElementVisible(acp.day,10);
 					WebElement date1=driver.findElement(By.xpath("//span[contains(@class,'disabled')=false and @id='_day']["+date+"]"));
 					date1.click();
+					
+					System.out.println(hour+"---"+minute+"----"+second);
+					if(!Arrays.equals(fullTime, emptyArray)) {
+						
+						dropdown.selectByValue(acp.hourDropDown, hour);
+						dropdown.selectByValue(acp.minuteDropDown, minute);
+						dropdown.selectByValue(acp.secondDropDown, second);
+						
+					}
+					
 					applyWait.waitForElementToBeClickable(acp.doneButton, 30).click();
 					Thread.sleep(500);
 					
