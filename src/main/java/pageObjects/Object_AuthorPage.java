@@ -1,5 +1,7 @@
 package pageObjects;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,6 +38,9 @@ public class Object_AuthorPage extends BaseClass{
 
 	@FindBy(xpath="//*[text()='List of Data Services']")
 	public WebElement listOfDataServices;
+	
+	@FindBy(id="serviceManagerCardTitle")
+	public List  <WebElement> listOfDataService;
 
 	@FindBy(xpath="//*[text()='New Data Service']")
 	public WebElement newDataService;

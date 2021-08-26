@@ -21,6 +21,7 @@ import base.BaseClass;
 import helperMethods.DropDown;
 import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
+import helperMethods.Property;
 import helperMethods.ScrollTypes;
 import helperMethods.SwitchWindow;
 import helperMethods.WaitTypes;
@@ -36,6 +37,7 @@ public class LoginAppCenter extends BaseClass {
 	public ScrollTypes scroll;
 	public static String data_Service;
 	public Object_AppCenterPage acp;
+	public LoginPage lp;
 
 	public LoginAppCenter(WebDriver driver, ExtentTest test) {
 		this.driver = driver;
@@ -44,6 +46,7 @@ public class LoginAppCenter extends BaseClass {
 		dropdown = new DropDown(driver);
 		scroll = new ScrollTypes(driver);
 		acp = new Object_AppCenterPage();
+		lp=new LoginPage(driver);
 	}
 
 	public void loginToAppCenterPage() {
@@ -312,16 +315,16 @@ public class LoginAppCenter extends BaseClass {
 
 	
 	public void workflow() {
-		applyWait.waitForElementToBeClickable(acp.username, 30).sendKeys("reviewer@appveen.com");
+		applyWait.waitForElementToBeClickable(acp.username, 30).sendKeys(Property.getProperty("reviewerEmail"));
 		applyWait.waitForElementToBeClickable(acp.nextButton, 30).click();
-		applyWait.waitforElementToBeDisplayed(acp.password, 30).sendKeys("123123123");
+		applyWait.waitforElementToBeDisplayed(acp.password, 30).sendKeys(Property.getProperty("password"));
 		applyWait.waitforElementToBeDisplayed(acp.login, 30).click();
 		applyWait.waitforElementToBeDisplayed(acp.workflowTab, 30).click();
 		for (WebElement workflow : acp.workflowsId) {
 			workflow.click();
 			applyWait.waitforElementToBeDisplayed(acp.respond, 30).click();
 			applyWait.waitforElementToBeDisplayed(acp.approve, 30).click();
-			applyWait.waitforElementToBeDisplayed(acp.enterApproveComment, 30).sendKeys("Approved");
+			applyWait.waitforElementToBeDisplayed(acp.enterApproveComment, 30).sendKeys(Property.getProperty("approveMessage"));
 			applyWait.waitforElementToBeDisplayed(acp.approve, 30).click();
 
 		}
@@ -551,6 +554,7 @@ public class LoginAppCenter extends BaseClass {
 					catch(Exception e) {
 						continue;
 					}
+					
 					String emptyArray[]= {"00","00","00Z"};
 					String fullDate[]=dateValue.split("T")[0].split("-");
 					String fullTime[]=dateValue.split("T")[1].split(":");
@@ -562,6 +566,9 @@ public class LoginAppCenter extends BaseClass {
 					String second1=fullTime[2].replace("Z", "");
 					Integer second2=(int)Float.parseFloat(second1);
 					String second=second2.toString();
+					if(second.length()==1) {
+						second="0"+second;
+					}
 					
 					WebElement selectDate=driver.findElement(By.id(id1));
 					selectDate.click();
@@ -571,10 +578,10 @@ public class LoginAppCenter extends BaseClass {
 					WebElement date1=driver.findElement(By.xpath("//span[contains(@class,'disabled')=false and @id='_day']["+date+"]"));
 					date1.click();
 					
-					
-					
-					System.out.println(hour+"---"+minute+"----"+second);
-					if(!Arrays.equals(fullTime, emptyArray)) {
+					if(id1.equals("dsDateTime1014")) {
+						System.out.println();
+					}
+					if(lp.isDateTime) {
 						
 						dropdown.selectByValue(acp.hourDropDown, hour);
 						dropdown.selectByValue(acp.minuteDropDown, minute);

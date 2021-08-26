@@ -45,11 +45,13 @@ public class LoginPage extends BaseClass{
 	public static ArrayList<String> data_Services;
 	public Object_AuthorPage ap;
 	public Object_GroupPage gp;
+	public static boolean isDateTime;
 	
 	public LoginPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.applyWait = new WaitTypes(driver);
 		this.test = test;
+		javascriptClick=new JavascriptClick(driver);
 		dropdown=new DropDown(driver);
 		scroll=new ScrollTypes(driver);
 		ap=new Object_AuthorPage();
@@ -84,8 +86,9 @@ public class LoginPage extends BaseClass{
 	public void verifyDataServiceExist(String dataService) throws InterruptedException {
 		
 		dataServiceName=dataService;
-		List<WebElement> dataServices=driver.findElements(By.id("serviceManagerCardTitle"));
-		for(WebElement dataService1 : dataServices) {
+		applyExplicitWaitsUntilElementVisible(ap.listOfDataService, 20);
+//		List<WebElement> dataServices=driver.findElements(By.id("serviceManagerCardTitle"));
+		for(WebElement dataService1 : ap.listOfDataService) {
 			String data=dataService1.getText();
 			if(data.equalsIgnoreCase(dataServiceName)) {
 				 data_serviceToggler=driver.findElement(By.xpath("//span[@id='serviceManagerCardTitle' and text()='"+data+"']/parent::div/parent::div/parent::div/following-sibling::div[2]/div/div[@class='toggler']"));
@@ -116,7 +119,7 @@ public class LoginPage extends BaseClass{
 	
 	public void createNewDataServices(JSONArray jsonArray, String dataService1) throws Exception {
 		dataServiceName=dataService1;
-		 Thread.sleep(1000); 
+		 Thread.sleep(3000); 
 		applyExplicitWaitsUntilElementVisible(ap.dataServiceName1, 10);
 		List<WebElement> dataServices=driver.findElements(By.id("serviceManagerCardTitle"));
 		data_Services=new ArrayList<String>();
@@ -129,12 +132,10 @@ public class LoginPage extends BaseClass{
 		action.moveToElement(ap.newDataService).perform();
 		applyWait.waitForElementToBeClickable(ap.newDataService, 30).click();
 		applyWait.waitForElementToBeClickable(ap.dataServiceName, 30).sendKeys(dataServiceName);;
-		try {
-			applyWait.waitForElementToBeClickable(ap.createButton, 30).click();
-		} catch (Exception e) {
-			Thread.sleep(500);
-			applyWait.waitForElementToBeClickable(ap.createButton, 30).click();
-		}
+		Thread.sleep(500);
+		javascriptClick.click(ap.createButton);
+//		applyWait.waitForElementToBeClickable(ap.createButton, 30).click();
+		
 		data_Services.add(dataServiceName);
 		}
 		try {
@@ -150,8 +151,8 @@ public class LoginPage extends BaseClass{
 				String keyName = attribute.get("key").toString();
 				
 				if(!keyName.equals("_id")) {
-					
-				applyWait.waitForElementToBeClickable(ap.newAttributeButton, 30).click();
+						applyWait.waitForElementToBeClickable(ap.newAttributeButton, 30).click();
+							
 				
 			switch(attributeName) {
 			
@@ -225,6 +226,7 @@ public class LoginPage extends BaseClass{
 					applyWait.waitForElementToBeClickable(ap.date, 30).click();
 				}
 				if(jsonProperties.get("dateType").equals("datetime-local")) {
+					isDateTime=true;
 					applyWait.waitForElementToBeClickable(ap.dateAndTime, 30).click();
 				}
 				requiredAttributes(jsonProperties);
@@ -1203,8 +1205,9 @@ public class LoginPage extends BaseClass{
 							applyWait.waitForElementToBeClickable(gp.profileIcon, 30).click();
 							}
 							catch(ElementClickInterceptedException e) {
-								Thread.sleep(1000);
-								applyWait.waitForElementToBeClickable(gp.profileIcon, 30).click();
+								Thread.sleep(2000);
+//								applyWait.waitForElementToBeClickable(gp.profileIcon, 30).click();
+								handleElementClickException(gp.profileIcon);
 							}
 							applyWait.waitForElementToBeClickable(gp.logout, 30).click();
 

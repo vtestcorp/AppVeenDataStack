@@ -62,7 +62,7 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//div[@class='list-item-label d-flex align-items-center text-truncate']")
 	public WebElement dataServiceName;
 	
-	@FindBy(xpath="//*[contains(@class,'form-control')]")
+	@FindBy(xpath="(//*[contains(@class,'form-control')])[1]")
 	public WebElement textBox1;
 	
 	@FindBy(xpath="//input[@type='text' and contains(@class,'form')]")
@@ -70,8 +70,6 @@ public class Object_AppCenterPage extends BaseClass{
 	
 	@FindBy(xpath="//*[contains(@class,'form-control')]")
 	public List<WebElement> textBoxes;
-	
-	
 	
 	@FindBy(xpath="//div[starts-with(@class,'d-flex flex-column align')]")
 	public List<WebElement> errorMessages;

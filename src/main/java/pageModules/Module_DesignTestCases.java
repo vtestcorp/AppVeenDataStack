@@ -95,12 +95,17 @@ public class Module_DesignTestCases extends BaseClass{
 
 	public void groupexist(String groupName) throws Exception {
 
-		Thread.sleep(3000);
-		applyWait.waitForElementToBeClickable(ap.groups, 30).click();
-		applyExplicitWaitsUntilElementVisible(gp.group1,10);
-		List<WebElement> groupNames=gp.groups;
+//		
+		try {
+			applyWait.waitForElementToBeClickable(ap.groups, 30).click();
+		} catch (Exception e1) {
+			Thread.sleep(3000);
+			handleElementClickException(ap.groups);
+		}
+//		applyExplicitWaitsUntilElementVisible(gp.group1,10);
+		applyExplicitWaitsUntilElementVisible(gp.groups, 10);
 		groups=new ArrayList<String>();
-		for(WebElement group : groupNames) {
+		for(WebElement group : gp.groups) {
 			String group1=group.getText();
 			groups.add(group1);
 	}
@@ -109,7 +114,11 @@ public class Module_DesignTestCases extends BaseClass{
 			WebElement group=driver.findElement(By.xpath("//div[normalize-space()='"+groupName+"']/parent::div"));
 			group.click();
 			Thread.sleep(500);
-			applyWait.waitForElementToBeClickable(gp.deleteGroup, 30).click();
+			try {
+				applyWait.waitForElementToBeClickable(gp.deleteGroup, 30).click();
+			} catch (Exception e) {
+				handleElementClickException(gp.deleteGroup);
+			}
 			Thread.sleep(500);
 			applyWait.waitForElementToBeClickable(gp.delete, 30).click();
 
@@ -135,8 +144,10 @@ public class Module_DesignTestCases extends BaseClass{
 	public void assignPermission(String dataServiceName,String user1) throws Exception {
 		String role="Manage";
 		String userEmail=user1;
-		Thread.sleep(2000);
-		applyWait.waitForElementToBeClickable(gp.appCenterRoles, 30).click();
+//		Thread.sleep(2000);
+		applyExplicitWaitsUntilElementVisible(gp.appCenterRoles, 10);
+//		applyWait.waitForElementToBeClickable(gp.appCenterRoles, 30).click();
+		javascriptClick.click(gp.appCenterRoles);
 		Thread.sleep(1000);
 		applyExplicitWaitsUntilElementVisible(gp.dsArrow, 10);
 		WebElement dsArrow=driver.findElement(By.xpath("//span[normalize-space()='"+dataServiceName+"']/parent::div/following-sibling::span[2]/child::span"));
@@ -879,6 +890,7 @@ public class Module_DesignTestCases extends BaseClass{
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
+		
 		List<WebElement> textBoxes = driver.findElements(By.xpath("//input[@class='invisible position-absolute' or @id='_id']"));
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
 		for(int  i=1;i<=textBoxes.size();i++) {
@@ -1011,6 +1023,10 @@ public void addRecordForDate(String jsonFile) throws Exception {
 					Integer second2=(int)Float.parseFloat(second1);
 					String second=second2.toString();
 					
+					if(second.length()==1) {
+						second="0"+second;
+					}
+					
 					String emptyArray[]= {"00","00","00Z"};
 					WebElement selectDate=driver.findElement(By.id(id1));
 					selectDate.click();
@@ -1020,8 +1036,7 @@ public void addRecordForDate(String jsonFile) throws Exception {
 					WebElement date1=driver.findElement(By.xpath("//span[contains(@class,'disabled')=false and @id='_day']["+date+"]"));
 					date1.click();
 					
-					System.out.println(hour+"---"+minute+"----"+second);
-					if(!Arrays.equals(fullTime, emptyArray)) {
+					if(lp.isDateTime) {
 						
 						dropdown.selectByValue(acp.hourDropDown, hour);
 						dropdown.selectByValue(acp.minuteDropDown, minute);

@@ -76,14 +76,14 @@ Examples:
 |id|data|
 |DAT1001|{"dsDateTime1001" : "2031-08-2T05:25:15Z","dsDateTime1002" : "2029-08-28T10:19:25Z","dsDateTime1003" : "2035-07-30T15:25:15Z","dsDateTime1004" : "2021-04-5T11:10:25Z","dsDateTime1006" : "2040-08-4T10:25:55Z","dsDateTime1007" : "2025-1-20T10:10:25Z","dsDateTime1008" : "2027-12-1T09:10:10Z","dsDateTime1010" : "2050-12-13T11:11:11Z","dsDateTime1011" : "2035-06-2T12:12:18Z","dsDateTime1012" : "2035-12-12T2:10:50Z","dsDateTime1013" : "2031-03-1T2:40:20Z","dsDateTime1014" : "2015-01-18T00:00:00Z","dsDateTime1015" : "2021-07-2T10:00:00Z","dsDateTime1016" : "2031-27-12T10:50:00Z","dsDateTime1017" : "2027-10-23T10:50:10Z"}|
 
-#Scenario Outline: Fetch record from the data service
-#	Given Data service "date&Time"
-#	Then Fetch record "<id>" from the data service
-#	And Match it to "<data>" Date Type
-#Examples:
-#|id|data|
-#|DAT1001|{"_id": "DAT1001","dsDateTime1001": "Saturday, August 2, 2031 (Etc/Zulu)","dsDateTime1002": "Thursday, July 15, 2021 (Etc/Zulu)","dsDateTime1003": "Monday, July 30, 2035 (Etc/Zulu)","dsDateTime1004": "Thursday, July 22, 2021 (Etc/Zulu)","dsDateTime1006": "Thursday, July 15, 2021 (Etc/Zulu)", "dsDateTime1010": "Tuesday, December 13, 2050 (Etc/Zulu)", "dsDateTime1011": "Saturday, June 2, 2035 (Etc/Zulu)","dsDateTime1012": "Wednesday, December 12, 2035 (Etc/Zulu)", "dsDateTime1013": "Saturday, March 1, 2031 (Etc/Zulu)", "dsDateTime1014": "Tuesday, January 30, 1990 (Etc/Zulu)", "dsDateTime1015": "Friday, July 2, 2021 (Etc/Zulu)", "dsDateTime1016": "Sunday, November 21, 2021 (Etc/Zulu)","dsDateTime1017": "Thursday, December 22, 2022 (Etc/Zulu)"}|
-#	
+Scenario Outline: Fetch record from the data service
+	Given Data service "date&Time"
+	Then Fetch record "<id>" from the data service
+	And Match it to "<data>" Date Type
+Examples:
+|id|data|
+|DAT1001|{"_id": "DAT1001","dsDateTime1001": "Saturday, August 2, 2031, 5:25:15 AM (Zulu)","dsDateTime1002": "Wednesday, February 2, 2022, 2:02:02 AM (Etc/Zulu)","dsDateTime1003": "Monday, July 30, 2035, 3:25:15 PM (Etc/Zulu)","dsDateTime1004": "Thursday, July 22, 2021 (Etc/Zulu)","dsDateTime1006": "Saturday, June 6, 2026, 6:06:06 AM (Etc/Zulu)", "dsDateTime1010": "Tuesday, December 13, 2050, 11:11:11 AM (Etc/Zulu)", "dsDateTime1011": "Saturday, June 2, 2035, 12:12:18 PM (Etc/Zulu)","dsDateTime1012": "Wednesday, December 12, 2035, 6:10:50 PM (Etc/Zulu)", "dsDateTime1013": "Saturday, March 1, 2031, 11:40:20 PM (Etc/Zulu)", "dsDateTime1014": "Monday, January 29, 1990, 11:31:39 PM (Etc/Zulu)", "dsDateTime1015": "Friday, July 2, 2021, 10:00:00 AM (Etc/Zulu)", "dsDateTime1016": "Sunday, January 12, 2031, 10:50:00 AM (Etc/Zulu)","dsDateTime1017": "Saturday, October 23, 2027, 10:50:10 AM (Etc/Zulu)"}|
+	
 #Scenario Outline: Delete record from the data service
 #	Given Data service "date&Time"
 #	Then Delete record "<id>" from the data service
