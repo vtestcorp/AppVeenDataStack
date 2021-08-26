@@ -24,6 +24,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentTest;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.MapDifference;
 import com.google.common.collect.MapDifference.ValueDifference;
 import com.jayway.jsonpath.JsonPath;
@@ -167,7 +168,7 @@ public class Module_DesignTestCases extends BaseClass{
 		applyWait.waitForElementToBeClickable(gp.members, 30).click();
 		applyWait.waitForElementToBeClickable(gp.addUsers, 30).click();
 		applyExplicitWaitsUntilElementVisible(gp.userEmail, 10);
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		
 		By ele=By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']");
 		applyWaitForDynamicWebElement(ele,10);
@@ -671,13 +672,16 @@ public class Module_DesignTestCases extends BaseClass{
 		}
 	}
 	
-	   public void addRecordInBooelan(String string) throws InterruptedException {
+	   public void addRecordInBooelan(String string) throws InterruptedException, MalformedURLException {
 		   Thread.sleep(2000);
 		   if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
 				acp.yes.click();
 		    }
-		   applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-			Thread.sleep(5000);
+		    
+		      if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
+					applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+			    }
+		    Thread.sleep(5000);
 			List<WebElement> buttons = acp.buttons;
 			JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
 			for (int j = 1; j <= buttons.size(); j++) {
@@ -773,6 +777,23 @@ public class Module_DesignTestCases extends BaseClass{
 		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 		
 	}
+	
+	public void updateRecordForBooelan(String id , String jsonFile) throws InterruptedException, MalformedURLException {
+
+        Thread.sleep(2000);
+		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
+			acp.yes.click();
+	    }
+		applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
+		Thread.sleep(1000);
+		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);
+		WebElement record=driver.findElement(By.xpath("//a[normalize-space()='"+id+"']"));
+		record.click();
+		Thread.sleep(1000);
+		 applyWait.waitForElementToBeClickable(acp.edit, 30).click();
+		Thread.sleep(1000);
+		addRecordInBooelan(jsonFile);
+	}
 
 
 
@@ -815,7 +836,6 @@ public class Module_DesignTestCases extends BaseClass{
 		}
 			q++;
 		}
-
 		
 	LinkedHashMap<String, String> expectedData =(LinkedHashMap<String, String>) JsonUtils.getMapFromJSON(jsonFile);
 	System.out.println("Expected List :"  + expectedData );
@@ -834,7 +854,40 @@ public class Module_DesignTestCases extends BaseClass{
 	}
 	}
 	
-
+   public void matchRecorforBoolen(String jsonFile) throws MalformedURLException {
+		LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
+		applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
+		WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
+		record.click();
+		int q=1;
+		applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPage, 10);
+		for(WebElement attribute : acp.attributesOnViewPage) {
+			WebElement t=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])["+q+"]/parent::div/following-sibling::odp-view-separator/descendant::div/child::*)[last()]"));
+			String a=attribute.getAttribute("for");
+			String w=t.getText();
+			if(!w.equals("N.A.")) {
+				actualData.put(a, w);
+		}
+			q++;
+		}
+		
+	LinkedHashMap<String, String> expectedData =(LinkedHashMap<String, String>) JsonUtils.getMapFromJSON(jsonFile);
+	System.out.println("Expected List :"  + expectedData );
+	if(actualData.equals(expectedData)) {
+		System.out.println("Data is matching");
+	}
+	else {
+		
+		System.err.println("Data is not matching.Unmatched data are as follows :");
+	    MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
+	    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
+	    System.err.println(entriesDiffering);
+	    System.out.println(expectedData);
+	    System.out.println(actualData);
+	    Assert.assertTrue(actualData.equals(expectedData));
+	}
+	
+}
 
 
 	public void deleteRecord(String id) {

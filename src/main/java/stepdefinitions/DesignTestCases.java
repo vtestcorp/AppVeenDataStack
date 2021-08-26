@@ -1,5 +1,7 @@
 package stepdefinitions;
 
+import java.net.MalformedURLException;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -96,7 +98,7 @@ public class DesignTestCases extends BaseClass{
 	    design.addNewRecordForFile(string);
 	}
 	@Then("^Add record \"(.*?)\" to the boolean data service$")
-	public void add_record_to_the_boolean_data_service(String string) throws InterruptedException {
+	public void add_record_to_the_boolean_data_service(String string) throws InterruptedException, MalformedURLException {
 	    design.addRecordInBooelan(string);
 	}
 	
@@ -144,6 +146,13 @@ public class DesignTestCases extends BaseClass{
 	    design.updateRecord(id,jsonFile);
 	}
 	
+	
+	
+	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the boolean data service$")
+	public void update_record_with__boolean_data_service(String id, String jsonFile) throws InterruptedException, MalformedURLException {
+		 design.updateRecordForBooelan(id, jsonFile);
+	}
+
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the data service for Date Type$")
 	public void update_record_with_to_the_data_service_for_Date_Type(String id, String jsonFile) throws Exception {
 	    design.updateRecordForDate(id,jsonFile);
@@ -208,7 +217,11 @@ public class DesignTestCases extends BaseClass{
 	public void match_it_to_for_File_type(String jsonFile) throws Exception {
 		design.matchToRecordForFileType(jsonFile);	
 }
-	
+	@Then("^Match it to \"(.*?)\" boolean$")
+	public void match_it_to__boolean(String string) throws MalformedURLException {
+		design.matchRecorforBoolen(string);
+	}
+
 		
 	@Then("Fetch record by searching {string} with {string} from the data service")
 	public void fetch_record_by_searching_with_from_the_data_service(String string, String string2) throws Exception {

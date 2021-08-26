@@ -250,6 +250,9 @@ public class Object_AppCenterPage extends BaseClass{
 	
 	@FindBy(id = "_day")
 	public WebElement day;
+	
+	@FindBy(xpath = "//*[starts-with(@class,'tox-edit-area__iframe') or   @id='_id']")
+	public List<WebElement> richtextBoxes;
 
 
 }

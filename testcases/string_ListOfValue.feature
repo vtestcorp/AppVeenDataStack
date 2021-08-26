@@ -67,8 +67,8 @@ Scenario Outline: Add record to data service
 	And Expect error "ID STR1001 already exists" on save
 	Examples:
 		|data|
-#	  |{ "_id" : "STR1001","dsStringListOfValues1002" : "LIST 2","dsStringListOfValues1003" : "LIST 1","dsStringListOfValues1007" : "LIST 1","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1014" : "LIST 1","dsStringListOfValues1015" : "LIST 1"}|
-    |{"_id" : "STR1001","dsStringListOfValues1001" : "LIST 1","dsStringListOfValues1002" : "LIST 2", "dsStringListOfValues1003" : "LIST 2","dsStringListOfValues1004" : "LIST 1","dsStringListOfValues1005" : "LIST 2","dsStringListOfValues1006" : null,"dsStringListOfValues1007" : "LIST 2","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1010" : "LIST 1","dsStringListOfValues1011" : null,"dsStringListOfValues1013" : "LIST 1","dsStringListOfValues1014" : "LIST 1","dsStringListOfValues1015" : "LIST 1", "dsStringListOfValues1016" : null,"dsStringListOfValues1018" : "LIST 2","dsStringListOfValues1019" : "LIST 2","dsStringListOfValues1020" : "LIST 1"}| 	
+#|{ "_id" : "STR1001","dsStringListOfValues1002" : "LIST 2","dsStringListOfValues1003" : "LIST 1","dsStringListOfValues1007" : "LIST 1","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1014" : "LIST 1","dsStringListOfValues1015" : "LIST 1"}|
+  |{"_id" : "STR1001","dsStringListOfValues1001" : "LIST 1","dsStringListOfValues1002" : "LIST 2", "dsStringListOfValues1003" : "LIST 2","dsStringListOfValues1004" : "LIST 1","dsStringListOfValues1005" : "LIST 2","dsStringListOfValues1006" : null,"dsStringListOfValues1007" : "LIST 2","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1010" : "LIST 1","dsStringListOfValues1011" : null,"dsStringListOfValues1013" : "LIST 1","dsStringListOfValues1014" : "LIST 1","dsStringListOfValues1015" : "LIST 1", "dsStringListOfValues1016" : null,"dsStringListOfValues1018" : "LIST 2","dsStringListOfValues1019" : "LIST 2","dsStringListOfValues1020" : "LIST 1"}| 	
     
 
 Scenario Outline: Add record to data service

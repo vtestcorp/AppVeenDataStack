@@ -127,9 +127,8 @@ public class BaseClass {
 		WebDriverWait wait = new WebDriverWait(driver, time);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	
-
 	}
-	
+
 	public void applyWaitForDynamicWebElement(By locator,int time) {
 		
 		WebDriverWait wait = new WebDriverWait(driver, time);

@@ -160,7 +160,7 @@
     "type" : "Boolean",
     "key" : "dsBoolean1010",
     "properties" : {
-      "label" : "DS-BOOLEAN-1001 Label",
+      "label" : "DS-BOOLEAN-1010 Label",
       "name" : "DS BOOLEAN 1010",
       "fieldLength" : 10,
       "_typeChanged" : "Boolean",

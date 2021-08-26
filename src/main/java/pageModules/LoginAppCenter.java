@@ -69,23 +69,23 @@ public class LoginAppCenter extends BaseClass {
 
 	public void dataService(String dataService) throws Exception {
 		data_Service=dataService;
-//		Thread.sleep(2000);
+		Thread.sleep(10000);
 		try {
 			By ds=By.xpath("//div[contains(text(),'" + dataService + "')]");
 			applyWaitForDynamicWebElement(ds, 5);
 			WebElement data = driver.findElement(ds);
 			data.click();
 		} catch (Exception e) {
-			Thread.sleep(10000);
+			Thread.sleep(20000);
 			driver.navigate().refresh();
 			Thread.sleep(4000);
 				try {
 						WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
 						data.click();
 					} catch (Exception e1) {
-						Thread.sleep(10000);
+						Thread.sleep(30000);
 						driver.navigate().refresh();
-						Thread.sleep(4000);
+						Thread.sleep(8000);
      					WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
 						data.click();
 					}
@@ -110,7 +110,6 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
 		List<WebElement> textBoxes = acp.textBoxes;
-		String path = System.getProperty("user.dir");
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 
@@ -352,15 +351,14 @@ public class LoginAppCenter extends BaseClass {
 			public void userEnterDataforBoolean() throws InterruptedException {
 				
 				applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-				//applyExplicitWaitsUntilElementVisible(acp.buttons, 10);
-				Thread.sleep(5000);
+				Thread.sleep(1000);
+			//	applyExplicitWaitsUntilElementVisible(acp.buttons, 10);
 				List<WebElement> buttons = acp.buttons;
 				String filePath=path + "\\testData\\" + data_Service + ".data.json";
 				JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 				for (int j = 1; j <= buttons.size(); j++) {
 					WebElement button = driver.findElement(By.xpath("(//input[@type='checkbox' or @id='_id' ])["+j+"]"));
 					String id1 = button.getAttribute("id");
-					Thread.sleep(1000);
 					if (button.getAttribute("type").equals("text"))
 					   	 {
 						     String value = (String) jsonObject.get(id1);
@@ -375,10 +373,55 @@ public class LoginAppCenter extends BaseClass {
 		              		}
 					      }
 					   	}
+			     	applyWait.waitForElementToBeClickable(acp.save, 30).click();
 				}
 			
-		
+		public void userEnterDataForRichText() throws InterruptedException {
+			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+			Thread.sleep(5000);
+		//	applyExplicitWaitsUntilElementVisible(acp.richtextBoxes, 10);
+			List<WebElement> textBoxes = acp.richtextBoxes;
+			String filePath=path + "\\testData\\" + data_Service + ".data.json";
+			JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
+			for (int j = 1; j <= textBoxes.size(); j++) {
+				WebElement textBox = driver.findElement(By.xpath("(//*[starts-with(@class,'tox-edit-area__iframe') or   @id='_id'])["+j+"]"));
+			//	String id1 = textBox.getAttribute("id");
+				if (textBox.isEnabled()) {
+					String id1 = " ";
+					if(j==1)
+					{
+						 id1 = textBox.getAttribute("id");
+						 System.out.println("Value of id1 : " + id1);
+						 String value = (String) jsonObject.get(id1);
+		        	     System.out.println("Value of value is : " +value);
+			             applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value);
+						 
+					}else {
 
+						 driver.switchTo().frame(textBox);
+						// WebElement child = textBox.findElement(By.xpath(".//body"));
+						  WebElement child =driver.findElement(By.xpath("//body"));
+						 id1 = child.getAttribute("data-id");
+						 System.out.println("Value of child is : " +child.getAttribute("type"));
+						 try {
+						        String value = (String) jsonObject.get(id1);
+						        applyWait.waitForElementToBeClickable(child, 30).sendKeys(value);
+					        
+						 }catch(Exception e) 
+						 {
+							 driver.switchTo().defaultContent();
+							 continue;
+						 }
+						 driver.switchTo().defaultContent();
+					  	 }
+				   	 }
+					
+					}
+			
+		
+			applyWait.waitForElementToBeClickable(acp.save, 30).click();
+		
+		}
 	
 	public void workflow() {
 		applyWait.waitForElementToBeClickable(acp.username, 30).sendKeys("reviewer@appveen.com");

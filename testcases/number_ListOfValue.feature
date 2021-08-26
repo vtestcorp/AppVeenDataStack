@@ -58,7 +58,7 @@ Scenario: Add data to data service
 	And Save button is disabled
 Examples:
 |data|
-|{"_id":"NUM1002","dsNumberListOfValues1001":123,"dsNumberListOfValues1003":4569, "dsNumberListOfValues1014":"","dsNumberListOfValues1015":"","dsNumberListOfValues1017":"","dsNumberListOfValues1018":""}|
+|{"_id":"NUM1002","dsNumberListOfValues1001": 123,"dsNumberListOfValues1002": 211,"dsNumberListOfValues1003": 4569,"dsNumberListOfValues1004": 3445,"dsNumberListOfValues1005": 5001,"dsNumberListOfValues1007":1235, "dsNumberListOfValues1008": 4988, "dsNumberListOfValues1010": 984,  "dsNumberListOfValues1013": 3098, "dsNumberListOfValues1014": "", "dsNumberListOfValues1015": "",  "dsNumberListOfValues1016": 3,"dsNumberListOfValues1017":"","dsNumberListOfValues1018":"",  "dsNumberListOfValues1020":904, "dsNumberListOfValues1021": 1911}|
 
 
 Scenario Outline: Add record to data service
@@ -67,8 +67,8 @@ Scenario Outline: Add record to data service
 	And Expect error "ID NUM1001 already exists" on save
 	Examples:
 		|data|
-	  |{ "_id" : "NUM1001",,"dsNumberListOfValues1001" : 123,"dsNumberListOfValues1002" : 123,"dsNumberListOfValues1003" : 123,"dsNumberListOfValues1007" : 123,"dsNumberListOfValues1008" : 123,"dsNumberListOfValues1014" : 123,"dsNumberListOfValues1015" : 123}|
-
+    |{"_id":"NUM1002","dsNumberListOfValues1001": 123,"dsNumberListOfValues1002": 201,"dsNumberListOfValues1003": 469,"dsNumberListOfValues1004": 345,"dsNumberListOfValues1005": 501,"dsNumberListOfValues1007":123, "dsNumberListOfValues1008": 498, "dsNumberListOfValues1010": 98,  "dsNumberListOfValues1013": 308, "dsNumberListOfValues1014": 345, "dsNumberListOfValues1015": 908,  "dsNumberListOfValues1016": 390,"dsNumberListOfValues1017": 567,"dsNumberListOfValues1018": 990,  "dsNumberListOfValues1020":904, "dsNumberListOfValues1021": 1711}|
+    
 
 Scenario Outline: Add record to data service
 	Given Data service "number_ListOfValue"
@@ -76,9 +76,8 @@ Scenario Outline: Add record to data service
 	And Expect error "Unique check validation failed for dsNumberListOfValues1002" on save
 Examples:
 |data|
-|{ "_id" : "NUM1002","dsNumberListOfValues1001" : 123,"dsNumberListOfValues1002" : 4569,"dsNumberListOfValues1003" : 123,"dsNumberListOfValues1007" : 123,"dsNumberListOfValues1008" : 123,"dsNumberListOfValues1014" : 123,"dsNumberListOfValues1015" : 123}|
-	
-	
+|{"_id":"NUM1002","dsNumberListOfValues1001": 123,"dsNumberListOfValues1002": 4569,"dsNumberListOfValues1003": 476,"dsNumberListOfValues1004": 350,"dsNumberListOfValues1005": 881,"dsNumberListOfValues1007":243, "dsNumberListOfValues1008": 467, "dsNumberListOfValues1010": 998,  "dsNumberListOfValues1013": 308, "dsNumberListOfValues1014": 345, "dsNumberListOfValues1015": 778,  "dsNumberListOfValues1016": 395,"dsNumberListOfValues1017": 567,"dsNumberListOfValues1018": 990,  "dsNumberListOfValues1020":884, "dsNumberListOfValues1021": 177}|
+
 	
 	Scenario Outline: Fetch record from the data service
 	Given Data service "number_ListOfValue"

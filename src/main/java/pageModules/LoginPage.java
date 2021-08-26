@@ -145,7 +145,7 @@ public class LoginPage extends BaseClass{
 				String keyName = attribute.get("key").toString();
 				
 				if(!keyName.equals("_id")) {
-					
+			//	applyWait.applyExplicitWaitsUntilElementVisible(ap.newAttributeButton, 30);	
 				applyWait.waitForElementToBeClickable(ap.newAttributeButton, 30).click();
 				
 			switch(attributeName) {
@@ -1071,6 +1071,20 @@ public class LoginPage extends BaseClass{
 									
 									else if(jsonProperties.get("deleteAction").toString().equals("restrict") && allowdeletion_Staus.equals("Yes") ) {
 										ap.allowdeletionToggler.click();
+									}
+								}
+								
+								if(jsonProperties.containsKey("default"))
+								{
+									String defult_Status = "";
+									
+									if(!driver.findElements(By.xpath("//div[normalize-space()='Default Value']/following-sibling::div//span[@class='ml-3']")).isEmpty()){
+											
+											 defult_Status=ap.defaultSatus.getText();
+									    }
+									if(jsonProperties.get("default").toString().equals("true")  &&  defult_Status.equals("No"))
+									{
+										ap.defaultToggler.click();
 									}
 								}
 						}

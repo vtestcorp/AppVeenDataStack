@@ -25,7 +25,7 @@ public class LoginToAppCenter extends BaseClass{
 	private WaitTypes applyWait;
 	private ExtentTest test;
 	public LoginAppCenter loginAppCenter;
-	
+		
 	@Before
 	public void initilization() {
 		loginAppCenter = new LoginAppCenter(driver, test);
@@ -80,6 +80,12 @@ public class LoginToAppCenter extends BaseClass{
 		
 		loginAppCenter.userEnterData();
 	}
+	
+	@Then("^Add data to the stringRichText data service$")
+	public void add_data_to_the_richTextdata_service() throws Exception {
+		loginAppCenter.userEnterDataForRichText();
+	}
+	
 	
 	@Then("Add data to the data service for Group")
 	public void add_data_to_the_data_service_for_Group() throws Exception {
