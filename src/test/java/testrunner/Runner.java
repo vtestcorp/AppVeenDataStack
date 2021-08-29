@@ -7,7 +7,8 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 
-@CucumberOptions(features="./testcases/string_richText.feature",
+//@CucumberOptions(features="C:\\Users\\Lenovo\\Downloads\\sentient\\test",
+@CucumberOptions(features="./testcases/number_Currency.feature",
 			//	dryRun=true,
            //	tags="@AppCenter",
 	        	glue="stepdefinitions",

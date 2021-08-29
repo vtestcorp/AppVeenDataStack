@@ -197,7 +197,7 @@ public class Module_DesignTestCases extends BaseClass{
 	    }
 		Thread.sleep(1000);
 		System.out.println(acp.textBoxes.size());
-		applyExplicitWaitsUntilElementVisible(acp.textBoxes, 20);
+		//applyExplicitWaitsUntilElementVisible(acp.textBoxes, 20);
 		List<WebElement> textBoxes = acp.textBoxes;
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
@@ -216,6 +216,7 @@ public class Module_DesignTestCases extends BaseClass{
 					
 							String id1 =textBox.getAttribute("id");
 							
+					
 							if(textBox.getAttribute("type").equals("text")) {
 								if(id1.contains(".")) {
 									String [] attributes=id1.trim().split("[^a-zA-Z0-9]+");
@@ -584,9 +585,52 @@ public class Module_DesignTestCases extends BaseClass{
 		      }
 
 	            applyWait.waitForElementToBeClickable(acp.save, 30).click();
-		       }
+	      }
 	
-					
+	
+	
+				public void addRecordForRichText(String string) throws InterruptedException {
+					Thread.sleep(2000);
+					if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
+						acp.yes.click();
+				    }
+					Thread.sleep(2000);
+					if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
+						applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
+				    }
+					List<WebElement> textBoxes = acp.richtextBoxes;
+					JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
+					for (int j = 1; j <= textBoxes.size(); j++) {
+						WebElement textBox = driver.findElement(By.xpath("(//*[starts-with(@class,'tox-edit-area__iframe') or   @id='_id'])["+j+"]"));
+						if (textBox.isEnabled()) {
+							String val =null;
+							String id1 = textBox.getAttribute("id");
+							val = (String) jsonObject.get(id1);
+							if(id1.equals("id"))
+							{
+								val = (String) jsonObject.get(id1);
+							}
+							 else {
+
+			   						 driver.switchTo().frame(textBox);
+			   						  WebElement child =driver.findElement(By.xpath("//body"));
+			   						 id1 = child.getAttribute("data-id");
+			   						 try {
+			   						        String value = (String) jsonObject.get(id1);
+			   						        applyWait.waitForElementToBeClickable(child, 30).sendKeys(value);
+			   					        
+			   						 }catch(Exception e) 
+			   						 {
+			   							 driver.switchTo().defaultContent();
+			   							 continue;
+			   						 }
+			   						 driver.switchTo().defaultContent();
+			   					  	 }
+			   				   	 }
+			   				}
+										
+							applyWait.waitForElementToBeClickable(acp.save, 30).click();
+				}	
 		
 	
 

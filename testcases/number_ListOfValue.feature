@@ -58,7 +58,7 @@ Scenario: Add data to data service
 	And Save button is disabled
 Examples:
 |data|
-|{"_id":"NUM1002","dsNumberListOfValues1001": 123,"dsNumberListOfValues1002": 211,"dsNumberListOfValues1003": 4569,"dsNumberListOfValues1004": 3445,"dsNumberListOfValues1005": 5001,"dsNumberListOfValues1007":1235, "dsNumberListOfValues1008": 4988, "dsNumberListOfValues1010": 984,  "dsNumberListOfValues1013": 3098, "dsNumberListOfValues1014": "", "dsNumberListOfValues1015": "",  "dsNumberListOfValues1016": 3,"dsNumberListOfValues1017":"","dsNumberListOfValues1018":"",  "dsNumberListOfValues1020":904, "dsNumberListOfValues1021": 1911}|
+|{"_id":"NUM1001","dsNumberListOfValues1001": 123,"dsNumberListOfValues1002": 211,"dsNumberListOfValues1003": 4569,"dsNumberListOfValues1004": 23,"dsNumberListOfValues1005": 123,"dsNumberListOfValues1007":123, "dsNumberListOfValues1008": 211, "dsNumberListOfValues1010": 4569,  "dsNumberListOfValues1013": 123, "dsNumberListOfValues1014": "", "dsNumberListOfValues1015": "",  "dsNumberListOfValues1016": 123,"dsNumberListOfValues1017":"","dsNumberListOfValues1018":"",  "dsNumberListOfValues1020":4569}|
 
 
 Scenario Outline: Add record to data service
@@ -67,8 +67,7 @@ Scenario Outline: Add record to data service
 	And Expect error "ID NUM1001 already exists" on save
 	Examples:
 		|data|
-    |{"_id":"NUM1002","dsNumberListOfValues1001": 123,"dsNumberListOfValues1002": 201,"dsNumberListOfValues1003": 469,"dsNumberListOfValues1004": 345,"dsNumberListOfValues1005": 501,"dsNumberListOfValues1007":123, "dsNumberListOfValues1008": 498, "dsNumberListOfValues1010": 98,  "dsNumberListOfValues1013": 308, "dsNumberListOfValues1014": 345, "dsNumberListOfValues1015": 908,  "dsNumberListOfValues1016": 390,"dsNumberListOfValues1017": 567,"dsNumberListOfValues1018": 990,  "dsNumberListOfValues1020":904, "dsNumberListOfValues1021": 1711}|
-    
+    |{"_id":"NUM1001","dsNumberListOfValues1001": 123,"dsNumberListOfValues1002": 211,"dsNumberListOfValues1003": 469,"dsNumberListOfValues1004": 123,"dsNumberListOfValues1005": 501, "dsNumberListOfValues1007":123, "dsNumberListOfValues1008": 211, "dsNumberListOfValues1010": 123,  "dsNumberListOfValues1013": 211, "dsNumberListOfValues1014": 4569, "dsNumberListOfValues1015": 211,  "dsNumberListOfValues1016": 4569,"dsNumberListOfValues1017": 1234,"dsNumberListOfValues1018":"" ,  "dsNumberListOfValues1020": 4569}|    
 
 Scenario Outline: Add record to data service
 	Given Data service "number_ListOfValue"
@@ -76,17 +75,17 @@ Scenario Outline: Add record to data service
 	And Expect error "Unique check validation failed for dsNumberListOfValues1002" on save
 Examples:
 |data|
-|{"_id":"NUM1002","dsNumberListOfValues1001": 123,"dsNumberListOfValues1002": 4569,"dsNumberListOfValues1003": 476,"dsNumberListOfValues1004": 350,"dsNumberListOfValues1005": 881,"dsNumberListOfValues1007":243, "dsNumberListOfValues1008": 467, "dsNumberListOfValues1010": 998,  "dsNumberListOfValues1013": 308, "dsNumberListOfValues1014": 345, "dsNumberListOfValues1015": 778,  "dsNumberListOfValues1016": 395,"dsNumberListOfValues1017": 567,"dsNumberListOfValues1018": 990,  "dsNumberListOfValues1020":884, "dsNumberListOfValues1021": 177}|
+|{"_id":"NUM1002","dsNumberListOfValues1001": 123,"dsNumberListOfValues1002": 4569,"dsNumberListOfValues1003": 123,"dsNumberListOfValues1004": 4569,"dsNumberListOfValues1005": 501,"dsNumberListOfValues1007":123, "dsNumberListOfValues1008": 123, "dsNumberListOfValues1010": 4569,  "dsNumberListOfValues1013": 211, "dsNumberListOfValues1014": 4569, "dsNumberListOfValues1015": 211,  "dsNumberListOfValues1016": 123,"dsNumberListOfValues1017": 1234,"dsNumberListOfValues1018": "",  "dsNumberListOfValues1020":123}|
 
 	
-	Scenario Outline: Fetch record from the data service
+Scenario Outline: Fetch record from the data service
 	Given Data service "number_ListOfValue"
 	Then Fetch record "<id>" from the data service
 	And Match it to "<data>"
 Examples:
 |id|data|
-|NUM1001|{"_id": "NUM1001","dsNumberListOfValues1001": 4569,"dsNumberListOfValues1002": 4569,"dsNumberListOfValues1003": 123,"dsNumberListOfValues1004": 123,"dsNumberListOfValues1005": 123,"dsNumberListOfValues1007": 123, "dsNumberListOfValues1008": 123, "dsNumberListOfValues1010": 123,  "dsNumberListOfValues1013": 123, "dsNumberListOfValues1014": 123, "dsNumberListOfValues1015": 123,  "dsNumberListOfValues1018": 456,  "dsNumberListOfValues1020": 123}|
-	
+|NUM1001|{"_id": "NUM1001","dsNumberListOfValues1001": 4569,"dsNumberListOfValues1002": 4569,"dsNumberListOfValues1003": 123,"dsNumberListOfValues1004": 123,"dsNumberListOfValues1005": 123,"dsNumberListOfValues1007": 123, "dsNumberListOfValues1008": 123, "dsNumberListOfValues1010": 123,  "dsNumberListOfValues1013": 123, "dsNumberListOfValues1014": 123, "dsNumberListOfValues1015": 123, "dsNumberListOfValues1018": 456 ,  "dsNumberListOfValues1020": 123}|
+
 	
 	Scenario Outline: Update record to data service
 	Given Data service "number_ListOfValue"
@@ -94,7 +93,7 @@ Examples:
 Examples:
 
 |id|data|
-|NUM1001|{"dsNumberListOfValues1001": 1,"dsNumberListOfValues1002": 2,"dsNumberListOfValues1003": 3,"dsNumberListOfValues1004": 3,"dsNumberListOfValues1005": 5,"dsNumberListOfValues1007": 5, "dsNumberListOfValues1008": 4, "dsNumberListOfValues1010": 4,  "dsNumberListOfValues1013": 3, "dsNumberListOfValues1014": 1, "dsNumberListOfValues1015": 5,  "dsNumberListOfValues1016": 3,  "dsNumberListOfValues1020": 4, "dsNumberListOfValues1021": 1}|
+|NUM1001|{"dsNumberListOfValues1001": 123,"dsNumberListOfValues1002": 2,"dsNumberListOfValues1003": 4569,"dsNumberListOfValues1004": 123,"dsNumberListOfValues1005": 501,"dsNumberListOfValues1007": 243, "dsNumberListOfValues1008": 211, "dsNumberListOfValues1010": 4569,  "dsNumberListOfValues1013": 123, "dsNumberListOfValues1014": 4569, "dsNumberListOfValues1015": 211,  "dsNumberListOfValues1018": "", "dsNumberListOfValues1020": 4569}|
 
 Scenario Outline: Fetch record from the data service
 	Given Data service "number_ListOfValue"
@@ -102,18 +101,19 @@ Scenario Outline: Fetch record from the data service
 	And Match it to "<data>"
 Examples:
 |id|data|
-|NUM1001|{"_id": "NUM1001","dsNumberListOfValues1001": 4569,"dsNumberListOfValues1002": 4569,"dsNumberListOfValues1003": 123,"dsNumberListOfValues1004": 123,"dsNumberListOfValues1005": 123,"dsNumberListOfValues1007": 123, "dsNumberListOfValues1008": 123, "dsNumberListOfValues1010": 123,  "dsNumberListOfValues1013": 123, "dsNumberListOfValues1014": 123, "dsNumberListOfValues1015": 123,  "dsNumberListOfValues1018": 456,  "dsNumberListOfValues1020": 123}|
+|NUM1001|{"_id": "NUM1001","dsNumberListOfValues1001": 123,"dsNumberListOfValues1002": 2,"dsNumberListOfValues1003": 123,"dsNumberListOfValues1004": 123,"dsNumberListOfValues1005": 501,"dsNumberListOfValues1007": 123, "dsNumberListOfValues1008": 211, "dsNumberListOfValues1010": 123,  "dsNumberListOfValues1013": 123, "dsNumberListOfValues1014": 4569, "dsNumberListOfValues1015": 211, "dsNumberListOfValues1018": 456,  "dsNumberListOfValues1020": 4569}|
+
 	
-Scenario Outline: Delete record from the data service
-	Given Data service "number_ListOfValue"
-	Then Delete record "<id>" from the data service
-	And deleting from listing page
-Examples:
-|id|
-|NUM1001|
-
-
-Scenario: Log out of App Center
-	Given User log out from AppCenter
+#Scenario Outline: Delete record from the data service
+#	Given Data service "number_ListOfValue"
+#	Then Delete record "<id>" from the data service
+#	And deleting from lissting page
+#Examples:
+#|id|
+#|NUM1001|
+#
+#
+#Scenario: Log out of App Center
+#	Given User log out from AppCenter
 
 

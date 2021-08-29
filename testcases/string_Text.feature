@@ -58,7 +58,7 @@ Scenario: Add data to data service
 	And Save button is disabled
 Examples:
 |data|
-|{"_id": "STR1002","dsStringText1001": "amazon","dsStringText1002": "","dsStringText1003": "flipkart","dsStringText1004": "mintra","dsStringText1005": "starbazar","dsStringText1007": "dmart", "dsStringText1008": "bigBazar", "dsStringText1010": "bigBasket",  "dsStringText1013": "online shooping", "dsStringText1014": "", "dsStringText1015": "",  "dsStringText1018": "",  "dsStringText1020": "ABCD", "dsStringText1021": "season", "dsStringText1022": "cathlon", "dsStringText1023": "shopper stop", "dsStringText1024": "snapdel"}|
+|{"_id": "STR1001","dsStringText1001": "amazon","dsStringText1002": "","dsStringText1003": "flipkart","dsStringText1004": "mintra","dsStringText1005": "starbazar","dsStringText1007": "dmart", "dsStringText1008": "bigBazar", "dsStringText1010": "bigBasket",  "dsStringText1013": "online shooping", "dsStringText1014": "", "dsStringText1015": "",  "dsStringText1018": "",  "dsStringText1020": "ABCD", "dsStringText1021": "season", "dsStringText1022": "cathlon", "dsStringText1023": "shopper stop", "dsStringText1024": "snapdel"}|
 
 
 Scenario Outline: Add record to data service
@@ -77,7 +77,7 @@ Scenario Outline: Add record to data service
 	And Expect error "Unique check validation failed for dsStringText1002" on save
 Examples:
 |data|
-|{"_id": "STR1001","dsStringText1001": "Rose","dsStringText1002": "shopify","dsStringText1003": "Lotus","dsStringText1004": "Butterfly Pea","dsStringText1005": "Crossandra","dsStringText1007": "Golden Shower", "dsStringText1008": "Forest Ghost", "dsStringText1010": "Marigold",  "dsStringText1013": "Jasmine", "dsStringText1014": "Night Blooming", "dsStringText1015": "Sambac",  "dsStringText1018": "Sunflower",  "dsStringText1020": "XYZ", "dsStringText1021": "M", "dsStringText1022": "Peacock", "dsStringText1023": "Hibiscus", "dsStringText1024": "Daisy"}|
+|{"_id": "STR1002","dsStringText1001": "Rose","dsStringText1002": "shopify","dsStringText1003": "Lotus","dsStringText1004": "Butterfly Pea","dsStringText1005": "Crossandra","dsStringText1007": "Golden Shower", "dsStringText1008": "Forest Ghost", "dsStringText1010": "Marigold",  "dsStringText1013": "Jasmine", "dsStringText1014": "Night Blooming", "dsStringText1015": "Sambac",  "dsStringText1018": "Sunflower",  "dsStringText1020": "XYZ", "dsStringText1021": "M", "dsStringText1022": "Peacock", "dsStringText1023": "Hibiscus", "dsStringText1024": "Daisy"}|
 	
 	Scenario Outline: Fetch record from the data service
 	Given Data service "string_Text"
@@ -103,7 +103,7 @@ Scenario Outline: Fetch record from the data service
 	And Match it to "<data>"
 Examples:
 |id|data|
-|STR1001|{"_id": "STR1001","dsStringText1001": "1111","dsStringText1002": "a","dsStringText1003": "1333","dsStringText1004": "1004","dsStringText1005": "1555","dsStringText1007": "1007", "dsStringText1008": "1888", "dsStringText1010": "1010",  "dsStringText1013": "101313", "dsStringText1014": "101414", "dsStringText1015": "101515", "dsStringText1018": "101818", "dsStringText1020": "ABCDEFGH", "dsStringText1021": "102121", "dsStringText1022": "102222", "dsStringText1023": "102323", "dsStringText1024": "102424"}|
+|STR1001|{"_id": "STR1001","dsStringText1001": "aa","dsStringText1002": "shopify","dsStringText1003": "cc","dsStringText1004": "shopperstops","dsStringText1005": "ee","dsStringText1007": "walmart", "dsStringText1008": "gg", "dsStringText1010": "myntra",  "dsStringText1013": "ii", "dsStringText1014": "jj", "dsStringText1015": "kk", "dsStringText1018": "ll", "dsStringText1020": "MM", "dsStringText1021": "N", "dsStringText1022": "oo", "dsStringText1023": "pp", "dsStringText1024": "qq"}|
 	
 Scenario Outline: Delete record from the data service
 	Given Data service "string_Text"

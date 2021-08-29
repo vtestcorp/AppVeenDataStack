@@ -1,4 +1,4 @@
-Feature: This is the Feature file of DS-Number
+Feature: DS-USER
 
 
 @Author
@@ -50,15 +50,15 @@ Scenario: Add data to data service
 	Then Add data to the data service for user
 	
 	
-#	Scenario Outline: Add record to data service
-#	Given Data service "user"
-#	Then Add record "<data>" to the user data service
-#	And Expect error "DS-user Error" on label "DS-user Label"
-#	And Save button is disabled
-#Examples:
-#|data|
-#|{"_id":"DS1002", "dsUser1001": "deepak@appveen.com", "dsUser1002": "", "dsUser1003": "suchita@appveen.com", "dsUser1004": "test_readonly@appveen.com", "dsUser1005": "test_manage@appveen.com", "dsUser1006": "suchita@appveen.com", "dsUser1007": "", "dsUser1008": "", "dsUser1009": "test_readonly@appveen.com","dsUser1010": "suchita@appveen.com", "dsUser1011": "deepak@appveen.com", "dsUser1012": "test_manage@appveen.com", "dsUser1013": "deepak@appveen.com", "dsUser1014": "", "dsUser1015": "", "dsUser1016": "test_readonly@appveen.com", "dsUser1017": "suchita@appveen.com", "dsUser1018": "deepak@appveen.com", "dsUser1019": "test_manage@appveen.com"}|
-#
+	Scenario Outline: Add record to data service
+	Given Data service "user"
+	Then Add record "<data>" to the user data service
+	And Expect error "DS-user Error" on label "DS-user Label"
+	And Save button is disabled
+Examples:
+|data|
+|{"_id":"DS1001", "dsUser1001": "deepak@appveen.com", "dsUser1002": "", "dsUser1003": "suchita@appveen.com", "dsUser1004": "test_readonly@appveen.com", "dsUser1005": "test_manage@appveen.com", "dsUser1006": "suchita@appveen.com", "dsUser1007": "", "dsUser1008": "", "dsUser1009": "test_readonly@appveen.com","dsUser1010": "suchita@appveen.com", "dsUser1011": "deepak@appveen.com", "dsUser1012": "test_manage@appveen.com", "dsUser1013": "deepak@appveen.com", "dsUser1014": "", "dsUser1015": "", "dsUser1016": "test_readonly@appveen.com", "dsUser1017": "suchita@appveen.com", "dsUser1018": "deepak@appveen.com", "dsUser1019": "test_manage@appveen.com"}|
+
 
  Scenario Outline: Add record to data service
 	Given Data service "user"
@@ -75,7 +75,7 @@ Scenario: Add data to data service
 	And Expect error "Unique check validation failed for dsUser1002" on save
 Examples:
 |data|
-|{"_id":"DS1003", "dsUser1001": "suchita@appveen.com", "dsUser1002": "deepak@appveen.com", "dsUser1003": "test_manage@appveen.com", "dsUser1004": "test_readonly@appveen.com", "dsUser1005": "test_manage@appveen.com", "dsUser1006": "deepak@appveen.com", "dsUser1007": "suchita@appveen.com", "dsUser1008": "maker@appveen.com", "dsUser1009": "test_readonly@appveen.com","dsUser1010": "reviewer@appveen.com", "dsUser1011": "deepak@appveen.com", "dsUser1012": "test_manage@appveen.com", "dsUser1013": "suchita@appveen.com", "dsUser1014": "deepak@appveen.com", "dsUser1015": "test_manage@appveen.com", "dsUser1016": "maker@appveen.com", "dsUser1017": "deepak@appveen.com", "dsUser1018": "reviewer@appveen.com", "dsUser1019": "test_manage@appveen.com"}|
+|{"_id":"DS1002", "dsUser1001": "suchita@appveen.com", "dsUser1002": "deepak@appveen.com", "dsUser1003": "test_manage@appveen.com", "dsUser1004": "test_readonly@appveen.com", "dsUser1005": "test_manage@appveen.com", "dsUser1006": "deepak@appveen.com", "dsUser1007": "suchita@appveen.com", "dsUser1008": "maker@appveen.com", "dsUser1009": "test_readonly@appveen.com","dsUser1010": "reviewer@appveen.com", "dsUser1011": "deepak@appveen.com", "dsUser1012": "test_manage@appveen.com", "dsUser1013": "suchita@appveen.com", "dsUser1014": "deepak@appveen.com", "dsUser1015": "test_manage@appveen.com", "dsUser1016": "maker@appveen.com", "dsUser1017": "deepak@appveen.com", "dsUser1018": "reviewer@appveen.com", "dsUser1019": "test_manage@appveen.com"}|
 
 	
 	Scenario Outline: Fetch record from the data service

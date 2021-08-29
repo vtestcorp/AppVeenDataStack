@@ -10,6 +10,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.aventstack.extentreports.ExtentTest;
@@ -68,32 +69,50 @@ public class LoginAppCenter extends BaseClass {
 	}
 
 	public void dataService(String dataService) throws Exception {
+
 		data_Service=dataService;
-		Thread.sleep(10000);
+		Actions action=new Actions(driver);
+		
+		By ds = null;
 		try {
-			By ds=By.xpath("//div[contains(text(),'" + dataService + "')]");
-			applyWaitForDynamicWebElement(ds, 5);
+			ds=By.xpath("//div[normalize-space()='"+dataService+"' and contains(@class,'text-truncate')]");
+			applyWaitForDynamicWebElement(ds, 10);
 			WebElement data = driver.findElement(ds);
+			action.moveToElement(data).perform();
 			data.click();
 		} catch (Exception e) {
-			Thread.sleep(20000);
+			Thread.sleep(10000);
 			driver.navigate().refresh();
-			Thread.sleep(4000);
-				try {
-						WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
+			Thread.sleep(3000);
+					try {
+						WebElement data = driver.findElement(ds);
+						action.moveToElement(data).perform();
 						data.click();
 					} catch (Exception e1) {
-						Thread.sleep(30000);
+						Thread.sleep(20000);
 						driver.navigate().refresh();
-						Thread.sleep(8000);
-     					WebElement data = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
-						data.click();
+						Thread.sleep(3000);
+							try {
+									WebElement data = driver.findElement(ds);
+									action.moveToElement(data).perform();
+									data.click();
+								} catch (Exception e2) {
+									Thread.sleep(30000);
+									driver.navigate().refresh();
+									Thread.sleep(3000);
+									WebElement data = driver.findElement(ds);
+									action.moveToElement(data).perform();
+									data.click();
+							}
 					}
 			
 			
 		}
+	
+			
+		}
 
-	}
+
 //		int data = driver.findElements(By.xpath("//div[contains(text(),'" + dataService + "')]")).size();
 //		while(data==1)
 //		{
@@ -385,21 +404,18 @@ public class LoginAppCenter extends BaseClass {
 			JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 			for (int j = 1; j <= textBoxes.size(); j++) {
 				WebElement textBox = driver.findElement(By.xpath("(//*[starts-with(@class,'tox-edit-area__iframe') or   @id='_id'])["+j+"]"));
-			//	String id1 = textBox.getAttribute("id");
+			//	WebElement textBox = driver.findElement(By.xpath("(//*//*[contains(@class,'mce-content-body') or   @id='_id'])["+j+"]"));
 				if (textBox.isEnabled()) {
 					String id1 = " ";
 					if(j==1)
 					{
 						 id1 = textBox.getAttribute("id");
-						 System.out.println("Value of id1 : " + id1);
 						 String value = (String) jsonObject.get(id1);
-		        	     System.out.println("Value of value is : " +value);
 			             applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value);
 						 
 					}else {
 
 						 driver.switchTo().frame(textBox);
-						// WebElement child = textBox.findElement(By.xpath(".//body"));
 						  WebElement child =driver.findElement(By.xpath("//body"));
 						 id1 = child.getAttribute("data-id");
 						 System.out.println("Value of child is : " +child.getAttribute("type"));

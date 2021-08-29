@@ -123,7 +123,9 @@
         "precision": 2,
          "enum": [
           123,
-          4569
+          4569,
+          211,
+          2
         ],
         "dataKey": "dsNumberCurrency1002",
         "dataPath": "dsNumberCurrency1002"
@@ -143,7 +145,8 @@
         "precision": 2,
          "enum": [
           123,
-          4569
+          4569,
+          469
         ],
         "dataKey": "dsNumberCurrency1003",
         "dataPath": "dsNumberCurrency1003"
@@ -161,7 +164,8 @@
         "precision": 2,
          "enum": [
           123,
-          4569
+          4569,
+          211
         ],
         "dataKey": "dsNumberCurrency1004",
         "dataPath": "dsNumberCurrency1004"
@@ -178,7 +182,9 @@
         "unique": true,
         "precision": 2,
          "enum": [
-          123
+          123,
+          501,
+          211
         ],
         "dataKey": "dsNumberCurrency1005",
         "dataPath": "dsNumberCurrency1005"
@@ -195,7 +201,9 @@
         "_typeChanged": "Number",
         "precision": 2,
         "enum": [
-          1234
+          1234,
+          211,
+          123
         ],
         "dataKey": "dsNumberCurrency1006",
         "dataPath": "dsNumberCurrency1006"
@@ -213,7 +221,9 @@
         "createOnly": true,
         "precision": 2,
         "enum": [
-          123
+          123,
+          243,
+          211
         ],
         "dataKey": "dsNumberCurrency1007",
         "dataPath": "dsNumberCurrency1007"
@@ -229,7 +239,8 @@
         "_typeChanged": "Number",
         "precision": 2,
         "enum": [
-          123
+          123,
+          211
         ],
         "dataKey": "dsNumberCurrency1008",
         "dataPath": "dsNumberCurrency1008"
@@ -247,7 +258,8 @@
         "unique": true,
         "precision": 2,
         "enum": [
-          123
+          123,
+          4569
         ],
         "dataKey": "dsNumberCurrency1010",
         "dataPath": "dsNumberCurrency1010"
@@ -300,7 +312,8 @@
         "_typeChanged": "Number",
         "precision": 2,
         "enum": [
-          123
+          123,
+          211
         ],
         "dataKey": "dsNumberCurrency1013",
         "dataPath": "dsNumberCurrency1013"
@@ -318,7 +331,8 @@
         "_typeChanged": "Number",
         "precision": 2,
         "enum": [
-          123
+          123,
+          4569
         ],
         "dataKey": "dsNumberCurrency1014",
         "dataPath": "dsNumberCurrency1014"
@@ -337,7 +351,8 @@
         "_typeChanged": "Number",
         "precision": 2,
         "enum": [
-          123
+          123,
+          211
         ],
         "dataKey": "dsNumberCurrency1015",
         "dataPath": "dsNumberCurrency1015"
@@ -355,7 +370,8 @@
         "_typeChanged": "Number",
         "precision": 2,
         "enum": [
-          123
+          123,
+          4569
         ],
         "dataKey": "dsNumberCurrency1016",
         "dataPath": "dsNumberCurrency1016"
@@ -372,7 +388,8 @@
         "default": 456,
         "precision": 2,
         "enum": [
-          456
+          456,
+          1234
         ],
         "dataKey": "dsNumberCurrency1018",
         "dataPath": "dsNumberCurrency1018"
@@ -407,7 +424,8 @@
         "_typeChanged": "Number",
         "precision": 2,
         "enum": [
-          123
+          123,
+          4569
         ],
         "dataKey": "dsNumberCurrency1020",
         "dataPath": "dsNumberCurrency1020"

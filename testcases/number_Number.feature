@@ -52,7 +52,7 @@ Scenario: Add data to data service
 	Scenario Outline: Add record to data service
 	Given Data service "number_Number"
 	Then Add record "<data>" to the data service
-	And Expect error "DS-NUMBER-NUMBER Error" on label "DS-NUMBER-NUMBER label"
+	And Expect error "DS-NUMBER-NUMBER Error" on label "DS-NUMBER-NUMBER 1002 label"
 	And Save button is disabled
 Examples:
 |data|
@@ -75,7 +75,7 @@ Scenario Outline: Add record to data service
 	And Expect error "Unique check validation failed for dsNumberNumber1002" on save
 Examples:
 |data|
-|{"_id": "DS1003","dsNumberNumber1001": 1,"dsNumberNumber1002": 10,"dsNumberNumber1003": 3, "dsNumberNumber1004": 4,"dsNumberNumber1005": 5,"dsNumberNumber1007": 7, "dsNumberNumber1008": 8, "dsNumberNumber1010":9,  "dsNumberNumber1013": 13, "dsNumberNumber1014": 14,"dsNumberNumber1015": 15, "dsNumberNumber1018": 18,"dsNumberNumber1020": 20,"dsNumberNumber1021": 21, "dsNumberNumber1022": 1, "dsNumberNumber1023": 23,"dsNumberNumber1024": 24}|
+|{"_id": "DS1002","dsNumberNumber1001": 1,"dsNumberNumber1002": 10,"dsNumberNumber1003": 3, "dsNumberNumber1004": 4,"dsNumberNumber1005": 5,"dsNumberNumber1007": 7, "dsNumberNumber1008": 8, "dsNumberNumber1010":9,  "dsNumberNumber1013": 13, "dsNumberNumber1014": 14,"dsNumberNumber1015": 15, "dsNumberNumber1018": 18,"dsNumberNumber1020": 20,"dsNumberNumber1021": 21, "dsNumberNumber1022": 1, "dsNumberNumber1023": 23,"dsNumberNumber1024": 24}|
 
 
 	

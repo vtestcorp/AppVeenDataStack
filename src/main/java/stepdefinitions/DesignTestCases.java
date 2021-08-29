@@ -126,11 +126,16 @@ public class DesignTestCases extends BaseClass{
 	}
 	
 	
-	@Then("Add record \"(.*?)\" to the user data service")
+	@Then("^Add record \"(.*?)\" to the user data service$")
 	public void add_data_to_theUser(String string) throws InterruptedException {
 		  design.addRecordForUser(string);
 	}
     
+	@Then("^Add record \"(.*?)\" to the stringRichText data service$")
+	public void add_data_to_thestringRichText(String string) throws InterruptedException {
+		  design.addRecordForRichText(string);
+	}
+	
 	@Then("Expect error {string} on save")
 	public void expect_error_on_save(String string) {
 	    
@@ -173,7 +178,7 @@ public class DesignTestCases extends BaseClass{
 	}
 	
 	
-	@Then("Update record \"(.*?)\" with \"(.*?)\" to the User")
+	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the User$")
 	public void update_record_with_User_data_service(String id, String jsonFile) throws Exception {
 	    design.updateRecordforUser(id, jsonFile);
 	}

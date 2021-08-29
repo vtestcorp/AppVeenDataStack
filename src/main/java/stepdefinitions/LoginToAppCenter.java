@@ -98,7 +98,7 @@ public class LoginToAppCenter extends BaseClass{
 	}
 
 	
-	@Then("Add data to the data service for user")
+	@Then("^Add data to the data service for user$")
 	public void add_data_to_the_data_service_for_user() throws InterruptedException {
 	   loginAppCenter.userEnterDataInUserField();
 	}

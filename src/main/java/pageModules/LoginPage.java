@@ -145,7 +145,7 @@ public class LoginPage extends BaseClass{
 				String keyName = attribute.get("key").toString();
 				
 				if(!keyName.equals("_id")) {
-			//	applyWait.applyExplicitWaitsUntilElementVisible(ap.newAttributeButton, 30);	
+				applyWait.applyExplicitWaitsUntilElementVisible(ap.newAttributeButton, 30);	
 				applyWait.waitForElementToBeClickable(ap.newAttributeButton, 30).click();
 				
 			switch(attributeName) {
