@@ -12,18 +12,18 @@ Examples:
 |deepak@appveen.com|123123123|
 
 Scenario: Delete data service
-	Given Data service "ds_Library" exists
+	Given Data service "library" exists
 	Then Remove the data service
 
 Scenario: Create data service
-	Given Data service "ds_Library" does not exist
-	Then Create new data service "ds_Library"
+	Given Data service "library" does not exist
+	Then Create new data service "library"
  #Under testData, picks up strings.json create the JSON
 
 Scenario Outline: Assign to Appcenter Group
  	Then Group "Library-Group" does not exist
 	Then Create new group "Library-Group" 
-	And Assign appcenter permissions for "ds_Library" dataservice to "<user>"
+	And Assign appcenter permissions for "library" dataservice to "<user>"
 	
 	Examples:
 	|user|
@@ -47,12 +47,12 @@ Examples:
 
  #INSERT/UPDATE
 Scenario: Add data to data service
-	Given Data service "ds_Library"
+	Given Data service "library"
 	Then Add data to the data service for Library Type
 	
 	
 #	Scenario Outline: Add record to data service
-#	Given Data service "ds_Library"
+#	Given Data service "library"
 #	Then Add record "<data>" to the data service
 #	And Expect error "DS STRING TEXT Error" on label "DS STRING TEXT Label"
 #	And Save button is disabled
@@ -62,7 +62,7 @@ Scenario: Add data to data service
 #
 #
 Scenario Outline: Add record to data service
-	Given Data service "ds_Library"
+	Given Data service "library"
 	Then Add record "<data>" to the data service	
 	And Expect error "ID DS1001 already exists" on save
 	Examples:
@@ -72,7 +72,7 @@ Scenario Outline: Add record to data service
 
 
 	Scenario Outline: Fetch record from the data service
-	Given Data service "ds_Library"
+	Given Data service "library"
 	Then Fetch record "<id>" from the data service
 	And Match it to "<data>"
 Examples:
@@ -81,7 +81,7 @@ Examples:
 	
 	
 	Scenario Outline: Update record to data service
-	Given Data service "ds_Library"
+	Given Data service "library"
 	Then Update record "<id>" with "<data>" to the data service
 Examples:
 
@@ -89,7 +89,7 @@ Examples:
 |DS1001|{ "_id" : "DS1001", "dsLibrary1001" : { "line1" : "Library 11", "line2" : "Library 12" }, "dsLibrary1003" : { "line1" : "Library 31", "line2" : "Library 32" }, "dsLibrary1004" : { "line1" : "Library 41", "line2" : "Library 42" }, "dsLibrary1005" : { "line1" : "Library 51", "line2" : "Library 52" }, "dsLibrary1006" : { "line1" : "Library 61", "line2" : "Library 62" }, "dsLibrary1007" : { "line1" : "Library 71", "line2" : "Library 72" }, "dsLibrary1008" : { "line1" : "Library 81", "line2" : "Library 82" } }|
 
 Scenario Outline: Fetch record from the data service
-	Given Data service "ds_Library"
+	Given Data service "library"
 	Then Fetch record "<id>" from the data service
 	And Match it to "<data>"
 Examples:
@@ -97,7 +97,7 @@ Examples:
 |STR1001|{"_id":"DS1001", "dsLibrary1001.line1":"Library 11", "dsLibrary1001.line2":"Library 12", "dsLibrary1003.line1":"Library 31", "dsLibrary1003.line2":"Library 32", "dsLibrary1005.line1":"Library 51", "dsLibrary1005.line2":"Library 52", "dsLibrary1006.line1":"Library 61", "dsLibrary1006.line2":"Library 62", "dsLibrary1007.line1":"Library 71", "dsLibrary1007.line2":"Library 72", "dsLibrary1008.line1":"Library 81", "dsLibrary1008.line2":"Library 82"}|
 
 #Scenario Outline: Delete record from the data service
-#	Given Data service "ds_Library"
+#	Given Data service "library"
 #	Then Delete record "<id>" from the data service
 #	And deleting from listing page
 #Examples:

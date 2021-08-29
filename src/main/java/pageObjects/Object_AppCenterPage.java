@@ -255,11 +255,14 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath = "//span[text()='Delete']")
 	public WebElement delete_ViewRecord;
 	
-	@FindBy(xpath="//input[@class='form-control form-control-sm rounded ng-pristine ng-valid ng-star-inserted ng-touched' or 'searchInput pac-target-input']")
+	@FindBy(xpath="//input[@class='searchInput pac-target-input' or @id='_id']")
 	public List<WebElement> textBoxesLocation;
 	
 	@FindBy(id = "doneBtn")
 	public WebElement doneButton;
+	
+	@FindBy(xpath = "//div[starts-with(@class,'footer')]//button[@id='cancelBtn']")
+	public WebElement cancelButton;
 	
 	@FindBy(xpath= "//input[@type='checkbox' or @id='_id' ]")
 	public List<WebElement> buttons;

@@ -120,7 +120,7 @@ public class DesignTestCases extends BaseClass{
 	
 	
 
-	@Then("Add record \"(.*?)\" to the Location data service")
+	@Then("^Add record \"(.*?)\" to the Location data service$")
 	public void add_record__toLocation(String string) throws InterruptedException {
 		design.addRecordForLocation(string);
 	}
@@ -183,7 +183,7 @@ public class DesignTestCases extends BaseClass{
 	    design.updateRecordforUser(id, jsonFile);
 	}
 	
-	@Then("Update record \"(.*?)\" with \"(.*?)\" to the Location")
+	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the Location$")
 	public void update_record_with_dsLocation_data_service(String id, String jsonFile) throws Exception {
 	    design.updateLocationRecord(id, jsonFile);
 	    

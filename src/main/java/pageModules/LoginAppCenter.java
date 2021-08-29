@@ -281,18 +281,18 @@ public class LoginAppCenter extends BaseClass {
 	}
 
 
-	public void userEnterDataInLocationField() throws InterruptedException {
-		Thread.sleep(2000);
+	public void userEnterDataInLocationField() throws InterruptedException, Exception {
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton, 20);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-		Thread.sleep(3000);
+		applyExplicitWaitsUntilElementVisible(acp.textBoxesLocation, 20);
 		List<WebElement> textBoxes = acp.textBoxesLocation;
 		
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 		
 		
-		for (int j = 2; j <= textBoxes.size(); j++) {
-		WebElement textBox = driver.findElement(By.xpath("(//input[@class='form-control form-control-sm rounded ng-pristine ng-valid ng-star-inserted ng-touched' or 'searchInput pac-target-input'])["+j+"]"));
+		for (int j = 1; j <= textBoxes.size(); j++) {
+		WebElement textBox = driver.findElement(By.xpath("(//input[@class='searchInput pac-target-input' or @id='_id'])["+j+"]"));
 			if (textBox.isEnabled()) {
 				String id1 = textBox.getAttribute("id");
 				String v1 =  jsonObject.get(id1).toString();
@@ -312,7 +312,7 @@ public class LoginAppCenter extends BaseClass {
 					}
 						else {
      							textBox.sendKeys(v2);
-								Thread.sleep(2000);
+								Thread.sleep(1000);
 								textBox.sendKeys(Keys.DOWN);
 								textBox.sendKeys(Keys.ENTER);
         			}

@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="./testcases/group.feature",
+@CucumberOptions(features=".\\testcases\\location.feature",
 				glue="stepdefinitions",
 				monochrome=true,
 				strict = true,
@@ -16,7 +16,6 @@ import io.cucumber.junit.CucumberOptions;
 				)
 
 public class Runner {
-	
 
 	  private static String[] defaultOptions = {
 	            "--glue", "stepdefinitions",

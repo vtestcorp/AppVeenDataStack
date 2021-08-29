@@ -516,17 +516,19 @@ public class Module_DesignTestCases extends BaseClass{
 	}
 	
 	public void addRecordForLocation(String string) throws InterruptedException {
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
 			acp.yes.click();
 	    }
+		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
+		applyExplicitWaitsUntilElementVisible(acp.textBoxesLocation, 20);
 		List<WebElement> textBoxes = acp.textBoxesLocation;
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
-	   	for (int j = 2; j <= textBoxes.size(); j++) {
-			WebElement textBox = driver.findElement(By.xpath("(//input[@class='form-control form-control-sm rounded ng-pristine ng-valid ng-star-inserted ng-touched' or 'searchInput pac-target-input'])["+j+"]"));
+	   	for (int j = 1; j <= textBoxes.size(); j++) {
+			WebElement textBox = driver.findElement(By.xpath("(//input[@class='searchInput pac-target-input' or @id='_id'])["+j+"]"));
 				if (textBox.isEnabled()) {
 					String id1 = textBox.getAttribute("id");
 						{		
@@ -1060,6 +1062,10 @@ public class Module_DesignTestCases extends BaseClass{
 
 	public void matchGroupData(String jsonFile) throws Exception {
 		
+		////odp-view-control/div/div/label[starts-with(@class,'label-width')]
+		
+		//label[@for='dsLocation1003']/parent::div/following-sibling::odp-view-separator/descendant::div[5]
+		
 		LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
 		applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
 		WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
@@ -1223,6 +1229,7 @@ public void addRecordForDate(String jsonFile) throws Exception {
 				try {
 				id1 = textBox.getAttribute("id");
 				dateValue=jsonObject.get(id1).toString();
+				System.out.println(id1+"-----"+dateValue);
 				}
 				catch(NullPointerException e) {
 					continue;
@@ -1232,6 +1239,15 @@ public void addRecordForDate(String jsonFile) throws Exception {
 					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(dateValue.toString());
 				}
 				else {
+					
+					if(dateValue.equals("")) {
+						WebElement selectDate=driver.findElement(By.id(id1));
+						selectDate.click();
+						applyExplicitWaitsUntilElementVisible(acp.cancelButton, 20);
+						acp.cancelButton.click();
+						
+					}
+					else {
 					
 					String fullDate[]=dateValue.split("T")[0].split("-");
 					String fullTime[]=dateValue.split("T")[1].split(":");
@@ -1267,7 +1283,7 @@ public void addRecordForDate(String jsonFile) throws Exception {
 					
 					applyWait.waitForElementToBeClickable(acp.doneButton, 30).click();
 					Thread.sleep(500);
-					
+					}
 				}
 			}
 			}
