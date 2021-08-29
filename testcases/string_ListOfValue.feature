@@ -21,8 +21,8 @@ Scenario: Create data service
  #Under testData, picks up strings.json create the JSON
 
 Scenario Outline: Assign to Appcenter Group
- 	Then Group "Number-Group" does not exist
-	Then Create new group "Number-Group" 
+ 	Then Group "String-ListOfValue" does not exist
+	Then Create new group "String-ListOfValue" 
 	And Assign appcenter permissions for "string_ListOfValue" dataservice to "<user>"
 	
 	Examples:
@@ -86,7 +86,7 @@ Examples:
 	And Match it to "<data>"
 Examples:
 |id|data|
-|STR1001|{"_id": "STR1001","dsStringListOfValues1001": "LIST 1","dsStringListOfValues1002": "LIST 1","dsStringListOfValues1003": "LIST 1","dsStringListOfValues1004": "LIST 1","dsStringListOfValues1005": "LIST 1","dsStringListOfValues1007": "LIST 1", "dsStringListOfValues1008": "LIST 1", "dsStringListOfValues1010": "LIST 1",  "dsStringListOfValues1013": "LIST 1", "dsStringListOfValues1014": "LIST 1", "dsStringListOfValues1015": "LIST 1",  "dsStringListOfValues1018": "LIST 2"}|
+|STR1001|{"_id": "STR1001","dsStringListOfValues1001": "LIST 1","dsStringListOfValues1002": "LIST 1","dsStringListOfValues1003": "LIST 1","dsStringListOfValues1004": "LIST 1","dsStringListOfValues1005": "LIST 1","dsStringListOfValues1007": "LIST 1", "dsStringListOfValues1008": "LIST 1", "dsStringListOfValues1010": "LIST 1",  "dsStringListOfValues1013": "LIST 1", "dsStringListOfValues1014": "LIST 1", "dsStringListOfValues1015": "LIST 1",  "dsStringListOfValues1018": "LIST 2", "dsStringListOfValues1020":"LIST 1"}|
 	
 	
 	Scenario Outline: Update record to data service
@@ -103,7 +103,7 @@ Scenario Outline: Fetch record from the data service
 	And Match it to "<data>"
 Examples:
 |id|data|
-|STR1001|{"_id": "STR1001","dsStringListOfValues1001": "LIST 2","dsStringListOfValues1002": "LIST 1","dsStringListOfValues1003": "LIST 2","dsStringLongText1004": "LIST 2","dsStringListOfValues1005": "LIST 2","dsStringListOfValues1007": "LIST 1", "dsStringListOfValues1008": "LIST 2", "dsStringListOfValues1010": "LIST 1",  "dsStringListOfValues1013": "LIST 2", "dsStringText1014": "Long 1014", "dsStringListOfValues1015": "LIST 2",  "dsStringListOfValues1018": "LIST 2"}|
+|STR1001|{"_id": "STR1001","dsStringListOfValues1001": "LIST 2","dsStringListOfValues1002": "LIST 1","dsStringListOfValues1003": "LIST 2","dsStringListOfValues1004": "LIST 1","dsStringListOfValues1005": "LIST 2","dsStringListOfValues1007": "LIST 1", "dsStringListOfValues1008": "LIST 2", "dsStringListOfValues1010": "LIST 1",  "dsStringListOfValues1013": "LIST 2", "dsStringListOfValues1014": "LIST 1", "dsStringListOfValues1015": "LIST 2",  "dsStringListOfValues1018": "LIST 2","dsStringListOfValues1020":"LIST 1"}|
 	
 Scenario Outline: Delete record from the data service
 	Given Data service "string_ListOfValue"
@@ -112,3 +112,6 @@ Scenario Outline: Delete record from the data service
 Examples:
 |id|
 |STR1001|
+
+Scenario: Log out of App Center
+	Given User log out from AppCenter

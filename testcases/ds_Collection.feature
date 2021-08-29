@@ -20,8 +20,8 @@ Scenario: Create data service
 
 
 Scenario Outline: Assign to Appcenter Group
- 	Then Group "String-Group" does not exist
-	Then Create new group "String-Group" 
+ 	Then Group "Collection-Group" does not exist
+	Then Create new group "Collection-Group" 
 	And Assign appcenter permissions for "ds_Collection" dataservice to "<user>"
 	
 	Examples:
