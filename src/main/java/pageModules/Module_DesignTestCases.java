@@ -144,7 +144,7 @@ public class Module_DesignTestCases extends BaseClass{
 	public void assignPermission(String dataServiceName,String user1) throws Exception {
 		String role="Manage";
 		String userEmail=user1;
-//		Thread.sleep(2000);
+		Thread.sleep(1000);
 		applyExplicitWaitsUntilElementVisible(gp.appCenterRoles, 10);
 //		applyWait.waitForElementToBeClickable(gp.appCenterRoles, 30).click();
 		javascriptClick.click(gp.appCenterRoles);
@@ -168,7 +168,7 @@ public class Module_DesignTestCases extends BaseClass{
 			WebElement toggler=driver.findElement(By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[2]/child::label/child::span[2]"));
 			applyWait.waitForElementToBeClickable(toggler, 30).click();
 			}
-		
+//		lp.VerifyUserExists(user1);
 		applyWait.waitForElementToBeClickable(gp.members, 30).click();
 		applyWait.waitForElementToBeClickable(gp.addUsers, 30).click();
 		applyExplicitWaitsUntilElementVisible(gp.userEmail, 10);
@@ -849,19 +849,23 @@ public class Module_DesignTestCases extends BaseClass{
 		WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
 		record.click();
 		int q=1;
+		applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPageForGroups, 10);
 		for(WebElement attribute : acp.attributesOnViewPageForGroups) {
-			WebElement t=driver.findElement(By.xpath("(//label[starts-with(@class,'label-width d-flex')])["+q+"]/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()]"));
-			String a=attribute.getAttribute("for");
-			String w=t.getText();
+			WebElement value=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])["+q+"]"));
+			WebElement key=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])["+q+"]/ancestor::odp-view-separator/preceding-sibling::div//label"));
+			String a=key.getAttribute("for");
+			String w=value.getText();
 			if(!w.equals("N.A.")) {
 				actualData.put(a, w);
 		}
-			q+=2;;
+//			q+=2;;
+			q++;
 		}
 		
 	LinkedHashMap<String, String> expectedData =(LinkedHashMap<String, String>) JsonUtils.getMapFromJSON(jsonFile);
 	
-
+	  System.out.println(actualData);
+	    System.out.println(expectedData);
 	
 	if(actualData.equals(expectedData)) {
 		System.out.println("Data is matching");
@@ -872,9 +876,12 @@ public class Module_DesignTestCases extends BaseClass{
 	  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
 	    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
 	    System.err.println(entriesDiffering);
+	    System.out.println(actualData);
+	    System.out.println(expectedData);
 	    Assert.assertTrue(actualData.equals(expectedData));
 	}
-		
+		//
+
 	}
 
 

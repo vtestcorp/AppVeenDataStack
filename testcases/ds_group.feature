@@ -58,8 +58,8 @@ Scenario Outline: Add record to data service
 	And Expect error "ID STR1001 already exists" on save
 	Examples:
 		|data|
-	  |{  "_id" : "DS1002", "dsGroup1001" : { "dsString" : "String 1111" }, "dsGroup1002" : { "dsString" : "String 122" }, "dsGroup1003" : { "dsString" : "String 1333" }, "dsGroup1004" : { "dsString" : "String 1444" }, "dsGroup1005" : { "dsString" : "String 1555" }, "dsGroup1006" : { "dsString" : "String 1666" }}|
-		|{  "_id" : "DS1003", "dsGroup1001" : { "dsString" : "String 1111" }, "dsGroup1002" : { "dsString" : "String 122" }, "dsGroup1003" : { "dsString" : "String 1333" }, "dsGroup1004" : { "dsString" : "String 1444" }, "dsGroup1005" : { "dsString" : "String 1555" }, "dsGroup1006" : { "dsString" : "String 1666" }}|
+	  |{  "_id" : "DS1001", "dsGroup1001" : { "dsString" : "String 1111" }, "dsGroup1002" : { "dsString" : "String 122" }, "dsGroup1003" : { "dsString" : "String 1333" }, "dsGroup1004" : { "dsString" : "String 1444" }, "dsGroup1005" : { "dsString" : "String 1555" }, "dsGroup1006" : { "dsString" : "String 1666" }}|
+#		|{  "_id" : "DS1003", "dsGroup1001" : { "dsString" : "String 1111" }, "dsGroup1002" : { "dsString" : "String 122" }, "dsGroup1003" : { "dsString" : "String 1333" }, "dsGroup1004" : { "dsString" : "String 1444" }, "dsGroup1005" : { "dsString" : "String 1555" }, "dsGroup1006" : { "dsString" : "String 1666" }}|
 	
 	
 	Scenario Outline: Fetch record from the data service
@@ -68,7 +68,7 @@ Scenario Outline: Add record to data service
 	And Match this GROUP data to "<data>"
 Examples:
 |id|data|
-|DS1002|{  "_id" : "DS1002", "dsGroup1001" : { "dsString" : "String 1001" }, "dsGroup1002" : { "dsString" : "String 1002" }, "dsGroup1003" : { "dsString" : "String 1003" }, "dsGroup1004" : { "dsString" : "String 1004" }, "dsGroup1005" : { "dsString" : "String 1005" }, "dsGroup1006" : { "dsString" : "String 1006" }}|
+|DS1001|{"_id":"DS1001", "dsGroup1001.dsString":"String 1001", "dsGroup1002.dsString":"String 1002", "dsGroup1003.dsString":"String 1003", "dsGroup1004.dsString":"String 1004", "dsGroup1005.dsString":"String 1005", "dsGroup1006.dsString":"String 1006"}|
 	
 	
 	Scenario Outline: Update record to data service
@@ -77,7 +77,7 @@ Examples:
 Examples:
 
 |id|data|
-|DS1002|{  "_id" : "DS1002", "dsGroup1001" : { "dsString" : "String 1111" }, "dsGroup1002" : { "dsString" : "String 2222" }, "dsGroup1003" : { "dsString" : "String 3333" }, "dsGroup1004" : { "dsString" : "String 4444" }, "dsGroup1005" : { "dsString" : "String 5555" }, "dsGroup1006" : { "dsString" : "String 6666" }}|
+|DS1001|{  "dsGroup1001" : { "dsString" : "String 1111" }, "dsGroup1002" : { "dsString" : "String 2222" }, "dsGroup1003" : { "dsString" : "String 3333" }, "dsGroup1004" : { "dsString" : "String 4444" }, "dsGroup1005" : { "dsString" : "String 5555" }, "dsGroup1006" : { "dsString" : "String 6666" }}|
 
 
 Scenario Outline: Fetch record from the data service
@@ -86,8 +86,8 @@ Scenario Outline: Fetch record from the data service
 	And Match this GROUP data to "<data>"
 Examples:
 |id|data|
-|DS1002|{  "_id" : "DS1002", "dsGroup1001" : { "dsString" : "String 1111" }, "dsGroup1002" : { "dsString" : "String 2222" }, "dsGroup1003" : { "dsString" : "String 3333" }, "dsGroup1004" : { "dsString" : "String 4444" }, "dsGroup1005" : { "dsString" : "String 5555" }, "dsGroup1006" : { "dsString" : "String 6666" }}|
-	
+|DS1001|{"_id":"DS1001", "dsGroup1001.dsString":"String 1111", "dsGroup1002.dsString":"String 2222", "dsGroup1003.dsString":"String 3333", "dsGroup1004.dsString":"String 4444", "dsGroup1005.dsString":"String 5555", "dsGroup1006.dsString":"String 6666"}|
+#	
 #Scenario Outline: Delete record from the data service
 #	Given Data service "ds_Group"
 #	Then Delete record "<id>" from the data service
@@ -97,8 +97,8 @@ Examples:
 #|STR1001|
 #
 
-Scenario: Log out of App Center
-	Given User log out from AppCenter
+#Scenario: Log out of App Center
+#	Given User log out from AppCenter
 
 #
 #

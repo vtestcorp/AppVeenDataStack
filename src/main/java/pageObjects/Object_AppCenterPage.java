@@ -217,6 +217,8 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//label[starts-with(@class,'label-width d-flex')]")
 	public List<WebElement> attributesOnViewPage;
 	
+	
+	////div[@class='d-flex flex-column w-100']//label
 	@FindBy(xpath="(//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()]")
 	public List<WebElement> attributesOnViewPageForGroups;
 	

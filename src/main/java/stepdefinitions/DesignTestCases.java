@@ -181,7 +181,8 @@ public class DesignTestCases extends BaseClass{
 	}
 	@Then("^Match it to \"(.*?)\"$")
 	public void match_it_to(String jsonFile) throws Exception {
-		design.matchToRecord(jsonFile);	
+//		design.matchToRecord(jsonFile);	
+		design.matchGroupData(jsonFile);
 }
 	
 	@Then("^Match it to \"(.*?)\" for File type$")

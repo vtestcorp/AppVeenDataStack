@@ -6,12 +6,11 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="./testcases/date&Time.feature",
-				dryRun=false,
+@CucumberOptions(features="./testcases/group.feature",
 				glue="stepdefinitions",
 				monochrome=true,
 				strict = true,
-				plugin = { "pretty", "html:target/cucumber-reports" ,"json:target/cucumber-reports/cucumber.json" 
+				plugin = { "pretty", "html:report" ,"json:target/cucumber-reports/cucumber.json" 
 						,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 }
 				)
