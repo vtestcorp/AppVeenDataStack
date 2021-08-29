@@ -87,30 +87,7 @@
         "dataPath" : "dsGroupStringText.stringText"
       }
     } ]
-  }, {
-    "_id" : "61043bdce53e2beb076735b8",
-    "type" : "Object",
-    "key" : "dsGroupStringLongText",
-    "properties" : {
-      "name" : "DS GROUP STRING LONG TEXT",
-      "fieldLength" : 10,
-      "_typeChanged" : "Object",
-      "dataKey" : "dsGroupStringLongText",
-      "dataPath" : "dsGroupStringLongText"
-    },
-    "definition" : [ {
-      "type" : "String",
-      "key" : "longText",
-      "properties" : {
-        "name" : "LONG TEXT",
-        "fieldLength" : 10,
-        "_typeChanged" : "String",
-        "longText" : true,
-        "dataKey" : "longText",
-        "dataPath" : "dsGroupStringLongText.longText"
-      }
-    } ]
-  },  {
+  },   {
     "_id" : "61043bdce53e2bb4496735bb",
     "type" : "Object",
     "key" : "dsGroupStringEmail",
@@ -441,70 +418,6 @@
         "relatedViewFields" : [ ],
         "dataKey" : "user",
         "dataPath" : "dsGroupUser.user"
-      }
-    } ]
-  }, {
-    "_id" : "61043bdce53e2b78f46735c7",
-    "type" : "Object",
-    "key" : "dsGroupRelation",
-    "properties" : {
-      "name" : "DS GROUP RELATION",
-      "fieldLength" : 10,
-      "_typeChanged" : "Object",
-      "dataKey" : "dsGroupRelation",
-      "dataPath" : "dsGroupRelation"
-    },
-    "definition" : [ {
-      "type" : "Object",
-      "definition" : [ {
-        "type" : "String",
-        "key" : "_id",
-        "properties" : {
-          "name" : "_id",
-          "_typeChanged" : "String"
-        }
-      }, {
-        "type" : "String",
-        "key" : "_href",
-        "properties" : {
-          "name" : "_href",
-          "_typeChanged" : "String"
-        }
-      } ],
-      "key" : "relation",
-      "properties" : {
-        "name" : "RELATION",
-        "fieldLength" : 10,
-        "_typeChanged" : "Relation",
-        "deleteAction" : "restrict",
-        "relatedTo" : "Simple",
-        "relatedSearchField" : "_id",
-        "relatedViewFields" : [ {
-          "_id" : "6102655b36c2eeaf8aee9463",
-          "key" : "_id",
-          "type" : "String",
-          "prefix" : "SIM",
-          "suffix" : null,
-          "padding" : null,
-          "counter" : 1001,
-          "properties" : {
-            "label" : null,
-            "readonly" : false,
-            "errorMessage" : null,
-            "name" : "ID",
-            "required" : false,
-            "fieldLength" : 10,
-            "_description" : null,
-            "_typeChanged" : "id",
-            "_isParrentArray" : null,
-            "_isGrpParentArray" : null,
-            "dataPath" : "_id",
-            "_detailedType" : "",
-            "dataKey" : "_id"
-          }
-        } ],
-        "dataKey" : "relation",
-        "dataPath" : "dsGroupRelation.relation"
       }
     } ]
   } ],

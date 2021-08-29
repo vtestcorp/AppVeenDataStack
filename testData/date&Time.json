@@ -1,0 +1,498 @@
+{
+  "workflowHooks" : {
+    "postHooks" : {
+      "submit" : [ ],
+      "rework" : [ ],
+      "discard" : [ ],
+      "approve" : [ ],
+      "reject" : [ ]
+    }
+  },
+  "_metadata" : {
+    "version" : {
+      "document" : 6,
+      "release" : "dev"
+    },
+    "deleted" : false,
+    "lastUpdated" : "2021-08-23T17:00:46.701Z",
+    "createdAt" : "2021-08-23T16:46:17.979Z",
+    "lastUpdatedBy" : "deepak@appveen.com"
+  },
+  "allowedFileTypes" : [ "jpeg", "ppt", "xls", "csv", "doc", "jpg", "png", "gif", "zip", "tar", "rar", "gz", "bz2", "7z", "mp4", "mp3", "pdf", "ico", "docx", "pptx", "xlsx", "ods", "xml", "txt" ],
+  "version" : 2,
+  "instances" : 1,
+  "versionValidity" : {
+    "validityType" : "count",
+    "validityValue" : -1
+  },
+  "permanentDeleteData" : true,
+  "disableInsights" : false,
+  "status" : "Active",
+  "enableSearchIndex" : false,
+  "attributeCount" : 16,
+  "type" : null,
+  "_id" : "SRVC6834",
+  "name" : "date",
+  "description" : null,
+  "app" : "vTest",
+  "api" : "/date",
+  "port" : 20046,
+  "wizard" : [ ],
+  "webHooks" : [ ],
+  "preHooks" : [ ],
+  "collectionName" : "date",
+  "__v" : 1,
+  "definition" : [ {
+    "_id" : "6123d43ee4af10f968e8839e",
+    "key" : "_id",
+    "type" : "String",
+    "prefix" : "DAT",
+    "suffix" : null,
+    "padding" : null,
+    "counter" : 1001,
+    "properties" : {
+      "label" : null,
+      "readonly" : false,
+      "errorMessage" : null,
+      "name" : "ID",
+      "required" : false,
+      "fieldLength" : 10,
+      "_description" : null,
+      "_typeChanged" : "id",
+      "_isParrentArray" : null,
+      "_isGrpParentArray" : null,
+      "dataPath" : "_id",
+      "_detailedType" : "",
+      "dataKey" : "_id"
+    }
+  }, {
+    "_id" : "6123d43ee4af10abf5e8839f",
+    "type" : "Date",
+    "key" : "dsDateTime1001",
+    "properties" : {
+      "name" : "DS DATE TIME 1001",
+      "fieldLength" : 10,
+      "_typeChanged" : "Date",
+      "dateType" : "datetime-local",
+      "defaultTimezone" : "Etc/Zulu",
+      "supportedTimezones" : [ ],
+      "dataKey" : "dsDateTime1001",
+      "dataPath" : "dsDateTime1001"
+    }
+  }, {
+    "_id" : "6123d43ee4af1052ace883a0",
+    "type" : "Date",
+    "key" : "dsDateTime1002",
+    "properties" : {
+      "label" : "DS DATE TIME 1002 LABEL",
+      "errorMessage" : "DS DATE TIME 1002 ERROR",
+      "name" : "DS DATE TIME 1002",
+      "required" : true,
+      "fieldLength" : 10,
+      "_description" : "DS DATE TIME 1002 DESCRIPTION",
+      "_typeChanged" : "Date",
+      "default" : "2026-01-27T04:50:31.824Z",
+      "createOnly" : true,
+      "dateType" : "datetime-local",
+      "defaultTimezone" : "Etc/Zulu",
+      "supportedTimezones" : [ "Australia/Canberra", "Australia/Darwin", "Australia/Hobart" ],
+      "dataKey" : "dsDateTime1002",
+      "dataPath" : "dsDateTime1002"
+    }
+  }, {
+    "_id" : "6123d43ee4af10325be883a1",
+    "type" : "Date",
+    "key" : "dsDateTime1003",
+    "properties" : {
+      "name" : "DS DATE TIME 1003",
+      "required" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "Date",
+      "dateType" : "datetime-local",
+      "defaultTimezone" : "Etc/Zulu",
+      "supportedTimezones" : [ ],
+      "dataKey" : "dsDateTime1003",
+      "dataPath" : "dsDateTime1003"
+    }
+  }, {
+    "_id" : "6123d43ee4af100675e883a2",
+    "type" : "Date",
+    "key" : "dsDateTime1004",
+    "properties" : {
+      "name" : "DS DATE TIME 1004",
+      "fieldLength" : 10,
+      "_typeChanged" : "Date",
+      "createOnly" : true,
+      "dateType" : "datetime-local",
+      "defaultTimezone" : "Etc/Zulu",
+      "supportedTimezones" : [ ],
+      "dataKey" : "dsDateTime1004",
+      "dataPath" : "dsDateTime1004"
+    }
+  }, {
+    "_id" : "6123d43ee4af10d0eee883a3",
+    "type" : "Date",
+    "key" : "dsDateTime1005",
+    "properties" : {
+      "readonly" : true,
+      "name" : "DS DATE TIME 1005",
+      "fieldLength" : 10,
+      "_typeChanged" : "Date",
+      "dateType" : "datetime-local",
+      "defaultTimezone" : "Etc/Zulu",
+      "supportedTimezones" : [ ],
+      "dataKey" : "dsDateTime1005",
+      "dataPath" : "dsDateTime1005"
+    }
+  }, {
+    "_id" : "6123d43ee4af10c4eee883a4",
+    "type" : "Date",
+    "key" : "dsDateTime1006",
+    "properties" : {
+      "name" : "DS DATE TIME 1006",
+      "required" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "Date",
+      "createOnly" : true,
+      "dateType" : "datetime-local",
+      "defaultTimezone" : "Etc/Zulu",
+      "supportedTimezones" : [ ],
+      "dataKey" : "dsDateTime1006",
+      "dataPath" : "dsDateTime1006"
+    }
+  }, {
+    "_id" : "6123d43ee4af1060cfe883a5",
+    "type" : "Date",
+    "key" : "dsDateTime1008",
+    "properties" : {
+      "readonly" : true,
+      "name" : "DS DATE TIME 1008",
+      "fieldLength" : 10,
+      "_typeChanged" : "Date",
+      "createOnly" : true,
+      "dateType" : "datetime-local",
+      "defaultTimezone" : "Etc/Zulu",
+      "supportedTimezones" : [ ],
+      "dataKey" : "dsDateTime1008",
+      "dataPath" : "dsDateTime1008"
+    }
+  }, {
+    "_id" : "6123d43ee4af1040e0e883a6",
+    "type" : "Date",
+    "key" : "dsDateTime1010",
+    "properties" : {
+      "label" : "DS DATE  TIME 1010 LABEL",
+      "name" : "DS DATE TIME 1010",
+      "fieldLength" : 10,
+      "_typeChanged" : "Date",
+      "dateType" : "datetime-local",
+      "defaultTimezone" : "Etc/Zulu",
+      "supportedTimezones" : [ ],
+      "dataKey" : "dsDateTime1010",
+      "dataPath" : "dsDateTime1010"
+    }
+  }, {
+    "_id" : "6123d43ee4af102911e883a7",
+    "type" : "Date",
+    "key" : "dsDateTime1011",
+    "properties" : {
+      "errorMessage" : "DS DATE TIME 1011 ERROR",
+      "name" : "DS DATE TIME 1011",
+      "required" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "Date",
+      "dateType" : "datetime-local",
+      "defaultTimezone" : "Etc/Zulu",
+      "supportedTimezones" : [ ],
+      "dataKey" : "dsDateTime1011",
+      "dataPath" : "dsDateTime1011"
+    }
+  }, {
+    "_id" : "6123d43ee4af10de72e883a8",
+    "type" : "Date",
+    "key" : "dsDateTime1012",
+    "properties" : {
+      "label" : "DS DATE TIME 1012 LABEL",
+      "errorMessage" : "DS DATE  TIME 1012 ERROR",
+      "name" : "DS DATE TIME 1012",
+      "required" : true,
+      "fieldLength" : 10,
+      "_typeChanged" : "Date",
+      "dateType" : "datetime-local",
+      "defaultTimezone" : "Etc/Zulu",
+      "supportedTimezones" : [ ],
+      "dataKey" : "dsDateTime1012",
+      "dataPath" : "dsDateTime1012"
+    }
+  }, {
+    "_id" : "6123d43ee4af104eb4e883a9",
+    "type" : "Date",
+    "key" : "dsDateTime1013",
+    "properties" : {
+      "name" : "DS DATE TIME 1013",
+      "fieldLength" : 10,
+      "_typeChanged" : "Date",
+      "default" : "2021-01-31T05:01:31.824Z",
+      "dateType" : "datetime-local",
+      "defaultTimezone" : "Etc/Zulu",
+      "supportedTimezones" : [ ],
+      "dataKey" : "dsDateTime1013",
+      "dataPath" : "dsDateTime1013"
+    }
+  }, {
+    "_id" : "6123d43ee4af107708e883aa",
+    "type" : "Date",
+    "key" : "dsDateTime1014",
+    "properties" : {
+      "readonly" : true,
+      "name" : "DS DATE TIME 1014",
+      "fieldLength" : 10,
+      "_typeChanged" : "Date",
+      "default" : "1990-01-30T05:01:31.824Z",
+      "dateType" : "datetime-local",
+      "defaultTimezone" : "Etc/Zulu",
+      "supportedTimezones" : [ ],
+      "dataKey" : "dsDateTime1014",
+      "dataPath" : "dsDateTime1014"
+    }
+  }, {
+    "_id" : "6123d43ee4af1051dde883ab",
+    "type" : "Date",
+    "key" : "dsDateTime1015",
+    "properties" : {
+      "name" : "DS DATE TIME 1015",
+      "fieldLength" : 10,
+      "_description" : "DS DATE TIME 1015 DESCRIPTION",
+      "_typeChanged" : "Date",
+      "dateType" : "datetime-local",
+      "defaultTimezone" : "Etc/Zulu",
+      "supportedTimezones" : [ ],
+      "dataKey" : "dsDateTime1015",
+      "dataPath" : "dsDateTime1015"
+    }
+  }, {
+    "_id" : "6123d43ee4af100cd3e883ac",
+    "type" : "Date",
+    "key" : "dsDateTime1016",
+    "properties" : {
+      "name" : "DS DATE TIME 1016",
+      "fieldLength" : 10,
+      "_typeChanged" : "Date",
+      "dateType" : "datetime-local",
+      "defaultTimezone" : "Etc/Zulu",
+      "supportedTimezones" : [ ],
+      "dataKey" : "dsDateTime1016",
+      "dataPath" : "dsDateTime1016"
+    }
+  }, {
+    "_id" : "6123d43ee4af10adfbe883ad",
+    "type" : "Date",
+    "key" : "dsDateTime1017",
+    "properties" : {
+      "name" : "DS DATE TIME 1017",
+      "fieldLength" : 10,
+      "_typeChanged" : "Date",
+      "dateType" : "datetime-local",
+      "defaultTimezone" : "Etc/Zulu",
+      "supportedTimezones" : [ "Africa/Bamako" ],
+      "dataKey" : "dsDateTime1017",
+      "dataPath" : "dsDateTime1017"
+    }
+  } ],
+  "headers" : [ ],
+  "relatedSchemas" : {
+    "internal" : {
+      "users" : [ ]
+    },
+    "outgoing" : [ ]
+  },
+  "role" : {
+    "_id" : "SRVC6834",
+    "_metadata" : {
+      "version" : {
+        "document" : 1,
+        "release" : "dev"
+      },
+      "deleted" : false,
+      "lastUpdated" : "2021-08-23T16:46:18.010Z",
+      "createdAt" : "2021-08-23T16:46:18.006Z"
+    },
+    "app" : "vTest",
+    "entity" : "SRVC6834",
+    "entityName" : "date",
+    "roles" : [ {
+      "skipReviewRole" : true,
+      "id" : "P8125108434",
+      "name" : "Skip Review",
+      "operations" : [ {
+        "method" : "SKIP_REVIEW"
+      }, {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record and without any approval"
+    }, {
+      "manageRole" : true,
+      "id" : "P7737880990",
+      "name" : "Manage",
+      "operations" : [ {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      }, {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record"
+    }, {
+      "viewRole" : true,
+      "id" : "P1693301858",
+      "name" : "View",
+      "operations" : [ {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to view the record"
+    } ],
+    "type" : "appcenter",
+    "fields" : {
+      "_id" : {
+        "_t" : "String",
+        "_p" : {
+          "P8125108434" : "R",
+          "P7737880990" : "R",
+          "P1693301858" : "R"
+        }
+      },
+      "dsDateTime1001" : {
+        "_t" : "Date",
+        "_p" : {
+          "P8125108434" : "R",
+          "P7737880990" : "R",
+          "P1693301858" : "R"
+        }
+      },
+      "dsDateTime1002" : {
+        "_t" : "Date",
+        "_p" : {
+          "P8125108434" : "R",
+          "P7737880990" : "R",
+          "P1693301858" : "R"
+        }
+      },
+      "dsDateTime1003" : {
+        "_t" : "Date",
+        "_p" : {
+          "P8125108434" : "R",
+          "P7737880990" : "R",
+          "P1693301858" : "R"
+        }
+      },
+      "dsDateTime1004" : {
+        "_t" : "Date",
+        "_p" : {
+          "P8125108434" : "R",
+          "P7737880990" : "R",
+          "P1693301858" : "R"
+        }
+      },
+      "dsDateTime1005" : {
+        "_t" : "Date",
+        "_p" : {
+          "P8125108434" : "R",
+          "P7737880990" : "R",
+          "P1693301858" : "R"
+        }
+      },
+      "dsDateTime1006" : {
+        "_t" : "Date",
+        "_p" : {
+          "P8125108434" : "R",
+          "P7737880990" : "R",
+          "P1693301858" : "R"
+        }
+      },
+      "dsDateTime1008" : {
+        "_t" : "Date",
+        "_p" : {
+          "P8125108434" : "R",
+          "P7737880990" : "R",
+          "P1693301858" : "R"
+        }
+      },
+      "dsDateTime1010" : {
+        "_t" : "Date",
+        "_p" : {
+          "P8125108434" : "R",
+          "P7737880990" : "R",
+          "P1693301858" : "R"
+        }
+      },
+      "dsDateTime1011" : {
+        "_t" : "Date",
+        "_p" : {
+          "P8125108434" : "R",
+          "P7737880990" : "R",
+          "P1693301858" : "R"
+        }
+      },
+      "dsDateTime1012" : {
+        "_t" : "Date",
+        "_p" : {
+          "P8125108434" : "R",
+          "P7737880990" : "R",
+          "P1693301858" : "R"
+        }
+      },
+      "dsDateTime1013" : {
+        "_t" : "Date",
+        "_p" : {
+          "P8125108434" : "R",
+          "P7737880990" : "R",
+          "P1693301858" : "R"
+        }
+      },
+      "dsDateTime1014" : {
+        "_t" : "Date",
+        "_p" : {
+          "P8125108434" : "R",
+          "P7737880990" : "R",
+          "P1693301858" : "R"
+        }
+      },
+      "dsDateTime1015" : {
+        "_t" : "Date",
+        "_p" : {
+          "P8125108434" : "R",
+          "P7737880990" : "R",
+          "P1693301858" : "R"
+        }
+      },
+      "dsDateTime1016" : {
+        "_t" : "Date",
+        "_p" : {
+          "P8125108434" : "R",
+          "P7737880990" : "R",
+          "P1693301858" : "R"
+        }
+      },
+      "dsDateTime1017" : {
+        "_t" : "Date",
+        "_p" : {
+          "P8125108434" : "R",
+          "P7737880990" : "R",
+          "P1693301858" : "R"
+        }
+      }
+    },
+    "__v" : 0
+  },
+  "stateModel" : {
+    "attribute" : "",
+    "initialStates" : [ ],
+    "enabled" : false
+  }
+}

@@ -20,7 +20,8 @@ public class WaitTypes extends BaseClass{
 
 		try {
 			wait = new WebDriverWait(driver, timeout);
-			wait.until(ExpectedConditions.elementToBeClickable(Element));
+//			wait.until(ExpectedConditions.elementToBeClickable(Element));
+			wait.until(ExpectedConditions.visibilityOf(Element));
 
 		} catch (Exception e) {
 			e.getMessage();
@@ -35,7 +36,7 @@ public class WaitTypes extends BaseClass{
 			wait.until(ExpectedConditions.visibilityOf(Element));
 		} catch (Exception e) {
 			e.getMessage();
-			System.out.println("" + e.getStackTrace());
+//			System.out.println("" + e.getStackTrace());
 		}
 		return Element;
 	}
@@ -46,7 +47,7 @@ public class WaitTypes extends BaseClass{
 			wait.until(ExpectedConditions.refreshed(ExpectedConditions.stalenessOf(Element)));
 		} catch (Exception e) {
 			e.getMessage();
-			System.out.println("" + e.getStackTrace());
+//			System.out.println("" + e.getStackTrace());
 		}
 		return Element;
 	}

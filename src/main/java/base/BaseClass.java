@@ -5,8 +5,12 @@ import java.net.MalformedURLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,14 +29,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
-
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-
 import config.DefineConstants;
 import config.DefineProperties;
 import helperMethods.Screenshots;
@@ -46,32 +42,20 @@ public class BaseClass {
 	int invalidLinksCount = 0;
 	int invalidImageCount = 0;
 	public static WebDriver driver;
-	public ExtentTest test;
-	public static ExtentReports extent;
-	public static ExtentHtmlReporter htmlReporter;
 	public static String DownloadFilepath, folder, basefold;
 	public static int count;
-	
-	public static  String author_URL;
-	public static  String app_center_URL ;
-
+	public static String author_URL;
+	public static String app_center_URL;
 	public static String testData = System.getProperty("testData");
-//	public static String testData = "D:\\users111.json";
 	public static String browser = System.getProperty("browser");
 	public static String url = System.getProperty("url");
 	public static String path = System.getProperty("user.dir");
 
-
-
 	@SuppressWarnings("deprecation")
 	public void start() {
-		if(browser==null) {
-			browser="chrome";
+		if (browser == null) {
+			browser = "chrome";
 		}
-		htmlReporter = config.ExtentReports.createInstance("report/extent.html");
-
-		extent = new ExtentReports();
-		extent.attachReporter(htmlReporter);
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
@@ -83,65 +67,72 @@ public class BaseClass {
 			driver.manage().window().maximize();
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-	        DesiredCapabilities capabilities = DesiredCapabilities.firefox();  
-	        capabilities.setCapability("marionette",true);  
-	        driver= new FirefoxDriver(capabilities); 
+			DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+			capabilities.setCapability("marionette", true);
+			driver = new FirefoxDriver(capabilities);
 			driver.manage().window().maximize();
 		} else if (browser.equalsIgnoreCase("internetexplorer")) {
 			WebDriverManager.iedriver().setup();
-			driver=new InternetExplorerDriver();
+			driver = new InternetExplorerDriver();
 			driver.manage().window().maximize();
-		}
-		else if (browser.equalsIgnoreCase("safari")) {
-			driver=new SafariDriver();
+		} else if (browser.equalsIgnoreCase("safari")) {
+			driver = new SafariDriver();
 			driver.manage().window().maximize();
-		}
-		else {
+		} else {
 			System.out.println("Please pass the correct browser value");
 		}
-		
-		if(url==null) {
-			url="https://bifrost.ds.appveen.com";
+
+		if (url == null) {
+			url = "https://bifrost.ds.appveen.com";
 		}
-		
-		if(url.equalsIgnoreCase("https://staging.appveen.com")) {
+
+		if (url.equalsIgnoreCase("https://staging.appveen.com")) {
 			author_URL = "https://staging.appveen.com/author";
 			app_center_URL = "https://staging.appveen.com/appcenter";
 		}
-		
-		else if(url.equalsIgnoreCase("https://bifrost.ds.appveen.com")) {
+
+		else if (url.equalsIgnoreCase("https://bifrost.ds.appveen.com")) {
 			author_URL = "https://bifrost.ds.appveen.com/author";
 			app_center_URL = "https://bifrost.ds.appveen.com/appcenter";
-			
+
 		}
-		extent.setSystemInfo("Selenium Version", "3");
-		extent.setSystemInfo("Environment", "Testing");
+
 	}
 
 	public static WebDriver getDriver() {
 		return driver;
 	}
 
-	public static void applyExplicitWaitsUntilElementVisible(WebElement element) throws MalformedURLException {
-		
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+	public static void applyExplicitWaitsUntilElementVisible(WebElement element, int time)
+			throws MalformedURLException {
+
+		WebDriverWait wait = new WebDriverWait(driver, time);
 		wait.until(ExpectedConditions.visibilityOf(element));
 
 	}
-	
 
-	
-	@AfterClass
-	public void tearDown() throws IOException {
-		extent.flush();
-//		driver.quit();
+	public void applyWaitForDynamicWebElement(By locator, int time) {
+
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 
-	
-
-	@AfterSuite
-	public void openReport() {
-//		SwitchWindow.openReportTab(driver);
-//		driver.get(DefineConstants.PROJECT_PATH + "report" + "/" + "extent.html");
+	public void applyExplicitWaitsUntilElementVisible(List<WebElement> element, int time) {
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.until(ExpectedConditions.visibilityOfAllElements(element));
 	}
+
+	public void handleElementClickException(WebElement element) {
+
+		JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+		javascriptExecutor.executeScript("arguments[0].scrollIntoView(true)", element);
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+
+		}
+		javascriptExecutor.executeScript("arguments[0].click()", element);
+
+	}
+
 }

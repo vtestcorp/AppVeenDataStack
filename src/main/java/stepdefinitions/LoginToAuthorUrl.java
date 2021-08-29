@@ -15,14 +15,18 @@ import com.aventstack.extentreports.Status;
 
 import base.BaseClass;
 import config.DefineConstants;
-import cucumber.api.java.Before;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
+//import cucumber.api.java.Before;
+//import cucumber.api.java.en.And;
+//import cucumber.api.java.en.Given;
+//import cucumber.api.java.en.Then;
 import helperMethods.JsonUtils;
 import helperMethods.Screenshots;
 import helperMethods.WaitTypes;
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pageModules.LoginPage;
 
@@ -36,12 +40,12 @@ public class LoginToAuthorUrl extends BaseClass {
 	@Before("@Author")
 	public void setUp() {
 		start();
-		loginPage = new LoginPage(driver, test);
+		loginPage = new LoginPage(driver);
 	}
 	
 	@Before
 	public void initilization() {
-		loginPage = new LoginPage(driver, test);
+		loginPage = new LoginPage(driver);
 	}
 	
 	
@@ -83,9 +87,7 @@ public class LoginToAuthorUrl extends BaseClass {
 
 	@Then("Create new data service {string}")
 	public void create_new_Data_Service(String dataService) throws Exception  {
-//		if(!dataService.equals(null)) {
 			data_Service=dataService;
-//		}
 		
 		String dataName=path+"\\testData" + "\\" + ""+dataService+".json";
 		
@@ -152,7 +154,7 @@ public class LoginToAuthorUrl extends BaseClass {
 	}
 
 	@Given("User logged into Author")
-	public void user_logged_into_Author() {
+	public void user_logged_into_Author() throws Exception {
 	    loginPage.logOutFromAuthor();
 	}
 
