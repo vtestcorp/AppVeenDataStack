@@ -261,7 +261,14 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(id = "doneBtn")
 	public WebElement doneButton;
 	
+	@FindBy(xpath= "//input[@type='checkbox' or @id='_id' ]")
+	public List<WebElement> buttons;
+	
 	@FindBy(id = "_day")
 	public WebElement day;
+	
+	@FindBy(xpath = "//*[starts-with(@class,'tox-edit-area__iframe') or   @id='_id']")
+	public List<WebElement> richtextBoxes;
+
 
 }

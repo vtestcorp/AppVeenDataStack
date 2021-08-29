@@ -73,6 +73,7 @@ public class LoginAppCenter extends BaseClass {
 	}
 
 	public void dataService(String dataService) throws Exception {
+
 		data_Service=dataService;
 		Actions action=new Actions(driver);
 		
@@ -92,7 +93,7 @@ public class LoginAppCenter extends BaseClass {
 						action.moveToElement(data).perform();
 						data.click();
 					} catch (Exception e1) {
-						Thread.sleep(10000);
+						Thread.sleep(20000);
 						driver.navigate().refresh();
 						Thread.sleep(3000);
 							try {
@@ -111,14 +112,27 @@ public class LoginAppCenter extends BaseClass {
 			
 			
 		}
-	}
+	
+			
+		}
+
+
+//		int data = driver.findElements(By.xpath("//div[contains(text(),'" + dataService + "')]")).size();
+//		while(data==1)
+//		{
+//			Thread.sleep(5000);
+//			driver.navigate().refresh();
+//		    data = driver.findElements(By.xpath("//div[contains(text(),'" + dataService + "')]")).size();
+//		}
+//		WebElement data1 = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
+//	    data1.click();
+//	}
 
 	public void userEnterData() throws Exception {
 		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
 		List<WebElement> textBoxes = acp.textBoxes;
-		String path = System.getProperty("user.dir");
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 
@@ -297,7 +311,8 @@ public class LoginAppCenter extends BaseClass {
 						applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(v1);
 					}
 						else {
-								textBox.sendKeys(v2);
+     							textBox.sendKeys(v2);
+								Thread.sleep(2000);
 								textBox.sendKeys(Keys.DOWN);
 								textBox.sendKeys(Keys.ENTER);
         			}
@@ -309,10 +324,124 @@ public class LoginAppCenter extends BaseClass {
 					
 	}
 				
+	public void userEnterDataInUserField() throws InterruptedException {
+		Thread.sleep(2000);
+		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		Thread.sleep(3000);
+		List<WebElement> textBoxes = acp.textBoxes;
+		
+		String filePath=path + "\\testData\\" + data_Service + ".data.json";
+		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
+	
+		for (int j = 1; j <= textBoxes.size(); j++) {
+			String val =null;
+		WebElement textBox = driver.findElement(By.xpath("(//*[contains(@class,'form-control')])["+j+"]"));
+			if (textBox.isEnabled()) {
+				String id1 = textBox.getAttribute("id");
+				if(id1.equals("_id"))
+				{
+					val = (String) jsonObject.get(id1);
+				}
+				else {
+                        try {
+							JSONObject json  = (JSONObject) jsonObject.get(id1);
+							val = (String) json.get("_id");
+						} catch (NullPointerException e) {
+							continue;
+						}
+				}
+				
+				if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")||textBox.getAttribute("type").equals("select-one")) {
+
+					   	if (val != null) {
+
+								if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
+		                            	applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(val);
+		                            	
+		                            	applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(Keys.DOWN);
+		                            	Thread.sleep(500);
+		                            	applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(Keys.ENTER);
+								}
+		   					}
+		            	}
+	            	}
+		     }
+				applyWait.waitForElementToBeClickable(acp.save, 30).click();
 					
+	}
+				
+					
+			public void userEnterDataforBoolean() throws InterruptedException {
+				
+				applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+				Thread.sleep(1000);
+			//	applyExplicitWaitsUntilElementVisible(acp.buttons, 10);
+				List<WebElement> buttons = acp.buttons;
+				String filePath=path + "\\testData\\" + data_Service + ".data.json";
+				JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
+				for (int j = 1; j <= buttons.size(); j++) {
+					WebElement button = driver.findElement(By.xpath("(//input[@type='checkbox' or @id='_id' ])["+j+"]"));
+					String id1 = button.getAttribute("id");
+					if (button.getAttribute("type").equals("text"))
+					   	 {
+						     String value = (String) jsonObject.get(id1);
+						     applyWait.waitForElementToBeClickable(button, 30).sendKeys(value);
+					   	 }
+					else if (button.getAttribute("type").equals("checkbox")) {
+						      WebElement parent = button.findElement(By.xpath("./.."));
+						      if(jsonObject.get(id1).equals(true))
+						      {
+						    	    
+						         applyWait.waitForElementToBeClickable(parent, 30).click();
+		              		}
+					      }
+					   	}
+			     	applyWait.waitForElementToBeClickable(acp.save, 30).click();
+				}
+			
+		public void userEnterDataForRichText() throws InterruptedException {
+			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+			Thread.sleep(5000);
+		//	applyExplicitWaitsUntilElementVisible(acp.richtextBoxes, 10);
+			List<WebElement> textBoxes = acp.richtextBoxes;
+			String filePath=path + "\\testData\\" + data_Service + ".data.json";
+			JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
+			for (int j = 1; j <= textBoxes.size(); j++) {
+				WebElement textBox = driver.findElement(By.xpath("(//*[starts-with(@class,'tox-edit-area__iframe') or   @id='_id'])["+j+"]"));
+			//	WebElement textBox = driver.findElement(By.xpath("(//*//*[contains(@class,'mce-content-body') or   @id='_id'])["+j+"]"));
+				if (textBox.isEnabled()) {
+					String id1 = " ";
+					if(j==1)
+					{
+						 id1 = textBox.getAttribute("id");
+						 String value = (String) jsonObject.get(id1);
+			             applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value);
+						 
+					}else {
+
+						 driver.switchTo().frame(textBox);
+						  WebElement child =driver.findElement(By.xpath("//body"));
+						 id1 = child.getAttribute("data-id");
+						 System.out.println("Value of child is : " +child.getAttribute("type"));
+						 try {
+						        String value = (String) jsonObject.get(id1);
+						        applyWait.waitForElementToBeClickable(child, 30).sendKeys(value);
+					        
+						 }catch(Exception e) 
+						 {
+							 driver.switchTo().defaultContent();
+							 continue;
+						 }
+						 driver.switchTo().defaultContent();
+					  	 }
+				   	 }
+					
+					}
 			
 		
-
+			applyWait.waitForElementToBeClickable(acp.save, 30).click();
+		
+		}
 	
 	public void workflow() {
 		applyWait.waitForElementToBeClickable(acp.username, 30).sendKeys(Property.getProperty("reviewerEmail"));
@@ -398,6 +527,7 @@ public class LoginAppCenter extends BaseClass {
 					for(int i=1;i<4;i++)
 					{
 						textBox.click();
+    					Thread.sleep(8000);
 						WebElement textBox1 = driver.findElement(By.xpath("(//input[contains(@id,'collection')])["+i+"]"));
 						String value = JsonUtils.getJsonValue(path + "\\testData\\" + data_Service + ".data.json", id1);	
 						applyWait.waitForElementToBeClickable(textBox1, 30).sendKeys(value);

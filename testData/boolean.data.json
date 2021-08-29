@@ -1,0 +1,26 @@
+{
+  "_metadata" : {
+    "deleted" : false,
+    "lastUpdated" : "2021-08-20T14:50:00.753Z",
+    "version" : {
+      "release" : "dev",
+      "document" : 1
+    },
+    "createdAt" : "2021-08-20T14:50:00.753Z"
+  },
+  "dsBoolean1002" : false,
+  "dsBoolean1013" : false,
+  "dsBoolean1014" : true,
+  "_id" : "DS1003",
+  "dsBoolean1001" : true,
+  "dsBoolean1003" : true,
+  "dsBoolean1004" : false,
+  "dsBoolean1005" : true,
+  "dsBoolean1006" : false,
+  "dsBoolean1008" : true,
+  "dsBoolean1010" : false,
+  "dsBoolean1011" : true,
+  "dsBoolean1012" : false,
+  "dsBoolean1015" : true,
+  "__v" : 0
+}

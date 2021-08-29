@@ -10,20 +10,20 @@ Examples:
 |deepak@appveen.com|123123123|
 
 Scenario: Delete data service
-	Given Data service "ds_Collection" exists
+	Given Data service "collection" exists
 	Then Remove the data service
 
 Scenario: Create data service
-	Given Data service "ds_Collection" does not exist
-	Then Create new data service "ds_Collection"
+	Given Data service "collection" does not exist
+	Then Create new data service "collection"
  #Under testData, picks up strings.json create the JSON
 
 
 Scenario Outline: Assign to Appcenter Group
+<<<<<<< HEAD:testcases/collection.feature
  	Then Group "Collection-Group" does not exist
 	Then Create new group "Collection-Group" 
-	And Assign appcenter permissions for "ds_Collection" dataservice to "<user>"
-	
+	And Assign appcenter permissions for "collection" dataservice to "<user>"
 	Examples:
 	|user|
 	|maker@appveen.com|
@@ -45,7 +45,7 @@ Examples:
 
 # INSERT/UPDATE
 Scenario: Add data to data service
-	Given Data service "ds_Collection"
+	Given Data service "collection"
 	Then Add data to the data service for Collection
 	
 	

@@ -46,6 +46,7 @@ public class LoginPage extends BaseClass{
 	public Object_AuthorPage ap;
 	public Object_GroupPage gp;
 	public static boolean isDateTime;
+	public static boolean isType;
 	
 	public LoginPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -148,8 +149,9 @@ public class LoginPage extends BaseClass{
 				String keyName = attribute.get("key").toString();
 				
 				if(!keyName.equals("_id")) {
-						applyWait.waitForElementToBeClickable(ap.newAttributeButton, 30).click();
-							
+
+				applyWait.applyExplicitWaitsUntilElementVisible(ap.newAttributeButton, 30);	
+				applyWait.waitForElementToBeClickable(ap.newAttributeButton, 30).click();
 				
 			switch(attributeName) {
 			
@@ -338,6 +340,7 @@ public class LoginPage extends BaseClass{
 							String  field=(String) searchObject.get("name");
 							dropdown.selectByVisibleText(ap.viewField, field);
 						}
+						isType=true;
 						requiredAttributes(jsonProperties);
 						break;
 			}
@@ -981,6 +984,7 @@ public class LoginPage extends BaseClass{
 									 }
 								  }
 									
+									
 								}
 								
 										
@@ -1050,6 +1054,40 @@ public class LoginPage extends BaseClass{
 								if(jsonProperties.containsKey("_description")) {
 									applyWait.waitForElementToBeClickable(ap.description, 30).sendKeys(jsonProperties.get("_description").toString());
 									}
+								
+								
+								if(jsonProperties.containsKey("deleteAction"))
+								{
+									String allowdeletion_Staus = "";
+															
+								if(!driver.findElements(By.xpath("//div[normalize-space()='Allow deletion of related users']/following-sibling::div//span[@class='text']")).isEmpty()){
+										
+										 allowdeletion_Staus=ap.allowdeletionStatus.getText();
+								    }
+									
+									if(jsonProperties.get("deleteAction").toString().equals("setnull") && allowdeletion_Staus.equals("No") ) {
+										
+									   ap.allowdeletionToggler.click();	
+									}
+									
+									else if(jsonProperties.get("deleteAction").toString().equals("restrict") && allowdeletion_Staus.equals("Yes") ) {
+										ap.allowdeletionToggler.click();
+									}
+								}
+								
+								if(jsonProperties.containsKey("default"))
+								{
+									String defult_Status = "";
+									
+									if(!driver.findElements(By.xpath("//div[normalize-space()='Default Value']/following-sibling::div//span[@class='ml-3']")).isEmpty()){
+											
+											 defult_Status=ap.defaultSatus.getText();
+									    }
+									if(jsonProperties.get("default").toString().equals("true")  &&  defult_Status.equals("No"))
+									{
+										ap.defaultToggler.click();
+									}
+								}
 						}
 
 						

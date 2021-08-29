@@ -1,5 +1,7 @@
 package stepdefinitions;
 
+import java.net.MalformedURLException;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -62,6 +64,12 @@ public class DesignTestCases extends BaseClass{
 	public void create_new_group(String groupName) throws Exception {
 	 design.createGroup(groupName);
 	}
+	
+	@Then("assign appcenter permissions for {string} dataservice")
+	public void assign_appcenter_permissions_for_dataservice(String string) {
+	   
+	}
+
 
 	@Then("Assign appcenter permissions for {string} dataservice to {string}")
 	public void assign_appcenter_permissions_for_strings_text_dataservice(String dataServiceName,String user) throws Exception {
@@ -89,7 +97,10 @@ public class DesignTestCases extends BaseClass{
 	public void add_record_to_File_Type(String string) throws Exception {
 	    design.addNewRecordForFile(string);
 	}
-	
+	@Then("^Add record \"(.*?)\" to the boolean data service$")
+	public void add_record_to_the_boolean_data_service(String string) throws InterruptedException, MalformedURLException {
+	    design.addRecordInBooelan(string);
+	}
 	
 
 	@Then("Expect error {string} on label {string}")
@@ -113,7 +124,18 @@ public class DesignTestCases extends BaseClass{
 	public void add_record__toLocation(String string) throws InterruptedException {
 		design.addRecordForLocation(string);
 	}
+	
+	
+	@Then("^Add record \"(.*?)\" to the user data service$")
+	public void add_data_to_theUser(String string) throws InterruptedException {
+		  design.addRecordForUser(string);
+	}
     
+	@Then("^Add record \"(.*?)\" to the stringRichText data service$")
+	public void add_data_to_thestringRichText(String string) throws InterruptedException {
+		  design.addRecordForRichText(string);
+	}
+	
 	@Then("Expect error {string} on save")
 	public void expect_error_on_save(String string) {
 	    
@@ -129,6 +151,13 @@ public class DesignTestCases extends BaseClass{
 	    design.updateRecord(id,jsonFile);
 	}
 	
+	
+	
+	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the boolean data service$")
+	public void update_record_with__boolean_data_service(String id, String jsonFile) throws InterruptedException, MalformedURLException {
+		 design.updateRecordForBooelan(id, jsonFile);
+	}
+
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the data service for Date Type$")
 	public void update_record_with_to_the_data_service_for_Date_Type(String id, String jsonFile) throws Exception {
 	    design.updateRecordForDate(id,jsonFile);
@@ -148,6 +177,11 @@ public class DesignTestCases extends BaseClass{
 		design.updateRecords(id,attribute);
 	}
 	
+	
+	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the User$")
+	public void update_record_with_User_data_service(String id, String jsonFile) throws Exception {
+	    design.updateRecordforUser(id, jsonFile);
+	}
 	
 	@Then("Update record \"(.*?)\" with \"(.*?)\" to the Location")
 	public void update_record_with_dsLocation_data_service(String id, String jsonFile) throws Exception {
@@ -189,7 +223,11 @@ public class DesignTestCases extends BaseClass{
 	public void match_it_to_for_File_type(String jsonFile) throws Exception {
 		design.matchToRecordForFileType(jsonFile);	
 }
-	
+	@Then("^Match it to \"(.*?)\" boolean$")
+	public void match_it_to__boolean(String string) throws MalformedURLException {
+		design.matchRecorforBoolen(string);
+	}
+
 		
 	@Then("Fetch record by searching {string} with {string} from the data service")
 	public void fetch_record_by_searching_with_from_the_data_service(String string, String string2) throws Exception {

@@ -25,7 +25,7 @@ public class LoginToAppCenter extends BaseClass{
 	private WaitTypes applyWait;
 	private ExtentTest test;
 	public LoginAppCenter loginAppCenter;
-	
+		
 	@Before
 	public void initilization() {
 		loginAppCenter = new LoginAppCenter(driver, test);
@@ -62,18 +62,31 @@ public class LoginToAppCenter extends BaseClass{
 		loginAppCenter.userEnterDataforCollection();
 	}
 
+
+    
+	@Then("Add data to the data service for boolean")
+	public void add_data_to_the_data_service_for_boolean() throws InterruptedException {
+		loginAppCenter.userEnterDataforBoolean();
+	    
+	}
+
 	@Then("Add data to the data service for Date")
 	public void add_data_to_the_data_service_for_Date() throws Exception {
 	    loginAppCenter.addDataForDate();
 	}
 	
-	
-	
+
 	@Then("Add data to the data service")
 	public void add_data_to_the_data_service() throws Exception {
 		
 		loginAppCenter.userEnterData();
 	}
+	
+	@Then("^Add data to the stringRichText data service$")
+	public void add_data_to_the_richTextdata_service() throws Exception {
+		loginAppCenter.userEnterDataForRichText();
+	}
+	
 	
 	@Then("Add data to the data service for Group")
 	public void add_data_to_the_data_service_for_Group() throws Exception {
@@ -85,7 +98,14 @@ public class LoginToAppCenter extends BaseClass{
 		loginAppCenter.userEnterDataInLocationField();
 	}
 
-
+	
+	@Then("^Add data to the data service for user$")
+	public void add_data_to_the_data_service_for_user() throws InterruptedException {
+	   loginAppCenter.userEnterDataInUserField();
+	}
+	  
+	
+	
 	
 	@Then("Add data to the data service for File Type")
 	public void add_data_to_the_data_service_for_file() throws Exception {

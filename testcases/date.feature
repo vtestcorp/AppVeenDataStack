@@ -12,8 +12,8 @@ Examples:
 |deepak@appveen.com|123123123|
 
 Scenario: Delete data service
-	Given Data service "date" exists
-	Then Remove the data service
+   	Given Data service "date" exists
+    Then Remove the data service
 
 Scenario: Create data service
 	Given Data service "date" does not exist
@@ -105,3 +105,4 @@ Examples:
 
 Scenario: Log out of App Center
 	Given User log out from AppCenter
+

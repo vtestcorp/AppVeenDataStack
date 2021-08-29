@@ -58,7 +58,7 @@ Scenario: Add data to data service
 	And Save button is disabled
 Examples:
 |data|
-|{"_id":"NUM1001","dsNumberCurrency1001":11, "dsNumberCurrency1002":15.8, "dsNumberCurrency1014":"","dsNumberCurrency1015":"","dsNumberCurrency1017":"","dsNumberCurrency1018":""}|
+|{"_id": "NUM1001","dsNumberCurrency1001": 11,"dsNumberCurrency1002": ,"dsNumberCurrency1003": 13.10,"dsNumberCurrency1004": 14,"dsNumberCurrency1005": 15.5,"dsNumberCurrency1007": 17, "dsNumberCurrency1008": 18, "dsNumberCurrency1010": 18,  "dsNumberCurrency1013": 13.3, "dsNumberCurrency1014": , "dsNumberCurrency1015": ,  "dsNumberCurrency1018": 20,  "dsNumberCurrency1020": 4.00, "dsNumberCurrency1021": 12 "dsNumberCurrency1022": 5, "dsNumberCurrency1023": 4.00, "dsNumberCurrency1024": 6}|
 
 
 Scenario Outline: Add record to data service
@@ -67,7 +67,7 @@ Scenario Outline: Add record to data service
 	And Expect error "ID NUM1001 already exists" on save
 	Examples:
 		|data|
-	  |{ "_id" : "NUM1001","dsNumberCurrency1001" : 1,"dsNumberCurrency1002" : 2,"dsNumberCurrency1003" : 3,"dsNumberCurrency1007" : 4,"dsNumberCurrency1008" : 5,"dsNumberCurrency1014" : 4,"dsNumberCurrency1015" : 5}|
+    |{"_id": "NUM1001","dsNumberCurrency1001": 1,"dsNumberCurrency1002": 2,"dsNumberCurrency1003": 3,"dsNumberCurrency1004": 4,"dsNumberCurrency1005": 5,"dsNumberCurrency1007": 7, "dsNumberCurrency1008": 8, "dsNumberCurrency1010": 10,  "dsNumberCurrency1013": 13.3, "dsNumberCurrency1014": 19.5, "dsNumberCurrency1015": 15,  "dsNumberCurrency1018": 2.5,  "dsNumberCurrency1020": 20.4, "dsNumberCurrency1021": 12.5 "dsNumberCurrency1022": 17, "dsNumberCurrency1023": 4.00, "dsNumberCurrency1024": 4}|
 
 
 Scenario Outline: Add record to data service
@@ -76,8 +76,8 @@ Scenario Outline: Add record to data service
 	And Expect error "Unique check validation failed for dsNumberCurrency1002" on save
 Examples:
 |data|
-|{ "_id" : "NUM1002","dsNumberCurrency1001" : 10,"dsNumberCurrency1002" : 3,"dsNumberCurrency1003" : 3,"dsNumberCurrency1007" : 7,"dsNumberCurrency1008" : 8,"dsNumberCurrency1014" : 14,"dsNumberCurrency1015" : 15}|
-	
+|{"_id": "NUM1002","dsNumberCurrency1001": 10,"dsNumberCurrency1002": 3,"dsNumberCurrency1003": 4,"dsNumberCurrency1004": 4,"dsNumberCurrency1005": 15.5,"dsNumberCurrency1007": 7, "dsNumberCurrency1008": 8, "dsNumberCurrency1010": 10,  "dsNumberCurrency1013": 13, "dsNumberCurrency1014": 14, "dsNumberCurrency1015": 15.00,  "dsNumberCurrency1018": 18,  "dsNumberCurrency1020": 4.00, "dsNumberCurrency1021": 12 "dsNumberCurrency1022": 22, "dsNumberCurrency1023": 0.5, "dsNumberCurrency1024": 5}|
+
 	
 	
 	Scenario Outline: Fetch record from the data service
