@@ -55,51 +55,58 @@ Scenario: Add data to data service
 #	And Save button is disabled
 #Examples:
 #|data|
-#|{"_id": "STR1002","dsStringRichText1001": "amazon","dsStringRichText1002": "","dsStringRichText1003": "flipkart","dsStringRichText1004": "mintra","dsStringText1005": "starbazar","dsStringRichText1007": "dmart", "dsStringRichText1008": "bigBazar", "dsStringRichText1010": "bigBasket",  "dsStringRichText1013": "online shooping", "dsStringRichText1014": "", "dsStringRichText1015": "",  "dsStringRichText1018": "",  "dsStringRichText1020": "ABCD", "dsStringRichText1021": "season", "dsStringRichText1022": "cathlon", "dsStringRichText1023": "shopper stop", "dsStringRichText1024": "snapdel"}|
+#|{"_id": "STR1001","dsStringRichText1001": "amazon","dsStringRichText1002": "","dsStringRichText1003": "flipkart","dsStringRichText1004": "mintra","dsStringText1005": "starbazar","dsStringRichText1007": "dmart", "dsStringRichText1008": "bigBazar", "dsStringRichText1010": "bigBasket", "dsStringRichText1011": "Mango", "dsStringRichText1013": "online shooping", "dsStringRichText1014": " ", "dsStringRichText1015": " ",  "dsStringRichText1018": "Hello"}|
+#
+#
+#Scenario Outline: Add record to data service
+#	Given Data service "string_RichText"
+#	Then Add record "<data>" to the stringRichText data service	
+#	And Expect error "ID STR1001 already exists" on save
+#	Examples:
+#		|data|
+#	|{"_id": "STR1001","dsStringRichText1001": "Mango","dsStringRichText1002": "apple","dsStringRichText1003": "Banana","dsStringRichText1004": "Grapes","dsStringRichText1005": "Pineapple","dsStringRichText1007": "Guava", "dsStringRichText1008": "Apricot", "dsStringRichText1010": "Black Current","dsStringRichText1011": "Mango", "dsStringRichText1013": "Black Berry", "dsStringRichText1014": "Blue Berry", "dsStringRichText1015": "Custard Apple",  "dsStringRichText1018": "Coconut"}|
+#	
+#
+#Scenario Outline: Add record to data service
+#	Given Data service "string_RichText"
+#	Then Add record "<data>" to the stringRichText data service		
+#	And Expect error "Unique check validation failed for dsStringText1002" on save
+#Examples:
+#|data|
+#|{"_id": "STR1002","dsStringRichText1001": "Mango","dsStringRichText1002": "Hello","dsStringRichText1003": "Banana","dsStringRichText1004": "Grapes","dsStringRichText1005": "Pineapple","dsStringRichText1007": "Guava", "dsStringRichText1008": "Apricot", "dsStringRichText1010": "Black Current",  "dsStringRichText1013": "Black Berry", "dsStringRichText1014": "Blue Berry", "dsStringRichText1015": "Custard Apple",  "dsStringRichText1018": "Coconut"}|
 
-
-Scenario Outline: Add record to data service
-	Given Data service "string_RichText"
-	Then Add record "<data>" to the stringRichText data service	
-	And Expect error "ID STR1001 already exists" on save
-	Examples:
-		|data|
-	|{"_id": "STR1001","dsStringRichText1001": "Mango","dsStringRichText1002": "apple","dsStringRichText1003": "Banana","dsStringRichText1004": "Grapes","dsStringRichText1005": "Pineapple","dsStringRichText1007": "Guava", "dsStringRichText1008": "Apricot", "dsStringRichText1010": "Black Current",  "dsStringRichText1013": "Black Berry", "dsStringRichText1014": "Blue Berry", "dsStringRichText1015": "Custard Apple",  "dsStringRichText1018": "Coconut",  "dsStringRichText1020": "DATE", "dsStringRichText1021": "F", "dsStringRichText1022": "Gooseberry", "dsStringRichText1023": "Jackfruit", "dsStringRichText1024": "Lamon"}|
-	
 	
 #	Scenario Outline: Fetch record from the data service
-#	Given Data service "Design-String"
+#	Given Data service "string_RichText"
 #	Then Fetch record "<id>" from the data service
 #	And Match it to "<data>"
 #Examples:
 #|id|data|
-#|DES1001|{"_id": "DES1001","dsStringRichText1001": "1001","dsStringRichText1002": "a","dsStringRichText1003": "1003","dsStringRichText1004": "1004","dsStringRichText1005": "1005","dsStringRichText1006": null,"dsStringRichText1007": "1007", "dsStringRichText1008": "1008", "dsStringRichText1010": "1010", "dsStringRichText1011": null, "dsStringRichText1013": "1013", "dsStringRichText1014": "1014", "dsStringRichText1015": "1015"}|
-#|DES1001|{"_id": "DES1001","dsStringRichText1001": "1001","dsStringRichText1002": "a","dsStringRichText1003": "1003","dsStringRichText1004": "1004","dsStringRichText1005": "1005","dsStringRichText1007": "1007", "dsStringRichText1008": "1008", "dsStringRichText1010": "1010",  "dsStringRichText1013": "1013", "dsStringRichText1014": "1014", "dsStringRichText1015": "1015"}|
+#|STR1001|{"_id": "STR1001","dsStringRichText1001": "Hello","dsStringRichText1002": "Hello","dsStringRichText1003": "Hello","dsStringRichText1004": "Hello","dsStringRichText1005": "Hello","dsStringRichText1007": "Hello", "dsStringRichText1008": "Hello", "dsStringRichText1010": "Hello",  "dsStringRichText1013": "Hello", "dsStringRichText1014": "Hello", "dsStringRichText1015": "Hello", "dsStringRichText1018" : "Hello"}|
 #	
-#	
-#	Scenario Outline: Update record to data service
-#	Given Data service "Design-String"
-#	Then Update record "<id>" with "<data>" to the data service
-#Examples:
-#
-#|id|data|
-#|DES1001|{"dsStringRichText1001": "1111","dsStringRichText1002": "b","dsStringRichText1003": "1333","dsStringRichText1004": "1444","dsStringRichText1005": "1555","dsStringRichText1007": "1777", "dsStringRichText1008": "1888", "dsStringRichText1010": "101010",  "dsStringRichText1013": "101313", "dsStringRichText1014": "101414", "dsStringRichText1015": "101515"}|
-#
+	
+	Scenario Outline: Update record to data service
+	Given Data service "string_RichText"
+	Then Update record "<id>" with "<data>" to the stringRichText data service
+Examples:
+
+|id|data|
+|STR1001|{"_id": "STR1001","dsStringRichText1001": "Flipkart","dsStringRichText1002": "Amazon","dsStringRichText1003": "Shopify","dsStringRichText1004": "Mintra","dsStringRichText1005": "dmart","dsStringRichText1007": "bigBazar", "dsStringRichText1008": "Swiggy", "dsStringRichText1010": "BigBascket",  "dsStringRichText1013": "Walmart", "dsStringRichText1014": "Pantaloon", "dsStringRichText1015": "Star Bazar",  "dsStringRichText1018" : "Cathlon"}|
+
 #Scenario Outline: Fetch record from the data service
-#	Given Data service "Design-String"
+#	Given Data service "string_RichText"
 #	Then Fetch record "<id>" from the data service
 #	And Match it to "<data>"
 #Examples:
 #|id|data|
-#|DES1001|{"_id": "DES1001","dsStringRichText1001": "1111","dsStringRichText1002": "a","dsStringRichText1003": "1333","dsStringRichText1004": "1004","dsStringRichText1005": "1555","dsStringRichText1007": "1777", "dsStringRichText1008": "1888", "dsStringRichText1010": "101010",  "dsStringRichText1013": "101313", "dsStringRichText1014": "101414", "dsStringRichText1015": "101515"}|
+#|STR1001|{"_id": "STR1001","dsStringRichText1001": "Hello","dsStringRichText1002": "Hello","dsStringRichText1003": "Hello","dsStringRichText1004": "Hello","dsStringRichText1005": "Hello","dsStringRichText1007": "Hello", "dsStringRichText1008": "Hello", "dsStringRichText1010": "Hello",  "dsStringRichText1013": "Hello", "dsStringRichText1014": "Hello", "dsStringRichText1015": "Hello",  "dsStringRichText1018" : "Hello"}|
+#
 #	
 #Scenario Outline: Delete record from the data service
-#	Given Data service "Design-String"
+#	Given Data service "string_RichText"
 #	Then Delete record "<id>" from the data service
 #	And deleting from listing page
 #Examples:
 #|id|
 #|STR1001|
-#
-#
-#
+

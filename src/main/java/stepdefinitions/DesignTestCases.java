@@ -151,7 +151,10 @@ public class DesignTestCases extends BaseClass{
 	    design.updateRecord(id,jsonFile);
 	}
 	
-	
+	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the stringRichText data service$")
+	public void update_record_with_to_the_data_RichTextservice(String id, String jsonFile) throws Exception {
+	    design.updateRecordForRichText(id,jsonFile);
+	}
 	
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the boolean data service$")
 	public void update_record_with__boolean_data_service(String id, String jsonFile) throws InterruptedException, MalformedURLException {

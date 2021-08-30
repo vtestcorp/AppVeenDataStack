@@ -619,9 +619,12 @@ public class Module_DesignTestCases extends BaseClass{
 			   						  WebElement child =driver.findElement(By.xpath("//body"));
 			   						 id1 = child.getAttribute("data-id");
 			   						 try {
+			   							    textBox.sendKeys(Keys.CONTROL);
+			   						        textBox.sendKeys(Keys.DELETE);
+			   						         Thread.sleep(5000);
 			   						        String value = (String) jsonObject.get(id1);
-			   						        applyWait.waitForElementToBeClickable(child, 30).sendKeys(value);
-			   					        
+			   						        Thread.sleep(5000);
+			   						     applyWait.waitForElementToBeClickable(child, 30).sendKeys(value);
 			   						 }catch(Exception e) 
 			   						 {
 			   							 driver.switchTo().defaultContent();
@@ -808,7 +811,24 @@ public class Module_DesignTestCases extends BaseClass{
 		
 	}
 	
+   public void updateRecordForRichText(String id, String jsonFile) throws InterruptedException, MalformedURLException {
+	   Thread.sleep(2000);
+		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
+			acp.yes.click();
+	    }
+		applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
+		Thread.sleep(1000);
+		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);
+		
+		WebElement record=driver.findElement(By.xpath("//a[normalize-space()='"+id+"']"));
+		record.click();
+		Thread.sleep(1000);
+		
+		applyWait.waitForElementToBeClickable(acp.edit, 30).click();
+		Thread.sleep(1000);
+		addRecordForRichText(jsonFile);
 
+   }
 
 
 	public void updateRecords(String id, String attribute) throws InterruptedException {
