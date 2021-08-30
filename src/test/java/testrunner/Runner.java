@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 
 //@CucumberOptions(features="C:\\Users\\Lenovo\\Downloads\\sentient\\test",
-@CucumberOptions(features="./testcases/string_LongText.feature",
+@CucumberOptions(features="./testcases/string_Text.feature",
 			//	dryRun=true,
            //	tags="@AppCenter",
 	        	glue="stepdefinitions",
@@ -22,7 +22,7 @@ import io.cucumber.junit.CucumberOptions;
 public class Runner {
 	
 
-	  private static String[] defaultOptions = {
+	  public static String[] defaultOptions = {
 	            "--glue", "stepdefinitions",
 	            
 	            "--strict",

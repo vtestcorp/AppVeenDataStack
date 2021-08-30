@@ -132,7 +132,7 @@ public class DesignTestCases extends BaseClass{
 	}
     
 	@Then("^Add record \"(.*?)\" to the stringRichText data service$")
-	public void add_data_to_thestringRichText(String string) throws InterruptedException {
+	public void add_data_to_thestringRichText(String string) throws InterruptedException, MalformedURLException {
 		  design.addRecordForRichText(string);
 	}
 	

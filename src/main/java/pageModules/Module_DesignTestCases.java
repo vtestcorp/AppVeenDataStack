@@ -589,7 +589,7 @@ public class Module_DesignTestCases extends BaseClass{
 	
 	
 	
-				public void addRecordForRichText(String string) throws InterruptedException {
+				public void addRecordForRichText(String string) throws InterruptedException, MalformedURLException {
 					Thread.sleep(2000);
 					if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
 						acp.yes.click();
@@ -598,21 +598,24 @@ public class Module_DesignTestCases extends BaseClass{
 					if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
 						applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 				    }
+					System.out.println(acp.richtextBoxes.size() + "=========");
+					Thread.sleep(5000);
 					List<WebElement> textBoxes = acp.richtextBoxes;
+					System.out.println(acp.richtextBoxes.size() + "=========");
 					JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
 					for (int j = 1; j <= textBoxes.size(); j++) {
+						String val =null;
 						WebElement textBox = driver.findElement(By.xpath("(//*[starts-with(@class,'tox-edit-area__iframe') or   @id='_id'])["+j+"]"));
 						if (textBox.isEnabled()) {
-							String val =null;
 							String id1 = textBox.getAttribute("id");
-							val = (String) jsonObject.get(id1);
-							if(id1.equals("id"))
+							//val = (String) jsonObject.get(id1);
+						if(id1.equals("_id"))
 							{
 								val = (String) jsonObject.get(id1);
+								applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(val);
 							}
-							 else {
-
-			   						 driver.switchTo().frame(textBox);
+						 else {
+    		   						 driver.switchTo().frame(textBox);
 			   						  WebElement child =driver.findElement(By.xpath("//body"));
 			   						 id1 = child.getAttribute("data-id");
 			   						 try {

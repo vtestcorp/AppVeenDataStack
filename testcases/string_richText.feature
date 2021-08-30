@@ -56,17 +56,17 @@ Scenario: Add data to data service
 #Examples:
 #|data|
 #|{"_id": "STR1002","dsStringRichText1001": "amazon","dsStringRichText1002": "","dsStringRichText1003": "flipkart","dsStringRichText1004": "mintra","dsStringText1005": "starbazar","dsStringRichText1007": "dmart", "dsStringRichText1008": "bigBazar", "dsStringRichText1010": "bigBasket",  "dsStringRichText1013": "online shooping", "dsStringRichText1014": "", "dsStringRichText1015": "",  "dsStringRichText1018": "",  "dsStringRichText1020": "ABCD", "dsStringRichText1021": "season", "dsStringRichText1022": "cathlon", "dsStringRichText1023": "shopper stop", "dsStringRichText1024": "snapdel"}|
-#
 
-#Scenario Outline: Add record to data service
-#	Given Data service "string_RichText"
-#	Then Add record "<data>" to the stringRichText data service	
-#	And Expect error "ID STR1001 already exists" on save
-#	Examples:
-#		|data|
-#	|{"_id": "STR1001","dsStringRichText1001": "Mango","dsStringRichText1002": "apple","dsStringRichText1003": "Banana","dsStringRichText1004": "Grapes","dsStringRichText1005": "Pineapple","dsStringRichText1007": "Guava", "dsStringRichText1008": "Apricot", "dsStringRichText1010": "Black Current",  "dsStringRichText1013": "Black Berry", "dsStringRichText1014": "Blue Berry", "dsStringRichText1015": "Custard Apple",  "dsStringRichText1018": "Coconut",  "dsStringRichText1020": "DATE", "dsStringRichText1021": "F", "dsStringRichText1022": "Gooseberry", "dsStringRichText1023": "Jackfruit", "dsStringRichText1024": "Lamon"}|
+
+Scenario Outline: Add record to data service
+	Given Data service "string_RichText"
+	Then Add record "<data>" to the stringRichText data service	
+	And Expect error "ID STR1001 already exists" on save
+	Examples:
+		|data|
+	|{"_id": "STR1001","dsStringRichText1001": "Mango","dsStringRichText1002": "apple","dsStringRichText1003": "Banana","dsStringRichText1004": "Grapes","dsStringRichText1005": "Pineapple","dsStringRichText1007": "Guava", "dsStringRichText1008": "Apricot", "dsStringRichText1010": "Black Current",  "dsStringRichText1013": "Black Berry", "dsStringRichText1014": "Blue Berry", "dsStringRichText1015": "Custard Apple",  "dsStringRichText1018": "Coconut",  "dsStringRichText1020": "DATE", "dsStringRichText1021": "F", "dsStringRichText1022": "Gooseberry", "dsStringRichText1023": "Jackfruit", "dsStringRichText1024": "Lamon"}|
 	
-#	
+	
 #	Scenario Outline: Fetch record from the data service
 #	Given Data service "Design-String"
 #	Then Fetch record "<id>" from the data service
