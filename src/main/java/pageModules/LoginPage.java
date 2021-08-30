@@ -956,6 +956,7 @@ public class LoginPage extends BaseClass{
 
 								if(jsonProperties.containsKey("relatedTo")) {
 									applyWait.waitForElementToBeClickable(ap.relatesTo, 30).sendKeys(jsonProperties.get("relatedTo").toString());
+									Thread.sleep(200);
 									applyWait.waitForElementToBeClickable(ap.relatesTo, 30).sendKeys(Keys.ENTER);
 								}
 								

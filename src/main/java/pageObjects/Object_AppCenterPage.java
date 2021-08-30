@@ -222,6 +222,9 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="(//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()]")
 	public List<WebElement> attributesOnViewPageForGroups;
 	
+	@FindBy(xpath="//odp-view-control/div/div/label[starts-with(@class,'label-width')]")
+	public List<WebElement> attributesOnViewPageForLocation;
+	
 	@FindBy(xpath = "//button[@class='btn btn-link px-3 ng-star-inserted']/parent::div")
 	public WebElement deleteButton;
 	

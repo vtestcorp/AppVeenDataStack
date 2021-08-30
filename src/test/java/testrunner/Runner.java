@@ -1,12 +1,20 @@
 package testrunner;
 
+import java.io.File;
 import java.util.stream.Stream;
+
+import org.junit.AfterClass;
 import org.junit.runner.RunWith;
+
+import com.cucumber.listener.Reporter;
+
+//import com.vimalselvam.cucumber.listener.Reporter;
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features=".\\testcases\\location.feature",
+@CucumberOptions(features="./testcases/relation.feature",
 				glue="stepdefinitions",
 				monochrome=true,
 				strict = true,
@@ -33,5 +41,6 @@ public class Runner {
 //	        cucumber.api.cli.Main.main(cucumberOptions.toArray(String[]::new));
 	        io.cucumber.core.cli.Main.main(cucumberOptions.toArray(String[]::new));
 	    }
+		
 }
  

@@ -389,11 +389,13 @@ public class LoginAppCenter extends BaseClass {
 					   	 }
 					else if (button.getAttribute("type").equals("checkbox")) {
 						      WebElement parent = button.findElement(By.xpath("./.."));
-						      if(jsonObject.get(id1).equals(true))
+						      if(jsonObject.get(id1).equals(true) && button.getAttribute("class").contains("ng-pristine"))
 						      {
-						    	    
 						         applyWait.waitForElementToBeClickable(parent, 30).click();
 		              		}
+						      else if(jsonObject.get(id1).equals(false) && button.getAttribute("class").contains("ng-dirty")){
+						    	  applyWait.waitForElementToBeClickable(parent, 30).click();
+						      }
 					      }
 					   	}
 			     	applyWait.waitForElementToBeClickable(acp.save, 30).click();

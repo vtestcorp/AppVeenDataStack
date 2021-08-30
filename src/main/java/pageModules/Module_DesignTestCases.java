@@ -537,8 +537,10 @@ public class Module_DesignTestCases extends BaseClass{
 						  {
 							 applyWait.waitForElementToBeClickable(textBox,30).clear();
 						     applyWait.waitForElementToBeClickable(textBox, 30).sendKeys((jsonObject.get(id1)).toString());
-						     applyWait.waitForElementToBeClickable(textBox,30).clear();
+//						     applyWait.waitForElementToBeClickable(textBox,30).clear();
+						     Thread.sleep(200);
 						     textBox.sendKeys(Keys.DOWN);
+						     Thread.sleep(200);
 						     textBox.sendKeys(Keys.ENTER);
 						     
 						  }
@@ -1089,6 +1091,8 @@ public class Module_DesignTestCases extends BaseClass{
 	
 	if(actualData.equals(expectedData)) {
 		System.out.println("Data is matching");
+		  System.out.println(actualData);
+		    System.out.println(expectedData);
 	}
 	else {
 		
@@ -1347,6 +1351,80 @@ public void updateRecordForDate(String id, String jsonFile) throws Exception {
 	record.click();
 	applyWait.waitForElementToBeClickable(acp.edit, 30).click();
 	addRecordForDate(jsonFile);
+	
+}
+
+
+
+public void matchLocationData(String jsonFile) throws Exception {
+	
+
+	
+	//odp-view-control/div/div/label[starts-with(@class,'label-width')]
+	
+	//label[@for='dsLocation1003']/parent::div/following-sibling::odp-view-separator/descendant::div[5]
+	
+	LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
+	applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
+	WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
+	record.click();
+//	int q=1;
+	
+	applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPageForLocation, 10);
+	System.out.println(acp.attributesOnViewPageForLocation.size());
+//	for(WebElement attribute : acp.attributesOnViewPageForLocation) {
+	for(int q=1;q<=acp.attributesOnViewPageForLocation.size();q++) {
+		WebElement value = null;
+		WebElement key = null;
+		
+		if(q==1) {
+			 value=driver.findElement(By.xpath("(//odp-view-control/div/div/label[starts-with(@class,'label-width')])["+q+"]/parent::div/following-sibling::odp-view-separator/descendant::div/span"));
+			key=driver.findElement(By.xpath("(//odp-view-control/div/div/label[starts-with(@class,'label-width')])["+q+"]"));
+			
+		}
+		else {
+//			WebElement ele=driver.findElement(By.xpath("(//odp-view-control/div/div/label[starts-with(@class,'label-width')])["+q+"]/parent::div/following-sibling::odp-view-separator//span"));
+//			if(!ele.getText().equals("N.A.")) {
+			 try {
+				value=driver.findElement(By.xpath("(//odp-view-control/div/div/label[starts-with(@class,'label-width')])["+q+"]/parent::div/following-sibling::odp-view-separator/descendant::div[5]"));
+				 key=driver.findElement(By.xpath("(//odp-view-control/div/div/label[starts-with(@class,'label-width')])["+q+"]"));
+			} catch (Exception e) {
+				continue;
+			}
+//		}
+		}
+	
+		
+			String a = key.getAttribute("for");
+			String w = value.getText();
+		
+		if(!w.equals("N.A.")) {
+			actualData.put(a, w);
+	}
+//		q++;
+	}
+	
+LinkedHashMap<String, String> expectedData =(LinkedHashMap<String, String>) JsonUtils.getMapFromJSON(jsonFile);
+
+
+if(actualData.equals(expectedData)) {
+	System.out.println("Data is matching");
+	  System.out.println(actualData);
+	    System.out.println(expectedData);
+}
+else {
+	
+	System.err.println("Data is not matching.Unmatched data are as follows :");
+  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
+    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
+    System.err.println(entriesDiffering);
+    System.out.println(actualData);
+    System.out.println(expectedData);
+    Assert.assertTrue(actualData.equals(expectedData));
+}
+	//
+
+
 	
 }
 

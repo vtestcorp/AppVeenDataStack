@@ -219,6 +219,13 @@ public class DesignTestCases extends BaseClass{
 		design.matchGroupData(jsonFile);
 }
 	
+	@Then("^Match this Location data to \"(.*?)\"$")
+	public void match_this_Location_to(String jsonFile) throws Exception {
+//		design.matchToRecord(jsonFile);	
+		design.matchLocationData(jsonFile);
+}
+	
+	
 	@Then("^Match it to \"(.*?)\" for File type$")
 	public void match_it_to_for_File_type(String jsonFile) throws Exception {
 		design.matchToRecordForFileType(jsonFile);	
