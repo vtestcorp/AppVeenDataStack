@@ -1,5 +1,7 @@
 package config;
 
+
+
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -37,6 +39,11 @@ public class DefineProperties {
 		return caps;
 	}
 
+//	public String getReportConfigPath(){
+//		String reportConfigPath = properties.getProperty("reportConfigPath");
+//		if(reportConfigPath!= null) return reportConfigPath;
+//		else throw new RuntimeException("Report Config Path not specified in the Configuration.properties file for the Key:reportConfigPath");		
+//	}
 	public static final String chromeDriver = "webdriver.chrome.driver";
 	public static final String setChromeDriverPath = "src/test/exeFiles/chromedriver.exe";
 

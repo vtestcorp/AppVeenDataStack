@@ -122,6 +122,8 @@ public class BaseClass {
 		return driver;
 	}
 
+	
+	
 	public static void applyExplicitWaitsUntilElementVisible(WebElement element,int time) throws MalformedURLException {
 		
 		WebDriverWait wait = new WebDriverWait(driver, time);
