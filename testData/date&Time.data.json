@@ -1,0 +1,90 @@
+{
+  "_metadata" : {
+    "deleted" : false,
+    "lastUpdated" : "2021-08-25T12:35:44.660Z",
+    "version" : {
+      "release" : "dev",
+      "document" : 2
+    },
+    "createdAt" : "2021-08-25T12:32:59.958Z"
+  },
+  "dsDateTime1002" : {
+    "rawData" : "2022-02-02T02:02:02Z",
+    "tzData" : "2022-02-02T02:02:02Z",
+    "tzInfo" : "Etc/Zulu",
+    "utc" : "2022-02-02T02:02:02.000Z",
+    "unix" : 1643767322000
+  },
+  "dsDateTime1013" : {
+    "rawData" : "2021-01-30T23:31:44.650Z",
+    "tzData" : "2021-01-30T23:31:44Z",
+    "tzInfo" : "Etc/Zulu",
+    "utc" : "2021-01-30T23:31:44.650Z",
+    "unix" : 1612049504650
+  },
+  "_id" : "DAT1001",
+  "dsDateTime1001" : {
+    "rawData" : "2021-08-02T10:20:30Z",
+    "tzData" : "2021-08-02T10:20:30Z",
+    "tzInfo" : "Zulu",
+    "utc" : "2021-08-02T10:20:30.000Z",
+    "unix" : 1627899630000
+  },
+  "dsDateTime1003" : {
+    "rawData" : "2023-03-03T03:03:33Z",
+    "tzData" : "2023-03-03T03:03:33Z",
+    "tzInfo" : "Etc/Zulu",
+    "utc" : "2023-03-03T03:03:33.000Z",
+    "unix" : 1677812613000
+  },
+  "dsDateTime1006" : {
+    "rawData" : "2026-06-06T06:06:06Z",
+    "tzData" : "2026-06-06T06:06:06Z",
+    "tzInfo" : "Etc/Zulu",
+    "utc" : "2026-06-06T06:06:06.000Z",
+    "unix" : 1780725966000
+  },
+  "dsDateTime1011" : {
+    "rawData" : "2031-11-11T11:11:11Z",
+    "tzData" : "2031-11-11T11:11:11Z",
+    "tzInfo" : "Etc/Zulu",
+    "utc" : "2031-11-11T11:11:11.000Z",
+    "unix" : 1952161871000
+  },
+  "dsDateTime1012" : {
+    "rawData" : "2032-12-12T18:01:53Z",
+    "tzData" : "2032-12-12T18:01:53Z",
+    "tzInfo" : "Etc/Zulu",
+    "utc" : "2032-12-12T18:01:53.000Z",
+    "unix" : 1986487313000
+  },
+  "__v" : 0,
+  "dsDateTime1010" : {
+    "rawData" : "2011-11-23T12:11:22Z",
+    "tzData" : "2011-11-23T12:11:22Z",
+    "tzInfo" : "Etc/Zulu",
+    "utc" : "2011-11-23T12:11:22.000Z",
+    "unix" : 1322050282000
+  },
+  "dsDateTime1015" : {
+    "rawData" : "2054-12-20T19:56:36Z",
+    "tzData" : "2054-12-20T19:56:36Z",
+    "tzInfo" : "Etc/Zulu",
+    "utc" : "2054-12-20T19:56:36.000Z",
+    "unix" : 2681409396000
+  },
+  "dsDateTime1016" : {
+    "rawData" : "2021-08-28T18:05:15Z",
+    "tzData" : "2021-08-28T18:05:15Z",
+    "tzInfo" : "Etc/Zulu",
+    "utc" : "2021-08-28T18:05:15.000Z",
+    "unix" : 1630173915000
+  },
+  "dsDateTime1017" : {
+    "rawData" : "2021-08-07T18:05:20Z",
+    "tzData" : "2021-08-07T18:05:20Z",
+    "tzInfo" : "Etc/Zulu",
+    "utc" : "2021-08-07T18:05:20.000Z",
+    "unix" : 1628359520000
+  }
+}

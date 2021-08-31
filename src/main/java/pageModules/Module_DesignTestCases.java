@@ -4,6 +4,7 @@ import java.awt.Desktop.Action;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -72,7 +73,7 @@ public class Module_DesignTestCases extends BaseClass{
 		acp=new Object_AppCenterPage();
 		ap=new Object_AuthorPage();
 		gp=new Object_GroupPage();
-		lp=new LoginPage(driver, test);
+		lp=new LoginPage(driver);
 		javascriptClick=new JavascriptClick(driver);
 	}
 
@@ -95,12 +96,17 @@ public class Module_DesignTestCases extends BaseClass{
 
 	public void groupexist(String groupName) throws Exception {
 
-		Thread.sleep(3000);
-		applyWait.waitForElementToBeClickable(ap.groups, 30).click();
-		applyExplicitWaitsUntilElementVisible(gp.group1,10);
-		List<WebElement> groupNames=gp.groups;
+//		
+		try {
+			applyWait.waitForElementToBeClickable(ap.groups, 30).click();
+		} catch (Exception e1) {
+			Thread.sleep(3000);
+			handleElementClickException(ap.groups);
+		}
+//		applyExplicitWaitsUntilElementVisible(gp.group1,10);
+		applyExplicitWaitsUntilElementVisible(gp.groups, 10);
 		groups=new ArrayList<String>();
-		for(WebElement group : groupNames) {
+		for(WebElement group : gp.groups) {
 			String group1=group.getText();
 			groups.add(group1);
 	}
@@ -109,7 +115,11 @@ public class Module_DesignTestCases extends BaseClass{
 			WebElement group=driver.findElement(By.xpath("//div[normalize-space()='"+groupName+"']/parent::div"));
 			group.click();
 			Thread.sleep(500);
-			applyWait.waitForElementToBeClickable(gp.deleteGroup, 30).click();
+			try {
+				applyWait.waitForElementToBeClickable(gp.deleteGroup, 30).click();
+			} catch (Exception e) {
+				handleElementClickException(gp.deleteGroup);
+			}
 			Thread.sleep(500);
 			applyWait.waitForElementToBeClickable(gp.delete, 30).click();
 
@@ -135,6 +145,7 @@ public class Module_DesignTestCases extends BaseClass{
 	public void assignPermission(String dataServiceName,String user1) throws Exception {
 		String role="Manage";
 		String userEmail=user1;
+		Thread.sleep(1000);
 		if(lp.isType)
 		{
 			applyWait.waitForElementToBeClickable(gp.authorRole, 30).click();
@@ -143,7 +154,8 @@ public class Module_DesignTestCases extends BaseClass{
 			applyWait.waitForElementToBeClickable(gp.view, 30).click();
 		}
 		Thread.sleep(2000);
-		applyWait.waitForElementToBeClickable(gp.appCenterRoles, 30).click();
+		applyExplicitWaitsUntilElementVisible(gp.appCenterRoles, 10);
+		javascriptClick.click(gp.appCenterRoles);
 		Thread.sleep(1000);
 		applyExplicitWaitsUntilElementVisible(gp.dsArrow, 10);
 		WebElement dsArrow=driver.findElement(By.xpath("//span[normalize-space()='"+dataServiceName+"']/parent::div/following-sibling::span[2]/child::span"));
@@ -164,7 +176,7 @@ public class Module_DesignTestCases extends BaseClass{
 			WebElement toggler=driver.findElement(By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[2]/child::label/child::span[2]"));
 			applyWait.waitForElementToBeClickable(toggler, 30).click();
 			}
-		
+//		lp.VerifyUserExists(user1);
 		applyWait.waitForElementToBeClickable(gp.members, 30).click();
 		applyWait.waitForElementToBeClickable(gp.addUsers, 30).click();
 		applyExplicitWaitsUntilElementVisible(gp.userEmail, 10);
@@ -195,9 +207,11 @@ public class Module_DesignTestCases extends BaseClass{
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		System.out.println(acp.textBoxes.size());
-		//applyExplicitWaitsUntilElementVisible(acp.textBoxes, 20);
+//		applyExplicitWaitsUntilElementVisible(acp.textBoxes, 10);
+		applyExplicitWaitsUntilElementVisible(acp.idTextBox1, 10);
+
 		List<WebElement> textBoxes = acp.textBoxes;
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
@@ -502,17 +516,19 @@ public class Module_DesignTestCases extends BaseClass{
 	}
 	
 	public void addRecordForLocation(String string) throws InterruptedException {
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
 			acp.yes.click();
 	    }
+		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
+		applyExplicitWaitsUntilElementVisible(acp.textBoxesLocation, 20);
 		List<WebElement> textBoxes = acp.textBoxesLocation;
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
-	   	for (int j = 2; j <= textBoxes.size(); j++) {
-			WebElement textBox = driver.findElement(By.xpath("(//input[@class='form-control form-control-sm rounded ng-pristine ng-valid ng-star-inserted ng-touched' or 'searchInput pac-target-input'])["+j+"]"));
+	   	for (int j = 1; j <= textBoxes.size(); j++) {
+			WebElement textBox = driver.findElement(By.xpath("(//input[@class='searchInput pac-target-input' or @id='_id'])["+j+"]"));
 				if (textBox.isEnabled()) {
 					String id1 = textBox.getAttribute("id");
 						{		
@@ -521,8 +537,10 @@ public class Module_DesignTestCases extends BaseClass{
 						  {
 							 applyWait.waitForElementToBeClickable(textBox,30).clear();
 						     applyWait.waitForElementToBeClickable(textBox, 30).sendKeys((jsonObject.get(id1)).toString());
-						     applyWait.waitForElementToBeClickable(textBox,30).clear();
+//						     applyWait.waitForElementToBeClickable(textBox,30).clear();
+						     Thread.sleep(200);
 						     textBox.sendKeys(Keys.DOWN);
+						     Thread.sleep(200);
 						     textBox.sendKeys(Keys.ENTER);
 						     
 						  }
@@ -775,6 +793,7 @@ public class Module_DesignTestCases extends BaseClass{
 		
 		WebElement record=driver.findElement(By.xpath("//a[normalize-space()='"+id+"']"));
 		record.click();
+		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.edit, 30).click();
 		addRecord(jsonFile);
 		
@@ -868,7 +887,12 @@ public class Module_DesignTestCases extends BaseClass{
 		this.id=id;
 		
 		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
-			acp.yes.click();
+			try {
+				acp.yes.click();
+			} catch (Exception e) {
+				Thread.sleep(500);
+				acp.yes.click();
+			}
 	    }
 		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
@@ -1063,27 +1087,35 @@ public class Module_DesignTestCases extends BaseClass{
 
 	public void matchGroupData(String jsonFile) throws Exception {
 		
+		////odp-view-control/div/div/label[starts-with(@class,'label-width')]
+		
+		//label[@for='dsLocation1003']/parent::div/following-sibling::odp-view-separator/descendant::div[5]
+		
 		LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
 		applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
 		WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
 		record.click();
 		int q=1;
+		applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPageForGroups, 10);
 		for(WebElement attribute : acp.attributesOnViewPageForGroups) {
-			WebElement t=driver.findElement(By.xpath("(//label[starts-with(@class,'label-width d-flex')])["+q+"]/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()]"));
-			String a=attribute.getAttribute("for");
-			String w=t.getText();
+			WebElement value=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])["+q+"]"));
+			WebElement key=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])["+q+"]/ancestor::odp-view-separator/preceding-sibling::div//label"));
+			String a=key.getAttribute("for");
+			String w=value.getText();
 			if(!w.equals("N.A.")) {
 				actualData.put(a, w);
 		}
-			q+=2;;
+//			q+=2;;
+			q++;
 		}
 		
 	LinkedHashMap<String, String> expectedData =(LinkedHashMap<String, String>) JsonUtils.getMapFromJSON(jsonFile);
-	 
 
 	
 	if(actualData.equals(expectedData)) {
 		System.out.println("Data is matching");
+		  System.out.println(actualData);
+		    System.out.println(expectedData);
 	}
 	else {
 		
@@ -1091,9 +1123,12 @@ public class Module_DesignTestCases extends BaseClass{
 	  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
 	    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
 	    System.err.println(entriesDiffering);
+	    System.out.println(actualData);
+	    System.out.println(expectedData);
 	    Assert.assertTrue(actualData.equals(expectedData));
 	}
-		
+		//
+
 	}
 
 
@@ -1109,6 +1144,7 @@ public class Module_DesignTestCases extends BaseClass{
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
+		
 		List<WebElement> textBoxes = driver.findElements(By.xpath("//input[@class='invisible position-absolute' or @id='_id']"));
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
 		for(int  i=1;i<=textBoxes.size();i++) {
@@ -1206,7 +1242,7 @@ public void addRecordForDate(String jsonFile) throws Exception {
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
 		Thread.sleep(2000);
-		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
+		applyExplicitWaitsUntilElementVisible(acp.textBox1,30);
 		List<WebElement> textBoxes = acp.dateFields;
 		String path = System.getProperty("user.dir");
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
@@ -1220,6 +1256,7 @@ public void addRecordForDate(String jsonFile) throws Exception {
 				try {
 				id1 = textBox.getAttribute("id");
 				dateValue=jsonObject.get(id1).toString();
+				System.out.println(id1+"-----"+dateValue);
 				}
 				catch(NullPointerException e) {
 					continue;
@@ -1230,6 +1267,15 @@ public void addRecordForDate(String jsonFile) throws Exception {
 				}
 				else {
 					
+					if(dateValue.equals("")) {
+						WebElement selectDate=driver.findElement(By.id(id1));
+						selectDate.click();
+						applyExplicitWaitsUntilElementVisible(acp.cancelButton, 20);
+						acp.cancelButton.click();
+						
+					}
+					else {
+					
 					String fullDate[]=dateValue.split("T")[0].split("-");
 					String fullTime[]=dateValue.split("T")[1].split(":");
 					String date=fullDate[2];
@@ -1237,8 +1283,15 @@ public void addRecordForDate(String jsonFile) throws Exception {
 					String year=fullDate[0];
 					String hour=fullTime[0];
 					String minute=fullTime[1];
-					String[] second=fullTime[2].trim().split(".");
+					String second1=fullTime[2].replace("Z", "");
+					Integer second2=(int)Float.parseFloat(second1);
+					String second=second2.toString();
 					
+					if(second.length()==1) {
+						second="0"+second;
+					}
+					
+					String emptyArray[]= {"00","00","00Z"};
 					WebElement selectDate=driver.findElement(By.id(id1));
 					selectDate.click();
 					dropdown.selectByValue(acp.yearDropDown, year);
@@ -1246,9 +1299,18 @@ public void addRecordForDate(String jsonFile) throws Exception {
 					applyExplicitWaitsUntilElementVisible(acp.day,10);
 					WebElement date1=driver.findElement(By.xpath("//span[contains(@class,'disabled')=false and @id='_day']["+date+"]"));
 					date1.click();
+					
+					if(lp.isDateTime) {
+						
+						dropdown.selectByValue(acp.hourDropDown, hour);
+						dropdown.selectByValue(acp.minuteDropDown, minute);
+						dropdown.selectByValue(acp.secondDropDown, second);
+						
+					}
+					
 					applyWait.waitForElementToBeClickable(acp.doneButton, 30).click();
 					Thread.sleep(500);
-					
+					}
 				}
 			}
 			}
@@ -1312,6 +1374,80 @@ public void updateRecordForDate(String id, String jsonFile) throws Exception {
 	record.click();
 	applyWait.waitForElementToBeClickable(acp.edit, 30).click();
 	addRecordForDate(jsonFile);
+	
+}
+
+
+
+public void matchLocationData(String jsonFile) throws Exception {
+	
+
+	
+	//odp-view-control/div/div/label[starts-with(@class,'label-width')]
+	
+	//label[@for='dsLocation1003']/parent::div/following-sibling::odp-view-separator/descendant::div[5]
+	
+	LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
+	applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
+	WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
+	record.click();
+//	int q=1;
+	
+	applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPageForLocation, 10);
+	System.out.println(acp.attributesOnViewPageForLocation.size());
+//	for(WebElement attribute : acp.attributesOnViewPageForLocation) {
+	for(int q=1;q<=acp.attributesOnViewPageForLocation.size();q++) {
+		WebElement value = null;
+		WebElement key = null;
+		
+		if(q==1) {
+			 value=driver.findElement(By.xpath("(//odp-view-control/div/div/label[starts-with(@class,'label-width')])["+q+"]/parent::div/following-sibling::odp-view-separator/descendant::div/span"));
+			key=driver.findElement(By.xpath("(//odp-view-control/div/div/label[starts-with(@class,'label-width')])["+q+"]"));
+			
+		}
+		else {
+//			WebElement ele=driver.findElement(By.xpath("(//odp-view-control/div/div/label[starts-with(@class,'label-width')])["+q+"]/parent::div/following-sibling::odp-view-separator//span"));
+//			if(!ele.getText().equals("N.A.")) {
+			 try {
+				value=driver.findElement(By.xpath("(//odp-view-control/div/div/label[starts-with(@class,'label-width')])["+q+"]/parent::div/following-sibling::odp-view-separator/descendant::div[5]"));
+				 key=driver.findElement(By.xpath("(//odp-view-control/div/div/label[starts-with(@class,'label-width')])["+q+"]"));
+			} catch (Exception e) {
+				continue;
+			}
+//		}
+		}
+	
+		
+			String a = key.getAttribute("for");
+			String w = value.getText();
+		
+		if(!w.equals("N.A.")) {
+			actualData.put(a, w);
+	}
+//		q++;
+	}
+	
+LinkedHashMap<String, String> expectedData =(LinkedHashMap<String, String>) JsonUtils.getMapFromJSON(jsonFile);
+
+
+if(actualData.equals(expectedData)) {
+	System.out.println("Data is matching");
+	  System.out.println(actualData);
+	    System.out.println(expectedData);
+}
+else {
+	
+	System.err.println("Data is not matching.Unmatched data are as follows :");
+  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
+    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
+    System.err.println(entriesDiffering);
+    System.out.println(actualData);
+    System.out.println(expectedData);
+    Assert.assertTrue(actualData.equals(expectedData));
+}
+	//
+
+
 	
 }
 

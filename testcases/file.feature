@@ -1,6 +1,6 @@
 Feature: DS FILE
 
-# Scenarios - DS NUMBER CURRENCY 1001 - DS NUMBER CURRENCY 1024
+# Scenarios - DS FILE 1001 - DS FILE 1013
 
 @Author
 Scenario Outline: Log into Author
@@ -12,18 +12,18 @@ Examples:
 |deepak@appveen.com|123123123|
 
 Scenario: Delete data service
-	Given Data service "ds_File" exists
+	Given Data service "file" exists
 	Then Remove the data service
 
 Scenario: Create data service
-	Given Data service "ds_File" does not exist
-	Then Create new data service "ds_File"
+	Given Data service "file" does not exist
+	Then Create new data service "file"
  #Under testData, picks up strings.json create the JSON
 
 Scenario Outline: Assign to Appcenter Group
  	Then Group "File-Group" does not exist
 	Then Create new group "File-Group" 
-	And Assign appcenter permissions for "ds_File" dataservice to "<user>"
+	And Assign appcenter permissions for "file" dataservice to "<user>"
 	
 	Examples:
 	|user|
@@ -46,12 +46,12 @@ Examples:
 
 
 Scenario: Add data to data service
-	Given Data service "ds_File"
+	Given Data service "file"
 	Then Add data to the data service for File Type
 	
 	
 	Scenario Outline: Add record to data service
-	Given Data service "ds_File"
+	Given Data service "file"
 	Then Add record "<data>" to the data service for File Type
 	And Expect error "" on label ""
 	And Save button is disabled
@@ -64,7 +64,7 @@ Examples:
 
 
 Scenario Outline: Add record to data service
-	Given Data service "ds_File"
+	Given Data service "file"
 	Then Add record "<data>" to the data service for File Type
 	And Expect error "ID NUM1001 already exists" on save
 	Examples:
@@ -75,7 +75,7 @@ Scenario Outline: Add record to data service
 	
 	
 	Scenario Outline: Fetch record from the data service
-	Given Data service "ds_File"
+	Given Data service "file"
 	Then Fetch record "<id>" from the data service
 	And Match it to "<data>" for File type
 Examples:
@@ -84,7 +84,7 @@ Examples:
 	
 	
 	Scenario Outline: Update record to data service
-	Given Data service "ds_File"
+	Given Data service "file"
 	Then Update record "<id>" with "<data>" to the data service for File Type
 Examples:
 
@@ -92,7 +92,7 @@ Examples:
 |DS1001|{"dsFile1001" : "Untitled.png","dsFile1002" : "Untitled.png","dsFile1003" : "Untitled.png","dsFile1004" : "Untitled.png","dsFile1006" : "Untitled.png","dsFile1010" : "Untitled.png","dsFile1011" : "Untitled.png","dsFile1012" : "Untitled.png","dsFile1013" : "Untitled.png"}|
 
 Scenario Outline: Fetch record from the data service
-	Given Data service "ds_File"
+	Given Data service "file"
 	Then Fetch record "<id>" from the data service
 	And Match it to "<data>" for File type
 Examples:
@@ -101,7 +101,7 @@ Examples:
 
 
 Scenario Outline: Delete record from the data service
-	Given Data service "ds_File"
+	Given Data service "file"
 	Then Delete record "<id>" from the data service
 	And deleting from listing page
 Examples:

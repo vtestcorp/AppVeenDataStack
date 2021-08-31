@@ -51,14 +51,14 @@ Scenario: Add data to data service
 	Then Add data to the data service for Date
 	
 	
-#	Scenario Outline: Add record to data service
-#	Given Data service "date"
-#	Then Add record "<data>" to the data service
-#	And Expect error "DS DATE Error" on label "DS DATE Label"
-#	And Save button is disabled
-#Examples:
-#|data|
-#|{"_id":"STR1002", "dsDate1002":"", "dsDate1014":"","dsDate1015":"","dsDate1017":"","dsDate1018":""}|
+	Scenario Outline: Add record to data service
+	Given Data service "date"
+	Then Add record "<data>" to the data service for Date
+	And Expect error "DS DATE Error" on label "DS DATE Label"
+	And Save button is disabled
+Examples:
+|data|
+|{"_id":"STR1002", "dsDate1002":"", "dsDate1014":"","dsDate1015":"","dsDate1017":"","dsDate1018":""}|
 
 
 Scenario Outline: Add record to data service
@@ -101,7 +101,7 @@ Scenario Outline: Delete record from the data service
 	And deleting from listing page
 Examples:
 |id|
-|STR1001|
+|DAT1001|
 
 Scenario: Log out of App Center
 	Given User log out from AppCenter

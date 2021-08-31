@@ -40,12 +40,12 @@ public class LoginToAuthorUrl extends BaseClass {
 	@Before("@Author")
 	public void setUp() {
 		start();
-		loginPage = new LoginPage(driver, test);
+		loginPage = new LoginPage(driver);
 	}
 	
 	@Before
 	public void initilization() {
-		loginPage = new LoginPage(driver, test);
+		loginPage = new LoginPage(driver);
 	}
 	
 	
@@ -154,7 +154,7 @@ public class LoginToAuthorUrl extends BaseClass {
 	}
 
 	@Given("User logged into Author")
-	public void user_logged_into_Author() {
+	public void user_logged_into_Author() throws Exception {
 	    loginPage.logOutFromAuthor();
 	}
 

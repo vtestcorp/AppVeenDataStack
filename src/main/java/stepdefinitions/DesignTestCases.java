@@ -120,7 +120,7 @@ public class DesignTestCases extends BaseClass{
 	
 	
 
-	@Then("Add record \"(.*?)\" to the Location data service")
+	@Then("^Add record \"(.*?)\" to the Location data service$")
 	public void add_record__toLocation(String string) throws InterruptedException {
 		design.addRecordForLocation(string);
 	}
@@ -186,7 +186,7 @@ public class DesignTestCases extends BaseClass{
 	    design.updateRecordforUser(id, jsonFile);
 	}
 	
-	@Then("Update record \"(.*?)\" with \"(.*?)\" to the Location")
+	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the Location$")
 	public void update_record_with_dsLocation_data_service(String id, String jsonFile) throws Exception {
 	    design.updateLocationRecord(id, jsonFile);
 	    
@@ -218,8 +218,16 @@ public class DesignTestCases extends BaseClass{
 	}
 	@Then("^Match it to \"(.*?)\"$")
 	public void match_it_to(String jsonFile) throws Exception {
-		design.matchToRecord(jsonFile);	
+//		design.matchToRecord(jsonFile);	
+		design.matchGroupData(jsonFile);
 }
+	
+	@Then("^Match this Location data to \"(.*?)\"$")
+	public void match_this_Location_to(String jsonFile) throws Exception {
+//		design.matchToRecord(jsonFile);	
+		design.matchLocationData(jsonFile);
+}
+	
 	
 	@Then("^Match it to \"(.*?)\" for File type$")
 	public void match_it_to_for_File_type(String jsonFile) throws Exception {

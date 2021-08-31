@@ -2,6 +2,7 @@ package pageModules;
 
 import java.io.File;
 import java.net.MalformedURLException;
+import java.util.Arrays;
 import java.util.List;
 
 import org.json.simple.JSONObject;
@@ -20,6 +21,7 @@ import base.BaseClass;
 import helperMethods.DropDown;
 import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
+import helperMethods.Property;
 import helperMethods.ScrollTypes;
 import helperMethods.SwitchWindow;
 import helperMethods.WaitTypes;
@@ -35,6 +37,7 @@ public class LoginAppCenter extends BaseClass {
 	public ScrollTypes scroll;
 	public static String data_Service;
 	public Object_AppCenterPage acp;
+	public LoginPage lp;
 
 	public LoginAppCenter(WebDriver driver, ExtentTest test) {
 		this.driver = driver;
@@ -43,6 +46,7 @@ public class LoginAppCenter extends BaseClass {
 		dropdown = new DropDown(driver);
 		scroll = new ScrollTypes(driver);
 		acp = new Object_AppCenterPage();
+		lp=new LoginPage(driver);
 	}
 
 	public void loginToAppCenterPage() {
@@ -97,7 +101,7 @@ public class LoginAppCenter extends BaseClass {
 									action.moveToElement(data).perform();
 									data.click();
 								} catch (Exception e2) {
-									Thread.sleep(30000);
+									Thread.sleep(20000);
 									driver.navigate().refresh();
 									Thread.sleep(3000);
 									WebElement data = driver.findElement(ds);
@@ -277,18 +281,18 @@ public class LoginAppCenter extends BaseClass {
 	}
 
 
-	public void userEnterDataInLocationField() throws InterruptedException {
-		Thread.sleep(2000);
+	public void userEnterDataInLocationField() throws InterruptedException, Exception {
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton, 20);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-		Thread.sleep(3000);
+		applyExplicitWaitsUntilElementVisible(acp.textBoxesLocation, 20);
 		List<WebElement> textBoxes = acp.textBoxesLocation;
 		
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 		
 		
-		for (int j = 2; j <= textBoxes.size(); j++) {
-		WebElement textBox = driver.findElement(By.xpath("(//input[@class='form-control form-control-sm rounded ng-pristine ng-valid ng-star-inserted ng-touched' or 'searchInput pac-target-input'])["+j+"]"));
+		for (int j = 1; j <= textBoxes.size(); j++) {
+		WebElement textBox = driver.findElement(By.xpath("(//input[@class='searchInput pac-target-input' or @id='_id'])["+j+"]"));
 			if (textBox.isEnabled()) {
 				String id1 = textBox.getAttribute("id");
 				String v1 =  jsonObject.get(id1).toString();
@@ -308,7 +312,7 @@ public class LoginAppCenter extends BaseClass {
 					}
 						else {
      							textBox.sendKeys(v2);
-								Thread.sleep(2000);
+								Thread.sleep(1000);
 								textBox.sendKeys(Keys.DOWN);
 								textBox.sendKeys(Keys.ENTER);
         			}
@@ -385,11 +389,13 @@ public class LoginAppCenter extends BaseClass {
 					   	 }
 					else if (button.getAttribute("type").equals("checkbox")) {
 						      WebElement parent = button.findElement(By.xpath("./.."));
-						      if(jsonObject.get(id1).equals(true))
+						      if(jsonObject.get(id1).equals(true) && button.getAttribute("class").contains("ng-pristine"))
 						      {
-						    	    
 						         applyWait.waitForElementToBeClickable(parent, 30).click();
 		              		}
+						      else if(jsonObject.get(id1).equals(false) && button.getAttribute("class").contains("ng-dirty")){
+						    	  applyWait.waitForElementToBeClickable(parent, 30).click();
+						      }
 					      }
 					   	}
 			     	applyWait.waitForElementToBeClickable(acp.save, 30).click();
@@ -440,16 +446,16 @@ public class LoginAppCenter extends BaseClass {
 		}
 	
 	public void workflow() {
-		applyWait.waitForElementToBeClickable(acp.username, 30).sendKeys("reviewer@appveen.com");
+		applyWait.waitForElementToBeClickable(acp.username, 30).sendKeys(Property.getProperty("reviewerEmail"));
 		applyWait.waitForElementToBeClickable(acp.nextButton, 30).click();
-		applyWait.waitforElementToBeDisplayed(acp.password, 30).sendKeys("123123123");
+		applyWait.waitforElementToBeDisplayed(acp.password, 30).sendKeys(Property.getProperty("password"));
 		applyWait.waitforElementToBeDisplayed(acp.login, 30).click();
 		applyWait.waitforElementToBeDisplayed(acp.workflowTab, 30).click();
 		for (WebElement workflow : acp.workflowsId) {
 			workflow.click();
 			applyWait.waitforElementToBeDisplayed(acp.respond, 30).click();
 			applyWait.waitforElementToBeDisplayed(acp.approve, 30).click();
-			applyWait.waitforElementToBeDisplayed(acp.enterApproveComment, 30).sendKeys("Approved");
+			applyWait.waitforElementToBeDisplayed(acp.enterApproveComment, 30).sendKeys(Property.getProperty("approveMessage"));
 			applyWait.waitforElementToBeDisplayed(acp.approve, 30).click();
 
 		}
@@ -656,7 +662,7 @@ public class LoginAppCenter extends BaseClass {
 		
 		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
+		applyExplicitWaitsUntilElementVisible(acp.textBox1,20);
 		List<WebElement> textBoxes = acp.dateFields;
 		String path = System.getProperty("user.dir");
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
@@ -667,15 +673,21 @@ public class LoginAppCenter extends BaseClass {
 			if (textBox.isEnabled()) {
 				String id1 = textBox.getAttribute("id");
 
-				String value1=JsonUtils.getJsonValue(filePath,id1);
-				
 				if(id1.equals("_id")) {
+					String value1=(String) jsonObject.get(id1);
 					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1.toString());
 				}
 				else {
-					
+					String dateValue;
+					try {
 					JSONObject json=(JSONObject) jsonObject.get(id1);
-					String dateValue=json.get("rawData").toString();
+					dateValue=json.get("rawData").toString();
+					}
+					catch(Exception e) {
+						continue;
+					}
+					
+					String emptyArray[]= {"00","00","00Z"};
 					String fullDate[]=dateValue.split("T")[0].split("-");
 					String fullTime[]=dateValue.split("T")[1].split(":");
 					String date=fullDate[2];
@@ -683,7 +695,12 @@ public class LoginAppCenter extends BaseClass {
 					String year=fullDate[0];
 					String hour=fullTime[0];
 					String minute=fullTime[1];
-					String[] second=fullTime[2].trim().split(".");
+					String second1=fullTime[2].replace("Z", "");
+					Integer second2=(int)Float.parseFloat(second1);
+					String second=second2.toString();
+					if(second.length()==1) {
+						second="0"+second;
+					}
 					
 					WebElement selectDate=driver.findElement(By.id(id1));
 					selectDate.click();
@@ -692,6 +709,19 @@ public class LoginAppCenter extends BaseClass {
 					applyExplicitWaitsUntilElementVisible(acp.day,10);
 					WebElement date1=driver.findElement(By.xpath("//span[contains(@class,'disabled')=false and @id='_day']["+date+"]"));
 					date1.click();
+					
+					if(id1.equals("dsDateTime1014")) {
+						System.out.println();
+					}
+					if(lp.isDateTime) {
+						
+						dropdown.selectByValue(acp.hourDropDown, hour);
+						dropdown.selectByValue(acp.minuteDropDown, minute);
+						Thread.sleep(500);
+						dropdown.selectByValue(acp.secondDropDown, second);
+						
+					}
+					
 					applyWait.waitForElementToBeClickable(acp.doneButton, 30).click();
 					Thread.sleep(500);
 					

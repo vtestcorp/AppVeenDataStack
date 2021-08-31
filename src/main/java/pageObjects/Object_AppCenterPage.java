@@ -33,6 +33,17 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//select[@class='text-primary time-select font-weight-bold'][2]")
 	public WebElement yearDropDown;
 	
+	@FindBy(xpath="//select[@class='text-primary time-select'][1]")
+	public WebElement hourDropDown;
+	
+	@FindBy(xpath="//select[@class='text-primary time-select'][2]")
+	public WebElement minuteDropDown;
+	
+	@FindBy(xpath="//select[@class='text-primary time-select'][3]")
+	public WebElement secondDropDown;
+	
+	//select[@class='text-primary time-select'][1]
+	
 	@FindBy(xpath="//input[@placeholder='Password']")
 	public WebElement password;
 
@@ -51,8 +62,11 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//div[@class='list-item-label d-flex align-items-center text-truncate']")
 	public WebElement dataServiceName;
 	
-	@FindBy(xpath="//*[contains(@class,'form-control')]")
+	@FindBy(xpath="(//*[contains(@class,'form-control')])[1]")
 	public WebElement textBox1;
+	
+	@FindBy(xpath="//input[@type='text' and contains(@class,'form')]")
+	public WebElement idTextBox1;
 	
 	@FindBy(xpath="//*[contains(@class,'form-control')]")
 	public List<WebElement> textBoxes;
@@ -173,7 +187,7 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//a[starts-with(@class,'ng')]")
 	public WebElement dataServiceList;
 	
-	@FindBy(xpath="//span[normalize-space()='Edit']")
+	@FindBy(id="_editButton")
 	public WebElement edit;
 	
 	@FindBy(xpath="//input[@id='_id']")
@@ -203,8 +217,13 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//label[starts-with(@class,'label-width d-flex')]")
 	public List<WebElement> attributesOnViewPage;
 	
+	
+	////div[@class='d-flex flex-column w-100']//label
 	@FindBy(xpath="(//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()]")
 	public List<WebElement> attributesOnViewPageForGroups;
+	
+	@FindBy(xpath="//odp-view-control/div/div/label[starts-with(@class,'label-width')]")
+	public List<WebElement> attributesOnViewPageForLocation;
 	
 	@FindBy(xpath = "//button[@class='btn btn-link px-3 ng-star-inserted']/parent::div")
 	public WebElement deleteButton;
@@ -239,11 +258,14 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath = "//span[text()='Delete']")
 	public WebElement delete_ViewRecord;
 	
-	@FindBy(xpath="//input[@class='form-control form-control-sm rounded ng-pristine ng-valid ng-star-inserted ng-touched' or 'searchInput pac-target-input']")
+	@FindBy(xpath="//input[@class='searchInput pac-target-input' or @id='_id']")
 	public List<WebElement> textBoxesLocation;
 	
 	@FindBy(id = "doneBtn")
 	public WebElement doneButton;
+	
+	@FindBy(xpath = "//div[starts-with(@class,'footer')]//button[@id='cancelBtn']")
+	public WebElement cancelButton;
 	
 	@FindBy(xpath= "//input[@type='checkbox' or @id='_id' ]")
 	public List<WebElement> buttons;

@@ -52,6 +52,7 @@ public class LoginToAppCenter extends BaseClass{
 	
 	@Given("Data service {string}")
 	public void data_service(String dataService) throws Exception {
+//		Thread.sleep(count);
 		loginAppCenter.dataService(dataService);
 	 
 	}
@@ -93,7 +94,7 @@ public class LoginToAppCenter extends BaseClass{
 	}
 	
 	@Then("Add data to the data service for Location")
-	public void add_data_to_the_data_service_for_Location() throws InterruptedException {
+	public void add_data_to_the_data_service_for_Location() throws Exception {
 		loginAppCenter.userEnterDataInLocationField();
 	}
 
