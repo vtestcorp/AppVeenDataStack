@@ -179,7 +179,6 @@ public class LoginAppCenter extends BaseClass {
 				WebElement textBox = driver.findElement(By.xpath("(//*[contains(@class,'form-control')])[" + j + "]"));
 				if (textBox.isEnabled()) {
 					String id1 = textBox.getAttribute("id");
-
 					String value1=JsonUtils.getJsonValue(filePath,id1);
 				
 					
@@ -729,6 +728,110 @@ public class LoginAppCenter extends BaseClass {
 			}
 			}
 		applyWait.waitForElementToBeClickable(acp.save, 30).click();
+	}
+
+	public void addDataForRelation() throws Exception {
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
+		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
+		List<WebElement> textBoxes = acp.textBoxes;
+		String filePath=path + "\\testData\\" + data_Service + ".data.json";
+		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
+		
+		for (int j = 1; j <= textBoxes.size(); j++) {
+			WebElement textBox = driver.findElement(By.xpath("(//*[contains(@class,'form-control')])[" + j + "]"));
+			if (textBox.isEnabled()) {
+				String id1 = textBox.getAttribute("id");
+				String value1="";
+				JSONObject json = null;
+				if(id1.equals("_id")) {
+					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(jsonObject.get(id1).toString());
+					continue;
+				}
+				else {
+					 json=(JSONObject) jsonObject.get(id1);
+					value1=json.get("_id").toString();
+				}
+				
+				System.out.println(id1+"------"+textBox.getAttribute("type"));
+				
+				if (textBox.getAttribute("type").equals("select-one")) {
+						if (json.get("_id") != null) {
+
+
+						if (textBox.getAttribute("type").equals("select-one")) {
+							if( value1.equals("")) {
+								textBox.click();
+							}
+							else {
+									if(json.get("_id").getClass().toString().contains("Long")) {
+										dropdown.selectByVisibleText(textBox, json.get(id1).toString());
+									}
+									else {
+										dropdown.selectByVisibleText(textBox, value1);
+									}
+							}
+						}
+					}
+				}
+
+				else if (textBox.getAttribute("type").equals("number") ||textBox.getAttribute("type").equals("select-one")) {
+						if(json.get("_id").getClass().toString().contains("Double")) {
+							if (json.get("_id") != null) {
+	
+								if (textBox.getAttribute("type").equals("number")) {
+									Double value = (Double) json.get("_id");
+									applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value.toString());
+									
+								}
+								
+								if (textBox.getAttribute("type").equals("select-one")) {
+
+									dropdown.selectByVisibleText(textBox, ((Double) json.get("_id")).toString());
+
+								}
+							}
+						}
+					
+					else if(json.get(id1).getClass().toString().contains("Long")) {
+						if (json.get(id1) != null) {
+
+							if (textBox.getAttribute("type").equals("number")) {
+								Long value = (Long) json.get("_id");
+								applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1.toString());
+								
+							}
+						}
+						}
+						
+					else if(jsonObject.get(id1).getClass().toString().contains("Integer")) {
+						if ( jsonObject.get(id1) != null) {
+
+							if (textBox.getAttribute("type").equals("number")) {
+								Integer value = (Integer) json.get(id1);
+								applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1.toString());
+								
+							}
+							
+							if (textBox.getAttribute("type").equals("select-one")) {
+
+								dropdown.selectByVisibleText(textBox, ((Integer) json.get("_id")).toString());
+
+							}
+						}
+						}
+						
+					else {
+						dropdown.selectByVisibleText(textBox, value1);
+					}
+				}
+				
+				else if (textBox.getAttribute("type").equals("email")) {
+					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1.toString());
+				}
+			}
+		}
+	applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	}
 	
 	

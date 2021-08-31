@@ -1,25 +1,17 @@
 {
   "_metadata" : {
     "deleted" : false,
-    "lastUpdated" : "2021-08-07T14:16:45.429Z",
+    "lastUpdated" : "2021-08-31T15:12:15.391Z",
     "version" : {
       "release" : "dev",
       "document" : 1
     },
-    "createdAt" : "2021-08-07T14:16:45.429Z"
+    "createdAt" : "2021-08-31T15:12:15.391Z"
   },
-  "_id" : "SAM1001",
-  "dsLocation1001" : {
-    "_id" : "610e95c697ed9501d151b9da",
-    "length" : 95356,
-    "chunkSize" : 261120,
-    "uploadDate" : "2021-08-07T14:16:38.453Z",
-    "filename" : "5998e57c3c0c776fc965c9fe28d091f2",
-    "md5" : "de35af4d283beb68e0a51d1ac8b629fe",
-    "contentType" : "image/png",
-    "metadata" : {
-      "filename" : "C:\\Users\\DELL\\Desktop\\Date & Time.png"
-    }
-  },
+  "_id" : "SAM1004",
+  "string1" : "Flipkart",
+  "number1" : 123,
+  "email" : "sam@yahoo.com",
+  "string2" : "Amazon",
   "__v" : 0
 }

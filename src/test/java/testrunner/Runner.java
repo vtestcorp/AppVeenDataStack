@@ -1,20 +1,14 @@
 package testrunner;
 
-import java.io.File;
 import java.util.stream.Stream;
 
-import org.junit.AfterClass;
 import org.junit.runner.RunWith;
-
-import com.cucumber.listener.Reporter;
-
-//import com.vimalselvam.cucumber.listener.Reporter;
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features="./testcases/relation.feature",
+				dryRun = false,
 				glue="stepdefinitions",
 				monochrome=true,
 				strict = true,
@@ -27,7 +21,6 @@ public class Runner {
 
 	  private static String[] defaultOptions = {
 	            "--glue", "stepdefinitions",
-	            
 	            "--strict",
 	            "--plugin", "pretty",
 	            "--plugin", "html:target/cucumber-reports",

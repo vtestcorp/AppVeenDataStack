@@ -1,0 +1,76 @@
+{
+  "_metadata": {
+    "deleted": false,
+    "lastUpdated": "2021-08-31T15:58:33.560Z",
+    "version": {
+      "release": "dev",
+      "document": 1
+    },
+    "createdAt": "2021-08-31T15:58:33.560Z"
+  },
+  "_id": "REL1001",
+  "dsRelation1001": {
+    "_id": "SAM1003",
+    "_href": "/api/c/vTest/sample/SAM1003"
+  },
+  "dsRelation1002": {
+    "_id": "5555",
+    "_href": "/api/c/vTest/sample/STR1006"
+  },
+  "dsRelation1003": {
+    "_id": "Flipkart",
+    "_href": "/api/c/vTest/sample/SAM1004"
+  },
+  "dsRelation1004": {
+    "_id": "SAM1002",
+    "_href": "/api/c/vTest/sample/SAM1002"
+  },
+  "dsRelation1005": {
+    "_id": "SAM1002",
+    "_href": "/api/c/vTest/sample/SAM1002"
+  },
+  "dsRelation1006": null,
+  "dsRelation1007": {
+    "_id": "SAM1002",
+    "_href": "/api/c/vTest/sample/SAM1002"
+  },
+  "dsRelation1008": {
+    "_id": "SAM1001",
+    "_href": "/api/c/vTest/sample/SAM1001"
+  },
+  "dsRelation1010": {
+    "_id": "SAM1001",
+    "_href": "/api/c/vTest/sample/SAM1001"
+  },
+  "dsRelation1011": null,
+  "dsRelation1013": {
+    "_id": "SAM1002",
+    "_href": "/api/c/vTest/sample/SAM1002"
+  },
+  "dsRelation1014": {
+    "_id": "SAM1003",
+    "_href": "/api/c/vTest/sample/SAM1003"
+  },
+  "dsRelation1015": {
+    "_id": "SAM1002",
+    "_href": "/api/c/vTest/sample/SAM1002"
+  },
+  "dsRelation1016": {
+    "_id": "SAM1001",
+    "_href": "/api/c/vTest/sample/SAM1001"
+  },
+  "dsRelation1017": null,
+  "dsRelation1018": {
+    "_id": "SAM1004",
+    "_href": "/api/c/vTest/sample/SAM1004"
+  },
+  "dsRelation1019": {
+    "_id": "Dee1006",
+    "_href": "/api/c/vTest/sample/Dee1006"
+  },
+  "dsRelation1020": {
+    "_id": "STR1007",
+    "_href": "/api/c/vTest/sample/STR1007"
+  },
+  "__v": 0
+}

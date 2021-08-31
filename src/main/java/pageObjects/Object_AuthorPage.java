@@ -207,7 +207,10 @@ public class Object_AuthorPage extends BaseClass{
 	
 	@FindBy(xpath="//select[@formcontrolname='_listInput']")
 	public WebElement viewField;
-
+	
+	@FindBy(xpath="//button[normalize-space()='Yes']")
+	public WebElement yes;
+	
 	@FindBy(xpath="//div[contains(text(),'Tokens')]/following-sibling::div/input")
 	public WebElement tokens;
 	
@@ -220,7 +223,6 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(xpath="//select[@formcontrolname='default']")
 	public WebElement defaultDropDown;
 	
-
 	@FindBy(xpath="//label[normalize-space()='Currency']")
 	public WebElement currency;
 
@@ -315,10 +317,10 @@ public class Object_AuthorPage extends BaseClass{
 	public WebElement manageTab;
 	
 
-	@FindBy(xpath = "//div[normalize-space()='Allow deletion of related users']/following-sibling::div//label/span[@class='toggler']")
+	@FindBy(xpath = "//div[contains(normalize-space(),'Allow deletion')]/following-sibling::div//label/span[@class='toggler']")
 	public WebElement allowdeletionToggler;
 	
-	@FindBy(xpath = "//div[normalize-space()='Allow deletion of related users']/following-sibling::div//span[@class='text']")
+	@FindBy(xpath = "//div[contains(normalize-space(),'Allow deletion')]/following-sibling::div//span[@class='text']")
 	public WebElement allowdeletionStatus;
 
 	@FindBy(xpath = "//div[normalize-space()='Default Value']/following-sibling::div//span[@class='toggler']")
