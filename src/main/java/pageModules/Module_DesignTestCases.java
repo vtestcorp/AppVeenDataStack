@@ -216,6 +216,7 @@ public class Module_DesignTestCases extends BaseClass{
 		}
 		applyWait.waitForElementToBeClickable(gp.done, 30).click();
 		applyWait.waitForElementToBeClickable(gp.save, 30).click();
+		Assert.assertTrue(false);
 		
 	}
 

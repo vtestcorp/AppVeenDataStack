@@ -388,6 +388,11 @@ public class LoginAppCenter extends BaseClass {
 					   	 }
 					else if (button.getAttribute("type").equals("checkbox")) {
 						      WebElement parent = button.findElement(By.xpath("./.."));
+						      try {
+							Boolean status=	(Boolean) jsonObject.get(id1);
+							} catch (NullPointerException e) {
+								continue;
+							}
 						      if(jsonObject.get(id1).equals(true) && button.getAttribute("class").contains("ng-pristine"))
 						      {
 						         applyWait.waitForElementToBeClickable(parent, 30).click();
@@ -436,9 +441,7 @@ public class LoginAppCenter extends BaseClass {
 						 driver.switchTo().defaultContent();
 					  	 }
 				   	 }
-					
 					}
-			
 		
 			applyWait.waitForElementToBeClickable(acp.save, 30).click();
 		

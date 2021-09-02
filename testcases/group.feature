@@ -46,9 +46,9 @@ Examples:
 
 
  #INSERT/UPDATE
-Scenario: Add data to data service
-	Given Data service "ds_Group-2"
-	Then Add data to the data service
+#Scenario: Add data to data service
+#	Given Data service "ds_Group-2"
+#	Then Add data to the data service
 #	
 #	
 #	Scenario Outline: Add record to data service

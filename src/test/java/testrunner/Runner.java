@@ -7,13 +7,13 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="./testcases/relation.feature",
+@CucumberOptions(features="./testcases/collection.feature",
 				dryRun = false,
-				glue="stepdefinitions",
+				glue={"stepdefinitions","cucumberHooks"},
 				monochrome=true,
 				strict = true,
 				plugin = { "pretty", "html:report" ,"json:target/cucumber-reports/cucumber.json" 
-						,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+		/* ,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" */
 }
 				)
 

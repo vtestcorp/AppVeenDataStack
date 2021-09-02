@@ -4,14 +4,20 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
+import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.GherkinKeyword;
 import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.gherkin.model.Feature;
+import com.aventstack.extentreports.gherkin.model.Scenario;
 
 import base.BaseClass;
 import config.DefineConstants;
@@ -28,6 +34,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import listeners.ExtentReportListener;
 import pageModules.LoginPage;
 
 public class LoginToAuthorUrl extends BaseClass {
@@ -36,16 +43,22 @@ public class LoginToAuthorUrl extends BaseClass {
 	public WaitTypes applyWait;
 	public LoginPage loginPage ;
 	public static String data_Service;
+	public ExtentReportListener test1;
+	public ExtentReports extent;
+	public ExtentTest logInfo=null;
+	
 
 	@Before("@Author")
 	public void setUp() {
 		start();
 		loginPage = new LoginPage(driver);
+	extent=	ExtentReportListener.setUp();
 	}
 	
 	@Before
 	public void initilization() {
 		loginPage = new LoginPage(driver);
+		test1=new ExtentReportListener();
 	}
 	
 	
@@ -53,6 +66,14 @@ public class LoginToAuthorUrl extends BaseClass {
 	public void user_Navigate_to_LogIn_Page() throws Exception {
 		
 		loginPage.loginToPage();
+		
+		
+		ExtentReportListener.test = extent.createTest(Feature.class, "DS GROUP");							
+		ExtentReportListener.test=ExtentReportListener.test.createNode(Scenario.class, "Log into Author");						
+		logInfo=ExtentReportListener.test.createNode(new GherkinKeyword("Given"), "Successful log in to Author page");
+		logInfo.fail("Ok Successfull");
+		logInfo.addScreenCaptureFromPath(ExtentReportListener.captureScreenShot(driver));
+		extent.flush();
 	}
 
 	@Given("User enters {string} and {string} in Author login page")
@@ -162,6 +183,7 @@ public class LoginToAuthorUrl extends BaseClass {
 	public void user_logs_out_of_Author() throws Exception {
 //		Thread.sleep(120000);	 
 		loginPage.logsOutOfAuthor();
+		Assert.assertTrue(false);
 	}
 	
 	@And("Create Data Service {string}")
