@@ -74,7 +74,7 @@ Examples:
 	And Match it to "<data>" Date Type
 Examples:
 |id|data|
-|DAT1001|{"_id": "DAT1001","dsDateTime1001": "Monday, August 2, 2021, 10:20:30 AM (Zulu)","dsDateTime1002": "Wednesday, February 2, 2022, 2:02:02 AM (Etc/Zulu)","dsDateTime1003": "Friday, March 3, 2023, 3:03:33 AM (Etc/Zulu)","dsDateTime1004":"Thursday, July 22, 2021 (Etc/Zulu)","dsDateTime1006": "Saturday, June 6, 2026, 6:06:06 AM (Etc/Zulu)", "dsDateTime1010": "Wednesday, November 23, 2011, 12:11:22 PM (Etc/Zulu)", "dsDateTime1011": "Tuesday, November 11, 2031, 11:11:11 AM (Etc/Zulu)","dsDateTime1012": "Sunday, December 12, 2032, 6:01:53 PM (Etc/Zulu)", "dsDateTime1013": "Saturday, January 30, 2021, 11:31:44 PM (Etc/Zulu)","dsDateTime1014":"Monday, January 29, 1990, 11:31:00 PM (Etc/Zulu)", "dsDateTime1015": "Sunday, December 20, 2054, 7:56:36 PM (Etc/Zulu)", "dsDateTime1016": "Saturday, August 28, 2021, 6:05:15 PM (Etc/Zulu)","dsDateTime1017": "Saturday, August 7, 2021, 6:05:20 PM (Etc/Zulu)"}|
+|DAT1001|{"_id": "DAT1001","dsDateTime1001": "Monday, August 2, 2021, 10:20:30 AM (Zulu)","dsDateTime1002": "Wednesday, February 2, 2022, 2:02:02 AM (Etc/Zulu)","dsDateTime1003": "Friday, March 3, 2023, 3:03:33 AM (Etc/Zulu)","dsDateTime1004":"Thursday, July 22, 2021 (Etc/Zulu)","dsDateTime1006": "Saturday, June 6, 2026, 6:06:06 AM (Etc/Zulu)", "dsDateTime1010": "Wednesday, November 23, 2011, 12:11:22 PM (Etc/Zulu)", "dsDateTime1011": "Tuesday, November 11, 2031, 11:11:11 AM (Etc/Zulu)","dsDateTime1012": "Sunday, December 12, 2032, 6:01:53 PM (Etc/Zulu)", "dsDateTime1013": "Saturday, January 30, 2021, 11:31:44 PM (Etc/Zulu)","dsDateTime1014":"Monday, January 29, 1990, 11:31:49 PM (Etc/Zulu)", "dsDateTime1015": "Sunday, December 20, 2054, 7:56:36 PM (Etc/Zulu)", "dsDateTime1016": "Saturday, August 28, 2021, 6:05:15 PM (Etc/Zulu)","dsDateTime1017": "Saturday, August 7, 2021, 6:05:20 PM (Etc/Zulu)"}|
 	
 	
 	Scenario Outline: UpDate record to data service
@@ -91,16 +91,16 @@ Scenario Outline: Fetch record from the data service
 	And Match it to "<data>" Date Type
 Examples:
 |id|data|
-|DAT1001|{"_id": "DAT1001","dsDateTime1001": "Saturday, August 2, 2031, 5:25:15 AM (Zulu)","dsDateTime1002": "Wednesday, February 2, 2022, 2:02:02 AM (Etc/Zulu)","dsDateTime1003": "Monday, July 30, 2035, 3:25:15 PM (Etc/Zulu)","dsDateTime1004": "Thursday, July 22, 2021 (Etc/Zulu)","dsDateTime1006": "Saturday, June 6, 2026, 6:06:06 AM (Etc/Zulu)", "dsDateTime1010": "Tuesday, December 13, 2050, 11:11:11 AM (Etc/Zulu)", "dsDateTime1011": "Saturday, June 2, 2035, 12:12:18 PM (Etc/Zulu)","dsDateTime1012": "Wednesday, December 12, 2035, 6:10:50 PM (Etc/Zulu)", "dsDateTime1013": "Saturday, March 1, 2031, 11:40:20 PM (Etc/Zulu)","dsDateTime1015": "Friday, July 2, 2021, 10:00:00 AM (Etc/Zulu)", "dsDateTime1016": "Sunday, January 12, 2031, 10:50:00 AM (Etc/Zulu)","dsDateTime1017": "Saturday, October 23, 2027, 10:50:10 AM (Etc/Zulu)"}|
+|DAT1001|{"_id": "DAT1001","dsDateTime1001": "Saturday, August 2, 2031, 9:39:24 AM (Zulu)","dsDateTime1002": "Wednesday, February 2, 2022, 9:39:25 AM (Etc/Zulu)","dsDateTime1003": "Monday, July 30, 2035, 9:39:27 AM (Etc/Zulu)","dsDateTime1006": "Saturday, June 6, 2026, 9:39:28 AM (Etc/Zulu)", "dsDateTime1010": "Tuesday, December 13, 2050, 9:39:29 AM (Etc/Zulu)", "dsDateTime1011": "Saturday, June 2, 2035, 9:39:30 AM (Etc/Zulu)","dsDateTime1012": "Wednesday, December 12, 2035, 9:39:31 AM (Etc/Zulu)", "dsDateTime1013": "Saturday, March 1, 2031, 9:39:33 AM (Etc/Zulu)", "dsDateTime1014" : "Monday, January 29, 1990, 11:31:08 PM (Etc/Zulu)","dsDateTime1015": "Friday, July 2, 2021, 9:39:34 AM (Etc/Zulu)", "dsDateTime1016": "Sunday, January 12, 2031, 9:39:35 AM (Etc/Zulu)","dsDateTime1017": "Sunday, January 12, 2031, 9:39:35 AM (Etc/Zulu)"}|
+
+Scenario Outline: Delete record from the data service
+	Given Data service "date&Time"
+	Then Delete record "<id>" from the data service
+	And Deleting from listing page
+Examples:
+|id|
+|DAT1001|
+
+Scenario: Log out of App Center
+	Given User log out from AppCenter
 	
-#Scenario Outline: Delete record from the data service
-#	Given Data service "date&Time"
-#	Then Delete record "<id>" from the data service
-#	And deleting from listing page
-#Examples:
-#|id|
-#|DAT1001|
-#
-#Scenario: Log out of App Center
-#	Given User log out from AppCenter
-#	

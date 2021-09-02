@@ -57,5 +57,5 @@ public class DefineConstants extends BaseClass{
 	
 	public static final String TC_Create_New_Data_Service = TestData_Folder +  "//" + "data.json";
 	
-	public static final String reportConfigPath= path + "\\extent-config.xml";
+	public static final String reportConfigPath= path + "\\configs\\extent-config.xml";
 }

@@ -1,4 +1,4 @@
-Feature: This is the Feature file of DS-Collection
+Feature: DS-Collection
 
 @Author
 Scenario Outline: Log into Author
@@ -20,7 +20,6 @@ Scenario: Create data service
 
 
 Scenario Outline: Assign to Appcenter Group
-<<<<<<< HEAD:testcases/collection.feature
  	Then Group "Collection-Group" does not exist
 	Then Create new group "Collection-Group" 
 	And Assign appcenter permissions for "collection" dataservice to "<user>"
@@ -49,22 +48,22 @@ Scenario: Add data to data service
 	Then Add data to the data service for Collection
 	
 	
-#	Scenario Outline: Add record to data service
-#	Given Data service "number_Number"
-#	Then Add record "<data>" to the data service
-#	And Expect error "DS-NUMBER-NUMBER error" on label "DS-NUMBER-NUMBER label"
-#	And Save button is disabled
-#Examples:
-#|data|
-#|{"_id":"DS1002", "dsNumberNumber1002": "", "dsNumberNumber1014": "","dsNumberNumber1015": "","dsNumberNumber1018": "" }|
-#
+	Scenario Outline: Add record to data service
+	Given Data service "number_Number"
+	Then Add record "<data>" to the data service
+	And Expect error "DS-NUMBER-NUMBER error" on label "DS-NUMBER-NUMBER label"
+	And Save button is disabled
+Examples:
+|data|
+|{"_id":"DS1002", "dsNumberNumber1002": "", "dsNumberNumber1014": "","dsNumberNumber1015": "","dsNumberNumber1018": "" }|
+
 #Scenario Outline: Add record to data service
 #	Given Data service "number_Number"
 #	Then Add record "<data>" to the data service	
 #	And Expect error "ID DS1001 already exists" on save
 #	Examples:
 #		|data|
-#	  |{ "_id" : "DS1001","dsNumberNumber1001" : 11,"dsNumberNumber1002" : 	12,"dsNumberNumber1003" : 13,"dsNumberNumber1007" : 14,"dsNumberNumber1008" : 18,"dsNumberNumber1014" : 17,"dsNumberNumber1015" : 15}|
+#	  |{ "_id"s : "DS1001","dsNumberNumber1001" : 11,"dsNumberNumber1002" : 	12,"dsNumberNumber1003" : 13,"dsNumberNumber1007" : 14,"dsNumberNumber1008" : 18,"dsNumberNumber1014" : 17,"dsNumberNumber1015" : 15}|
 #
 #Scenario Outline: Add record to data service
 #	Given Data service "number_Number"

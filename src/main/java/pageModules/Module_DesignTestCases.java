@@ -537,12 +537,10 @@ public class Module_DesignTestCases extends BaseClass{
 						  {
 							 applyWait.waitForElementToBeClickable(textBox,30).clear();
 						     applyWait.waitForElementToBeClickable(textBox, 30).sendKeys((jsonObject.get(id1)).toString());
-//						     applyWait.waitForElementToBeClickable(textBox,30).clear();
 						     Thread.sleep(200);
 						     textBox.sendKeys(Keys.DOWN);
 						     Thread.sleep(200);
 						     textBox.sendKeys(Keys.ENTER);
-						     
 						  }
 					  }
 					}
@@ -616,17 +614,14 @@ public class Module_DesignTestCases extends BaseClass{
 					if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
 						applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 				    }
-					System.out.println(acp.richtextBoxes.size() + "=========");
 					Thread.sleep(5000);
 					List<WebElement> textBoxes = acp.richtextBoxes;
-					System.out.println(acp.richtextBoxes.size() + "=========");
 					JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
 					for (int j = 1; j <= textBoxes.size(); j++) {
 						String val =null;
 						WebElement textBox = driver.findElement(By.xpath("(//*[starts-with(@class,'tox-edit-area__iframe') or   @id='_id'])["+j+"]"));
 						if (textBox.isEnabled()) {
 							String id1 = textBox.getAttribute("id");
-							//val = (String) jsonObject.get(id1);
 						if(id1.equals("_id"))
 							{
 								val = (String) jsonObject.get(id1);
@@ -637,12 +632,12 @@ public class Module_DesignTestCases extends BaseClass{
 			   						  WebElement child =driver.findElement(By.xpath("//body"));
 			   						 id1 = child.getAttribute("data-id");
 			   						 try {
-			   							    textBox.sendKeys(Keys.CONTROL);
-			   						        textBox.sendKeys(Keys.DELETE);
-			   						         Thread.sleep(5000);
+			   							  child.sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+			   							    Thread.sleep(500);
 			   						        String value = (String) jsonObject.get(id1);
-			   						        Thread.sleep(5000);
+			   						        Thread.sleep(500);
 			   						     applyWait.waitForElementToBeClickable(child, 30).sendKeys(value);
+			   						       child.sendKeys(Keys.TAB);
 			   						 }catch(Exception e) 
 			   						 {
 			   							 driver.switchTo().defaultContent();
@@ -749,12 +744,24 @@ public class Module_DesignTestCases extends BaseClass{
 		      if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
 					applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 			    }
-		    Thread.sleep(5000);
+		    Thread.sleep(2000);
+		    try {
+				applyExplicitWaitsUntilElementVisible(acp.idTextBox, 5);
+			} catch (Exception e1) {
+				//driver.get(driver.getCurrentUrl());
+				driver.navigate().refresh();
+				 Thread.sleep(3000);
+				if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
+					applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+				    }
+				applyExplicitWaitsUntilElementVisible(acp.idTextBox, 5);
+			}
 			List<WebElement> buttons = acp.buttons;
 			JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
 			for (int j = 1; j <= buttons.size(); j++) {
 				WebElement button = driver.findElement(By.xpath("(//input[@type='checkbox' or @id='_id' ])["+j+"]"));
 				String id1 = button.getAttribute("id");
+				System.out.println(id1 + "===================");
 				Thread.sleep(1000);
 				if(button.isEnabled())
 				   {
@@ -764,17 +771,24 @@ public class Module_DesignTestCases extends BaseClass{
 					    String value = (String) jsonObject.get(id1);
 					     applyWait.waitForElementToBeClickable(button, 30).sendKeys(value);
 				   	 }
-				else if (button.getAttribute("type").equals("checkbox")) {
-					      WebElement parent = button.findElement(By.xpath("./.."));
-					      if(jsonObject.get(id1).equals(true))
-					      {
-					         applyWait.waitForElementToBeClickable(parent, 30).click();
-	              		   }
-					      else if(jsonObject.get(id1).equals(false))
-					      {
-					    	   
-					      }
+				   
+				else if (button.getAttribute("type").equals("checkbox")) 
+				     {
+					 WebElement parent = button.findElement(By.xpath("./.."));
+					 try {
+							  jsonObject.get(id1);
+							} catch (NullPointerException e) {
+								continue;
+							}
+					     
+					 if(jsonObject.get(id1).equals(true) && button.getAttribute("class").contains("ng-pristine"))
+				      {
+				         applyWait.waitForElementToBeClickable(parent, 30).click();
+             		}
+				      else if(jsonObject.get(id1).equals(false) && button.getAttribute("class").contains("ng-dirty")){
+				    	  applyWait.waitForElementToBeClickable(parent, 30).click();
 				      }
+			      }
 				   	}
 			}
 			applyWait.waitForElementToBeClickable(acp.save, 30).click();
@@ -1444,11 +1458,32 @@ else {
     System.out.println(actualData);
     System.out.println(expectedData);
     Assert.assertTrue(actualData.equals(expectedData));
-}
-	//
-
-
+  }
 	
 }
+	
 
+
+ public void expectErrorOnSave(String errorMessage) throws InterruptedException {
+	 Thread.sleep(1000);
+	if(errorMessage.contains("ID"))
+	{
+		By error = By.xpath("//div[@role='alertdialog']");
+		System.out.println(errorMessage + "+++++++++++");
+		applyWaitForDynamicWebElement(error, 10);
+		String expectedError = driver.findElement(error).getText();
+		System.out.println(expectedError +"++++++++++++");
+		Assert.assertEquals(errorMessage, expectedError);
 	}
+	if(errorMessage.contains("Unique"))
+	{
+		By error = By.xpath("//div[@role='alertdialog']");
+		applyWaitForDynamicWebElement(error, 10);
+		String expectedError = driver.findElement(error).getText();
+		Assert.assertTrue( expectedError.contains("Unique check validation failed"));  	
+	}
+	
+  }
+
+}
+	

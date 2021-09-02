@@ -51,16 +51,16 @@ Scenario: Add data to data service
 	Then Add data to the data service for Library Type
 	
 	
-#	Scenario Outline: Add record to data service
-#	Given Data service "library"
-#	Then Add record "<data>" to the data service
-#	And Expect error "DS STRING TEXT Error" on label "DS STRING TEXT Label"
-#	And Save button is disabled
-#Examples:
-#|data|
-#|{"_id":"STR1002", "dsStringText1002":"", "dsStringText1014":"","dsStringText1015":"","dsStringText1017":"","dsStringText1018":""}|
-#
-#
+	Scenario Outline: Add record to data service
+	Given Data service "library"
+	Then Add record "<data>" to the data service
+	And Expect error "DS-LIBRARY Error" on label "DS-LIBRARY Label"
+	And Save button is disabled
+Examples:
+|data|
+|{"_id":"STR1002", "dsStringText1002":"", "dsStringText1014":"","dsStringText1015":"","dsStringText1017":"","dsStringText1018":""}|
+
+
 Scenario Outline: Add record to data service
 	Given Data service "library"
 	Then Add record "<data>" to the data service	
@@ -96,15 +96,16 @@ Examples:
 |id|data|
 |STR1001|{"_id":"DS1001", "dsLibrary1001.line1":"Library 11", "dsLibrary1001.line2":"Library 12", "dsLibrary1003.line1":"Library 31", "dsLibrary1003.line2":"Library 32", "dsLibrary1005.line1":"Library 51", "dsLibrary1005.line2":"Library 52", "dsLibrary1006.line1":"Library 61", "dsLibrary1006.line2":"Library 62", "dsLibrary1007.line1":"Library 71", "dsLibrary1007.line2":"Library 72", "dsLibrary1008.line1":"Library 81", "dsLibrary1008.line2":"Library 82"}|
 
-#Scenario Outline: Delete record from the data service
-#	Given Data service "library"
-#	Then Delete record "<id>" from the data service
-#	And deleting from listing page
-#Examples:
-#|id|
-#|STR1001|
+Scenario Outline: Delete record from the data service
+	Given Data service "library"
+	Then Delete record "<id>" from the data service
+	And Deleting from listing page
+Examples:
+|id|
+|STR1001|
 
 
-
+Scenario: Log out of App Center
+Given User log out from AppCenter
 
 

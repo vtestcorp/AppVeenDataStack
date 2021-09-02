@@ -1,5 +1,7 @@
 Feature: DS NUMBER-NUMBER
 
+# Scenarios - DS-NUMBER-NUMBER-1001 - DS-NUMBER-NUMBER-1024
+
 @Author
 Scenario Outline: Log into Author
 	Given User navigate to Author login page
@@ -109,7 +111,7 @@ Examples:
 Scenario Outline: Delete record from the data service
 	Given Data service "number_Number"
 	Then Delete record "<id>" from the data service
-	And deleting from listing page
+	And Deleting from listing page
 Examples:
 |id|
 |DS1001|

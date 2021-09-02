@@ -137,8 +137,8 @@ public class DesignTestCases extends BaseClass{
 	}
 	
 	@Then("Expect error {string} on save")
-	public void expect_error_on_save(String string) {
-	    
+	public void expect_error_on_save(String errorMessage) throws InterruptedException {
+	    design.expectErrorOnSave(errorMessage);
 	}
 	
 	@Then("Add records to {string} {string} {string} {string} {string} {string} {string} {string}")
@@ -263,7 +263,7 @@ public class DesignTestCases extends BaseClass{
 	public void delete_record_by_searching_with_from_the_data_service(String string, String string2) throws Exception {
 		design.deleteRecordFromViewPage(string , string2);
 	}
-	@Then("deleting from listing page")
+	@Then("Deleting from listing page")
 	public void deleting_from_listing_page() {
 	    
 	}

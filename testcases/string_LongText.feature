@@ -1,5 +1,7 @@
 Feature: DS STRING LONG TEXT
 
+# Scenarios - DS-STRING-LONG-TEXT-1001 - DS-STRING-LONG-TEXT-1018
+
 @Author
 Scenario Outline: Log into Author
 	Given User navigate to Author login page
@@ -52,7 +54,7 @@ Scenario: Add data to data service
 Scenario Outline: Add record to data service
 	Given Data service "string_Long-Text"
 	Then Add record "<data>" to the data service
-	And Expect error "DS STRING TEXT Error" on label "DS STRING TEXT Label"
+	And Expect error "DS-STRING-LONG-TEXT-1002 Error" on label "DS-STRING-LONG-TEXT-1002 Label"
 	And Save button is disabled
 Examples:
 |data|
@@ -105,7 +107,7 @@ Examples:
 Scenario Outline: Delete record from the data service
 	Given Data service "string_Long-Text"
 	Then Delete record "<id>" from the data service
-	And deleting from listing page
+	And Deleting from listing page
 Examples:
 |id|
 |STR1001|

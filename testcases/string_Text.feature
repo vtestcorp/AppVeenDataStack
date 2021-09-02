@@ -51,14 +51,14 @@ Scenario: Add data to data service
 	Then Add data to the data service
 	
 	
-#	Scenario Outline: Add record to data service
-#	Given Data service "string_Text"
-#	Then Add record "<data>" to the data service
-#	And Expect error "DS STRING TEXT Error" on label "DS STRING TEXT Label"
-#	And Save button is disabled
-#Examples:
-#|data|
-#|{"_id": "STR1001","dsStringText1001": "amazon","dsStringText1002": "","dsStringText1003": "flipkart","dsStringText1004": "mintra","dsStringText1005": "starbazar","dsStringText1007": "dmart", "dsStringText1008": "bigBazar", "dsStringText1010": "bigBasket",  "dsStringText1013": "online shooping", "dsStringText1014": "", "dsStringText1015": "",  "dsStringText1018": "",  "dsStringText1020": "ABCD", "dsStringText1021": "season", "dsStringText1022": "cathlon", "dsStringText1023": "shopper stop", "dsStringText1024": "snapdel"}|
+	Scenario Outline: Add record to data service
+	Given Data service "string_Text"
+	Then Add record "<data>" to the data service
+	And Expect error "DS STRING TEXT 1002 Error" on label "DS STRING TEXT 1002 Label"
+	And Save button is disabled
+Examples:
+|data|
+|{"_id": "STR1001","dsStringText1001": "amazon","dsStringText1002": "","dsStringText1003": "flipkart","dsStringText1004": "mintra","dsStringText1005": "starbazar","dsStringText1007": "dmart", "dsStringText1008": "bigBazar", "dsStringText1010": "bigBasket",  "dsStringText1013": "online shooping", "dsStringText1014": "", "dsStringText1015": "",  "dsStringText1018": "",  "dsStringText1020": "ABCD", "dsStringText1021": "season", "dsStringText1022": "cathlon", "dsStringText1023": "shopper stop", "dsStringText1024": "snapdel"}|
 
 
 Scenario Outline: Add record to data service
@@ -87,32 +87,32 @@ Examples:
 |id|data|
 |STR1001|{"_id": "STR1001","dsStringText1001": "builder","dsStringText1002": "shopify","dsStringText1003": "amazon","dsStringText1004": "shopperstops","dsStringText1005": "snapdeal","dsStringText1007": "walmart", "dsStringText1008": "pantaloon", "dsStringText1010": "myntra",  "dsStringText1013": "limeraod", "dsStringText1014": "shopclues", "dsStringText1015": "tatacliq",  "dsStringText1018": "paytmmall",  "dsStringText1020": "ABCD", "dsStringText1021": "P", "dsStringText1022": "asksly", "dsStringText1023": "wrangler", "dsStringText1024": "flipkart"}|
 	
-#	
-#	Scenario Outline: Update record to data service
-#	Given Data service "string_Text"
-#	Then Update record "<id>" with "<data>" to the data service
-#Examples:
-#
-#|id|data|
-#|STR1001|{"_id": "STR1001","dsStringText1001": "aa","dsStringText1002": "bb","dsStringText1003": "cc","dsStringText1004": "dd","dsStringText1005": "ee","dsStringText1007": "ff", "dsStringText1008": "gg", "dsStringText1010": "hh",  "dsStringText1013": "ii", "dsStringText1014": "jj", "dsStringText1015": "kk",  "dsStringText1018": "ll",  "dsStringText1020": "MM", "dsStringText1021": "N", "dsStringText1022": "oo", "dsStringText1023": "pp", "dsStringText1024": "qq"}|
-#
-#
-#Scenario Outline: Fetch record from the data service
-#	Given Data service "string_Text"
-#	Then Fetch record "<id>" from the data service
-#	And Match it to "<data>"
-#Examples:
-#|id|data|
-#|STR1001|{"_id": "STR1001","dsStringText1001": "aa","dsStringText1002": "shopify","dsStringText1003": "cc","dsStringText1004": "shopperstops","dsStringText1005": "ee","dsStringText1007": "walmart", "dsStringText1008": "gg", "dsStringText1010": "myntra",  "dsStringText1013": "ii", "dsStringText1014": "jj", "dsStringText1015": "kk", "dsStringText1018": "ll", "dsStringText1020": "MM", "dsStringText1021": "N", "dsStringText1022": "oo", "dsStringText1023": "pp", "dsStringText1024": "qq"}|
-#	
-#Scenario Outline: Delete record from the data service
-#	Given Data service "string_Text"
-#	Then Delete record "<id>" from the data service
-#	And deleting from listing page
-#Examples:
-#|id|
-#|STR1001|
-#
-#Scenario: Log out of App Center
-#	Given User log out from AppCenter
-#
+	
+	Scenario Outline: Update record to data service
+	Given Data service "string_Text"
+	Then Update record "<id>" with "<data>" to the data service
+Examples:
+
+|id|data|
+|STR1001|{"_id": "STR1001","dsStringText1001": "aa","dsStringText1002": "bb","dsStringText1003": "cc","dsStringText1004": "dd","dsStringText1005": "ee","dsStringText1007": "ff", "dsStringText1008": "gg", "dsStringText1010": "hh",  "dsStringText1013": "ii", "dsStringText1014": "jj", "dsStringText1015": "kk",  "dsStringText1018": "ll",  "dsStringText1020": "MM", "dsStringText1021": "N", "dsStringText1022": "oo", "dsStringText1023": "pp", "dsStringText1024": "qq"}|
+
+
+Scenario Outline: Fetch record from the data service
+	Given Data service "string_Text"
+	Then Fetch record "<id>" from the data service
+	And Match it to "<data>"
+Examples:
+|id|data|
+|STR1001|{"_id": "STR1001","dsStringText1001": "aa","dsStringText1002": "shopify","dsStringText1003": "cc","dsStringText1004": "shopperstops","dsStringText1005": "ee","dsStringText1007": "walmart", "dsStringText1008": "gg", "dsStringText1010": "myntra",  "dsStringText1013": "ii", "dsStringText1014": "jj", "dsStringText1015": "kk", "dsStringText1018": "ll", "dsStringText1020": "MM", "dsStringText1021": "N", "dsStringText1022": "oo", "dsStringText1023": "pp", "dsStringText1024": "qq"}|
+	
+Scenario Outline: Delete record from the data service
+	Given Data service "string_Text"
+	Then Delete record "<id>" from the data service
+	And Deleting from listing page
+Examples:
+|id|
+|STR1001|
+
+Scenario: Log out of App Center
+	Given User log out from AppCenter
+

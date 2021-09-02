@@ -129,7 +129,11 @@ public class LoginPage extends BaseClass{
 		if(flag==false) {
 		Actions action=new Actions(driver);
 		action.moveToElement(ap.newDataService).perform();
-		applyWait.waitForElementToBeClickable(ap.newDataService, 30).click();
+		try {
+			applyWait.waitForElementToBeClickable(ap.newDataService, 30).click();
+		} catch (Exception e) {
+			handleElementClickException(ap.newDataService);
+		}
 		applyWait.waitForElementToBeClickable(ap.dataServiceName, 30).sendKeys(dataServiceName);;
 		Thread.sleep(500);
 		javascriptClick.click(ap.createButton);
@@ -1062,7 +1066,7 @@ public class LoginPage extends BaseClass{
 									String allowdeletion_Staus = "";
 															
 								if(!driver.findElements(By.xpath("//div[normalize-space()='Allow deletion of related users']/following-sibling::div//span[@class='text']")).isEmpty()){
-										
+									//div[contains(normalize-space(),'Allow deletion')]/following-sibling::div//span[@class='text']
 										 allowdeletion_Staus=ap.allowdeletionStatus.getText();
 								    }
 									

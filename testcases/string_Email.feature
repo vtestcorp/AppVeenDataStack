@@ -1,5 +1,7 @@
 Feature: DS STRING EMAIL
 
+# Scenarios - DS-STRING-EMAIL-1001 - DS-STRING-EMAIL-1020
+
 @Author
 Scenario Outline: Log into Author
 	Given User navigate to Author login page
@@ -51,7 +53,7 @@ Scenario: Add data to data service
 Scenario Outline: Add record to data service
 	Given Data service "string_Email"
 	Then Add record "<data>" to the data service
-	And Expect error "DS-string-Email error" on label "DS-string-Email-label"
+	And Expect error "DS-string-Email 1002 error" on label "DS-string-Email-1002 label"
 	And Save button is disabled
 Examples:
 |data|
@@ -105,7 +107,7 @@ Examples:
 Scenario Outline: Delete record from the data service
 	Given Data service "string_Email"
 	Then Delete record "<id>" from the data service
-	And deleting from listing page
+	And Deleting from listing page
 Examples:
 |id|
 |RC101|

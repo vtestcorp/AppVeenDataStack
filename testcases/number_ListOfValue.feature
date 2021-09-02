@@ -104,16 +104,16 @@ Examples:
 |NUM1001|{"_id": "NUM1001","dsNumberListOfValues1001": 123,"dsNumberListOfValues1002": 2,"dsNumberListOfValues1003": 123,"dsNumberListOfValues1004": 123,"dsNumberListOfValues1005": 501,"dsNumberListOfValues1007": 123, "dsNumberListOfValues1008": 211, "dsNumberListOfValues1010": 123,  "dsNumberListOfValues1013": 123, "dsNumberListOfValues1014": 4569, "dsNumberListOfValues1015": 211, "dsNumberListOfValues1018": 456,  "dsNumberListOfValues1020": 4569}|
 
 	
-#Scenario Outline: Delete record from the data service
-#	Given Data service "number_ListOfValue"
-#	Then Delete record "<id>" from the data service
-#	And deleting from lissting page
-#Examples:
-#|id|
-#|NUM1001|
-#
-#
-#Scenario: Log out of App Center
-#	Given User log out from AppCenter
+Scenario Outline: Delete record from the data service
+	Given Data service "number_ListOfValue"
+	Then Delete record "<id>" from the data service
+	And Deleting from lissting page
+Examples:
+|id|
+|NUM1001|
+
+
+Scenario: Log out of App Center
+	Given User log out from AppCenter
 
 
