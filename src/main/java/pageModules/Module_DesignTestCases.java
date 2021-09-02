@@ -176,6 +176,27 @@ public class Module_DesignTestCases extends BaseClass{
 			WebElement toggler=driver.findElement(By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[2]/child::label/child::span[2]"));
 			applyWait.waitForElementToBeClickable(toggler, 30).click();
 			}
+		
+		if(lp.isRelation) {
+			WebElement dsArrow1=driver.findElement(By.xpath("//span[normalize-space()='"+lp.anotherDataService+"']/parent::div/following-sibling::span[2]/child::span"));
+			applyWait.waitForElementToBeClickable(dsArrow1, 30).click();
+			
+			if(role.equalsIgnoreCase("SkipReview")) {
+				applyWait.waitForElementToBeClickable(gp.skipReviewToggler, 30).click();
+				}
+			else if(role.equalsIgnoreCase("Manage")) {
+				applyWait.waitForElementToBeClickable(gp.manageToggler, 30).click();
+			}
+			
+			else if(role.equalsIgnoreCase("View")) {
+				applyWait.waitForElementToBeClickable(gp.viewToggler, 30).click();
+				}
+			
+			else {
+				WebElement toggler=driver.findElement(By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[2]/child::label/child::span[2]"));
+				applyWait.waitForElementToBeClickable(toggler, 30).click();
+				}
+		}
 //		lp.VerifyUserExists(user1);
 		applyWait.waitForElementToBeClickable(gp.members, 30).click();
 		applyWait.waitForElementToBeClickable(gp.addUsers, 30).click();

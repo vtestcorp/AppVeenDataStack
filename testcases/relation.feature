@@ -47,37 +47,48 @@ Examples:
 
 # INSERT/UPDATE
 Scenario: Add data to data service
-	Given Data service "relation"
+	Given Data service "sample"
 	Then Add data to the data service
 	
+#	Scenario Outline: Add record to data service
+#	Given Data service "sample"
+#	Then Add record "<data>" to the data service
+#	Examples:
+#|data|
+#|{"_id": "STR1005","string1": "Myntra","number1": 1234,"email": "ycm@gmail.com","string2": "Upstox"}|
+#|{"_id": "STR1006","string1": "Zerodha","number1": 4321,"email": "xyz@gmail.com","string2": "Samco"}|
+#|{"_id": "STR1007","string1": "Swiggy","number1": 5555,"email": "pqr@gmail.com","string2": "Zomato"}|
+#	
+	Scenario: Add data to data service
+	Given Data service "relation"
+	Then Add data to the data service for Relation
 	
 	Scenario Outline: Add record to data service
 	Given Data service "relation"
 	Then Add record "<data>" to the data service
-	And Expect error "DS STRING TEXT Error" on label "DS STRING TEXT Label"
+	And Expect error "DS RELATION 1002 ERROR" on label "DS RELATION 1002 LABEL"
 	And Save button is disabled
 Examples:
 |data|
-|{"_id": "STR1001","dsStringText1001": "amazon","dsStringText1002": "","dsStringText1003": "flipkart","dsStringText1004": "mintra","dsStringText1005": "starbazar","dsStringText1007": "dmart", "dsStringText1008": "bigBazar", "dsStringText1010": "bigBasket",  "dsStringText1013": "online shooping", "dsStringText1014": "", "dsStringText1015": "",  "dsStringText1018": "",  "dsStringText1020": "ABCD", "dsStringText1021": "season", "dsStringText1022": "cathlon", "dsStringText1023": "shopper stop", "dsStringText1024": "snapdel"}|
+|{"_id": "REL1002","dsRelation1001": "SAM1003","dsRelation1002": "","dsRelation1003": "Flipkart","dsRelation1004": "SAM1003","dsRelation1005": "SAM1002","dsRelation1007": "SAM1001", "dsRelation1008": "SAM1003", "dsRelation1010": "SAM1002",  "dsRelation1013": "SAM1003", "dsRelation1014": "", "dsRelation1015": "", "dsRelation1016": "SAM1003",  "dsRelation1018": "Flipkart", "dsRelation1019": "Sam", "dsRelation1020": "xyz@gmail.com"}|
 
 
 Scenario Outline: Add record to data service
 	Given Data service "relation"
 	Then Add record "<data>" to the data service	
-	And Expect error "ID STR1001 already exists" on save
+	And Expect error "ID REL1001 already exists" on save
 	Examples:
 		|data|
-	|{"_id": "STR1001","dsStringText1001": "Mango","dsStringText1002": "apple","dsStringText1003": "Banana","dsStringText1004": "Grapes","dsStringText1005": "Pineapple","dsStringText1007": "Guava", "dsStringText1008": "Apricot", "dsStringText1010": "Black Current",  "dsStringText1013": "Black Berry", "dsStringText1014": "Blue Berry", "dsStringText1015": "Custard Apple",  "dsStringText1018": "Coconut",  "dsStringText1020": "DATE", "dsStringText1021": "F", "dsStringText1022": "Gooseberry", "dsStringText1023": "Jackfruit", "dsStringText1024": "Lamon"}|
-	
+|{"_id": "REL1001","dsRelation1001": "SAM1003","dsRelation1002": "5555","dsRelation1003": "Flipkart","dsRelation1004": "SAM1003","dsRelation1005": "SAM1002","dsRelation1007": "SAM1001", "dsRelation1008": "SAM1003", "dsRelation1010": "SAM1002",  "dsRelation1013": "SAM1003", "dsRelation1014": "SAM1002", "dsRelation1015": "SAM1001", "dsRelation1016": "SAM1003",  "dsRelation1018": "Flipkart", "dsRelation1019": "Sam", "dsRelation1020": "xyz@gmail.com"}|	
 
 
 Scenario Outline: Add record to data service
 	Given Data service "relation"
 	Then Add record "<data>" to the data service		
-	And Expect error "Unique check validation failed for dsStringText1002" on save
+	And Expect error "Unique check validation failed for dsRelation1002" on save
 Examples:
 |data|
-|{"_id": "STR1002","dsStringText1001": "Rose","dsStringText1002": "shopify","dsStringText1003": "Lotus","dsStringText1004": "Butterfly Pea","dsStringText1005": "Crossandra","dsStringText1007": "Golden Shower", "dsStringText1008": "Forest Ghost", "dsStringText1010": "Marigold",  "dsStringText1013": "Jasmine", "dsStringText1014": "Night Blooming", "dsStringText1015": "Sambac",  "dsStringText1018": "Sunflower",  "dsStringText1020": "XYZ", "dsStringText1021": "M", "dsStringText1022": "Peacock", "dsStringText1023": "Hibiscus", "dsStringText1024": "Daisy"}|
+|{"_id": "REL1003","dsRelation1001": "SAM1003","dsRelation1002": 5555,"dsRelation1003": "Flipkart","dsRelation1004": "SAM1003","dsRelation1005": "SAM1002","dsRelation1007": "SAM1001", "dsRelation1008": "SAM1003", "dsRelation1010": "SAM1002",  "dsRelation1013": "SAM1003", "dsRelation1014": "SAM1002", "dsRelation1015": "SAM1001", "dsRelation1016": "SAM1003",  "dsRelation1018": "Flipkart", "dsRelation1019": "Sam", "dsRelation1020": "xyz@gmail.com"}|	
 	
 	Scenario Outline: Fetch record from the data service
 	Given Data service "relation"
@@ -85,7 +96,7 @@ Examples:
 	And Match it to "<data>"
 Examples:
 |id|data|
-|STR1001|{"_id": "STR1001","dsStringText1001": "builder","dsStringText1002": "shopify","dsStringText1003": "amazon","dsStringText1004": "shopperstops","dsStringText1005": "snapdeal","dsStringText1007": "walmart", "dsStringText1008": "pantaloon", "dsStringText1010": "myntra",  "dsStringText1013": "limeraod", "dsStringText1014": "shopclues", "dsStringText1015": "tatacliq",  "dsStringText1018": "paytmmall",  "dsStringText1020": "ABCD", "dsStringText1021": "P", "dsStringText1022": "asksly", "dsStringText1023": "wrangler", "dsStringText1024": "flipkart"}|
+|REL1001|{"_id": "REL1001","dsRelation1001": "SAM1003","dsRelation1002": "5555","dsRelation1003": "Flipkart","dsRelation1004": "SAM1002","dsRelation1005": "SAM1002","dsRelation1007": "SAM1002", "dsRelation1008": "SAM1001", "dsRelation1010": "SAM1001",  "dsRelation1013": "SAM1002", "dsRelation1014": "SAM1003", "dsRelation1015": "SAM1002",  "dsRelation1016": "SAM1001",  "dsRelation1018": "SAM1004", "dsRelation1019": "Flipkart", "dsRelation1020": "ycm@gmail.com"}|
 	
 	
 	Scenario Outline: Update record to data service
@@ -94,7 +105,7 @@ Examples:
 Examples:
 
 |id|data|
-|STR1001|{"_id": "STR1001","dsStringText1001": "aa","dsStringText1002": "bb","dsStringText1003": "cc","dsStringText1004": "dd","dsStringText1005": "ee","dsStringText1007": "ff", "dsStringText1008": "gg", "dsStringText1010": "hh",  "dsStringText1013": "ii", "dsStringText1014": "jj", "dsStringText1015": "kk",  "dsStringText1018": "ll",  "dsStringText1020": "MM", "dsStringText1021": "N", "dsStringText1022": "oo", "dsStringText1023": "pp", "dsStringText1024": "qq"}|
+|REL1001|{"dsRelation1001": "SAM1002","dsRelation1002": "1234","dsRelation1003": "Zerodha","dsRelation1004": "SAM1001","dsRelation1005": "SAM1003","dsRelation1007": "SAM1001", "dsRelation1008": "SAM1002", "dsRelation1010": "SAM1003",  "dsRelation1013": "SAM1001", "dsRelation1014": "SAM1001", "dsRelation1015": "SAM1001",  "dsRelation1016": "SAM1002",  "dsRelation1018": "SAM1002", "dsRelation1019": "Flipkart", "dsRelation1020": "STR1007"}|
 
 
 Scenario Outline: Fetch record from the data service
@@ -103,16 +114,16 @@ Scenario Outline: Fetch record from the data service
 	And Match it to "<data>"
 Examples:
 |id|data|
-|STR1001|{"_id": "STR1001","dsStringText1001": "aa","dsStringText1002": "shopify","dsStringText1003": "cc","dsStringText1004": "shopperstops","dsStringText1005": "ee","dsStringText1007": "walmart", "dsStringText1008": "gg", "dsStringText1010": "myntra",  "dsStringText1013": "ii", "dsStringText1014": "jj", "dsStringText1015": "kk", "dsStringText1018": "ll", "dsStringText1020": "MM", "dsStringText1021": "N", "dsStringText1022": "oo", "dsStringText1023": "pp", "dsStringText1024": "qq"}|
+|REL1001|{"dsRelation1001": "SAM1002","dsRelation1002": "1234","dsRelation1003": "Zerodha","dsRelation1004": "SAM1001","dsRelation1005": "SAM1003","dsRelation1007": "SAM1001", "dsRelation1008": "SAM1002", "dsRelation1010": "SAM1003",  "dsRelation1013": "SAM1001", "dsRelation1014": "SAM1001", "dsRelation1015": "SAM1001",  "dsRelation1016": "SAM1002",  "dsRelation1018": "SAM1002", "dsRelation1019": "Flipkart", "dsRelation1020": "STR1007"}|
 	
-Scenario Outline: Delete record from the data service
-	Given Data service "relation"
-	Then Delete record "<id>" from the data service
-	And deleting from listing page
-Examples:
-|id|
-|STR1001|
-
-Scenario: Log out of App Center
-	Given User log out from AppCenter
-
+#Scenario Outline: Delete record from the data service
+#	Given Data service "relation"
+#	Then Delete record "<id>" from the data service
+#	And deleting from listing page
+#Examples:
+#|id|
+#|STR1001|
+#
+#Scenario: Log out of App Center
+#	Given User log out from AppCenter
+#

@@ -45,13 +45,14 @@ public class LoginPage extends BaseClass{
 	public static ArrayList<String> data_Services;
 	public Object_AuthorPage ap;
 	public Object_GroupPage gp;
+	public static	String anotherDataService;
+	public static boolean isRelation;
 	public static boolean isDateTime;
 	public static boolean isType;
 	
 	public LoginPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.applyWait = new WaitTypes(driver);
-		this.test = test;
 		javascriptClick=new JavascriptClick(driver);
 		dropdown=new DropDown(driver);
 		scroll=new ScrollTypes(driver);
@@ -255,6 +256,7 @@ public class LoginPage extends BaseClass{
 						applyWait.waitForElementToBeClickable(ap.relation, 30).click();
 						requiredAttributes(jsonProperties);
 						
+						isRelation = true;
 					}
                   else if(jsonProperties.containsKey("schema")) {
 						
@@ -353,7 +355,22 @@ public class LoginPage extends BaseClass{
 			function_ExperienceTab();
 			function_RolesTab();
 			applyWait.waitForElementToBeClickable(ap.submitAndDeploy, 30).click();;
-			
+			Thread.sleep(10000);
+			if(isRelation) {
+				System.out.println("Starting "+anotherDataService);
+				By anotherDataService1=By.xpath("//span[@id='serviceManagerCardTitle' and @title='"+anotherDataService+"']");
+				WebElement dsStart=driver.findElement(anotherDataService1);
+				WebElement toggler=dsStart.findElement(By.xpath("./ancestor::div[3]/following-sibling::div[2]/div/div[@class='toggler']"));
+				toggler.click();
+				WebElement startButton=toggler.findElement(By.xpath("./following-sibling::div[6]/span[2]"));
+				Thread.sleep(1000);
+				if(startButton.getText().equals("Start")) {
+				startButton.click();
+				Thread.sleep(1000);
+				applyWait.waitforElementToBeDisplayed(ap.yes, 10).click();
+				}
+				
+			}
 		}
 
 
@@ -500,8 +517,7 @@ public class LoginPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(ap.search, 30).sendKeys(dataServiceName,Keys.ENTER);;
 		Boolean dataService=applyWait.waitForElementToBeClickable(ap.dataServiceName1, 30).isDisplayed();
 		String dataServiceActualName=applyWait.waitForElementToBeClickable(ap.dataServiceName1, 30).getText();
-		if(dataService) {
-		}
+		
 	}
 
 	public void deleteDataService() throws Exception {
@@ -526,8 +542,6 @@ public class LoginPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(ap.saveButton, 30).click();
 		
 		String service=applyWait.waitForElementToBeClickable(ap.dataServiceName1, 30).getText();
-		if(service.contains(dataServiceName)) {
-		}
 	}
 	
 	
@@ -959,9 +973,11 @@ public class LoginPage extends BaseClass{
 								}
 
 								if(jsonProperties.containsKey("relatedTo")) {
+									anotherDataService=jsonProperties.get("relatedTo").toString();
 									applyWait.waitForElementToBeClickable(ap.relatesTo, 30).sendKeys(jsonProperties.get("relatedTo").toString());
-									Thread.sleep(200);
-									applyWait.waitForElementToBeClickable(ap.relatesTo, 30).sendKeys(Keys.ENTER);
+									By dataService=By.xpath("//button[@role='option']//span[text()='"+anotherDataService+"']");
+									applyWaitForDynamicWebElement(dataService, 10);
+									driver.findElement(dataService).click();
 								}
 								
 								if(jsonProperties.containsKey("relatedSearchField")) {
@@ -988,20 +1004,12 @@ public class LoginPage extends BaseClass{
 										dropdown.selectByVisibleText(ap.viewFields, value);
 									 }
 								  }
-									
-									
 								}
-								
-										
-									
-								
-								
 								
 								if(jsonProperties.containsKey("schema")) {
 									applyWait.waitForElementToBeClickable(ap.linkedLibrary, 30).sendKeys(jsonProperties.get("schema").toString());
 								     Thread.sleep(1000);
 								}
-								
 								
 								if(jsonProperties.containsKey("enum")) {
 									JSONArray array=(JSONArray) jsonProperties.get("enum");
@@ -1026,7 +1034,6 @@ public class LoginPage extends BaseClass{
 											
 											String fullDate[]=jsonProperties.get("default").toString().split("T")[0].split("-");
 											String fullTime[]=jsonProperties.get("default").toString().split("T")[1].split(":");
-		
 											String date=fullDate[2];
 											String month=fullDate[1];
 											String year=fullDate[0];
@@ -1065,8 +1072,9 @@ public class LoginPage extends BaseClass{
 								{
 									String allowdeletion_Staus = "";
 															
-								if(!driver.findElements(By.xpath("//div[normalize-space()='Allow deletion of related users']/following-sibling::div//span[@class='text']")).isEmpty()){
-									//div[contains(normalize-space(),'Allow deletion')]/following-sibling::div//span[@class='text']
+
+								if(!driver.findElements(By.xpath("//div[contains(normalize-space(),'Allow deletion')]/following-sibling::div//span[@class='text']")).isEmpty()){
+										
 										 allowdeletion_Staus=ap.allowdeletionStatus.getText();
 								    }
 									
@@ -1246,7 +1254,6 @@ public class LoginPage extends BaseClass{
 							}
 							catch(ElementClickInterceptedException e) {
 								Thread.sleep(2000);
-//								applyWait.waitForElementToBeClickable(gp.profileIcon, 30).click();
 								handleElementClickException(gp.profileIcon);
 							}
 							applyWait.waitForElementToBeClickable(gp.logout, 30).click();

@@ -1,28 +1,14 @@
 package stepdefinitions;
 
-import java.net.MalformedURLException;
-import java.util.List;
-
-import org.openqa.selenium.WebDriver;
-
 import com.aventstack.extentreports.ExtentTest;
-
 import base.BaseClass;
-//import cucumber.api.Scenario;
-//import cucumber.api.java.Before;
-//import cucumber.api.java.en.Given;
-//import cucumber.api.java.en.Then;
-import helperMethods.WaitTypes;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pageModules.LoginAppCenter;
-import pageModules.LoginPage;
 
 public class LoginToAppCenter extends BaseClass{
-	private WaitTypes applyWait;
 	private ExtentTest test;
 	public LoginAppCenter loginAppCenter;
 		
@@ -80,6 +66,11 @@ public class LoginToAppCenter extends BaseClass{
 	public void add_data_to_the_data_service() throws Exception {
 		
 		loginAppCenter.userEnterData();
+	}
+	
+	@Then("Add data to the data service for Relation")
+	public void add_data_to_the_data_service_for_Relation() throws Exception {
+		loginAppCenter.addDataForRelation();
 	}
 	
 	@Then("^Add data to the stringRichText data service$")
