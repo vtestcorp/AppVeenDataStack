@@ -202,13 +202,9 @@ public class LoginAppCenter extends BaseClass {
 										else {
 											dropdown.selectByVisibleText(textBox, (JsonUtils.getJsonValue(filePath,id1)).toString());
 										}
-
-								
 								}
-
 							}
 						}
-
 					}
 
 					else if (textBox.getAttribute("type").equals("number") ||textBox.getAttribute("type").equals("select-one")) {
@@ -218,13 +214,11 @@ public class LoginAppCenter extends BaseClass {
 									if (textBox.getAttribute("type").equals("number")) {
 										Double value = (Double) jsonObject.get(id1);
 										applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value.toString());
-										
 									}
 									
 									if (textBox.getAttribute("type").equals("select-one")) {
 
 										dropdown.selectByVisibleText(textBox, ((Double) jsonObject.get(id1)).toString());
-
 									}
 								}
 							}
@@ -258,7 +252,6 @@ public class LoginAppCenter extends BaseClass {
 								if (textBox.getAttribute("type").equals("select-one")) {
 
 									dropdown.selectByVisibleText(textBox, ((Integer) jsonObject.get(id1)).toString());
-
 								}
 							}
 							}
@@ -266,8 +259,6 @@ public class LoginAppCenter extends BaseClass {
 						else {
 							dropdown.selectByVisibleText(textBox, (JsonUtils.getJsonValue(filePath,id1).toString()));
 						}
-
-
 					}
 					
 					else if (textBox.getAttribute("type").equals("email")) {
@@ -414,7 +405,6 @@ public class LoginAppCenter extends BaseClass {
 			JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 			for (int j = 1; j <= textBoxes.size(); j++) {
 				WebElement textBox = driver.findElement(By.xpath("(//*[starts-with(@class,'tox-edit-area__iframe') or   @id='_id'])["+j+"]"));
-			//	WebElement textBox = driver.findElement(By.xpath("(//*//*[contains(@class,'mce-content-body') or   @id='_id'])["+j+"]"));
 				if (textBox.isEnabled()) {
 					String id1 = " ";
 					if(j==1)

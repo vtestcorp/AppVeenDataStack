@@ -2,25 +2,16 @@ package stepdefinitions;
 
 import java.net.MalformedURLException;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import com.aventstack.extentreports.ExtentTest;
 
 import base.BaseClass;
-//import cucumber.api.java.Before;
-//import cucumber.api.java.en.And;
-//import cucumber.api.java.en.Given;
-//import cucumber.api.java.en.Then;
 import helperMethods.WaitTypes;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pageModules.Module_DesignTestCases;
-import pageModules.WorkflowsInAppcenterPage;
-
 public class DesignTestCases extends BaseClass{
 	
 	
@@ -70,11 +61,9 @@ public class DesignTestCases extends BaseClass{
 	   
 	}
 
-
 	@Then("Assign appcenter permissions for {string} dataservice to {string}")
 	public void assign_appcenter_permissions_for_strings_text_dataservice(String dataServiceName,String user) throws Exception {
 	    design.assignPermission(dataServiceName,user);
-	    
 	}
 	
 	@Then("^Add record \"(.*?)\" to the data service for Date$")
@@ -99,9 +88,8 @@ public class DesignTestCases extends BaseClass{
 	}
 	@Then("^Add record \"(.*?)\" to the boolean data service$")
 	public void add_record_to_the_boolean_data_service(String string) throws InterruptedException, MalformedURLException {
-	    design.addRecordInBooelan(string);
+	    design.addRecordInBoolean(string);
 	}
-	
 
 	@Then("Expect error {string} on label {string}")
 	public void expect_error_on_label(String string, String string2) throws Exception {
@@ -113,12 +101,10 @@ public class DesignTestCases extends BaseClass{
 	    design.saveButtonIsDisable();
 	}
 	
-	@Then("Add records {string} {string} {string} {string} {string} {string} {string} {string}")
-	public void add_records(String string, String string2, String string3, String string4, String string5, String string6, String string7, String string8) throws Exception {
+	@Then("^Add records \"(.*?)\"$")
+	public void add_records(String string) throws Exception {
 	    design.addRecordForRepeatedId();
 	}
-	
-	
 
 	@Then("^Add record \"(.*?)\" to the Location data service$")
 	public void add_record__toLocation(String string) throws InterruptedException {
@@ -141,8 +127,8 @@ public class DesignTestCases extends BaseClass{
 	    
 	}
 	
-	@Then("Add records to {string} {string} {string} {string} {string} {string} {string} {string}")
-	public void add_records_to_And_Expect_error_on_save(String string, String string2, String string3, String string4, String string5, String string6, String string7, String string8) throws Exception {
+	@Then("^Add records to \"(.*?)\"$")
+	public void add_records_to_And_Expect_error_on_save(String json) throws Exception {
 	    design.addNewRecords();
 	}
 	
@@ -150,8 +136,6 @@ public class DesignTestCases extends BaseClass{
 	public void update_record_with_to_the_data_service(String id, String jsonFile) throws Exception {
 	    design.updateRecord(id,jsonFile);
 	}
-	
-	
 	
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the boolean data service$")
 	public void update_record_with__boolean_data_service(String id, String jsonFile) throws InterruptedException, MalformedURLException {
@@ -163,14 +147,10 @@ public class DesignTestCases extends BaseClass{
 	    design.updateRecordForDate(id,jsonFile);
 	}
 	
-	
-	
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the data service for File Type$")
 	public void update_data_to_the_data_service_for_file(String id, String jsonFile) throws Exception {
 		design.updateDataForFile(id,jsonFile);
 	}
-	
-
 	
 	@Then("Update records {string} with {string} to the data service")
 	public void update_records_with_to_the_data_service(String id, String attribute) throws Exception {
@@ -221,7 +201,6 @@ public class DesignTestCases extends BaseClass{
 	
 	@Then("^Match this Location data to \"(.*?)\"$")
 	public void match_this_Location_to(String jsonFile) throws Exception {
-//		design.matchToRecord(jsonFile);	
 		design.matchLocationData(jsonFile);
 }
 	
@@ -242,19 +221,15 @@ public class DesignTestCases extends BaseClass{
 	   
 	}
 	
-	
 	@Then("Delete record {string} from the data service")
 	public void delete_record_from_the_data_service(String id) {
 	  	    design.deleteRecord(id);
-	  	   
 	}
 	
 	@Then("Delete record by searching {string} with {string} from the data service.")
 	public void delete_record__from_the_data_service(String dsStringText1001 ,String dsStringText1002) throws InterruptedException {
 	    design.deleteRecordWithLabel( dsStringText1001 , dsStringText1002);
 	}
-	
-
 
 	@Then("Delete record by searching {string} with {string} from the data service")
 	public void delete_record_by_searching_with_from_the_data_service(String string, String string2) throws Exception {
@@ -274,7 +249,5 @@ public class DesignTestCases extends BaseClass{
 	public void user_logs_out_of_AppCenter() {
 	    driver.quit();
 	}
-	
-	
 
 }

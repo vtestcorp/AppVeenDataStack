@@ -64,13 +64,12 @@ public class LoginToAuthorUrl extends BaseClass {
 	
 	@Given("User navigate to Author login page")
 	public void user_Navigate_to_LogIn_Page() throws Exception {
-		
-		loginPage.loginToPage();
-		
-		
 		ExtentReportListener.test = extent.createTest(Feature.class, "DS GROUP");							
 		ExtentReportListener.test=ExtentReportListener.test.createNode(Scenario.class, "Log into Author");						
 		logInfo=ExtentReportListener.test.createNode(new GherkinKeyword("Given"), "Successful log in to Author page");
+		
+		loginPage.loginToPage();
+	
 		logInfo.fail("Ok Successfull");
 		logInfo.addScreenCaptureFromPath(ExtentReportListener.captureScreenShot(driver));
 		extent.flush();
@@ -122,12 +121,9 @@ public class LoginToAuthorUrl extends BaseClass {
 			}
 			catch(Exception file1) {
 				System.err.println("Data Service file not found");
-				
 			}
 		}
-		
 		loginPage.createNewDataServices(JsonUtils.getArrayValues(dataName, "definition"),dataService);
-		
 	}
 	
 	@Given("Group sampleGroup {string} exists")
@@ -156,12 +152,9 @@ public class LoginToAuthorUrl extends BaseClass {
 		loginPage.createGroupAndEnableRole(groupName,role,dataservice);
 	  
 	}
-	
-	
 	@Given("Group {string} exists")
 	public void group_exists(String groupName) {
 		loginPage.groupExists(groupName);
-	   
 	}
 
 	@Given("User {string} exists")
@@ -181,9 +174,7 @@ public class LoginToAuthorUrl extends BaseClass {
 
 	@Then("User logs out of Author")
 	public void user_logs_out_of_Author() throws Exception {
-//		Thread.sleep(120000);	 
 		loginPage.logsOutOfAuthor();
-		Assert.assertTrue(false);
 	}
 	
 	@And("Create Data Service {string}")
@@ -200,17 +191,11 @@ public class LoginToAuthorUrl extends BaseClass {
 	public void delete_Given_Data_Service() throws Exception {
 		Thread.sleep(3000);
 		loginPage.deleteDataService();
-		
 	}
 	
 	@Then("Clone Given Data Service")
 	public void clone_Given_Data_Service() throws Exception {
 		loginPage.cloneGivenDataService();
-		
 	}
-	
-	
-	
-	
 
 }

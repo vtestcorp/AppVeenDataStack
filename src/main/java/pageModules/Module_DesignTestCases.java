@@ -216,7 +216,6 @@ public class Module_DesignTestCases extends BaseClass{
 		}
 		applyWait.waitForElementToBeClickable(gp.done, 30).click();
 		applyWait.waitForElementToBeClickable(gp.save, 30).click();
-		Assert.assertTrue(false);
 		
 	}
 
@@ -488,9 +487,7 @@ public class Module_DesignTestCases extends BaseClass{
 					if(textBox.getAttribute("type").equals("number")) {
 						applyWait.waitForElementToBeClickable(textBox,30).sendKeys(((Long)jsonObject.get(id1)).toString());;
 						}
-					
 				}
-				
 			}
 			}
 			
@@ -518,13 +515,10 @@ public class Module_DesignTestCases extends BaseClass{
 					if(textBox.getAttribute("type").equals("number")) {
 						applyWait.waitForElementToBeClickable(textBox,30).sendKeys(((Long)jsonObject.get(id1)).toString());;
 						}
-					
 				}
 					}
 				}
-				
 			}
-			
 			
 			if((jsonArray.size()-1) > i) {
 			applyWait.waitForElementToBeClickable(acp.proceedAndCreateAnother, 30).click();
@@ -532,9 +526,7 @@ public class Module_DesignTestCases extends BaseClass{
 				else {
 					applyWait.waitForElementToBeClickable(acp.save, 30).click();
 				}
-		
 	      }
-		
 	}
 	
 	public void addRecordForLocation(String string) throws InterruptedException {
@@ -592,19 +584,6 @@ public class Module_DesignTestCases extends BaseClass{
 				if (textBox.isEnabled()) {
 					String id1 = textBox.getAttribute("id");
 					val = (String) jsonObject.get(id1);
-//					if(id1.equals("_id"))
-//					{
-//						val = (String) jsonObject.get(id1);
-//					}
-//					else {
-//	                        try {
-//								JSONObject json  = (JSONObject) jsonObject.get(id1);
-//								val = (String) json.get("_id");
-//							} catch (NullPointerException e) {
-//								continue;
-//							}
-		 //		}
-					
 					if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")||textBox.getAttribute("type").equals("select-one")) {
 
 						   	if (val != null) {
@@ -671,9 +650,6 @@ public class Module_DesignTestCases extends BaseClass{
 										
 							applyWait.waitForElementToBeClickable(acp.save, 30).click();
 				}	
-		
-	
-
 		
 	public void addNewRecords() throws Exception {
 		
@@ -756,7 +732,7 @@ public class Module_DesignTestCases extends BaseClass{
 		}
 	}
 	
-	   public void addRecordInBooelan(String string) throws InterruptedException, MalformedURLException {
+	   public void addRecordInBoolean(String string) throws InterruptedException, MalformedURLException {
 		   Thread.sleep(2000);
 		   if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
 				acp.yes.click();
@@ -877,7 +853,7 @@ public class Module_DesignTestCases extends BaseClass{
 		Thread.sleep(1000);
 		 applyWait.waitForElementToBeClickable(acp.edit, 30).click();
 		Thread.sleep(1000);
-		addRecordInBooelan(jsonFile);
+		addRecordInBoolean(jsonFile);
 	}
 
 

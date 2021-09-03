@@ -352,6 +352,8 @@ public class LoginPage extends BaseClass{
 			function_RolesTab();
 			applyWait.waitForElementToBeClickable(ap.submitAndDeploy, 30).click();;
 			Thread.sleep(10000);
+			
+			
 			if(isRelation) {
 				System.out.println("Starting "+anotherDataService);
 				By anotherDataService1=By.xpath("//span[@id='serviceManagerCardTitle' and @title='"+anotherDataService+"']");
@@ -365,14 +367,8 @@ public class LoginPage extends BaseClass{
 				Thread.sleep(1000);
 				applyWait.waitforElementToBeDisplayed(ap.yes, 10).click();
 				}
-				
 			}
 		}
-
-
-
-
-
 
 
 	private void function_ExperienceTab() {
@@ -416,8 +412,6 @@ public class LoginPage extends BaseClass{
 			}
 		}
 	}
-
-
 
 	public void function_RolesTab() throws Exception {
 		
@@ -499,8 +493,6 @@ public class LoginPage extends BaseClass{
 		}
 	}
 
-
-
 	public void createDataService(String dataServicName) throws Exception {
 		dataServiceName=dataServicName;
 		applyWait.waitForElementToBeClickable(ap.newDataService, 30).click();
@@ -526,7 +518,6 @@ public class LoginPage extends BaseClass{
 				applyWait.waitForElementToBeClickable(ap.delete1, 30).click();
 			}
 		}
-		
 	}
 
 	public void cloneGivenDataService() throws Exception {
