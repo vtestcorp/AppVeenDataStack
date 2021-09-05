@@ -611,7 +611,6 @@ public class LoginPage extends BaseClass{
 				
      		applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
 			applyWait.waitForElementToBeClickable(ap.calender, 30).click();
-			
 			if(jsonProperties.get("dateType").equals("date")) {
 				applyWait.waitForElementToBeClickable(ap.date, 30).click();
 			}
@@ -731,73 +730,52 @@ public class LoginPage extends BaseClass{
 				jsonProperties = (JSONObject) attribute.get("properties");
 				applyWait.waitForElementToBeClickable(ap.dropdownCollection, 30).click();
 				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
-				applyWait.waitForElementToBeClickable(ap.text, 30).click();
+				if(	jsonProperties.containsKey("longText")){
+					applyWait.waitForElementToBeClickable(ap.longText, 30).click();
+					}
+				
+				else if(jsonProperties.containsKey("richText")) {
+					applyWait.waitForElementToBeClickable(ap.richText, 30).click();
+				}
+				
+				else if(jsonProperties.containsKey("email")) {
+					applyWait.waitForElementToBeClickable(ap.email, 30).click();
+				}
+				else if(jsonProperties.containsKey("enum")) {
+					applyWait.waitForElementToBeClickable(ap.listOfValue, 30).click();
+				}
+				
+				else {
+					applyWait.waitForElementToBeClickable(ap.text, 30).click();
+				}
+					
 				requiredAttributes(jsonProperties);
 				break;
 				
-			case "Long Text" : 
-				jsonProperties = (JSONObject) attribute.get("properties");
-				
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
-				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
-				applyWait.waitForElementToBeClickable(ap.longText, 30).click();
-				requiredAttributes(jsonProperties);
-				break;
 			
-			case "Rich Text" : 
-				jsonProperties = (JSONObject) attribute.get("properties");
-				
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
-				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
-				applyWait.waitForElementToBeClickable(ap.richText, 30).click();
-				requiredAttributes(jsonProperties);
-				break;
-				
-			case "Secure Text" : 
-				jsonProperties = (JSONObject) attribute.get("properties");
-				
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
-				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
-				applyWait.waitForElementToBeClickable(ap.secureText, 30).click();
-				requiredAttributes(jsonProperties);
-				break;
-				
-			case "Email" : 
-				jsonProperties = (JSONObject) attribute.get("properties");
-				
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
-				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
-				applyWait.waitForElementToBeClickable(ap.email, 30).click();
-				requiredAttributes(jsonProperties);
-				break;
-				
-			case "List of values" : 
-				jsonProperties = (JSONObject) attribute.get("properties");
-				
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
-				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
-				applyWait.waitForElementToBeClickable(ap.listOfValue, 30).click();
-				requiredAttributes(jsonProperties);
-				break;
-			
+								
+						
 			case "Number" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
 				
 				applyWait.waitForElementToBeClickable(ap.dropdownCollection, 30).click();
 				applyWait.waitForElementToBeClickable(ap.number, 30).click();
-				applyWait.waitForElementToBeClickable(ap.number1, 30).click();
+				if(	jsonProperties.containsKey("currency")){
+					applyWait.waitForElementToBeClickable(ap.currency, 30).click();
+					}
+				
+				else if(jsonProperties.containsKey("enum")) {
+					applyWait.waitForElementToBeClickable(ap.listOfValue, 30).click();
+				}
+				
+				else {
+					applyWait.waitForElementToBeClickable(ap.number1, 30).click();
+				}
+				
 				requiredAttributes(jsonProperties);
 				break;
 				
-			case "Currency" : 
-				jsonProperties = (JSONObject) attribute.get("properties");
-				
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
-				applyWait.waitForElementToBeClickable(ap.number, 30).click();
-				applyWait.waitForElementToBeClickable(ap.currency, 30).click();
-				requiredAttributes(jsonProperties);
-				break;
-				
+							
 			case "Boolean" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
 				applyWait.waitForElementToBeClickable(ap.dropdownCollection, 30).click();
@@ -809,6 +787,12 @@ public class LoginPage extends BaseClass{
      			jsonProperties = (JSONObject) attribute.get("properties");
 				applyWait.waitForElementToBeClickable(ap.dropdownCollection, 30).click();
 				applyWait.waitForElementToBeClickable(ap.calender, 30).click();
+				if(jsonProperties.get("dateType").equals("date")) {
+					applyWait.waitForElementToBeClickable(ap.date, 30).click();
+				}
+				if(jsonProperties.get("dateType").equals("datetime-local")) {
+					applyWait.waitForElementToBeClickable(ap.dateAndTime, 30).click();
+				}
 				requiredAttributes(jsonProperties);
 				break;
 				
@@ -842,7 +826,7 @@ public class LoginPage extends BaseClass{
 	 	        		 applyWait.waitForElementToBeClickable(ap.group, 30).click();
 	 	        		 JSONArray objectArray=(JSONArray) attribute.get("definition");
 	 	        		 requiredAttributes(jsonProperties);
-						for(int k=0;k<objectArray.size();k++) {
+						 for(int k=0;k<objectArray.size();k++) {
 							
 							JSONObject object = (JSONObject) objectArray.get(k);
 							String objectAttributeName = attribute.get("type").toString();
@@ -856,9 +840,6 @@ public class LoginPage extends BaseClass{
 						   groupAttributes((String) object.get("type"),object);
 						}
 	        		 }
-	 	        		 
-						  
-		  
 					
 						break;
 

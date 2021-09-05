@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 
 
 //@CucumberOptions(features="C:\\Users\\Lenovo\\Downloads\\sentient\\test",
-@CucumberOptions(features="./testcases/collection.feature",
+@CucumberOptions(features="./testcases/string_Email.feature",
 			//	dryRun=true,
            //	tags="@AppCenter",
 	        	glue="stepdefinitions",

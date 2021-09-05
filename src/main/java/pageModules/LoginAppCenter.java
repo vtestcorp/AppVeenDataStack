@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 import java.util.Arrays;
 import java.util.List;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -517,28 +518,39 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		String path = System.getProperty("user.dir");
 		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
-
-		List<WebElement> addNew = driver.findElements(By.xpath("//span[text()='Add new']"));
+         Thread.sleep(5000);
+		List<WebElement> addNew = driver.findElements(By.xpath("//*[@id='_id' or text()='Add new']"));
+		
 		int k=1, m=2;
 			for (int j = 1; j <= addNew.size(); j++) {
-				WebElement textBox = driver.findElement(By.xpath("(//span[text()='Add new'] )[" +j+ "]"));
+				String val = null;
+				WebElement textBox = driver.findElement(By.xpath("(//*[@id='_id' or text()='Add new'])["+j+"]"));
 				if (textBox.isEnabled()) {
-					
-					String id1 = "collection1001";
-					for(int i=1;i<4;i++)
+					String id1 = textBox.getAttribute("id");
+					if(id1.equals("_id"))
+					{
+						 val = (String) jsonObject.get(id1);
+						 applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(val);
+					}
+					else {
+					 id1 = "user"+k;
+					// JSONArray arr=jsonObject.get(id1);
+					for(int i=0;i<3;i++)
 					{
 						textBox.click();
-    					Thread.sleep(8000);
-						WebElement textBox1 = driver.findElement(By.xpath("(//input[contains(@id,'collection')])["+i+"]"));
-						String value = JsonUtils.getJsonValue(path + "\\testData\\" + data_Service + ".data.json", id1);	
+    					Thread.sleep(2000);
+						WebElement textBox1 = driver.findElement(By.xpath("//input[@id='"+id1+"."+i+"']"));
+						String newId=id1+"["+i+"]";
+						String value = JsonUtils.getJsonValue(path + "\\testData\\" + data_Service + ".data.json", newId);	
 						applyWait.waitForElementToBeClickable(textBox1, 30).sendKeys(value);
+						Thread.sleep(1000);
 					}
 					
 					k++;
 			}
 
 		}
-
+	}
 		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	}
 

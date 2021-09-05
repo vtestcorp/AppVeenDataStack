@@ -1,0 +1,15 @@
+{
+  "_metadata" : {
+    "deleted" : false,
+    "lastUpdated" : "2021-09-02T15:04:53.359Z",
+    "version" : {
+      "release" : "dev",
+      "document" : 1
+    },
+    "createdAt" : "2021-09-02T15:04:53.359Z"
+  },
+  "user1" : [ "admin", "test", "sample" ],
+  "user2" : [ "admin1", "test1", "sample1" ],
+  "_id" : "SAM1001",
+  "__v" : 0
+}

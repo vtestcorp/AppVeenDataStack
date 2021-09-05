@@ -31,8 +31,8 @@ Scenario: Log out of Author
 	Given User logged into Author
 	Then User logs out of Author
 	
-#
-#@AppCenter
+
+@AppCenter
 Scenario Outline: Log into AppCenter
 	Given User navigate to AppCenter login page
 	And User enters "<username>" and "<password>" in AppCenter login page
@@ -42,20 +42,20 @@ Examples:
 |maker@appveen.com|123123123|
 
 
-# INSERT/UPDATE
+ #INSERT/UPDATE
 Scenario: Add data to data service
 	Given Data service "collection"
 	Then Add data to the data service for Collection
-	
-	
-	Scenario Outline: Add record to data service
-	Given Data service "number_Number"
-	Then Add record "<data>" to the data service
-	And Expect error "DS-NUMBER-NUMBER error" on label "DS-NUMBER-NUMBER label"
-	And Save button is disabled
-Examples:
-|data|
-|{"_id":"DS1002", "dsNumberNumber1002": "", "dsNumberNumber1014": "","dsNumberNumber1015": "","dsNumberNumber1018": "" }|
+#	
+#	
+#	Scenario Outline: Add record to data service
+#	Given Data service "number_Number"
+#	Then Add record "<data>" to the data service
+#	And Expect error "DS-NUMBER-NUMBER error" on label "DS-NUMBER-NUMBER label"
+#	And Save button is disabled
+#Examples:
+#|data|
+#|{"_id":"DS1002", "dsNumberNumber1002": "", "dsNumberNumber1014": "","dsNumberNumber1015": "","dsNumberNumber1018": "" }|
 
 #Scenario Outline: Add record to data service
 #	Given Data service "number_Number"
