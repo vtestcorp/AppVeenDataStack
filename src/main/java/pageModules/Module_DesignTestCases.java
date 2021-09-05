@@ -952,7 +952,6 @@ public class Module_DesignTestCases extends BaseClass{
 	    System.out.println(actualData);
 	    Assert.assertTrue(actualData.equals(expectedData));
 	}
-	
 }
 
 

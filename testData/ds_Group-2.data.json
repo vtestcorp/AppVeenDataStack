@@ -1,0 +1,92 @@
+{
+  "dsGroupLibrary" : {
+    "library" : {
+      "line1" : "Library Line 1",
+      "line2" : "Library Line 2"
+    }
+  },
+  "_metadata" : {
+    "deleted" : false,
+    "lastUpdated" : "2021-09-04T15:34:14.227Z",
+    "version" : {
+      "release" : "dev",
+      "document" : 1
+    },
+    "createdAt" : "2021-09-04T15:34:14.226Z"
+  },
+  "_id" : "DS1001",
+  "dsGroupStringText" : {
+    "stringText" : "Group Text"
+  },
+  "dsGroupStringEmail" : {
+    "email" : "abc@gmail.com"
+  },
+  "dsGroupStringListOfValues" : {
+    "listOfValues" : "ABC"
+  },
+  "dsGroupNumberNumber" : {
+    "number" : 100
+  },
+  "dsGroupNumberCurrency" : {
+    "currency" : 5
+  },
+  "dsGroupNumberListOfValues" : {
+    "listOfValues" : 123
+  },
+  "dsGroupBoolean" : {
+    "boolean" : true
+  },
+  "dsGroupDate" : {
+    "date" : {
+      "rawData" : "2015-05-22T00:00:00Z",
+      "tzData" : "2015-05-22T00:00:00Z",
+      "tzInfo" : "Etc/Zulu",
+      "utc" : "2015-05-22T00:00:00.000Z",
+      "unix" : 1432252800000
+    }
+  },
+  "dsGroupDateTime" : {
+    "dateTime" : {
+      "rawData" : "2030-12-12T10:10:10Z",
+      "tzData" : "2030-12-12T10:10:10Z",
+      "tzInfo" : "Zulu",
+      "utc" : "2030-12-12T10:10:10.000Z",
+      "unix" : 1923300610000
+    }
+  },
+  "dsGroupLocation" : {
+    "location" : {
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [ 73.8567437, 18.5204303 ]
+      },
+      "userInput" : "Pune, Maharashtra, India",
+      "town" : "Pune",
+      "district" : "Pune",
+      "state" : "Maharashtra",
+      "country" : "India",
+      "formattedAddress" : "Pune, Maharashtra, India"
+    }
+  },
+  "dsGroupFile" : {
+    "file" : {
+      "_id" : "613391c977d454e7975d91dd",
+      "length" : 95356,
+      "chunkSize" : 261120,
+      "uploadDate" : "2021-09-04T15:33:29.268Z",
+      "filename" : "e8def6c71e2b5956569282b131c488a7",
+      "md5" : "de35af4d283beb68e0a51d1ac8b629fe",
+      "contentType" : "image/png",
+      "metadata" : {
+        "filename" : "Date & Time.png"
+      }
+    }
+  },
+  "dsGroupUser" : {
+    "user" : {
+      "_id" : "maker@appveen.com",
+      "_href" : "/api/a/rbac/usr/maker@appveen.com"
+    }
+  },
+  "__v" : 0
+}

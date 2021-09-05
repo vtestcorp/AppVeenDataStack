@@ -2,12 +2,16 @@ package testrunner;
 
 import java.util.stream.Stream;
 
+import org.junit.AfterClass;
 import org.junit.runner.RunWith;
+
+import com.vimalselvam.cucumber.listener.Reporter;
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="./testcases/group.feature",
+@CucumberOptions(features=".\\testcases\\string_Text.feature",
 				dryRun = false,
 				glue={"stepdefinitions","cucumberHooks"},
 				monochrome=true,
@@ -25,7 +29,7 @@ public class Runner {
 	            "--plugin", "pretty",
 	            "--plugin", "html:target/cucumber-reports",
 	            "--plugin", "json:target/cucumber-reports/jsonReport.json",
-	            "--plugin", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+	            "--plugin", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:target/cucumber-reports/extentReport.html"
 	           
 	    };
 	 
@@ -34,6 +38,7 @@ public class Runner {
 //	        cucumber.api.cli.Main.main(cucumberOptions.toArray(String[]::new));
 	        io.cucumber.core.cli.Main.main(cucumberOptions.toArray(String[]::new));
 	    }
+		
 		
 }
  

@@ -44,9 +44,9 @@ Scenario: Delete data service
 #
 #
  #INSERT/UPDATE
-#Scenario: Add data to data service
-#	Given Data service "boolean"
-#	Then Add data to the data service for boolean
+Scenario: Add data to data service
+	Given Data service "boolean"
+	Then Add data to the data service for boolean
 #
 #Scenario Outline: Add record to data service
 #	Given Data service "boolean"

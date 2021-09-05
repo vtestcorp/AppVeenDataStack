@@ -247,6 +247,7 @@ public class DesignTestCases extends BaseClass{
 
 	@Then("User log out from AppCenter")
 	public void user_logs_out_of_AppCenter() {
+//		extent.flush();
 	    driver.quit();
 	}
 

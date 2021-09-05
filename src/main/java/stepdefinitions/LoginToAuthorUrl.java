@@ -52,7 +52,7 @@ public class LoginToAuthorUrl extends BaseClass {
 	public void setUp() {
 		start();
 		loginPage = new LoginPage(driver);
-	extent=	ExtentReportListener.setUp();
+		extent=	ExtentReportListener.setUp();
 	}
 	
 	@Before
@@ -64,15 +64,13 @@ public class LoginToAuthorUrl extends BaseClass {
 	
 	@Given("User navigate to Author login page")
 	public void user_Navigate_to_LogIn_Page() throws Exception {
-		ExtentReportListener.test = extent.createTest(Feature.class, "DS GROUP");							
+		
+		ExtentReportListener.test = extent.createTest(Feature.class, "DS GROUP");
 		ExtentReportListener.test=ExtentReportListener.test.createNode(Scenario.class, "Log into Author");						
 		logInfo=ExtentReportListener.test.createNode(new GherkinKeyword("Given"), "Successful log in to Author page");
-		
 		loginPage.loginToPage();
-	
-		logInfo.fail("Ok Successfull");
 		logInfo.addScreenCaptureFromPath(ExtentReportListener.captureScreenShot(driver));
-		extent.flush();
+		
 	}
 
 	@Given("User enters {string} and {string} in Author login page")
