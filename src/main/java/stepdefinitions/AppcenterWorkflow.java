@@ -24,12 +24,10 @@ public class AppcenterWorkflow extends BaseClass{
 		workflow = new WorkflowsInAppcenterPage(driver, test);
 	}
 	
-	
 	@Given("Data Service {string}")
 	public void data_Service(String string) throws Exception {
 	  workflow.dataService(string);
 	}
-	
 	
 	@Then("Add data to the data service workflow  for Approval")
 	public void add_data_to_the_data_service_workflow_for_Approval() throws Exception {

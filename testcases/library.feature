@@ -107,5 +107,3 @@ Examples:
 
 Scenario: Log out of App Center
 Given User log out from AppCenter
-
-

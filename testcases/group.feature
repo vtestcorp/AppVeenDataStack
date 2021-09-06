@@ -48,9 +48,9 @@ Examples:
  #INSERT/UPDATE
 Scenario: Add data to data service
 	Given Data service "ds_Group-2"
-	Then Add data to the data service
-#	
-#	
+	Then Add data to the data service for Group
+	
+	
 #	Scenario Outline: Add record to data service
 #	Given Data service "ds_Group-2"
 #	Then Add record "<data>" to the data service
@@ -60,7 +60,7 @@ Scenario: Add data to data service
 #|data|
 #|{"_id":"STR1002", "dsStringText1002":"", "dsStringText1014":"","dsStringText1015":"","dsStringText1017":"","dsStringText1018":""}|
 #
-#
+
 #Scenario Outline: Add record to data service
 #	Given Data service "ds_Group-2"
 #	Then Add record "<data>" to the data service	
@@ -112,8 +112,3 @@ Scenario: Add data to data service
 #Examples:
 #|id|
 #|STR1001|
-#
-#
-#
-#
-#

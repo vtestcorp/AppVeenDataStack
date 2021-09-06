@@ -71,6 +71,9 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//*[contains(@class,'form-control')]")
 	public List<WebElement> textBoxes;
 	
+	@FindBy(xpath="//*[contains(@class,'form-control') or @type='checkbox' or @type='file' or contains(@class,'btn btn-link mr-2 p-0') or contains(@class,'searchInput')]")
+	public List<WebElement> groupTextBoxes;
+	
 	@FindBy(xpath="//div[starts-with(@class,'d-flex flex-column align')]")
 	public List<WebElement> errorMessages;
 

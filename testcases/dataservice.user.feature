@@ -39,8 +39,6 @@ Scenario Outline: Add group
 		| ReviewGroup | users | Reviewer |
 		| CreateGroup|users|Maker|
 
-
-
 Scenario Outline: Assign permissions
 	Given Data service "<dataservice>"  exists
 	And Group "<group>" exists
@@ -52,8 +50,6 @@ Scenario Outline: Assign permissions
 		| ReadOnlyGroup | users | test_readonly@appveen.com |
 		| ReviewGroup | users | reviewer@appveen.com |
 		| CreateGroup|users|maker@appveen.com|
-
-
 
 Scenario: Log out of Author
 	Given User logged into Author
