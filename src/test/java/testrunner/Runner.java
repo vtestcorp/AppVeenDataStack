@@ -11,13 +11,13 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features=".\\testcases\\string_Text.feature",
+@CucumberOptions(features=".\\testcases\\relation.feature",
 				dryRun = false,
 				glue={"stepdefinitions","cucumberHooks"},
 				monochrome=true,
 				strict = true,
 				plugin = { "pretty", "html:report" ,"json:target/cucumber-reports/cucumber.json" 
-		/* ,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" */
+		 ,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" 
 }
 				)
 
@@ -26,10 +26,10 @@ public class Runner {
 	  private static String[] defaultOptions = {
 	            "--glue", "stepdefinitions",
 	            "--strict",
-	            "--plugin", "pretty",
-	            "--plugin", "html:target/cucumber-reports",
-	            "--plugin", "json:target/cucumber-reports/jsonReport.json",
-	            "--plugin", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:target/cucumber-reports/extentReport.html"
+//	            "--plugin", "pretty",
+//	            "--plugin", "html:target/cucumber-reports",
+//	            "--plugin", "json:target/cucumber-reports/jsonReport.json",
+	            "--plugin", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 	           
 	    };
 	 

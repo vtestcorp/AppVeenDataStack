@@ -50,15 +50,15 @@ Scenario: Add data to data service
 	Given Data service "sample"
 	Then Add data to the data service
 	
-#	Scenario Outline: Add record to data service
-#	Given Data service "sample"
-#	Then Add record "<data>" to the data service
-#	Examples:
-#|data|
-#|{"_id": "STR1005","string1": "Myntra","number1": 1234,"email": "ycm@gmail.com","string2": "Upstox"}|
-#|{"_id": "STR1006","string1": "Zerodha","number1": 4321,"email": "xyz@gmail.com","string2": "Samco"}|
-#|{"_id": "STR1007","string1": "Swiggy","number1": 5555,"email": "pqr@gmail.com","string2": "Zomato"}|
-#	
+	Scenario Outline: Add record to data service
+	Given Data service "sample"
+	Then Add record "<data>" to the data service
+	Examples:
+|data|
+|{"_id": "STR1005","string1": "Myntra","number1": 1234,"email": "ycm@gmail.com","string2": "Upstox"}|
+|{"_id": "STR1006","string1": "Zerodha","number1": 4321,"email": "xyz@gmail.com","string2": "Samco"}|
+|{"_id": "STR1007","string1": "Swiggy","number1": 5555,"email": "pqr@gmail.com","string2": "Zomato"}|
+	
 	Scenario: Add data to data service
 	Given Data service "relation"
 	Then Add data to the data service for Relation

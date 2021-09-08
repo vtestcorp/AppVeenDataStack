@@ -222,7 +222,7 @@ public class LoginAppCenter extends BaseClass {
 										dropdown.selectByVisibleText(textBox, ((Double) jsonObject.get(id1)).toString());
 									}
 								}
-							}
+							
 						
 						else if(jsonObject.get(id1).getClass().toString().contains("Long")) {
 							if (jsonObject.get(id1) != null) {
@@ -260,6 +260,7 @@ public class LoginAppCenter extends BaseClass {
 						else {
 							dropdown.selectByVisibleText(textBox, (JsonUtils.getJsonValue(filePath,id1).toString()));
 						}
+					}
 					}
 					
 					else if (textBox.getAttribute("type").equals("email")) {

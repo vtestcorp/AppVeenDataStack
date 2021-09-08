@@ -43,9 +43,9 @@ public class LoginToAuthorUrl extends BaseClass {
 	public WaitTypes applyWait;
 	public LoginPage loginPage ;
 	public static String data_Service;
-	public ExtentReportListener test1;
-	public ExtentReports extent;
-	public ExtentTest logInfo=null;
+//	public ExtentReportListener test1;
+//	public ExtentReports extent;
+//	public ExtentTest logInfo=null;
 	
 
 	@Before("@Author")
@@ -58,7 +58,7 @@ public class LoginToAuthorUrl extends BaseClass {
 	@Before
 	public void initilization() {
 		loginPage = new LoginPage(driver);
-		test1=new ExtentReportListener();
+//		test1=new ExtentReportListener();
 	}
 	
 	
@@ -67,10 +67,10 @@ public class LoginToAuthorUrl extends BaseClass {
 		
 		ExtentReportListener.test = extent.createTest(Feature.class, "DS GROUP");
 		ExtentReportListener.test=ExtentReportListener.test.createNode(Scenario.class, "Log into Author");						
-		logInfo=ExtentReportListener.test.createNode(new GherkinKeyword("Given"), "Successful log in to Author page");
+//		logInfo=ExtentReportListener.test.createNode(new GherkinKeyword("Given"), "Successful log in to Author page");
 		loginPage.loginToPage();
-		logInfo.addScreenCaptureFromPath(ExtentReportListener.captureScreenShot(driver));
-		
+//		logInfo.addScreenCaptureFromPath(ExtentReportListener.captureScreenShot(driver));
+//		extent.flush();
 	}
 
 	@Given("User enters {string} and {string} in Author login page")

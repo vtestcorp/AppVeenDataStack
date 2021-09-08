@@ -52,7 +52,7 @@ Scenario: Add data to data service
 Scenario Outline: Add record to data service
 	Given Data service "string_Long-Text"
 	Then Add record "<data>" to the data service
-	And Expect error "DS STRING TEXT Error" on label "DS STRING TEXT Label"
+	And Expect error "DS STRING LONG TEXT Error" on label "DS STRING LONG TEXT Label"
 	And Save button is disabled
 Examples:
 |data|

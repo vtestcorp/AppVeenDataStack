@@ -23,9 +23,9 @@ import base.BaseClass;
 @SuppressWarnings("deprecation")
 public class ExtentReportListener extends BaseClass{
 
-	public static ExtentHtmlReporter report = null;
-	public static ExtentReports extent = null;
-	public static ExtentTest test = null;
+//	public static ExtentHtmlReporter report = null;
+//	public static ExtentReports extent = null;
+//	public static ExtentTest test = null;
 
 	public static ExtentReports setUp() {
 		String reportLocation = "./Reports/Extent_Report.html";
@@ -39,8 +39,8 @@ public class ExtentReportListener extends BaseClass{
 		extent = new ExtentReports();
 		extent.attachReporter(report);		
 		extent.setSystemInfo("Application", "DataStack");
-		extent.setSystemInfo("Operating System", System.getProperty("os.name"));
-		extent.setSystemInfo("User Name", System.getProperty("user.name"));
+//		extent.setSystemInfo("Operating System", System.getProperty("os.name"));
+//		extent.setSystemInfo("User Name", System.getProperty("user.name"));
 		System.out.println("System Info. set in Extent Report");		
 		return extent;
 	}

@@ -18,7 +18,6 @@ Scenario: Delete data service
 Scenario: Create data service
 	Given Data service "file" does not exist
 	Then Create new data service "file"
- #Under testData, picks up strings.json create the JSON
 
 Scenario Outline: Assign to Appcenter Group
  	Then Group "File-Group" does not exist
