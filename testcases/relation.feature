@@ -116,14 +116,14 @@ Examples:
 |id|data|
 |REL1001|{"dsRelation1001": "SAM1002","dsRelation1002": "1234","dsRelation1003": "Zerodha","dsRelation1004": "SAM1001","dsRelation1005": "SAM1003","dsRelation1007": "SAM1001", "dsRelation1008": "SAM1002", "dsRelation1010": "SAM1003",  "dsRelation1013": "SAM1001", "dsRelation1014": "SAM1001", "dsRelation1015": "SAM1001",  "dsRelation1016": "SAM1002",  "dsRelation1018": "SAM1002", "dsRelation1019": "Flipkart", "dsRelation1020": "STR1007"}|
 	
-#Scenario Outline: Delete record from the data service
-#	Given Data service "relation"
-#	Then Delete record "<id>" from the data service
-#	And deleting from listing page
-#Examples:
-#|id|
-#|STR1001|
-#
-#Scenario: Log out of App Center
-#	Given User log out from AppCenter
+Scenario Outline: Delete record from the data service
+	Given Data service "relation"
+	Then Delete record "<id>" from the data service
+	And deleting from listing page
+Examples:
+|id|
+|STR1001|
+
+Scenario: Log out of App Center
+	Given User log out from AppCenter
 #

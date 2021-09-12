@@ -23,25 +23,17 @@ import base.BaseClass;
 @SuppressWarnings("deprecation")
 public class ExtentReportListener extends BaseClass{
 
-//	public static ExtentHtmlReporter report = null;
-//	public static ExtentReports extent = null;
-//	public static ExtentTest test = null;
-
 	public static ExtentReports setUp() {
-		String reportLocation = "./Reports/Extent_Report.html";
+		String reportLocation = "./report/extentReport/datastack.html";
 		report = new ExtentHtmlReporter(reportLocation);		
 		report.config().setDocumentTitle("DataStack Test Report");
 		report.config().setReportName("DataStack Report");
 		report.config().setTheme(Theme.STANDARD);		
-		System.out.println("Extent Report location initialized . . .");
 		report.start();
 		
 		extent = new ExtentReports();
 		extent.attachReporter(report);		
 		extent.setSystemInfo("Application", "DataStack");
-//		extent.setSystemInfo("Operating System", System.getProperty("os.name"));
-//		extent.setSystemInfo("User Name", System.getProperty("user.name"));
-		System.out.println("System Info. set in Extent Report");		
 		return extent;
 	}
 	
@@ -74,7 +66,7 @@ public class ExtentReportListener extends BaseClass{
 	public static String captureScreenShot(WebDriver driver) throws IOException {
 		TakesScreenshot screen = (TakesScreenshot) driver;
 		File src = screen.getScreenshotAs(OutputType.FILE);
-		String dest = path+"\\screenshots\\" + getcurrentdateandtime() + ".png";
+		String dest = path+"\\report\\screenshots\\" + getcurrentdateandtime() + ".png";
 		File target = new File(dest);
 		FileUtils.copyFile(src, target);
 		return dest;
@@ -91,7 +83,4 @@ public class ExtentReportListener extends BaseClass{
 		}
 		return str;
 	}
-	
-	
-	
 }

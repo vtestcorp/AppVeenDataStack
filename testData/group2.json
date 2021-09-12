@@ -128,7 +128,7 @@
         "name" : "LIST OF VALUES",
         "fieldLength" : 10,
         "_typeChanged" : "String",
-        "enum" : [ "ABC" ],
+        "enum" : [ "ABC" ,"XYZ","PQR"],
         "dataKey" : "listOfValues",
         "dataPath" : "dsGroupStringListOfValues.listOfValues"
       }
@@ -199,7 +199,7 @@
         "fieldLength" : 10,
         "_typeChanged" : "Number",
         "precision" : 2,
-        "enum" : [ 123 ],
+        "enum" : [ 123,999,455 ],
         "dataKey" : "listOfValues",
         "dataPath" : "dsGroupNumberListOfValues.listOfValues"
       }

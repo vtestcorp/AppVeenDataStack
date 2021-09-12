@@ -52,7 +52,7 @@ public class LoginToAuthorUrl extends BaseClass {
 	public void setUp() {
 		start();
 		loginPage = new LoginPage(driver);
-		extent=	ExtentReportListener.setUp();
+//		extent=	ExtentReportListener.setUp();
 	}
 	
 	@Before
@@ -64,28 +64,59 @@ public class LoginToAuthorUrl extends BaseClass {
 	
 	@Given("User navigate to Author login page")
 	public void user_Navigate_to_LogIn_Page() throws Exception {
-		
-		ExtentReportListener.test = extent.createTest(Feature.class, "DS GROUP");
-		ExtentReportListener.test=ExtentReportListener.test.createNode(Scenario.class, "Log into Author");						
-//		logInfo=ExtentReportListener.test.createNode(new GherkinKeyword("Given"), "Successful log in to Author page");
+//		
+//		test = extent.createTest(Feature.class, "DS GROUP");
+//		test=test.createNode(Scenario.class, "Log into Author");						
+//		test=test.createNode(new GherkinKeyword("Given"), "Successful log in to Author page");
 		loginPage.loginToPage();
 //		logInfo.addScreenCaptureFromPath(ExtentReportListener.captureScreenShot(driver));
 //		extent.flush();
+		
+//		ExtentTest logInfo=null;
+//		try {
+//			test = extent.createTest(Feature.class, "DS GROUP");							
+//			test=test.createNode(Scenario.class, "Log into Author");						
+//			logInfo=test.createNode(new GherkinKeyword("Given"), "Successful log in to Author page");
+//			loginPage.loginToPage();
+//			logInfo.pass("Successfull login");
+////			logInfo.addScreenCaptureFromPath(ExtentReportListener.captureScreenShot(driver));			
+//			
+//		} catch (AssertionError | Exception e) {
+//			ExtentReportListener.testStepHandle("FAIL",driver,logInfo,e);			
+//		}
+		
+		
 	}
 
 	@Given("User enters {string} and {string} in Author login page")
 	public void user_enters_UserName_and_Password(String username,String password) throws Exception {
-
+//		ExtentTest logInfo=null;
+//		try {
+////			test = extent.createTest(Feature.class, "DS GROUP");							
+////			test=test.createNode(Scenario.class, "Log into Author");						
+//			logInfo=test.createNode(new GherkinKeyword("Given"), "User enters "+username+" and "+password+" in Author login page");
 			loginPage.enterUserNameAndPassword(username, password);
+//			logInfo.pass("Successfull login pass");
+////			logInfo.addScreenCaptureFromPath(ExtentReportListener.captureScreenShot(driver));			
+//			
+//		} catch (AssertionError | Exception e) {
+//			ExtentReportListener.testStepHandle("FAIL",driver,logInfo,e);			
+//		}
+//		test=test.createNode(new GherkinKeyword("Given"), "User enters "+username+" and "+password+" in Author login page");
+			
 	}
 
 	@Then("Verify User has Logged in successfully in Author Url")
 	public void message_displayed_Login_Successfully() throws Exception {
+		
+//		test=test.createNode(new GherkinKeyword("Given"), "Verify User has Logged in successfully in Author Url");
 		loginPage.verifyListOfDataServices();
 	}
 	
 	@Given("Data service {string} exists")
 	public void data_service_exists(String dataService) throws Exception {
+//		test=test.createNode(new GherkinKeyword("Given"), "Data service "+dataService+" exists");
+
 		 loginPage.verifyDataServiceExist(dataService);
 	}
 

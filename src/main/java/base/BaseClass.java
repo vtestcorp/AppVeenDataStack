@@ -31,6 +31,7 @@ public class BaseClass {
 	public static int count;
 	public static String author_URL;
 	public static String app_center_URL;
+	public static String errorMessage = "";
 	public static String testData = System.getProperty("testData");
 	public static String browser = System.getProperty("browser");
 	public static String url = System.getProperty("url");

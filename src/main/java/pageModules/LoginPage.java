@@ -603,6 +603,7 @@ public class LoginPage extends BaseClass{
 				applyWait.waitForElementToBeClickable(ap.date, 30).click();
 			}
 			if(jsonProperties.get("dateType").equals("datetime-local")) {
+				isDateTime=true;
 				applyWait.waitForElementToBeClickable(ap.dateAndTime, 30).click();
 			}
 			
