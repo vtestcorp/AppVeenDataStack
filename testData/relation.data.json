@@ -14,11 +14,11 @@
     "_href": "/api/c/vTest/sample/SAM1003"
   },
   "dsRelation1002": {
-    "_id": "5555",
+    "_id": "SAM1003",
     "_href": "/api/c/vTest/sample/STR1006"
   },
   "dsRelation1003": {
-    "_id": "Flipkart",
+    "_id": "SAM1004",
     "_href": "/api/c/vTest/sample/SAM1004"
   },
   "dsRelation1004": {
@@ -65,7 +65,7 @@
     "_href": "/api/c/vTest/sample/SAM1004"
   },
   "dsRelation1019": {
-    "_id": "Dee1006",
+    "_id": "SAM1007",
     "_href": "/api/c/vTest/sample/Dee1006"
   },
   "dsRelation1020": {

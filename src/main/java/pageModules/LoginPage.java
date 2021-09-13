@@ -1,5 +1,7 @@
 package pageModules;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -117,9 +119,32 @@ public class LoginPage extends BaseClass{
 		}
 	}
 	
+	public void createDataServiceForRelation(String dataService) throws Exception {
+		verifyDataServiceExist(dataService);
+		if(flag==false) {
+			
+			String dataName=path+"\\testData" + "\\" + ""+dataService+".json";
+			
+			try {
+				FileReader reader = new FileReader(dataName);
+			}
+			catch(FileNotFoundException file) {
+				try {
+					FileReader reader = new FileReader(testData);
+					dataName=testData;
+				}
+				catch(Exception file1) {
+				}
+			}
+			createNewDataServices(JsonUtils.getArrayValues(dataName, "definition"),dataService);
+		}
+		
+		
+	}
+	
 	public void createNewDataServices(JSONArray jsonArray, String dataService1) throws Exception {
 		dataServiceName=dataService1;
-		 Thread.sleep(3000); 
+		 Thread.sleep(2000); 
 		applyExplicitWaitsUntilElementVisible(ap.dataServiceName1, 10);
 		List<WebElement> dataServices=driver.findElements(By.id("serviceManagerCardTitle"));
 		data_Services=new ArrayList<String>();
@@ -1028,7 +1053,7 @@ public class LoginPage extends BaseClass{
 											String year=fullDate[0];
 											String hour=fullTime[0];
 											String minute=fullTime[1];
-											String[] second=fullTime[2].trim().split(".");
+											String second=fullTime[2].trim().split("[.]")[0];
 											
 											dropdown.selectByIndex(ap.monthDropDown, Integer.parseInt(month)-1);
 											
@@ -1039,6 +1064,7 @@ public class LoginPage extends BaseClass{
 											
 											dropdown.selectByValue(ap.hourDropDown, hour);
 											dropdown.selectByValue(ap.minuteDropDown, minute);
+											dropdown.selectByValue(ap.secondDropDown, second);
 											applyWait.waitForElementToBeClickable(ap.done, 30).click();
 											
 										}
@@ -1259,6 +1285,9 @@ public class LoginPage extends BaseClass{
 						public void navigateToAppcenterLoginPage() {
 							
 						}
+
+
+						
 							
 						
 		

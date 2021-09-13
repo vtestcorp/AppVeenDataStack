@@ -90,7 +90,12 @@ public class LoginToAuthorUrl extends BaseClass {
 	public void data_service_does_not_exist(String string) {
 		loginPage.verifyDataServiceDoesNotExist();
 	}
-
+	
+	@Given("Create new data service {string} for Relation")
+	public void create_DataService_For_Relation(String string) throws Exception {
+		loginPage.createDataServiceForRelation(string);
+	}
+	
 	@Then("Create new data service {string}")
 	public void create_new_Data_Service(String dataService) throws Exception  {
 			data_Service=dataService;

@@ -247,7 +247,7 @@ public class DesignTestCases extends BaseClass{
 	public void delete_record_by_searching_with_from_the_data_service(String string, String string2) throws Exception {
 		design.deleteRecordFromViewPage(string , string2);
 	}
-	@Then("deleting from listing page")
+	@Then("Deleting from listing page")
 	public void deleting_from_listing_page() {
 	    
 	}

@@ -875,6 +875,10 @@ public class Module_DesignTestCases extends BaseClass{
 		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);;
+		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(Keys.ENTER);;
+		Thread.sleep(1000);
+		
+		
 		
 	}
 
@@ -1324,6 +1328,9 @@ else {
   MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
     Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
     System.err.println(entriesDiffering);
+    System.out.println("actual"+actualData);
+    System.out.println(expectedData);
+
     Assert.assertTrue(actualData.equals(expectedData));
 }
 
