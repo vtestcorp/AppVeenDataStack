@@ -52,7 +52,7 @@ Scenario: Add data to data service
 	Scenario Outline: Add record to data service
 	Given Data service "file"
 	Then Add record "<data>" to the data service for File Type
-	And Expect error "" on label ""
+	And Expect error "DS-FILE 1002 Error" on label ""
 	And Save button is disabled
 Examples:
 |data|

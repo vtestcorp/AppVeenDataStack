@@ -144,7 +144,6 @@ public class LoginAppCenter extends BaseClass {
 
 		if (stepNames.size() > 0) {
 			for (WebElement stepName : stepNames) {
-				System.out.println(stepName.getText());
 				stepName.click();
 
 				for (int j = 1; j <= textBoxes.size(); j++) {
@@ -153,7 +152,6 @@ public class LoginAppCenter extends BaseClass {
 							.findElement(By.xpath("(//*[contains(@class,'form-control')])[" + j + "]"));
 
 					String id1 = textBox.getAttribute("id");
-					System.out.println(textBox.getAttribute("type"));
 					if (textBox.getAttribute("type").equals("text") || textBox.getAttribute("type") == null) {
 						if (id1.contains(".")) {
 							String[] attributes = id1.trim().split("[^a-zA-Z0-9]+");
@@ -288,7 +286,6 @@ public class LoginAppCenter extends BaseClass {
 			if (textBox.isEnabled()) {
 				String id1 = textBox.getAttribute("id");
 				String v1 =  jsonObject.get(id1).toString();
-				System.out.println(v1);
 				String v2= null;
 				if(!id1.equals("_id"))
 				{
@@ -420,7 +417,6 @@ public class LoginAppCenter extends BaseClass {
 							 driver.switchTo().frame(textBox);
 							  WebElement child =driver.findElement(By.xpath("//body"));
 							 id1 = child.getAttribute("data-id");
-							 System.out.println("Value of child is : " +child.getAttribute("type"));
 							 try {
 							        String value = (String) jsonObject.get(id1);
 							        applyWait.waitForElementToBeClickable(child, 30).sendKeys(value);
@@ -549,7 +545,6 @@ public class LoginAppCenter extends BaseClass {
 		List<WebElement> textBoxes = acp.groupTextBoxes;
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
-		System.out.println(textBoxes.size());
 
 		for (int j = 1; j <= textBoxes.size(); j++) {
 			WebElement textBox = driver.findElement(By.xpath("(//*[contains(@class,'form-control') or @type='checkbox' or @type='file' or contains(@class,'btn btn-link mr-2 p-0') or contains(@class,'searchInput')])[" + j + "]"));
@@ -569,7 +564,6 @@ public class LoginAppCenter extends BaseClass {
 											if(textBox.getAttribute("class").contains("searchInput")) {
 												
 												String v1 =  JsonUtils.getJsonValue(filePath, id1+".userInput");
-												System.out.println(v1);
 												textBox.sendKeys(v1);
 												Thread.sleep(1000);
 												textBox.sendKeys(Keys.DOWN);
@@ -684,7 +678,6 @@ public class LoginAppCenter extends BaseClass {
 					WebElement date1=driver.findElement(By.xpath("//span[contains(@class,'disabled')=false and @id='_day']["+date+"]"));
 					date1.click();
 					if(lp.isDateTime) {
-						System.out.println("Entering dateTime");
 						dropdown.selectByValue(acp.hourDropDown, hour);
 						dropdown.selectByValue(acp.minuteDropDown, minute);
 						Thread.sleep(500);
@@ -754,9 +747,7 @@ public class LoginAppCenter extends BaseClass {
 					WebElement date1=driver.findElement(By.xpath("//span[contains(@class,'disabled')=false and @id='_day']["+date+"]"));
 					date1.click();
 					
-					if(id1.equals("dsDateTime1014")) {
-						System.out.println();
-					}
+					
 					if(lp.isDateTime) {
 						
 						dropdown.selectByValue(acp.hourDropDown, hour);
@@ -797,8 +788,6 @@ public class LoginAppCenter extends BaseClass {
 					 json=(JSONObject) jsonObject.get(id1);
 					value1=json.get("_id").toString();
 				}
-				
-				System.out.println(id1+"------"+textBox.getAttribute("type"));
 				
 				if (textBox.getAttribute("type").equals("select-one")) {
 						if (json.get("_id") != null) {

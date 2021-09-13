@@ -105,11 +105,15 @@ Examples:
 |id|data|
 |DS1001|{"_id":"DS1001", "dsUser1001": "deepak@appveen.com", "dsUser1002": "maker@appveen.com", "dsUser1003": "suchita@appveen", "dsUser1004": "reviewer@appveen.com", "dsUser1005": "maker@appveen.com", "dsUser1006": "test_manage@appveen.com", "dsUser1007": "test_readonly@appveen.com", "dsUser1008": "deepak@appveen.com", "dsUser1009": "suchita@appveen.com","dsUser1010": "maker@appveen.com", "dsUser1011": "test_manage@appveen.com", "dsUser1012": "suchita@appveen.com", "dsUser1013": "deepak@appveen.com", "dsUser1014": "test_manage@appveen.com", "dsUser1015": "maker@appveen.com", "dsUser1016": "test_readonly@appveen.com", "dsUser1017": "suchita@appveen.com", "dsUser1018": "test_manage@appveen.com", "dsUser1019": "maker@appveen.com"}|
 
-#
-#Scenario Outline: Delete record from the data service
-#	Given Data service "user"
-#	Then Delete record "<id>" from the data service
-#	And deleting from listing page
-#Examples:
-#|id|
-#|DS1001|
+
+Scenario Outline: Delete record from the data service
+	Given Data service "user"
+	Then Delete record "<id>" from the data service
+	And deleting from listing page
+Examples:
+|id|
+|DS1001|
+
+
+Scenario: Log out of App Center
+	Given User log out from AppCenter

@@ -128,6 +128,7 @@ public class LoginPage extends BaseClass{
 			data_Services.add(data);
 		}
 		if(flag==false) {
+			Thread.sleep(1000);
 		Actions action=new Actions(driver);
 		action.moveToElement(ap.newDataService).perform();
 		applyWait.waitForElementToBeClickable(ap.newDataService, 30).click();

@@ -250,7 +250,6 @@ public class Module_DesignTestCases extends BaseClass{
 							WebElement textBox=driver.findElement(By.xpath("(//input[contains(@class,'ng-valid ng-star-inserted') or contains(@class,'ng-invalid')])["+j+"]"));
 					
 							String id1 =textBox.getAttribute("id");
-							
 					
 							if(textBox.getAttribute("type").equals("text")) {
 								if(id1.contains(".")) {
@@ -335,7 +334,6 @@ public class Module_DesignTestCases extends BaseClass{
 	
 										}
 									}
-								
 							
 								else if(JsonPath.read(string, "$."+id1+"").getClass().toString().contains("Long")) {
 		
@@ -367,7 +365,6 @@ public class Module_DesignTestCases extends BaseClass{
 									                textBox.sendKeys(Keys.BACK_SPACE);
 									            }
 									        }
-										
 									
 										applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value.toString());
 										
@@ -427,7 +424,6 @@ public class Module_DesignTestCases extends BaseClass{
 	}
 		if(acp.errorMessages.isEmpty()) {
 			errorMessage=string+" - Custom Error Expected";
-			System.err.println("Custom Error message are not printing");
 			Assert.assertTrue(false);
 		}
 	}
@@ -437,11 +433,9 @@ public class Module_DesignTestCases extends BaseClass{
 		
 	Boolean status=	acp.saveButton.isEnabled();
 	if(status) {
-		System.err.println("Save Button is Enable.");
 		Assert.assertTrue(false);
 	}
 	else {
-		System.out.println("Save Button is Disable");
 	}
 		
 	}
@@ -552,7 +546,6 @@ public class Module_DesignTestCases extends BaseClass{
 						  {
 							 applyWait.waitForElementToBeClickable(textBox,30).clear();
 						     applyWait.waitForElementToBeClickable(textBox, 30).sendKeys((jsonObject.get(id1)).toString());
-//						     applyWait.waitForElementToBeClickable(textBox,30).clear();
 						     Thread.sleep(200);
 						     textBox.sendKeys(Keys.DOWN);
 						     Thread.sleep(200);
@@ -694,9 +687,7 @@ public class Module_DesignTestCases extends BaseClass{
 					if(textBox.getAttribute("type").equals("number")) {
 						applyWait.waitForElementToBeClickable(textBox,30).sendKeys(((Long)jsonObject.get(id1)).toString());;
 						}
-					
 				}
-				
 			}
 			}
 			
@@ -760,19 +751,6 @@ public class Module_DesignTestCases extends BaseClass{
 					    String value = (String) jsonObject.get(id1);
 					     applyWait.waitForElementToBeClickable(button, 30).sendKeys(value);
 				   	 }
-//				else if (button.getAttribute("type").equals("checkbox")) {
-//					WebElement parent = button.findElement(By.xpath("./.."));
-//					if(jsonObject.get(id1)!=null)
-//					      
-//					      if(jsonObject.get(id1).equals(true))
-//					      {
-//					         applyWait.waitForElementToBeClickable(parent, 30).click();
-//	              		   }
-//					      else if(jsonObject.get(id1).equals(false))
-//					      {
-//					    	   
-//					      }
-//				}
 				   
 				   else if (button.getAttribute("type").equals("checkbox")) {
 					      WebElement parent = button.findElement(By.xpath("./.."));
@@ -973,8 +951,6 @@ public class Module_DesignTestCases extends BaseClass{
 	    MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
 	    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
 	    System.err.println(entriesDiffering);
-	    System.out.println(expectedData);
-	    System.out.println(actualData);
 	    Assert.assertTrue(actualData.equals(expectedData));
 	}
 }
@@ -1073,8 +1049,6 @@ public class Module_DesignTestCases extends BaseClass{
 	  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
 	    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
 	    System.err.println(entriesDiffering);
-	    System.out.println(actualData);
-	    System.out.println(expectedData);
 	    Assert.assertTrue(actualData.equals(expectedData));
 	}
 	
@@ -1332,7 +1306,6 @@ public void matchDateData(String jsonFile) throws Exception {
 		
 		String a=attribute.getAttribute("for");
 		String w=t.getText();
-		System.out.println(q+"      "+a+"      "+w);
 		if(!w.equals("N.A.")) {
 			actualData.put(a, w);
 	}
@@ -1351,8 +1324,6 @@ else {
   MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
     Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
     System.err.println(entriesDiffering);
-    System.out.println(expectedData);
-    System.out.println(actualData);
     Assert.assertTrue(actualData.equals(expectedData));
 }
 
@@ -1415,9 +1386,11 @@ public void matchLocationData(String jsonFile) throws Exception {
 			}
 //		}
 		}
-	
+			
+		//*[contains(@class,'value-wrapper')]//span[(last() and not(contains(@class, 'mr-2')) and not(contains(@class, 'ml-2')))] | //odp-view-date//div[@class='font-weight-bold value-wrapper'] | //span[text()='Raw location']/ancestor::div[contains(@class,'label-wrapper')]/following-sibling::div | //odp-view-user//a[@class='ng-star-inserted']
 		
-			String a = key.getAttribute("for");
+		
+		String a = key.getAttribute("for");
 			String w = value.getText();
 		
 		if(!w.equals("N.A.")) {
@@ -1527,8 +1500,6 @@ public void addRecordForGroup(String string) throws Exception {
 				applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1.toString());
 			}
 			
-			
-			
 //-----------------------------------------------------------Email------------------------------------------------------------------------------------------------------------------------				
 		
 			else if (textBox.getAttribute("type").equals("email")) {
@@ -1573,7 +1544,6 @@ public void addRecordForGroup(String string) throws Exception {
 			
 			else if (textBox.getAttribute("type").equals("submit")) {
 				
-//				String dateValue=JsonUtils.getJsonValue(filePath, id1+".rawData");
 				String dateValue=JsonPath.read(string, "$."+id1+".rawData").toString();
 
 				
@@ -1624,9 +1594,7 @@ public void updateRecordForRichText(String id, String jsonFile) throws Interrupt
 	    }
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
 		Thread.sleep(1000);
-		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id)
-;
-		
+		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);
 		WebElement record=driver.findElement(By.xpath("//a[normalize-space()='"+id+"']"));
 		record.click();
 		Thread.sleep(1000);
@@ -1634,6 +1602,5 @@ public void updateRecordForRichText(String id, String jsonFile) throws Interrupt
 		applyWait.waitForElementToBeClickable(acp.edit, 30).click();
 		Thread.sleep(1000);
 		addRecordForRichText(jsonFile);
-
 }
 	}
