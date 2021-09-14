@@ -184,6 +184,13 @@
 			<version>4.1.5</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.23</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-junit4 -->
 		<dependency>
 			<groupId>io.qameta.allure</groupId>
@@ -214,11 +221,11 @@
 						</property>
 					</properties>
 				</configuration>
-                  <dependencies>
-				<dependency>
-					<groupId>org.aspectj</groupId>
-					<artifactId>aspectjweaver</artifactId>
-					<version>1.9.7</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjweaver</artifactId>
+						<version>1.9.7</version>
 					</dependency>
 				</dependencies>
 

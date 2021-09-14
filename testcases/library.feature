@@ -9,7 +9,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|deepak@appveen.com|123123123|
+|test_appadmin@appveen.com|123123123|
 
 Scenario: Delete data service
 	Given Data service "library" exists
@@ -27,7 +27,7 @@ Scenario Outline: Assign to Appcenter Group
 	
 	Examples:
 	|user|
-	|maker@appveen.com|
+	|test_ac_ds_manage@appveen.com|
 
 
 Scenario: Log out of Author
@@ -42,7 +42,7 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|maker@appveen.com|123123123|
+|test_ac_ds_manage@appveen.com|123123123|
 
 
  #INSERT/UPDATE
@@ -64,7 +64,7 @@ Examples:
 Scenario Outline: Add record to data service
 	Given Data service "library"
 	Then Add record "<data>" to the data service	
-	And Expect error "ID DS1001 already exists" on save
+	And Expect error "ID DS1001 already exists." on save
 	Examples:
 		|data|
 	  |{ "_id" : "DS1001", "dsLibrary1001" : { "line1" : "1001", "line2" : "1002" }, "dsLibrary1002" : { "line1" : null, "line2" : null }, "dsLibrary1003" : { "line1" : "3001", "line2" : "3002" }, "dsLibrary1004" : { "line1" : "4001", "line2" : "4002" }, "dsLibrary1005" : { "line1" : "5001", "line2" : "5002" }, "dsLibrary1006" : { "line1" : "6001", "line2" : "6002" }, "dsLibrary1007" : { "line1" : "7001", "line2" : "7002" }, "dsLibrary1008" : { "line1" : "8001", "line2" : "8002" } }|

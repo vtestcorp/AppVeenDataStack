@@ -276,6 +276,7 @@ public class LoginAppCenter extends BaseClass {
 	public void userEnterDataInLocationField() throws InterruptedException, Exception {
 		applyExplicitWaitsUntilElementVisible(acp.addDataButton, 20);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		Thread.sleep(5000);
 		applyExplicitWaitsUntilElementVisible(acp.textBoxesLocation, 20);
 		List<WebElement> textBoxes = acp.textBoxesLocation;
 		
@@ -284,6 +285,7 @@ public class LoginAppCenter extends BaseClass {
 		
 		
 		for (int j = 1; j <= textBoxes.size(); j++) {
+			Thread.sleep(1000);
 		WebElement textBox = driver.findElement(By.xpath("(//input[@class='searchInput pac-target-input' or @id='_id'])["+j+"]"));
 			if (textBox.isEnabled()) {
 				String id1 = textBox.getAttribute("id");
@@ -420,7 +422,6 @@ public class LoginAppCenter extends BaseClass {
 						 driver.switchTo().frame(textBox);
 						  WebElement child =driver.findElement(By.xpath("//body"));
 						 id1 = child.getAttribute("data-id");
-						 System.out.println("Value of child is : " +child.getAttribute("type"));
 						 try {
 						        String value = (String) jsonObject.get(id1);
 						        applyWait.waitForElementToBeClickable(child, 30).sendKeys(value);

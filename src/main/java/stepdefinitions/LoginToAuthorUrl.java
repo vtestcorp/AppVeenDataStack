@@ -44,7 +44,7 @@ public class LoginToAuthorUrl extends BaseClass {
 	public LoginPage loginPage ;
 	public static String data_Service;
 	public ExtentReportListener test1;
-	public ExtentReports extent;
+	public static ExtentReports extent;
 	public ExtentTest logInfo=null;
 	
 
@@ -52,7 +52,7 @@ public class LoginToAuthorUrl extends BaseClass {
 	public void setUp() {
 		start();
 		loginPage = new LoginPage(driver);
-		extent=	ExtentReportListener.setUp();
+	//	extent=	ExtentReportListener.setUpExtent();
 	}
 	
 	@Before
@@ -64,19 +64,12 @@ public class LoginToAuthorUrl extends BaseClass {
 	
 	@Given("User navigate to Author login page")
 	public void user_Navigate_to_LogIn_Page() throws Exception {
-		
-		ExtentReportListener.test = extent.createTest(Feature.class, "DS GROUP");
-		ExtentReportListener.test=ExtentReportListener.test.createNode(Scenario.class, "Log into Author");						
-		logInfo=ExtentReportListener.test.createNode(new GherkinKeyword("Given"), "Successful log in to Author page");
 		loginPage.loginToPage();
-		logInfo.addScreenCaptureFromPath(ExtentReportListener.captureScreenShot(driver));
-		
-	}
+		}
 
 	@Given("User enters {string} and {string} in Author login page")
 	public void user_enters_UserName_and_Password(String username,String password) throws Exception {
-
-			loginPage.enterUserNameAndPassword(username, password);
+		loginPage.enterUserNameAndPassword(username, password);
 	}
 
 	@Then("Verify User has Logged in successfully in Author Url")
@@ -91,7 +84,7 @@ public class LoginToAuthorUrl extends BaseClass {
 
 	@Then("Remove the data service")
 	public void remove_the_data_service() throws Exception {
-	    loginPage.deleteGivenDataService();
+	      loginPage.deleteGivenDataService();
 	}
 
 
@@ -183,6 +176,8 @@ public class LoginToAuthorUrl extends BaseClass {
 	@Then("Search given Data Service")
 	public void search_given_Data_Service() throws Exception {
 		loginPage.searchDataService();
+		
+		loginPage.logsOutOfAuthor();
 	}
 
 	@Then("Delete Given Data Service")

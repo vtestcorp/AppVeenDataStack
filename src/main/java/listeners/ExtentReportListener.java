@@ -27,7 +27,7 @@ public class ExtentReportListener extends BaseClass{
 	public static ExtentReports extent = null;
 	public static ExtentTest test = null;
 
-	public static ExtentReports setUp() {
+	public static ExtentReports setUpExtent() {
 		String reportLocation = "./Reports/Extent_Report.html";
 		report = new ExtentHtmlReporter(reportLocation);		
 		report.config().setDocumentTitle("DataStack Test Report");

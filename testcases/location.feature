@@ -9,7 +9,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|deepak@appveen.com|123123123|
+|test_appadmin@appveen.com|123123123|
 
 Scenario: Delete data service
 	Given Data service "location" exists
@@ -28,7 +28,7 @@ Scenario Outline: Assign to Appcenter Group
 	
 	Examples:
 	|user|
-	|maker@appveen.com|
+	|test_ac_ds_manage@appveen.com|
 
 Scenario: Log out of Author
 	Given User logged into Author
@@ -42,7 +42,7 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|maker@appveen.com|123123123|
+|test_ac_ds_manage@appveen.com|123123123|
 
 
 Scenario: Add data to data service
@@ -50,19 +50,19 @@ Scenario: Add data to data service
 	Then Add data to the data service for Location
 	
 	
-	Scenario Outline: Add record to data service
-	Given Data service "location"
-	Then Add record "<data>" to the Location data service
-	And Expect error "DS-LOCATION Error" on label "DS-LOCATION Label"
-	And Save button is disabled
-Examples:
-|data|
-|{"_id":"DS1002", "dsLocation1002": "", "dsLocation1007": "", "dsLocation1008": ""}|
+#	Scenario Outline: Add record to data service
+#	Given Data service "location"
+#	Then Add record "<data>" to the Location data service
+#	And Expect error "DS-LOCATION Error" on label "DS-LOCATION Label"
+#	And Save button is disabled
+#Examples:
+#|data|
+#|{"_id":"DS1002", "dsLocation1002": "", "dsLocation1007": "", "dsLocation1008": ""}|
 
 Scenario Outline: Add record to data service
 	Given Data service "location"
 	Then Add record "<data>" to the Location data service	
-	And Expect error "ID DS1001 already exists" on save
+	And Expect error "ID DS1001 already exists." on save
 	Examples:
 		|data|
 	  |{ "_id": "DS1001", "dsLocation1001": "Satara, Maharashtra, India", "dsLocation1002": "Mumbai, Maharashtra, India", "dsLocation1003": "Kolhapur, Maharashtra, India", "dsLocation1006": "Sangli, Maharashtra, India", "dsLocation1007": "Nanded, Maharashtra, India", "dsLocation1008": "Dhule, Maharashtra, India", "dsLocation1009": "Ratnagiri, Maharashtra, India" }|
@@ -75,6 +75,7 @@ Scenario Outline: Add record to data service
 Examples:
 |id|data|
 |DS1001|{"_id": "DS1001","dsLocation1001": "Pune, Maharashtra, India","dsLocation1002": "Pimpri-Chinchwad, Maharashtra, India","dsLocation1003": "Bangalore, Karnataka, India","dsLocation1006": "Chennai, Tamil Nadu, India","dsLocation1007": "Gujrat, Pakistan", "dsLocation1008": "Satara, Maharashtra, India"}|
+
 
 	Scenario Outline: Update record to data service
 	Given Data service "location"
@@ -89,12 +90,12 @@ Scenario Outline: Fetch record from the data service
 	And Match this Location data to "<data>" 
 Examples:
 |id|data|
-|DS1001|{"_id": "DS1001","dsLocation1001": "Aundh, Pune, Maharashtra, India","dsLocation1002": "Tamil Nadu, India","dsLocation1003": "Jammu and Kashmir","dsLocation1006": "Bihar, India","dsLocation1007": "Patna, Bihar, India", "dsLocation1008": "Chandigarh, India"}|
+|DS1001|{"_id": "DS1001","dsLocation1001": "Aundh, Pune, Maharashtra, India","dsLocation1002": "Tamil Nadu, India","dsLocation1003": "Jammu and Kashmir","dsLocation1006": "Bihar, India","dsLocation1007": "Patna, Bihar, India", "dsLocation1008": "Satara, Maharashtra, India", "dsLocation1009" : "Mumbai, Maharashtra, India"}|
 
-Scenario Outline: Delete record from the data service
-	Given Data service "location"
-	Then Delete record "<id>" from the data service
-	And Deleting from listing page
-Examples:
-|id|
-|DS1001|
+#Scenario Outline: Delete record from the data service
+#	Given Data service "location"
+#	Then Delete record "<id>" from the data service
+#	And Deleting from listing page
+#Examples:
+#|id|
+#|DS1001|

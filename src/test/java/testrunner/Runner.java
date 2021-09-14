@@ -12,15 +12,15 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 //@CucumberOptions(features="C:\\Users\\Lenovo\\Downloads\\sentient\\test",
-@CucumberOptions(features="./testcases/string_Email.feature",
+@CucumberOptions(features="./testcases/location.feature",
 			//	dryRun=true,
-           //	tags="@AppCenter",
+            // 	tags={"@Author"},
 	        	glue={"stepdefinitions","cucumberHooks"},
 				monochrome=true,
 				strict = true,
-				plugin = { "pretty", "html:target/cucumber-reports" ,"json:target/cucumber-reports/cucumber.json" }
+				plugin = { "pretty", "html:target/cucumber-reports" ,"json:target/cucumber-reports/cucumber.json" 
 					/*	,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" */
-						
+                 }	
 			)
 
 public class Runner {

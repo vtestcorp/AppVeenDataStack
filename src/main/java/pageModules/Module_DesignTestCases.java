@@ -536,12 +536,14 @@ public class Module_DesignTestCases extends BaseClass{
 	    }
 		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
-			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
-	    }
+			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		    }
+		Thread.sleep(5000);
 		applyExplicitWaitsUntilElementVisible(acp.textBoxesLocation, 20);
 		List<WebElement> textBoxes = acp.textBoxesLocation;
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
 	   	for (int j = 1; j <= textBoxes.size(); j++) {
+	   		Thread.sleep(1000);
 			WebElement textBox = driver.findElement(By.xpath("(//input[@class='searchInput pac-target-input' or @id='_id'])["+j+"]"));
 				if (textBox.isEnabled()) {
 					String id1 = textBox.getAttribute("id");
@@ -746,7 +748,6 @@ public class Module_DesignTestCases extends BaseClass{
 		    try {
 				applyExplicitWaitsUntilElementVisible(acp.idTextBox, 5);
 			} catch (Exception e1) {
-				//driver.get(driver.getCurrentUrl());
 				driver.navigate().refresh();
 				 Thread.sleep(3000);
 				if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
@@ -759,7 +760,6 @@ public class Module_DesignTestCases extends BaseClass{
 			for (int j = 1; j <= buttons.size(); j++) {
 				WebElement button = driver.findElement(By.xpath("(//input[@type='checkbox' or @id='_id' ])["+j+"]"));
 				String id1 = button.getAttribute("id");
-				System.out.println(id1 + "===================");
 				Thread.sleep(1000);
 				if(button.isEnabled())
 				   {
@@ -908,9 +908,14 @@ public class Module_DesignTestCases extends BaseClass{
 	    }
 		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
-		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);;
-		
+		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);
+		Thread.sleep(1000);
+		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(Keys.ENTER);
+				
 	}
+	
+	
+	
 
 
 
@@ -1466,6 +1471,7 @@ else {
 	if(errorMessage.contains("ID"))
 	{
 		By error = By.xpath("//div[@role='alertdialog']");
+		Thread.sleep(1000);
 		applyWaitForDynamicWebElement(error, 10);
 		String expectedError = driver.findElement(error).getText();
 		Assert.assertEquals(errorMessage, expectedError);

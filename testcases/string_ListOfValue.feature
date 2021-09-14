@@ -9,7 +9,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|deepak@appveen.com|123123123|
+|test_appadmin@appveen.com|123123123|
 
 Scenario: Delete data service
 	Given Data service "string_ListOfValue" exists
@@ -27,7 +27,7 @@ Scenario Outline: Assign to Appcenter Group
 	
 	Examples:
 	|user|
-	|maker@appveen.com|
+	|test_ac_ds_manage@appveen.com|
 
 
 Scenario: Log out of Author
@@ -42,7 +42,7 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|maker@appveen.com|123123123|
+|test_ac_ds_manage@appveen.com|123123123|
 
 
  #INSERT/UPDATE
@@ -58,13 +58,13 @@ Scenario Outline: Add record to data service
 	And Save button is disabled
 Examples:
 |data|
-|{"_id": "STR1001","dsStringListOfValues1001": "LIST 1","dsStringListOfValues1002": " ","dsStringListOfValues1003": "LIST 1","dsStringListOfValues1004": "LIST 1","dsStringListOfValues1005": "LIST 1","dsStringListOfValues1007": "LIST 1", "dsStringListOfValues1008": "LIST 1", "dsStringListOfValues1010": "LIST 1",  "dsStringListOfValues1013": "LIST 1", "dsStringListOfValues1014": " ", "dsStringListOfValues1015": " ",  "dsStringListOfValues1018": " ", "dsStringListOfValues1020":"LIST 1"}|
+|{"_id": "STR1001","dsStringListOfValues1001": "LIST 1","dsStringListOfValues1002": "","dsStringListOfValues1003": "LIST 1","dsStringListOfValues1004": "LIST 1","dsStringListOfValues1005": "LIST 1","dsStringListOfValues1007": "LIST 1", "dsStringListOfValues1008": "LIST 1", "dsStringListOfValues1010": "LIST 1",  "dsStringListOfValues1013": "LIST 1", "dsStringListOfValues1014": "", "dsStringListOfValues1015": "",  "dsStringListOfValues1018": "", "dsStringListOfValues1020":"LIST 1"}|
 
 
 Scenario Outline: Add record to data service
 	Given Data service "string_ListOfValue"
 	Then Add record "<data>" to the data service	
-	And Expect error "ID STR1001 already exists" on save
+	And Expect error "ID STR1001 already exists." on save
 	Examples:
 		|data|
   |{"_id" : "STR1001","dsStringListOfValues1001" : "LIST 1","dsStringListOfValues1002" : "LIST 2", "dsStringListOfValues1003" : "LIST 2","dsStringListOfValues1004" : "LIST 1","dsStringListOfValues1005" : "LIST 2","dsStringListOfValues1007" : "LIST 2","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1010" : "LIST 1","dsStringListOfValues1013" : "LIST 1","dsStringListOfValues1014" : "LIST 1","dsStringListOfValues1015" : "LIST 1", "dsStringListOfValues1018" : "LIST 2","dsStringListOfValues1020" : "LIST 1"}| 	
