@@ -250,7 +250,6 @@ public class Module_DesignTestCases extends BaseClass{
 							WebElement textBox=driver.findElement(By.xpath("(//input[contains(@class,'ng-valid ng-star-inserted') or contains(@class,'ng-invalid')])["+j+"]"));
 					
 							String id1 =textBox.getAttribute("id");
-							
 					
 							if(textBox.getAttribute("type").equals("text")) {
 								if(id1.contains(".")) {
@@ -335,7 +334,6 @@ public class Module_DesignTestCases extends BaseClass{
 	
 										}
 									}
-								
 							
 								else if(JsonPath.read(string, "$."+id1+"").getClass().toString().contains("Long")) {
 		
@@ -367,7 +365,6 @@ public class Module_DesignTestCases extends BaseClass{
 									                textBox.sendKeys(Keys.BACK_SPACE);
 									            }
 									        }
-										
 									
 										applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value.toString());
 										
@@ -426,7 +423,7 @@ public class Module_DesignTestCases extends BaseClass{
 		System.err.println(errorMessage);
 	}
 		if(acp.errorMessages.isEmpty()) {
-			System.err.println("Custom Error message are not printing");
+			errorMessage=string+" - Custom Error Expected";
 			Assert.assertTrue(false);
 		}
 	}
@@ -436,11 +433,9 @@ public class Module_DesignTestCases extends BaseClass{
 		
 	Boolean status=	acp.saveButton.isEnabled();
 	if(status) {
-		System.err.println("Save Button is Enable.");
 		Assert.assertTrue(false);
 	}
 	else {
-		System.out.println("Save Button is Disable");
 	}
 		
 	}
@@ -653,6 +648,7 @@ public class Module_DesignTestCases extends BaseClass{
 										
 							applyWait.waitForElementToBeClickable(acp.save, 30).click();
 				}	
+
 		
 	public void addNewRecords() throws Exception {
 		
@@ -693,9 +689,7 @@ public class Module_DesignTestCases extends BaseClass{
 					if(textBox.getAttribute("type").equals("number")) {
 						applyWait.waitForElementToBeClickable(textBox,30).sendKeys(((Long)jsonObject.get(id1)).toString());;
 						}
-					
 				}
-				
 			}
 			}
 			
@@ -770,25 +764,26 @@ public class Module_DesignTestCases extends BaseClass{
 					     applyWait.waitForElementToBeClickable(button, 30).sendKeys(value);
 				   	 }
 				   
-				else if (button.getAttribute("type").equals("checkbox")) 
-				     {
-					 WebElement parent = button.findElement(By.xpath("./.."));
-					 try {
-							  jsonObject.get(id1);
-							} catch (NullPointerException e) {
-								continue;
-							}
-					     
-					 if(jsonObject.get(id1).equals(true) && button.getAttribute("class").contains("ng-pristine"))
-				      {
-				         applyWait.waitForElementToBeClickable(parent, 30).click();
-             		}
-				      else if(jsonObject.get(id1).equals(false) && button.getAttribute("class").contains("ng-dirty")){
-				    	  applyWait.waitForElementToBeClickable(parent, 30).click();
+				   else if (button.getAttribute("type").equals("checkbox")) {
+					      WebElement parent = button.findElement(By.xpath("./.."));
+					      if(jsonObject.get(id1)!=null) {
+					      try {
+						Boolean status=	(Boolean) jsonObject.get(id1);
+						} catch (NullPointerException e) {
+							continue;
+						}
+					      if(jsonObject.get(id1).equals(true) && button.getAttribute("class").contains("ng-pristine"))
+					      {
+					         applyWait.waitForElementToBeClickable(parent, 30).click();
+	              		}
+					      else if(jsonObject.get(id1).equals(false) && button.getAttribute("class").contains("ng-dirty")){
+					    	  applyWait.waitForElementToBeClickable(parent, 30).click();
+					      }
 				      }
-			      }
-				   	}
+				      }
+				   }
 			}
+			
 			applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	    }
 
@@ -908,12 +903,10 @@ public class Module_DesignTestCases extends BaseClass{
 	    }
 		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
-		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);
+		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);;
+		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(Keys.ENTER);;
 		Thread.sleep(1000);
-		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(Keys.ENTER);
-				
-	}
-	
+	}	
 	
 	
 
@@ -990,8 +983,6 @@ public class Module_DesignTestCases extends BaseClass{
 	    MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
 	    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
 	    System.err.println(entriesDiffering);
-	    System.out.println(expectedData);
-	    System.out.println(actualData);
 	    Assert.assertTrue(actualData.equals(expectedData));
 	}
 }
@@ -1090,8 +1081,6 @@ public class Module_DesignTestCases extends BaseClass{
 	  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
 	    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
 	    System.err.println(entriesDiffering);
-	    System.out.println(actualData);
-	    System.out.println(expectedData);
 	    Assert.assertTrue(actualData.equals(expectedData));
 	}
 	
@@ -1349,7 +1338,6 @@ public void matchDateData(String jsonFile) throws Exception {
 		
 		String a=attribute.getAttribute("for");
 		String w=t.getText();
-		System.out.println(q+"      "+a+"      "+w);
 		if(!w.equals("N.A.")) {
 			actualData.put(a, w);
 	}
@@ -1368,8 +1356,9 @@ else {
   MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
     Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
     System.err.println(entriesDiffering);
+    System.out.println("actual"+actualData);
     System.out.println(expectedData);
-    System.out.println(actualData);
+
     Assert.assertTrue(actualData.equals(expectedData));
 }
 
@@ -1432,9 +1421,11 @@ public void matchLocationData(String jsonFile) throws Exception {
 			}
 //		}
 		}
-	
+			
+		//*[contains(@class,'value-wrapper')]//span[(last() and not(contains(@class, 'mr-2')) and not(contains(@class, 'ml-2')))] | //odp-view-date//div[@class='font-weight-bold value-wrapper'] | //span[text()='Raw location']/ancestor::div[contains(@class,'label-wrapper')]/following-sibling::div | //odp-view-user//a[@class='ng-star-inserted']
 		
-			String a = key.getAttribute("for");
+		
+		String a = key.getAttribute("for");
 			String w = value.getText();
 		
 		if(!w.equals("N.A.")) {
@@ -1486,5 +1477,185 @@ else {
 	
   }
 
-}
+
+
+public void addRecordForGroup(String string) throws Exception {
 	
+	applyExplicitWaitsUntilElementVisible(acp.addDataButton,20);
+	applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+	applyExplicitWaitsUntilElementVisible(acp.textBox1,20);
+	List<WebElement> textBoxes = acp.groupTextBoxes;
+	JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
+	System.out.println(textBoxes.size());
+
+	for (int j = 1; j <= textBoxes.size(); j++) {
+		WebElement textBox = driver.findElement(By.xpath("(//*[contains(@class,'form-control') or @type='checkbox' or @type='file' or contains(@class,'btn btn-link mr-2 p-0') or contains(@class,'searchInput')])[" + j + "]"));
+		if (textBox.isEnabled()) {
+			String id1 = textBox.getAttribute("id");
+
+			String value1 = JsonPath.read(string, "$."+id1+"").toString();
+//			String value1=JsonUtils.getJsonValue(filePath,id1);
+			System.out.println(id1+"------------"+textBox.getAttribute("type"));
+//--------------------------------------------------------String Text------------------------------------------------------------------------------------------------------------------				
+			
+			if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")||textBox.getAttribute("type").equals("select-one")) {
+					if (value1!= null) {
+
+
+					if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
+						
+										if(textBox.getAttribute("class").contains("searchInput")) {
+											
+//											String v1 =  JsonUtils.getJsonValue(filePath, id1+".userInput");
+											String v1 = JsonPath.read(string, "$."+id1+".userInput").toString();
+											System.out.println(v1);
+											textBox.sendKeys(v1);
+											Thread.sleep(1000);
+											textBox.sendKeys(Keys.DOWN);
+											textBox.sendKeys(Keys.ENTER);
+											
+										}
+										
+										else {
+											try {
+												textBox.getAttribute("role");
+//												String value=JsonUtils.getJsonValue(filePath, id1+"._id");
+												String value = JsonPath.read(string, "$."+id1+"._id").toString();
+
+												applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value);
+												Thread.sleep(500);
+												applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(Keys.ENTER);
+												
+											} catch (Exception e) {
+												applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1);
+											}
+										}
+					}
+
+					if (textBox.getAttribute("type").equals("select-one")) {
+						if( JsonPath.read(string, "$."+id1).equals("")) {
+							textBox.click();
+						}
+						else {
+							
+								if( JsonPath.read(string, "$."+id1).equals("String")) {
+									dropdown.selectByVisibleText(textBox, JsonPath.read(string, "$."+id1));
+								}
+								else {
+									dropdown.selectByVisibleText(textBox, (JsonPath.read(string, "$."+id1)).toString());
+							}
+						}
+					}
+				}
+			}
+//---------------------------------------------------------Number-----------------------------------------------------------------------------------------------------------------------------------
+		
+			else if (textBox.getAttribute("type").equals("number") ||textBox.getAttribute("type").equals("select-one")) {
+				applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1.toString());
+			}
+			
+//-----------------------------------------------------------Email------------------------------------------------------------------------------------------------------------------------				
+		
+			else if (textBox.getAttribute("type").equals("email")) {
+				applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1.toString());
+			}
+			
+//-----------------------------------------------------------Boolean-------------------------------------------------------------------------------------------------------------------------			
+		
+			else if (textBox.getAttribute("type").equals("checkbox")) {
+				
+				
+
+			      WebElement parent = textBox.findElement(By.xpath("./.."));
+//			      String v1 =  JsonPath.read(string, "$."+id1);
+				Boolean status=	JsonPath.read(string, "$."+id1);
+				
+			      if(status.equals(true) && textBox.getAttribute("class").contains("ng-pristine"))
+			      {
+			         applyWait.waitForElementToBeClickable(parent, 30).click();
+        		}
+			      else if(status.equals(false) && textBox.getAttribute("class").contains("ng-dirty")){
+			    	  applyWait.waitForElementToBeClickable(parent, 30).click();
+			      }
+			}
+			
+//--------------------------------------------------------File--------------------------------------------------------------------------------------------------------------------------------				
+		
+			else if (textBox.getAttribute("type").equals("file")) {
+				Thread.sleep(500);
+//			String json1=JsonUtils.getJsonValue(filePath, id1+".metadata.filename");
+			String json1=JsonPath.read(string, "$."+id1+".metadata.filename").toString();
+				if(json1!=null) {
+					String absolutePath=new File("files\\"+json1).getAbsolutePath();
+					textBox.sendKeys(absolutePath);
+					Thread.sleep(500);
+				}
+			}
+//--------------------------------------------------------Location--------------------------------------------------------------------------------------------------------------------------------				
+			else if (textBox.getAttribute("type").equals("email")) {
+				applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1.toString());
+			}
+			
+			else if (textBox.getAttribute("type").equals("submit")) {
+				
+				String dateValue=JsonPath.read(string, "$."+id1+".rawData").toString();
+
+				
+				String emptyArray[]= {"00","00","00Z"};
+				String fullDate[]=dateValue.split("T")[0].split("-");
+				String fullTime[]=dateValue.split("T")[1].split(":");
+				String date=fullDate[2];
+				String month=fullDate[1];
+				String year=fullDate[0];
+				String hour=fullTime[0];
+				String minute=fullTime[1];
+				String second1=fullTime[2].replace("Z", "");
+				Integer second2=(int)Float.parseFloat(second1);
+				String second=second2.toString();
+				if(second.length()==1) {
+					second="0"+second;
+				}
+				
+				WebElement selectDate=driver.findElement(By.id(id1));
+				selectDate.click();
+				dropdown.selectByValue(acp.yearDropDown, year);
+				dropdown.selectByIndex(acp.monthDropDown, Integer.parseInt(month)-1);
+				applyExplicitWaitsUntilElementVisible(acp.day,10);
+				WebElement date1=driver.findElement(By.xpath("//span[contains(@class,'disabled')=false and @id='_day']["+date+"]"));
+				date1.click();
+				if(lp.isDateTime) {
+					System.out.println("Entering dateTime");
+					dropdown.selectByValue(acp.hourDropDown, hour);
+					dropdown.selectByValue(acp.minuteDropDown, minute);
+					Thread.sleep(500);
+					dropdown.selectByValue(acp.secondDropDown, second);
+				}
+				
+				applyWait.waitForElementToBeClickable(acp.doneButton, 30).click();
+				Thread.sleep(500);
+			}
+		}
+	}
+	applyWait.waitForElementToBeClickable(acp.save, 30).click();
+}
+
+
+
+//public void updateRecordForRichText(String id, String jsonFile) throws InterruptedException, MalformedURLException {
+//	   Thread.sleep(2000);
+//		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
+//			acp.yes.click();
+//	    }
+//		applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
+//		Thread.sleep(1000);
+//		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);
+//		WebElement record=driver.findElement(By.xpath("//a[normalize-space()='"+id+"']"));
+//		record.click();
+//		Thread.sleep(1000);
+//		
+//		applyWait.waitForElementToBeClickable(acp.edit, 30).click();
+//		Thread.sleep(1000);
+//		addRecordForRichText(jsonFile);
+//}
+	}
+

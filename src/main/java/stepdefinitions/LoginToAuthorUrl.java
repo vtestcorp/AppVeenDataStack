@@ -43,37 +43,52 @@ public class LoginToAuthorUrl extends BaseClass {
 	public WaitTypes applyWait;
 	public LoginPage loginPage ;
 	public static String data_Service;
+<<<<<<< HEAD
 	public ExtentReportListener test1;
 	public static ExtentReports extent;
 	public ExtentTest logInfo=null;
+=======
+>>>>>>> deepak
 	
 
 	@Before("@Author")
 	public void setUp() {
 		start();
 		loginPage = new LoginPage(driver);
+<<<<<<< HEAD
 	//	extent=	ExtentReportListener.setUpExtent();
+=======
+>>>>>>> deepak
 	}
 	
 	@Before
 	public void initilization() {
 		loginPage = new LoginPage(driver);
-		test1=new ExtentReportListener();
 	}
 	
 	
 	@Given("User navigate to Author login page")
 	public void user_Navigate_to_LogIn_Page() throws Exception {
 		loginPage.loginToPage();
+<<<<<<< HEAD
 		}
 
 	@Given("User enters {string} and {string} in Author login page")
 	public void user_enters_UserName_and_Password(String username,String password) throws Exception {
 		loginPage.enterUserNameAndPassword(username, password);
+=======
+	}
+
+	@Given("User enters {string} and {string} in Author login page")
+	public void user_enters_UserName_and_Password(String username,String password) throws Exception {
+			loginPage.enterUserNameAndPassword(username, password);
+			
+>>>>>>> deepak
 	}
 
 	@Then("Verify User has Logged in successfully in Author Url")
 	public void message_displayed_Login_Successfully() throws Exception {
+		
 		loginPage.verifyListOfDataServices();
 	}
 	
@@ -92,10 +107,13 @@ public class LoginToAuthorUrl extends BaseClass {
 	@Given("Data service {string} does not exist")
 	public void data_service_does_not_exist(String string) {
 		loginPage.verifyDataServiceDoesNotExist();
-	  
 	}
-
-
+	
+	@Given("Create new data service {string} for Relation")
+	public void create_DataService_For_Relation(String string) throws Exception {
+		loginPage.createDataServiceForRelation(string);
+	}
+	
 	@Then("Create new data service {string}")
 	public void create_new_Data_Service(String dataService) throws Exception  {
 			data_Service=dataService;

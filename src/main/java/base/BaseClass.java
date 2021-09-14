@@ -1,14 +1,7 @@
 package base;
 
-import java.io.IOException;
 import java.net.MalformedURLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.TimeZone;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -21,31 +14,24 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
-import config.DefineConstants;
-import config.DefineProperties;
-import helperMethods.Screenshots;
-import helperMethods.SwitchWindow;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 
-	public static String atest = "";
-	public String space = "", hypen = "";
-	int invalidLinksCount = 0;
-	int invalidImageCount = 0;
+
 	public static WebDriver driver;
+	public static ExtentHtmlReporter report = null;
+	public static ExtentReports extent = null;
+	public static ExtentTest test = null;
 	public static String DownloadFilepath, folder, basefold;
 	public static int count;
 	public static String author_URL;
 	public static String app_center_URL;
+	public static String errorMessage = "";
 	public static String testData = System.getProperty("testData");
 	public static String browser = System.getProperty("browser");
 	public static String url = System.getProperty("url");
@@ -82,6 +68,8 @@ public class BaseClass {
 			System.out.println("Please pass the correct browser value");
 		}
 
+		//     -Durl = https://qa.ds.appveen.com
+		
 		if (url == null) {
 			url = "https://bifrost.ds.appveen.com";
 		}
@@ -94,9 +82,11 @@ public class BaseClass {
 		else if (url.equalsIgnoreCase("https://bifrost.ds.appveen.com")) {
 			author_URL = "https://bifrost.ds.appveen.com/author";
 			app_center_URL = "https://bifrost.ds.appveen.com/appcenter";
-
 		}
-
+		else {
+			author_URL = url+"/author";
+			app_center_URL = url+"/appcenter";
+		}
 	}
 
 	public static WebDriver getDriver() {

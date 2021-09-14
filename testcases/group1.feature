@@ -9,25 +9,25 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|test_appadmin@appveen.com|123123123|
+|deepak@appveen.com|123123123|
 
 Scenario: Delete data service
-	Given Data service "ds_Group" exists
+	Given Data service "group1" exists
 	Then Remove the data service
 
 Scenario: Create data service
-	Given Data service "ds_Group" does not exist
-	Then Create new data service "ds_Group"
+	Given Data service "group1" does not exist
+	Then Create new data service "group1"
  #Under testData, picks up strings.json create the JSON
 
 Scenario Outline: Assign to Appcenter Group
  	Then Group "DS Group" does not exist
 	Then Create new group "DS Group" 
-	And Assign appcenter permissions for "ds_Group" dataservice to "<user>"
+	And Assign appcenter permissions for "group1" dataservice to "<user>"
 	
 	Examples:
 	|user|
-	|test_ac_ds_manage@appveen.com|
+	|maker@appveen.com|
 
 
 Scenario: Log out of Author
@@ -42,28 +42,27 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|test_ac_ds_manage@appveen.com|123123123|
+|maker@appveen.com|123123123|
 
 
 # INSERT/UPDATE
 Scenario: Add data to data service
-	Given Data service "ds_Group"
+	Given Data service "group1"
 	Then Add data to the data service for Group
 	
 	
 
 Scenario Outline: Add record to data service
-	Given Data service "ds_Group"
+	Given Data service "group1"
 	Then Add record "<data>" to the data service	
 	And Expect error "ID STR1001 already exists" on save
 	Examples:
 		|data|
 	  |{  "_id" : "DS1001", "dsGroup1001" : { "dsString" : "String 1111" }, "dsGroup1002" : { "dsString" : "String 122" }, "dsGroup1003" : { "dsString" : "String 1333" }, "dsGroup1004" : { "dsString" : "String 1444" }, "dsGroup1005" : { "dsString" : "String 1555" }, "dsGroup1006" : { "dsString" : "String 1666" }}|
-		|{  "_id" : "DS1003", "dsGroup1001" : { "dsString" : "String 1111" }, "dsGroup1002" : { "dsString" : "String 122" }, "dsGroup1003" : { "dsString" : "String 1333" }, "dsGroup1004" : { "dsString" : "String 1444" }, "dsGroup1005" : { "dsString" : "String 1555" }, "dsGroup1006" : { "dsString" : "String 1666" }}|
 	
 	
 	Scenario Outline: Fetch record from the data service
-	Given Data service "ds_Group"
+	Given Data service "group1"
 	Then Fetch record "<id>" from the data service
 	And Match this GROUP data to "<data>"
 Examples:
@@ -72,7 +71,7 @@ Examples:
 	
 	
 	Scenario Outline: Update record to data service
-	Given Data service "ds_Group"
+	Given Data service "group1"
 	Then Update record "<id>" with "<data>" to the data service
 Examples:
 
@@ -81,7 +80,7 @@ Examples:
 
 
 Scenario Outline: Fetch record from the data service
-	Given Data service "ds_Group"
+	Given Data service "group1"
 	Then Fetch record "<id>" from the data service
 	And Match this GROUP data to "<data>"
 Examples:
@@ -89,7 +88,7 @@ Examples:
 |DS1001|{"_id":"DS1001", "dsGroup1001.dsString":"String 1111", "dsGroup1002.dsString":"String 2222", "dsGroup1003.dsString":"String 3333", "dsGroup1004.dsString":"String 4444", "dsGroup1005.dsString":"String 5555", "dsGroup1006.dsString":"String 6666"}|
 	
 Scenario Outline: Delete record from the data service
-	Given Data service "ds_Group"
+	Given Data service "group1"
 	Then Delete record "<id>" from the data service
 	And Deleting from listing page
 Examples:
@@ -99,8 +98,4 @@ Examples:
 
 Scenario: Log out of App Center
 	Given User log out from AppCenter
-
-
-
-
 

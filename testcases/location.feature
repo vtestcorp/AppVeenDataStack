@@ -50,14 +50,14 @@ Scenario: Add data to data service
 	Then Add data to the data service for Location
 	
 	
-#	Scenario Outline: Add record to data service
-#	Given Data service "location"
-#	Then Add record "<data>" to the Location data service
-#	And Expect error "DS-LOCATION Error" on label "DS-LOCATION Label"
-#	And Save button is disabled
-#Examples:
-#|data|
-#|{"_id":"DS1002", "dsLocation1002": "", "dsLocation1007": "", "dsLocation1008": ""}|
+	Scenario Outline: Add record to data service
+	Given Data service "location"
+	Then Add record "<data>" to the Location data service
+	And Expect error "DS-LOCATION Error" on label "DS-LOCATION Label"
+	And Save button is disabled
+Examples:
+|data|
+|{"_id":"DS1002", "dsLocation1002": "", "dsLocation1007": "", "dsLocation1008": ""}|
 
 Scenario Outline: Add record to data service
 	Given Data service "location"
@@ -92,10 +92,16 @@ Examples:
 |id|data|
 |DS1001|{"_id": "DS1001","dsLocation1001": "Aundh, Pune, Maharashtra, India","dsLocation1002": "Tamil Nadu, India","dsLocation1003": "Jammu and Kashmir","dsLocation1006": "Bihar, India","dsLocation1007": "Patna, Bihar, India", "dsLocation1008": "Satara, Maharashtra, India", "dsLocation1009" : "Mumbai, Maharashtra, India"}|
 
-#Scenario Outline: Delete record from the data service
-#	Given Data service "location"
-#	Then Delete record "<id>" from the data service
-#	And Deleting from listing page
-#Examples:
-#|id|
-#|DS1001|
+<<<<<<< HEAD
+Scenario Outline: Delete record from the data service
+	Given Data service "location"
+	Then Delete record "<id>" from the data service
+	And Deleting from listing page
+Examples:
+|id|
+|DS1001|
+
+
+Scenario: Log out of App Center
+	Given User log out from AppCenter
+

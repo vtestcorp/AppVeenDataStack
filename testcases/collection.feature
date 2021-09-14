@@ -20,7 +20,7 @@ Scenario: Create data service
 
 
 Scenario Outline: Assign to Appcenter Group
- 	Then Group "Collection-Group" does not exist
+ #	Then Group "Collection-Group" does not exist
 	Then Create new group "Collection-Group" 
 	And Assign appcenter permissions for "collection" dataservice to "<user>"
 	Examples:

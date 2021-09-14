@@ -18,7 +18,6 @@ Scenario: Delete data service
 Scenario: Create data service
 	Given Data service "string_Email" does not exist
 	Then Create new data service "string_Email"
- #Under testData, picks up strings.json create the JSON
 
 
 Scenario Outline: Assign to Appcenter Group
@@ -45,7 +44,6 @@ Examples:
 |test_ac_ds_manage@appveen.com|123123123|
 
 
- #INSERT/UPDATE
 Scenario: Add data to data service
 	Given Data service "string_Email"
 	Then Add data to the data service

@@ -95,6 +95,13 @@ public class DesignTestCases extends BaseClass{
 	public void expect_error_on_label(String string, String string2) throws Exception {
 	    design.expectError(string,string2);
 	}
+	
+	
+	
+	@Then("^Add record \"(.*?)\" to the group$")
+	public void add_record_to_Group(String string) throws Exception {
+		design.addRecordForGroup(string);
+	}
 
 	@Then("Save button is disabled")
 	public void save_button_is_disabled() {
@@ -137,13 +144,19 @@ public class DesignTestCases extends BaseClass{
 	    design.updateRecord(id,jsonFile);
 	}
 	
+<<<<<<< HEAD
 
+=======
+>>>>>>> deepak
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the stringRichText data service$")
 	public void update_record_with_to_the_data_RichTextservice(String id, String jsonFile) throws Exception {
 	    design.updateRecordForRichText(id,jsonFile);
 	}
 	
+<<<<<<< HEAD
 
+=======
+>>>>>>> deepak
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the boolean data service$")
 	public void update_record_with__boolean_data_service(String id, String jsonFile) throws InterruptedException, MalformedURLException {
 		 design.updateRecordForBooelan(id, jsonFile);

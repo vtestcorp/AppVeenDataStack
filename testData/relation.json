@@ -10,17 +10,17 @@
   },
   "_metadata" : {
     "version" : {
-      "document" : 15,
+      "document" : 5,
       "release" : "dev"
     },
     "deleted" : false,
-    "lastUpdated" : "2021-08-30T16:50:37.954Z",
-    "createdAt" : "2021-08-19T12:09:39.765Z",
+    "lastUpdated" : "2021-09-13T17:06:41.326Z",
+    "createdAt" : "2021-09-13T17:03:04.959Z",
     "lastUpdatedBy" : "deepak@appveen.com"
   },
-  "_id" : "SRVC6512",
+  "_id" : "SRVC8120",
   "allowedFileTypes" : [ "jpeg", "ppt", "xls", "csv", "doc", "jpg", "png", "gif", "zip", "tar", "rar", "gz", "bz2", "7z", "mp4", "mp3", "pdf", "ico", "docx", "pptx", "xlsx", "ods", "xml", "txt" ],
-  "version" : 4,
+  "version" : 2,
   "instances" : 1,
   "versionValidity" : {
     "validityType" : "count",
@@ -28,7 +28,7 @@
   },
   "permanentDeleteData" : true,
   "disableInsights" : false,
-  "status" : "Undeployed",
+  "status" : "Active",
   "enableSearchIndex" : false,
   "attributeCount" : 39,
   "type" : null,
@@ -36,14 +36,14 @@
   "description" : null,
   "app" : "vTest",
   "api" : "/relation",
-  "port" : 20196,
+  "port" : 20036,
   "wizard" : [ ],
   "webHooks" : [ ],
   "preHooks" : [ ],
   "collectionName" : "relation",
   "__v" : 0,
   "definition" : [ {
-    "_id" : "612d0c5d64690b8ff751d19b",
+    "_id" : "613f852154d3c1b187c2b708",
     "key" : "_id",
     "type" : "String",
     "prefix" : "REL",
@@ -66,7 +66,7 @@
       "dataKey" : "_id"
     }
   }, {
-    "_id" : "612d0c5d64690b397151d19c",
+    "_id" : "613f852154d3c10e80c2b709",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -92,7 +92,7 @@
       "relatedTo" : "sample",
       "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612d08271bf9c529a3806057",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -119,7 +119,7 @@
       "dataPath" : "dsRelation1001"
     }
   }, {
-    "_id" : "612d0c5d64690be39651d19d",
+    "_id" : "613f852154d3c1531fc2b70a",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -138,9 +138,9 @@
     } ],
     "key" : "dsRelation1002",
     "properties" : {
-      "name" : "DS RELATION 1002",
       "label" : "DS RELATION 1002 LABEL",
       "errorMessage" : "DS RELATION 1002 ERROR",
+      "name" : "DS RELATION 1002",
       "required" : true,
       "fieldLength" : 10,
       "_description" : "DS RELATION 1002 DESCRIPTION",
@@ -149,9 +149,9 @@
       "unique" : true,
       "deleteAction" : "restrict",
       "relatedTo" : "sample",
-      "relatedSearchField" : "number1",
+      "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612775b91d8a4a88ddfb754c",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -173,35 +173,12 @@
           "_detailedType" : "",
           "dataKey" : "_id"
         }
-      }, {
-        "_id" : "612d08271bf9c50163806058",
-        "type" : "String",
-        "key" : "string1",
-        "properties" : {
-          "name" : "String 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "dataKey" : "string1",
-          "dataPath" : "string1"
-        }
-      }, {
-        "_id" : "612d08271bf9c561c9806059",
-        "type" : "Number",
-        "key" : "number1",
-        "properties" : {
-          "name" : "Number 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "Number",
-          "precision" : 2,
-          "dataKey" : "number1",
-          "dataPath" : "number1"
-        }
       } ],
       "dataKey" : "dsRelation1002",
       "dataPath" : "dsRelation1002"
     }
   }, {
-    "_id" : "612d0c5d64690b604051d19e",
+    "_id" : "613f852154d3c15de9c2b70b",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -226,9 +203,9 @@
       "_typeChanged" : "Relation",
       "deleteAction" : "restrict",
       "relatedTo" : "sample",
-      "relatedSearchField" : "string1",
+      "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612d08271bf9c529a3806057",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -250,46 +227,12 @@
           "_detailedType" : "",
           "dataKey" : "_id"
         }
-      }, {
-        "_id" : "612d08271bf9c561c9806059",
-        "type" : "Number",
-        "key" : "number1",
-        "properties" : {
-          "name" : "Number 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "Number",
-          "precision" : 2,
-          "dataKey" : "number1",
-          "dataPath" : "number1"
-        }
-      }, {
-        "_id" : "612d08271bf9c50163806058",
-        "type" : "String",
-        "key" : "string1",
-        "properties" : {
-          "name" : "String 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "dataKey" : "string1",
-          "dataPath" : "string1"
-        }
-      }, {
-        "_id" : "612d08271bf9c5e8ec80605b",
-        "type" : "String",
-        "key" : "string2",
-        "properties" : {
-          "name" : "String 2",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "dataKey" : "string2",
-          "dataPath" : "string2"
-        }
       } ],
       "dataKey" : "dsRelation1003",
       "dataPath" : "dsRelation1003"
     }
   }, {
-    "_id" : "612d0c5d64690b47af51d19f",
+    "_id" : "613f852154d3c185f2c2b70c",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -316,7 +259,7 @@
       "relatedTo" : "sample",
       "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612d08271bf9c529a3806057",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -338,35 +281,12 @@
           "_detailedType" : "",
           "dataKey" : "_id"
         }
-      }, {
-        "_id" : "612d08271bf9c50163806058",
-        "type" : "String",
-        "key" : "string1",
-        "properties" : {
-          "name" : "String 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "dataKey" : "string1",
-          "dataPath" : "string1"
-        }
-      }, {
-        "_id" : "612d08271bf9c561c9806059",
-        "type" : "Number",
-        "key" : "number1",
-        "properties" : {
-          "name" : "Number 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "Number",
-          "precision" : 2,
-          "dataKey" : "number1",
-          "dataPath" : "number1"
-        }
       } ],
       "dataKey" : "dsRelation1004",
       "dataPath" : "dsRelation1004"
     }
   }, {
-    "_id" : "612d0c5d64690b2c7b51d1a0",
+    "_id" : "613f852154d3c18cffc2b70d",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -393,7 +313,7 @@
       "relatedTo" : "sample",
       "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612d08271bf9c529a3806057",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -415,35 +335,12 @@
           "_detailedType" : "",
           "dataKey" : "_id"
         }
-      }, {
-        "_id" : "612d08271bf9c50163806058",
-        "type" : "String",
-        "key" : "string1",
-        "properties" : {
-          "name" : "String 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "dataKey" : "string1",
-          "dataPath" : "string1"
-        }
-      }, {
-        "_id" : "612d08271bf9c561c9806059",
-        "type" : "Number",
-        "key" : "number1",
-        "properties" : {
-          "name" : "Number 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "Number",
-          "precision" : 2,
-          "dataKey" : "number1",
-          "dataPath" : "number1"
-        }
       } ],
       "dataKey" : "dsRelation1005",
       "dataPath" : "dsRelation1005"
     }
   }, {
-    "_id" : "612d0c5d64690b53de51d1a1",
+    "_id" : "613f852154d3c13a05c2b70e",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -462,15 +359,15 @@
     } ],
     "key" : "dsRelation1006",
     "properties" : {
-      "name" : "DS RELATION 1006",
       "readonly" : true,
+      "name" : "DS RELATION 1006",
       "fieldLength" : 10,
       "_typeChanged" : "Relation",
       "deleteAction" : "restrict",
       "relatedTo" : "sample",
       "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612d08271bf9c529a3806057",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -492,35 +389,12 @@
           "_detailedType" : "",
           "dataKey" : "_id"
         }
-      }, {
-        "_id" : "612d08271bf9c50163806058",
-        "type" : "String",
-        "key" : "string1",
-        "properties" : {
-          "name" : "String 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "dataKey" : "string1",
-          "dataPath" : "string1"
-        }
-      }, {
-        "_id" : "612d08271bf9c561c9806059",
-        "type" : "Number",
-        "key" : "number1",
-        "properties" : {
-          "name" : "Number 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "Number",
-          "precision" : 2,
-          "dataKey" : "number1",
-          "dataPath" : "number1"
-        }
       } ],
       "dataKey" : "dsRelation1006",
       "dataPath" : "dsRelation1006"
     }
   }, {
-    "_id" : "612d0c5d64690b132651d1a2",
+    "_id" : "613f852154d3c14a34c2b70f",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -548,7 +422,7 @@
       "relatedTo" : "sample",
       "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612d08271bf9c529a3806057",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -570,24 +444,12 @@
           "_detailedType" : "",
           "dataKey" : "_id"
         }
-      }, {
-        "_id" : "612d08271bf9c56b6980605a",
-        "type" : "String",
-        "key" : "email",
-        "properties" : {
-          "name" : "Email",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "email" : true,
-          "dataKey" : "email",
-          "dataPath" : "email"
-        }
       } ],
       "dataKey" : "dsRelation1007",
       "dataPath" : "dsRelation1007"
     }
   }, {
-    "_id" : "612d0c5d64690b02e551d1a3",
+    "_id" : "613f852154d3c1ccc3c2b710",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -615,7 +477,7 @@
       "relatedTo" : "sample",
       "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612d08271bf9c529a3806057",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -637,23 +499,12 @@
           "_detailedType" : "",
           "dataKey" : "_id"
         }
-      }, {
-        "_id" : "612d08271bf9c5e8ec80605b",
-        "type" : "String",
-        "key" : "string2",
-        "properties" : {
-          "name" : "String 2",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "dataKey" : "string2",
-          "dataPath" : "string2"
-        }
       } ],
       "dataKey" : "dsRelation1008",
       "dataPath" : "dsRelation1008"
     }
   }, {
-    "_id" : "612d0c5d64690b2ef051d1a4",
+    "_id" : "613f852154d3c1e6a7c2b711",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -681,7 +532,7 @@
       "relatedTo" : "sample",
       "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612d08271bf9c529a3806057",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -703,35 +554,12 @@
           "_detailedType" : "",
           "dataKey" : "_id"
         }
-      }, {
-        "_id" : "612d08271bf9c50163806058",
-        "type" : "String",
-        "key" : "string1",
-        "properties" : {
-          "name" : "String 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "dataKey" : "string1",
-          "dataPath" : "string1"
-        }
-      }, {
-        "_id" : "612d08271bf9c561c9806059",
-        "type" : "Number",
-        "key" : "number1",
-        "properties" : {
-          "name" : "Number 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "Number",
-          "precision" : 2,
-          "dataKey" : "number1",
-          "dataPath" : "number1"
-        }
       } ],
       "dataKey" : "dsRelation1010",
       "dataPath" : "dsRelation1010"
     }
   }, {
-    "_id" : "612d0c5d64690b90cc51d1a5",
+    "_id" : "613f852154d3c17338c2b712",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -750,8 +578,8 @@
     } ],
     "key" : "dsRelation1011",
     "properties" : {
-      "name" : "DS RELATION 1011",
       "readonly" : true,
+      "name" : "DS RELATION 1011",
       "fieldLength" : 10,
       "_typeChanged" : "Relation",
       "createOnly" : true,
@@ -759,7 +587,7 @@
       "relatedTo" : "sample",
       "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612d08271bf9c529a3806057",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -781,35 +609,12 @@
           "_detailedType" : "",
           "dataKey" : "_id"
         }
-      }, {
-        "_id" : "612d08271bf9c50163806058",
-        "type" : "String",
-        "key" : "string1",
-        "properties" : {
-          "name" : "String 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "dataKey" : "string1",
-          "dataPath" : "string1"
-        }
-      }, {
-        "_id" : "612d08271bf9c56b6980605a",
-        "type" : "String",
-        "key" : "email",
-        "properties" : {
-          "name" : "Email",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "email" : true,
-          "dataKey" : "email",
-          "dataPath" : "email"
-        }
       } ],
       "dataKey" : "dsRelation1011",
       "dataPath" : "dsRelation1011"
     }
   }, {
-    "_id" : "612d0c5d64690b60a751d1a6",
+    "_id" : "613f852154d3c1d972c2b713",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -828,8 +633,8 @@
     } ],
     "key" : "dsRelation1012",
     "properties" : {
-      "name" : "DS RELATION 1012",
       "readonly" : true,
+      "name" : "DS RELATION 1012",
       "fieldLength" : 10,
       "_typeChanged" : "Relation",
       "unique" : true,
@@ -837,7 +642,7 @@
       "relatedTo" : "sample",
       "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612d08271bf9c529a3806057",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -859,35 +664,12 @@
           "_detailedType" : "",
           "dataKey" : "_id"
         }
-      }, {
-        "_id" : "612d08271bf9c5e8ec80605b",
-        "type" : "String",
-        "key" : "string2",
-        "properties" : {
-          "name" : "String 2",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "dataKey" : "string2",
-          "dataPath" : "string2"
-        }
-      }, {
-        "_id" : "612d08271bf9c56b6980605a",
-        "type" : "String",
-        "key" : "email",
-        "properties" : {
-          "name" : "Email",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "email" : true,
-          "dataKey" : "email",
-          "dataPath" : "email"
-        }
       } ],
       "dataKey" : "dsRelation1012",
       "dataPath" : "dsRelation1012"
     }
   }, {
-    "_id" : "612d0c5d64690b4ed651d1a7",
+    "_id" : "613f852154d3c11697c2b714",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -906,15 +688,15 @@
     } ],
     "key" : "dsRelation1013",
     "properties" : {
-      "name" : "DS RELATION 1013",
       "label" : "DS RELATION 1013 LABEL",
+      "name" : "DS RELATION 1013",
       "fieldLength" : 10,
       "_typeChanged" : "Relation",
       "deleteAction" : "restrict",
       "relatedTo" : "sample",
       "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612d08271bf9c529a3806057",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -936,23 +718,12 @@
           "_detailedType" : "",
           "dataKey" : "_id"
         }
-      }, {
-        "_id" : "612d08271bf9c50163806058",
-        "type" : "String",
-        "key" : "string1",
-        "properties" : {
-          "name" : "String 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "dataKey" : "string1",
-          "dataPath" : "string1"
-        }
       } ],
       "dataKey" : "dsRelation1013",
       "dataPath" : "dsRelation1013"
     }
   }, {
-    "_id" : "612d0c5d64690be96651d1a8",
+    "_id" : "613f852154d3c1c388c2b715",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -971,8 +742,8 @@
     } ],
     "key" : "dsRelation1014",
     "properties" : {
-      "name" : "DS RELATION 1014",
       "errorMessage" : "DS RELATION 1013 ERROR",
+      "name" : "DS RELATION 1014",
       "required" : true,
       "fieldLength" : 10,
       "_typeChanged" : "Relation",
@@ -980,7 +751,7 @@
       "relatedTo" : "sample",
       "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612d08271bf9c529a3806057",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -1002,35 +773,12 @@
           "_detailedType" : "",
           "dataKey" : "_id"
         }
-      }, {
-        "_id" : "612d08271bf9c50163806058",
-        "type" : "String",
-        "key" : "string1",
-        "properties" : {
-          "name" : "String 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "dataKey" : "string1",
-          "dataPath" : "string1"
-        }
-      }, {
-        "_id" : "612d08271bf9c56b6980605a",
-        "type" : "String",
-        "key" : "email",
-        "properties" : {
-          "name" : "Email",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "email" : true,
-          "dataKey" : "email",
-          "dataPath" : "email"
-        }
       } ],
       "dataKey" : "dsRelation1014",
       "dataPath" : "dsRelation1014"
     }
   }, {
-    "_id" : "612d0c5d64690b71cc51d1a9",
+    "_id" : "613f852154d3c17610c2b716",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -1049,9 +797,9 @@
     } ],
     "key" : "dsRelation1015",
     "properties" : {
-      "name" : "DS RELATION 1015",
       "label" : "DS RELATION 1015 CUSTOM LABEL",
       "errorMessage" : "DS RELATION 1015 CUSTOM ERROR",
+      "name" : "DS RELATION 1015",
       "required" : true,
       "fieldLength" : 10,
       "_typeChanged" : "Relation",
@@ -1059,7 +807,7 @@
       "relatedTo" : "sample",
       "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612d08271bf9c529a3806057",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -1081,34 +829,12 @@
           "_detailedType" : "",
           "dataKey" : "_id"
         }
-      }, {
-        "_id" : "612d08271bf9c5e8ec80605b",
-        "type" : "String",
-        "key" : "string2",
-        "properties" : {
-          "name" : "String 2",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "dataKey" : "string2",
-          "dataPath" : "string2"
-        }
-      }, {
-        "_id" : "612d08271bf9c50163806058",
-        "type" : "String",
-        "key" : "string1",
-        "properties" : {
-          "name" : "String 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "dataKey" : "string1",
-          "dataPath" : "string1"
-        }
       } ],
       "dataKey" : "dsRelation1015",
       "dataPath" : "dsRelation1015"
     }
   }, {
-    "_id" : "612d0c5d64690b5e8c51d1aa",
+    "_id" : "613f852154d3c16b07c2b717",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -1130,12 +856,11 @@
       "name" : "DS RELATION 1016",
       "fieldLength" : 10,
       "_typeChanged" : "Relation",
-      "default" : "SAM1003",
       "deleteAction" : "restrict",
       "relatedTo" : "sample",
       "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612d08271bf9c529a3806057",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -1157,23 +882,12 @@
           "_detailedType" : "",
           "dataKey" : "_id"
         }
-      }, {
-        "_id" : "612d08271bf9c50163806058",
-        "type" : "String",
-        "key" : "string1",
-        "properties" : {
-          "name" : "String 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "dataKey" : "string1",
-          "dataPath" : "string1"
-        }
       } ],
       "dataKey" : "dsRelation1016",
       "dataPath" : "dsRelation1016"
     }
   }, {
-    "_id" : "612d0c5d64690b69e551d1ab",
+    "_id" : "613f852154d3c17b8ec2b718",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -1192,16 +906,15 @@
     } ],
     "key" : "dsRelation1017",
     "properties" : {
-      "name" : "DS RELATION 1017",
       "readonly" : true,
+      "name" : "DS RELATION 1017",
       "fieldLength" : 10,
       "_typeChanged" : "Relation",
-      "default" : "12",
       "deleteAction" : "restrict",
       "relatedTo" : "sample",
       "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612d08271bf9c529a3806057",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -1223,24 +936,12 @@
           "_detailedType" : "",
           "dataKey" : "_id"
         }
-      }, {
-        "_id" : "612d08271bf9c561c9806059",
-        "type" : "Number",
-        "key" : "number1",
-        "properties" : {
-          "name" : "Number 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "Number",
-          "precision" : 2,
-          "dataKey" : "number1",
-          "dataPath" : "number1"
-        }
       } ],
       "dataKey" : "dsRelation1017",
       "dataPath" : "dsRelation1017"
     }
   }, {
-    "_id" : "612d0c5d64690b76bd51d1ac",
+    "_id" : "613f852154d3c13e28c2b719",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -1264,9 +965,9 @@
       "_typeChanged" : "Relation",
       "deleteAction" : "restrict",
       "relatedTo" : "sample",
-      "relatedSearchField" : "string1",
+      "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612d08271bf9c529a3806057",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -1288,35 +989,12 @@
           "_detailedType" : "",
           "dataKey" : "_id"
         }
-      }, {
-        "_id" : "612d08271bf9c50163806058",
-        "type" : "String",
-        "key" : "string1",
-        "properties" : {
-          "name" : "String 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "dataKey" : "string1",
-          "dataPath" : "string1"
-        }
-      }, {
-        "_id" : "612d08271bf9c561c9806059",
-        "type" : "Number",
-        "key" : "number1",
-        "properties" : {
-          "name" : "Number 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "Number",
-          "precision" : 2,
-          "dataKey" : "number1",
-          "dataPath" : "number1"
-        }
       } ],
       "dataKey" : "dsRelation1018",
       "dataPath" : "dsRelation1018"
     }
   }, {
-    "_id" : "612d0c5d64690b761f51d1ad",
+    "_id" : "613f852154d3c1d8c9c2b71a",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -1340,9 +1018,9 @@
       "_typeChanged" : "Relation",
       "deleteAction" : "setnull",
       "relatedTo" : "sample",
-      "relatedSearchField" : "string1",
+      "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612d08271bf9c529a3806057",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -1364,35 +1042,12 @@
           "_detailedType" : "",
           "dataKey" : "_id"
         }
-      }, {
-        "_id" : "612d08271bf9c50163806058",
-        "type" : "String",
-        "key" : "string1",
-        "properties" : {
-          "name" : "String 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "dataKey" : "string1",
-          "dataPath" : "string1"
-        }
-      }, {
-        "_id" : "612d08271bf9c561c9806059",
-        "type" : "Number",
-        "key" : "number1",
-        "properties" : {
-          "name" : "Number 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "Number",
-          "precision" : 2,
-          "dataKey" : "number1",
-          "dataPath" : "number1"
-        }
       } ],
       "dataKey" : "dsRelation1019",
       "dataPath" : "dsRelation1019"
     }
   }, {
-    "_id" : "612d0c5d64690b520251d1ae",
+    "_id" : "613f852154d3c1bb0fc2b71b",
     "type" : "Object",
     "definition" : [ {
       "type" : "String",
@@ -1417,9 +1072,9 @@
       "_typeChanged" : "Relation",
       "deleteAction" : "restrict",
       "relatedTo" : "sample",
-      "relatedSearchField" : "email",
+      "relatedSearchField" : "_id",
       "relatedViewFields" : [ {
-        "_id" : "612d08271bf9c529a3806057",
+        "_id" : "612e1da85852f9808d22902f",
         "key" : "_id",
         "type" : "String",
         "prefix" : "SAM",
@@ -1441,29 +1096,6 @@
           "_detailedType" : "",
           "dataKey" : "_id"
         }
-      }, {
-        "_id" : "612d08271bf9c56b6980605a",
-        "type" : "String",
-        "key" : "email",
-        "properties" : {
-          "name" : "Email",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "email" : true,
-          "dataKey" : "email",
-          "dataPath" : "email"
-        }
-      }, {
-        "_id" : "612d08271bf9c50163806058",
-        "type" : "String",
-        "key" : "string1",
-        "properties" : {
-          "name" : "String 1",
-          "fieldLength" : 10,
-          "_typeChanged" : "String",
-          "dataKey" : "string1",
-          "dataPath" : "string1"
-        }
       } ],
       "dataKey" : "dsRelation1020",
       "dataPath" : "dsRelation1020"
@@ -1476,99 +1108,99 @@
     },
     "outgoing" : [ {
       "path" : "{\"dsRelation1001\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : true
     }, {
       "path" : "{\"dsRelation1002\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : true
     }, {
       "path" : "{\"dsRelation1003\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : true
     }, {
       "path" : "{\"dsRelation1004\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : true
     }, {
       "path" : "{\"dsRelation1005\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : true
     }, {
       "path" : "{\"dsRelation1006\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : true
     }, {
       "path" : "{\"dsRelation1007\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : true
     }, {
       "path" : "{\"dsRelation1008\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : true
     }, {
       "path" : "{\"dsRelation1010\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : true
     }, {
       "path" : "{\"dsRelation1011\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : true
     }, {
       "path" : "{\"dsRelation1012\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : true
     }, {
       "path" : "{\"dsRelation1013\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : true
     }, {
       "path" : "{\"dsRelation1014\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : true
     }, {
       "path" : "{\"dsRelation1015\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : true
     }, {
       "path" : "{\"dsRelation1016\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : true
     }, {
       "path" : "{\"dsRelation1017\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : true
     }, {
       "path" : "{\"dsRelation1018\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : true
     }, {
       "path" : "{\"dsRelation1019\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : false
     }, {
       "path" : "{\"dsRelation1020\":\"Object\"}",
-      "service" : "SRVC5798",
+      "service" : "sample",
       "isRequired" : true
     } ]
   },
   "role" : {
-    "_id" : "SRVC6512",
+    "_id" : "SRVC8120",
     "_metadata" : {
       "version" : {
         "document" : 1,
         "release" : "dev"
       },
       "deleted" : false,
-      "lastUpdated" : "2021-08-19T12:09:39.855Z",
-      "createdAt" : "2021-08-19T12:09:39.851Z"
+      "lastUpdated" : "2021-09-13T17:03:04.981Z",
+      "createdAt" : "2021-09-13T17:03:04.979Z"
     },
     "app" : "vTest",
-    "entity" : "SRVC6512",
+    "entity" : "SRVC8120",
     "entityName" : "relation",
     "roles" : [ {
       "skipReviewRole" : true,
-      "id" : "P1387824105",
+      "id" : "P3751108420",
       "name" : "Skip Review",
       "operations" : [ {
         "method" : "SKIP_REVIEW"
@@ -1582,7 +1214,7 @@
       "description" : "This role entitles an authorized user to create, update or delete a record and without any approval"
     }, {
       "manageRole" : true,
-      "id" : "P4751833729",
+      "id" : "P6171782750",
       "name" : "Manage",
       "operations" : [ {
         "method" : "POST"
@@ -1596,7 +1228,7 @@
       "description" : "This role entitles an authorized user to create, update or delete a record"
     }, {
       "viewRole" : true,
-      "id" : "P2323762826",
+      "id" : "P3104233426",
       "name" : "View",
       "operations" : [ {
         "method" : "GET"
@@ -1608,198 +1240,350 @@
       "_id" : {
         "_t" : "String",
         "_p" : {
-          "P1387824105" : "R",
-          "P4751833729" : "R",
-          "P2323762826" : "R"
+          "P3751108420" : "R",
+          "P6171782750" : "R",
+          "P3104233426" : "R"
         }
       },
       "dsRelation1001" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       },
       "dsRelation1002" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       },
       "dsRelation1003" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       },
       "dsRelation1004" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       },
       "dsRelation1005" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       },
       "dsRelation1006" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       },
       "dsRelation1007" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       },
       "dsRelation1008" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       },
       "dsRelation1010" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       },
       "dsRelation1011" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       },
       "dsRelation1012" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       },
       "dsRelation1013" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       },
       "dsRelation1014" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       },
       "dsRelation1015" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       },
       "dsRelation1016" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       },
       "dsRelation1017" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       },
       "dsRelation1018" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       },
       "dsRelation1019" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       },
       "dsRelation1020" : {
         "_id" : {
+          "_id" : {
+            "_t" : "String",
+            "_p" : {
+              "P3751108420" : "R",
+              "P6171782750" : "R",
+              "P3104233426" : "R"
+            }
+          },
           "_t" : "String",
           "_p" : {
-            "P1387824105" : "R",
-            "P4751833729" : "R",
-            "P2323762826" : "R"
+            "P3751108420" : "R",
+            "P6171782750" : "R",
+            "P3104233426" : "R"
           }
         }
       }
@@ -1810,6 +1594,5 @@
     "attribute" : "",
     "initialStates" : [ ],
     "enabled" : false
-  },
-  "draftVersion" : null
+  }
 }

@@ -2,10 +2,10 @@ package testrunner;
 
 import java.util.stream.Stream;
 
-import org.junit.AfterClass;
+//import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 
-import com.vimalselvam.cucumber.listener.Reporter;
+//import com.vimalselvam.cucumber.listener.Reporter;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -30,10 +30,16 @@ public class Runner {
 	            "--glue", "stepdefinitions",
 	            "--strict",
 	            "--plugin", "pretty",
+
 	            "--plugin", "html:target/cucumber-reports",
 	            "--plugin", "json:target/cucumber-reports/jsonReport.json",
 	            "--plugin", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:target/cucumber-reports/extentReport.html"
 
+
+//	            "--plugin", "html:report/htmlReport",
+//	            "--plugin", "json:report/jsonReport/jsonReport.json",
+////	        "--plugin", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+//	            "--plugin","cucumberHooks.customReportListener"
 	           
 	    };
 	 
