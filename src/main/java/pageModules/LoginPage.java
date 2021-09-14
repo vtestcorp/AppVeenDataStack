@@ -87,7 +87,7 @@ public class LoginPage extends BaseClass{
 	}
 	
 	public void verifyDataServiceExist(String dataService) throws InterruptedException {
-		
+		Thread.sleep(1000);
 		dataServiceName=dataService;
 		applyExplicitWaitsUntilElementVisible(ap.listOfDataService, 20);
 		for(WebElement dataService1 : ap.listOfDataService) {
@@ -102,6 +102,7 @@ public class LoginPage extends BaseClass{
 
 	public void deleteGivenDataService() throws Exception {
 		if(flag==true) {
+			applyExplicitWaitsUntilElementVisible(data_serviceToggler, 5);
 				data_serviceToggler.click();
 				applyWait.waitForElementToBeClickable(ap.delete, 30).click();
 				 
@@ -112,6 +113,11 @@ public class LoginPage extends BaseClass{
 					applyWait.waitForElementToBeClickable(ap.delete1, 30).click();
 				}
 			}
+	}
+	
+	public void deleteDataService(String dataService) throws Exception {
+		verifyDataServiceExist(dataService);
+		deleteGivenDataService();
 	}
 
 	public void verifyDataServiceDoesNotExist() {
@@ -1285,6 +1291,9 @@ public class LoginPage extends BaseClass{
 						public void navigateToAppcenterLoginPage() {
 							
 						}
+
+
+						
 
 
 						

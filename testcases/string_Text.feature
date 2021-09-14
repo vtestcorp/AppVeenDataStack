@@ -106,7 +106,7 @@ Examples:
 Scenario Outline: Delete record from the data service
 	Given Data service "string_Text"
 	Then Delete record "<id>" from the data service
-	And deleting from listing page
+	And Deleting from listing page
 Examples:
 |id|
 |STR1001|

@@ -11,14 +11,14 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="C:\\Users\\DELL\\eclipse-workspace\\ds-dev-ui-automation-framework\\testcases\\relation.feature",
+@CucumberOptions(features="C:\\Users\\DELL\\eclipse-workspace\\ds-dev-ui-automation-framework\\testcases\\group2.feature",
 				dryRun = false,
 				glue={"stepdefinitions","cucumberHooks"},
 				monochrome=true,
 				strict = true,
-				plugin = { "pretty", "html:report" ,"json:target/cucumber-reports/cucumber.json" 
-//		 ,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" 
-						,"cucumberHooks.customReportListener"
+				plugin = { "pretty", "html:report/htmlReport" 
+						,"json:report/jsonReport/jsonReport.json" 
+						,"cucumberHooks.CustomReportListener"
 }
 				)
 
@@ -31,7 +31,7 @@ public class Runner {
 	            "--plugin", "html:report/htmlReport",
 	            "--plugin", "json:report/jsonReport/jsonReport.json",
 //	            "--plugin", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
-	            "--plugin","cucumberHooks.customReportListener"
+	            "--plugin","cucumberHooks.CustomReportListener"
 	           
 	    };
 	 
