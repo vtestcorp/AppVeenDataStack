@@ -65,11 +65,11 @@
     "_href": "/api/c/vTest/sample/SAM1004"
   },
   "dsRelation1019": {
-    "_id": "SAM1007",
+    "_id": "SAM1001",
     "_href": "/api/c/vTest/sample/Dee1006"
   },
   "dsRelation1020": {
-    "_id": "STR1007",
+    "_id": "STR1001",
     "_href": "/api/c/vTest/sample/STR1007"
   },
   "__v": 0

@@ -2,13 +2,16 @@ package cucumberHooks;
 
 import java.io.IOException;
 
+import org.junit.BeforeClass;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import base.BaseClass;
 import helperMethods.Screenshots;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import io.cucumber.plugin.event.TestSourceRead;
 
 public class Hooks extends BaseClass{
 	

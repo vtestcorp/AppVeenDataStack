@@ -145,6 +145,11 @@ public class DesignTestCases extends BaseClass{
 	}
 	
 
+	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the data service for group$")
+	public void update_record_with_to_the_data_service_for_group(String id, String jsonFile) throws Exception {
+	    design.updateRecordForGroup(id,jsonFile);
+	}
+	
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the stringRichText data service$")
 	public void update_record_with_to_the_data_RichTextservice(String id, String jsonFile) throws Exception {
 	    design.updateRecordForRichText(id,jsonFile);

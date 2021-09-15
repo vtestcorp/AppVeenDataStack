@@ -81,6 +81,13 @@ public class LoginToAuthorUrl extends BaseClass {
 	public void data_service_exists(String dataService) throws Exception {
 		 loginPage.verifyDataServiceExist(dataService);
 	}
+	
+	@Given("Delete {string} data service")
+	public void delete_DataService(String dataService) throws Exception {
+		 loginPage.deleteDataService(dataService);
+	}
+	
+	
 
 	@Then("Remove the data service")
 	public void remove_the_data_service() throws Exception {

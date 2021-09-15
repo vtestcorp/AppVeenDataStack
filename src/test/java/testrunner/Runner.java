@@ -18,10 +18,11 @@ import io.cucumber.junit.CucumberOptions;
 	        	glue={"stepdefinitions","cucumberHooks"},
 				monochrome=true,
 				strict = true,
-				plugin = { "pretty", "html:target/cucumber-reports" ,"json:target/cucumber-reports/cucumber.json" 
-					/*	,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" */
-                 }	
-			)
+				plugin = { "pretty", "html:report/htmlReport" 
+						,"json:report/jsonReport/jsonReport.json" 
+						,"cucumberHooks.CustomReportListener"
+}
+				)
 
 public class Runner {
 	

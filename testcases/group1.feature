@@ -93,7 +93,7 @@ Scenario Outline: Delete record from the data service
 	And Deleting from listing page
 Examples:
 |id|
-|STR1001|
+|DS1001|
 
 
 Scenario: Log out of App Center

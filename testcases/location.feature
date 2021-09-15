@@ -76,7 +76,7 @@ Examples:
 |id|data|
 |DS1001|{"_id": "DS1001","dsLocation1001": "Pune, Maharashtra, India","dsLocation1002": "Pimpri-Chinchwad, Maharashtra, India","dsLocation1003": "Bangalore, Karnataka, India","dsLocation1006": "Chennai, Tamil Nadu, India","dsLocation1007": "Gujrat, Pakistan", "dsLocation1008": "Satara, Maharashtra, India"}|
 
-
+	
 #	Scenario Outline: Update record to data service
 #	Given Data service "location"
 #	Then Update record "<id>" with "<data>" to the Location 

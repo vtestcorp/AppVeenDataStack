@@ -6,6 +6,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.gherkin.model.Feature;
 import com.aventstack.extentreports.gherkin.model.Given;
 import com.aventstack.extentreports.gherkin.model.Scenario;
+//import com.aventstack.extentreports.gherkin.model.Scenario;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
@@ -26,7 +27,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class customReportListener extends BaseClass implements EventListener {
+public class CustomReportListener extends BaseClass implements EventListener {
 //	private ExtentSparkReporter spark;
 //	private ExtentReports extent;
 	Map<String, ExtentTest> feature = new HashMap<String, ExtentTest>();
@@ -34,7 +35,7 @@ public class customReportListener extends BaseClass implements EventListener {
 	ExtentTest step;
 	String keyword;
 
-	public customReportListener() {
+	public CustomReportListener() {
 	};
 
 	@Override
@@ -45,6 +46,7 @@ public class customReportListener extends BaseClass implements EventListener {
 		 * 'this' instance. Here we says runStarted method accepts or listens to
 		 * TestRunStarted event type
 		 */
+		
 		publisher.registerHandlerFor(TestRunStarted.class, this::runStarted);
 		publisher.registerHandlerFor(TestRunFinished.class, this::runFinished);
 		publisher.registerHandlerFor(TestSourceRead.class, this::featureRead);
@@ -59,13 +61,14 @@ public class customReportListener extends BaseClass implements EventListener {
 	 * accepts the type specified in TestRunStarted.class
 	 */
 // Here we create the reporter
+	
 	private void runStarted(TestRunStarted event) {
 //		spark = new ExtentSparkReporter("./ExtentReportResults.html");
 //		extent = new ExtentReports();
 //		spark.config().setTheme(Theme.DARK);
 //// Create extent report instance with spark reporter
 //		extent.attachReporter(spark);
-		extent= ExtentReportListener.setUp();
+
 	};
 
 // TestRunFinished event is triggered when all feature file executions are
@@ -77,10 +80,11 @@ public class customReportListener extends BaseClass implements EventListener {
 
 // This event is triggered when feature file is read
 // here we create the feature node
-	private void featureRead(TestSourceRead event) {
+	public void featureRead(TestSourceRead event) {
 		String featureSource = event.getUri().toString();
 		String featureName1 = featureSource.split(".*/")[1];
-		String featureName = featureName1.replace(".feature", "");
+		 featureName = featureName1.replace(".feature", "");
+		 extent= ExtentReportListener.setUp(featureName);
 		if (feature.get(featureSource) == null) {
 			feature.putIfAbsent(featureSource, extent.createTest(featureName));
 		}
@@ -89,6 +93,7 @@ public class customReportListener extends BaseClass implements EventListener {
 // This event is triggered when Test Case is started
 // here we create the scenario node
 	private void ScenarioStarted(TestCaseStarted event) {
+
 		String featureName = event.getTestCase().getUri().toString();
 		scenario = feature.get(featureName).createNode(event.getTestCase().getName());
 	};
@@ -131,7 +136,6 @@ public class customReportListener extends BaseClass implements EventListener {
 				}
 				step.addScreenCaptureFromPath(ExtentReportListener.captureScreenShot(driver));
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 //				e.printStackTrace();
 			}
 		}
