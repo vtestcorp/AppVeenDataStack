@@ -73,18 +73,18 @@ Examples:
 Scenario Outline: Fetch record from the data service
 	Given Data service "group2"
 	Then Fetch record "<id>" from the data service
-	And Match it to "<data>"
+	And Match this GROUP data to "<data>"
 Examples:
 |id|data|
 |DS1001|{"_id":"DS1001", "dsGroupStringText.stringText":"Update Group Text", "dsGroupStringEmail.email":"xyz@gmail.com", "dsGroupStringListOfValues.listOfValues":"XYZ", "dsGroupNumberNumber.number":"999", "dsGroupNumberCurrency.currency":"11.00", "dsGroupNumberListOfValues.listOfValues":"999", "dsGroupBoolean.boolean":"No", "dsGroupDate.date":"Thursday, November 27, 2025 (Etc/Zulu)", "dsGroupDateTime.dateTime":"Tuesday, June 11, 2030, 8:20:30 AM (Zulu)", "dsGroupLocation.location":"Solapur, Maharashtra, India", "dsGroupFile.file":"Untitled.png", "dsGroupLibrary.library.line1":"Update Library Line 1", "dsGroupLibrary.library.line2":"Update Library Line 2", "dsGroupUser.user":"deepak@appveen.com"}|
 	
-#Scenario Outline: Delete record from the data service
-#	Given Data service "group2"
-#	Then Delete record "<id>" from the data service
-#	And Deleting from listing page
-#Examples:
-#|id|
-#|DS1001|
+Scenario Outline: Delete record from the data service
+	Given Data service "group2"
+	Then Delete record "<id>" from the data service
+	And Deleting from listing page
+Examples:
+|id|
+|DS1001|
 
-#Scenario: Log out of App Center
-#	Given User log out from AppCenter
+Scenario: Log out of App Center
+	Given User log out from AppCenter

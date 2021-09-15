@@ -201,6 +201,11 @@ public class DesignTestCases extends BaseClass{
 	   design.matchGroupData(jsonFile);
 	}
 	
+	@Then("^Match this Library data to \"(.*?)\"$")
+	public void match_this_Library_data(String jsonFile) throws Exception {
+	   design.matchGroupData(jsonFile);
+	}
+	
 	@Then("^Match it to \"(.*?)\" Date Type$")
 	public void match_this_Date_data(String jsonFile) throws Exception {
 	   design.matchDateData(jsonFile);
@@ -275,7 +280,6 @@ public class DesignTestCases extends BaseClass{
 
 	@Then("User log out from AppCenter")
 	public void user_logs_out_of_AppCenter() {
-//		extent.flush();
 	    driver.quit();
 	}
 

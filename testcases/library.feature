@@ -74,7 +74,7 @@ Scenario Outline: Add record to data service
 	Scenario Outline: Fetch record from the data service
 	Given Data service "library"
 	Then Fetch record "<id>" from the data service
-	And Match this GROUP data to "<data>"
+	And Match this Library data to "<data>"
 Examples:
 |id|data|
 |DS1001|{"_id":"DS1001", "dsLibrary1001.line1":"Library 1001", "dsLibrary1001.line2":"Library 1002", "dsLibrary1003.line1":"Library 3001", "dsLibrary1003.line2":"Library 3002", "dsLibrary1005.line1":"Library 5001", "dsLibrary1005.line2":"Library 5002", "dsLibrary1006.line1":"Library 6001", "dsLibrary1006.line2":"Library 6002", "dsLibrary1007.line1":"Library 7001", "dsLibrary1007.line2":"Library 7002", "dsLibrary1008.line1":"Library 8001", "dsLibrary1008.line2":"Library 8002"}|
@@ -91,7 +91,7 @@ Examples:
 Scenario Outline: Fetch record from the data service
 	Given Data service "library"
 	Then Fetch record "<id>" from the data service
-	And Match this GROUP data to "<data>"
+	And Match this Library data to "<data>"
 Examples:
 |id|data|
 |DS1001|{"_id":"DS1001", "dsLibrary1001.line1":"Library 11", "dsLibrary1001.line2":"Library 12", "dsLibrary1003.line1":"Library 31", "dsLibrary1003.line2":"Library 32", "dsLibrary1005.line1":"Library 51", "dsLibrary1005.line2":"Library 52", "dsLibrary1006.line1":"Library 61", "dsLibrary1006.line2":"Library 62", "dsLibrary1007.line1":"Library 71", "dsLibrary1007.line2":"Library 72", "dsLibrary1008.line1":"Library 81", "dsLibrary1008.line2":"Library 82"}|
