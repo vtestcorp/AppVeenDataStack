@@ -62,7 +62,7 @@ Examples:
 	Scenario Outline: Add record to data service
 	Given Data service "date&Time"
 	Then Add record "<data>" to the data service for Date
-	And Expect error "ID DAT1001 already exists" on save
+	And Expect error "ID DAT1001 already exists." on save
 	Examples:
 		|data|
 	  |{ "_id" : "DAT1001","dsDateTime1001" : "2031-07-25T01:10:25Z","dsDateTime1002" : "2029-08-8T5:05:00Z","dsDateTime1003" : "2031-08-8T08:50:24Z","dsDateTime1004" : "2031-04-4T12:25:10Z","dsDateTime1006" : "2040-06-6T21:05:25Z","dsDateTime1010" : "2020-10-10T2:15:20Z","dsDateTime1011" : "2031-08-25T10:30:20Z","dsDateTime1012" : "2035-12-12T10:45:58Z","dsDateTime1013" : "2031-03-13T3:54:21Z","dsDateTime1015" : "2021-07-28T15:15:20Z"}|

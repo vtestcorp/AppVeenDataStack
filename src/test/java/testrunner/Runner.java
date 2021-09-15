@@ -30,7 +30,6 @@ public class Runner {
 	            "--glue", "stepdefinitions",
 	            "--strict",
 	            "--plugin", "pretty",
-
 	            "--plugin", "html:target/cucumber-reports",
 	            "--plugin", "json:target/cucumber-reports/jsonReport.json",
 	            "--plugin", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:target/cucumber-reports/extentReport.html"

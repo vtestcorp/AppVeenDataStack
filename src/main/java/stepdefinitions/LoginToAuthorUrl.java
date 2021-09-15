@@ -43,22 +43,14 @@ public class LoginToAuthorUrl extends BaseClass {
 	public WaitTypes applyWait;
 	public LoginPage loginPage ;
 	public static String data_Service;
-<<<<<<< HEAD
-	public ExtentReportListener test1;
-	public static ExtentReports extent;
-	public ExtentTest logInfo=null;
-=======
->>>>>>> deepak
+
 	
 
 	@Before("@Author")
 	public void setUp() {
 		start();
 		loginPage = new LoginPage(driver);
-<<<<<<< HEAD
-	//	extent=	ExtentReportListener.setUpExtent();
-=======
->>>>>>> deepak
+
 	}
 	
 	@Before
@@ -70,20 +62,13 @@ public class LoginToAuthorUrl extends BaseClass {
 	@Given("User navigate to Author login page")
 	public void user_Navigate_to_LogIn_Page() throws Exception {
 		loginPage.loginToPage();
-<<<<<<< HEAD
 		}
 
-	@Given("User enters {string} and {string} in Author login page")
-	public void user_enters_UserName_and_Password(String username,String password) throws Exception {
-		loginPage.enterUserNameAndPassword(username, password);
-=======
-	}
-
+	
 	@Given("User enters {string} and {string} in Author login page")
 	public void user_enters_UserName_and_Password(String username,String password) throws Exception {
 			loginPage.enterUserNameAndPassword(username, password);
 			
->>>>>>> deepak
 	}
 
 	@Then("Verify User has Logged in successfully in Author Url")

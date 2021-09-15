@@ -1462,7 +1462,7 @@ else {
 	if(errorMessage.contains("ID"))
 	{
 		By error = By.xpath("//div[@role='alertdialog']");
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		applyWaitForDynamicWebElement(error, 10);
 		String expectedError = driver.findElement(error).getText();
 		Assert.assertEquals(errorMessage, expectedError);

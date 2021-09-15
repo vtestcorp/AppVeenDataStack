@@ -9,7 +9,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|deepak@appveen.com|123123123|
+|test_appadmin@appveen.com|123123123|
 
 Scenario: Delete data service
 	Given Data service "group1" exists
@@ -27,7 +27,7 @@ Scenario Outline: Assign to Appcenter Group
 	
 	Examples:
 	|user|
-	|maker@appveen.com|
+	|test_ac_ds_manage@appveen.com|
 
 
 Scenario: Log out of Author
@@ -42,7 +42,7 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|maker@appveen.com|123123123|
+|test_ac_ds_manage@appveen.com|123123123|
 
 
 # INSERT/UPDATE
@@ -55,7 +55,7 @@ Scenario: Add data to data service
 Scenario Outline: Add record to data service
 	Given Data service "group1"
 	Then Add record "<data>" to the data service	
-	And Expect error "ID STR1001 already exists" on save
+	And Expect error "ID STR1001 already exists." on save
 	Examples:
 		|data|
 	  |{  "_id" : "DS1001", "dsGroup1001" : { "dsString" : "String 1111" }, "dsGroup1002" : { "dsString" : "String 122" }, "dsGroup1003" : { "dsString" : "String 1333" }, "dsGroup1004" : { "dsString" : "String 1444" }, "dsGroup1005" : { "dsString" : "String 1555" }, "dsGroup1006" : { "dsString" : "String 1666" }}|

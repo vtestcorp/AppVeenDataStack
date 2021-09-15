@@ -79,7 +79,7 @@ Examples:
 Scenario Outline: Add record to data service
 	Given Data service "relation"
 	Then Add record "<data>" to the data service	
-	And Expect error "ID REL1001 already exists" on save
+	And Expect error "ID REL1001 already exists." on save
 	Examples:
 		|data|
 |{"_id": "REL1001","dsRelation1001": "SAM1003","dsRelation1002": "SAM1002","dsRelation1003": "SAM1001","dsRelation1004": "SAM1003","dsRelation1005": "SAM1002","dsRelation1007": "SAM1001", "dsRelation1008": "SAM1003", "dsRelation1010": "SAM1002",  "dsRelation1013": "SAM1003", "dsRelation1014": "SAM1002", "dsRelation1015": "SAM1001", "dsRelation1016": "SAM1003",  "dsRelation1018": "SAM1002", "dsRelation1019": "SAM1004", "dsRelation1020": "SAM1005"}|	
