@@ -904,14 +904,12 @@ public class Module_DesignTestCases extends BaseClass{
 		record.click();
 		Thread.sleep(1000);
 		int q=1;
-		System.out.println(acp.attributesOnViewPageForRichText.size());
-		applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPageForRichText, 10);
-		for(WebElement attribute : acp.attributesOnViewPageForRichText) {
-//			WebElement value=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])["+q+"]"));
-//			WebElement key=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])["+q+"]/ancestor::odp-view-separator/preceding-sibling::div//label"));
+		System.out.println(acp.attributesOnViewPage.size());
+		applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPage, 10);
+		for(WebElement attribute : acp.attributesOnViewPage) {
+			WebElement value=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])["+q+"]"));
+			WebElement key=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])["+q+"]/ancestor::odp-view-separator/preceding-sibling::div//label"));
 			
-			WebElement value=driver.findElement(By.xpath("(((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])/p | //span[@class='value-width ng-star-inserted'])["+q+"]"));
-			WebElement key=driver.findElement(By.xpath("(((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])/p | //span[@class='value-width ng-star-inserted'])["+q+"]/ancestor::odp-view-separator/preceding-sibling::div/child::*[last()]"));
 			
 			String a=key.getAttribute("for");
 			String w=value.getText();
@@ -1697,5 +1695,52 @@ else {
     Assert.assertTrue(actualData.equals(expectedData));
 }
 	//	
+}
+
+
+
+public void matchToRecordToRichText(String jsonFile) throws Exception {
+	LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
+	applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
+	WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
+	record.click();
+	Thread.sleep(1000);
+	int q=1;
+	System.out.println(acp.attributesOnViewPageForRichText.size());
+	applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPageForRichText, 10);
+	for(WebElement attribute : acp.attributesOnViewPageForRichText) {
+//		WebElement value=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])["+q+"]"));
+//		WebElement key=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])["+q+"]/ancestor::odp-view-separator/preceding-sibling::div//label"));
+		
+		WebElement value=driver.findElement(By.xpath("(((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])/p | //span[@class='value-width ng-star-inserted'])["+q+"]"));
+		WebElement key=driver.findElement(By.xpath("(((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])/p | //span[@class='value-width ng-star-inserted'])["+q+"]/ancestor::odp-view-separator/preceding-sibling::div/child::*[last()]"));
+		
+		String a=key.getAttribute("for");
+		String w=value.getText();
+		if(!w.equals("N.A.")) {
+			actualData.put(a, w);
+	}
+		q++;
+	}
+	
+LinkedHashMap<String, String> expectedData =(LinkedHashMap<String, String>) JsonUtils.getMapFromJSON(jsonFile);
+
+
+if(actualData.equals(expectedData)) {
+	System.out.println("Data is matching");
+	  System.out.println(actualData);
+	    System.out.println(expectedData);
+}
+else {
+	
+	System.err.println("Data is not matching.Unmatched data are as follows :");
+  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
+    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
+    System.err.println(entriesDiffering);
+    System.out.println(actualData);
+    System.out.println(expectedData);
+    Assert.assertTrue(actualData.equals(expectedData));
+}
+	
 }
 	}

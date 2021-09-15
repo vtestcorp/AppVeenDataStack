@@ -213,8 +213,13 @@ public class DesignTestCases extends BaseClass{
 	@Then("^Match it to \"(.*?)\"$")
 	public void match_it_to(String jsonFile) throws Exception {
 		design.matchToRecord(jsonFile);	
-//		design.matchGroupData(jsonFile);
 }
+	
+	@Then("^Match it to \"(.*?)\" for RichText$")
+	public void match_it_to_RichText(String jsonFile) throws Exception {
+		design.matchToRecordToRichText(jsonFile);	
+}
+	
 	
 	@Then("^Match it to \"(.*?)\" for Relation$")
 	public void match_this_Relation_to(String jsonFile) throws Exception {
