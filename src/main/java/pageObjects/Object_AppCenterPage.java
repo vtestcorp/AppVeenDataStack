@@ -220,10 +220,16 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//label[starts-with(@class,'label-width d-flex')]")
 	public List<WebElement> attributesOnViewPage;
 	
+	@FindBy(xpath="((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])/p | //span[@class='value-width ng-star-inserted']")
+	public List<WebElement> attributesOnViewPageForRichText;
+	
 	
 //	@FindBy(xpath="(//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()]")
 	@FindBy(xpath="//*[contains(@class,'value-wrapper')]//span[(last() and not(contains(@class, 'mr-2')) and not(contains(@class, 'ml-2')))] | //odp-view-date//div[@class='font-weight-bold value-wrapper'] | //span[text()='Raw location']/ancestor::div[contains(@class,'label-wrapper')]/following-sibling::div | //odp-view-user//a[@class='ng-star-inserted']")
 	public List<WebElement> attributesOnViewPageForGroups;
+	
+	@FindBy(xpath="//*[contains(@class,'value-wrapper')]//span[(last() and not(contains(@class, 'mr-2')) and not(contains(@class, 'ml-2')))] | //odp-view-date//div[@class='font-weight-bold value-wrapper'] | //span[text()='Raw location']/ancestor::div[contains(@class,'label-wrapper')]/following-sibling::div | //odp-view-user//a[@class='ng-star-inserted']")
+	public List<WebElement> attributesOnViewPageFor;
 	
 	@FindBy(xpath="//odp-view-control/div/div/label[starts-with(@class,'label-width')]")
 	public List<WebElement> attributesOnViewPageForLocation;

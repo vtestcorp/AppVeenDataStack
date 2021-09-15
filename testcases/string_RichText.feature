@@ -101,15 +101,15 @@ Examples:
 |id|data|
 |STR1001|{"_id": "STR1001","dsStringRichText1001": "Amazon","dsStringRichText1002": "Hello","dsStringRichText1003": "Shopify","dsStringRichText1004": "BigBazar","dsStringRichText1005": "Dmart","dsStringRichText1007": "Dmart", "dsStringRichText1008": "Swiggy", "dsStringRichText1010": "Walmart",  "dsStringRichText1013": "Walmart", "dsStringRichText1014": "Pantaloon", "dsStringRichText1015": "Star Bazar",  "dsStringRichText1018" : "Dcathlon"}|
 
-	
-Scenario Outline: Delete record from the data service
-	Given Data service "string_RichText"
-	Then Delete record "<id>" from the data service
-	And Deleting from listing page
-Examples:
-|id|
-|STR1001|
-
-Scenario: Log out of App Center
-Given User log out from AppCenter
+#	
+#Scenario Outline: Delete record from the data service
+#	Given Data service "string_RichText"
+#	Then Delete record "<id>" from the data service
+#	And Deleting from listing page
+#Examples:
+#|id|
+#|STR1001|
+#
+#Scenario: Log out of App Center
+#Given User log out from AppCenter
 

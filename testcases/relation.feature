@@ -57,7 +57,7 @@ Examples:
 	Then Add record "<data>" to the data service
 	Examples:
 |data|
-|{"_id": "SAM1001","string1": "Facebbok","number1": 5555,"email": "pqr@gmail.com","string2": "Zomato"}|
+|{"_id": "SAM1001","string1": "Facebook","number1": 5555,"email": "pqr@gmail.com","string2": "Zomato"}|
 |{"_id": "SAM1002","string1": "Swiggy","number1": 3333,"email": "xyz@gmail.com","string2": "Samco"}|
 |{"_id": "SAM1003","string1": "Zerodha","number1": 4444,"email": "pqr@gmail.com","string2": "Zomato"}|
 |{"_id": "SAM1004","string1": "Swiggy","number1": 5555,"email": "pqr@gmail.com","string2": "Zomato"}|
@@ -99,7 +99,7 @@ Scenario Outline: Add record to data service
 	Scenario Outline: Fetch record from the data service
 	Given Data service "relation"
 	Then Fetch record "<id>" from the data service
-	And Match it to "<data>"
+	And Match it to "<data>" for Relation
 Examples:
 |id|data|
 |REL1001|{"_id": "REL1001","dsRelation1001": "SAM1003","dsRelation1002": "SAM1003","dsRelation1003": "SAM1004","dsRelation1004": "SAM1002","dsRelation1005": "SAM1002","dsRelation1007": "SAM1002", "dsRelation1008": "SAM1001", "dsRelation1010": "SAM1001",  "dsRelation1013": "SAM1002", "dsRelation1014": "SAM1003", "dsRelation1015": "SAM1002",  "dsRelation1016": "SAM1001",  "dsRelation1018": "SAM1004", "dsRelation1019": "SAM1001"}|
@@ -117,7 +117,7 @@ Examples:
 Scenario Outline: Fetch record from the data service
 	Given Data service "relation"
 	Then Fetch record "<id>" from the data service
-	And Match it to "<data>"
+	And Match it to "<data>" for Relation
 Examples:
 |id|data|
 |REL1001|{"_id": "REL1001","dsRelation1001": "SAM1002","dsRelation1002": "SAM1003","dsRelation1003": "SAM1005","dsRelation1004": "SAM1002","dsRelation1005": "SAM1003","dsRelation1007": "SAM1002", "dsRelation1008": "SAM1002", "dsRelation1010": "SAM1001",  "dsRelation1013": "SAM1001", "dsRelation1014": "SAM1001", "dsRelation1015": "SAM1001",  "dsRelation1016": "SAM1002",  "dsRelation1018": "SAM1002", "dsRelation1019": "SAM1001"}|

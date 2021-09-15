@@ -30,7 +30,7 @@ import java.util.Map;
 public class CustomReportListener extends BaseClass implements EventListener {
 //	private ExtentSparkReporter spark;
 //	private ExtentReports extent;
-	Map<String, ExtentTest> feature = new HashMap<String, ExtentTest>();
+	Map<String, ExtentReports> feature = new HashMap<String, ExtentReports>();
 	ExtentTest scenario;
 	ExtentTest step;
 	String keyword;
@@ -75,7 +75,11 @@ public class CustomReportListener extends BaseClass implements EventListener {
 // completed
 	private void runFinished(TestRunFinished event) {
 		System.out.println("Run success");
-		extent.flush();
+		//extent.flush();
+		
+		for(ExtentReports f : feature.values()) {
+			f.flush();
+		}
 	};
 
 // This event is triggered when feature file is read
@@ -86,7 +90,8 @@ public class CustomReportListener extends BaseClass implements EventListener {
 		 featureName = featureName1.replace(".feature", "");
 		 extent= ExtentReportListener.setUp(featureName);
 		if (feature.get(featureSource) == null) {
-			feature.putIfAbsent(featureSource, extent.createTest(featureName));
+			//feature.putIfAbsent(featureSource, extent.createTest(featureName));
+			feature.putIfAbsent(featureName, extent);
 		}
 	};
 
@@ -94,8 +99,9 @@ public class CustomReportListener extends BaseClass implements EventListener {
 // here we create the scenario node
 	private void ScenarioStarted(TestCaseStarted event) {
 
-		String featureName = event.getTestCase().getUri().toString();
-		scenario = feature.get(featureName).createNode(event.getTestCase().getName());
+//		String featureName = event.getTestCase().getUri().toString();
+		//scenario = feature.get(featureName).createNode(event.getTestCase().getName());
+		scenario = feature.get(featureName).createTest(featureName).createNode(event.getTestCase().getName());
 	};
 
 // step started event
