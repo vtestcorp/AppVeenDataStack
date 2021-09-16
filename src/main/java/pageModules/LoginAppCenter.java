@@ -116,18 +116,6 @@ public class LoginAppCenter extends BaseClass {
 			
 		}
 
-
-//		int data = driver.findElements(By.xpath("//div[contains(text(),'" + dataService + "')]")).size();
-//		while(data==1)
-//		{
-//			Thread.sleep(5000);
-//			driver.navigate().refresh();
-//		    data = driver.findElements(By.xpath("//div[contains(text(),'" + dataService + "')]")).size();
-//		}
-//		WebElement data1 = driver.findElement(By.xpath("//div[contains(text(),'" + dataService + "')]"));
-//	    data1.click();
-//	}
-
 	public void userEnterData() throws Exception {
 		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
@@ -301,14 +289,16 @@ public class LoginAppCenter extends BaseClass {
 					}
 						else {
      							textBox.sendKeys(v2);
-								Thread.sleep(1000);
+								Thread.sleep(500);
 								textBox.sendKeys(Keys.DOWN);
+								Thread.sleep(500);
 								textBox.sendKeys(Keys.ENTER);
         			}
 				}
 			}
 			
 		}
+		Thread.sleep(2000);
 				applyWait.waitForElementToBeClickable(acp.save, 30).click();
 					
 	}

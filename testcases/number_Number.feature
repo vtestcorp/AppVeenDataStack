@@ -1,5 +1,7 @@
 Feature: DS NUMBER-NUMBER
 
+# Scenarios - DS-NUMBER-NUMBER-1001 - DS-NUMBER-NUMBER-1024
+
 @Author
 Scenario Outline: Log into Author
 	Given User navigate to Author login page
@@ -7,7 +9,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|deepak@appveen.com|123123123|
+|test_appadmin@appveen.com|123123123|
 
 Scenario: Delete data service
 	Given Data service "number_Number" exists
@@ -26,7 +28,7 @@ Scenario Outline: Assign to Appcenter Group
 	
 	Examples:
 	|user|
-	|maker@appveen.com|
+	|test_ac_ds_manage@appveen.com|
 
 Scenario: Log out of Author
 	Given User logged into Author
@@ -40,7 +42,7 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|maker@appveen.com|123123123|
+|test_ac_ds_manage@appveen.com|123123123|
 
 
  #INSERT/UPDATE
@@ -56,13 +58,13 @@ Scenario: Add data to data service
 	And Save button is disabled
 Examples:
 |data|
-|{"_id": "DS1001","dsNumberNumber1001": 10,"dsNumberNumber1002": ,"dsNumberNumber1003": 30, "dsNumberNumber1004": 40,"dsNumberNumber1005": 50,"dsNumberNumber1007": 60, "dsNumberNumber1008": 1, "dsNumberNumber1010":4,  "dsNumberNumber1013": -5, "dsNumberNumber1014": ,"dsNumberNumber1015": , "dsNumberNumber1018": ,"dsNumberNumber1020": -4,"dsNumberNumber1021": 3, "dsNumberNumber1022": 1, "dsNumberNumber1023": 23,"dsNumberNumber1024": 24}|
+|{"_id": "DS1001","dsNumberNumber1001": 10,"dsNumberNumber1002": "","dsNumberNumber1003": 30, "dsNumberNumber1004": 40,"dsNumberNumber1005": 50,"dsNumberNumber1007": 60, "dsNumberNumber1008": 1, "dsNumberNumber1010":4,  "dsNumberNumber1013": -5, "dsNumberNumber1014": "","dsNumberNumber1015": "", "dsNumberNumber1018": "","dsNumberNumber1020": -4,"dsNumberNumber1021": 3, "dsNumberNumber1022": 1, "dsNumberNumber1023": 23,"dsNumberNumber1024": 24}|
 
 
 Scenario Outline: Add record to data service
 	Given Data service "number_Number"
 	Then Add record "<data>" to the data service	
-	And Expect error "ID DS1001 already exists" on save
+	And Expect error "ID DS1001 already exists." on save
 	Examples:
 		|data|
 	  |{"_id": "DS1001","dsNumberNumber1001": 11,"dsNumberNumber1002": 12,"dsNumberNumber1003": 13, "dsNumberNumber1004": 14,"dsNumberNumber1005": 15,"dsNumberNumber1007": 16, "dsNumberNumber1008": 17, "dsNumberNumber1010":18,  "dsNumberNumber1013": 19, "dsNumberNumber1014": 20,"dsNumberNumber1015": 21, "dsNumberNumber1018": 22,"dsNumberNumber1020": 23,"dsNumberNumber1021": 24, "dsNumberNumber1022": 1, "dsNumberNumber1023": 12,"dsNumberNumber1024": 24}|

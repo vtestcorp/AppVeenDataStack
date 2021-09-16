@@ -387,7 +387,6 @@ public class LoginPage extends BaseClass{
 			
 			
 			if(isRelation) {
-				System.out.println("Starting "+anotherDataService);
 				By anotherDataService1=By.xpath("//span[@id='serviceManagerCardTitle' and @title='"+anotherDataService+"']");
 				WebElement dsStart=driver.findElement(anotherDataService1);
 				WebElement toggler=dsStart.findElement(By.xpath("./ancestor::div[3]/following-sibling::div[2]/div/div[@class='toggler']"));

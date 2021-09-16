@@ -1,5 +1,7 @@
 Feature: DS STRING EMAIL
 
+# Scenarios - DS-STRING-EMAIL-1001 - DS-STRING-EMAIL-1020
+
 @Author
 Scenario Outline: Log into Author
 	Given User navigate to Author login page
@@ -7,7 +9,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|deepak@appveen.com|123123123|
+|test_appadmin@appveen.com|123123123|
 
 Scenario: Delete data service
 	Given Data service "string_Email" exists
@@ -16,6 +18,7 @@ Scenario: Delete data service
 Scenario: Create data service
 	Given Data service "string_Email" does not exist
 	Then Create new data service "string_Email"
+ #Under testData, picks up strings.json create the JSON
 
 
 Scenario Outline: Assign to Appcenter Group
@@ -25,7 +28,7 @@ Scenario Outline: Assign to Appcenter Group
 	
 	Examples:
 	|user|
-	|maker@appveen.com|
+	|test_ac_ds_manage@appveen.com|
 
 Scenario: Log out of Author
 	Given User logged into Author
@@ -39,9 +42,10 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|maker@appveen.com|123123123|
+|test_ac_ds_manage@appveen.com|123123123|
 
 
+ #INSERT/UPDATE
 Scenario: Add data to data service
 	Given Data service "string_Email"
 	Then Add data to the data service
@@ -49,7 +53,7 @@ Scenario: Add data to data service
 Scenario Outline: Add record to data service
 	Given Data service "string_Email"
 	Then Add record "<data>" to the data service
-	And Expect error "DS-string-Email error" on label "DS-string-Email-label"
+	And Expect error "DS-string-Email 1002 error" on label "DS-string-Email-1002 label"
 	And Save button is disabled
 Examples:
 |data|
@@ -59,7 +63,7 @@ Examples:
 Scenario Outline: Add record to data service
 	Given Data service "string_Email"
 	Then Add record "<data>" to the data service	
-	And Expect error "ID RC101 already exists" on save
+	And Expect error "ID RC101 already exists." on save
 	Examples:
 		|data|
 	  |{"_id": "RC101","dsStringEmail1001": "abc@gmail.com","dsStringEmail1002": "xyz@gmail.com","dsStringEmail1003": "pqr@gmail.com","dsStringEmail1004": "xyz@gmail.com","dsStringEmail1005": "xyz@gmail.com","dsStringEmail1007": "uvw@gmail.com", "dsStringEmail1008": "mno@gmail.com",  "dsStringEmail1010": "xyz@gmail.com", "dsStringEmail1013": "xyz@gmail.com", "dsStringEmail1014": "hij@gmail.com", "dsStringEmail1015": "lmn@gmail.com", "dsStringEmail1018": "mnop@gmail.com", "dsStringEmail1020": "xyz@gmail.com"}|

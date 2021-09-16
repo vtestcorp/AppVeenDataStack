@@ -9,7 +9,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|deepak@appveen.com|123123123|
+|test_appadmin@appveen.com|123123123|
 
 Scenario: Delete data service
 	Given Data service "number_Currency" exists
@@ -27,7 +27,7 @@ Scenario Outline: Assign to Appcenter Group
 	
 	Examples:
 	|user|
-	|maker@appveen.com|
+	|test_ac_ds_manage@appveen.com|
 
 
 Scenario: Log out of Author
@@ -42,7 +42,7 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|maker@appveen.com|123123123|
+|test_ac_ds_manage@appveen.com|123123123|
 
 
 # INSERT/UPDATE
@@ -63,7 +63,7 @@ Examples:
 Scenario Outline: Add record to data service
 	Given Data service "number_Currency"
 	Then Add record "<data>" to the data service	
-	And Expect error "ID NUM1001 already exists" on save
+	And Expect error "ID NUM1001 already exists." on save
 	Examples:
 		|data|
     |{"_id": "NUM1001","dsNumberCurrency1001": 1,"dsNumberCurrency1002": 2,"dsNumberCurrency1003": 3,"dsNumberCurrency1004": 4,"dsNumberCurrency1005": 5,"dsNumberCurrency1007": 7, "dsNumberCurrency1008": 8, "dsNumberCurrency1010": 10,  "dsNumberCurrency1013": 13.3, "dsNumberCurrency1014": 19.5, "dsNumberCurrency1015": 15,  "dsNumberCurrency1018": 2.5,  "dsNumberCurrency1020": 20.4, "dsNumberCurrency1021": 12.5 "dsNumberCurrency1022": 17, "dsNumberCurrency1023": 4.00, "dsNumberCurrency1024": 4}|

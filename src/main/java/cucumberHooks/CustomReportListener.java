@@ -74,7 +74,6 @@ public class CustomReportListener extends BaseClass implements EventListener {
 // TestRunFinished event is triggered when all feature file executions are
 // completed
 	private void runFinished(TestRunFinished event) {
-		System.out.println("Run success");
 		//extent.flush();
 		
 		for(ExtentReports f : feature.values()) {

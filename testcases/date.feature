@@ -9,7 +9,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|deepak@appveen.com|123123123|
+|test_appadmin@appveen.com|123123123|
 
 Scenario: Delete data service
    	Given Data service "date" exists
@@ -27,7 +27,7 @@ Scenario Outline: Assign to Appcenter Group
 	
 	Examples:
 	|user|
-	|maker@appveen.com|
+	|test_ac_ds_manage@appveen.com|
 
 
 Scenario: Log out of Author
@@ -42,7 +42,7 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|maker@appveen.com|123123123|
+|test_ac_ds_manage@appveen.com|123123123|
 
 
 #INSERT/UPDATE
@@ -54,17 +54,17 @@ Scenario: Add data to data service
 	Scenario Outline: Add record to data service
 	Given Data service "date"
 	Then Add record "<data>" to the data service for Date
-	And Expect error "DS DATE Error" on label "DS DATE Label"
+	And Expect error "DS DATE 1002 Error" on label "DS DATE 1002Label"
 	And Save button is disabled
 Examples:
 |data|
-|{"_id":"STR1002", "dsDate1002":"", "dsDate1014":"","dsDate1015":"","dsDate1017":"","dsDate1018":""}|
+|{"_id":"DAT1002", "dsDate1002":"", "dsDate1014":"","dsDate1015":"","dsDate1017":"","dsDate1018":""}|
 
 
 Scenario Outline: Add record to data service
 	Given Data service "date"
 	Then Add record "<data>" to the data service for Date
-	And Expect error "ID DAT1001 already exists" on save
+	And Expect error "ID DAT1001 already exists." on save
 	Examples:
 		|data|
 	  |{ "_id" : "DAT1001","dsDate1001" : "2031-07-25T00:00:00Z","dsDate1002" : "2029-08-8T00:00:00Z","dsDate1003" : "2031-08-8T00:00:00Z","dsDate1004" : "2031-04-4T00:00:00Z","dsDate1006" : "2040-06-6T00:00:00Z","dsDate1010" : "2020-10-10T00:00:00Z","dsDate1011" : "2031-08-25T00:00:00Z","dsDate1012" : "2035-12-12T00:00:00Z","dsDate1013" : "2031-03-13T00:00:00Z","dsDate1015" : "2021-07-28T00:00:00Z"}|

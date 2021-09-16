@@ -90,15 +90,15 @@ Scenario Outline: Fetch record from the data service
 	And Match this Location data to "<data>" 
 Examples:
 |id|data|
-|DS1001|{"_id": "DS1001","dsLocation1001": "Aundh, Pune, Maharashtra, India","dsLocation1002": "Tamil Nadu, India","dsLocation1003": "Jammu and Kashmir","dsLocation1006": "Bihar, India","dsLocation1007": "Patna, Bihar, India", "dsLocation1008": "Chandigarh, India", "dsLocation1009" : "Mumbai, Maharashtra, India"}|
+|DS1001|{"_id": "DS1001","dsLocation1001": "Aundh, Pune, Maharashtra, India","dsLocation1002": "Tamil Nadu, India","dsLocation1003": "Jammu and Kashmir","dsLocation1006": "Bihar, India","dsLocation1007": "Patna, Bihar, India", "dsLocation1008": "Chandigarh, India", "dsLocation1009" : "Himachal Pradesh, India"}|
 
-Scenario Outline: Delete record from the data service
-	Given Data service "location"
-	Then Delete record "<id>" from the data service
-	And Deleting from listing page
-Examples:
-|id|
-|DS1001|
-
-Scenario: Log out of App Center
-	Given User log out from AppCenter
+#Scenario Outline: Delete record from the data service
+#	Given Data service "location"
+#	Then Delete record "<id>" from the data service
+#	And Deleting from listing page
+#Examples:
+#|id|
+#|DS1001|
+#
+#Scenario: Log out of App Center
+#	Given User log out from AppCenter

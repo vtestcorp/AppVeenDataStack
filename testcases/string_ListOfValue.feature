@@ -9,7 +9,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|deepak@appveen.com|123123123|
+|test_appadmin@appveen.com|123123123|
 
 Scenario: Delete data service
 	Given Data service "string_ListOfValue" exists
@@ -27,7 +27,7 @@ Scenario Outline: Assign to Appcenter Group
 	
 	Examples:
 	|user|
-	|maker@appveen.com|
+	|test_ac_ds_manage@appveen.com|
 
 
 Scenario: Log out of Author
@@ -42,7 +42,7 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|maker@appveen.com|123123123|
+|test_ac_ds_manage@appveen.com|123123123|
 
 
  #INSERT/UPDATE
@@ -64,10 +64,9 @@ Examples:
 Scenario Outline: Add record to data service
 	Given Data service "string_ListOfValue"
 	Then Add record "<data>" to the data service	
-	And Expect error "ID STR1001 already exists" on save
+	And Expect error "ID STR1001 already exists." on save
 	Examples:
 		|data|
-#|{ "_id" : "STR1001","dsStringListOfValues1002" : "LIST 2","dsStringListOfValues1003" : "LIST 1","dsStringListOfValues1007" : "LIST 1","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1014" : "LIST 1","dsStringListOfValues1015" : "LIST 1"}|
   |{"_id" : "STR1001","dsStringListOfValues1001" : "LIST 1","dsStringListOfValues1002" : "LIST 2", "dsStringListOfValues1003" : "LIST 2","dsStringListOfValues1004" : "LIST 1","dsStringListOfValues1005" : "LIST 2","dsStringListOfValues1007" : "LIST 2","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1010" : "LIST 1","dsStringListOfValues1013" : "LIST 1","dsStringListOfValues1014" : "LIST 1","dsStringListOfValues1015" : "LIST 1", "dsStringListOfValues1018" : "LIST 2","dsStringListOfValues1020" : "LIST 1"}| 	
     
 
@@ -77,7 +76,6 @@ Scenario Outline: Add record to data service
 	And Expect error "Unique check validation failed for dsStringListOfValues1002" on save
 Examples:
 |data|
-#|{ "_id" : "STR1003","dsStringListOfValues1001" : "LIST 1","dsStringListOfValues1002" : "LIST 1","dsStringListOfValues1003" : "LIST 1","dsStringListOfValues1007" : "LIST 1","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1014" : "LIST 1","dsStringListOfValues1015" : "LIST 1"}|
 |{"_id" : "STR1003","dsStringListOfValues1001" : "LIST 1","dsStringListOfValues1002" : "LIST 1", "dsStringListOfValues1003" : "LIST 1","dsStringListOfValues1004" : "LIST 1","dsStringListOfValues1005" : "LIST 1","dsStringListOfValues1007" : "LIST 1","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1010" : "LIST 1","dsStringListOfValues1013" : "LIST 1","dsStringListOfValues1014" : "LIST 1","dsStringListOfValues1015" : "LIST 1", "dsStringListOfValues1018" : "LIST 2","dsStringListOfValues1020" : "LIST 1"}| 	
 
 	
@@ -88,7 +86,6 @@ Examples:
 	And Match it to "<data>"
 Examples:
 |id|data|
-#|STR1001|{"_id": "STR1001","dsStringListOfValues1001": "LIST 1","dsStringListOfValues1002": "LIST 2","dsStringListOfValues1003": "LIST 1","dsStringListOfValues1004": "LIST 1","dsStringListOfValues1005": "LIST 1","dsStringListOfValues1007": "LIST 1", "dsStringListOfValues1008": "LIST 1", "dsStringListOfValues1010": "LIST 1",  "dsStringListOfValues1013": "LIST 1", "dsStringListOfValues1014": "LIST 1", "dsStringListOfValues1015": "LIST 1",  "dsStringListOfValues1018": "LIST 2", "dsStringListOfValues1020":"LIST 1"}|
 |STR1001|{"_id" : "STR1001","dsStringListOfValues1001" : "LIST 1","dsStringListOfValues1002" : "LIST 1", "dsStringListOfValues1003" : "LIST 1","dsStringListOfValues1004" : "LIST 1","dsStringListOfValues1005" : "LIST 1","dsStringListOfValues1007" : "LIST 1","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1010" : "LIST 1","dsStringListOfValues1013" : "LIST 1","dsStringListOfValues1014" : "LIST 1","dsStringListOfValues1015" : "LIST 1", "dsStringListOfValues1018" : "LIST 2","dsStringListOfValues1020" : "LIST 1"}| 	
 
 	Scenario Outline: Update record to data service
@@ -97,7 +94,6 @@ Examples:
 Examples:
 
 |id|data|
-#|STR1001|{"dsStringListOfValues1001": "LIST 2","dsStringListOfValues1002": "LIST 2","dsStringListOfValues1003": "LIST 2","dsStringListOfValues1004": "LIST 2","dsStringListOfValues1005": "LIST 2","dsStringListOfValues1007": "LIST 2", "dsStringListOfValues1008": "LIST 2", "dsStringListOfValues1010": "LIST 2",  "dsStringListOfValues1013": "LIST 2", "dsStringText1014": "LIST 2", "dsStringListOfValues1015": "LIST 2",  "dsStringListOfValues1018": "LIST 2"}|
 |STR1001|{"_id" : "STR1001","dsStringListOfValues1001" : "LIST 2","dsStringListOfValues1002" : "LIST 2", "dsStringListOfValues1003" : "LIST 2","dsStringListOfValues1004" : "LIST 2","dsStringListOfValues1005" : "LIST 2","dsStringListOfValues1007" : "LIST 1","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1010" : "LIST 2","dsStringListOfValues1013" : "LIST 2","dsStringListOfValues1014" : "LIST 2","dsStringListOfValues1015" : "LIST 2", "dsStringListOfValues1018" : "LIST 2","dsStringListOfValues1020" : "LIST 2"}| 
 
 Scenario Outline: Fetch record from the data service
@@ -107,7 +103,6 @@ Scenario Outline: Fetch record from the data service
 Examples:
 |id|data|
 |STR1001|{"_id": "STR1001","dsStringListOfValues1001": "LIST 2","dsStringListOfValues1002": "LIST 1","dsStringListOfValues1003": "LIST 2","dsStringListOfValues1004": "LIST 1","dsStringListOfValues1005": "LIST 2","dsStringListOfValues1007": "LIST 1", "dsStringListOfValues1008": "LIST 1", "dsStringListOfValues1010": "LIST 1",  "dsStringListOfValues1013": "LIST 2", "dsStringListOfValues1014": "LIST 2", "dsStringListOfValues1015": "LIST 2",  "dsStringListOfValues1018": "LIST 2","dsStringListOfValues1020":"LIST 2"}|
-#|STR1001|{"_id" : "STR1001","dsStringListOfValues1001" : "LIST 1","dsStringListOfValues1002" : "LIST 1", "dsStringListOfValues1003" : "LIST 1","dsStringListOfValues1004" : "LIST 1","dsStringListOfValues1005" : "LIST 1","dsStringListOfValues1007" : "LIST 1","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1010" : "LIST 1","dsStringListOfValues1013" : "LIST 1","dsStringListOfValues1014" : "LIST 1","dsStringListOfValues1015" : "LIST 1","dsStringListOfValues1018" : "LIST 2","dsStringListOfValues1020" : "LIST 1"}| 
 
 Scenario Outline: Delete record from the data service
 	Given Data service "string_ListOfValue"

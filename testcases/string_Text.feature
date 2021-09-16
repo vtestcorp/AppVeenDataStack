@@ -9,7 +9,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|deepak@appveen.com|123123123|
+|test_appadmin@appveen.com|123123123|
 
 Scenario: Delete data service
 	Given Data service "string_Text" exists
@@ -26,7 +26,7 @@ Scenario Outline: Assign to Appcenter Group
 	
 	Examples:
 	|user|
-	|maker@appveen.com|
+	|test_ac_ds_manage@appveen.com|
 
 
 Scenario: Log out of Author
@@ -41,7 +41,7 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|maker@appveen.com|123123123|
+|test_ac_ds_manage@appveen.com|123123123|
 
 
 Scenario: Add data to data service
@@ -62,7 +62,7 @@ Examples:
 Scenario Outline: Add record to data service
 	Given Data service "string_Text"
 	Then Add record "<data>" to the data service	
-	And Expect error "ID STR1001 already exists" on save
+	And Expect error "ID STR1001 already exists." on save
 	Examples:
 		|data|
 	|{"_id": "STR1001","dsStringText1001": "Mango","dsStringText1002": "apple","dsStringText1003": "Banana","dsStringText1004": "Grapes","dsStringText1005": "Pineapple","dsStringText1007": "Guava", "dsStringText1008": "Apricot", "dsStringText1010": "Black Current",  "dsStringText1013": "Black Berry", "dsStringText1014": "Blue Berry", "dsStringText1015": "Custard Apple",  "dsStringText1018": "Coconut",  "dsStringText1020": "DATE", "dsStringText1021": "F", "dsStringText1022": "Gooseberry", "dsStringText1023": "Jackfruit", "dsStringText1024": "Lamon"}|
@@ -113,4 +113,4 @@ Examples:
 
 Scenario: Log out of App Center
 	Given User log out from AppCenter
-	
+
