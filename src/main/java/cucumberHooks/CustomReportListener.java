@@ -85,7 +85,7 @@ public class CustomReportListener extends BaseClass implements EventListener {
 // here we create the feature node
 	public void featureRead(TestSourceRead event) {
 		String featureSource = event.getUri().toString();
-		String featureName1 = featureSource.split(".*/")[1];
+		String featureName1 = featureSource.split(".*/")[1]; //location.feature
 		 featureName = featureName1.replace(".feature", "");
 		 extent= ExtentReportListener.setUp(featureName);
 		if (feature.get(featureSource) == null) {
@@ -98,9 +98,14 @@ public class CustomReportListener extends BaseClass implements EventListener {
 // here we create the scenario node
 	private void ScenarioStarted(TestCaseStarted event) {
 
-//		String featureName = event.getTestCase().getUri().toString();
+		String featureSource = event.getTestCase().getUri().toString();
+		String featureName12 = featureSource.split(".*/")[1];
+		String featureName1 = featureName12.replace(".feature", "");
 		//scenario = feature.get(featureName).createNode(event.getTestCase().getName());
-		scenario = feature.get(featureName).createTest(featureName).createNode(event.getTestCase().getName());
+//		test=feature.get(featureName).createTest(featureName);
+//		scenario = feature.get(featureName1).createTest(featureName1).createNode(event.getTestCase().getName());
+		scenario = feature.get(featureName1).createTest(event.getTestCase().getName()).createNode(event.getTestCase().getName()) ;
+
 	};
 
 // step started event
