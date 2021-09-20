@@ -1,6 +1,6 @@
-Feature: DS BOOLEAN
+Feature: DS-Boolean
 
-#Scenarios - DS BOOLEAN 1001-DS BOOLEAN 1015
+# Scenarios - DS-BOOLEAN-1001 - DS-BOOLEAN-1015
 
 @Author
 Scenario Outline: Log into Author
@@ -33,6 +33,7 @@ Scenario Outline: Assign to Appcenter Group
 Scenario: Log out of Author
 	Given User logged into Author
 	Then User logs out of Author
+	
 
 
 @AppCenter
@@ -50,6 +51,7 @@ Scenario: Add data to data service
 	Given Data service "boolean"
 	Then Add data to the data service for boolean
 
+
 #Scenario Outline: Add record to data service
 #	Given Data service "boolean"
 #	Then Add record "<data>" to the boolean data service	
@@ -66,7 +68,6 @@ Scenario Outline: Add record to data service
 	Examples:
 		|data|
 	  |{"_id" : "DS1001", "dsBoolean1001" : false, "dsBoolean1002" : true, "dsBoolean1003" : false, "dsBoolean1004" : false, "dsBoolean1005" : true, "dsBoolean1006" : true, "dsBoolean1008" : false, "dsBoolean1010" : true, "dsBoolean1011" : false, "dsBoolean1012" : true,"dsBoolean1013" : false, "dsBoolean1014" : false, "dsBoolean1015" : false}|
-
 	  
 
 	Scenario Outline: Fetch record from the data service
@@ -76,7 +77,6 @@ Scenario Outline: Add record to data service
 Examples:
 |id|data|
 |DS1001|{"_id" : "DS1001", "dsBoolean1001" : "Yes", "dsBoolean1002" : "Yes", "dsBoolean1003" : "Yes", "dsBoolean1004" : "No", "dsBoolean1005" : "No", "dsBoolean1006" : "No", "dsBoolean1008" : "No", "dsBoolean1010" : "No", "dsBoolean1011" : "Yes", "dsBoolean1012" : "No","dsBoolean1013" : "Yes", "dsBoolean1014" : "Yes", "dsBoolean1015" : "Yes"}|
-
 
 	Scenario Outline: Update record to data service
 	Given Data service "boolean"
@@ -105,5 +105,4 @@ Examples:
 
 Scenario: Log out of App Center
 Given User log out from AppCenter
-
 

@@ -30,7 +30,7 @@ import java.util.Map;
 public class CustomReportListener extends BaseClass implements EventListener {
 //	private ExtentSparkReporter spark;
 //	private ExtentReports extent;
-	Map<String, ExtentTest> feature = new HashMap<String, ExtentTest>();
+	Map<String, ExtentReports> feature = new HashMap<String, ExtentReports>();
 	ExtentTest scenario;
 	ExtentTest step;
 	String keyword;
@@ -74,19 +74,23 @@ public class CustomReportListener extends BaseClass implements EventListener {
 // TestRunFinished event is triggered when all feature file executions are
 // completed
 	private void runFinished(TestRunFinished event) {
-		System.out.println("Run success");
-		extent.flush();
+		//extent.flush();
+		
+		for(ExtentReports f : feature.values()) {
+			f.flush();
+		}
 	};
 
 // This event is triggered when feature file is read
 // here we create the feature node
 	public void featureRead(TestSourceRead event) {
 		String featureSource = event.getUri().toString();
-		String featureName1 = featureSource.split(".*/")[1];
+		String featureName1 = featureSource.split(".*/")[1]; //location.feature
 		 featureName = featureName1.replace(".feature", "");
 		 extent= ExtentReportListener.setUp(featureName);
 		if (feature.get(featureSource) == null) {
-			feature.putIfAbsent(featureSource, extent.createTest(featureName));
+			//feature.putIfAbsent(featureSource, extent.createTest(featureName));
+			feature.putIfAbsent(featureName, extent);
 		}
 	};
 
@@ -94,8 +98,14 @@ public class CustomReportListener extends BaseClass implements EventListener {
 // here we create the scenario node
 	private void ScenarioStarted(TestCaseStarted event) {
 
-		String featureName = event.getTestCase().getUri().toString();
-		scenario = feature.get(featureName).createNode(event.getTestCase().getName());
+		String featureSource = event.getTestCase().getUri().toString();
+		String featureName12 = featureSource.split(".*/")[1];
+		String featureName1 = featureName12.replace(".feature", "");
+		//scenario = feature.get(featureName).createNode(event.getTestCase().getName());
+//		test=feature.get(featureName).createTest(featureName);
+//		scenario = feature.get(featureName1).createTest(featureName1).createNode(event.getTestCase().getName());
+		scenario = feature.get(featureName1).createTest(event.getTestCase().getName()).createNode(event.getTestCase().getName()) ;
+
 	};
 
 // step started event

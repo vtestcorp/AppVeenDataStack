@@ -53,11 +53,11 @@ Scenario: Add data to data service
 	Scenario Outline: Add record to data service
 	Given Data service "date&Time"
 	Then Add record "<data>" to the data service for Date
-	And Expect error "DS DATE & TIME Error" on label "DS DATE & TIME Label"
+	And Expect error "DS DATE & TIME 1002 Error" on label "DS DATE & TIME 1002 Label"
 	And Save button is disabled
 Examples:
 |data|
-|{"_id":"STR1002", "dsDateTime1002":"", "dsDateTime1014":"","dsDateTime1015":"","dsDateTime1017":"","dsDateTime1018":""}|
+|{"_id":"DAT1002", "dsDateTime1002":"", "dsDateTime1014":"","dsDateTime1015":"","dsDateTime1017":"","dsDateTime1018":""}|
 
 	Scenario Outline: Add record to data service
 	Given Data service "date&Time"

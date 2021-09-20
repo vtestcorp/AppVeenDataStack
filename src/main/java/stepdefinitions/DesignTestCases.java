@@ -203,6 +203,11 @@ public class DesignTestCases extends BaseClass{
 	   design.matchGroupData(jsonFile);
 	}
 	
+	@Then("^Match this Library data to \"(.*?)\"$")
+	public void match_this_Library_data(String jsonFile) throws Exception {
+	   design.matchGroupData(jsonFile);
+	}
+	
 	@Then("^Match it to \"(.*?)\" Date Type$")
 	public void match_this_Date_data(String jsonFile) throws Exception {
 	   design.matchDateData(jsonFile);
@@ -214,8 +219,19 @@ public class DesignTestCases extends BaseClass{
 	}
 	@Then("^Match it to \"(.*?)\"$")
 	public void match_it_to(String jsonFile) throws Exception {
-//		design.matchToRecord(jsonFile);	
-		design.matchGroupData(jsonFile);
+		design.matchToRecord(jsonFile);	
+}
+	
+	@Then("^Match it to \"(.*?)\" for RichText$")
+	public void match_it_to_RichText(String jsonFile) throws Exception {
+		design.matchToRecordToRichText(jsonFile);	
+}
+	
+	
+	@Then("^Match it to \"(.*?)\" for Relation$")
+	public void match_this_Relation_to(String jsonFile) throws Exception {
+//		design.matchRelationData(jsonFile);
+		design.matchToRecord(jsonFile);	
 }
 	
 	@Then("^Match this Location data to \"(.*?)\"$")
@@ -266,7 +282,6 @@ public class DesignTestCases extends BaseClass{
 
 	@Then("User log out from AppCenter")
 	public void user_logs_out_of_AppCenter() {
-//		extent.flush();
 	    driver.quit();
 	}
 

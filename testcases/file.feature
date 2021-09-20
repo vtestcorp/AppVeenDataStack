@@ -56,7 +56,6 @@ Scenario: Add data to data service
 	And Save button is disabled
 Examples:
 |data|
-
 |{"_id" : "DS1004","dsFile1001" : "Date & Time.png","dsFile1002" : "File.txt","dsFile1003" : "Date & Time.png","dsFile1004" : "Date & Time.png","dsFile1006" : "Date & Time.png","dsFile1010" : "Date & Time.png","dsFile1011" : "Date & Time.png","dsFile1012" : "Date & Time.png","dsFile1013" : "Date & Time.png"}|
 
 
@@ -68,7 +67,7 @@ Scenario Outline: Add record to data service
 	And Expect error "ID DS1001 already exists." on save
 	Examples:
 		|data|
-|{"_id" : "DS1001","dsFile1001" : "Date & Time.png","dsFile1002" : "Date & Time.png","dsFile1003" : "Date & Time.png","dsFile1004" : "Date & Time.png","dsFile1006" : "Date & Time.png","dsFile1010" : "Date & Time.png","dsFile1011" : "Date & Time.png","dsFile1012" : "Date & Time.png","dsFile1013" : "Date & Time.png"}|
+		|{"_id" : "DS1001","dsFile1001" : "Date & Time.png","dsFile1002" : "Date & Time.png","dsFile1003" : "Date & Time.png","dsFile1004" : "Date & Time.png","dsFile1006" : "Date & Time.png","dsFile1010" : "Date & Time.png","dsFile1011" : "Date & Time.png","dsFile1012" : "Date & Time.png","dsFile1013" : "Date & Time.png"}|
 
 
 	
