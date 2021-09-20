@@ -557,6 +557,7 @@ public class Module_DesignTestCases extends BaseClass{
 					}
 				}
 		      }
+	   	             Thread.sleep(3000);
 		            applyWait.waitForElementToBeClickable(acp.save, 30).click();
 		       }
 	
@@ -955,7 +956,7 @@ public class Module_DesignTestCases extends BaseClass{
 	}
 	}
 	
-   public void matchRecorforBoolen(String jsonFile) throws MalformedURLException {
+   public void matchRecordforBoolean(String jsonFile) throws MalformedURLException {
 		LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
 		applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
 		WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
@@ -1454,8 +1455,8 @@ else {
 	 Thread.sleep(1000);
 	if(errorMessage.contains("ID"))
 	{
-		By error = By.xpath("//div[@role='alertdialog']");
 		Thread.sleep(3000);
+		By error = By.xpath("//div[@role='alertdialog']");
 		applyWaitForDynamicWebElement(error, 10);
 		String expectedError = driver.findElement(error).getText();
 		Assert.assertEquals(errorMessage, expectedError);

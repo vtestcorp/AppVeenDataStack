@@ -50,14 +50,14 @@ Scenario: Add data to data service
 	Then Add data to the data service for Location
 	
 	
-	Scenario Outline: Add record to data service
-	Given Data service "location"
-	Then Add record "<data>" to the Location data service
-	And Expect error "DS-LOCATION Error" on label "DS-LOCATION Label"
-	And Save button is disabled
-Examples:
-|data|
-|{"_id":"DS1002", "dsLocation1002": "", "dsLocation1007": "", "dsLocation1008": ""}|
+#	Scenario Outline: Add record to data service
+#	Given Data service "location"
+#	Then Add record "<data>" to the Location data service
+#	And Expect error "DS-LOCATION 1002 Error" on label "DS-LOCATION 1002 Label"
+#	And Save button is disabled
+#Examples:
+#|data|
+#|{"_id":"DS1002", "dsLocation1002": "", "dsLocation1007": "", "dsLocation1008": ""}|
 
 Scenario Outline: Add record to data service
 	Given Data service "location"
@@ -74,24 +74,24 @@ Scenario Outline: Add record to data service
 
 Examples:
 |id|data|
-|DS1001|{"_id": "DS1001","dsLocation1001": "Pune, Maharashtra, India","dsLocation1002": "Pimpri-Chinchwad, Maharashtra, India","dsLocation1003": "Bangalore, Karnataka, India","dsLocation1006": "Chennai, Tamil Nadu, India","dsLocation1007": "Gujrat, Pakistan", "dsLocation1008": "Satara, Maharashtra, India"}|
+|DS1001|{"_id": "DS1001","dsLocation1001": "Pune, Maharashtra, India","dsLocation1002": "Pimpri-Chinchwad, Maharashtra, India","dsLocation1003": "Bangalore, Karnataka, India","dsLocation1006": "Chennai, Tamil Nadu, India","dsLocation1007": "Gujrat, Pakistan", "dsLocation1008": "Satara, Maharashtra, India","dsLocation1009":"Mumbai, Maharashtra, India"}|
 
-	
-#	Scenario Outline: Update record to data service
-#	Given Data service "location"
-#	Then Update record "<id>" with "<data>" to the Location 
-#Examples:
-#|id|data|
-#|DS1001|{"dsLocation1001": "Aundh, Pune, Maharashtra, India","dsLocation1002": "Tamil Nadu, India","dsLocation1003": "Jammu and Kashmir","dsLocation1006": "Bihar, India","dsLocation1007": "Patna, Bihar, India","dsLocation1008": "Chandigarh, India" ,"dsLocation1009": "Himachal Pradesh, India"}|
-#
-#Scenario Outline: Fetch record from the data service
-#	Given Data service "location"
-#	Then Fetch record "<id>" from the data service
-#	And Match this Location data to "<data>" 
-#Examples:
-#|id|data|
-#|DS1001|{"_id": "DS1001","dsLocation1001": "Aundh, Pune, Maharashtra, India","dsLocation1002": "Tamil Nadu, India","dsLocation1003": "Jammu and Kashmir","dsLocation1006": "Bihar, India","dsLocation1007": "Patna, Bihar, India", "dsLocation1008": "Satara, Maharashtra, India", "dsLocation1009" : "Mumbai, Maharashtra, India"}|
-#
+
+	Scenario Outline: Update record to data service
+	Given Data service "location"
+	Then Update record "<id>" with "<data>" to the Location 
+Examples:
+|id|data|
+|DS1001|{"dsLocation1001": "Aundh, Pune, Maharashtra, India","dsLocation1002": "Tamil Nadu, India","dsLocation1003": "Jammu and Kashmir","dsLocation1006": "Bihar, India","dsLocation1007": "Patna, Bihar, India","dsLocation1008": "Chandigarh, India" ,"dsLocation1009": "Himachal Pradesh, India"}|
+
+Scenario Outline: Fetch record from the data service
+	Given Data service "location"
+	Then Fetch record "<id>" from the data service
+	And Match this Location data to "<data>" 
+Examples:
+|id|data|
+|DS1001|{"_id": "DS1001","dsLocation1001": "Aundh, Pune, Maharashtra, India","dsLocation1002": "Tamil Nadu, India","dsLocation1003": "Jammu and Kashmir","dsLocation1006": "Bihar, India","dsLocation1007": "Patna, Bihar, India", "dsLocation1008": "Chandigarh, India", "dsLocation1009" : "Himachal Pradesh, India"}|
+
 #Scenario Outline: Delete record from the data service
 #	Given Data service "location"
 #	Then Delete record "<id>" from the data service
@@ -100,7 +100,5 @@ Examples:
 #|id|
 #|DS1001|
 #
-#
 #Scenario: Log out of App Center
 #	Given User log out from AppCenter
-#

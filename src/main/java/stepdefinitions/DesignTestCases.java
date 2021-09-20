@@ -230,7 +230,7 @@ public class DesignTestCases extends BaseClass{
 }
 	@Then("^Match it to \"(.*?)\" boolean$")
 	public void match_it_to__boolean(String string) throws MalformedURLException {
-		design.matchRecorforBoolen(string);
+		design.matchRecordforBoolean(string);
 	}
 
 		

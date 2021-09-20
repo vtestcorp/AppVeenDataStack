@@ -82,7 +82,6 @@
     "key" : "dsBoolean1002",
     "properties" : {
       "label" : "DS-BOOLEAN-1002 Label",
-      "errorMessage" : "DS-BOOLEAN-1002 Error",
       "name" : "DS BOOLEAN 1002",
       "required" : true,
       "fieldLength" : 10,
@@ -172,7 +171,6 @@
     "type" : "Boolean",
     "key" : "dsBoolean1011",
     "properties" : {
-      "errorMessage" : "DS-BOOLEAN-1011 Error",
       "name" : "DS BOOLEAN 1011",
       "required" : true,
       "fieldLength" : 10,
@@ -186,7 +184,6 @@
     "key" : "dsBoolean1012",
     "properties" : {
       "label" : "DS-BOOLEAN-1012 Label",
-      "errorMessage" : "DS-BOOLEAN-1012 Error",
       "name" : "DS BOOLEAN 1012",
       "required" : true,
       "fieldLength" : 10,

@@ -9,7 +9,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|test_appadmin@appveen.com|123123123|
+|deepak@appveen.com|123123123|
 
 Scenario: Delete data service
 	Given Data service "group2" exists
@@ -23,9 +23,10 @@ Scenario Outline: Assign to Appcenter Group
  	Then Group "DS Group" does not exist
 	Then Create new group "DS Group" 
 	And Assign appcenter permissions for "group2" dataservice to "<user>"
+	
 	Examples:
 	|user|
-	|test_ac_ds_manage@appveen.com|
+	|maker@appveen.com|
 
 Scenario: Log out of Author
 	Given User logged into Author
@@ -38,7 +39,7 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|test_ac_ds_manage@appveen.com|123123123|
+|maker@appveen.com|123123123|
 
 Scenario: Add data to data service
 	Given Data service "group2"
@@ -65,13 +66,14 @@ Examples:
 	Given Data service "group2"
 	Then Update record "<id>" with "<data>" to the data service for group
 Examples:
+
 |id|data|
 |DS1001|{ "dsGroupLibrary" : { "library" : { "line1" : "Update Library Line 1", "line2" : "Update Library Line 2" } }, "dsGroupStringText" : { "stringText" : "Update Group Text" }, "dsGroupStringEmail" : { "email" : "xyz@gmail.com" }, "dsGroupStringListOfValues" : { "listOfValues" : "XYZ" }, "dsGroupNumberNumber" : { "number" : 999 }, "dsGroupNumberCurrency" : { "currency" : 11 }, "dsGroupNumberListOfValues" : { "listOfValues" : 999 }, "dsGroupBoolean" : { "boolean" : true }, "dsGroupDate" : { "date" : { "rawData" : "2025-11-27T00:00:00Z" } }, "dsGroupDateTime" : { "dateTime" : { "rawData" : "2030-06-11T08:20:30Z" } }, "dsGroupLocation" : { "location" : { "userInput" : "Solapur, Maharashtra, India" } }, "dsGroupFile" : { "file" : { "metadata" : { "filename" : "Untitled.png" } } }, "dsGroupUser" : { "user" : { "_id" : "deepak@appveen.com" } } }|
 
 Scenario Outline: Fetch record from the data service
 	Given Data service "group2"
 	Then Fetch record "<id>" from the data service
-	And Match it to "<data>"
+	And Match this GROUP data to "<data>"
 Examples:
 |id|data|
 |DS1001|{"_id":"DS1001", "dsGroupStringText.stringText":"Update Group Text", "dsGroupStringEmail.email":"xyz@gmail.com", "dsGroupStringListOfValues.listOfValues":"XYZ", "dsGroupNumberNumber.number":"999", "dsGroupNumberCurrency.currency":"11.00", "dsGroupNumberListOfValues.listOfValues":"999", "dsGroupBoolean.boolean":"No", "dsGroupDate.date":"Thursday, November 27, 2025 (Etc/Zulu)", "dsGroupDateTime.dateTime":"Tuesday, June 11, 2030, 8:20:30 AM (Zulu)", "dsGroupLocation.location":"Solapur, Maharashtra, India", "dsGroupFile.file":"Untitled.png", "dsGroupLibrary.library.line1":"Update Library Line 1", "dsGroupLibrary.library.line2":"Update Library Line 2", "dsGroupUser.user":"deepak@appveen.com"}|
