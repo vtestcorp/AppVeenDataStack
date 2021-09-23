@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
@@ -15,27 +14,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-
-import com.aventstack.extentreports.ExtentTest;
-import com.google.gson.JsonObject;
-
 import base.BaseClass;
 import helperMethods.DropDown;
 import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
 import helperMethods.Log;
 import helperMethods.Property;
-import helperMethods.Screenshots;
 import helperMethods.ScrollTypes;
 import helperMethods.WaitTypes;
-import junit.framework.Assert;
 import pageObjects.Object_AuthorPage;
 import pageObjects.Object_GroupPage;
 
 public class LoginPage extends BaseClass{
 	private WaitTypes applyWait;
-	private ExtentTest test;
 	private JavascriptClick javascriptClick;
 	public DropDown dropdown;
 	public ScrollTypes scroll;
@@ -213,7 +204,6 @@ public class LoginPage extends BaseClass{
 							applyWait.waitForElementToBeClickable(ap.text, 30).click();
 						}
 							requiredAttributes(jsonProperties);
-
 				break;
 			
 			case "Number" : 
@@ -236,8 +226,6 @@ public class LoginPage extends BaseClass{
 				
 				requiredAttributes(jsonProperties);
 				break;
-				
-		
 				
 			case "Boolean" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
@@ -263,7 +251,6 @@ public class LoginPage extends BaseClass{
 				}
 				requiredAttributes(jsonProperties);
 				break;
-				
 				
 				case "Object" : 
 					jsonProperties = (JSONObject) attribute.get("properties");
@@ -383,24 +370,7 @@ public class LoginPage extends BaseClass{
 			function_ExperienceTab();
 			function_RolesTab();
 			applyWait.waitForElementToBeClickable(ap.submitAndDeploy, 30).click();;
-			Thread.sleep(10000);
-			
-			
-			if(isRelation) {
-				By anotherDataService1=By.xpath("//span[@id='serviceManagerCardTitle' and @title='"+anotherDataService+"']");
-				WebElement dsStart=driver.findElement(anotherDataService1);
-				WebElement toggler=dsStart.findElement(By.xpath("./ancestor::div[3]/following-sibling::div[2]/div/div[@class='toggler']"));
-				toggler.click();
-				WebElement startButton=toggler.findElement(By.xpath("./following-sibling::div[6]/span[2]"));
-				Thread.sleep(1000);
-				if(startButton.getText().equals("Start")) {
-				startButton.click();
-				Thread.sleep(1000);
-				applyWait.waitforElementToBeDisplayed(ap.yes, 10).click();
-				}
-			}
 		}
-
 
 	private void function_ExperienceTab() {
 		String path=System.getProperty("user.dir");
@@ -559,7 +529,6 @@ public class LoginPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(ap.clone, 30).click();
 		applyWait.waitForElementToBeClickable(ap.saveButton, 30).click();
 		
-		String service=applyWait.waitForElementToBeClickable(ap.dataServiceName1, 30).getText();
 	}
 	
 	
@@ -703,8 +672,6 @@ public class LoginPage extends BaseClass{
 
 				}
 				}
-				
-				
 
 				break;
 				
@@ -744,7 +711,6 @@ public class LoginPage extends BaseClass{
 		public void collectionTypes(String objectAttribute,JSONObject attribute) throws Exception {
 			JSONObject jsonProperties;
 			switch(objectAttribute) {
-			
 			
 			case "String" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
@@ -875,9 +841,6 @@ public class LoginPage extends BaseClass{
 						   groupAttributes((String) object.get("type"),object);
 						}
 	        		 }
-	 	        		 
-						  
-		  
 					
 						break;
 
@@ -905,9 +868,6 @@ public class LoginPage extends BaseClass{
 						requiredAttributes(jsonProperties);
 						break;
 			}
-		
-		
-
 }
 						public void requiredAttributes(JSONObject jsonProperties) throws Exception{
 							
@@ -1122,8 +1082,6 @@ public class LoginPage extends BaseClass{
 								}
 						}
 
-						
-
 						public void verifyGroupExists(String groupName) throws Exception {
 							applyWait.waitForElementToBeClickable(ap.groups, 30).click();
 							Thread.sleep(2000);
@@ -1149,8 +1107,6 @@ public class LoginPage extends BaseClass{
 								applyWait.waitForElementToBeClickable(gp.delete, 30).click();
 
 							}
-							
-							
 						}
 
 						public void verifyGroupDoesNotExist(String groupName) throws Exception {
@@ -1290,15 +1246,6 @@ public class LoginPage extends BaseClass{
 						public void navigateToAppcenterLoginPage() {
 							
 						}
-
-
-						
-
-
-						
-							
-						
-		
 		
 }
 

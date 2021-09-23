@@ -18,8 +18,6 @@ Scenario: Delete data service
 Scenario: Create data service
 	Given Data service "boolean" does not exist
 	Then Create new data service "boolean"
- #Under testData, picks up strings.json create the JSON
-
 
 Scenario Outline: Assign to Appcenter Group
  	Then Group "boolean-Group" does not exist
@@ -44,21 +42,9 @@ Examples:
 |username|password|
 |test_ac_ds_manage@appveen.com|123123123|
 
-
- #INSERT/UPDATE
 Scenario: Add data to data service
 	Given Data service "boolean"
 	Then Add data to the data service for boolean
-
-
-#Scenario Outline: Add record to data service
-#	Given Data service "boolean"
-#	Then Add record "<data>" to the boolean data service	
-#	And Expect error "DS-BOOLEAN 1002 Error" on label "DS-BOOLEAN 1002 Label"
-#	And Save button is disabled
-#Examples:
-#|data|
-#|{"_id" : "DS1002", "dsBoolean1001" : false, "dsBoolean1002" : "", "dsBoolean1003" : true, "dsBoolean1004" : false, "dsBoolean1005" : true, "dsBoolean1006" : true, "dsBoolean1008" : false, "dsBoolean1010" : true, "dsBoolean1011" :"" , "dsBoolean1012" :"" ,"dsBoolean1013" : false, "dsBoolean1014" : true, "dsBoolean1015" : false}|
 
 Scenario Outline: Add record to data service
 	Given Data service "boolean"

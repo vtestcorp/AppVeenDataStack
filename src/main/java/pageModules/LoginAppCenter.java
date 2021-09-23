@@ -2,24 +2,16 @@ package pageModules;
 
 import java.io.File;
 import java.net.MalformedURLException;
-import java.util.Arrays;
 import java.util.List;
-
 import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
-
 import com.aventstack.extentreports.ExtentTest;
-import com.jayway.jsonpath.JsonPath;
-
 import base.BaseClass;
 import helperMethods.DropDown;
-import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
 import helperMethods.Property;
 import helperMethods.ScrollTypes;
@@ -31,8 +23,6 @@ public class LoginAppCenter extends BaseClass {
 
 	private WebDriver driver;
 	private WaitTypes applyWait;
-	private ExtentTest test;
-	private JavascriptClick javascriptClick;
 	public DropDown dropdown;
 	public ScrollTypes scroll;
 	public static String data_Service;
@@ -42,7 +32,6 @@ public class LoginAppCenter extends BaseClass {
 	public LoginAppCenter(WebDriver driver, ExtentTest test) {
 		this.driver = driver;
 		this.applyWait = new WaitTypes(driver);
-		this.test = test;
 		dropdown = new DropDown(driver);
 		scroll = new ScrollTypes(driver);
 		acp = new Object_AppCenterPage();
@@ -76,7 +65,6 @@ public class LoginAppCenter extends BaseClass {
 
 		data_Service=dataService;
 		Actions action=new Actions(driver);
-		
 		By ds = null;
 		try {
 			ds=By.xpath("//div[normalize-space()='"+dataService+"' and contains(@class,'text-truncate')]");
@@ -109,11 +97,7 @@ public class LoginAppCenter extends BaseClass {
 									data.click();
 							}
 					}
-			
-			
 		}
-	
-			
 		}
 
 	public void userEnterData() throws Exception {
@@ -123,10 +107,7 @@ public class LoginAppCenter extends BaseClass {
 		List<WebElement> textBoxes = acp.textBoxes;
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
-
-		/**
-		 * Code for Experience tab
-		 */
+		
 		List<WebElement> stepNames = driver
 				.findElements(By.xpath("//div[@class='step-name high-zIndex text-truncate']"));
 
@@ -208,7 +189,6 @@ public class LoginAppCenter extends BaseClass {
 										dropdown.selectByVisibleText(textBox, ((Double) jsonObject.get(id1)).toString());
 									}
 								}
-							
 						
 						else if(jsonObject.get(id1).getClass().toString().contains("Long")) {
 							if (jsonObject.get(id1) != null) {
@@ -296,11 +276,9 @@ public class LoginAppCenter extends BaseClass {
         			}
 				}
 			}
-			
 		}
 		Thread.sleep(2000);
 				applyWait.waitForElementToBeClickable(acp.save, 30).click();
-					
 	}
 				
 	public void userEnterDataInUserField() throws InterruptedException {
@@ -346,15 +324,12 @@ public class LoginAppCenter extends BaseClass {
 	            	}
 		     }
 				applyWait.waitForElementToBeClickable(acp.save, 30).click();
-					
 	}
-				
 					
 			public void userEnterDataforBoolean() throws InterruptedException {
 				
 				applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 				Thread.sleep(1000);
-			//	applyExplicitWaitsUntilElementVisible(acp.buttons, 10);
 				List<WebElement> buttons = acp.buttons;
 				String filePath=path + "\\testData\\" + data_Service + ".data.json";
 				JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
@@ -388,7 +363,6 @@ public class LoginAppCenter extends BaseClass {
 			public void userEnterDataForRichText() throws InterruptedException {
 				applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 				Thread.sleep(5000);
-			//	applyExplicitWaitsUntilElementVisible(acp.richtextBoxes, 10);
 				List<WebElement> textBoxes = acp.richtextBoxes;
 				String filePath=path + "\\testData\\" + data_Service + ".data.json";
 				JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
@@ -857,7 +831,5 @@ public class LoginAppCenter extends BaseClass {
 		}
 	applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	}
-	
-	
 }
 

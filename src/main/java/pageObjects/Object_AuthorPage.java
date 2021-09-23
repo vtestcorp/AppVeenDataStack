@@ -189,10 +189,6 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(xpath="//span[@class='odp-library']")
 	public WebElement library;
 
-	//@FindBy(xpath = "//span[@class='odp-references']")
-//	public WebElement relation; 
-	
-	
 	@FindBy(xpath="//div[text()='Linked Library']/following-sibling::div/select")
 	public WebElement linkedLibrary;
 
@@ -315,7 +311,6 @@ public class Object_AuthorPage extends BaseClass{
 	
 	@FindBy(xpath="//div[@class='text'][normalize-space()='Manage']")
 	public WebElement manageTab;
-	
 
 	@FindBy(xpath = "//div[contains(normalize-space(),'Allow deletion')]/following-sibling::div//label/span[@class='toggler']")
 	public WebElement allowdeletionToggler;
@@ -329,15 +324,3 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(xpath = "//div[normalize-space()='Default Value']/following-sibling::div//span[@class='ml-3']")
 	public WebElement defaultSatus;
     }
-
-
-
-	
-	
-	
-	
-
-
-	
-	
-

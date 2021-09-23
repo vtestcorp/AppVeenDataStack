@@ -29,7 +29,6 @@ Scenario Outline: Assign to Appcenter Group
 	|user|
 	|test_ac_ds_manage@appveen.com|
 
-
 Scenario: Log out of Author
 	Given User logged into Author
 	Then User logs out of Author
@@ -112,8 +111,5 @@ Examples:
 |id|
 |NUM1001|
 
-
 Scenario: Log out of App Center
 	Given User log out from AppCenter
-
-

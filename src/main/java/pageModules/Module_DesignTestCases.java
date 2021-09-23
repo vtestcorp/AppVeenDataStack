@@ -1,40 +1,25 @@
 package pageModules;
 
-import java.awt.Desktop.Action;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.aventstack.extentreports.ExtentTest;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.MapDifference;
 import com.google.common.collect.MapDifference.ValueDifference;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.PathNotFoundException;
 import com.google.common.collect.Maps;
-import com.google.gson.JsonObject;
-import com.jayway.jsonpath.JsonPath;
-import com.jayway.jsonpath.PathNotFoundException;
-
 import base.BaseClass;
 import config.DefineConstants;
 import helperMethods.DropDown;
@@ -48,7 +33,6 @@ import pageObjects.Object_GroupPage;
 
 public class Module_DesignTestCases extends BaseClass{
 	private WaitTypes applyWait;
-	private ExtentTest test;
 	private JavascriptClick javascriptClick;
 	public DropDown dropdown;
 	public ScrollTypes scroll;
@@ -58,16 +42,11 @@ public class Module_DesignTestCases extends BaseClass{
 	public Object_GroupPage gp;
 	public LoginPage lp;
 	public String id;
-	
-	
 	public static ArrayList<String> groups;
 	
-	
-	
-	public Module_DesignTestCases(WebDriver driver, ExtentTest test) {
+	public Module_DesignTestCases(WebDriver driver) {
 		this.driver = driver;
 		this.applyWait = new WaitTypes(driver);
-		this.test = test;
 		dropdown=new DropDown(driver);
 		scroll=new ScrollTypes(driver);
 		acp=new Object_AppCenterPage();
@@ -76,8 +55,6 @@ public class Module_DesignTestCases extends BaseClass{
 		lp=new LoginPage(driver);
 		javascriptClick=new JavascriptClick(driver);
 	}
-
-
 
 	public void dataServiceShouldDeployed() throws Exception {
 		String dataService="String";
@@ -92,18 +69,14 @@ public class Module_DesignTestCases extends BaseClass{
 		
 	}
 
-
-
 	public void groupexist(String groupName) throws Exception {
 
-//		
 		try {
 			applyWait.waitForElementToBeClickable(ap.groups, 30).click();
 		} catch (Exception e1) {
 			Thread.sleep(3000);
 			handleElementClickException(ap.groups);
 		}
-//		applyExplicitWaitsUntilElementVisible(gp.group1,10);
 		applyExplicitWaitsUntilElementVisible(gp.groups, 10);
 		groups=new ArrayList<String>();
 		for(WebElement group : gp.groups) {
@@ -124,7 +97,6 @@ public class Module_DesignTestCases extends BaseClass{
 			applyWait.waitForElementToBeClickable(gp.delete, 30).click();
 
 		}
-		
 	}
 
 	public void createGroup(String groupName) throws Exception {
@@ -197,7 +169,6 @@ public class Module_DesignTestCases extends BaseClass{
 				applyWait.waitForElementToBeClickable(toggler, 30).click();
 				}
 		}
-//		lp.VerifyUserExists(user1);
 		applyWait.waitForElementToBeClickable(gp.members, 30).click();
 		applyWait.waitForElementToBeClickable(gp.addUsers, 30).click();
 		applyExplicitWaitsUntilElementVisible(gp.userEmail, 10);
@@ -232,7 +203,6 @@ public class Module_DesignTestCases extends BaseClass{
 		applyExplicitWaitsUntilElementVisible(acp.idTextBox1, 10);
 
 		List<WebElement> textBoxes = acp.textBoxes;
-		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
 		
 			List<WebElement> stepNames=driver.findElements(By.xpath("//div[@class='step-name high-zIndex text-truncate']"));
@@ -268,7 +238,6 @@ public class Module_DesignTestCases extends BaseClass{
 								applyWait.waitForElementToBeClickable(textBox,30).sendKeys(((Long)jsonObject.get(id1)).toString());;
 								}
 						}
-						
 					}
 				}
 
@@ -296,7 +265,7 @@ public class Module_DesignTestCases extends BaseClass{
 									applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(jsonValue);
 									
 										}
-	
+								
 								if (textBox.getAttribute("type").equals("select-one")) {
 									if( jsonObject.get(id1).toString().equals("")){
 										applyWait.waitForElementToBeClickable(textBox, 30).click();
@@ -304,10 +273,8 @@ public class Module_DesignTestCases extends BaseClass{
 									else {
 									dropdown.selectByVisibleText(textBox, ( jsonObject.get(id1)).toString());
 									}
-	
 								}
 							}
-	
 						}
 	
 						else if (textBox.getAttribute("type").equals("number") ) {
@@ -363,9 +330,7 @@ public class Module_DesignTestCases extends BaseClass{
 									                textBox.sendKeys(Keys.BACK_SPACE);
 									            }
 									        }
-									
 										applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value.toString());
-										
 									}
 									
 									if (textBox.getAttribute("type").equals("select-one")) {
@@ -376,7 +341,6 @@ public class Module_DesignTestCases extends BaseClass{
 										else {
 										dropdown.selectByVisibleText(textBox, (JsonPath.read(string, "$."+id1+"").toString()));
 										}
-	
 									}
 								}
 								
@@ -398,9 +362,6 @@ public class Module_DesignTestCases extends BaseClass{
 				}
 				applyWait.waitForElementToBeClickable(acp.save, 30).click();
 				}
-			
-	
-	
 
 	public void addNewRecord(String string, String string2) throws Exception {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
@@ -410,8 +371,6 @@ public class Module_DesignTestCases extends BaseClass{
 		WebElement textBox1=driver.findElement(By.xpath("//input[@id='dsStringText1003']"));
 		textBox1.click();
 	}
-
-
 
 	public void expectError(String string, String string2) throws Exception {
 		List<WebElement> errors=acp.errorMessages;
@@ -426,16 +385,12 @@ public class Module_DesignTestCases extends BaseClass{
 		}
 	}
 
-
 	public void saveButtonIsDisable() {
 		
 	Boolean status=	acp.saveButton.isEnabled();
 	if(status) {
 		Assert.assertTrue(false);
 	}
-	else {
-	}
-		
 	}
 
 	public void addRecordForRepeatedId() throws Exception {
@@ -449,9 +404,7 @@ public class Module_DesignTestCases extends BaseClass{
 		for(int i=0;i<jsonArray.size();i++) {
 			Thread.sleep(1000);
 			JSONObject jsonObject=(JSONObject) jsonArray.get(i);
-/**
- * Code for Experience tab
- */
+
 			List<WebElement> stepNames=driver.findElements(By.xpath("//div[@class='step-name high-zIndex text-truncate']"));
 			
 			if(stepNames.size()>0) {
@@ -599,8 +552,6 @@ public class Module_DesignTestCases extends BaseClass{
 	            applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	      }
 	
-	
-	
 	public void addRecordForRichText(String string) throws InterruptedException, MalformedURLException {
 		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
@@ -655,9 +606,7 @@ public class Module_DesignTestCases extends BaseClass{
 		JSONArray jsonArray = JsonUtils.getJSONArray(path +"\\testData\\string3.json");
 		for(int i=0;i<jsonArray.size();i++) {
 			JSONObject jsonObject=(JSONObject) jsonArray.get(i);
-/**
- * Code for Experience tab
- */
+
 			List<WebElement> stepNames=driver.findElements(By.xpath("//div[@class='step-name high-zIndex text-truncate']"));
 			
 			if(stepNames.size()>0) {
@@ -755,7 +704,6 @@ public class Module_DesignTestCases extends BaseClass{
 					      WebElement parent = button.findElement(By.xpath("./.."));
 					      if(jsonObject.get(id1)!=null) {
 					      try {
-						Boolean status=	(Boolean) jsonObject.get(id1);
 						} catch (NullPointerException e) {
 							continue;
 						}
@@ -823,9 +771,6 @@ public class Module_DesignTestCases extends BaseClass{
 		addRecordForUser(jsonFile);
 		
 	}
-	
-
-
 
 	public void updateRecords(String id, String attribute) throws InterruptedException {
 		
@@ -876,12 +821,7 @@ public class Module_DesignTestCases extends BaseClass{
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);;
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(Keys.ENTER);;
 		Thread.sleep(1000);
-		
-		
-		
 	}
-
-
 
 	public void recordMustNotExist() throws Exception {
 		Thread.sleep(1000);
@@ -890,12 +830,7 @@ public class Module_DesignTestCases extends BaseClass{
 	    }
 	}
 
-
 	public void matchToRecord(String jsonFile) throws Exception {
-		
-		////odp-view-control/div/div/label[starts-with(@class,'label-width')]
-		
-		//label[@for='dsLocation1003']/parent::div/following-sibling::odp-view-separator/descendant::div[5]
 		
 		LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
 		applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
@@ -916,22 +851,10 @@ public class Module_DesignTestCases extends BaseClass{
 			q++;
 		}
 		
-	LinkedHashMap<String, String> expectedData =(LinkedHashMap<String, String>) JsonUtils.getMapFromJSON(jsonFile);
-	
-	
-	if(actualData.equals(expectedData)) {
-	}
-	else {
-		
-	  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
-	    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
-//	    System.err.println(entriesDiffering);
-	    Assert.assertTrue(actualData.equals(expectedData));
-	}
-
+		matchData(jsonFile, actualData);
 	}
 	
-   public void matchRecorforBoolen(String jsonFile) throws MalformedURLException {
+   public void matchRecorforBoolen(String jsonFile) throws Exception {
 		LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
 		applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
 		WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
@@ -948,16 +871,7 @@ public class Module_DesignTestCases extends BaseClass{
 			q++;
 		}
 		
-	LinkedHashMap<String, String> expectedData =(LinkedHashMap<String, String>) JsonUtils.getMapFromJSON(jsonFile);
-	if(actualData.equals(expectedData)) {
-	}
-	else {
-		
-	    MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
-	    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
-	    System.err.println(entriesDiffering);
-	    Assert.assertTrue(actualData.equals(expectedData));
-	}
+		matchData(jsonFile, actualData);
 }
 
 
@@ -1007,8 +921,6 @@ public class Module_DesignTestCases extends BaseClass{
 		
 	}
 
-
-
 	public void fetchRecordBySearchingData(String dsStringText1001, String dsStringText1002) throws Exception {
 		
 		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
@@ -1019,8 +931,6 @@ public class Module_DesignTestCases extends BaseClass{
 			 javascriptClick.sendKeys(acp.dsSTRINGTEXT1002, dsStringText1002);
 			 acp.dsSTRINGTEXT1002.sendKeys(Keys.ENTER);
 	}
-
-
 
 	public void matchDataCurrency(String jsonFile) throws Exception {
 
@@ -1039,25 +949,9 @@ public class Module_DesignTestCases extends BaseClass{
 		}
 			q++;
 		}
-
 		
-	LinkedHashMap<String, String> expectedData =(LinkedHashMap<String, String>) JsonUtils.getMapFromJSON(jsonFile);
-
-	
-	if(actualData.equals(expectedData)) {
+		matchData(jsonFile, actualData);
 	}
-	else {
-		
-	  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
-	    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
-	    System.err.println(entriesDiffering);
-	    Assert.assertTrue(actualData.equals(expectedData));
-	}
-	
-	
-		
-	}
-
 
 
 	public void matchGroupData(String jsonFile) throws Exception {
@@ -1081,18 +975,8 @@ public class Module_DesignTestCases extends BaseClass{
 		}
 			q++;
 		}
-		
-	LinkedHashMap<String, String> expectedData =(LinkedHashMap<String, String>) JsonUtils.getMapFromJSON(jsonFile);
-	
-	if(actualData.equals(expectedData)) {
-	}
-	else {
-		
-	  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
-	    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
-	    System.err.println(entriesDiffering);
-	    Assert.assertTrue(actualData.equals(expectedData));
-	}
+
+		matchData(jsonFile, actualData);
 	}
 
 	public void addNewRecordForFile(String string) throws Exception {
@@ -1134,8 +1018,6 @@ public class Module_DesignTestCases extends BaseClass{
 		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	}
 
-
-
 	public void updateDataForFile(String id, String jsonFile) throws Exception {
 		Thread.sleep(1000);
 		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
@@ -1150,8 +1032,6 @@ public class Module_DesignTestCases extends BaseClass{
 		addNewRecordForFile(jsonFile);
 		
 	}
-
-
 
 	public void matchToRecordForFileType(String jsonFile) throws Exception {
 		
@@ -1174,20 +1054,8 @@ public class Module_DesignTestCases extends BaseClass{
 		}
 
 		
-	LinkedHashMap<String, String> expectedData =(LinkedHashMap<String, String>) JsonUtils.getMapFromJSON(jsonFile);
-		
-	if(actualData.equals(expectedData)) {
+		matchData(jsonFile, actualData);
 	}
-	else {
-		
-	  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
-	    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
-	    System.err.println(entriesDiffering);
-	    Assert.assertTrue(actualData.equals(expectedData));
-	}
-	}
-
-
 
 public void addRecordForDate(String jsonFile) throws Exception {
 		
@@ -1203,8 +1071,6 @@ public void addRecordForDate(String jsonFile) throws Exception {
 		Thread.sleep(2000);
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,30);
 		List<WebElement> textBoxes = acp.dateFields;
-		String path = System.getProperty("user.dir");
-		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(jsonFile);
 		
 		for (int j = 1; j <= textBoxes.size(); j++) {
@@ -1298,18 +1164,7 @@ public void matchDateData(String jsonFile) throws Exception {
 	}
 
 	
-LinkedHashMap<String, String> expectedData =(LinkedHashMap<String, String>) JsonUtils.getMapFromJSON(jsonFile);
-	
-if(actualData.equals(expectedData)) {
-}
-else {
-	
-  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
-    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
-    System.err.println(entriesDiffering);
-
-    Assert.assertTrue(actualData.equals(expectedData));
-}
+	matchData(jsonFile, actualData);
 
 	
 }
@@ -1334,7 +1189,6 @@ public void updateRecordForDate(String id, String jsonFile) throws Exception {
 
 
 public void matchLocationData(String jsonFile) throws Exception {
-	
 	
 	LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
 	applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
@@ -1367,19 +1221,7 @@ public void matchLocationData(String jsonFile) throws Exception {
 	}
 	}
 	
-LinkedHashMap<String, String> expectedData =(LinkedHashMap<String, String>) JsonUtils.getMapFromJSON(jsonFile);
-
-
-if(actualData.equals(expectedData)) {
-}
-else {
-	
-	System.err.println("Data is not matching.Unmatched data are as follows :");
-  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
-    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
-    System.err.println(entriesDiffering);
-    Assert.assertTrue(actualData.equals(expectedData));
-}
+	matchData(jsonFile, actualData);
 }
 
 
@@ -1416,7 +1258,6 @@ public void addRecordForGroup(String string) throws Exception {
 						
 										if(textBox.getAttribute("class").contains("searchInput")) {
 											
-//											String v1 =  JsonUtils.getJsonValue(filePath, id1+".userInput");
 											String v1 = JsonPath.read(string, "$."+id1+".userInput").toString();
 											textBox.clear();
 											textBox.sendKeys(v1);
@@ -1429,7 +1270,6 @@ public void addRecordForGroup(String string) throws Exception {
 										else {
 											try {
 												textBox.getAttribute("role");
-//												String value=JsonUtils.getJsonValue(filePath, id1+"._id");
 												String value = JsonPath.read(string, "$."+id1+"._id").toString();
 												applyWait.waitForElementToBeClickable(textBox, 30).clear();;
 												applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value);
@@ -1485,7 +1325,6 @@ public void addRecordForGroup(String string) throws Exception {
 				
 
 			      WebElement parent = textBox.findElement(By.xpath("./.."));
-//			      String v1 =  JsonPath.read(string, "$."+id1);
 				Boolean status=	JsonPath.read(string, "$."+id1);
 				
 			      if(status.equals(true) && textBox.getAttribute("class").contains("ng-pristine"))
@@ -1616,20 +1455,8 @@ public void matchRelationData(String jsonFile) throws Exception {
 	}
 		q++;
 	}
-	
-LinkedHashMap<String, String> expectedData =(LinkedHashMap<String, String>) JsonUtils.getMapFromJSON(jsonFile);
 
-
-if(actualData.equals(expectedData)) {
-}
-else {
-	
-	System.err.println("Data is not matching.Unmatched data are as follows :");
-  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
-    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
-    System.err.println(entriesDiffering);
-    Assert.assertTrue(actualData.equals(expectedData));
-}
+	matchData(jsonFile, actualData);
 }
 
 
@@ -1654,10 +1481,14 @@ public void matchToRecordToRichText(String jsonFile) throws Exception {
 	}
 		q++;
 	}
+
+	matchData(jsonFile, actualData);
 	
+}
+
+public void matchData(String jsonFile,LinkedHashMap actualData ) throws Exception {
+
 LinkedHashMap<String, String> expectedData =(LinkedHashMap<String, String>) JsonUtils.getMapFromJSON(jsonFile);
-
-
 if(actualData.equals(expectedData)) {
 }
 else {
@@ -1667,6 +1498,26 @@ else {
     System.err.println(entriesDiffering);
     Assert.assertTrue(actualData.equals(expectedData));
 }
-	
 }
+
+public void expectErrorOnSave(String errorMessage) throws InterruptedException {
+	 Thread.sleep(1000);
+	if(errorMessage.contains("ID"))
+	{
+		By error = By.xpath("//div[@role='alertdialog']");
+		applyWaitForDynamicWebElement(error, 10);
+		String expectedError = driver.findElement(error).getText();
+		System.err.println(errorMessage);
+		System.err.println(expectedError);
+
+		Assert.assertEquals(errorMessage, expectedError);
+	}
+	if(errorMessage.contains("Unique"))
+	{
+		By error = By.xpath("//div[@role='alertdialog']");
+		applyWaitForDynamicWebElement(error, 10);
+		String expectedError = driver.findElement(error).getText();
+		Assert.assertTrue( expectedError.contains("Unique check validation failed"));  	
+	}
+ }
 	}

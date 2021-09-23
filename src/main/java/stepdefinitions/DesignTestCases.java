@@ -1,28 +1,21 @@
 package stepdefinitions;
 
 import java.net.MalformedURLException;
-
-
-import com.aventstack.extentreports.ExtentTest;
-
 import base.BaseClass;
-import helperMethods.WaitTypes;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pageModules.Module_DesignTestCases;
+
 public class DesignTestCases extends BaseClass{
 	
 	
-	private WaitTypes applyWait;
-	private ExtentTest test;
 	public Module_DesignTestCases design;
 	
 	@Before
 	public void initilization() {
-//		start();
-		design = new Module_DesignTestCases(driver, test);
+		design = new Module_DesignTestCases(driver);
 	}
 
 	@Given("Data service should be saved and deployed")
@@ -47,7 +40,6 @@ public class DesignTestCases extends BaseClass{
 	}
 	@Given("Group {string} does not exist")
 	public void group_does_not_exist(String groupName) throws Exception {
-//		Thread.sleep(30000);
 	    design.groupexist(groupName);
 	}
 
@@ -96,8 +88,6 @@ public class DesignTestCases extends BaseClass{
 	    design.expectError(string,string2);
 	}
 	
-	
-	
 	@Then("^Add record \"(.*?)\" to the group$")
 	public void add_record_to_Group(String string) throws Exception {
 		design.addRecordForGroup(string);
@@ -118,7 +108,6 @@ public class DesignTestCases extends BaseClass{
 		design.addRecordForLocation(string);
 	}
 	
-	
 	@Then("^Add record \"(.*?)\" to the user data service$")
 	public void add_data_to_theUser(String string) throws InterruptedException {
 		  design.addRecordForUser(string);
@@ -130,8 +119,12 @@ public class DesignTestCases extends BaseClass{
 	}
 	
 	@Then("Expect error {string} on save")
-	public void expect_error_on_save(String string) {
-	    
+	public void expect_error_on_save(String string) throws Exception {
+		try {
+			design.expectErrorOnSave(string);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@Then("^Add records to \"(.*?)\"$")
@@ -228,7 +221,6 @@ public class DesignTestCases extends BaseClass{
 	
 	@Then("^Match it to \"(.*?)\" for Relation$")
 	public void match_this_Relation_to(String jsonFile) throws Exception {
-//		design.matchRelationData(jsonFile);
 		design.matchToRecord(jsonFile);	
 }
 	
@@ -243,7 +235,7 @@ public class DesignTestCases extends BaseClass{
 		design.matchToRecordForFileType(jsonFile);	
 }
 	@Then("^Match it to \"(.*?)\" boolean$")
-	public void match_it_to__boolean(String string) throws MalformedURLException {
+	public void match_it_to__boolean(String string) throws Exception {
 		design.matchRecorforBoolen(string);
 	}
 

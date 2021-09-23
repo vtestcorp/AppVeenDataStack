@@ -1,21 +1,14 @@
 package pageModules;
 
 import java.util.List;
-import java.util.Properties;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import com.aventstack.extentreports.ExtentTest;
-
 import base.BaseClass;
 import helperMethods.DropDown;
-import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
 import helperMethods.Property;
 import helperMethods.ScrollTypes;
@@ -27,17 +20,14 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 	
 	private WebDriver driver;
 	private WaitTypes applyWait;
-	private ExtentTest test;
-	private JavascriptClick javascriptClick;
 	public DropDown dropdown;
 	public ScrollTypes scroll;
 	public static String data_Service;
 	public Object_AppCenterPage acp;
 	
-	public WorkflowsInAppcenterPage(WebDriver driver, ExtentTest test) {
+	public WorkflowsInAppcenterPage(WebDriver driver) {
 		this.driver = driver;
 		this.applyWait = new WaitTypes(driver);
-		this.test = test;
 		dropdown=new DropDown(driver);
 		scroll=new ScrollTypes(driver);
 		acp=new Object_AppCenterPage();
@@ -48,7 +38,6 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 		Thread.sleep(1000);
 		data_Service=dataService;
 		WebElement data=driver.findElement(By.xpath("//div[contains(text(),'"+dataService+"')]"));
-		javascriptClick=new JavascriptClick(driver);
 		data.click();
 	}
 	
@@ -104,11 +93,7 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 			applyWait.waitForElementToBeClickable(acp.submit, 30).click();
 				
 		}
-	
-		
-
 	}
-
 
 	public void logoutFromAppcenter() {
 		
@@ -117,15 +102,12 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 		
 	}
 
-
 	public void userNavigateToAppCenter() {
-		
 		
 		SwitchWindow.openNewTab(driver);
 		driver.get(app_center_URL);
 		driver.manage().window().maximize();
 	}
-
 
 	public void verifyDataAvailableInWorkflowListingPage() {
 		
@@ -133,14 +115,11 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 		Boolean verify=applyWait.waitForElementToBeClickable(acp.workflowList, 30).isDisplayed();
 		if(verify) {
 		}
-		
 	}
-
 
 	public void approveTheRecord() throws Exception {
 		applyWait.waitForElementToBeClickable(acp.workflowTab, 30).click();
 		List <WebElement> workflows=acp.respondWorkflows;
-		int i=1;
 		for(WebElement workflow : workflows) {
 			applyExplicitWaitsUntilElementVisible(acp.respond1,10);
 			Thread.sleep(1000);
@@ -214,18 +193,13 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 			applyWait.waitForElementToBeClickable(acp.submit, 30).click();
 				break;
 		}
-		
-		
 	}
-
 
 	public void verifyDataAvailableUnderDraft() {
 		applyWait.waitForElementToBeClickable(acp.draftTab, 30).click();
 		Boolean verify=applyWait.waitForElementToBeClickable(acp.draftStatus, 30).isDisplayed();
 		
 	}
-
-
 
 	public void updateDraftRecord() throws InterruptedException {
 		applyWait.waitForElementToBeClickable(acp.workflowTab, 30).click();
@@ -287,11 +261,7 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(acp.saveAsDraft, 30).click();
 		applyWait.waitForElementToBeClickable(acp.saveAsDraftComments, 30).sendKeys(Property.getProperty("editMessage"));;
 		applyWait.waitForElementToBeClickable(acp.submit, 30).click();
-		
-		
-		
 	}
-
 
 	public void approveTheRecordFromUpdateRecordTab() {
 		
@@ -301,17 +271,13 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(acp.approve, 30).click();
 		applyWait.waitForElementToBeClickable(acp.enterApproveComment, 30).sendKeys(Property.getProperty("approveMessage"));
 		applyWait.waitForElementToBeClickable(acp.approveButton, 30).click();
-
-		
 	}
-
 
 	public void rejectTheRecord() throws Exception {
 		
 
 		applyWait.waitForElementToBeClickable(acp.workflowTab, 30).click();
 		List <WebElement> workflows=acp.respondWorkflows;
-		int i=1;
 		for(WebElement workflow : workflows) {
 			applyExplicitWaitsUntilElementVisible(acp.respond1,10);
 			try {
@@ -337,7 +303,6 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 		
 		applyWait.waitForElementToBeClickable(acp.workflowTab, 30).click();
 		List <WebElement> workflows=acp.respondWorkflows;
-		int i=1;
 		for(WebElement workflow : workflows) {
 			applyExplicitWaitsUntilElementVisible(acp.respond1,10);
 			try {

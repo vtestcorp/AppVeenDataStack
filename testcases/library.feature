@@ -11,6 +11,9 @@ Examples:
 |username|password|
 |test_appadmin@appveen.com|123123123|
 
+Scenario: Create Library
+#	Given Create "Address" Library
+
 Scenario: Delete data service
 	Given Data service "library" exists
 	Then Remove the data service
@@ -51,16 +54,7 @@ Scenario: Add data to data service
 	Then Add data to the data service for Library Type
 	
 	
-#	Scenario Outline: Add record to data service
-#	Given Data service "library"
-#	Then Add record "<data>" to the data service
-#	And Expect error "DS STRING TEXT Error" on label "DS STRING TEXT Label"
-#	And Save button is disabled
-#Examples:
-#|data|
-#|{"_id":"STR1002", "dsStringText1002":"", "dsStringText1014":"","dsStringText1015":"","dsStringText1017":"","dsStringText1018":""}|
-#
-#
+
 Scenario Outline: Add record to data service
 	Given Data service "library"
 	Then Add record "<data>" to the data service	

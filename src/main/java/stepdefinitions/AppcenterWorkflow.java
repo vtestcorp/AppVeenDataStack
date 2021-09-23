@@ -1,27 +1,20 @@
 package stepdefinitions;
 
-import com.aventstack.extentreports.ExtentTest;
-
 import base.BaseClass;
-//import cucumber.api.java.Before;
-//import cucumber.api.java.en.Given;
-//import cucumber.api.java.en.Then;
 import helperMethods.WaitTypes;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import pageModules.LoginAppCenter;
 import pageModules.WorkflowsInAppcenterPage;
 
 public class AppcenterWorkflow extends BaseClass{
 	
 	private WaitTypes applyWait;
-	private ExtentTest test;
 	public WorkflowsInAppcenterPage workflow;
 	
 	@Before
 	public void initilization() {
-		workflow = new WorkflowsInAppcenterPage(driver, test);
+		workflow = new WorkflowsInAppcenterPage(driver);
 	}
 	
 	@Given("Data Service {string}")

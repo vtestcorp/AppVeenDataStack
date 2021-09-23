@@ -42,8 +42,6 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//select[@class='text-primary time-select'][3]")
 	public WebElement secondDropDown;
 	
-	//select[@class='text-primary time-select'][1]
-	
 	@FindBy(xpath="//input[@placeholder='Password']")
 	public WebElement password;
 
@@ -146,13 +144,11 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//button[starts-with(@class,'btn respond-btn rework')]/span")
 	public WebElement rework1;
 	
-	
 	@FindBy(xpath="//textarea[@placeholder='Enter comments to justify your response. Attach document if necessary']")
 	public WebElement enterApproveComment;
 	
 	@FindBy(xpath="//textarea[@placeholder='Comments are required to justify your response. Attach document if necessary.']")
 	public WebElement enterRejectComment;
-	
 	
 	@FindBy(xpath="//span[@class='font-bold text-dark ml-2 ng-star-inserted']")
 	public WebElement workflowList;
@@ -223,8 +219,6 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])/p | //span[@class='value-width ng-star-inserted']")
 	public List<WebElement> attributesOnViewPageForRichText;
 	
-	
-//	@FindBy(xpath="(//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()]")
 	@FindBy(xpath="//*[contains(@class,'value-wrapper')]//span[(last() and not(contains(@class, 'mr-2')) and not(contains(@class, 'ml-2')))] | //odp-view-date//div[@class='font-weight-bold value-wrapper'] | //span[text()='Raw location']/ancestor::div[contains(@class,'label-wrapper')]/following-sibling::div | //odp-view-user//a[@class='ng-star-inserted']")
 	public List<WebElement> attributesOnViewPageForGroups;
 	
