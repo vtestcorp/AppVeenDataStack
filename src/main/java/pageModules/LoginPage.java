@@ -41,12 +41,14 @@ public class LoginPage extends BaseClass{
 	public ScrollTypes scroll;
 	public Object_AuthorPage author;
 	public String dataServiceName;
+	public String libraryName;
 	public boolean flag;
 	public WebElement data_serviceToggler;
 	public static ArrayList<String> groups;
 	public static ArrayList<String> data_Services;
 	public Object_AuthorPage ap;
 	public Object_GroupPage gp;
+	public static boolean libraryflag;
 	public static	String anotherDataService;
 	public static boolean isRelation;
 	public static boolean isDateTime;
@@ -84,6 +86,26 @@ public class LoginPage extends BaseClass{
 		javascriptClick.highLighterMethod(ap.listOfDataServices);
 		Log.info("User successfully signed up");
 	}
+	}
+	
+	public void verifyLibraryExist(String library) throws InterruptedException {
+		Thread.sleep(1000);
+		applyWait.waitForElementToBeClickable(ap.library_Tab, 30).click();
+		libraryName=library;
+		applyExplicitWaitsUntilElementVisible(ap.listOfLibrary, 20);
+		for(WebElement library1 : ap.listOfLibrary) {
+			String lib=library1.getText();
+			if(lib.equalsIgnoreCase(libraryName)) {
+				libraryflag=true;
+				break;
+			}
+		}
+	      if(libraryflag=false)
+	      {
+	    	  applyWait.waitForElementToBeClickable(ap.newLibrary, 30).sendKeys(libraryName);
+	    	  Thread.sleep(1000);
+	    	  applyWait.waitForElementToBeClickable(ap.createButton, 30).click();
+	      }
 	}
 	
 	public void verifyDataServiceExist(String dataService) throws InterruptedException {

@@ -73,6 +73,7 @@ public class BaseClass {
 		
 		if (url == null) {
 			url = "https://bifrost.ds.appveen.com";
+		//	url = "https://qa.ds.appveen.com";
 		}
 
 		if (url.equalsIgnoreCase("https://staging.appveen.com")) {

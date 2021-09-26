@@ -43,6 +43,7 @@ public class LoginToAuthorUrl extends BaseClass {
 	public WaitTypes applyWait;
 	public LoginPage loginPage ;
 	public static String data_Service;
+	public static String data_library;
 
 	
 
@@ -76,6 +77,13 @@ public class LoginToAuthorUrl extends BaseClass {
 		
 		loginPage.verifyListOfDataServices();
 	}
+	
+	
+	@Given("Library {string} exist")
+	public void data_Library_exist(String library) throws Exception {
+		 loginPage.verifyLibraryExist(library);
+	}
+	
 	
 	@Given("Data service {string} exists")
 	public void data_service_exists(String dataService) throws Exception {
@@ -125,6 +133,26 @@ public class LoginToAuthorUrl extends BaseClass {
 			}
 		}
 		loginPage.createNewDataServices(JsonUtils.getArrayValues(dataName, "definition"),dataService);
+	}
+	
+	@Then("Create new Library {string}")
+	public void create_new_Library(String library) {
+		data_library = library;
+		
+		String libName=path+"\\testData" + "\\" + ""+library+".json";
+		try {
+			FileReader reader = new FileReader(libName);
+		}
+		catch(FileNotFoundException file) {
+			try {
+				FileReader reader = new FileReader(testData);
+				libName=testData;
+			}
+			catch(Exception file1) {
+				System.err.println("Data Service file not found");
+			}
+		}
+
 	}
 	
 	@Given("Group sampleGroup {string} exists")

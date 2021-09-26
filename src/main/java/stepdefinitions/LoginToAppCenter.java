@@ -40,7 +40,13 @@ public class LoginToAppCenter extends BaseClass{
 	public void data_service(String dataService) throws Exception {
 //		Thread.sleep(count);
 		loginAppCenter.dataService(dataService);
-	 
+	}
+	
+	
+	
+	@Then("Import data to the data service")
+	public void import_data_service() throws Exception {
+		loginAppCenter.importDatafile();
 	}
 	
 	@Then("Add data to the data service for Collection")

@@ -286,4 +286,9 @@ public class Object_AppCenterPage extends BaseClass{
 	public List<WebElement> richtextBoxes;
 
 	
+	@FindBy(xpath = "//span[@class='fas fa-cloud-upload-alt text-white ng-tns-c86-2']")
+	public WebElement importfile;
+	
+	@FindBy(xpath = "//label/input[@id='logoFile']")
+	public WebElement uploadFile;
 }

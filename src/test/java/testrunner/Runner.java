@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 //@CucumberOptions(features="C:\\Users\\Lenovo\\Downloads\\sentient\\test",
-@CucumberOptions(features="./testcases/location.feature",
+@CucumberOptions(features="./testcases/library.feature",
 			//	dryRun=true,
             // 	tags={"@Author"},
 	        	glue={"stepdefinitions","cucumberHooks"},

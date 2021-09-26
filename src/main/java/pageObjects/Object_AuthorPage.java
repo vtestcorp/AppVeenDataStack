@@ -42,6 +42,9 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(id="serviceManagerCardTitle")
 	public List  <WebElement> listOfDataService;
 
+	@FindBy(xpath = "//span[@class='name d-inline-block font-weight-bold']")
+	public List  <WebElement> listOfLibrary;
+	
 	@FindBy(xpath="//*[text()='New Data Service']")
 	public WebElement newDataService;
 
@@ -188,6 +191,10 @@ public class Object_AuthorPage extends BaseClass{
 
 	@FindBy(xpath="//span[@class='odp-library']")
 	public WebElement library;
+	
+	
+	@FindBy(xpath="//div[@id='_lib']")
+	public WebElement library_Tab;
 
 	//@FindBy(xpath = "//span[@class='odp-references']")
 //	public WebElement relation; 
@@ -328,7 +335,15 @@ public class Object_AuthorPage extends BaseClass{
 	
 	@FindBy(xpath = "//div[normalize-space()='Default Value']/following-sibling::div//span[@class='ml-3']")
 	public WebElement defaultSatus;
-    }
+	
+	
+	@FindBy(xpath = "//span[@class='fa fa-plus mr-2']")
+	public WebElement newLibrary;
+	
+	@FindBy(xpath = "//input[@id='name']")
+	public WebElement nameOfLibrary;
+	
+}
 
 
 

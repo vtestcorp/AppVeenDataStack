@@ -116,6 +116,15 @@ public class LoginAppCenter extends BaseClass {
 	
 			
 		}
+	
+	public void importDatafile() throws MalformedURLException, InterruptedException {
+		applyExplicitWaitsUntilElementVisible(acp.importfile,10);
+		applyWait.waitForElementToBeClickable(acp.importfile, 30).click();
+		Thread.sleep(2000);
+		applyWait.waitForElementToBeClickable(acp.uploadFile, 30).sendKeys("C:\\Users\\Lenovo\\Documents\\Customer.xlsx");
+		
+
+	}
 
 	public void userEnterData() throws Exception {
 		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
