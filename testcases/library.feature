@@ -16,12 +16,12 @@ Scenario: Delete data service
 	Then Remove the data service
 
 Scenario: Create Library
-	Given Library "Address" exist
+	Given Library "Customer" exist
 #	
 
 #Scenario: Create data service
 #	Given Data service "library" does not exist
-	Then Create new data service "library"
+#	Then Create new data service "library"
  #Under testData, picks up strings.json create the JSON
 
 

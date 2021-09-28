@@ -48,6 +48,7 @@ public class LoginPage extends BaseClass{
 	public static ArrayList<String> data_Services;
 	public Object_AuthorPage ap;
 	public Object_GroupPage gp;
+	public static boolean libraryflag1;
 	public static boolean libraryflag;
 	public static	String anotherDataService;
 	public static boolean isRelation;
@@ -88,8 +89,9 @@ public class LoginPage extends BaseClass{
 	}
 	}
 	
-	public void verifyLibraryExist(String library) throws InterruptedException {
+	public void verifyLibraryExist(String library) throws Exception {
 		Thread.sleep(1000);
+		libraryflag1=true;
 		applyWait.waitForElementToBeClickable(ap.library_Tab, 30).click();
 		libraryName=library;
 		applyExplicitWaitsUntilElementVisible(ap.listOfLibrary, 20);
@@ -100,11 +102,24 @@ public class LoginPage extends BaseClass{
 				break;
 			}
 		}
-	      if(libraryflag=false)
+		 if(!libraryflag)
 	      {
-	    	  applyWait.waitForElementToBeClickable(ap.newLibrary, 30).sendKeys(libraryName);
+	    	  applyWait.waitForElementToBeClickable(ap.newLibrary, 30).click();
 	    	  Thread.sleep(1000);
-	    	  applyWait.waitForElementToBeClickable(ap.createButton, 30).click();
+	    	  applyWait.waitForElementToBeClickable(ap.nameOfLibrary, 30).sendKeys(libraryName);
+	    	  Thread.sleep(1000);
+	    	  applyWait.waitForElementToBeClickable(ap.createNewLibraryButton, 30).click();
+	    	  String libName=path+"\\testData" + "\\" + ""+library+".json";
+	  		try {
+	  			FileReader reader = new FileReader(libName);
+	  		}
+	  		catch(FileNotFoundException file) {
+	  				System.err.println("Data Service file not found");
+	  			}
+	  		 JSONArray js = JsonUtils.getArrayValues(libName, "definition");
+	  		 JSONObject obj = (JSONObject) js.get(0);
+	  		 JSONArray array = (JSONArray) obj.get("definition");
+	  		createNewDataServices(array,library);
 	      }
 	}
 	
@@ -170,8 +185,31 @@ public class LoginPage extends BaseClass{
 		
 	}
 	
+	public void createNewLibrary(String library) throws Exception {
+		verifyDataServiceExist(library);
+		if(flag==false) {
+			
+			String dataName=path+"\\testData" + "\\" + ""+library+".json";
+			
+			try {
+				FileReader reader = new FileReader(dataName);
+			}
+			catch(FileNotFoundException file) {
+				try {
+					FileReader reader = new FileReader(testData);
+					dataName=testData;
+				}
+				catch(Exception file1) {
+				}
+			}
+			createNewDataServices(JsonUtils.getArrayValues(dataName, "definition"),library);
+		}
+	}
+	
 	public void createNewDataServices(JSONArray jsonArray, String dataService1) throws Exception {
-		dataServiceName=dataService1;
+		if(!libraryflag1)
+		{
+		 dataServiceName=dataService1;
 		 Thread.sleep(2000); 
 		applyExplicitWaitsUntilElementVisible(ap.dataServiceName1, 10);
 		List<WebElement> dataServices=driver.findElements(By.id("serviceManagerCardTitle"));
@@ -184,6 +222,7 @@ public class LoginPage extends BaseClass{
 			Thread.sleep(1000);
 		Actions action=new Actions(driver);
 		action.moveToElement(ap.newDataService).perform();
+		
 		try {
 			applyWait.waitForElementToBeClickable(ap.newDataService, 30).click();
 		} catch (Exception e) {
@@ -195,23 +234,30 @@ public class LoginPage extends BaseClass{
 		
 		data_Services.add(dataServiceName);
 		}
+	}
 		try {
 			jsonArray.size();
 		}
 		catch (Exception e) {
 		    }
 			for (int i = 0; i < jsonArray.size(); i++) {
-				
 				JSONObject jsonProperties;
 				JSONObject attribute = (JSONObject) jsonArray.get(i);
 				String attributeName = attribute.get("type").toString();
 				String keyName = attribute.get("key").toString();
 				
-				if(!keyName.equals("_id")) {
-
-				applyWait.applyExplicitWaitsUntilElementVisible(ap.newAttributeButton, 30);	
-				applyWait.waitForElementToBeClickable(ap.newAttributeButton, 30).click();
-				
+				if(!keyName.equals("_id") ) {
+                if(i==0) {
+                	 if(!libraryflag1)
+                	 {
+				        applyExplicitWaitsUntilElementVisible(ap.newAttributeButton, 30);	
+				        applyWait.waitForElementToBeClickable(ap.newAttributeButton, 30).click();
+                     }
+                } else
+                 {
+                	 applyExplicitWaitsUntilElementVisible(ap.newAttributeButton, 30);	
+				     applyWait.waitForElementToBeClickable(ap.newAttributeButton, 30).click(); 
+                 }
 			switch(attributeName) {
 			
 			case "String" : 

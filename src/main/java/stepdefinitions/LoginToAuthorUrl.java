@@ -135,25 +135,7 @@ public class LoginToAuthorUrl extends BaseClass {
 		loginPage.createNewDataServices(JsonUtils.getArrayValues(dataName, "definition"),dataService);
 	}
 	
-	@Then("Create new Library {string}")
-	public void create_new_Library(String library) {
-		data_library = library;
-		
-		String libName=path+"\\testData" + "\\" + ""+library+".json";
-		try {
-			FileReader reader = new FileReader(libName);
-		}
-		catch(FileNotFoundException file) {
-			try {
-				FileReader reader = new FileReader(testData);
-				libName=testData;
-			}
-			catch(Exception file1) {
-				System.err.println("Data Service file not found");
-			}
-		}
 
-	}
 	
 	@Given("Group sampleGroup {string} exists")
 	public void group_sampleGroup_exists(String groupName) throws Exception {

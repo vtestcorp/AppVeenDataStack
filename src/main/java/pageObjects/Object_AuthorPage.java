@@ -337,11 +337,14 @@ public class Object_AuthorPage extends BaseClass{
 	public WebElement defaultSatus;
 	
 	
-	@FindBy(xpath = "//span[@class='fa fa-plus mr-2']")
+	@FindBy(xpath = "//span[contains(@class,'fa-plus')]")
 	public WebElement newLibrary;
 	
 	@FindBy(xpath = "//input[@id='name']")
 	public WebElement nameOfLibrary;
+	
+	@FindBy(xpath="//button[@id='newLibraryModalYes']")
+	public WebElement createNewLibraryButton;
 	
 }
 

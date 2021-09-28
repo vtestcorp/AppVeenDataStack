@@ -291,4 +291,23 @@ public class Object_AppCenterPage extends BaseClass{
 	
 	@FindBy(xpath = "//label/input[@id='logoFile']")
 	public WebElement uploadFile;
+		
+	//@FindBy(xpath = "//select[@class='form-control ng-pristine ng-valid ng-touched']")
+	
+	@FindBy(xpath = "//select[contains(@class,'form-control')]")
+	public WebElement sheetToReadDropdown;
+	
+	@FindBy(xpath = "//button[normalize-space()='Next']")
+	public WebElement next;
+	
+	@FindBy(xpath = "//a[normalize-space()='here']")
+	public WebElement here;
+	
+	@FindBy(xpath = "//span[contains(@class,'fa-bell')]")
+	public WebElement notification;
+	
+	@FindBy(xpath = "(//div[@class='content'])[1]")
+	public WebElement notification_body;
+	
+	
 }
