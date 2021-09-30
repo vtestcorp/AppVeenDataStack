@@ -15,21 +15,16 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-
 import base.BaseClass;
-import cucumberHooks.CustomReportListener;
-import io.cucumber.java.Scenario;
-import io.cucumber.plugin.event.TestSourceRead;
 
-@SuppressWarnings("deprecation")
 public class ExtentReportListener extends BaseClass{
 	
 	public static ExtentReports setUp(String featureName) {
 
 		String reportLocation = "./report/extentReport/"+featureName+".html";
-		report = new ExtentHtmlReporter(reportLocation);		
+		report = new ExtentSparkReporter(reportLocation);		
 		report.config().setDocumentTitle("DataStack Test Report");
 		report.config().setReportName("DataStack Report");
 		report.config().setTheme(Theme.STANDARD);		

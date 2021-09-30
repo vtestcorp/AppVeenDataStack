@@ -7,7 +7,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="C:\\Users\\DELL\\eclipse-workspace\\ds-dev-ui-automation-framework\\testcases\\boolean.feature",
+@CucumberOptions(features="C:\\Users\\DELL\\eclipse-workspace\\ds-dev-ui-automation-framework\\testcases\\string_LongText.feature",
 				dryRun = false,
 				glue={"stepdefinitions","cucumberHooks"},
 				monochrome=true,
@@ -27,7 +27,6 @@ public class Runner {
 	            "--plugin", "html:report/htmlReport",
 	            "--plugin", "json:report/jsonReport/jsonReport.json",
 	            "--plugin","cucumberHooks.CustomReportListener"
-	           
 	    };
 	 
 		public static void main(String[] args) {

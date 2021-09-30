@@ -15,6 +15,8 @@ import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.asserts.SoftAssert;
+
 import com.google.common.collect.MapDifference;
 import com.google.common.collect.MapDifference.ValueDifference;
 import com.jayway.jsonpath.JsonPath;
@@ -30,6 +32,7 @@ import helperMethods.WaitTypes;
 import pageObjects.Object_AppCenterPage;
 import pageObjects.Object_AuthorPage;
 import pageObjects.Object_GroupPage;
+import org.assertj.core.api.SoftAssertions;
 
 public class Module_DesignTestCases extends BaseClass{
 	private WaitTypes applyWait;
@@ -43,6 +46,7 @@ public class Module_DesignTestCases extends BaseClass{
 	public LoginPage lp;
 	public String id;
 	public static ArrayList<String> groups;
+//	public SoftAssertions assertCheck;
 	
 	public Module_DesignTestCases(WebDriver driver) {
 		this.driver = driver;
@@ -53,6 +57,7 @@ public class Module_DesignTestCases extends BaseClass{
 		ap=new Object_AuthorPage();
 		gp=new Object_GroupPage();
 		lp=new LoginPage(driver);
+//		assertCheck=new SoftAssert();
 		javascriptClick=new JavascriptClick(driver);
 	}
 
@@ -175,7 +180,7 @@ public class Module_DesignTestCases extends BaseClass{
 		Thread.sleep(5000);
 		
 		By ele=By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']");
-		applyWaitForDynamicWebElement(ele,10);
+//		applyWaitForDynamicWebElement(ele,20);
 		WebElement user=driver.findElement(ele);
 		applyExplicitWaitsUntilElementVisible(user,10);
 		try {
@@ -382,6 +387,7 @@ public class Module_DesignTestCases extends BaseClass{
 		if(acp.errorMessages.isEmpty()) {
 			errorMessage=string+" - Custom Error Expected";
 			Assert.assertTrue(false);
+//			assertCheck.assertTrue(false);
 		}
 	}
 
@@ -1507,9 +1513,6 @@ public void expectErrorOnSave(String errorMessage) throws InterruptedException {
 		By error = By.xpath("//div[@role='alertdialog']");
 		applyWaitForDynamicWebElement(error, 10);
 		String expectedError = driver.findElement(error).getText();
-		System.err.println(errorMessage);
-		System.err.println(expectedError);
-
 		Assert.assertEquals(errorMessage, expectedError);
 	}
 	if(errorMessage.contains("Unique"))

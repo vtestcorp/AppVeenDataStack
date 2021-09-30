@@ -25,30 +25,23 @@ public class LoginToAppCenter extends BaseClass{
 
 	@Given("User enters {string} and {string} in AppCenter login page")
 	public void user_enters_username_and_password_in_AppCenter_Url(String userName,String password) throws Exception {
-		
 			loginAppCenter.enterUserNameAndPassword(userName, password);
-		
 	}
 
 	@Given("Verify User has Logged in Successfully")
 	public void verify_User_Login_Successfully_in_Appcenter_Url() throws Exception {
 		loginAppCenter.verifyUserLoginSuccesfullyToAppCenter();
-	    
 	}
 	
 	@Given("Data service {string}")
 	public void data_service(String dataService) throws Exception {
-//		Thread.sleep(count);
 		loginAppCenter.dataService(dataService);
-	 
 	}
 	
 	@Then("Add data to the data service for Collection")
 	public void add_data_to_the_data_service_for_Collection() throws InterruptedException {
 		loginAppCenter.userEnterDataforCollection();
 	}
-
-
     
 	@Then("Add data to the data service for boolean")
 	public void add_data_to_the_data_service_for_boolean() throws InterruptedException {

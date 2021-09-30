@@ -11,13 +11,9 @@ import org.apache.commons.io.FileUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.jsonpath.JsonPath;
-
 import base.BaseClass;
 
 public class JsonUtils extends BaseClass{
@@ -88,7 +84,6 @@ public class JsonUtils extends BaseClass{
 			reader = new FileReader(filePath);
 			jsonParser = new JSONParser();
 			object = jsonParser.parse(reader);
-		//	jsonObject = (JSONObject) object;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -100,7 +95,6 @@ public class JsonUtils extends BaseClass{
 		try {
 			jsonParser = new JSONParser();
 			object = jsonParser.parse(jsonArray);
-		//	jsonObject = (JSONObject) object;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -112,7 +106,6 @@ public class JsonUtils extends BaseClass{
 		try {
 			jsonParser = new JSONParser();
 			object = jsonParser.parse(jsonObject);
-		//	jsonObject = (JSONObject) object;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -169,6 +162,4 @@ public class JsonUtils extends BaseClass{
 		return authors;
 
 	}
-
-	
 }
