@@ -24,7 +24,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 
-
 	public static WebDriver driver;
 	public static ExtentSparkReporter report = null;
 	public static ExtentReports extent = null;
@@ -48,6 +47,8 @@ public class BaseClass {
 		if (browser == null) {
 			browser = "chrome";
 		}
+		
+		
 		if(headless==null) {
 			isHeadLess=false;
 		}
@@ -61,7 +62,7 @@ public class BaseClass {
 			options.addArguments("--start-maximized");
 			options.addArguments("window-size=1280,1024");
 			if(isHeadLess) {
-			options.addArguments("headless");
+			options.addArguments("--headless");
 			}
 			String path = System.getProperty("user.dir");
 			DownloadFilepath = path + "\\Test_Data\\Download";
@@ -89,7 +90,7 @@ public class BaseClass {
 			 
 			  driver=new HtmlUnitDriver(true);
 				driver.manage().window().maximize();
-				
+				System.out.println("Running in headless mode");
 			}
 		
 		else {
@@ -100,7 +101,6 @@ public class BaseClass {
 		
 		if (url == null) {
 			url = "https://bifrost.ds.appveen.com";
-			url = "https://qa.ds.appveen.com";
 		}
 
 		if (url.equalsIgnoreCase("https://staging.appveen.com")) {

@@ -145,7 +145,7 @@ public class CustomReportListener extends BaseClass implements EventListener {
 				step.error(errorMessage);
 				}
 				step.addScreenCaptureFromPath(ExtentReportListener.captureScreenShot(driver));
-			} catch (IOException e) {
+			} catch (Exception e) {
 //				e.printStackTrace();
 			}
 		}

@@ -43,8 +43,8 @@ public class ExtentReportListener extends BaseClass{
 			extenttest.error(throwable.fillInStackTrace());
 			
 			try {
-				extenttest.addScreenCaptureFromPath(captureScreenShot(driver));
-				} catch (IOException e) {
+//				extenttest.addScreenCaptureFromPath(captureScreenShot(driver));
+				} catch (Exception e) {
 				e.printStackTrace();
 				}
 			

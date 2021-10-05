@@ -21,8 +21,8 @@ public class Hooks extends BaseClass{
     	if (scenario.isFailed()) {
 //    		scenario.embed(((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES), "image/png", "Step FAILED (Screenshot):");
     		try {
-				Screenshots.takeScreenshot(driver, "files");
-			} catch (IOException e) {
+//				Screenshots.takeScreenshot(driver, "files");
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
     	}
