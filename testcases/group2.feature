@@ -48,7 +48,7 @@ Scenario: Add data to data service
 Scenario Outline: Add record to data service
 	Given Data service "group2"
 	Then Add record "<data>" to the group	
-	And Expect error "ID DS1001 already exists" on save
+	And Expect error "ID DS1001 already exists." on save
 	Examples:
 		|data|
 	  |{ "dsGroupLibrary" : { "library" : { "line1" : "Library Line 12 ", "line2" : "Library Line 22" } }, "_id" : "DS1001", "dsGroupStringText" : { "stringText" : "Group Text 1" }, "dsGroupStringEmail" : { "email" : "pqr@gmail.com" }, "dsGroupStringListOfValues" : { "listOfValues" : "XYZ" }, "dsGroupNumberNumber" : { "number" : 888 }, "dsGroupNumberCurrency" : { "currency" : 8 }, "dsGroupNumberListOfValues" : { "listOfValues" : 999 }, "dsGroupBoolean" : { "boolean" : true }, "dsGroupDate" : { "date" : { "rawData" : "2040-12-12T00:00:00Z" } }, "dsGroupDateTime" : { "dateTime" : { "rawData" : "2050-10-20T15:15:15Z" } }, "dsGroupLocation" : { "location" : { "userInput" : "Kolhapur, Maharashtra, India" } }, "dsGroupFile" : { "file" : { "metadata" : { "filename" : "Untitled.png" } } }, "dsGroupUser" : { "user" : { "_id" : "deepak@appveen.com" } } }|

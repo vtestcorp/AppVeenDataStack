@@ -7,7 +7,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|deepak@appveen.com|123123123|
+|test_appadmin@appveen.com|123123123|
 
 Scenario: Delete data service
 	Given Data service "collection" exists
@@ -20,17 +20,18 @@ Scenario: Create data service
 
 
 Scenario Outline: Assign to Appcenter Group
-	Then Create new group "Collection-Group" 
+ 	Then Group "Collection" does not exist
+	Then Create new group "Collection" 
 	And Assign appcenter permissions for "collection" dataservice to "<user>"
+	
 	Examples:
 	|user|
-	|maker@appveen.com|
+	|test_ac_ds_manage@appveen.com|
 
 Scenario: Log out of Author
 	Given User logged into Author
 	Then User logs out of Author
 	
-#
 #@AppCenter
 Scenario Outline: Log into AppCenter
 	Given User navigate to AppCenter login page
@@ -38,10 +39,9 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|maker@appveen.com|123123123|
+|test_ac_ds_manage@appveen.com|123123123|
 
 
-# INSERT/UPDATE
 Scenario: Add data to data service
 	Given Data service "collection"
 	Then Add data to the data service for Collection

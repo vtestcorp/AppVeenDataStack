@@ -41,7 +41,7 @@ public class LoginPage extends BaseClass{
 	public static	String anotherDataService;
 	public static boolean isRelation;
 	public static boolean isDateTime;
-	public static boolean isType;
+	public static boolean isUserType;
 	
 	public LoginPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -361,7 +361,7 @@ public class LoginPage extends BaseClass{
 							String  field=(String) searchObject.get("name");
 							dropdown.selectByVisibleText(ap.viewField, field);
 						}
-						isType=true;
+						isUserType=true;
 						requiredAttributes(jsonProperties);
 						break;
 			}
@@ -704,6 +704,7 @@ public class LoginPage extends BaseClass{
 					applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
 					applyWait.waitForElementToBeClickable(ap.user, 30).click();
 					requiredAttributes(jsonProperties);
+					isUserType=true;
 					break;
 		}
 	}
@@ -955,8 +956,10 @@ public class LoginPage extends BaseClass{
 									anotherDataService=jsonProperties.get("relatedTo").toString();
 									applyWait.waitForElementToBeClickable(ap.relatesTo, 30).sendKeys(jsonProperties.get("relatedTo").toString());
 									By dataService=By.xpath("//button[@role='option']//span[text()='"+anotherDataService+"']");
+									if(!driver.findElements(dataService).isEmpty()) {
 									applyWaitForDynamicWebElement(dataService, 10);
 									driver.findElement(dataService).click();
+									}
 								}
 								
 								if(jsonProperties.containsKey("relatedSearchField")) {

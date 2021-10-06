@@ -123,7 +123,7 @@ public class Module_DesignTestCases extends BaseClass{
 		String role="Manage";
 		String userEmail=user1;
 		Thread.sleep(1000);
-		if(lp.isType)
+		if(lp.isUserType)
 		{
 			applyWait.waitForElementToBeClickable(gp.authorRole, 30).click();
 			applyWait.waitForElementToBeClickable(gp.user, 30).click();
@@ -1169,10 +1169,7 @@ public void matchDateData(String jsonFile) throws Exception {
 		q++;
 	}
 
-	
 	matchData(jsonFile, actualData);
-
-	
 }
 
 
