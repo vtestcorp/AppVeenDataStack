@@ -10,19 +10,19 @@ Examples:
 |test_appadmin@appveen.com|123123123|
 
 Scenario: Delete data service
-	Given Data service "collection" exists
+	Given Data service "collection1" exists
 	Then Remove the data service
 
 Scenario: Create data service
-	Given Data service "collection" does not exist
-	Then Create new data service "collection"
+	Given Data service "collection1" does not exist
+	Then Create new data service "collection1"
  #Under testData, picks up strings.json create the JSON
 
 
 Scenario Outline: Assign to Appcenter Group
  	Then Group "Collection" does not exist
 	Then Create new group "Collection" 
-	And Assign appcenter permissions for "collection" dataservice to "<user>"
+	And Assign appcenter permissions for "collection1" dataservice to "<user>"
 	
 	Examples:
 	|user|
@@ -43,7 +43,7 @@ Examples:
 
 
 Scenario: Add data to data service
-	Given Data service "collection"
+	Given Data service "collection1"
 	Then Add data to the data service for Collection
 	
 	

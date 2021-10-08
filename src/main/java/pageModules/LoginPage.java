@@ -177,7 +177,7 @@ public class LoginPage extends BaseClass{
 				applyWait.applyExplicitWaitsUntilElementVisible(ap.newAttributeButton, 30);	
 				applyWait.waitForElementToBeClickable(ap.newAttributeButton, 30).click();
 				
-			switch(attributeName) {
+				switch(attributeName) {
 			
 			case "String" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
@@ -955,9 +955,11 @@ public class LoginPage extends BaseClass{
 								if(jsonProperties.containsKey("relatedTo")) {
 									anotherDataService=jsonProperties.get("relatedTo").toString();
 									applyWait.waitForElementToBeClickable(ap.relatesTo, 30).sendKeys(jsonProperties.get("relatedTo").toString());
+									Thread.sleep(1000);
 									By dataService=By.xpath("//button[@role='option']//span[text()='"+anotherDataService+"']");
 									if(!driver.findElements(dataService).isEmpty()) {
-									applyWaitForDynamicWebElement(dataService, 10);
+										
+										applyWaitForDynamicWebElement(dataService, 10);
 									driver.findElement(dataService).click();
 									}
 								}

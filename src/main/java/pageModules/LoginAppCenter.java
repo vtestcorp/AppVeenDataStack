@@ -3,6 +3,8 @@ package pageModules;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.util.List;
+
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -472,24 +474,28 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		String path = System.getProperty("user.dir");
 		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
-
-		List<WebElement> addNew = driver.findElements(By.xpath("//span[text()='Add new']"));
-		int k=1, m=2;
+		Thread.sleep(3000);
+		List<WebElement> addNew = driver.findElements(By.xpath("//div[@class='ng-star-inserted']//*[contains(@class,'add-new')]"));
+		System.out.println(addNew.size());
 			for (int j = 1; j <= addNew.size(); j++) {
-				WebElement textBox = driver.findElement(By.xpath("(//span[text()='Add new'] )[" +j+ "]"));
+				WebElement textBox = driver.findElement(By.xpath("(//div[@class='ng-star-inserted']//*[contains(@class,'add-new')])[" +j+ "]"));
 				if (textBox.isEnabled()) {
 					
-					String id1 = "collection1001";
-					for(int i=1;i<4;i++)
+					String id1 = textBox.getAttribute("id");
+					System.out.println(id1+"  ==================");
+					JSONArray collectionArray=(JSONArray) jsonObject.get(id1);
+					System.out.println("Size of Array is "+collectionArray.size());
+					for(int i=0;i<collectionArray.size();i++)
 					{
 						textBox.click();
-    					Thread.sleep(8000);
-						WebElement textBox1 = driver.findElement(By.xpath("(//input[contains(@id,'collection')])["+i+"]"));
-						String value = JsonUtils.getJsonValue(path + "\\testData\\" + data_Service + ".data.json", id1);	
+    					Thread.sleep(2000);
+						WebElement textBox1 = driver.findElement(By.xpath("//input[contains(@id,'"+id1+"."+i+"')]"));
+						String idValue=textBox1.getAttribute("id");   //cText1001.0         ///cText1001[0] 
+						String qw=idValue.split("[.]")[0]+"["+idValue.split("[.]")[1]+"]";
+						String value = JsonUtils.getJsonValue(path + "\\testData\\" + data_Service + ".data.json",qw);
+						System.out.println(value);
 						applyWait.waitForElementToBeClickable(textBox1, 30).sendKeys(value);
 					}
-					
-					k++;
 			}
 
 		}

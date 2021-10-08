@@ -540,7 +540,7 @@
             "fieldLength": 10,
             "_typeChanged": "Object",
             "deleteAction": "restrict",
-            "relatedTo": "Simple",
+            "relatedTo": "sample",
             "relatedSearchField": "boolean1",
             "relatedViewFields": [
               {
@@ -876,7 +876,7 @@
             "fieldLength": 10,
             "_typeChanged": "Object",
             "deleteAction": "restrict",
-            "relatedTo": "Simple",
+            "relatedTo": "sample",
             "relatedSearchField": "date1",
             "relatedViewFields": [
               {
