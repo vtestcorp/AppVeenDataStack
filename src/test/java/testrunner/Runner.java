@@ -8,9 +8,8 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 //@CucumberOptions(features="C:\\Users\\Lenovo\\Downloads\\sentient\\test",
-@CucumberOptions(features="./testcases/library.feature",
-			//	dryRun=true,
-            // 	tags={"@Author"},
+@CucumberOptions(features="./testcases/statemodel (2).feature",
+				dryRun=false,
 	        	glue={"stepdefinitions","cucumberHooks"},
         		monochrome=true,
 				strict = true,

@@ -9,7 +9,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|vtest@appveen.com|123123123|
+|test_appadmin@appveen.com|123123123|
 
 Scenario: Delete data service
 	Given Data service "string_Text" exists
@@ -26,7 +26,7 @@ Scenario Outline: Assign to Appcenter Group
 	
 	Examples:
 	|user|
-	|vtest@appveen.com|
+	|test_ac_ds_manage@appveen.com|
 
 
 Scenario: Log out of Author
@@ -41,27 +41,64 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|vtest@appveen.com|123123123|
+|test_ac_ds_manage@appveen.com|123123123|
 
 Scenario: Import data to data service
 	Given Data service "string_Text"
-	Then Import data to the data service
+	Then 	Upload file "Customer" to the import page of data service
+
+Scenario Outline: Provide File settings for importing
+	Given User navigates to File setting page
+	Then Map "<file_settings>" to the import
+	Examples:
+	|file_settings|
+	|{"sheetToRead":"string_Text","rowsToSkipFromTop":"4","rowsToSkipFromBottom":"7","markFirstRecordAsHeader":"True"}|
 	
+	Scenario Outline: Complete column mapping of the file to DS
+	Given User navigate to column mapping page
+	Then Map column "<ds_attribute>" to the attributes "<column_names>"
+	Examples:
+	|ds_attribute|column_names|
+	|ID|STR1004|
+	|DS STRING TEXT 1001|DD|
+	| DS STRING TEXT 1002 Label|c|
+	|DS STRING TEXT 1003|D|
+	|DS STRING TEXT 1004|W|
+	|DS STRING TEXT 1005|R|
+	|DS STRING TEXT 1006|H|
+	|DS STRING TEXT 1007|J|
+	|DS STRING TEXT 1008|K|
+	|DS STRING TEXT 1009|L|
+	|DS STRING TEXT 1010|M|
+	|DS STRING TEXT 1011|N|
+	|DS STRING TEXT 1012|O|
+	|DS STRING TEXT 1013|P|
+	|DS STRING TEXT 1014|XX|
+	|DS STRING TEXT 1015|NN|
+	|DS STRING TEXT 1016|B|
+	|DS STRING TEXT 1017|RR|
+	|DS STRING TEXT 1018|I|
+	|DS STRING TEXT 1019|Q|
+	|DS STRING TEXT 1020|Y|
+	|DS STRING TEXT 1021|U|
+	|DS STRING TEXT 1022|X|
+	|DS STRING TEXT 1023|Z|
+	|DS STRING TEXT 1024|T|
 
 #Scenario: Add data to data service
 #	Given Data service "string_Text"
 #	Then Add data to the data service
 #	
 #	
-	Scenario Outline: Add record to data service
-	Given Data service "string_Text"
-	Then Add record "<data>" to the data service
-	And Expect error "DS STRING TEXT 1002 Error" on label "DS STRING TEXT 1002 Label"
-	And Save button is disabled
-Examples:
-|data|
-|{"_id": "STR1001","dsStringText1001": "amazon","dsStringText1002": "","dsStringText1003": "flipkart","dsStringText1004": "mintra","dsStringText1005": "starbazar","dsStringText1007": "dmart", "dsStringText1008": "bigBazar", "dsStringText1010": "bigBasket",  "dsStringText1013": "online shooping", "dsStringText1014": "", "dsStringText1015": "",  "dsStringText1018": "",  "dsStringText1020": "ABCD", "dsStringText1021": "season", "dsStringText1022": "cathlon", "dsStringText1023": "shopper stop", "dsStringText1024": "snapdel"}|
-
+#	Scenario Outline: Add record to data service
+#	Given Data service "string_Text"
+#	Then Add record "<data>" to the data service
+#	And Expect error "DS STRING TEXT 1002 Error" on label "DS STRING TEXT 1002 Label"
+#	And Save button is disabled
+#Examples:
+#|data|
+#|{"_id": "STR1001","dsStringText1001": "amazon","dsStringText1002": "","dsStringText1003": "flipkart","dsStringText1004": "mintra","dsStringText1005": "starbazar","dsStringText1007": "dmart", "dsStringText1008": "bigBazar", "dsStringText1010": "bigBasket",  "dsStringText1013": "online shooping", "dsStringText1014": "", "dsStringText1015": "",  "dsStringText1018": "",  "dsStringText1020": "ABCD", "dsStringText1021": "season", "dsStringText1022": "cathlon", "dsStringText1023": "shopper stop", "dsStringText1024": "snapdel"}|
+#
 #
 #Scenario Outline: Add record to data service
 #	Given Data service "string_Text"

@@ -117,28 +117,31 @@ public class LoginAppCenter extends BaseClass {
 			
 		}
 	
-	public void importDatafile() throws MalformedURLException, InterruptedException {
+	public void uploadDatafile(String file) throws MalformedURLException, InterruptedException {
 		applyExplicitWaitsUntilElementVisible(acp.importfile,10);
+		Actions action = new Actions(driver);
+		action.moveToElement(acp.importfile);
 		applyWait.waitForElementToBeClickable(acp.importfile, 30).click();
 		Thread.sleep(2000);
-		applyWait.waitForElementToBeClickable(acp.uploadFile, 30).sendKeys("C:\\Users\\Lenovo\\Documents\\Customer.xlsx");
-		System.out.println("Sheet is :" + data_Service);
-		applyExplicitWaitsUntilElementVisible(acp.sheetToReadDropdown, 10);
-		dropdown.selectByVisibleText(acp.sheetToReadDropdown, data_Service);
-		applyWait.waitForElementToBeClickable(acp.next, 30).click();
-		Thread.sleep(1000);
-		applyWait.waitForElementToBeClickable(acp.next, 30).click();
-		Thread.sleep(1000);
-		applyWait.waitForElementToBeClickable(acp.here, 30).click();
-		Thread.sleep(1000);
-		applyWait.waitForElementToBeClickable(acp.notification, 30).click();
-		Thread.sleep(1000);
-		applyWait.waitForElementToBeClickable(acp.notification_body, 30).click();
-		Thread.sleep(1000);
-		applyWait.waitForElementToBeClickable(acp.next, 30).click();
-		Thread.sleep(1000);
-		applyWait.waitForElementToBeClickable(acp.here, 30).click();
+		applyWait.waitForElementToBeClickable(acp.uploadFile, 30).sendKeys(path +"\\files" + "\\" +""+file+".xlsx");
+//		applyExplicitWaitsUntilElementVisible(acp.sheetToReadDropdown, 10);
+//		dropdown.selectByVisibleText(acp.sheetToReadDropdown, data_Service);
+//		applyWait.waitForElementToBeClickable(acp.next, 30).click();
+//		Thread.sleep(1000);
+//		applyWait.waitForElementToBeClickable(acp.next, 30).click();
+//		Thread.sleep(1000);
+//		applyWait.waitForElementToBeClickable(acp.here, 30).click();
+//		Thread.sleep(1000);
+//		applyWait.waitForElementToBeClickable(acp.notification, 30).click();
+//		Thread.sleep(1000);
+//		applyWait.waitForElementToBeClickable(acp.notification_body, 30).click();
+//		Thread.sleep(1000);
+//		applyWait.waitForElementToBeClickable(acp.next, 30).click();
+//		Thread.sleep(1000);
+//		applyWait.waitForElementToBeClickable(acp.here, 30).click();
 	}
+	
+	
 
 	public void userEnterData() throws Exception {
 		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
@@ -893,7 +896,33 @@ public class LoginAppCenter extends BaseClass {
 		}
 	applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	}
-	
-	
-}
 
+	public void userEnterDataForStateModel() throws MalformedURLException {
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
+		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		List<WebElement> textBoxes = acp.groupTextBoxes;
+		String filePath=path + "\\testData\\" + data_Service + ".data.json";
+		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
+
+		for (int j = 1; j <= textBoxes.size(); j++) {
+			WebElement textBox = driver.findElement(By.xpath("(//*[contains(@class,'form-control') or @type='checkbox' or @type='file' or contains(@class,'btn btn-link mr-2 p-0') or contains(@class,'searchInput')])[" + j + "]"));
+			if (textBox.isEnabled()) {
+				String id1 = textBox.getAttribute("_id");
+				String value1=JsonUtils.getJsonValue(filePath,id1);
+				
+				if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
+					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1);	
+				}
+				if (textBox.getAttribute("type").equals("number")) {
+					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(((Long) jsonObject.get(id1)).toString());
+					
+				}
+
+			}
+		}
+	}
+}
+	
+	
+
+	

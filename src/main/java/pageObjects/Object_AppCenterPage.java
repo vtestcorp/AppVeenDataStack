@@ -42,7 +42,6 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//select[@class='text-primary time-select'][3]")
 	public WebElement secondDropDown;
 	
-	//select[@class='text-primary time-select'][1]
 	
 	@FindBy(xpath="//input[@placeholder='Password']")
 	public WebElement password;
@@ -292,10 +291,34 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath = "//label/input[@id='logoFile']")
 	public WebElement uploadFile;
 		
-	//@FindBy(xpath = "//select[@class='form-control ng-pristine ng-valid ng-touched']")
 	
 	@FindBy(xpath = "//select[contains(@class,'form-control')]")
 	public WebElement sheetToReadDropdown;
+	
+	
+	
+	@FindBy(xpath = "//div[normalize-space()='From the top']//input[contains(@class,'form-control')]")
+	public WebElement sheetTopRow;
+	
+	
+	//div[normalize-space()='From the bottom']//input[contains(@class,'form-control')
+	@FindBy(xpath = "//div[normalize-space()='From the bottom']//input[contains(@class,'form-control')]")
+	public WebElement sheetBottomRow;
+	
+	@FindBy(xpath = "//div[normalize-space()='ID']//input[contains(@class,'colDiv')]")
+	public WebElement destination;
+	
+	@FindBy(xpath = "//div[normalize-space()='STR1004']")
+	public WebElement source;
+	
+	
+	
+		
+	//div[normalize-space()='DS STRING TEXT 1001']//input[contains(@class,'colDiv p-2 rounded')]
+	//div[normalize-space()='DS STRING TEXT 1002 Label']//input[contains(@class,'colDiv p-2 rounded')]
+	
+	@FindBy(xpath = "//span[@class='slider']")
+	public WebElement recoredHeader;
 	
 	@FindBy(xpath = "//button[normalize-space()='Next']")
 	public WebElement next;

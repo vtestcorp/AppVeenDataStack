@@ -196,10 +196,6 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(xpath="//div[@id='_lib']")
 	public WebElement library_Tab;
 
-	//@FindBy(xpath = "//span[@class='odp-references']")
-//	public WebElement relation; 
-	
-	
 	@FindBy(xpath="//div[text()='Linked Library']/following-sibling::div/select")
 	public WebElement linkedLibrary;
 
@@ -345,6 +341,23 @@ public class Object_AuthorPage extends BaseClass{
 	
 	@FindBy(xpath="//button[@id='newLibraryModalYes']")
 	public WebElement createNewLibraryButton;
+	
+	
+	@FindBy(xpath="//input[@id='typeahead-basic']")
+	public WebElement stateModelStatus;
+	
+	
+	@FindBy(xpath="//button[@id='configureStateModel']")
+	public WebElement configStateModel;
+	
+	
+	@FindBy(xpath="//input[@id='new-state-input']")
+	public WebElement addStateValueHere;
+	
+	
+	@FindBy(xpath="//div[@id='add-state']")
+	public WebElement addStateInput;
+	
 	
 }
 

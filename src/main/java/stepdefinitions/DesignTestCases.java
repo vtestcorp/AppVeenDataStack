@@ -77,6 +77,27 @@ public class DesignTestCases extends BaseClass{
 	    design.addRecord(string);
 	}
 	
+	@Given("User navigates to File setting page")
+	public void user_navigates_to_File_setting_page() {
+		
+	}
+ 
+	
+	@Given("User navigate to column mapping page")
+	public void user_navigates_to_column_mapping_page() {
+	   design.userNavigateToColumnMappingPage();		
+	}
+	   
+	@Then("^Map \"(.*?)\" to the import$")
+	public void map_rowsToSkipFromBottom(String jsonFile) throws MalformedURLException {
+			design.mapFileSettingToImport(jsonFile);
+	}
+
+	@Then("Map column {string} to the attributes {string}")
+	public void map_columnToTheAttributes(String destination, String source) throws MalformedURLException, InterruptedException {
+			design.mapColumnToValue(destination , source);
+	}
+
 	@Then("Add record {string} {string} to the data service")
 	public void add_record_to_the_data_service(String string, String string2) throws Exception {
 	    design.addNewRecord(string,string2);
@@ -139,6 +160,7 @@ public class DesignTestCases extends BaseClass{
 	    design.addNewRecords();
 	}
 	
+		
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the data service$")
 	public void update_record_with_to_the_data_service(String id, String jsonFile) throws Exception {
 	    design.updateRecord(id,jsonFile);

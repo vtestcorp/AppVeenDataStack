@@ -786,6 +786,68 @@ public class Module_DesignTestCases extends BaseClass{
 			
 			applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	    }
+	   
+	   public void mapFileSettingToImport(String jsonfile) throws MalformedURLException {
+			JSONObject jsonObject = JsonUtils.fetchJSONObject(jsonfile);
+			System.out.println(jsonObject.get("sheetToRead").toString());
+			System.out.println(jsonObject.get("rowsToSkipFromTop").toString());
+			System.out.println(jsonObject.get("rowsToSkipFromBottom").toString());
+			System.out.println(jsonObject.get("markFirstRecordAsHeader").toString());
+			
+			String sheetName= jsonObject.get("sheetToRead").toString();
+			String rowValue = jsonObject.get("rowsToSkipFromTop").toString();
+			String bottomRow = jsonObject.get("rowsToSkipFromBottom").toString();
+			String header= jsonObject.get("markFirstRecordAsHeader").toString();
+			
+			applyExplicitWaitsUntilElementVisible(acp.sheetToReadDropdown, 10);
+			dropdown.selectByVisibleText(acp.sheetToReadDropdown, sheetName);
+			applyWait.waitForElementToBeClickable(acp.sheetTopRow, 10).sendKeys(rowValue);
+			applyWait.waitForElementToBeClickable(acp.sheetBottomRow, 10).sendKeys(bottomRow);
+		//	applyWait.waitForElementToBeClickable(acp.recoredHeader, 10).click();
+		
+		}
+	   
+	   public void userNavigateToColumnMappingPage() {
+		   applyWait.waitForElementToBeClickable(acp.next, 30).click();
+	   }
+	   
+	  
+	   
+	   public void mapColumnToValue(String destination, String source) throws InterruptedException {
+		   Thread.sleep(2000);
+		   WebElement dest=driver.findElement(By.xpath("//div[normalize-space()='"+destination+"']//input[contains(@class,'colDiv')]"));
+		 //  WebElement dest=driver.findElement(By.xpath("//div[normalize-space()='"+destination+"']//input[starts-with(@class,'colDiv')]"));
+		   //   WebElement src=driver.findElement(By.xpath("//div[normalize-space()='"+source+"' and contains(@class,'name-width')]//ancestor::div[contains(@class,'fileKeyContainer')]"));
+		   dest.clear();
+		   dest.sendKeys(source);
+		  Thread.sleep(1000);
+	//	  dest.sendKeys(Keys.TAB);
+		 
+//	   Actions action = new Actions(driver);
+//		   action.clickAndHold(src).build();
+//		   Thread.sleep(5000);
+//		   action.release();
+//		   Thread.sleep(5000);
+//		   action.moveToElement(dest).build();
+//		   Thread.sleep(5000);
+//	//	   action.dragAndDrop().perform();
+//		   action.release();
+////		   Thread.sleep(5000);
+//		   
+//		   WebElement dest1=driver.findElement(By.xpath("//odp-column-mapping/div/div/div[normalize-space()='DS STRING TEXT 1003']"));
+//		   WebElement src1=driver.findElement(By.xpath("//div[contains(@class,'d-flex ')][normalize-space()='D']"));
+//		  
+//		   Actions action1 = new Actions(driver);
+//		  
+//		   action1.clickAndHold(src1);
+//		   action1.moveToElement(dest1);
+//		   action1.release(src1);
+//		   action1.build();
+//		   Thread.sleep(2000);
+//		   action1.perform();
+//		   
+//		
+	}
 
 
 	public void updateRecord(String id, String jsonFile) throws Exception {

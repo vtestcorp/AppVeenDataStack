@@ -44,10 +44,17 @@ public class LoginToAppCenter extends BaseClass{
 	
 	
 	
-	@Then("Import data to the data service")
-	public void import_data_service() throws Exception {
-		loginAppCenter.importDatafile();
+	@Then("Upload file {string} to the import page of data service")
+	public void import_data_service(String file) throws Exception {
+		loginAppCenter.uploadDatafile(file);
 	}
+	
+//	@Then("Map {string} to the import")
+//	public void map_Filesetting(String file) throws Exception {
+//		loginAppCenter.uploadDatafile(file);
+//	}
+	
+	
 	
 	@Then("Add data to the data service for Collection")
 	public void add_data_to_the_data_service_for_Collection() throws InterruptedException {
@@ -70,9 +77,14 @@ public class LoginToAppCenter extends BaseClass{
 
 	@Then("Add data to the data service")
 	public void add_data_to_the_data_service() throws Exception {
-		
 		loginAppCenter.userEnterData();
 	}
+	
+	@Then("Add data to the stateModel data service")
+	public void add_data_to_the_stateModel_data_service() throws Exception {
+		loginAppCenter.userEnterDataForStateModel();
+	}
+	
 	
 	@Then("Add data to the data service for Relation")
 	public void add_data_to_the_data_service_for_Relation() throws Exception {

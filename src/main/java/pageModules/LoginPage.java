@@ -3,7 +3,10 @@ package pageModules;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -15,7 +18,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.google.gson.JsonObject;
@@ -29,6 +34,7 @@ import helperMethods.Property;
 import helperMethods.Screenshots;
 import helperMethods.ScrollTypes;
 import helperMethods.WaitTypes;
+import io.cucumber.datatable.DataTable;
 import junit.framework.Assert;
 import pageObjects.Object_AuthorPage;
 import pageObjects.Object_GroupPage;
@@ -48,6 +54,7 @@ public class LoginPage extends BaseClass{
 	public static ArrayList<String> data_Services;
 	public Object_AuthorPage ap;
 	public Object_GroupPage gp;
+	public static WebDriverWait wait;
 	public static boolean libraryflag1;
 	public static boolean libraryflag;
 	public static	String anotherDataService;
@@ -75,7 +82,8 @@ public class LoginPage extends BaseClass{
 		
 		applyWait.waitForElementToBeClickable(ap.emailIDTextBox, 30).sendKeys(username);
 		applyWait.waitForElementToBeClickable(ap.nextButton, 30).click();
-		applyWait.waitforElementToBeDisplayed(ap.password, 30).sendKeys(password);;
+		applyWait.waitforElementToBeDisplayed(ap.password, 30).sendKeys(password);
+		wait = new WebDriverWait(driver, 90);
 		applyWait.waitforElementToBeDisplayed(ap.signInButton, 30).click();
 		
 	}
@@ -205,6 +213,63 @@ public class LoginPage extends BaseClass{
 			createNewDataServices(JsonUtils.getArrayValues(dataName, "definition"),library);
 		}
 	}
+	
+	public void createDataServiceForStateModel(String data_ServicName) throws Exception {
+		 dataServiceName = data_ServicName;
+		applyWait.waitForElementToBeClickable(ap.newDataService, 30).click();
+		applyWait.waitForElementToBeClickable(ap.dataServiceName, 30).sendKeys(data_ServicName);
+		applyWait.waitForElementToBeClickable(ap.createButton, 30).click();
+	}
+	
+	public void addAttributes(String attributeName, String attributeType ) throws InterruptedException {
+		
+		applyWait.waitForElementToBeClickable(ap.newAttributeButton, 10).click();
+		applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(attributeName);
+	   if(attributeType.equals("Text"))
+	   {
+		   applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+		   applyWait.waitForElementToBeClickable(ap.abc, 30).click();
+		   applyWait.waitForElementToBeClickable(ap.text, 30).click();
+	   }
+	   else if(attributeType.equals("Number"))
+	   {
+		   applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+		   applyWait.waitForElementToBeClickable(ap.number, 30).click();
+	   }
+	   else if(attributeType.equals("Date"))
+	   {
+		   applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+		   applyWait.waitForElementToBeClickable(ap.calender, 30).click();
+		   applyWait.waitForElementToBeClickable(ap.date, 30).click();
+	   }
+//	   else if(attributeType.equals("List of values"))
+//	   {
+//		   applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+//		   applyWait.waitForElementToBeClickable(ap.listOfValue, 30).click();
+//	   }
+	   
+	   
+	}
+	
+	public void clickOnExperienceTab() throws InterruptedException {
+		Thread.sleep(3000);
+		Actions action = new Actions(driver);
+		action.moveToElement(ap.experienceTab);
+		applyWait.waitForElementToBeClickable(ap.experienceTab, 10).click();
+		
+
+	}
+	
+	public void configureStateModel(String statusName) throws InterruptedException {
+		applyWait.waitForElementToBeClickable(ap.stateModelStatus, 30).sendKeys(statusName);
+		Thread.sleep(500);
+		applyWait.waitForElementToBeClickable(ap.stateModelStatus, 30).click();
+		applyWait.waitForElementToBeClickable(ap.stateModelStatus, 30).sendKeys(Keys.ENTER);
+		Thread.sleep(500);
+		applyWait.waitForElementToBeClickable(ap.configStateModel, 30).click();
+	}
+	
+	
 	
 	public void createNewDataServices(JSONArray jsonArray, String dataService1) throws Exception {
 		if(!libraryflag1)
@@ -603,7 +668,10 @@ public class LoginPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(ap.createButton, 30).click();
 		applyWait.waitForElementToBeClickable(ap.saveButton, 30).click();
 	}
+	
+	
 
+	
 	public void searchDataService() throws Exception {
 		applyWait.waitForElementToBeClickable(ap.search, 30).sendKeys(dataServiceName,Keys.ENTER);;
 		Boolean dataService=applyWait.waitForElementToBeClickable(ap.dataServiceName1, 30).isDisplayed();
@@ -1346,6 +1414,52 @@ public class LoginPage extends BaseClass{
 						}
 
 
+						public void createStates(String stateName) throws InterruptedException {
+							applyWait.waitForElementToBeClickable(ap.addStateValueHere, 30).sendKeys(stateName);
+						    Thread.sleep(500);	
+							applyWait.waitForElementToBeClickable(ap.addStateInput, 30).click();
+							 Thread.sleep(1000);	
+						}
+
+
+//						public void setStates(String fromState, String nextState) throws InterruptedException {
+//							String[] addNextStates = nextState.split(","); //[In Progress, Rejected, Deferred, Config Issue, Cannot Reproduce, Working as Expected]
+//							WebElement setState =  driver.findElement(By.xpath("//div[normalize-space()='"+fromState+"' and contains(@class,'state-name')]/parent::div[starts-with(@class,'col-3')]/following-sibling::div//input"));
+//							for (int i = 0; i < addNextStates.length; i++) { 
+//                               	String value = addNextStates[i];
+//                             	System.out.println(value);
+//                             	Thread.sleep(500);
+//								setState.sendKeys(value ,Keys.ENTER);
+//								Thread.sleep(500);
+//								//	applyWait.waitforElementToBeDisplayed(ap.yes, 10).click();
+//							}
+//						
+//							setState.sendKeys(Keys.TAB);
+//						}
+						
+						public void setStates(DataTable dataTable) throws InterruptedException {
+							List<List<String>> states = dataTable.asLists(String.class);
+							for (List<String> value : states) {
+							//	System.out.println(value);
+							//	List<String> state = value;
+							//	System.out.println(state);
+						WebElement setState =  driver.findElement(By.xpath("//div[normalize-space()='"+value.get(0)+"' and contains(@class,'state-name')]/parent::div[starts-with(@class,'col-3')]/following-sibling::div//input"));
+								for (int i = 1; i < value.size(); i++) {
+									String val = value.get(i);
+									setState.sendKeys(val , Keys.ENTER);
+								}
+								setState.sendKeys(Keys.TAB);
+							}
+						}
+
+
+						public void saveAndDeploy() {
+							applyWait.waitForElementToBeClickable(ap.submitAndDeploy, 30).click();
+						}
+						
+   }
+
+
 						
 
 
@@ -1354,5 +1468,5 @@ public class LoginPage extends BaseClass{
 						
 		
 		
-}
+
 

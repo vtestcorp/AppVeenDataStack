@@ -134,8 +134,46 @@ public class LoginToAuthorUrl extends BaseClass {
 		}
 		loginPage.createNewDataServices(JsonUtils.getArrayValues(dataName, "definition"),dataService);
 	}
-	
+	@Then("Create new data service {string} for State_Model")
+	public void create_DateServiceFor_StateModel(String dataService) throws Exception {
+          loginPage.createDataServiceForStateModel(dataService);		
 
+	}
+	
+	@Then("Add attributes {string} and type {string}")
+	public void addAttributeWithType(String attributeName , String attributeType) throws InterruptedException {
+       loginPage.addAttributes(attributeName, attributeType);
+	}
+	
+	@Given("Click on Experience tab to create a State Model")
+	public void clickOnExperienceTab() throws InterruptedException {
+		loginPage.clickOnExperienceTab();
+	}
+	@Then("Create a State Model for the field {string}")
+	public void configureStateModelStatus(String status) throws InterruptedException {
+		loginPage.configureStateModel(status);
+	}
+	
+	
+	@Then("Create states {string}")
+	public void createStateName(String stateName) throws InterruptedException {
+       loginPage.createStates(stateName);
+	}
+	
+//	@And("Set Current State {string} and {string} and Save")
+//	public void setCurrentState(String fromState, String nextState) throws InterruptedException {
+//       loginPage.setStates(fromState,nextState);
+//	}
+	
+	@And("Set Current State with from state to next state")
+	public void setCurrentStateFromToNext(DataTable datatable) throws InterruptedException {
+       loginPage.setStates(datatable);
+	}
+	
+	@Then("Save and Deploy data service")
+	public void saveAndDeploy() throws InterruptedException {
+       loginPage.saveAndDeploy();
+	}
 	
 	@Given("Group sampleGroup {string} exists")
 	public void group_sampleGroup_exists(String groupName) throws Exception {
