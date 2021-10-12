@@ -23,7 +23,7 @@ import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.PathNotFoundException;
 import com.google.common.collect.Maps;
 import base.BaseClass;
-import config.DefineConstants;
+import config.Constants;
 import helperMethods.DropDown;
 import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
@@ -65,9 +65,9 @@ public class Module_DesignTestCases extends BaseClass{
 		String dataService="String";
 		
 		driver.get(author_URL);
-		applyWait.waitForElementToBeClickable(ap.emailIDTextBox, 30).sendKeys(DefineConstants.User_Email_Id);
+		applyWait.waitForElementToBeClickable(ap.emailIDTextBox, 30).sendKeys(Constants.User_Email_Id);
 		applyWait.waitForElementToBeClickable(ap.nextButton, 30).click();
-		applyWait.waitforElementToBeDisplayed(ap.password, 30).sendKeys(DefineConstants.User_Password);;
+		applyWait.waitforElementToBeDisplayed(ap.password, 30).sendKeys(Constants.User_Password);;
 		applyWait.waitforElementToBeDisplayed(ap.signInButton, 30).click();
 		String dataName=path+"\\testData" + "\\" + ""+dataService+".json";
 		lp.createNewDataServices(JsonUtils.getArrayValues(dataName, "definition"),dataService);
@@ -177,7 +177,7 @@ public class Module_DesignTestCases extends BaseClass{
 		applyWait.waitForElementToBeClickable(gp.members, 30).click();
 		applyWait.waitForElementToBeClickable(gp.addUsers, 30).click();
 		applyExplicitWaitsUntilElementVisible(gp.userEmail, 10);
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		
 		By ele=By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']");
 //		applyWaitForDynamicWebElement(ele,20);

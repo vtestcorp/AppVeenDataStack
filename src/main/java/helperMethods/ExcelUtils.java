@@ -10,13 +10,13 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import config.DefineConstants;
+import config.Constants;
 
 public class ExcelUtils {
 
 	public static List<String> getExcelCellValue(String filePath, String columnHeader) throws IOException {
 		List<String> cellValues;
-		FileInputStream file = new FileInputStream(DefineConstants.PROJECT_PATH + filePath + ".xlsx");
+		FileInputStream file = new FileInputStream(Constants.PROJECT_PATH + filePath + ".xlsx");
 		Workbook workbook = new XSSFWorkbook(file);
 		Sheet sheet = workbook.getSheetAt(0);
 		int rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();

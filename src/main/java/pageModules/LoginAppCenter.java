@@ -12,7 +12,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import com.aventstack.extentreports.ExtentTest;
+import com.jayway.jsonpath.JsonPath;
+
 import base.BaseClass;
+import config.Constants;
 import helperMethods.DropDown;
 import helperMethods.JsonUtils;
 import helperMethods.Property;
@@ -107,7 +110,7 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
 		List<WebElement> textBoxes = acp.textBoxes;
-		String filePath=path + "\\testData\\" + data_Service + ".data.json";
+		String filePath=Constants.testData_Folder + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 		
 		List<WebElement> stepNames = driver
@@ -247,7 +250,7 @@ public class LoginAppCenter extends BaseClass {
 		applyExplicitWaitsUntilElementVisible(acp.textBoxesLocation, 20);
 		List<WebElement> textBoxes = acp.textBoxesLocation;
 		
-		String filePath=path + "\\testData\\" + data_Service + ".data.json";
+		String filePath=Constants.testData_Folder + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 		
 		
@@ -289,7 +292,7 @@ public class LoginAppCenter extends BaseClass {
 		Thread.sleep(3000);
 		List<WebElement> textBoxes = acp.textBoxes;
 		
-		String filePath=path + "\\testData\\" + data_Service + ".data.json";
+		String filePath=Constants.testData_Folder + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 	
 		for (int j = 1; j <= textBoxes.size(); j++) {
@@ -333,7 +336,7 @@ public class LoginAppCenter extends BaseClass {
 				applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 				Thread.sleep(1000);
 				List<WebElement> buttons = acp.buttons;
-				String filePath=path + "\\testData\\" + data_Service + ".data.json";
+				String filePath=Constants.testData_Folder + data_Service + ".data.json";
 				JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 				for (int j = 1; j <= buttons.size(); j++) {
 					WebElement button = driver.findElement(By.xpath("(//input[@type='checkbox' or @id='_id' ])["+j+"]"));
@@ -366,7 +369,7 @@ public class LoginAppCenter extends BaseClass {
 				applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 				Thread.sleep(5000);
 				List<WebElement> textBoxes = acp.richtextBoxes;
-				String filePath=path + "\\testData\\" + data_Service + ".data.json";
+				String filePath=Constants.testData_Folder + data_Service + ".data.json";
 				JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 				for (int j = 1; j <= textBoxes.size(); j++) {
 					WebElement textBox = driver.findElement(By.xpath("(//*[starts-with(@class,'tox-edit-area__iframe') or   @id='_id'])["+j+"]"));
@@ -443,8 +446,7 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
 		List<WebElement> textBoxes = driver.findElements(By.xpath("//input[@class='invisible position-absolute' or @id='_id']"));
-		String path = System.getProperty("user.dir");
-		String filePath=path + "\\testData\\" + data_Service + ".data.json";
+		String filePath=Constants.testData_Folder + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 		
 		for(int  i=1;i<=textBoxes.size();i++) {
@@ -470,31 +472,52 @@ public class LoginAppCenter extends BaseClass {
 	}
 
 	
-	public void userEnterDataforCollection() throws InterruptedException {
+	public void userEnterDataforCollection() throws Exception {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-		String path = System.getProperty("user.dir");
-		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
-		Thread.sleep(3000);
-		List<WebElement> addNew = driver.findElements(By.xpath("//div[@class='ng-star-inserted']//*[contains(@class,'add-new')]"));
+		JSONObject jsonObject = JsonUtils.getJSONObject(Constants.testData_Folder + data_Service + "Constants.testData_Suffix");
+		applyExplicitWaitsUntilElementVisible(acp.addNewButtons, 20);
+		List<WebElement> addNew = acp.addNewButtons;
 		System.out.println(addNew.size());
 			for (int j = 1; j <= addNew.size(); j++) {
 				WebElement textBox = driver.findElement(By.xpath("(//div[@class='ng-star-inserted']//*[contains(@class,'add-new')])[" +j+ "]"));
 				if (textBox.isEnabled()) {
 					
 					String id1 = textBox.getAttribute("id");
-					System.out.println(id1+"  ==================");
 					JSONArray collectionArray=(JSONArray) jsonObject.get(id1);
-					System.out.println("Size of Array is "+collectionArray.size());
+					try {
+						collectionArray.size();
+					}
+					catch(NullPointerException e) {
+						continue;
+					}
 					for(int i=0;i<collectionArray.size();i++)
 					{
 						textBox.click();
-    					Thread.sleep(2000);
+    					Thread.sleep(500);
 						WebElement textBox1 = driver.findElement(By.xpath("//input[contains(@id,'"+id1+"."+i+"')]"));
-						String idValue=textBox1.getAttribute("id");   //cText1001.0         ///cText1001[0] 
+						String idValue=textBox1.getAttribute("id");   
 						String qw=idValue.split("[.]")[0]+"["+idValue.split("[.]")[1]+"]";
-						String value = JsonUtils.getJsonValue(path + "\\testData\\" + data_Service + ".data.json",qw);
+						String value = JsonUtils.getJsonValue(Constants.testData_Folder + data_Service + Constants.testData_Suffix,qw);
 						System.out.println(value);
-						applyWait.waitForElementToBeClickable(textBox1, 30).sendKeys(value);
+						
+						if(textBox1.getAttribute("type").equals("text") || textBox1.getAttribute("type").equals("number")) {
+							if(textBox1.getAttribute("class").contains("searchInput")) {
+								value = JsonUtils.getJsonValue(Constants.testData_Folder + data_Service + Constants.testData_Suffix,qw+".userInput");
+								applyWait.waitForElementToBeClickable(textBox1, 30).sendKeys(value);
+								applyWait.waitForElementToBeClickable(textBox1, 30).sendKeys(Keys.TAB);
+								applyWait.waitForElementToBeClickable(textBox1, 30).sendKeys(Keys.ENTER);
+							}
+							else {
+								applyWait.waitForElementToBeClickable(textBox1, 30).sendKeys(value);
+							}
+						}
+						else if(textBox1.getAttribute("type").equals("checkbox")) {
+							if(value.equals("true")) {
+								WebElement parentElement =textBox1.findElement(By.xpath("../.."));
+								applyWait.waitForElementToBeClickable(parentElement, 30).click();
+							}
+
+						}
 					}
 			}
 
@@ -513,7 +536,7 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,20);
 		List<WebElement> textBoxes = acp.groupTextBoxes;
-		String filePath=path + "\\testData\\" + data_Service + ".data.json";
+		String filePath=Constants.testData_Folder + data_Service + Constants.testData_Suffix;
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 
 		for (int j = 1; j <= textBoxes.size(); j++) {
@@ -629,7 +652,7 @@ public class LoginAppCenter extends BaseClass {
 					String fullDate[]=dateValue.split("T")[0].split("-");
 					String fullTime[]=dateValue.split("T")[1].split(":");
 					String date=fullDate[2];
-					String month=fullDate[1];
+					String month=fullDate[1];//    30
 					String year=fullDate[0];
 					String hour=fullTime[0];
 					String minute=fullTime[1];
@@ -671,8 +694,7 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,20);
 		List<WebElement> textBoxes = acp.dateFields;
-		String path = System.getProperty("user.dir");
-		String filePath=path + "\\testData\\" + data_Service + ".data.json";
+		String filePath=Constants.testData_Folder + data_Service + Constants.testData_Suffix;
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 		
 		for (int j = 1; j <= textBoxes.size(); j++) {
@@ -741,7 +763,7 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
 		List<WebElement> textBoxes = acp.textBoxes;
-		String filePath=path + "\\testData\\" + data_Service + ".data.json";
+		String filePath=Constants.testData_Folder + data_Service + Constants.testData_Suffix;
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 		
 		for (int j = 1; j <= textBoxes.size(); j++) {

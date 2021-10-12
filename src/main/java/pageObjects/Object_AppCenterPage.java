@@ -278,6 +278,11 @@ public class Object_AppCenterPage extends BaseClass{
 	
 	@FindBy(xpath = "//*[starts-with(@class,'tox-edit-area__iframe') or   @id='_id']")
 	public List<WebElement> richtextBoxes;
+	
+	@FindBy(xpath = "//div[@class='ng-star-inserted']//*[contains(@class,'add-new')]")
+	public List<WebElement> addNewButtons;
+	
+	//div[@class='ng-star-inserted']//*[contains(@class,'add-new')]
 
 
 }

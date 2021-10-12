@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import config.DefineConstants;
+import config.Constants;
 
 public class SeekBar {
 	
@@ -13,7 +13,7 @@ public class SeekBar {
 	
 	public void dragSeekBarTo(int perc,WebDriver driver,String seekBarPath) {
 		
-		seekBar	=driver.findElement(By.xpath(JsonUtils.getData(DefineConstants.json_FilePath, seekBarPath)));
+		seekBar	=driver.findElement(By.xpath(JsonUtils.getData(Constants.testData_Folder, seekBarPath)));
 		
 		
         // get location of seek bar from left

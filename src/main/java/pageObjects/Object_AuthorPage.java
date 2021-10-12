@@ -6,10 +6,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import base.BaseClass;
-import config.DefineConstants;
+import config.Constants;
 import helperMethods.JsonUtils;
 
 public class Object_AuthorPage extends BaseClass{
@@ -21,10 +22,10 @@ public class Object_AuthorPage extends BaseClass{
 	
 
 	
-	@FindBy(xpath="//div[normalize-space()='Sign in with your credentials']")
+	@FindBy(how=How.XPATH, using="//div[normalize-space()='Sign in with your credentials']")
 	public WebElement signIn;
 	
-	@FindBy(xpath="//input[@id='username']")
+	@FindBy(how=How.XPATH ,using="//input[@id='username']")
 	public WebElement emailIDTextBox;
 	
 	@FindBy(xpath="//span[contains(text(),'Login')]")

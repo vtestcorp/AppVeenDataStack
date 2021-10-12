@@ -20,7 +20,7 @@ import com.aventstack.extentreports.gherkin.model.Feature;
 import com.aventstack.extentreports.gherkin.model.Scenario;
 
 import base.BaseClass;
-import config.DefineConstants;
+import config.Constants;
 //import cucumber.api.java.Before;
 //import cucumber.api.java.en.And;
 //import cucumber.api.java.en.Given;
