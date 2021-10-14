@@ -4,6 +4,7 @@ import com.aventstack.extentreports.ExtentTest;
 import base.BaseClass;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pageModules.LoginAppCenter;
@@ -85,6 +86,12 @@ public class LoginToAppCenter extends BaseClass{
 		loginAppCenter.userEnterDataForStateModel();
 	}
 	
+	@And("Verify the State is {string}")
+	public void verifyState(String text) throws Exception {
+		loginAppCenter.verifyState(text);
+	}
+	
+		
 	
 	@Then("Add data to the data service for Relation")
 	public void add_data_to_the_data_service_for_Relation() throws Exception {

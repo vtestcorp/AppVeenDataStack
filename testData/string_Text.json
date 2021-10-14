@@ -1,7 +1,11 @@
 {
   "workflowHooks": {
     "postHooks": {
-      "submit": [],
+      "submit": [{ 
+      "version": {
+      "document": 6,
+      "release": "dev"
+     }}],
       "rework": [],
       "discard": [],
       "approve": [],

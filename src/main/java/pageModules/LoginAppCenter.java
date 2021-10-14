@@ -3,10 +3,12 @@ package pageModules;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -896,10 +898,12 @@ public class LoginAppCenter extends BaseClass {
 		}
 	applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	}
+	
 
-	public void userEnterDataForStateModel() throws MalformedURLException {
+	public void userEnterDataForStateModel() throws MalformedURLException, InterruptedException {
 		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		applyWait.applyExplicitWaitsUntilElementVisible(acp.groupTextBoxes, 10);
 		List<WebElement> textBoxes = acp.groupTextBoxes;
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
@@ -907,8 +911,11 @@ public class LoginAppCenter extends BaseClass {
 		for (int j = 1; j <= textBoxes.size(); j++) {
 			WebElement textBox = driver.findElement(By.xpath("(//*[contains(@class,'form-control') or @type='checkbox' or @type='file' or contains(@class,'btn btn-link mr-2 p-0') or contains(@class,'searchInput')])[" + j + "]"));
 			if (textBox.isEnabled()) {
-				String id1 = textBox.getAttribute("_id");
+				String id1 = textBox.getAttribute("id");
+			//	System.out.println("textbox  id : "+id1);
 				String value1=JsonUtils.getJsonValue(filePath,id1);
+				String type = textBox.getAttribute("type");
+				System.out.println("Type of box : " + type);
 				
 				if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
 					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1);	
@@ -917,10 +924,89 @@ public class LoginAppCenter extends BaseClass {
 					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(((Long) jsonObject.get(id1)).toString());
 					
 				}
+				if(textBox.getAttribute("type").equals("submit")){
+					applyWait.waitForElementToBeClickable(textBox, 30).click();
+					JSONObject js = (JSONObject) jsonObject.get(id1);
+					 String value = (String) js.get("rawData");
+					 String[] part = value.split("T");
+				//	String Calender = JsonPath.read(path,"$.dob.rawData").toString(); //1995-01-11T00:00:00Z
+				 //    System.out.println(Calender);
+				     
+				 //    Calender = "1995-01-11T10:20:30Z";
+				 //    String[] part = Calender.split("T");
+					 
+					 //1995-11-20
+				     System.out.println(part[0] +"_____________"+part[1]);
+				     String year =  part[0].split("-")[0];
+				     System.out.println(year);
+				     String month = part[0].split("-")[1];
+				     System.out.println(month);
+				     int i=Integer.parseInt(month)-1;
+                     String m = i+"";			    
+				     String date = part[0].split("-")[2];
+				     System.out.println(date);
+				     
+				     
+				     String time = part[1]; //10:20:30Z
+				     System.out.println(time);
+				     String hour = time.split(":")[0];
+				     System.out.println(hour);
+				     String min = time.split(":")[1];
+				     System.out.println(min);
+				     String sec = time.split(":")[2].replace("Z", "");
+				     System.out.println(sec);
+					
+//				     HashMap<String, String> map = new HashMap<String, String>();
+//				     			map.put("1", "January");
+//				     			map.put("2", "February");
+//				     			map.put("3", "March");
+//				     			map.put("4", "April");
+//				     			map.put("5", "May");
+//				     			map.put("6", "June");
+//				     			map.put("7", "July");
+//				     			map.put("8", "August");
+//				     			map.put("9", "September");
+//				     			map.put("10", "October");
+//				     			map.put("11", "November");
+//				     			map.put("12", "December");
+				     			
+			//	     dropdown.selectByValue(acp.yearDropDown,year);
+			//	     Thread.sleep(1000);
+				     
+			//	     dropdown.selectByValue(acp.monthDropDown, m);
+				     
+				     
+				     dropdown.selectByValue(acp.yearDropDown,year);
+				     Thread.sleep(1000);
+				     
+				     dropdown.selectByIndex(acp.monthDropDown, i);
+				  //   dropdown.selectByVisibleText(acp.monthDropDown, map.get(month));
+				   //  System.out.println("Month is : " + map.get(month) + "======" +map.size());
+                     WebElement date1 = driver.findElement(By.xpath("//span[@id='_day' and not(contains(@class,'disabled'))]//small[normalize-space()='"+date+"']"));
+                     date1.click();
+                             
+                     applyWait.waitForElementToBeClickable(acp.doneButton, 30).click();
+                     
+				     			
+				     	
+				}
 
 			}
 		}
+		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	}
+
+	public void verifyState(String currentState) throws MalformedURLException {
+		applyWait.waitForElementToBeClickable(acp.record, 30).click();
+		applyExplicitWaitsUntilElementVisible(acp.onBoardingStatus,10);
+		WebElement expected = acp.onBoardingStatus;
+		String value = expected.getText();
+		System.out.println(value);
+		Assert.assertEquals(value, currentState);
+	}
+
+	
+	
 }
 	
 	

@@ -207,6 +207,9 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//button[@id='saveBtn']")
 	public WebElement saveButton;
 
+	@FindBy(xpath="//button[contains(@class,'dropdown-toggle')]")
+	public WebElement saveDropDown;
+
 	@FindBy(xpath="//span[normalize-space()='ID']/ancestor::div[@class='ag-header-row']/following-sibling::div//input[contains(@class,'border rounded bg-white w-100 ng')]")
 	public WebElement idTab;
 	
@@ -312,10 +315,9 @@ public class Object_AppCenterPage extends BaseClass{
 	public WebElement source;
 	
 	
-	
-		
-	//div[normalize-space()='DS STRING TEXT 1001']//input[contains(@class,'colDiv p-2 rounded')]
-	//div[normalize-space()='DS STRING TEXT 1002 Label']//input[contains(@class,'colDiv p-2 rounded')]
+	@FindBy(xpath = "//span[normalize-space()='Onboarding Status']/following-sibling::span[starts-with(@class,'badge')]")
+	public WebElement onBoardingStatus;
+
 	
 	@FindBy(xpath = "//span[@class='slider']")
 	public WebElement recoredHeader;

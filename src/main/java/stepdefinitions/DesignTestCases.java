@@ -81,12 +81,37 @@ public class DesignTestCases extends BaseClass{
 	public void user_navigates_to_File_setting_page() {
 		
 	}
- 
+//	@Then("^Add record  \"(.*?)\" to stateModel data service$")
+//	public void add__record_for_stateModel(String data) throws Exception {
+//		design.addDataForstateModel(data);
+//	}
+	
+	@Then("^Add record \"(.*?)\" to stateModel data service$")
+	public void add_record_to_stateModel_data_service(String data) throws MalformedURLException, InterruptedException {
+		design.addRecordForstateModel(data);
+	}
+	
+	@And("^Verify \"(.*?)\" is available$")
+	public void verify_NextState(String nextState) throws InterruptedException {
+	   design.userNextStateAvailable(nextState);		
+	}
+	
+	
+	@And("^Verify \"(.*?)\" is not available$")
+	public void verify_InvalidState(String invalidState) throws InterruptedException {
+	  // design.verifyInvalidState(invalidState);		
+	}
+	
+	@And("^update \"(.*?)\" and save the record$")
+	public void updateRecordStateModel(String updateState) throws InterruptedException, MalformedURLException {
+	   design.updateRecordForStateModel(updateState);		
+	}
 	
 	@Given("User navigate to column mapping page")
 	public void user_navigates_to_column_mapping_page() {
 	   design.userNavigateToColumnMappingPage();		
 	}
+	
 	   
 	@Then("^Map \"(.*?)\" to the import$")
 	public void map_rowsToSkipFromBottom(String jsonFile) throws MalformedURLException {

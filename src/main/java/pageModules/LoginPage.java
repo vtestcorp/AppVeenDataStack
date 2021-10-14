@@ -242,13 +242,6 @@ public class LoginPage extends BaseClass{
 		   applyWait.waitForElementToBeClickable(ap.calender, 30).click();
 		   applyWait.waitForElementToBeClickable(ap.date, 30).click();
 	   }
-//	   else if(attributeType.equals("List of values"))
-//	   {
-//		   applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
-//		   applyWait.waitForElementToBeClickable(ap.listOfValue, 30).click();
-//	   }
-	   
-	   
 	}
 	
 	public void clickOnExperienceTab() throws InterruptedException {

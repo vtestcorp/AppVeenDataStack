@@ -1,0 +1,23 @@
+{
+  "_metadata": {
+    "deleted": false,
+    "lastUpdated": "2021-10-12T07:49:07.633Z",
+    "version": {
+      "release": "1.1.2",
+      "document": 1
+    },
+    "createdAt": "2021-10-12T07:49:07.633Z"
+  },
+  "_id": "STR1001",
+  "name": "Ram",
+  "dob": {
+    "rawData": "1995-11-30T10:20:30Z",
+    "tzData": "1995-11-20T00:00:00Z",
+    "tzInfo": "Zulu",
+    "utc": "1995-01-11T00:00:00.000Z",
+    "unix": 789782400000
+  },
+  "salary": 100000,
+  "onboardingStatus": "Approved",
+  "__v": 0
+}

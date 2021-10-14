@@ -12,12 +12,12 @@ Examples:
 |vtest@appveen.com|123123123|
 
 Scenario: Delete data service
-	Given Data service "string_StateModel" exists
+	Given Data service "stringStateModel" exists
 	Then Remove the data service
 
 Scenario: Create data service
-	Given Data service "string_StateModel" does not exist
-	Then Create new data service "string_StateModel" for State_Model 
+	Given Data service "stringStateModel" does not exist
+	Then Create new data service "stringStateModel" for State_Model 
 	
 
 Scenario Outline: Add Attributes to data service
@@ -73,49 +73,50 @@ And Set Current State with from state to next state
 |Deffered|Open|
 Then Save and Deploy data service
 
-#Scenario Outline: Assign to Appcenter Group
-#	Then Group "string_StateModel" does not exist
-#	Then Create new group "string_StateModel" 
-#	And Assign appcenter permissions for "string_StateModel" dataservice to "<user>"
-#	
-#	Examples:
-#	|user|
-#	|maker@appveen.com|
-#
-#
-#Scenario: Log out of Author
-#	Given User logged into Author
-#	Then User logs out of Author
-#
-#@AppCenter
-#Scenario Outline: Log into AppCenter
-#	Given User navigate to AppCenter login page
-#	And User enters "<username>" and "<password>" in AppCenter login page
-#	And Verify User has Logged in Successfully 
-#Examples:
-#|username|password|
-#|maker@appveen.com|123123123|
-#
-#
+Scenario Outline: Assign to Appcenter Group
+	Then Group "stringStateModel" does not exist
+	Then Create new group "stringStateModel" 
+	And Assign appcenter permissions for "stringStateModel" dataservice to "<user>"
+	
+	Examples:
+	|user|
+	|vtest@appveen.com|
+
+
+Scenario: Log out of Author
+	Given User logged into Author
+	Then User logs out of Author
+
+@AppCenter
+Scenario Outline: Log into AppCenter
+	Given User navigate to AppCenter login page
+	And User enters "<username>" and "<password>" in AppCenter login page
+	And Verify User has Logged in Successfully 
+Examples:
+|username|password|
+|vtest@appveen.com|123123123|
+
+
  #INSERT/UPDATE
 #Scenario Outline: Add data to data service
-#	Given Data service "string_StateModel"
+#	Given Data service "stringStateModel"
 #	Then Add data to the stateModel data service
 #	And Verify the State is "<Current State>"
 #	Examples:
-#	|Current State|Open|
+#	|Current State|
+#	|Open|
 	
-#Scenario Outline: Edit record to data service and verify available next states
-#	Given Data service "string_StateModel"
-#	Then Add record "<data>" to the data service
-#	And Verify "<Next State>" is available
-#	And Verify "<Invalid State>" is not available
-#	And update "<Update State>" and save the record
-#Examples:
-#|data|Next State|Invalid State|Update state|
-#|{"_id": "STR1001","dsStringListOfValues1001": "LIST 1","dsStringListOfValues1002": " ","dsStringListOfValues1003": "LIST 1","dsStringListOfValues1004": "LIST 1","dsStringListOfValues1005": "LIST 1","dsStringListOfValues1007": "LIST 1", "dsStringListOfValues1008": "LIST 1", "dsStringListOfValues1010": "LIST 1",  "dsStringListOfValues1013": "LIST 1", "dsStringListOfValues1014": " ", "dsStringListOfValues1015": " ",  "dsStringListOfValues1018": " ", "dsStringListOfValues1020":"LIST 1"}|In Progress,Rejected,Deferred|Closed,Ready for QA|Deferred|
-#
-#
+Scenario Outline: Edit record to data service and verify available next states
+	Given Data service "stringStateModel"
+	Then Add record "<data>" to stateModel data service
+	And Verify "<Next State>" is available
+	And Verify "<Invalid State>" is not available
+	And update "<Update State>" and save the record
+Examples:
+|data|Next State|Invalid State|Update State|
+|{"_id": "STR1002","name": "Shyam","dob": "2000-05-21T10:20:30Z", "salary": 400000,"onboardingStatus": "Rejected"}|In Progress,Rejected,Deffered,Config Issue,Cannot Reproduce,Working as Expected|Closed,Ready for QA|Deffered|
+
+
 #Scenario Outline: Edit record to data service
 #	Given Data service "number_ListOfValue"
 #	Then Add record "<data>" to the data service

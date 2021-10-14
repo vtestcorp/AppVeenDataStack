@@ -61,6 +61,7 @@ public class Module_DesignTestCases extends BaseClass{
 	
 	
 	public static ArrayList<String> groups;
+	public static List<String> availableStateList;
 	
 	
 	
@@ -1761,5 +1762,107 @@ else {
 }
 	
 }
-	}
+
+
+
+public void addRecordForstateModel(String data) throws MalformedURLException, InterruptedException {
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
+		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		applyWait.applyExplicitWaitsUntilElementVisible(acp.groupTextBoxes, 10);
+		JSONObject jsonObject = JsonUtils.fetchJSONObject(data);
+		for (int j = 1; j <= acp.groupTextBoxes.size(); j++) {
+			System.out.println("=========" + acp.groupTextBoxes.size());
+			WebElement textBox = driver.findElement(By.xpath("(//*[contains(@class,'form-control') or @type='checkbox' or @type='file' or contains(@class,'btn btn-link mr-2 p-0') or contains(@class,'searchInput')])["+j+"]"));
+			if (textBox.isEnabled()) {
+				String id1 = textBox.getAttribute("id");
+			   String jsonValue = JsonPath.read(data, "$."+id1+"").toString();
+			   
+
+				if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
+					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(jsonValue);	
+				}
+				else if (textBox.getAttribute("type").equals("number")) {
+					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(jsonValue);
+				}
+				else if(textBox.getAttribute("type").equals("submit")){
+					applyWait.waitForElementToBeClickable(textBox, 30).click();
+					String[] part = jsonValue.split("T");
+					 System.out.println(part[0] +"_____________"+part[1]);
+				     String year =  part[0].split("-")[0];
+				     System.out.println(year);
+				     String month = part[0].split("-")[1];
+				     System.out.println(month);
+				     int i=Integer.parseInt(month)-1;
+                     String m = i+"";			    
+				     String date = part[0].split("-")[2];
+				     System.out.println(date);
+				     
+				     
+				     String time = part[1]; //10:20:30Z
+				     System.out.println(time);
+				     String hour = time.split(":")[0];
+				     System.out.println(hour);
+				     String min = time.split(":")[1];
+				     System.out.println(min);
+				     String sec = time.split(":")[2].replace("Z", "");
+				     System.out.println(sec);
+					
+				     dropdown.selectByValue(acp.yearDropDown,year);
+				     Thread.sleep(1000);
+				     
+				     dropdown.selectByIndex(acp.monthDropDown, i);
+				     
+				     WebElement date1 = driver.findElement(By.xpath("//span[@id='_day' and not(contains(@class,'disabled'))]//small[normalize-space()='"+date+"']"));
+                     date1.click();
+                             
+                     applyWait.waitForElementToBeClickable(acp.doneButton, 30).click();
+                     
+				}
+				
+			}
+			
+		}
+		applyWait.waitForElementToBeClickable(acp.save, 30).click();
+}
+
+
+
+			public void userNextStateAvailable(String nextState) throws InterruptedException {
+				applyWait.waitForElementToBeClickable(acp.record, 30).click();
+				applyWait.waitForElementToBeClickable(acp.edit, 30).click();
+				Thread.sleep(1000);
+				applyWait.waitForElementToBeClickable(acp.saveDropDown, 30).click();
+				System.out.println("=================" + nextState);
+				String[] st = nextState.split(",");
+				List<String> al =  Arrays.asList(st);
+				System.out.println("ArrayList is : " +al);
+				List<WebElement> stateList = driver.findElements(By.xpath("//button[@class='dropdown-item state-model-option ng-star-inserted']"));
+				availableStateList = new ArrayList<>();
+				for (int i = 0; i < stateList.size(); i++) {
+					String value = stateList.get(i).getText();
+					availableStateList.add(value);
+				}
+				System.out.println("Expected List :  " + availableStateList);
+				Assert.assertEquals(availableStateList,  al);
+								
+				}
+
+
+
+			public void verifyInvalidState(String invalidState) {
+				System.out.println("Invalid states are : "+ invalidState);
+				String[] invalid = invalidState.split(",");
+				List<String> ls = Arrays.asList(invalid);
+				Assert.assertEquals(availableStateList, invalidState);
+				
+				
+			}
+
+			public void updateRecordForStateModel(String updateState) throws MalformedURLException, InterruptedException {
+				Thread.sleep(5000);
+				driver.findElement(By.xpath("//button[contains(@class,'dropdown-item state-model-option')][normalize-space()='"+updateState+"']")).click();
+				applyWait.waitForElementToBeClickable(acp.save, 30).click();
+
+			}
+			}
 
