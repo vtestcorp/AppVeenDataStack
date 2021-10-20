@@ -7,6 +7,7 @@ import com.aventstack.extentreports.ExtentTest;
 
 import base.BaseClass;
 import helperMethods.WaitTypes;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -99,7 +100,7 @@ public class DesignTestCases extends BaseClass{
 	
 	@And("^Verify \"(.*?)\" is not available$")
 	public void verify_InvalidState(String invalidState) throws InterruptedException {
-	  // design.verifyInvalidState(invalidState);		
+	   design.verifyInvalidState(invalidState);		
 	}
 	
 	@And("^update \"(.*?)\" and save the record$")
@@ -107,11 +108,26 @@ public class DesignTestCases extends BaseClass{
 	   design.updateRecordForStateModel(updateState);		
 	}
 	
-	@Given("User navigate to column mapping page")
-	public void user_navigates_to_column_mapping_page() {
+	@Then("User navigate to column mapping page")
+	public void user_navigates_to_column_mapping_page() throws MalformedURLException, InterruptedException {
 	   design.userNavigateToColumnMappingPage();		
 	}
 	
+	@Then("User navigate to validating record")
+	public void user_navigates_to_validate_record() throws MalformedURLException, InterruptedException {
+	   design.userNavigateToValidateRecord();		
+	}
+	
+	
+	@Given("Verify Valid record \"(.*?)\" is correct")
+	public void verify_valid_record(String count) throws MalformedURLException, InterruptedException {
+	   design.verifyValidRecord(count);		
+	}
+	
+	@Given("Select \"(.*?)\" to be updated")
+	public void select_conflict_record(String conflictRecord) throws MalformedURLException, InterruptedException {
+	   design.selectConflictRecords(conflictRecord);		
+	}
 	   
 	@Then("^Map \"(.*?)\" to the import$")
 	public void map_rowsToSkipFromBottom(String jsonFile) throws MalformedURLException {

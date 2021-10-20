@@ -50,17 +50,6 @@ Examples:
 |Re-open|
 |Ready for Release|
 
-#Scenario Outline: Create State for State Model
-#And Set Current State "<from state>" and "<next state>" and Save
-#Examples:
-#|from state|next state|
-#|Open|In Progress,Rejected,Deffered,Config Issue,Cannot Reproduce,Working as Expected|
-#|In Progress|Ready for QA,Open|
-#|Ready for QA|Ready for Release,Re-open|
-#|Re-open|In Progress|
-#|Ready for Release|Closed|
-#|Rejected|Open|
-#|Deffered|Open|
 
 Scenario: Create State for State Model
 And Set Current State with from state to next state
@@ -98,13 +87,13 @@ Examples:
 
 
  #INSERT/UPDATE
-#Scenario Outline: Add data to data service
-#	Given Data service "stringStateModel"
-#	Then Add data to the stateModel data service
-#	And Verify the State is "<Current State>"
-#	Examples:
-#	|Current State|
-#	|Open|
+Scenario Outline: Add data to data service
+	Given Data service "stringStateModel"
+	Then Add data to the stateModel data service
+	And Verify the State is "<Current State>"
+	Examples:
+	|Current State|
+	|Open|
 	
 Scenario Outline: Edit record to data service and verify available next states
 	Given Data service "stringStateModel"
@@ -117,21 +106,13 @@ Examples:
 |{"_id": "STR1002","name": "Shyam","dob": "2000-05-21T10:20:30Z", "salary": 400000,"onboardingStatus": "Rejected"}|In Progress,Rejected,Deffered,Config Issue,Cannot Reproduce,Working as Expected|Closed,Ready for QA|Deffered|
 
 
-#Scenario Outline: Edit record to data service
-#	Given Data service "number_ListOfValue"
-#	Then Add record "<data>" to the data service
-#	And update "<Next State>" and save the record
-#Examples:
-#|data|Next State|
-#|{"_id":"NUM1001","dsNumberListOfValues1001": 123,"dsNumberListOfValues1002": "","dsNumberListOfValues1003": 4569,"dsNumberListOfValues1004": 23,"dsNumberListOfValues1005": 123,"dsNumberListOfValues1007":123, "dsNumberListOfValues1008": 211, "dsNumberListOfValues1010": 4569,  "dsNumberListOfValues1013": 123, "dsNumberListOfValues1014": "", "dsNumberListOfValues1015": "",  "dsNumberListOfValues1016": 123,"dsNumberListOfValues1017":"","dsNumberListOfValues1018":"",  "dsNumberListOfValues1020":4569}|In Progress|
-#
-#Scenario Outline: Fetch record from the data service
-#	Given Data service "number_ListOfValue"
-#	Then Fetch record "<id>" from the data service
-#	And Match it to "<data>"
-#Examples:
-#|id|data|
-#|NUM1001|{"_id": "NUM1001","dsNumberListOfValues1001": 123,"dsNumberListOfValues1002": 2,"dsNumberListOfValues1003": 123,"dsNumberListOfValues1004": 123,"dsNumberListOfValues1005": 501,"dsNumberListOfValues1007": 123, "dsNumberListOfValues1008": 211, "dsNumberListOfValues1010": 123,  "dsNumberListOfValues1013": 123, "dsNumberListOfValues1014": 4569, "dsNumberListOfValues1015": 211, "dsNumberListOfValues1018": 456,  "dsNumberListOfValues1020": 4569, "Onboarding Status":"In Progress"}|
+Scenario Outline: Fetch record from the data service
+	Given Data service "stringStateModel"
+	Then Fetch record "<id>" from the data service
+	And Match it to "<data>" Date Type
+Examples:
+|id|data|
+|STR1001|{"_id": "STR1001","name": "Ram","dob": "Thursday, November 30, 1995 (Zulu)", "salary": 100000}|
 
-#Scenario: Log out of App Center
-#	Given User log out from AppCenter
+Scenario: Log out of App Center
+	Given User log out from AppCenter

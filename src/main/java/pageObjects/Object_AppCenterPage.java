@@ -334,5 +334,10 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath = "(//div[@class='content'])[1]")
 	public WebElement notification_body;
 	
+	@FindBy(xpath = "//span[normalize-space()='Click here']//input")
+	public WebElement clickHere;
+		
+	@FindBy(xpath = "//span[starts-with(text(),'Valid Records')]/following-sibling::span//u")
+	public WebElement validRecords;
 	
 }

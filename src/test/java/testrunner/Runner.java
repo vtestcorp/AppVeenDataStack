@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 //@CucumberOptions(features="C:\\Users\\Lenovo\\Downloads\\sentient\\test",
-@CucumberOptions(features="./testcases/statemodel (2).feature",
+@CucumberOptions(features="./importFile/string_Text.feature",
 				dryRun=false,
 	        	glue={"stepdefinitions","cucumberHooks"},
         		monochrome=true,

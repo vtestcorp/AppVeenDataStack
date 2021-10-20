@@ -42,6 +42,7 @@ import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
 import helperMethods.ScrollTypes;
 import helperMethods.WaitTypes;
+import io.cucumber.datatable.DataTable;
 import pageObjects.Object_AppCenterPage;
 import pageObjects.Object_AuthorPage;
 import pageObjects.Object_GroupPage;
@@ -808,21 +809,35 @@ public class Module_DesignTestCases extends BaseClass{
 		
 		}
 	   
-	   public void userNavigateToColumnMappingPage() {
+	   public void userNavigateToColumnMappingPage() throws MalformedURLException, InterruptedException {
+		   Thread.sleep(1000);
 		   applyWait.waitForElementToBeClickable(acp.next, 30).click();
-	   }
+		  }
+	   
+
+		public void userNavigateToValidateRecord() throws InterruptedException {
+			 Thread.sleep(1000);
+			 applyWait.waitForElementToBeClickable(acp.here, 30).click();
+			 Thread.sleep(1000);
+			 applyWait.waitForElementToBeClickable(acp.notification, 30).click();
+			// applyWait.waitForElementToBeClickable(acp.notification_body, 10).click();
+			 Thread.sleep(500);
+		//	 applyWait.waitForElementToBeClickable(acp.next, 30).click();
+		}
 	   
 	  
 	   
 	   public void mapColumnToValue(String destination, String source) throws InterruptedException {
-		   Thread.sleep(2000);
-		   WebElement dest=driver.findElement(By.xpath("//div[normalize-space()='"+destination+"']//input[contains(@class,'colDiv')]"));
+		   By src = By.xpath("//div[normalize-space()='"+destination+"']//input[contains(@class,'colDiv')]");
+		 //  Thread.sleep(2000);
+		   applyWaitForDynamicWebElement(src, 10);
+		   WebElement dest=driver.findElement(src);
 		 //  WebElement dest=driver.findElement(By.xpath("//div[normalize-space()='"+destination+"']//input[starts-with(@class,'colDiv')]"));
-		   //   WebElement src=driver.findElement(By.xpath("//div[normalize-space()='"+source+"' and contains(@class,'name-width')]//ancestor::div[contains(@class,'fileKeyContainer')]"));
+		//   WebElement src=driver.findElement(By.xpath("//div[normalize-space()='"+source+"' and contains(@class,'name-width')]//ancestor::div[contains(@class,'fileKeyContainer')]"));
 		   dest.clear();
-		   dest.sendKeys(source);
-		  Thread.sleep(1000);
-	//	  dest.sendKeys(Keys.TAB);
+		   dest.sendKeys(source,Keys.TAB.toString());
+		   Thread.sleep(1000);
+		  
 		 
 //	   Actions action = new Actions(driver);
 //		   action.clickAndHold(src).build();
@@ -997,7 +1012,9 @@ public class Module_DesignTestCases extends BaseClass{
 		int q=1;
 		applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPage, 10);
 		for(WebElement attribute : acp.attributesOnViewPage) {
+			
 			WebElement value=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])["+q+"]"));
+			Thread.sleep(1000);
 			WebElement key=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])["+q+"]/ancestor::odp-view-separator/preceding-sibling::div//label"));
 			
 			String a=key.getAttribute("for");
@@ -1853,16 +1870,35 @@ public void addRecordForstateModel(String data) throws MalformedURLException, In
 				System.out.println("Invalid states are : "+ invalidState);
 				String[] invalid = invalidState.split(",");
 				List<String> ls = Arrays.asList(invalid);
-				Assert.assertEquals(availableStateList, invalidState);
-				
-				
+				ArrayList<String> demo = new ArrayList<>(availableStateList);
+				demo.retainAll(ls);
+				System.out.println(demo);
+				if(!demo.isEmpty())
+				{
+					Assert.assertTrue(false);
+				}
 			}
 
 			public void updateRecordForStateModel(String updateState) throws MalformedURLException, InterruptedException {
 				Thread.sleep(5000);
 				driver.findElement(By.xpath("//button[contains(@class,'dropdown-item state-model-option')][normalize-space()='"+updateState+"']")).click();
-				applyWait.waitForElementToBeClickable(acp.save, 30).click();
-
+			//	applyWait.waitForElementToBeClickable(acp.save, 30).click();
 			}
+
+
+			public void verifyValidRecord(String count) {
+				String actual = applyWait.waitforElementToBeDisplayed(acp.validRecords, 30).getText();
+				System.out.println(actual);
+				Assert.assertEquals(count, actual);
+			}
+
+
+
+			public void selectConflictRecords(String conflictRecord) {
+				
+			}
+
+
+
 			}
 
