@@ -805,7 +805,6 @@ public class Module_DesignTestCases extends BaseClass{
 			dropdown.selectByVisibleText(acp.sheetToReadDropdown, sheetName);
 			applyWait.waitForElementToBeClickable(acp.sheetTopRow, 10).sendKeys(rowValue);
 			applyWait.waitForElementToBeClickable(acp.sheetBottomRow, 10).sendKeys(bottomRow);
-		//	applyWait.waitForElementToBeClickable(acp.recoredHeader, 10).click();
 		
 		}
 	   
@@ -816,11 +815,10 @@ public class Module_DesignTestCases extends BaseClass{
 	   
 
 		public void userNavigateToValidateRecord() throws InterruptedException {
-			 Thread.sleep(1000);
 			 applyWait.waitForElementToBeClickable(acp.here, 30).click();
 			 Thread.sleep(1000);
 			 applyWait.waitForElementToBeClickable(acp.notification, 30).click();
-			// applyWait.waitForElementToBeClickable(acp.notification_body, 10).click();
+			 applyWait.waitForElementToBeClickable(acp.notification_body, 10).click();
 			 Thread.sleep(500);
 		//	 applyWait.waitForElementToBeClickable(acp.next, 30).click();
 		}
@@ -829,41 +827,12 @@ public class Module_DesignTestCases extends BaseClass{
 	   
 	   public void mapColumnToValue(String destination, String source) throws InterruptedException {
 		   By src = By.xpath("//div[normalize-space()='"+destination+"']//input[contains(@class,'colDiv')]");
-		 //  Thread.sleep(2000);
 		   applyWaitForDynamicWebElement(src, 10);
 		   WebElement dest=driver.findElement(src);
-		 //  WebElement dest=driver.findElement(By.xpath("//div[normalize-space()='"+destination+"']//input[starts-with(@class,'colDiv')]"));
-		//   WebElement src=driver.findElement(By.xpath("//div[normalize-space()='"+source+"' and contains(@class,'name-width')]//ancestor::div[contains(@class,'fileKeyContainer')]"));
 		   dest.clear();
 		   dest.sendKeys(source,Keys.TAB.toString());
 		   Thread.sleep(1000);
-		  
-		 
-//	   Actions action = new Actions(driver);
-//		   action.clickAndHold(src).build();
-//		   Thread.sleep(5000);
-//		   action.release();
-//		   Thread.sleep(5000);
-//		   action.moveToElement(dest).build();
-//		   Thread.sleep(5000);
-//	//	   action.dragAndDrop().perform();
-//		   action.release();
-////		   Thread.sleep(5000);
-//		   
-//		   WebElement dest1=driver.findElement(By.xpath("//odp-column-mapping/div/div/div[normalize-space()='DS STRING TEXT 1003']"));
-//		   WebElement src1=driver.findElement(By.xpath("//div[contains(@class,'d-flex ')][normalize-space()='D']"));
-//		  
-//		   Actions action1 = new Actions(driver);
-//		  
-//		   action1.clickAndHold(src1);
-//		   action1.moveToElement(dest1);
-//		   action1.release(src1);
-//		   action1.build();
-//		   Thread.sleep(2000);
-//		   action1.perform();
-//		   
-//		
-	}
+}
 
 
 	public void updateRecord(String id, String jsonFile) throws Exception {
@@ -1000,10 +969,6 @@ public class Module_DesignTestCases extends BaseClass{
 
 	public void matchToRecord(String jsonFile) throws Exception {
 		
-		////odp-view-control/div/div/label[starts-with(@class,'label-width')]
-		
-		//label[@for='dsLocation1003']/parent::div/following-sibling::odp-view-separator/descendant::div[5]
-		
 		LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
 		applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
 		WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
@@ -1034,7 +999,6 @@ public class Module_DesignTestCases extends BaseClass{
 		
 	  MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
 	    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
-//	    System.err.println(entriesDiffering);
 	    Assert.assertTrue(actualData.equals(expectedData));
 	}
 
@@ -1064,7 +1028,6 @@ public class Module_DesignTestCases extends BaseClass{
 		
 	    MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
 	    Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
-	    System.err.println(entriesDiffering);
 	    Assert.assertTrue(actualData.equals(expectedData));
 	}
 }
@@ -1737,7 +1700,6 @@ else {
 	System.err.println("Data is not matching.Unmatched data are as follows :");
   MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
     Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
-    System.err.println(entriesDiffering);
     Assert.assertTrue(actualData.equals(expectedData));
 }
 }
@@ -1774,7 +1736,6 @@ else {
 	
   MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
     Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
-    System.err.println(entriesDiffering);
     Assert.assertTrue(actualData.equals(expectedData));
 }
 	
@@ -1788,7 +1749,6 @@ public void addRecordForstateModel(String data) throws MalformedURLException, In
 		applyWait.applyExplicitWaitsUntilElementVisible(acp.groupTextBoxes, 10);
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(data);
 		for (int j = 1; j <= acp.groupTextBoxes.size(); j++) {
-			System.out.println("=========" + acp.groupTextBoxes.size());
 			WebElement textBox = driver.findElement(By.xpath("(//*[contains(@class,'form-control') or @type='checkbox' or @type='file' or contains(@class,'btn btn-link mr-2 p-0') or contains(@class,'searchInput')])["+j+"]"));
 			if (textBox.isEnabled()) {
 				String id1 = textBox.getAttribute("id");
@@ -1804,19 +1764,15 @@ public void addRecordForstateModel(String data) throws MalformedURLException, In
 				else if(textBox.getAttribute("type").equals("submit")){
 					applyWait.waitForElementToBeClickable(textBox, 30).click();
 					String[] part = jsonValue.split("T");
-					 System.out.println(part[0] +"_____________"+part[1]);
 				     String year =  part[0].split("-")[0];
-				     System.out.println(year);
 				     String month = part[0].split("-")[1];
-				     System.out.println(month);
 				     int i=Integer.parseInt(month)-1;
                      String m = i+"";			    
 				     String date = part[0].split("-")[2];
 				     System.out.println(date);
 				     
 				     
-				     String time = part[1]; //10:20:30Z
-				     System.out.println(time);
+				     String time = part[1]; 
 				     String hour = time.split(":")[0];
 				     System.out.println(hour);
 				     String min = time.split(":")[1];
@@ -1849,7 +1805,6 @@ public void addRecordForstateModel(String data) throws MalformedURLException, In
 				applyWait.waitForElementToBeClickable(acp.edit, 30).click();
 				Thread.sleep(1000);
 				applyWait.waitForElementToBeClickable(acp.saveDropDown, 30).click();
-				System.out.println("=================" + nextState);
 				String[] st = nextState.split(",");
 				List<String> al =  Arrays.asList(st);
 				System.out.println("ArrayList is : " +al);
@@ -1867,12 +1822,10 @@ public void addRecordForstateModel(String data) throws MalformedURLException, In
 
 
 			public void verifyInvalidState(String invalidState) {
-				System.out.println("Invalid states are : "+ invalidState);
 				String[] invalid = invalidState.split(",");
 				List<String> ls = Arrays.asList(invalid);
 				ArrayList<String> demo = new ArrayList<>(availableStateList);
 				demo.retainAll(ls);
-				System.out.println(demo);
 				if(!demo.isEmpty())
 				{
 					Assert.assertTrue(false);
@@ -1882,13 +1835,11 @@ public void addRecordForstateModel(String data) throws MalformedURLException, In
 			public void updateRecordForStateModel(String updateState) throws MalformedURLException, InterruptedException {
 				Thread.sleep(5000);
 				driver.findElement(By.xpath("//button[contains(@class,'dropdown-item state-model-option')][normalize-space()='"+updateState+"']")).click();
-			//	applyWait.waitForElementToBeClickable(acp.save, 30).click();
 			}
 
 
 			public void verifyValidRecord(String count) {
 				String actual = applyWait.waitforElementToBeDisplayed(acp.validRecords, 30).getText();
-				System.out.println(actual);
 				Assert.assertEquals(count, actual);
 			}
 

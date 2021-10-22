@@ -19,9 +19,7 @@ public class Object_AuthorPage extends BaseClass{
 	}
 //	WebDriver driver;
 	
-
-	
-	@FindBy(xpath="//div[normalize-space()='Sign in with your credentials']")
+    @FindBy(xpath="//div[normalize-space()='Sign in with your credentials']")
 	public WebElement signIn;
 	
 	@FindBy(xpath="//input[@id='username']")

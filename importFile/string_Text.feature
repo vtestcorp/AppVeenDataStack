@@ -53,7 +53,7 @@ Scenario Outline: Provide File settings for importing
 	Then User navigate to column mapping page
 	Examples:
 	|file_settings|
-	|{"sheetToRead":"string_Text","rowsToSkipFromTop":"4","rowsToSkipFromBottom":"7","markFirstRecordAsHeader":"True"}|
+	|{"sheetToRead":"string_Text","rowsToSkipFromTop":"5","rowsToSkipFromBottom":"7","markFirstRecordAsHeader":"True"}|
 	
 	Scenario Outline: Complete column mapping of the file to DS
 	Then Map column "<ds_attribute>" to the attributes "<column_names>"
@@ -79,7 +79,7 @@ Scenario Outline: Provide File settings for importing
 #	|DS STRING TEXT 1017|RR|
 	|DS STRING TEXT 1018|Num1018|
 #	|DS STRING TEXT 1019|Q|
-	|DS STRING TEXT 1020|Num1020|
+	|DS STRING TEXT 1020|NUM|
 	|DS STRING TEXT 1021|Num1021|
 	|DS STRING TEXT 1022|Num1022|
 	|DS STRING TEXT 1023|Num1023|

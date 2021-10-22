@@ -385,7 +385,6 @@ public class LoginAppCenter extends BaseClass {
 				
 				applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 				Thread.sleep(1000);
-			//	applyExplicitWaitsUntilElementVisible(acp.buttons, 10);
 				List<WebElement> buttons = acp.buttons;
 				String filePath=path + "\\testData\\" + data_Service + ".data.json";
 				JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
@@ -420,7 +419,6 @@ public class LoginAppCenter extends BaseClass {
 			public void userEnterDataForRichText() throws InterruptedException {
 				applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 				Thread.sleep(5000);
-			//	applyExplicitWaitsUntilElementVisible(acp.richtextBoxes, 10);
 				List<WebElement> textBoxes = acp.richtextBoxes;
 				String filePath=path + "\\testData\\" + data_Service + ".data.json";
 				JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
@@ -499,7 +497,6 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
 		List<WebElement> textBoxes = driver.findElements(By.xpath("//input[@class='invisible position-absolute' or @id='_id']"));
-		String path = System.getProperty("user.dir");
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 		
@@ -528,7 +525,6 @@ public class LoginAppCenter extends BaseClass {
 	
 	public void userEnterDataforCollection() throws InterruptedException {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-		String path = System.getProperty("user.dir");
 		JSONObject jsonObject = JsonUtils.getJSONObject(path + "\\testData\\" + data_Service + ".data.json");
          Thread.sleep(5000);
 		List<WebElement> addNew = driver.findElements(By.xpath("//*[@id='_id' or text()='Add new']"));
@@ -546,7 +542,6 @@ public class LoginAppCenter extends BaseClass {
 					}
 					else {
 					 id1 = "user"+k;
-					// JSONArray arr=jsonObject.get(id1);
 					for(int i=0;i<3;i++)
 					{
 						textBox.click();
@@ -732,7 +727,6 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,20);
 		List<WebElement> textBoxes = acp.dateFields;
-		String path = System.getProperty("user.dir");
 		String filePath=path + "\\testData\\" + data_Service + ".data.json";
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 		
@@ -912,10 +906,8 @@ public class LoginAppCenter extends BaseClass {
 			WebElement textBox = driver.findElement(By.xpath("(//*[contains(@class,'form-control') or @type='checkbox' or @type='file' or contains(@class,'btn btn-link mr-2 p-0') or contains(@class,'searchInput')])[" + j + "]"));
 			if (textBox.isEnabled()) {
 				String id1 = textBox.getAttribute("id");
-			//	System.out.println("textbox  id : "+id1);
 				String value1=JsonUtils.getJsonValue(filePath,id1);
 				String type = textBox.getAttribute("type");
-				System.out.println("Type of box : " + type);
 				
 				if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
 					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1);	
@@ -929,59 +921,22 @@ public class LoginAppCenter extends BaseClass {
 					JSONObject js = (JSONObject) jsonObject.get(id1);
 					 String value = (String) js.get("rawData");
 					 String[] part = value.split("T");
-				//	String Calender = JsonPath.read(path,"$.dob.rawData").toString(); //1995-01-11T00:00:00Z
-				 //    System.out.println(Calender);
-				     
-				 //    Calender = "1995-01-11T10:20:30Z";
-				 //    String[] part = Calender.split("T");
-					 
-					 //1995-11-20
-				     System.out.println(part[0] +"_____________"+part[1]);
 				     String year =  part[0].split("-")[0];
-				     System.out.println(year);
 				     String month = part[0].split("-")[1];
-				     System.out.println(month);
 				     int i=Integer.parseInt(month)-1;
                      String m = i+"";			    
 				     String date = part[0].split("-")[2];
-				     System.out.println(date);
-				     
-				     
-				     String time = part[1]; //10:20:30Z
-				     System.out.println(time);
+  
+		             String time = part[1]; 
 				     String hour = time.split(":")[0];
-				     System.out.println(hour);
 				     String min = time.split(":")[1];
-				     System.out.println(min);
 				     String sec = time.split(":")[2].replace("Z", "");
-				     System.out.println(sec);
-					
-//				     HashMap<String, String> map = new HashMap<String, String>();
-//				     			map.put("1", "January");
-//				     			map.put("2", "February");
-//				     			map.put("3", "March");
-//				     			map.put("4", "April");
-//				     			map.put("5", "May");
-//				     			map.put("6", "June");
-//				     			map.put("7", "July");
-//				     			map.put("8", "August");
-//				     			map.put("9", "September");
-//				     			map.put("10", "October");
-//				     			map.put("11", "November");
-//				     			map.put("12", "December");
-				     			
-			//	     dropdown.selectByValue(acp.yearDropDown,year);
-			//	     Thread.sleep(1000);
-				     
-			//	     dropdown.selectByValue(acp.monthDropDown, m);
-				     
+    
 				     
 				     dropdown.selectByValue(acp.yearDropDown,year);
 				     Thread.sleep(1000);
 				     
 				     dropdown.selectByIndex(acp.monthDropDown, i);
-				  //   dropdown.selectByVisibleText(acp.monthDropDown, map.get(month));
-				   //  System.out.println("Month is : " + map.get(month) + "======" +map.size());
                      WebElement date1 = driver.findElement(By.xpath("//span[@id='_day' and not(contains(@class,'disabled'))]//small[normalize-space()='"+date+"']"));
                      date1.click();
                              
@@ -1001,7 +956,6 @@ public class LoginAppCenter extends BaseClass {
 		applyExplicitWaitsUntilElementVisible(acp.onBoardingStatus,10);
 		WebElement expected = acp.onBoardingStatus;
 		String value = expected.getText();
-		System.out.println(value);
 		Assert.assertEquals(value, currentState);
 	}
 

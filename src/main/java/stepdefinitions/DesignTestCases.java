@@ -119,12 +119,12 @@ public class DesignTestCases extends BaseClass{
 	}
 	
 	
-	@Given("Verify Valid record \"(.*?)\" is correct")
+	@Given("^Verify Valid record \"(.*?)\" is correct$")
 	public void verify_valid_record(String count) throws MalformedURLException, InterruptedException {
 	   design.verifyValidRecord(count);		
 	}
 	
-	@Given("Select \"(.*?)\" to be updated")
+	@Given("^Select \"(.*?)\" to be updated$")
 	public void select_conflict_record(String conflictRecord) throws MalformedURLException, InterruptedException {
 	   design.selectConflictRecords(conflictRecord);		
 	}

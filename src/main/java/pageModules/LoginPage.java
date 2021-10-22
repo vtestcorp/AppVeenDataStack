@@ -1415,28 +1415,11 @@ public class LoginPage extends BaseClass{
 						}
 
 
-//						public void setStates(String fromState, String nextState) throws InterruptedException {
-//							String[] addNextStates = nextState.split(","); //[In Progress, Rejected, Deferred, Config Issue, Cannot Reproduce, Working as Expected]
-//							WebElement setState =  driver.findElement(By.xpath("//div[normalize-space()='"+fromState+"' and contains(@class,'state-name')]/parent::div[starts-with(@class,'col-3')]/following-sibling::div//input"));
-//							for (int i = 0; i < addNextStates.length; i++) { 
-//                               	String value = addNextStates[i];
-//                             	System.out.println(value);
-//                             	Thread.sleep(500);
-//								setState.sendKeys(value ,Keys.ENTER);
-//								Thread.sleep(500);
-//								//	applyWait.waitforElementToBeDisplayed(ap.yes, 10).click();
-//							}
-//						
-//							setState.sendKeys(Keys.TAB);
-//						}
-						
+		
 						public void setStates(DataTable dataTable) throws InterruptedException {
 							List<List<String>> states = dataTable.asLists(String.class);
 							for (List<String> value : states) {
-							//	System.out.println(value);
-							//	List<String> state = value;
-							//	System.out.println(state);
-						WebElement setState =  driver.findElement(By.xpath("//div[normalize-space()='"+value.get(0)+"' and contains(@class,'state-name')]/parent::div[starts-with(@class,'col-3')]/following-sibling::div//input"));
+								WebElement setState =  driver.findElement(By.xpath("//div[normalize-space()='"+value.get(0)+"' and contains(@class,'state-name')]/parent::div[starts-with(@class,'col-3')]/following-sibling::div//input"));
 								for (int i = 1; i < value.size(); i++) {
 									String val = value.get(i);
 									setState.sendKeys(val , Keys.ENTER);
