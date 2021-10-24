@@ -9,15 +9,15 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|deepak@appveen.com|123123123|
+|vtest@appveen.com|123123123|
 
 Scenario: Delete data service
-	Given Data service "Sample1" exists
+	Given Data service "testing3" exists
 	Then Remove the data service
 
 Scenario: Create data service
-	Given Data service "Sample1" does not exist
-	Then Create new data service "Sample1"
+	Given Data service "testing3" does not exist
+	Then Create new data service "testing3"
  #Under testData, picks up strings.json create the JSON
 
 Scenario Outline: Assign to Appcenter Group
