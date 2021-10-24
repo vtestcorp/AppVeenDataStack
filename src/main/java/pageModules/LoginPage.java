@@ -3,7 +3,10 @@ package pageModules;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
@@ -14,6 +17,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import com.aventstack.extentreports.ExtentTest;
+import com.google.gson.JsonObject;
 import base.BaseClass;
 import helperMethods.DropDown;
 import helperMethods.JavascriptClick;
@@ -22,6 +30,7 @@ import helperMethods.Log;
 import helperMethods.Property;
 import helperMethods.ScrollTypes;
 import helperMethods.WaitTypes;
+import io.cucumber.datatable.DataTable;
 import pageObjects.Object_AuthorPage;
 import pageObjects.Object_GroupPage;
 
@@ -32,12 +41,16 @@ public class LoginPage extends BaseClass{
 	public ScrollTypes scroll;
 	public Object_AuthorPage author;
 	public String dataServiceName;
+	public String libraryName;
 	public boolean flag;
 	public WebElement data_serviceToggler;
 	public static ArrayList<String> groups;
 	public static ArrayList<String> data_Services;
 	public Object_AuthorPage ap;
 	public Object_GroupPage gp;
+	public static WebDriverWait wait;
+	public static boolean libraryflag1;
+	public static boolean libraryflag;
 	public static	String anotherDataService;
 	public static boolean isRelation;
 	public static boolean isDateTime;
@@ -63,7 +76,8 @@ public class LoginPage extends BaseClass{
 		
 		applyWait.waitForElementToBeClickable(ap.emailIDTextBox, 30).sendKeys(username);
 		applyWait.waitForElementToBeClickable(ap.nextButton, 30).click();
-		applyWait.waitforElementToBeDisplayed(ap.password, 30).sendKeys(password);;
+		applyWait.waitforElementToBeDisplayed(ap.password, 30).sendKeys(password);
+		wait = new WebDriverWait(driver, 90);
 		applyWait.waitforElementToBeDisplayed(ap.signInButton, 30).click();
 		
 	}
@@ -75,6 +89,40 @@ public class LoginPage extends BaseClass{
 		javascriptClick.highLighterMethod(ap.listOfDataServices);
 		Log.info("User successfully signed up");
 	}
+	}
+	
+	public void verifyLibraryExist(String library) throws Exception {
+		Thread.sleep(1000);
+		libraryflag1=true;
+		applyWait.waitForElementToBeClickable(ap.library_Tab, 30).click();
+		libraryName=library;
+		applyExplicitWaitsUntilElementVisible(ap.listOfLibrary, 20);
+		for(WebElement library1 : ap.listOfLibrary) {
+			String lib=library1.getText();
+			if(lib.equalsIgnoreCase(libraryName)) {
+				libraryflag=true;
+				break;
+			}
+		}
+		 if(!libraryflag)
+	      {
+	    	  applyWait.waitForElementToBeClickable(ap.newLibrary, 30).click();
+	    	  Thread.sleep(1000);
+	    	  applyWait.waitForElementToBeClickable(ap.nameOfLibrary, 30).sendKeys(libraryName);
+	    	  Thread.sleep(1000);
+	    	  applyWait.waitForElementToBeClickable(ap.createNewLibraryButton, 30).click();
+	    	  String libName=path+"\\testData" + "\\" + ""+library+".json";
+	  		try {
+	  			FileReader reader = new FileReader(libName);
+	  		}
+	  		catch(FileNotFoundException file) {
+	  				System.err.println("Data Service file not found");
+	  			}
+	  		 JSONArray js = JsonUtils.getArrayValues(libName, "definition");
+	  		 JSONObject obj = (JSONObject) js.get(0);
+	  		 JSONArray array = (JSONArray) obj.get("definition");
+	  		createNewDataServices(array,library);
+	      }
 	}
 	
 	public void verifyDataServiceExist(String dataService) throws InterruptedException {
@@ -139,8 +187,81 @@ public class LoginPage extends BaseClass{
 		
 	}
 	
+	public void createNewLibrary(String library) throws Exception {
+		verifyDataServiceExist(library);
+		if(flag==false) {
+			
+			String dataName=path+"\\testData" + "\\" + ""+library+".json";
+			
+			try {
+				FileReader reader = new FileReader(dataName);
+			}
+			catch(FileNotFoundException file) {
+				try {
+					FileReader reader = new FileReader(testData);
+					dataName=testData;
+				}
+				catch(Exception file1) {
+				}
+			}
+			createNewDataServices(JsonUtils.getArrayValues(dataName, "definition"),library);
+		}
+	}
+	
+	public void createDataServiceForStateModel(String data_ServicName) throws Exception {
+		 dataServiceName = data_ServicName;
+		applyWait.waitForElementToBeClickable(ap.newDataService, 30).click();
+		applyWait.waitForElementToBeClickable(ap.dataServiceName, 30).sendKeys(data_ServicName);
+		applyWait.waitForElementToBeClickable(ap.createButton, 30).click();
+	}
+	
+	public void addAttributes(String attributeName, String attributeType ) throws InterruptedException {
+		
+		applyWait.waitForElementToBeClickable(ap.newAttributeButton, 10).click();
+		applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(attributeName);
+	   if(attributeType.equals("Text"))
+	   {
+		   applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+		   applyWait.waitForElementToBeClickable(ap.abc, 30).click();
+		   applyWait.waitForElementToBeClickable(ap.text, 30).click();
+	   }
+	   else if(attributeType.equals("Number"))
+	   {
+		   applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+		   applyWait.waitForElementToBeClickable(ap.number, 30).click();
+	   }
+	   else if(attributeType.equals("Date"))
+	   {
+		   applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
+		   applyWait.waitForElementToBeClickable(ap.calender, 30).click();
+		   applyWait.waitForElementToBeClickable(ap.date, 30).click();
+	   }
+	}
+	
+	public void clickOnExperienceTab() throws InterruptedException {
+		Thread.sleep(3000);
+		Actions action = new Actions(driver);
+		action.moveToElement(ap.experienceTab);
+		applyWait.waitForElementToBeClickable(ap.experienceTab, 10).click();
+		
+
+	}
+	
+	public void configureStateModel(String statusName) throws InterruptedException {
+		applyWait.waitForElementToBeClickable(ap.stateModelStatus, 30).sendKeys(statusName);
+		Thread.sleep(500);
+		applyWait.waitForElementToBeClickable(ap.stateModelStatus, 30).click();
+		applyWait.waitForElementToBeClickable(ap.stateModelStatus, 30).sendKeys(Keys.ENTER);
+		Thread.sleep(500);
+		applyWait.waitForElementToBeClickable(ap.configStateModel, 30).click();
+	}
+	
+	
+	
 	public void createNewDataServices(JSONArray jsonArray, String dataService1) throws Exception {
-		dataServiceName=dataService1;
+		if(!libraryflag1)
+		{
+		 dataServiceName=dataService1;
 		 Thread.sleep(2000); 
 		applyExplicitWaitsUntilElementVisible(ap.dataServiceName1, 10);
 		List<WebElement> dataServices=driver.findElements(By.id("serviceManagerCardTitle"));
@@ -153,31 +274,52 @@ public class LoginPage extends BaseClass{
 			Thread.sleep(1000);
 		Actions action=new Actions(driver);
 		action.moveToElement(ap.newDataService).perform();
-		applyWait.waitForElementToBeClickable(ap.newDataService, 30).click();
+		
+		try {
+			applyWait.waitForElementToBeClickable(ap.newDataService, 30).click();
+		} catch (Exception e) {
+			handleElementClickException(ap.newDataService);
+		}
 		applyWait.waitForElementToBeClickable(ap.dataServiceName, 30).sendKeys(dataServiceName);;
 		Thread.sleep(500);
 		javascriptClick.click(ap.createButton);
 		
 		data_Services.add(dataServiceName);
 		}
+	}
 		try {
 			jsonArray.size();
 		}
 		catch (Exception e) {
 		    }
 			for (int i = 0; i < jsonArray.size(); i++) {
-				
 				JSONObject jsonProperties;
 				JSONObject attribute = (JSONObject) jsonArray.get(i);
 				String attributeName = attribute.get("type").toString();
 				String keyName = attribute.get("key").toString();
 				
-				if(!keyName.equals("_id")) {
-
-				applyWait.applyExplicitWaitsUntilElementVisible(ap.newAttributeButton, 30);	
-				applyWait.waitForElementToBeClickable(ap.newAttributeButton, 30).click();
-				
-				switch(attributeName) {
+//<<<<<<< HEAD
+//				if(!keyName.equals("_id")) {
+//
+//				applyWait.applyExplicitWaitsUntilElementVisible(ap.newAttributeButton, 30);	
+//				applyWait.waitForElementToBeClickable(ap.newAttributeButton, 30).click();
+//				
+//				switch(attributeName) {
+//=======
+				if(!keyName.equals("_id") ) {
+                if(i==0) {
+                	 if(!libraryflag1)
+                	 {
+				        applyExplicitWaitsUntilElementVisible(ap.newAttributeButton, 30);	
+				        applyWait.waitForElementToBeClickable(ap.newAttributeButton, 30).click();
+                     }
+                } else
+                 {
+                	 applyExplicitWaitsUntilElementVisible(ap.newAttributeButton, 30);	
+				     applyWait.waitForElementToBeClickable(ap.newAttributeButton, 30).click(); 
+                 }
+			switch(attributeName) {
+//>>>>>>> data
 			
 			case "String" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
@@ -501,7 +643,10 @@ public class LoginPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(ap.createButton, 30).click();
 		applyWait.waitForElementToBeClickable(ap.saveButton, 30).click();
 	}
+	
+	
 
+	
 	public void searchDataService() throws Exception {
 		applyWait.waitForElementToBeClickable(ap.search, 30).sendKeys(dataServiceName,Keys.ENTER);;
 		Boolean dataService=applyWait.waitForElementToBeClickable(ap.dataServiceName1, 30).isDisplayed();
@@ -598,7 +743,6 @@ public class LoginPage extends BaseClass{
 				
      		applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
 			applyWait.waitForElementToBeClickable(ap.calender, 30).click();
-			
 			if(jsonProperties.get("dateType").equals("date")) {
 				applyWait.waitForElementToBeClickable(ap.date, 30).click();
 			}
@@ -717,73 +861,52 @@ public class LoginPage extends BaseClass{
 				jsonProperties = (JSONObject) attribute.get("properties");
 				applyWait.waitForElementToBeClickable(ap.dropdownCollection, 30).click();
 				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
-				applyWait.waitForElementToBeClickable(ap.text, 30).click();
+				if(	jsonProperties.containsKey("longText")){
+					applyWait.waitForElementToBeClickable(ap.longText, 30).click();
+					}
+				
+				else if(jsonProperties.containsKey("richText")) {
+					applyWait.waitForElementToBeClickable(ap.richText, 30).click();
+				}
+				
+				else if(jsonProperties.containsKey("email")) {
+					applyWait.waitForElementToBeClickable(ap.email, 30).click();
+				}
+				else if(jsonProperties.containsKey("enum")) {
+					applyWait.waitForElementToBeClickable(ap.listOfValue, 30).click();
+				}
+				
+				else {
+					applyWait.waitForElementToBeClickable(ap.text, 30).click();
+				}
+					
 				requiredAttributes(jsonProperties);
 				break;
 				
-			case "Long Text" : 
-				jsonProperties = (JSONObject) attribute.get("properties");
-				
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
-				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
-				applyWait.waitForElementToBeClickable(ap.longText, 30).click();
-				requiredAttributes(jsonProperties);
-				break;
 			
-			case "Rich Text" : 
-				jsonProperties = (JSONObject) attribute.get("properties");
-				
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
-				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
-				applyWait.waitForElementToBeClickable(ap.richText, 30).click();
-				requiredAttributes(jsonProperties);
-				break;
-				
-			case "Secure Text" : 
-				jsonProperties = (JSONObject) attribute.get("properties");
-				
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
-				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
-				applyWait.waitForElementToBeClickable(ap.secureText, 30).click();
-				requiredAttributes(jsonProperties);
-				break;
-				
-			case "Email" : 
-				jsonProperties = (JSONObject) attribute.get("properties");
-				
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
-				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
-				applyWait.waitForElementToBeClickable(ap.email, 30).click();
-				requiredAttributes(jsonProperties);
-				break;
-				
-			case "List of values" : 
-				jsonProperties = (JSONObject) attribute.get("properties");
-				
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
-				applyWait.waitForElementToBeClickable(ap.abc, 30).click();
-				applyWait.waitForElementToBeClickable(ap.listOfValue, 30).click();
-				requiredAttributes(jsonProperties);
-				break;
-			
+								
+						
 			case "Number" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
 				
 				applyWait.waitForElementToBeClickable(ap.dropdownCollection, 30).click();
 				applyWait.waitForElementToBeClickable(ap.number, 30).click();
-				applyWait.waitForElementToBeClickable(ap.number1, 30).click();
+				if(	jsonProperties.containsKey("currency")){
+					applyWait.waitForElementToBeClickable(ap.currency, 30).click();
+					}
+				
+				else if(jsonProperties.containsKey("enum")) {
+					applyWait.waitForElementToBeClickable(ap.listOfValue, 30).click();
+				}
+				
+				else {
+					applyWait.waitForElementToBeClickable(ap.number1, 30).click();
+				}
+				
 				requiredAttributes(jsonProperties);
 				break;
 				
-			case "Currency" : 
-				jsonProperties = (JSONObject) attribute.get("properties");
-				
-				applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
-				applyWait.waitForElementToBeClickable(ap.number, 30).click();
-				applyWait.waitForElementToBeClickable(ap.currency, 30).click();
-				requiredAttributes(jsonProperties);
-				break;
-				
+							
 			case "Boolean" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
 				applyWait.waitForElementToBeClickable(ap.dropdownCollection, 30).click();
@@ -795,6 +918,12 @@ public class LoginPage extends BaseClass{
      			jsonProperties = (JSONObject) attribute.get("properties");
 				applyWait.waitForElementToBeClickable(ap.dropdownCollection, 30).click();
 				applyWait.waitForElementToBeClickable(ap.calender, 30).click();
+				if(jsonProperties.get("dateType").equals("date")) {
+					applyWait.waitForElementToBeClickable(ap.date, 30).click();
+				}
+				if(jsonProperties.get("dateType").equals("datetime-local")) {
+					applyWait.waitForElementToBeClickable(ap.dateAndTime, 30).click();
+				}
 				requiredAttributes(jsonProperties);
 				break;
 				
@@ -828,7 +957,7 @@ public class LoginPage extends BaseClass{
 	 	        		 applyWait.waitForElementToBeClickable(ap.group, 30).click();
 	 	        		 JSONArray objectArray=(JSONArray) attribute.get("definition");
 	 	        		 requiredAttributes(jsonProperties);
-						for(int k=0;k<objectArray.size();k++) {
+						 for(int k=0;k<objectArray.size();k++) {
 							
 							JSONObject object = (JSONObject) objectArray.get(k);
 							String objectAttributeName = attribute.get("type").toString();
@@ -1057,6 +1186,7 @@ public class LoginPage extends BaseClass{
 								{
 									String allowdeletion_Staus = "";
 															
+
 								if(!driver.findElements(By.xpath("//div[contains(normalize-space(),'Allow deletion')]/following-sibling::div//span[@class='text']")).isEmpty()){
 										
 										 allowdeletion_Staus=ap.allowdeletionStatus.getText();
@@ -1224,7 +1354,6 @@ public class LoginPage extends BaseClass{
 							}
 							applyWait.waitForElementToBeClickable(gp.done, 30).click();
 							applyWait.waitForElementToBeClickable(gp.save, 30).click();
-
 							
 						}
 
@@ -1251,6 +1380,27 @@ public class LoginPage extends BaseClass{
 						public void navigateToAppcenterLoginPage() {
 							
 						}
-		
-}
 
+						public void createStates(String stateName) throws InterruptedException {
+							applyWait.waitForElementToBeClickable(ap.addStateValueHere, 30).sendKeys(stateName);
+						    Thread.sleep(500);	
+							applyWait.waitForElementToBeClickable(ap.addStateInput, 30).click();
+							 Thread.sleep(1000);	
+						}
+		
+						public void setStates(DataTable dataTable) throws InterruptedException {
+							List<List<String>> states = dataTable.asLists(String.class);
+							for (List<String> value : states) {
+								WebElement setState =  driver.findElement(By.xpath("//div[normalize-space()='"+value.get(0)+"' and contains(@class,'state-name')]/parent::div[starts-with(@class,'col-3')]/following-sibling::div//input"));
+								for (int i = 1; i < value.size(); i++) {
+									String val = value.get(i);
+									setState.sendKeys(val , Keys.ENTER);
+								}
+								setState.sendKeys(Keys.TAB);
+							}
+						}
+
+						public void saveAndDeploy() {
+							applyWait.waitForElementToBeClickable(ap.submitAndDeploy, 30).click();
+						}
+   }

@@ -52,7 +52,7 @@ Scenario: Add data to data service
 	Scenario Outline: Add record to data service
 	Given Data service "file"
 	Then Add record "<data>" to the data service for File Type
-	And Expect error "DS-FILE-1002 Error" on label "DS-FILE-1002 Label"
+	And Expect error "DS-FILE 1002 Error" on label "DS-FILE 1002 Label"
 	And Save button is disabled
 Examples:
 |data|
@@ -95,8 +95,7 @@ Scenario Outline: Fetch record from the data service
 	And Match it to "<data>" for File type
 Examples:
 |id|data|
-|DS1001|{ "_id": "DS1001", "dsFile1001": "Untitled.png", "dsFile1002": "Untitled.png", "dsFile1003": "Untitled.png", "dsFile1004": "Date & Time.png", "dsFile1006": "Date & Time.png", "dsFile1010": "Untitled.png", "dsFile1011": "Untitled.png", "dsFile1012": "Untitled.png", "dsFile1013": "Untitled.png" }|
-
+|DS1001|{ "_id": "DS1001", "dsFile1001": "Untitled.png", "dsFile1002": "Untitled.png", "dsFile1003": "Untitled.png", "dsFile1004": "Date & Time.png", "dsFile1006": "Date & Time.png", "dsFile1010": "Untitled.png", "dsFile1011": "Date & Time.png", "dsFile1012": "Untitled.png", "dsFile1013": "Untitled.png" }|
 
 Scenario Outline: Delete record from the data service
 	Given Data service "file"

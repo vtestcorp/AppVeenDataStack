@@ -10,17 +10,17 @@
   },
   "_metadata" : {
     "version" : {
-      "document" : 29,
+      "document" : 36,
       "release" : "dev"
     },
     "deleted" : false,
-    "lastUpdated" : "2021-08-21T15:03:20.095Z",
+    "lastUpdated" : "2021-09-02T15:01:02.087Z",
     "createdAt" : "2021-08-10T10:34:05.122Z",
     "lastUpdatedBy" : "deepak@appveen.com"
   },
   "_id" : "SRVC5969",
   "allowedFileTypes" : [ "jpeg", "ppt", "xls", "csv", "doc", "jpg", "png", "gif", "zip", "tar", "rar", "gz", "bz2", "7z", "mp4", "mp3", "pdf", "ico", "docx", "pptx", "xlsx", "ods", "xml", "txt" ],
-  "version" : 10,
+  "version" : 12,
   "instances" : 1,
   "versionValidity" : {
     "validityType" : "count",
@@ -28,7 +28,7 @@
   },
   "permanentDeleteData" : true,
   "disableInsights" : false,
-  "status" : "Undeployed",
+  "status" : "Active",
   "enableSearchIndex" : false,
   "attributeCount" : 3,
   "type" : null,
@@ -43,7 +43,7 @@
   "collectionName" : "example",
   "__v" : 0,
   "definition" : [ {
-    "_id" : "612115b8305243afa061e515",
+    "_id" : "6130e72e1a6c51bb224ef319",
     "key" : "_id",
     "type" : "String",
     "prefix" : "EXA",
@@ -66,29 +66,44 @@
       "dataKey" : "_id"
     }
   }, {
-    "_id" : "612115b830524301e861e516",
-    "type" : "String",
+    "_id" : "6130e72e1a6c512d9b4ef31a",
+    "type" : "Array",
     "key" : "user1",
     "properties" : {
       "name" : "User 1",
       "fieldLength" : 10,
-      "_typeChanged" : "String",
-      "dataKey" : "user1",
-      "dataPath" : "user1"
-    }
+      "_typeChanged" : "Array",
+      "dataKey" : "user1[#]",
+      "dataPath" : "user1[#]"
+    },
+    "definition" : [ {
+      "type" : "String",
+      "key" : "_self",
+      "properties" : {
+        "name" : "_self",
+        "fieldLength" : 10,
+        "_typeChanged" : "String"
+      }
+    } ]
   }, {
-    "_id" : "612115b8305243673461e517",
-    "type" : "Number",
+    "_id" : "6130e72e1a6c518cd04ef31b",
+    "type" : "Array",
     "key" : "user2",
     "properties" : {
-      "name" : "User 2",
-      "label" : "label",
+      "name" : "User2",
       "fieldLength" : 10,
-      "_typeChanged" : "Number",
-      "precision" : 2,
-      "dataKey" : "user2",
-      "dataPath" : "user2"
-    }
+      "_typeChanged" : "Array",
+      "dataKey" : "user2[#]",
+      "dataPath" : "user2[#]"
+    },
+    "definition" : [ {
+      "type" : "String",
+      "key" : "_self",
+      "properties" : {
+        "fieldLength" : 10,
+        "_typeChanged" : "String"
+      }
+    } ]
   } ],
   "headers" : [ ],
   "relatedSchemas" : {
@@ -159,7 +174,7 @@
         }
       },
       "user1" : {
-        "_t" : "String",
+        "_t" : "Array",
         "_p" : {
           "P3163989175" : "R",
           "P4542141905" : "R",
@@ -167,7 +182,7 @@
         }
       },
       "user2" : {
-        "_t" : "Number",
+        "_t" : "Array",
         "_p" : {
           "P3163989175" : "R",
           "P4542141905" : "R",

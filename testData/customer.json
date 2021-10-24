@@ -1,0 +1,73 @@
+{
+  "_metadata": {
+    "version": {
+      "document": 3,
+      "release": "dev"
+    },
+    "deleted": false,
+    "lastUpdated": "2021-09-23T07:24:30.000Z",
+    "createdAt": "2021-09-17T15:41:23.661Z"
+  },
+  "_id": "SCHM2698",
+  "services": [],
+  "name": "KYC",
+  "description": null,
+  "app": "vTest",
+  "__v": 2,
+  "definition": [
+    {
+      "definition": [
+        {
+          "_fieldId": "42a3a120-1c3f-11ec-8c3a-25d9e8ae0ed8",
+          "type": "Number",
+          "key": "bankNumber",
+          "properties": {
+            "name": "BankNumber",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "bankNumber",
+            "dataPath": "bankNumber"
+          }
+        },
+        {
+          "_fieldId": "42a3c830-1c3f-11ec-8c3a-25d9e8ae0ed8",
+          "type": "String",
+          "key": "address",
+          "properties": {
+            "name": "Address",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "address",
+            "dataPath": "address"
+          }
+        },
+        {
+          "_fieldId": "42a3ef40-1c3f-11ec-8c3a-25d9e8ae0ed8",
+          "type": "Number",
+          "key": "number",
+          "properties": {
+            "name": "Number",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "number",
+            "dataPath": "number"
+          }
+        },
+        {
+          "_fieldId": "437485b0-1c3f-11ec-8c3a-25d9e8ae0ed8",
+          "type": "String",
+          "key": "email",
+          "properties": {
+            "name": "Email",
+             "email" : true,
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "email",
+            "dataPath": "email"
+          }
+        }
+      ],
+      "type": "Object"
+    }
+  ]
+}

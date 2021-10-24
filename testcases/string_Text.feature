@@ -43,7 +43,6 @@ Examples:
 |username|password|
 |vtest@appveen.com|123123123|
 
-
 Scenario: Add data to data service
 	Given Data service "string_Text"
 	Then Add data to the data service
@@ -58,7 +57,6 @@ Examples:
 |data|
 |{"_id": "STR1001","dsStringText1001": "amazon","dsStringText1002": "","dsStringText1003": "flipkart","dsStringText1004": "mintra","dsStringText1005": "starbazar","dsStringText1007": "dmart", "dsStringText1008": "bigBazar", "dsStringText1010": "bigBasket",  "dsStringText1013": "online shooping", "dsStringText1014": "", "dsStringText1015": "",  "dsStringText1018": "",  "dsStringText1020": "ABCD", "dsStringText1021": "season", "dsStringText1022": "cathlon", "dsStringText1023": "shopper stop", "dsStringText1024": "snapdel"}|
 
-
 Scenario Outline: Add record to data service
 	Given Data service "string_Text"
 	Then Add record "<data>" to the data service	
@@ -67,8 +65,6 @@ Scenario Outline: Add record to data service
 		|data|
 	|{"_id": "STR1001","dsStringText1001": "Mango","dsStringText1002": "apple","dsStringText1003": "Banana","dsStringText1004": "Grapes","dsStringText1005": "Pineapple","dsStringText1007": "Guava", "dsStringText1008": "Apricot", "dsStringText1010": "Black Current",  "dsStringText1013": "Black Berry", "dsStringText1014": "Blue Berry", "dsStringText1015": "Custard Apple",  "dsStringText1018": "Coconut",  "dsStringText1020": "DATE", "dsStringText1021": "F", "dsStringText1022": "Gooseberry", "dsStringText1023": "Jackfruit", "dsStringText1024": "Lamon"}|
 	
-
-
 Scenario Outline: Add record to data service
 	Given Data service "string_Text"
 	Then Add record "<data>" to the data service		

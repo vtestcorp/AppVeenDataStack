@@ -204,6 +204,9 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//button[@id='saveBtn']")
 	public WebElement saveButton;
 
+	@FindBy(xpath="//button[contains(@class,'dropdown-toggle')]")
+	public WebElement saveDropDown;
+
 	@FindBy(xpath="//span[normalize-space()='ID']/ancestor::div[@class='ag-header-row']/following-sibling::div//input[contains(@class,'border rounded bg-white w-100 ng')]")
 	public WebElement idTab;
 	
@@ -219,6 +222,7 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])/p | //span[@class='value-width ng-star-inserted']")
 	public List<WebElement> attributesOnViewPageForRichText;
 	
+
 	@FindBy(xpath="//*[contains(@class,'value-wrapper')]//span[(last() and not(contains(@class, 'mr-2')) and not(contains(@class, 'ml-2')))] | //odp-view-date//div[@class='font-weight-bold value-wrapper'] | //span[text()='Raw location']/ancestor::div[contains(@class,'label-wrapper')]/following-sibling::div | //odp-view-user//a[@class='ng-star-inserted']")
 	public List<WebElement> attributesOnViewPageForGroups;
 	
@@ -282,7 +286,53 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath = "//div[@class='ng-star-inserted']//*[contains(@class,'add-new')]")
 	public List<WebElement> addNewButtons;
 	
-	//div[@class='ng-star-inserted']//*[contains(@class,'add-new')]
-
-
+	@FindBy(xpath = "//span[@class='fas fa-cloud-upload-alt text-white ng-tns-c86-2']")
+	public WebElement importfile;
+	
+	@FindBy(xpath = "//label/input[@id='logoFile']")
+	public WebElement uploadFile;
+		
+	@FindBy(xpath = "//select[contains(@class,'form-control')]")
+	public WebElement sheetToReadDropdown;
+	
+	@FindBy(xpath = "//div[normalize-space()='From the top']//input[contains(@class,'form-control')]")
+	public WebElement sheetTopRow;
+	
+	@FindBy(xpath = "//div[normalize-space()='From the bottom']//input[contains(@class,'form-control')]")
+	public WebElement sheetBottomRow;
+	
+	@FindBy(xpath = "//div[normalize-space()='ID']//input[contains(@class,'colDiv')]")
+	public WebElement destination;
+	
+	@FindBy(xpath = "//div[normalize-space()='STR1004']")
+	public WebElement source;
+	
+	@FindBy(xpath = "//span[normalize-space()='Onboarding Status']/following-sibling::span[starts-with(@class,'badge')]")
+	public WebElement onBoardingStatus;
+	
+	@FindBy(xpath = "//span[@class='slider']")
+	public WebElement recoredHeader;
+	
+//	@FindBy(xpath = "//button[normalize-space()='Next']")
+//	public WebElement next;
+	
+	
+	@FindBy(xpath = "//button[normalize-space()='Next' and contains(@class,'btn-min-width')]")
+	public WebElement next;
+	
+	@FindBy(xpath = "//a[normalize-space()='here']")
+	public WebElement here;
+	
+	@FindBy(xpath = "//span[contains(@class,'fa-bell')]")
+	public WebElement notification;
+	
+	@FindBy(xpath = "(//div[@class='content'])[1]")
+	public WebElement notification_body;
+	
+	@FindBy(xpath = "//span[normalize-space()='Click here']//input")
+	public WebElement clickHere;
+		
+	@FindBy(xpath = "//span[starts-with(text(),'Valid Records')]/following-sibling::span//u")
+	public WebElement validRecords;
+	
 }

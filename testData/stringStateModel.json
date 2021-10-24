@@ -1,0 +1,272 @@
+{
+  "workflowHooks": {
+    "postHooks": {
+      "submit": [],
+      "rework": [],
+      "discard": [],
+      "approve": [],
+      "reject": []
+    }
+  },
+  "_metadata": {
+    "version": {
+      "document": 2,
+      "release": "1.1.2"
+    },
+    "deleted": false,
+    "lastUpdated": "2021-10-12T07:40:15.601Z",
+    "createdAt": "2021-10-12T05:52:16.286Z",
+    "lastUpdatedBy": "vtest@appveen.com"
+  },
+  "allowedFileTypes": [
+    "jpeg",
+    "ppt",
+    "xls",
+    "csv",
+    "doc",
+    "jpg",
+    "png",
+    "gif",
+    "zip",
+    "tar",
+    "rar",
+    "gz",
+    "bz2",
+    "7z",
+    "mp4",
+    "mp3",
+    "pdf",
+    "ico",
+    "docx",
+    "pptx",
+    "xlsx",
+    "ods",
+    "xml",
+    "txt"
+  ],
+  "version": 1,
+  "instances": 1,
+  "versionValidity": {
+    "validityType": "count",
+    "validityValue": -1
+  },
+  "permanentDeleteData": true,
+  "disableInsights": false,
+  "status": "Draft",
+  "enableSearchIndex": false,
+  "attributeCount": 5,
+  "type": null,
+  "_id": "SRVC2218",
+  "name": "string_StateModel",
+  "description": null,
+  "app": "vTest",
+  "api": "/stringStateModel",
+  "port": 20112,
+  "wizard": [],
+  "webHooks": [],
+  "preHooks": [],
+  "collectionName": "stringStateModel",
+  "__v": 1,
+  "stateModel": {
+    "attribute": "",
+    "initialStates": [],
+    "enabled": false
+  },
+  "definition": [
+    {
+      "_id": "61653bdf42e29613c36420d9",
+      "key": "_id",
+      "type": "String",
+      "prefix": "STR",
+      "suffix": null,
+      "padding": null,
+      "counter": 1001,
+      "properties": {
+        "label": null,
+        "readonly": false,
+        "errorMessage": null,
+        "name": "ID",
+        "required": false,
+        "fieldLength": 10,
+        "_description": null,
+        "_typeChanged": "id",
+        "_isParrentArray": null,
+        "_isGrpParentArray": null,
+        "dataPath": "_id",
+        "_detailedType": "",
+        "dataKey": "_id"
+      }
+    },
+    {
+      "_id": "61653bdf42e2961d726420da",
+      "type": "String",
+      "key": "name",
+      "properties": {
+        "name": "Name",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "dataKey": "name",
+        "dataPath": "name"
+      }
+    },
+    {
+      "_id": "61653bdf42e296eb646420db",
+      "type": "Date",
+      "key": "dob",
+      "properties": {
+        "name": "DOB",
+        "fieldLength": 10,
+        "_typeChanged": "Date",
+        "dateType": "date",
+        "defaultTimezone": "Zulu",
+        "supportedTimezones": [],
+        "dataKey": "dob",
+        "dataPath": "dob"
+      }
+    },
+    {
+      "_id": "61653bdf42e29639256420dc",
+      "type": "Number",
+      "key": "salary",
+      "properties": {
+        "name": "Salary",
+        "fieldLength": 10,
+        "_typeChanged": "Number",
+        "precision": 2,
+        "dataKey": "salary",
+        "dataPath": "salary"
+      }
+    },
+    {
+      "_id": "61653bdf42e29630d86420dd",
+      "type": "String",
+      "key": "onboardingStatus",
+      "properties": {
+        "name": "Onboarding Status",
+        "fieldLength": 10,
+        "_typeChanged": "String",
+        "dataKey": "onboardingStatus",
+        "dataPath": "onboardingStatus"
+      }
+    }
+  ],
+  "headers": [],
+  "role": {
+    "_id": "SRVC2218",
+    "_metadata": {
+      "version": {
+        "document": 1,
+        "release": "1.1.2"
+      },
+      "deleted": false,
+      "lastUpdated": "2021-10-12T05:52:16.318Z",
+      "createdAt": "2021-10-12T05:52:16.312Z"
+    },
+    "app": "vTest",
+    "entity": "SRVC2218",
+    "entityName": "string_StateModel",
+    "roles": [
+      {
+        "skipReviewRole": true,
+        "id": "P7945516823",
+        "name": "Skip Review",
+        "operations": [
+          {
+            "method": "SKIP_REVIEW"
+          },
+          {
+            "method": "POST"
+          },
+          {
+            "method": "PUT"
+          },
+          {
+            "method": "DELETE"
+          }
+        ],
+        "description": "This role entitles an authorized user to create, update or delete a record and without any approval"
+      },
+      {
+        "manageRole": true,
+        "id": "P6067126493",
+        "name": "Manage",
+        "operations": [
+          {
+            "method": "POST"
+          },
+          {
+            "method": "PUT"
+          },
+          {
+            "method": "DELETE"
+          },
+          {
+            "method": "GET"
+          }
+        ],
+        "description": "This role entitles an authorized user to create, update or delete a record"
+      },
+      {
+        "viewRole": true,
+        "id": "P7418807563",
+        "name": "View",
+        "operations": [
+          {
+            "method": "GET"
+          }
+        ],
+        "description": "This role entitles an authorized user to view the record"
+      }
+    ],
+    "type": "appcenter",
+    "fields": {
+      "_id": {
+        "_t": "String",
+        "_p": {
+          "P7945516823": "R",
+          "P6067126493": "R",
+          "P7418807563": "R"
+        }
+      },
+      "name": {
+        "_t": "String",
+        "_p": {
+          "P7945516823": "R",
+          "P6067126493": "R",
+          "P7418807563": "R"
+        }
+      },
+      "dob": {
+        "_t": "Date",
+        "_p": {
+          "P7945516823": "R",
+          "P6067126493": "R",
+          "P7418807563": "R"
+        }
+      },
+      "salary": {
+        "_t": "Number",
+        "_p": {
+          "P7945516823": "R",
+          "P6067126493": "R",
+          "P7418807563": "R"
+        }
+      },
+      "onboardingStatus": {
+        "_t": "String",
+        "_p": {
+          "P7945516823": "R",
+          "P6067126493": "R",
+          "P7418807563": "R"
+        }
+      }
+    },
+    "__v": 0
+  },
+  "relatedSchemas": {
+    "internal": {
+      "users": []
+    },
+    "outgoing": []
+  }
+}

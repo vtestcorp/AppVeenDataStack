@@ -2,10 +2,13 @@ package pageModules;
 
 import java.io.File;
 import java.net.MalformedURLException;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -104,6 +107,32 @@ public class LoginAppCenter extends BaseClass {
 					}
 		}
 		}
+	
+	public void uploadDatafile(String file) throws MalformedURLException, InterruptedException {
+		applyExplicitWaitsUntilElementVisible(acp.importfile,10);
+		Actions action = new Actions(driver);
+		action.moveToElement(acp.importfile);
+		applyWait.waitForElementToBeClickable(acp.importfile, 30).click();
+		Thread.sleep(2000);
+		applyWait.waitForElementToBeClickable(acp.uploadFile, 30).sendKeys(path +"\\files" + "\\" +""+file+".xlsx");
+//		applyExplicitWaitsUntilElementVisible(acp.sheetToReadDropdown, 10);
+//		dropdown.selectByVisibleText(acp.sheetToReadDropdown, data_Service);
+//		applyWait.waitForElementToBeClickable(acp.next, 30).click();
+//		Thread.sleep(1000);
+//		applyWait.waitForElementToBeClickable(acp.next, 30).click();
+//		Thread.sleep(1000);
+//		applyWait.waitForElementToBeClickable(acp.here, 30).click();
+//		Thread.sleep(1000);
+//		applyWait.waitForElementToBeClickable(acp.notification, 30).click();
+//		Thread.sleep(1000);
+//		applyWait.waitForElementToBeClickable(acp.notification_body, 30).click();
+//		Thread.sleep(1000);
+//		applyWait.waitForElementToBeClickable(acp.next, 30).click();
+//		Thread.sleep(1000);
+//		applyWait.waitForElementToBeClickable(acp.here, 30).click();
+	}
+	
+	
 
 	public void userEnterData() throws Exception {
 		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
@@ -247,6 +276,7 @@ public class LoginAppCenter extends BaseClass {
 	public void userEnterDataInLocationField() throws InterruptedException, Exception {
 		applyExplicitWaitsUntilElementVisible(acp.addDataButton, 20);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		Thread.sleep(5000);
 		applyExplicitWaitsUntilElementVisible(acp.textBoxesLocation, 20);
 		List<WebElement> textBoxes = acp.textBoxesLocation;
 		
@@ -255,6 +285,7 @@ public class LoginAppCenter extends BaseClass {
 		
 		
 		for (int j = 1; j <= textBoxes.size(); j++) {
+			Thread.sleep(1000);
 		WebElement textBox = driver.findElement(By.xpath("(//input[@class='searchInput pac-target-input' or @id='_id'])["+j+"]"));
 			if (textBox.isEnabled()) {
 				String id1 = textBox.getAttribute("id");
@@ -365,6 +396,7 @@ public class LoginAppCenter extends BaseClass {
 			     	applyWait.waitForElementToBeClickable(acp.save, 30).click();
 				}
 			
+
 			public void userEnterDataForRichText() throws InterruptedException {
 				applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 				Thread.sleep(5000);
@@ -447,6 +479,7 @@ public class LoginAppCenter extends BaseClass {
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
 		List<WebElement> textBoxes = driver.findElements(By.xpath("//input[@class='invisible position-absolute' or @id='_id']"));
 		String filePath=Constants.testData_Folder + data_Service + ".data.json";
+
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 		
 		for(int  i=1;i<=textBoxes.size();i++) {
@@ -518,17 +551,16 @@ public class LoginAppCenter extends BaseClass {
 							}
 
 						}
+
 					}
 			}
 
 		}
-
+	
 		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	}
 
-	public void addDataForLibrary() {
-		
-	}
+	
 
 	public void addDataForGroups() throws MalformedURLException, Exception {
 		
@@ -695,6 +727,7 @@ public class LoginAppCenter extends BaseClass {
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,20);
 		List<WebElement> textBoxes = acp.dateFields;
 		String filePath=Constants.testData_Folder + data_Service + Constants.testData_Suffix;
+
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 		
 		for (int j = 1; j <= textBoxes.size(); j++) {
@@ -859,5 +892,61 @@ public class LoginAppCenter extends BaseClass {
 		}
 	applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	}
-}
 
+	public void userEnterDataForStateModel() throws MalformedURLException, InterruptedException {
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
+		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		applyWait.applyExplicitWaitsUntilElementVisible(acp.groupTextBoxes, 10);
+		List<WebElement> textBoxes = acp.groupTextBoxes;
+		String filePath=path + "\\testData\\" + data_Service + ".data.json";
+		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
+
+		for (int j = 1; j <= textBoxes.size(); j++) {
+			WebElement textBox = driver.findElement(By.xpath("(//*[contains(@class,'form-control') or @type='checkbox' or @type='file' or contains(@class,'btn btn-link mr-2 p-0') or contains(@class,'searchInput')])[" + j + "]"));
+			if (textBox.isEnabled()) {
+				String id1 = textBox.getAttribute("id");
+				String value1=JsonUtils.getJsonValue(filePath,id1);
+				String type = textBox.getAttribute("type");
+				
+				if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
+					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(value1);	
+				}
+				if (textBox.getAttribute("type").equals("number")) {
+					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(((Long) jsonObject.get(id1)).toString());
+					
+				}
+				if(textBox.getAttribute("type").equals("submit")){
+					applyWait.waitForElementToBeClickable(textBox, 30).click();
+					JSONObject js = (JSONObject) jsonObject.get(id1);
+					 String value = (String) js.get("rawData");
+					 String[] part = value.split("T");
+				     String year =  part[0].split("-")[0];
+				     String month = part[0].split("-")[1];
+				     int i=Integer.parseInt(month)-1;
+                     String m = i+"";			    
+				     String date = part[0].split("-")[2];
+		             String time = part[1]; 
+				     String hour = time.split(":")[0];
+				     String min = time.split(":")[1];
+				     String sec = time.split(":")[2].replace("Z", "");
+				     
+				     dropdown.selectByValue(acp.yearDropDown,year);
+				     Thread.sleep(1000);
+				     dropdown.selectByIndex(acp.monthDropDown, i);
+                     WebElement date1 = driver.findElement(By.xpath("//span[@id='_day' and not(contains(@class,'disabled'))]//small[normalize-space()='"+date+"']"));
+                     date1.click();
+                     applyWait.waitForElementToBeClickable(acp.doneButton, 30).click();
+				}
+			}
+		}
+		applyWait.waitForElementToBeClickable(acp.save, 30).click();
+	}
+
+	public void verifyState(String currentState) throws MalformedURLException {
+		applyWait.waitForElementToBeClickable(acp.record, 30).click();
+		applyExplicitWaitsUntilElementVisible(acp.onBoardingStatus,10);
+		WebElement expected = acp.onBoardingStatus;
+		String value = expected.getText();
+		Assert.assertEquals(value, currentState);
+	}
+}

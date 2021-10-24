@@ -11,12 +11,12 @@ Examples:
 |deepak@appveen.com|123123123|
 
 Scenario: Delete data service
-	Given Data service "Sample-String" exists
+	Given Data service "Sample1" exists
 	Then Remove the data service
 
 Scenario: Create data service
-	Given Data service "Sample-String" does not exist
-	Then Create new data service "Sample-String"
+	Given Data service "Sample1" does not exist
+	Then Create new data service "Sample1"
 
 Scenario Outline: Delete group
 	Given Group sampleGroup "<group>" exists

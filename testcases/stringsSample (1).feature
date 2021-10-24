@@ -48,7 +48,7 @@ Examples:
  #INSERT/UPDATE
 Scenario: Add data to data service
 	Given Data service "Sample1"
-	Then Add data to the data service for Location
+	Then Add data to the data service for Collection
 	
 	
 #	Scenario Outline: Fetch record from the data service

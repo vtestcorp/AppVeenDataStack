@@ -3,6 +3,8 @@ package base;
 import java.net.MalformedURLException;
 //import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import java.util.List;
+
+import org.apache.commons.io.filefilter.FalseFileFilter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -36,14 +38,14 @@ public class BaseClass {
 	public static String featureName ="";
 	public static String testData = System.getProperty("testData");
 	public static String browser = System.getProperty("browser");
-	public static String url = System.getProperty("url");
 	public static String headless = System.getProperty("headless");
+	public static String url = System.getProperty("url");
 	public static String path = System.getProperty("user.dir");
 	public boolean isHeadLess;
 
 	@SuppressWarnings("deprecation")
 	public void start() {
-//		headless="true";
+
 		if (browser == null) {
 			browser = "chrome";
 		}
@@ -64,6 +66,7 @@ public class BaseClass {
 			if(isHeadLess) {
 			options.addArguments("--headless");
 			}
+
 			String path = System.getProperty("user.dir");
 			DownloadFilepath = path + "\\Test_Data\\Download";
 			driver = new ChromeDriver(options);
@@ -102,6 +105,7 @@ public class BaseClass {
 		if (url == null) {
 			url = "https://bifrost.ds.appveen.com";
 			url="https://qa.ds.appveen.com";
+
 		}
 
 		if (url.equalsIgnoreCase("https://staging.appveen.com")) {
@@ -123,9 +127,8 @@ public class BaseClass {
 		return driver;
 	}
 
-	public static void applyExplicitWaitsUntilElementVisible(WebElement element, int time)
-			throws MalformedURLException {
 
+	public static void applyExplicitWaitsUntilElementVisible(WebElement element, int time)throws MalformedURLException {
 		WebDriverWait wait = new WebDriverWait(driver, time);
 		wait.until(ExpectedConditions.visibilityOf(element));
 

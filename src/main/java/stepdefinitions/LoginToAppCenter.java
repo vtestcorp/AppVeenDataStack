@@ -4,6 +4,7 @@ import com.aventstack.extentreports.ExtentTest;
 import base.BaseClass;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pageModules.LoginAppCenter;
@@ -38,6 +39,20 @@ public class LoginToAppCenter extends BaseClass{
 		loginAppCenter.dataService(dataService);
 	}
 	
+	
+	
+	@Then("Upload file {string} to the import page of data service")
+	public void import_data_service(String file) throws Exception {
+		loginAppCenter.uploadDatafile(file);
+	}
+	
+//	@Then("Map {string} to the import")
+//	public void map_Filesetting(String file) throws Exception {
+//		loginAppCenter.uploadDatafile(file);
+//	}
+	
+	
+	
 	@Then("Add data to the data service for Collection")
 	public void add_data_to_the_data_service_for_Collection() throws Exception {
 		loginAppCenter.userEnterDataforCollection();
@@ -57,9 +72,20 @@ public class LoginToAppCenter extends BaseClass{
 
 	@Then("Add data to the data service")
 	public void add_data_to_the_data_service() throws Exception {
-		
 		loginAppCenter.userEnterData();
 	}
+	
+	@Then("Add data to the stateModel data service")
+	public void add_data_to_the_stateModel_data_service() throws Exception {
+		loginAppCenter.userEnterDataForStateModel();
+	}
+	
+	@And("Verify the State is {string}")
+	public void verifyState(String text) throws Exception {
+		loginAppCenter.verifyState(text);
+	}
+	
+		
 	
 	@Then("Add data to the data service for Relation")
 	public void add_data_to_the_data_service_for_Relation() throws Exception {

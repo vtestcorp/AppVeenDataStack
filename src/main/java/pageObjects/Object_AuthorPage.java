@@ -18,9 +18,6 @@ public class Object_AuthorPage extends BaseClass{
 	public Object_AuthorPage() {
 		PageFactory.initElements(driver, this);
 	}
-//	WebDriver driver;
-	
-
 	
 	@FindBy(how=How.XPATH, using="//div[normalize-space()='Sign in with your credentials']")
 	public WebElement signIn;
@@ -43,6 +40,9 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(id="serviceManagerCardTitle")
 	public List  <WebElement> listOfDataService;
 
+	@FindBy(xpath = "//span[@class='name d-inline-block font-weight-bold']")
+	public List  <WebElement> listOfLibrary;
+	
 	@FindBy(xpath="//*[text()='New Data Service']")
 	public WebElement newDataService;
 
@@ -189,6 +189,9 @@ public class Object_AuthorPage extends BaseClass{
 
 	@FindBy(xpath="//span[@class='odp-library']")
 	public WebElement library;
+	
+	@FindBy(xpath="//div[@id='_lib']")
+	public WebElement library_Tab;
 
 	@FindBy(xpath="//div[text()='Linked Library']/following-sibling::div/select")
 	public WebElement linkedLibrary;
@@ -324,4 +327,26 @@ public class Object_AuthorPage extends BaseClass{
 	
 	@FindBy(xpath = "//div[normalize-space()='Default Value']/following-sibling::div//span[@class='ml-3']")
 	public WebElement defaultSatus;
-    }
+	
+	@FindBy(xpath = "//span[contains(@class,'fa-plus')]")
+	public WebElement newLibrary;
+	
+	@FindBy(xpath = "//input[@id='name']")
+	public WebElement nameOfLibrary;
+	
+	@FindBy(xpath="//button[@id='newLibraryModalYes']")
+	public WebElement createNewLibraryButton;
+	
+	@FindBy(xpath="//input[@id='typeahead-basic']")
+	public WebElement stateModelStatus;
+	
+	@FindBy(xpath="//button[@id='configureStateModel']")
+	public WebElement configStateModel;
+	
+	@FindBy(xpath="//input[@id='new-state-input']")
+	public WebElement addStateValueHere;
+	
+	@FindBy(xpath="//div[@id='add-state']")
+	public WebElement addStateInput;
+	
+}

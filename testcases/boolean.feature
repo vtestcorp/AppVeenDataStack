@@ -33,6 +33,7 @@ Scenario: Log out of Author
 	Then User logs out of Author
 	
 
+
 @AppCenter
 Scenario Outline: Log into AppCenter
 	Given User navigate to AppCenter login page
@@ -69,6 +70,7 @@ Examples:
 Examples:
 |id|data|
 |DS1001|{"dsBoolean1001" : false, "dsBoolean1002" : true, "dsBoolean1003" : false, "dsBoolean1004" : false, "dsBoolean1005" : false, "dsBoolean1006" : true, "dsBoolean1008" : true, "dsBoolean1010" : true, "dsBoolean1011" : false, "dsBoolean1012" : false,"dsBoolean1013" : true, "dsBoolean1014" : true, "dsBoolean1015" : false}|
+
 
 Scenario Outline: Fetch record from the data service
 	Given Data service "boolean"

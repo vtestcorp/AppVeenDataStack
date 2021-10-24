@@ -1,20 +1,33 @@
 package stepdefinitions;
 
+
+import java.io.IOException;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.GherkinKeyword;
+import com.aventstack.extentreports.gherkin.model.Feature;
+import com.aventstack.extentreports.gherkin.model.Scenario;
 import base.BaseClass;
 import helperMethods.WaitTypes;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import listeners.ExtentReportListener;
 import pageModules.WorkflowsInAppcenterPage;
 
 public class AppcenterWorkflow extends BaseClass{
 	
 	private WaitTypes applyWait;
 	public WorkflowsInAppcenterPage workflow;
+	public ExtentReportListener test1;
+	public ExtentReports extent;
+	public ExtentTest logInfo=null;
 	
 	@Before
 	public void initilization() {
 		workflow = new WorkflowsInAppcenterPage(driver);
+
 	}
 	
 	@Given("Data Service {string}")
@@ -33,9 +46,12 @@ public class AppcenterWorkflow extends BaseClass{
 	}
 	
 	@Then("User logs out of AppCenter")
-	public void user_logs_out_of_AppCenter() {
-		
+	public void user_logs_out_of_AppCenter() throws IOException, ClassNotFoundException {
+		ExtentReportListener.test = extent.createTest(Feature.class, "DS GROUP");
+		ExtentReportListener.test=ExtentReportListener.test.createNode(Scenario.class, "Log out AppCenter");						
+		logInfo=ExtentReportListener.test.createNode(new GherkinKeyword("Given"), "Successful log out AppCenter page");
 		workflow.logoutFromAppcenter();
+		logInfo.addScreenCaptureFromPath(ExtentReportListener.captureScreenShot(driver));
 	}
 
 	@Given("User navigate to AppCenter login page")
@@ -53,6 +69,8 @@ public class AppcenterWorkflow extends BaseClass{
 	@Then("Verify data is available in the workflow listing page under New Records with status Approved")
 	public void verify_data_is_available_in_the_workflow_listing_page_under_New_Records_with_status_Approved() throws Exception {
 	    workflow.verifyDataIsAvailableWithStatusApproved();
+	    
+	    
 	}
 	
 	@Then("Add data to the data service and save as draft")

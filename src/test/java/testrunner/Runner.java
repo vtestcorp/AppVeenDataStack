@@ -11,6 +11,7 @@ import io.cucumber.junit.CucumberOptions;
 				dryRun = false,
 				glue={"stepdefinitions","cucumberHooks"},
 				monochrome=true,
+
 				strict = true,
 				plugin = { "pretty", "html:report/htmlReport" 
 						,"json:report/jsonReport/jsonReport.json" 
@@ -19,14 +20,17 @@ import io.cucumber.junit.CucumberOptions;
 				)
 
 public class Runner {
+	
 
-	  private static String[] defaultOptions = {
+	  public static String[] defaultOptions = {
 	            "--glue", "stepdefinitions",
 	            "--strict",
 	            "--plugin", "pretty",
 	            "--plugin", "html:report/htmlReport",
-	            "--plugin", "json:report/jsonReport/jsonReport.json",
+	            "--plugin", "json:target/cucumber-reports/jsonReport.json",
+	      //      "--plugin", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:target/cucumber-reports/extentReport.html"
 	            "--plugin","cucumberHooks.CustomReportListener"
+
 	    };
 	 
 		public static void main(String[] args) {

@@ -18,36 +18,40 @@ Scenario: Delete data service
 	Given Data service "library" exists
 	Then Remove the data service
 
-Scenario: Create data service
-	Given Data service "library" does not exist
-	Then Create new data service "library"
+Scenario: Create Library
+	Given Library "Customer" exist
+
+#Scenario: Create data service
+#	Given Data service "library" does not exist
+#	Then Create new data service "library"
  #Under testData, picks up strings.json create the JSON
 
-Scenario Outline: Assign to Appcenter Group
- 	Then Group "Library-Group" does not exist
-	Then Create new group "Library-Group" 
-	And Assign appcenter permissions for "library" dataservice to "<user>"
-	
-	Examples:
-	|user|
-	|test_ac_ds_manage@appveen.com|
 
-
-Scenario: Log out of Author
-	Given User logged into Author
-	Then User logs out of Author
-	
-
-@AppCenter
-Scenario Outline: Log into AppCenter
-	Given User navigate to AppCenter login page
-	And User enters "<username>" and "<password>" in AppCenter login page
-	And Verify User has Logged in Successfully 
-Examples:
-|username|password|
-|test_ac_ds_manage@appveen.com|123123123|
-
-
+#Scenario Outline: Assign to Appcenter Group
+ #	Then Group "Library-Group" does not exist
+#	Then Create new group "Library-Group" 
+#	And Assign appcenter permissions for "library" dataservice to "<user>"
+#	
+#	Examples:
+#	|user|
+#	|test_ac_ds_manage@appveen.com|
+#
+#
+#Scenario: Log out of Author
+#	Given User logged into Author
+#	Then User logs out of Author
+#	
+#
+#@AppCenter
+#Scenario Outline: Log into AppCenter
+#	Given User navigate to AppCenter login page
+#	And User enters "<username>" and "<password>" in AppCenter login page
+#	And Verify User has Logged in Successfully 
+#Examples:
+#|username|password|
+#|test_ac_ds_manage@appveen.com|123123123|
+#
+#
  #INSERT/UPDATE
 Scenario: Add data to data service
 	Given Data service "library"

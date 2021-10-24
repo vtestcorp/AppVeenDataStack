@@ -2,6 +2,8 @@ package stepdefinitions;
 
 import java.net.MalformedURLException;
 import base.BaseClass;
+import helperMethods.WaitTypes;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -69,6 +71,67 @@ public class DesignTestCases extends BaseClass{
 	    design.addRecord(string);
 	}
 	
+	@Given("User navigates to File setting page")
+	public void user_navigates_to_File_setting_page() {
+		
+	}
+//	@Then("^Add record  \"(.*?)\" to stateModel data service$")
+//	public void add__record_for_stateModel(String data) throws Exception {
+//		design.addDataForstateModel(data);
+//	}
+	
+	@Then("^Add record \"(.*?)\" to stateModel data service$")
+	public void add_record_to_stateModel_data_service(String data) throws MalformedURLException, InterruptedException {
+		design.addRecordForstateModel(data);
+	}
+	
+	@And("^Verify \"(.*?)\" is available$")
+	public void verify_NextState(String nextState) throws InterruptedException {
+	   design.userNextStateAvailable(nextState);		
+	}
+	
+	
+	@And("^Verify \"(.*?)\" is not available$")
+	public void verify_InvalidState(String invalidState) throws InterruptedException {
+	   design.verifyInvalidState(invalidState);		
+	}
+	
+	@And("^update \"(.*?)\" and save the record$")
+	public void updateRecordStateModel(String updateState) throws InterruptedException, MalformedURLException {
+	   design.updateRecordForStateModel(updateState);		
+	}
+	
+	@Then("User navigate to column mapping page")
+	public void user_navigates_to_column_mapping_page() throws MalformedURLException, InterruptedException {
+	   design.userNavigateToColumnMappingPage();		
+	}
+	
+	@Then("User navigate to validating record")
+	public void user_navigates_to_validate_record() throws MalformedURLException, InterruptedException {
+	   design.userNavigateToValidateRecord();		
+	}
+	
+	
+	@Given("^Verify Valid record \"(.*?)\" is correct$")
+	public void verify_valid_record(String count) throws MalformedURLException, InterruptedException {
+	   design.verifyValidRecord(count);		
+	}
+	
+	@Given("^Select \"(.*?)\" to be updated$")
+	public void select_conflict_record(String conflictRecord) throws MalformedURLException, InterruptedException {
+	   design.selectConflictRecords(conflictRecord);		
+	}
+	   
+	@Then("^Map \"(.*?)\" to the import$")
+	public void map_rowsToSkipFromBottom(String jsonFile) throws MalformedURLException {
+			design.mapFileSettingToImport(jsonFile);
+	}
+
+	@Then("Map column {string} to the attributes {string}")
+	public void map_columnToTheAttributes(String destination, String source) throws MalformedURLException, InterruptedException {
+			design.mapColumnToValue(destination , source);
+	}
+
 	@Then("Add record {string} {string} to the data service")
 	public void add_record_to_the_data_service(String string, String string2) throws Exception {
 	    design.addNewRecord(string,string2);
@@ -125,6 +188,7 @@ public class DesignTestCases extends BaseClass{
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+
 	}
 	
 	@Then("^Add records to \"(.*?)\"$")
@@ -132,11 +196,13 @@ public class DesignTestCases extends BaseClass{
 	    design.addNewRecords();
 	}
 	
+		
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the data service$")
 	public void update_record_with_to_the_data_service(String id, String jsonFile) throws Exception {
 	    design.updateRecord(id,jsonFile);
 	}
 	
+
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the data service for group$")
 	public void update_record_with_to_the_data_service_for_group(String id, String jsonFile) throws Exception {
 	    design.updateRecordForGroup(id,jsonFile);
@@ -147,6 +213,7 @@ public class DesignTestCases extends BaseClass{
 	    design.updateRecordForRichText(id,jsonFile);
 	}
 	
+
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the boolean data service$")
 	public void update_record_with__boolean_data_service(String id, String jsonFile) throws InterruptedException, MalformedURLException {
 		 design.updateRecordForBooelan(id, jsonFile);
@@ -235,8 +302,9 @@ public class DesignTestCases extends BaseClass{
 		design.matchToRecordForFileType(jsonFile);	
 }
 	@Then("^Match it to \"(.*?)\" boolean$")
+
 	public void match_it_to__boolean(String string) throws Exception {
-		design.matchRecorforBoolen(string);
+		design.matchRecordforBoolean(string);
 	}
 
 		

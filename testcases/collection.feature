@@ -1,4 +1,4 @@
-Feature: This is the Feature file of DS-Collection
+Feature: DS-Collection
 
 @Author
 Scenario Outline: Log into Author
@@ -7,7 +7,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|vtest@appveen.com|123123123|
+|test_appadmin@appveen.com|123123123|
 
 Scenario: Delete data service
 	Given Data service "collection1" exists
@@ -28,11 +28,14 @@ Scenario Outline: Assign to Appcenter Group
 	|user|
 	|vtest@appveen.com|
 
+
 Scenario: Log out of Author
 	Given User logged into Author
 	Then User logs out of Author
 	
-#@AppCenter
+
+
+@AppCenter
 Scenario Outline: Log into AppCenter
 	Given User navigate to AppCenter login page
 	And User enters "<username>" and "<password>" in AppCenter login page
@@ -42,11 +45,12 @@ Examples:
 |vtest@appveen.com|123123123|
 
 
+ #INSERT/UPDATE
 Scenario: Add data to data service
 	Given Data service "collection1"
 	Then Add data to the data service for Collection
-	
-	
+#	
+#	
 #	Scenario Outline: Add record to data service
 #	Given Data service "number_Number"
 #	Then Add record "<data>" to the data service
@@ -55,14 +59,14 @@ Scenario: Add data to data service
 #Examples:
 #|data|
 #|{"_id":"DS1002", "dsNumberNumber1002": "", "dsNumberNumber1014": "","dsNumberNumber1015": "","dsNumberNumber1018": "" }|
-#
+
 #Scenario Outline: Add record to data service
 #	Given Data service "number_Number"
 #	Then Add record "<data>" to the data service	
 #	And Expect error "ID DS1001 already exists" on save
 #	Examples:
 #		|data|
-#	  |{ "_id" : "DS1001","dsNumberNumber1001" : 11,"dsNumberNumber1002" : 	12,"dsNumberNumber1003" : 13,"dsNumberNumber1007" : 14,"dsNumberNumber1008" : 18,"dsNumberNumber1014" : 17,"dsNumberNumber1015" : 15}|
+#	  |{ "_id"s : "DS1001","dsNumberNumber1001" : 11,"dsNumberNumber1002" : 	12,"dsNumberNumber1003" : 13,"dsNumberNumber1007" : 14,"dsNumberNumber1008" : 18,"dsNumberNumber1014" : 17,"dsNumberNumber1015" : 15}|
 #
 #Scenario Outline: Add record to data service
 #	Given Data service "number_Number"

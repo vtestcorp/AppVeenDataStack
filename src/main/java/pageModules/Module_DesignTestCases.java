@@ -3,6 +3,7 @@ package pageModules;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,6 +31,7 @@ import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
 import helperMethods.ScrollTypes;
 import helperMethods.WaitTypes;
+import io.cucumber.datatable.DataTable;
 import pageObjects.Object_AppCenterPage;
 import pageObjects.Object_AuthorPage;
 import pageObjects.Object_GroupPage;
@@ -47,7 +49,7 @@ public class Module_DesignTestCases extends BaseClass{
 	public LoginPage lp;
 	public String id;
 	public static ArrayList<String> groups;
-//	public SoftAssertions assertCheck;
+	public static List<String> availableStateList;
 	
 	public Module_DesignTestCases(WebDriver driver) {
 		this.driver = driver;
@@ -489,12 +491,14 @@ public class Module_DesignTestCases extends BaseClass{
 	    }
 		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
-			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
-	    }
+			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		    }
+		Thread.sleep(5000);
 		applyExplicitWaitsUntilElementVisible(acp.textBoxesLocation, 20);
 		List<WebElement> textBoxes = acp.textBoxesLocation;
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
 	   	for (int j = 1; j <= textBoxes.size(); j++) {
+	   		Thread.sleep(1000);
 			WebElement textBox = driver.findElement(By.xpath("(//input[@class='searchInput pac-target-input' or @id='_id'])["+j+"]"));
 				if (textBox.isEnabled()) {
 					String id1 = textBox.getAttribute("id");
@@ -508,12 +512,12 @@ public class Module_DesignTestCases extends BaseClass{
 						     textBox.sendKeys(Keys.DOWN);
 						     Thread.sleep(500);
 						     textBox.sendKeys(Keys.ENTER);
-						     
 						  }
 					  }
 					}
 				}
 		      }
+
 	   				Thread.sleep(2000);
 		            applyWait.waitForElementToBeClickable(acp.save, 30).click();
 		       }
@@ -559,51 +563,101 @@ public class Module_DesignTestCases extends BaseClass{
 	            applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	      }
 	
-	public void addRecordForRichText(String string) throws InterruptedException, MalformedURLException {
-		Thread.sleep(2000);
-		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
-			acp.yes.click();
-	    }
-		Thread.sleep(2000);
-		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
-			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
-	    }
-		Thread.sleep(5000);
-		List<WebElement> textBoxes = acp.richtextBoxes;
-		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
-		for (int j = 1; j <= textBoxes.size(); j++) {
-			String val =null;
-			WebElement textBox = driver.findElement(By.xpath("(//*[starts-with(@class,'tox-edit-area__iframe') or   @id='_id'])["+j+"]"));
-			if (textBox.isEnabled()) {
-				String id1 = textBox.getAttribute("id");
-			if(id1.equals("_id"))
-				{
-					val = (String) jsonObject.get(id1);
-					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(val);
-				}
-			 else {
-   						 driver.switchTo().frame(textBox);
-   						  WebElement child =driver.findElement(By.xpath("//body"));
-   						 id1 = child.getAttribute("data-id");
-   						 try {
-   							  child.sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
-   							    Thread.sleep(500);
-   						        String value = (String) jsonObject.get(id1);
-   						        Thread.sleep(500);
-   						     applyWait.waitForElementToBeClickable(child, 30).sendKeys(value);
-   						       child.sendKeys(Keys.TAB);
-   						 }catch(Exception e) 
-   						 {
-   							 driver.switchTo().defaultContent();
-   							 continue;
-   						 }
-   						 driver.switchTo().defaultContent();
-   					  	 }
-   				   	 }
-   				}
-							
-				applyWait.waitForElementToBeClickable(acp.save, 30).click();
-	}	
+//<<<<<<< HEAD
+//	public void addRecordForRichText(String string) throws InterruptedException, MalformedURLException {
+//		Thread.sleep(2000);
+//		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
+//			acp.yes.click();
+//	    }
+//		Thread.sleep(2000);
+//		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
+//			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
+//	    }
+//		Thread.sleep(5000);
+//		List<WebElement> textBoxes = acp.richtextBoxes;
+//		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
+//		for (int j = 1; j <= textBoxes.size(); j++) {
+//			String val =null;
+//			WebElement textBox = driver.findElement(By.xpath("(//*[starts-with(@class,'tox-edit-area__iframe') or   @id='_id'])["+j+"]"));
+//			if (textBox.isEnabled()) {
+//				String id1 = textBox.getAttribute("id");
+//			if(id1.equals("_id"))
+//				{
+//					val = (String) jsonObject.get(id1);
+//					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(val);
+//				}
+//			 else {
+//   						 driver.switchTo().frame(textBox);
+//   						  WebElement child =driver.findElement(By.xpath("//body"));
+//   						 id1 = child.getAttribute("data-id");
+//   						 try {
+//   							  child.sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+//   							    Thread.sleep(500);
+//   						        String value = (String) jsonObject.get(id1);
+//   						        Thread.sleep(500);
+//   						     applyWait.waitForElementToBeClickable(child, 30).sendKeys(value);
+//   						       child.sendKeys(Keys.TAB);
+//   						 }catch(Exception e) 
+//   						 {
+//   							 driver.switchTo().defaultContent();
+//   							 continue;
+//   						 }
+//   						 driver.switchTo().defaultContent();
+//   					  	 }
+//   				   	 }
+//   				}
+//							
+//				applyWait.waitForElementToBeClickable(acp.save, 30).click();
+//	}	
+//=======
+	
+	
+				public void addRecordForRichText(String string) throws InterruptedException, MalformedURLException {
+					Thread.sleep(2000);
+					if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
+						acp.yes.click();
+				    }
+					Thread.sleep(2000);
+					if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
+						applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
+				    }
+					Thread.sleep(5000);
+					List<WebElement> textBoxes = acp.richtextBoxes;
+					JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
+					for (int j = 1; j <= textBoxes.size(); j++) {
+						String val =null;
+						WebElement textBox = driver.findElement(By.xpath("(//*[starts-with(@class,'tox-edit-area__iframe') or   @id='_id'])["+j+"]"));
+						if (textBox.isEnabled()) {
+							String id1 = textBox.getAttribute("id");
+						if(id1.equals("_id"))
+							{
+								val = (String) jsonObject.get(id1);
+								applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(val);
+							}
+						 else {
+    		   						 driver.switchTo().frame(textBox);
+			   						  WebElement child =driver.findElement(By.xpath("//body"));
+			   						 id1 = child.getAttribute("data-id");
+			   						 try {
+			   							  child.sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+			   							    Thread.sleep(500);
+			   						        String value = (String) jsonObject.get(id1);
+			   						        Thread.sleep(500);
+			   						     applyWait.waitForElementToBeClickable(child, 30).sendKeys(value);
+			   						       child.sendKeys(Keys.TAB);
+			   						 }catch(Exception e) 
+			   						 {
+			   							 driver.switchTo().defaultContent();
+			   							 continue;
+			   						 }
+			   						 driver.switchTo().defaultContent();
+			   					  	 }
+			   				   	 }
+			   				}
+										
+							applyWait.waitForElementToBeClickable(acp.save, 30).click();
+				}	
+//>>>>>>> data
 		
 	public void addNewRecords() throws Exception {
 		
@@ -691,7 +745,17 @@ public class Module_DesignTestCases extends BaseClass{
 		      if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
 					applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 			    }
-		    Thread.sleep(5000);
+		    Thread.sleep(2000);
+		    try {
+				applyExplicitWaitsUntilElementVisible(acp.idTextBox, 5);
+			} catch (Exception e1) {
+				driver.navigate().refresh();
+				 Thread.sleep(3000);
+				if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
+					applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+				    }
+				applyExplicitWaitsUntilElementVisible(acp.idTextBox, 5);
+			}
 			List<WebElement> buttons = acp.buttons;
 			JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
 			for (int j = 1; j <= buttons.size(); j++) {
@@ -723,11 +787,56 @@ public class Module_DesignTestCases extends BaseClass{
 					      }
 				      }
 				      }
-				   	}
+				   }
 			}
 			
 			applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	    }
+	   
+	   public void mapFileSettingToImport(String jsonfile) throws MalformedURLException {
+			JSONObject jsonObject = JsonUtils.fetchJSONObject(jsonfile);
+			System.out.println(jsonObject.get("sheetToRead").toString());
+			System.out.println(jsonObject.get("rowsToSkipFromTop").toString());
+			System.out.println(jsonObject.get("rowsToSkipFromBottom").toString());
+			System.out.println(jsonObject.get("markFirstRecordAsHeader").toString());
+			
+			String sheetName= jsonObject.get("sheetToRead").toString();
+			String rowValue = jsonObject.get("rowsToSkipFromTop").toString();
+			String bottomRow = jsonObject.get("rowsToSkipFromBottom").toString();
+			String header= jsonObject.get("markFirstRecordAsHeader").toString();
+			
+			applyExplicitWaitsUntilElementVisible(acp.sheetToReadDropdown, 10);
+			dropdown.selectByVisibleText(acp.sheetToReadDropdown, sheetName);
+			applyWait.waitForElementToBeClickable(acp.sheetTopRow, 10).sendKeys(rowValue);
+			applyWait.waitForElementToBeClickable(acp.sheetBottomRow, 10).sendKeys(bottomRow);
+		
+		}
+	   
+	   public void userNavigateToColumnMappingPage() throws MalformedURLException, InterruptedException {
+		   Thread.sleep(1000);
+		   applyWait.waitForElementToBeClickable(acp.next, 30).click();
+		  }
+	   
+
+		public void userNavigateToValidateRecord() throws InterruptedException {
+			 applyWait.waitForElementToBeClickable(acp.here, 30).click();
+			 Thread.sleep(1000);
+			 applyWait.waitForElementToBeClickable(acp.notification, 30).click();
+			 applyWait.waitForElementToBeClickable(acp.notification_body, 10).click();
+			 Thread.sleep(500);
+		//	 applyWait.waitForElementToBeClickable(acp.next, 30).click();
+		}
+	   
+	  
+	   
+	   public void mapColumnToValue(String destination, String source) throws InterruptedException {
+		   By src = By.xpath("//div[normalize-space()='"+destination+"']//input[contains(@class,'colDiv')]");
+		   applyWaitForDynamicWebElement(src, 10);
+		   WebElement dest=driver.findElement(src);
+		   dest.clear();
+		   dest.sendKeys(source,Keys.TAB.toString());
+		   Thread.sleep(1000);
+}
 
 
 	public void updateRecord(String id, String jsonFile) throws Exception {
@@ -778,6 +887,27 @@ public class Module_DesignTestCases extends BaseClass{
 		addRecordForUser(jsonFile);
 		
 	}
+
+	
+   public void updateRecordForRichText(String id, String jsonFile) throws InterruptedException, MalformedURLException {
+	   Thread.sleep(2000);
+		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
+			acp.yes.click();
+	    }
+		applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
+		Thread.sleep(1000);
+		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);
+		
+		WebElement record=driver.findElement(By.xpath("//a[normalize-space()='"+id+"']"));
+		record.click();
+		Thread.sleep(1000);
+		
+		applyWait.waitForElementToBeClickable(acp.edit, 30).click();
+		Thread.sleep(1000);
+		addRecordForRichText(jsonFile);
+
+   }
+
 
 	public void updateRecords(String id, String attribute) throws InterruptedException {
 		
@@ -847,7 +977,9 @@ public class Module_DesignTestCases extends BaseClass{
 		int q=1;
 		applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPage, 10);
 		for(WebElement attribute : acp.attributesOnViewPage) {
+			
 			WebElement value=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])["+q+"]"));
+			Thread.sleep(1000);
 			WebElement key=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])["+q+"]/ancestor::odp-view-separator/preceding-sibling::div//label"));
 			
 			String a=key.getAttribute("for");
@@ -861,7 +993,7 @@ public class Module_DesignTestCases extends BaseClass{
 		matchData(jsonFile, actualData);
 	}
 	
-   public void matchRecorforBoolen(String jsonFile) throws Exception {
+   public void matchRecordforBoolean(String jsonFile) throws Exception {
 		LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
 		applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
 		WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
@@ -879,6 +1011,7 @@ public class Module_DesignTestCases extends BaseClass{
 		}
 		
 		matchData(jsonFile, actualData);
+
 }
 
 
@@ -1230,6 +1363,26 @@ public void matchLocationData(String jsonFile) throws Exception {
 
 
 
+// public void expectErrorOnSave(String errorMessage) throws InterruptedException {
+//	 Thread.sleep(1000);
+//	if(errorMessage.contains("ID"))
+//	{
+//		Thread.sleep(3000);
+//		By error = By.xpath("//div[@role='alertdialog']");
+//		applyWaitForDynamicWebElement(error, 10);
+//		String expectedError = driver.findElement(error).getText();
+//		Assert.assertEquals(errorMessage, expectedError);
+//	}
+//	if(errorMessage.contains("Unique"))
+//	{
+//		By error = By.xpath("//div[@role='alertdialog']");
+//		applyWaitForDynamicWebElement(error, 10);
+//		String expectedError = driver.findElement(error).getText();
+//		Assert.assertTrue( expectedError.contains("Unique check validation failed"));  	
+//	}
+//	
+//  }
+
 public void addRecordForGroup(String string) throws Exception {
 	
 	Thread.sleep(1000);
@@ -1400,26 +1553,6 @@ public void addRecordForGroup(String string) throws Exception {
 }
 
 
-
-public void updateRecordForRichText(String id, String jsonFile) throws InterruptedException, MalformedURLException {
-	   Thread.sleep(2000);
-		if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
-			acp.yes.click();
-	    }
-		applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
-		Thread.sleep(1000);
-		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);
-		WebElement record=driver.findElement(By.xpath("//a[normalize-space()='"+id+"']"));
-		record.click();
-		Thread.sleep(1000);
-		
-		applyWait.waitForElementToBeClickable(acp.edit, 30).click();
-		Thread.sleep(1000);
-		addRecordForRichText(jsonFile);
-}
-
-
-
 public void updateRecordForGroup(String id2, String jsonFile) throws Exception {
 	Thread.sleep(2000);
 	if(!driver.findElements(By.xpath("//button[normalize-space()='Yes']")).isEmpty()){
@@ -1499,7 +1632,6 @@ else {
 	
   MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
     Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
-    System.err.println(entriesDiffering);
     Assert.assertTrue(actualData.equals(expectedData));
 }
 }
@@ -1521,4 +1653,116 @@ public void expectErrorOnSave(String errorMessage) throws InterruptedException {
 		Assert.assertTrue( expectedError.contains("Unique check validation failed"));  	
 	}
  }
-	}
+	
+
+
+public void addRecordForstateModel(String data) throws MalformedURLException, InterruptedException {
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
+		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		applyWait.applyExplicitWaitsUntilElementVisible(acp.groupTextBoxes, 10);
+		JSONObject jsonObject = JsonUtils.fetchJSONObject(data);
+		for (int j = 1; j <= acp.groupTextBoxes.size(); j++) {
+			WebElement textBox = driver.findElement(By.xpath("(//*[contains(@class,'form-control') or @type='checkbox' or @type='file' or contains(@class,'btn btn-link mr-2 p-0') or contains(@class,'searchInput')])["+j+"]"));
+			if (textBox.isEnabled()) {
+				String id1 = textBox.getAttribute("id");
+			   String jsonValue = JsonPath.read(data, "$."+id1+"").toString();
+			   
+
+				if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
+					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(jsonValue);	
+				}
+				else if (textBox.getAttribute("type").equals("number")) {
+					applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(jsonValue);
+				}
+				else if(textBox.getAttribute("type").equals("submit")){
+					applyWait.waitForElementToBeClickable(textBox, 30).click();
+					String[] part = jsonValue.split("T");
+				     String year =  part[0].split("-")[0];
+				     String month = part[0].split("-")[1];
+				     int i=Integer.parseInt(month)-1;
+                     String m = i+"";			    
+				     String date = part[0].split("-")[2];
+				     System.out.println(date);
+				     
+				     
+				     String time = part[1]; 
+				     String hour = time.split(":")[0];
+				     System.out.println(hour);
+				     String min = time.split(":")[1];
+				     System.out.println(min);
+				     String sec = time.split(":")[2].replace("Z", "");
+				     System.out.println(sec);
+					
+				     dropdown.selectByValue(acp.yearDropDown,year);
+				     Thread.sleep(1000);
+				     
+				     dropdown.selectByIndex(acp.monthDropDown, i);
+				     
+				     WebElement date1 = driver.findElement(By.xpath("//span[@id='_day' and not(contains(@class,'disabled'))]//small[normalize-space()='"+date+"']"));
+                     date1.click();
+                             
+                     applyWait.waitForElementToBeClickable(acp.doneButton, 30).click();
+                     
+				}
+				
+			}
+			
+		}
+		applyWait.waitForElementToBeClickable(acp.save, 30).click();
+}
+
+
+
+			public void userNextStateAvailable(String nextState) throws InterruptedException {
+				applyWait.waitForElementToBeClickable(acp.record, 30).click();
+				applyWait.waitForElementToBeClickable(acp.edit, 30).click();
+				Thread.sleep(1000);
+				applyWait.waitForElementToBeClickable(acp.saveDropDown, 30).click();
+				String[] st = nextState.split(",");
+				List<String> al =  Arrays.asList(st);
+				System.out.println("ArrayList is : " +al);
+				List<WebElement> stateList = driver.findElements(By.xpath("//button[@class='dropdown-item state-model-option ng-star-inserted']"));
+				availableStateList = new ArrayList<>();
+				for (int i = 0; i < stateList.size(); i++) {
+					String value = stateList.get(i).getText();
+					availableStateList.add(value);
+				}
+				System.out.println("Expected List :  " + availableStateList);
+				Assert.assertEquals(availableStateList,  al);
+								
+				}
+
+
+
+			public void verifyInvalidState(String invalidState) {
+				String[] invalid = invalidState.split(",");
+				List<String> ls = Arrays.asList(invalid);
+				ArrayList<String> demo = new ArrayList<>(availableStateList);
+				demo.retainAll(ls);
+				if(!demo.isEmpty())
+				{
+					Assert.assertTrue(false);
+				}
+			}
+
+			public void updateRecordForStateModel(String updateState) throws MalformedURLException, InterruptedException {
+				Thread.sleep(5000);
+				driver.findElement(By.xpath("//button[contains(@class,'dropdown-item state-model-option')][normalize-space()='"+updateState+"']")).click();
+			}
+
+
+			public void verifyValidRecord(String count) {
+				String actual = applyWait.waitforElementToBeDisplayed(acp.validRecords, 30).getText();
+				Assert.assertEquals(count, actual);
+			}
+
+
+
+			public void selectConflictRecords(String conflictRecord) {
+				
+			}
+
+
+
+			}
+
