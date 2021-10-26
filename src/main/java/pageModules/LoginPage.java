@@ -11,6 +11,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -128,6 +129,8 @@ public class LoginPage extends BaseClass{
 	public void verifyDataServiceExist(String dataService) throws InterruptedException {
 		Thread.sleep(1000);
 		dataServiceName=dataService;
+		
+		applyWait.waitForElementToBeClickable(ap.servicesTab, 30).click();
 		applyExplicitWaitsUntilElementVisible(ap.listOfDataService, 20);
 		for(WebElement dataService1 : ap.listOfDataService) {
 			String data=dataService1.getText();
@@ -144,7 +147,7 @@ public class LoginPage extends BaseClass{
 			applyExplicitWaitsUntilElementVisible(data_serviceToggler, 5);
 				data_serviceToggler.click();
 				applyWait.waitForElementToBeClickable(ap.delete, 30).click();
-				 
+				 Thread.sleep(500);
 				try {
 					applyWait.waitForElementToBeClickable(ap.delete1, 30).click();
 				} catch (ElementClickInterceptedException e) {
@@ -1383,9 +1386,10 @@ public class LoginPage extends BaseClass{
 
 						public void createStates(String stateName) throws InterruptedException {
 							applyWait.waitForElementToBeClickable(ap.addStateValueHere, 30).sendKeys(stateName);
-						    Thread.sleep(500);	
+							Thread.sleep(200);	
 							applyWait.waitForElementToBeClickable(ap.addStateInput, 30).click();
-							 Thread.sleep(1000);	
+							Thread.sleep(200);	
+
 						}
 		
 						public void setStates(DataTable dataTable) throws InterruptedException {
@@ -1402,5 +1406,44 @@ public class LoginPage extends BaseClass{
 
 						public void saveAndDeploy() {
 							applyWait.waitForElementToBeClickable(ap.submitAndDeploy, 30).click();
+						}
+
+						public void addUser(String userEmail) throws Exception {
+							Thread.sleep(500);
+							String name=getName(userEmail);
+							applyWait.waitForElementToBeClickable(gp.users, 30).click();
+							Thread.sleep(500);
+							applyExplicitWaitsUntilElementVisible(gp.userList, 10);
+							ArrayList<String> users=new ArrayList<String>();
+							for(WebElement user : gp.userList) {
+								String user1=user.getText();
+								users.add(user1);
+								System.out.println(user1);
+						}
+
+							if(!users.contains(userEmail)) {
+								applyWait.waitForElementToBeClickable(gp.addUser, 30).click();
+								applyWait.waitForElementToBeClickable(gp.userName, 30).sendKeys(userEmail);;
+								Thread.sleep(1000);
+								applyWait.waitForElementToBeClickable(gp.password, 30).click();
+								Thread.sleep(500);
+								if(driver.findElements(By.id("importUser")).isEmpty()) {
+								applyWait.waitForElementToBeClickable(gp.password, 30).sendKeys(Property.getProperty("password"));;
+								applyWait.waitForElementToBeClickable(gp.confirmPassword, 30).sendKeys(Property.getProperty("password"));;
+								applyWait.waitForElementToBeClickable(gp.name, 30).sendKeys(name);;
+								applyWait.waitForElementToBeClickable(gp.add, 30).click();
+								}
+								else {
+									applyWait.waitForElementToBeClickable(gp.importUsers, 30).click();
+								}
+								
+							}
+							
+						}
+						private String getName(String userEmail) {
+							String name=userEmail.split("@")[0].replaceFirst(userEmail.split("@")[0].charAt(0)+"", (char) (userEmail.split("@")[0].charAt(0)-32)+"");
+							System.out.println(name);
+
+							return name;
 						}
    }

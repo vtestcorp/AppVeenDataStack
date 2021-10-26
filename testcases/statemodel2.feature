@@ -50,7 +50,6 @@ Examples:
 |Re-open|
 |Ready for Release|
 
-
 Scenario: Create State for State Model
 And Set Current State with from state to next state
 |Open|In Progress,Rejected,Deffered,Config Issue,Cannot Reproduce,Working as Expected|

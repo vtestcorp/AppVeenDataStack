@@ -181,6 +181,9 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(xpath="//button[normalize-space()='Done']")
 	public WebElement done;
 	
+	@FindBy(xpath="//span[normalize-space()='Services']")
+	public WebElement servicesTab;
+	
 	@FindBy(xpath="//label[normalize-space()='Point on a map']")
 	public WebElement pointOnAMap;
 

@@ -23,10 +23,9 @@ Scenario Outline: Assign to Appcenter Group
  	Then Group "String-Group" does not exist
 	Then Create new group "String-Group" 
 	And Assign appcenter permissions for "string_Text" dataservice to "<user>"
-	
 	Examples:
 	|user|
-	|vtest@appveen.com|
+	|vtest1@appveen.com|
 
 
 Scenario: Log out of Author

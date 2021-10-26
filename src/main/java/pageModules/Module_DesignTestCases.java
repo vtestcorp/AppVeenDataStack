@@ -29,6 +29,7 @@ import config.Constants;
 import helperMethods.DropDown;
 import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
+import helperMethods.Property;
 import helperMethods.ScrollTypes;
 import helperMethods.WaitTypes;
 import io.cucumber.datatable.DataTable;
@@ -125,6 +126,7 @@ public class Module_DesignTestCases extends BaseClass{
 	public void assignPermission(String dataServiceName,String user1) throws Exception {
 		String role="Manage";
 		String userEmail=user1;
+		
 		Thread.sleep(1000);
 		if(lp.isUserType)
 		{
@@ -183,9 +185,8 @@ public class Module_DesignTestCases extends BaseClass{
 		Thread.sleep(1000);
 		
 		By ele=By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']");
-//		applyWaitForDynamicWebElement(ele,20);
+		applyWaitForDynamicWebElement(ele, 20);
 		WebElement user=driver.findElement(ele);
-		applyExplicitWaitsUntilElementVisible(user,10);
 		try {
 		user.click();
 		}
@@ -197,6 +198,8 @@ public class Module_DesignTestCases extends BaseClass{
 		applyWait.waitForElementToBeClickable(gp.save, 30).click();
 		
 	}
+
+	
 
 	public void addRecord(String string) throws Exception {
 		Thread.sleep(2000);
@@ -956,8 +959,8 @@ public class Module_DesignTestCases extends BaseClass{
 		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);;
+		Thread.sleep(500);
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(Keys.ENTER);;
-		Thread.sleep(1000);
 	}
 
 	public void recordMustNotExist() throws Exception {
@@ -1632,6 +1635,8 @@ else {
 	
   MapDifference<String, String> diff = Maps.difference(actualData, expectedData);
     Map<String, ValueDifference<String>> entriesDiffering = diff.entriesDiffering();
+    System.out.println(entriesDiffering);
+    System.out.println(diff);
     Assert.assertTrue(actualData.equals(expectedData));
 }
 }
@@ -1682,36 +1687,23 @@ public void addRecordForstateModel(String data) throws MalformedURLException, In
 				     int i=Integer.parseInt(month)-1;
                      String m = i+"";			    
 				     String date = part[0].split("-")[2];
-				     System.out.println(date);
-				     
-				     
 				     String time = part[1]; 
 				     String hour = time.split(":")[0];
-				     System.out.println(hour);
 				     String min = time.split(":")[1];
-				     System.out.println(min);
 				     String sec = time.split(":")[2].replace("Z", "");
-				     System.out.println(sec);
-					
 				     dropdown.selectByValue(acp.yearDropDown,year);
 				     Thread.sleep(1000);
-				     
 				     dropdown.selectByIndex(acp.monthDropDown, i);
 				     
 				     WebElement date1 = driver.findElement(By.xpath("//span[@id='_day' and not(contains(@class,'disabled'))]//small[normalize-space()='"+date+"']"));
                      date1.click();
-                             
                      applyWait.waitForElementToBeClickable(acp.doneButton, 30).click();
                      
 				}
-				
 			}
-			
 		}
 		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 }
-
-
 
 			public void userNextStateAvailable(String nextState) throws InterruptedException {
 				applyWait.waitForElementToBeClickable(acp.record, 30).click();
@@ -1731,8 +1723,6 @@ public void addRecordForstateModel(String data) throws MalformedURLException, In
 				Assert.assertEquals(availableStateList,  al);
 								
 				}
-
-
 
 			public void verifyInvalidState(String invalidState) {
 				String[] invalid = invalidState.split(",");

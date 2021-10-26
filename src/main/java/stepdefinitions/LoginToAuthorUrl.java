@@ -2,44 +2,18 @@ package stepdefinitions;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
-import java.util.List;
-import java.util.Properties;
-
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.PageFactory;
-
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.GherkinKeyword;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.gherkin.model.Feature;
-import com.aventstack.extentreports.gherkin.model.Scenario;
-
 import base.BaseClass;
-import config.Constants;
-//import cucumber.api.java.Before;
-//import cucumber.api.java.en.And;
-//import cucumber.api.java.en.Given;
-//import cucumber.api.java.en.Then;
 import helperMethods.JsonUtils;
-import helperMethods.Screenshots;
 import helperMethods.WaitTypes;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import listeners.ExtentReportListener;
 import pageModules.LoginPage;
 
 public class LoginToAuthorUrl extends BaseClass {
 
-//	public WebDriver driver;
 	public WaitTypes applyWait;
 	public LoginPage loginPage ;
 	public static String data_Service;
@@ -51,7 +25,6 @@ public class LoginToAuthorUrl extends BaseClass {
 	public void setUp() {
 		start();
 		loginPage = new LoginPage(driver);
-
 	}
 	
 	@Before
@@ -69,21 +42,17 @@ public class LoginToAuthorUrl extends BaseClass {
 	@Given("User enters {string} and {string} in Author login page")
 	public void user_enters_UserName_and_Password(String username,String password) throws Exception {
 			loginPage.enterUserNameAndPassword(username, password);
-			
 	}
 
 	@Then("Verify User has Logged in successfully in Author Url")
 	public void message_displayed_Login_Successfully() throws Exception {
-		
 		loginPage.verifyListOfDataServices();
 	}
-	
 	
 	@Given("Library {string} exist")
 	public void data_Library_exist(String library) throws Exception {
 		 loginPage.verifyLibraryExist(library);
 	}
-	
 	
 	@Given("Data service {string} exists")
 	public void data_service_exists(String dataService) throws Exception {
@@ -114,7 +83,7 @@ public class LoginToAuthorUrl extends BaseClass {
 	public void create_new_Data_Service(String dataService) throws Exception  {
 			data_Service=dataService;
 		
-		String dataName=path+"\\testData" + "\\" + ""+dataService+".json";
+		String dataName=path+"\\testData" + "\\" + dataService+".json";
 		
 		try {
 			FileReader reader = new FileReader(dataName);
@@ -206,6 +175,13 @@ public class LoginToAuthorUrl extends BaseClass {
 	public void user_exists(String userEmail) throws Exception {
 	   loginPage.VerifyUserExists(userEmail);
 	}
+	
+	@Given("Add {string} if not present")
+	public void add_if_not_present(String user) throws Exception {
+		loginPage.addUser(user);
+	}
+
+	
 
 	@Then("Add {string} to {string}")
 	public void add_to(String userEmail, String group) throws Exception {

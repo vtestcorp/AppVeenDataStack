@@ -8,7 +8,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|deepak@appveen.com|123123123|
+|vtest@appveen.com|123123123|
 
 Scenario: Delete data service
 	Given Data service "Sample1" exists
@@ -34,10 +34,10 @@ Scenario Outline: Add group
 	Then Create group "<group>" and enable role "<role>" of "<dataservice>"
 	Examples:
 		| group | dataservice | role |
-		| ManageGroup | users | Manage |
-		| ReadOnlyGroup | users | View |
-		| ReviewGroup | users | Reviewer |
-		| CreateGroup|users|Maker|
+		| ManageGroup | Sample1 | Manage |
+		| ReadOnlyGroup | Sample1 | View |
+		| ReviewGroup | Sample1 | Reviewer |
+		| CreateGroup|Sample1|Maker|
 
 Scenario Outline: Assign permissions
 	Given Data service "<dataservice>"  exists
@@ -46,10 +46,10 @@ Scenario Outline: Assign permissions
 	Then Add "<user>" to "<group>"
 	Examples:
 		| group | dataservice | user |
-		| ManageGroup | users | test_manage@appveen.com |
-		| ReadOnlyGroup | users | test_readonly@appveen.com |
-		| ReviewGroup | users | reviewer@appveen.com |
-		| CreateGroup|users|maker@appveen.com|
+		| ManageGroup | Sample1 | test_manage@appveen.com |
+		| ReadOnlyGroup | Sample1 | test_readonly@appveen.com |
+		| ReviewGroup | Sample1 | reviewer@appveen.com |
+		| CreateGroup|Sample1|maker@appveen.com|
 
 Scenario: Log out of Author
 	Given User logged into Author

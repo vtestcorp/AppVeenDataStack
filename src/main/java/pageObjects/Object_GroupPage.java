@@ -54,11 +54,18 @@ public WebElement members;
 @FindBy(xpath="//span[normalize-space()='Users']")
 public WebElement users;
 
-@FindBy(xpath="//odp-user-list-cell-renderer[@class='ng-star-inserted']")
+@FindBy(xpath="//button[@id='importUser']")
+public WebElement importUsers;
+
+@FindBy(xpath="//div[@col-id='username']//odp-user-list-cell-renderer[@class='ng-star-inserted']")
 public List<WebElement> userList;
 
 @FindBy(xpath="//span[text()='Add User']")
 public WebElement addUser;
+
+@FindBy(xpath="//button[normalize-space()='Cancel']")
+public WebElement cancel;
+
 
 @FindBy(xpath="//input[@placeholder='Enter Username']")
 public WebElement userName;
