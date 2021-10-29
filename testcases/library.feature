@@ -9,50 +9,50 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|test_appadmin@appveen.com|123123123|
+|vtest@appveen.com|123123123|
+
+#Scenario: Create Library
+#	Given Create "Address" Library
 
 Scenario: Create Library
-#	Given Create "Address" Library
+	Given Library "Customer1" exist
 
 Scenario: Delete data service
 	Given Data service "library" exists
 	Then Remove the data service
 
-Scenario: Create Library
-	Given Library "Customer" exist
+#Scenario: Create Library
+#	Given Library "Customer" exist
 
-#Scenario: Create data service
-#	Given Data service "library" does not exist
-#	Then Create new data service "library"
- #Under testData, picks up strings.json create the JSON
+Scenario: Create data service
+	Given Data service "library" does not exist
+	Then Create new data service "library"
+
+Scenario Outline: Assign to Appcenter Group
+ 	Then Group "Library-Group" does not exist
+	Then Create new group "Library-Group" 
+	And Assign appcenter permissions for "library" dataservice to "<user>"
+	
+	Examples:
+	|user|
+	|test_ac_ds_manage@appveen.com|
 
 
-#Scenario Outline: Assign to Appcenter Group
- #	Then Group "Library-Group" does not exist
-#	Then Create new group "Library-Group" 
-#	And Assign appcenter permissions for "library" dataservice to "<user>"
-#	
-#	Examples:
-#	|user|
-#	|test_ac_ds_manage@appveen.com|
-#
-#
-#Scenario: Log out of Author
-#	Given User logged into Author
-#	Then User logs out of Author
-#	
-#
-#@AppCenter
-#Scenario Outline: Log into AppCenter
-#	Given User navigate to AppCenter login page
-#	And User enters "<username>" and "<password>" in AppCenter login page
-#	And Verify User has Logged in Successfully 
-#Examples:
-#|username|password|
-#|test_ac_ds_manage@appveen.com|123123123|
-#
-#
- #INSERT/UPDATE
+Scenario: Log out of Author
+	Given User logged into Author
+	Then User logs out of Author
+	
+
+@AppCenter
+Scenario Outline: Log into AppCenter
+	Given User navigate to AppCenter login page
+	And User enters "<username>" and "<password>" in AppCenter login page
+	And Verify User has Logged in Successfully 
+Examples:
+|username|password|
+|test_ac_ds_manage@appveen.com|123123123|
+
+
 Scenario: Add data to data service
 	Given Data service "library"
 	Then Add data to the data service for Library Type

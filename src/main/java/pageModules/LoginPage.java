@@ -265,6 +265,7 @@ public class LoginPage extends BaseClass{
 		if(!libraryflag1)
 		{
 		 dataServiceName=dataService1;
+		 applyWait.waitForElementToBeClickable(ap.servicesTab, 30).click();
 		 Thread.sleep(2000); 
 		applyExplicitWaitsUntilElementVisible(ap.dataServiceName1, 10);
 		List<WebElement> dataServices=driver.findElements(By.id("serviceManagerCardTitle"));
@@ -1408,7 +1409,7 @@ public class LoginPage extends BaseClass{
 							applyWait.waitForElementToBeClickable(ap.submitAndDeploy, 30).click();
 						}
 
-						public void addUser(String userEmail) throws Exception {
+						public void addUser(String userEmail, String password) throws Exception {
 							Thread.sleep(500);
 							String name=getName(userEmail);
 							applyWait.waitForElementToBeClickable(gp.users, 30).click();
@@ -1428,18 +1429,19 @@ public class LoginPage extends BaseClass{
 								applyWait.waitForElementToBeClickable(gp.password, 30).click();
 								Thread.sleep(500);
 								if(driver.findElements(By.id("importUser")).isEmpty()) {
-								applyWait.waitForElementToBeClickable(gp.password, 30).sendKeys(Property.getProperty("password"));;
-								applyWait.waitForElementToBeClickable(gp.confirmPassword, 30).sendKeys(Property.getProperty("password"));;
+								applyWait.waitForElementToBeClickable(gp.password, 30).sendKeys(password);;
+								applyWait.waitForElementToBeClickable(gp.confirmPassword, 30).sendKeys(password);;
 								applyWait.waitForElementToBeClickable(gp.name, 30).sendKeys(name);;
 								applyWait.waitForElementToBeClickable(gp.add, 30).click();
 								}
 								else {
 									applyWait.waitForElementToBeClickable(gp.importUsers, 30).click();
 								}
+								Thread.sleep(1000);
 								
 							}
 							
-						}
+						}//vtest@appveen.com
 						private String getName(String userEmail) {
 							String name=userEmail.split("@")[0].replaceFirst(userEmail.split("@")[0].charAt(0)+"", (char) (userEmail.split("@")[0].charAt(0)-32)+"");
 							System.out.println(name);

@@ -176,9 +176,9 @@ public class LoginToAuthorUrl extends BaseClass {
 	   loginPage.VerifyUserExists(userEmail);
 	}
 	
-	@Given("Add {string} if not present")
-	public void add_if_not_present(String user) throws Exception {
-		loginPage.addUser(user);
+	@Given("Add {string} and {string} if not present")
+	public void add_if_not_present(String username,String password) throws Exception {
+		loginPage.addUser(username,password);
 	}
 
 	
