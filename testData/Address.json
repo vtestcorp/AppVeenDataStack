@@ -1,0 +1,50 @@
+{
+  "_metadata": {
+    "version": {
+      "document": 4,
+      "release": "1.1.2"
+    },
+    "deleted": false,
+    "lastUpdated": "2021-11-02T08:15:11.208Z",
+    "createdAt": "2021-11-02T08:09:47.826Z"
+  },
+  "_id": "SCHM1040",
+  "services": [
+    "SRVC2790"
+  ],
+  "name": "Address",
+  "description": null,
+  "app": "vTest",
+  "__v": 3,
+  "definition": [
+    {
+      "definition": [
+        {
+          "_fieldId": "e90bf5f0-3bb4-11ec-8a71-71004f938911",
+          "type": "String",
+          "key": "line1",
+          "properties": {
+            "name": "line1",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "line1",
+            "dataPath": "line1"
+          }
+        },
+        {
+          "_fieldId": "f16fc9b0-3bb4-11ec-8a71-71004f938911",
+          "type": "String",
+          "key": "line2",
+          "properties": {
+            "name": "line2",
+            "fieldLength": 10,
+            "_typeChanged": "String",
+            "dataKey": "line2",
+            "dataPath": "line2"
+          }
+        }
+      ],
+      "type": "Object"
+    }
+  ]
+}

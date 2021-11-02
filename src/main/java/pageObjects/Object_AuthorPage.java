@@ -40,7 +40,7 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(id="serviceManagerCardTitle")
 	public List  <WebElement> listOfDataService;
 
-	@FindBy(xpath = "//span[@class='name d-inline-block font-weight-bold']")
+	@FindBy(xpath = "//span[contains(@class,'d-inline-block')]")
 	public List  <WebElement> listOfLibrary;
 	
 	@FindBy(xpath="//*[text()='New Data Service']")
@@ -232,9 +232,16 @@ public class Object_AuthorPage extends BaseClass{
 
 	@FindBy(xpath="//button[@id='sbButtonSave']")
 	public WebElement saveButton;
+	
+	
+	@FindBy(xpath="//button[@id='_saveSchema']")
+	public WebElement saveLibrary;
 
 	@FindBy(xpath="//input[@id='searchTerm']")
 	public WebElement search;
+	
+	@FindBy(xpath="//span[normalize-space()='Services']")
+	public WebElement servicesTab;
 
 	@FindBy(xpath="//span[@id='serviceManagerCardTitle']")
 	public WebElement dataServiceName1;
