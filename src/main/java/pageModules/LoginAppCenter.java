@@ -115,21 +115,7 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.importfile, 30).click();
 		Thread.sleep(2000);
 		applyWait.waitForElementToBeClickable(acp.uploadFile, 30).sendKeys(path +"\\files" + "\\" +""+file+".xlsx");
-//		applyExplicitWaitsUntilElementVisible(acp.sheetToReadDropdown, 10);
-//		dropdown.selectByVisibleText(acp.sheetToReadDropdown, data_Service);
-//		applyWait.waitForElementToBeClickable(acp.next, 30).click();
-//		Thread.sleep(1000);
-//		applyWait.waitForElementToBeClickable(acp.next, 30).click();
-//		Thread.sleep(1000);
-//		applyWait.waitForElementToBeClickable(acp.here, 30).click();
-//		Thread.sleep(1000);
-//		applyWait.waitForElementToBeClickable(acp.notification, 30).click();
-//		Thread.sleep(1000);
-//		applyWait.waitForElementToBeClickable(acp.notification_body, 30).click();
-//		Thread.sleep(1000);
-//		applyWait.waitForElementToBeClickable(acp.next, 30).click();
-//		Thread.sleep(1000);
-//		applyWait.waitForElementToBeClickable(acp.here, 30).click();
+
 	}
 	
 	

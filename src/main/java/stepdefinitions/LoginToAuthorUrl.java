@@ -10,12 +10,14 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import pageModules.LoginPage;
 
 public class LoginToAuthorUrl extends BaseClass {
 
 	public WaitTypes applyWait;
 	public LoginPage loginPage ;
+	private String userEmail;
 	public static String data_Service;
 	public static String data_library;
 
@@ -178,7 +180,14 @@ public class LoginToAuthorUrl extends BaseClass {
 	
 	@Given("Add {string} and {string} if not present")
 	public void add_if_not_present(String username,String password) throws Exception {
+		userEmail=username;
+		
 		loginPage.addUser(username,password);
+	}
+	
+	@When("Make App Admin")
+	public void make_App_Admin() throws Exception {
+		loginPage.makeAppAdmin(userEmail);
 	}
 
 	

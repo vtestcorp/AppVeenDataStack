@@ -105,6 +105,7 @@ public class LoginPage extends BaseClass{
 				break;
 			}
 		}
+		
 		 if(!libraryflag)
 	      {
 	    	  applyWait.waitForElementToBeClickable(ap.newLibrary, 30).click();
@@ -112,7 +113,7 @@ public class LoginPage extends BaseClass{
 	    	  applyWait.waitForElementToBeClickable(ap.nameOfLibrary, 30).sendKeys(libraryName);
 	    	  Thread.sleep(1000);
 	    	  applyWait.waitForElementToBeClickable(ap.createNewLibraryButton, 30).click();
-	    	  String libName=path+"\\testData" + "\\" + ""+library+".json";
+	    	  String libName=path+"\\testData" + "\\" +library+".json";
 	  		try {
 	  			FileReader reader = new FileReader(libName);
 	  		}
@@ -186,8 +187,6 @@ public class LoginPage extends BaseClass{
 			}
 			createNewDataServices(JsonUtils.getArrayValues(dataName, "definition"),dataService);
 		}
-		
-		
 	}
 	
 	public void createNewLibrary(String library) throws Exception {
@@ -1413,15 +1412,14 @@ public class LoginPage extends BaseClass{
 							Thread.sleep(500);
 							String name=getName(userEmail);
 							applyWait.waitForElementToBeClickable(gp.users, 30).click();
-							Thread.sleep(500);
-							applyExplicitWaitsUntilElementVisible(gp.userList, 10);
+							Thread.sleep(2000);
+							applyExplicitWaitsUntilElementVisible(gp.userList, 30);
 							ArrayList<String> users=new ArrayList<String>();
 							for(WebElement user : gp.userList) {
 								String user1=user.getText();
 								users.add(user1);
-								System.out.println(user1);
 						}
-
+							System.out.println(users.size());
 							if(!users.contains(userEmail)) {
 								applyWait.waitForElementToBeClickable(gp.addUser, 30).click();
 								applyWait.waitForElementToBeClickable(gp.userName, 30).sendKeys(userEmail);;
@@ -1441,11 +1439,52 @@ public class LoginPage extends BaseClass{
 								
 							}
 							
-						}//vtest@appveen.com
+						}
 						private String getName(String userEmail) {
 							String name=userEmail.split("@")[0].replaceFirst(userEmail.split("@")[0].charAt(0)+"", (char) (userEmail.split("@")[0].charAt(0)-32)+"");
-							System.out.println(name);
 
 							return name;
+						}
+
+
+						public void makeAppAdmin(String userEmail) throws Exception {
+							System.out.println(userEmail);
+							Thread.sleep(2000);
+//							By userElement=By.xpath("//div[@name='right']//div[@row-id='"+userEmail+"']//button[normalize-space()='View']");
+//							applyWaitForDynamicWebElement(userElement, 30);
+//							driver.findElement(userElement).click();;
+//							applyWait.waitForElementToBeClickable(gp.moreActions, 30).click();
+//							Thread.sleep(500);
+//							applyWait.waitForElementToBeClickable(gp.makeAppAdmin, 30).click();
+//							applyWait.waitForElementToBeClickable(gp.listOfUsers, 30).click();
+							
+							
+//							By listOfUsers=By.xpath("//div[@col-id='username']/odp-user-list-cell-renderer");
+//							applyWaitForDynamicWebElement(listOfUsers, 30);
+//							List<WebElement> userList=driver.findElements(listOfUsers);
+							int countForUser=1;
+							applyExplicitWaitsUntilElementVisible(gp.listUsers, 30);
+							for(WebElement user : gp.listUsers) {
+								String userName =user.getText();
+								if(userName.equals(userEmail)) {
+									break;
+								}
+								else {
+									countForUser++;
+								}
+							}
+							
+							WebElement userView=driver.findElement(By.xpath("(//button[normalize-space()='View'])["+countForUser+"]"));
+							userView.click();
+							applyWait.waitForElementToBeClickable(gp.moreActions, 30).click();
+							Thread.sleep(500);
+							List<WebElement> makeAppAdminSize=driver.findElements(By.xpath("//button[normalize-space()='Make app Admin']"));
+							if(!makeAppAdminSize.isEmpty()) {
+							applyWait.waitForElementToBeClickable(gp.makeAppAdmin, 30).click();
+						}
+							applyWait.waitForElementToBeClickable(gp.listOfUsers, 30).click();
+							
+							
+							
 						}
    }

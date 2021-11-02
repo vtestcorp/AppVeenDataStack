@@ -54,8 +54,21 @@ public WebElement members;
 @FindBy(xpath="//span[normalize-space()='Users']")
 public WebElement users;
 
+@FindBy(xpath="//button[normalize-space()='Make app Admin']")
+public WebElement makeAppAdmin;
+
+@FindBy(xpath="//div[normalize-space()='List of Users']")
+public WebElement listOfUsers;
+
 @FindBy(xpath="//button[@id='importUser']")
 public WebElement importUsers;
+
+@FindBy(xpath="//div[@col-id='username']/odp-user-list-cell-renderer")
+public List<WebElement> listUsers;
+
+
+@FindBy(xpath="//div[text()='More actions']")
+public WebElement moreActions;
 
 @FindBy(xpath="//div[@col-id='username']//odp-user-list-cell-renderer[@class='ng-star-inserted']")
 public List<WebElement> userList;

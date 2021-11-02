@@ -15,6 +15,7 @@ public class JavascriptClick {
 	}
 
 	public void click(WebElement element) {
+		
 		javascriptExecutor = (JavascriptExecutor) driver;
 		javascriptExecutor.executeScript("arguments[0].click()", element);
 	}
