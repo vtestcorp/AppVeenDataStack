@@ -693,9 +693,6 @@ public class LoginPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(ap.saveButton, 30).click();
 	}
 	
-	
-
-	
 	public void searchDataService() throws Exception {
 		applyWait.waitForElementToBeClickable(ap.search, 30).sendKeys(dataServiceName,Keys.ENTER);;
 		Boolean dataService=applyWait.waitForElementToBeClickable(ap.dataServiceName1, 30).isDisplayed();
@@ -757,7 +754,6 @@ public class LoginPage extends BaseClass{
 				requiredAttributes(jsonProperties);
 
 	break;
-			
 		
 		case "Number" : 
 			jsonProperties = (JSONObject) attribute.get("properties");

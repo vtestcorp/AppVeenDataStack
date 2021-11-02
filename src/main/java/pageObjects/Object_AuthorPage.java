@@ -242,9 +242,6 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(xpath="//input[@id='searchTerm']")
 	public WebElement search;
 	
-	@FindBy(xpath="//span[normalize-space()='Services']")
-	public WebElement servicesTab;
-
 	@FindBy(xpath="//span[@id='serviceManagerCardTitle']")
 	public WebElement dataServiceName1;
 
