@@ -799,19 +799,29 @@ public class Module_DesignTestCases extends BaseClass{
 	   public void mapFileSettingToImport(String jsonfile) throws MalformedURLException {
 			JSONObject jsonObject = JsonUtils.fetchJSONObject(jsonfile);
 			System.out.println(jsonObject.get("sheetToRead").toString());
-			System.out.println(jsonObject.get("rowsToSkipFromTop").toString());
-			System.out.println(jsonObject.get("rowsToSkipFromBottom").toString());
-			System.out.println(jsonObject.get("markFirstRecordAsHeader").toString());
+//			System.out.println(jsonObject.get("rowsToSkipFromTop").toString());
+//			System.out.println(jsonObject.get("rowsToSkipFromBottom").toString());
+//			System.out.println(jsonObject.get("markFirstRecordAsHeader").toString());
 			
 			String sheetName= jsonObject.get("sheetToRead").toString();
-			String rowValue = jsonObject.get("rowsToSkipFromTop").toString();
-			String bottomRow = jsonObject.get("rowsToSkipFromBottom").toString();
+			if(!(jsonObject.get("rowsToSkipFromTop")==null))
+			{
+			  	String rowValue = jsonObject.get("rowsToSkipFromTop").toString();
+			   	applyWait.waitForElementToBeClickable(acp.sheetTopRow, 10).sendKeys(rowValue);
+			}
+		//	String rowValue = jsonObject.get("rowsToSkipFromTop").toString();
+			if(!(jsonObject.get("rowsToSkipFromBottom")==null))
+			{
+				String bottomRow = jsonObject.get("rowsToSkipFromBottom").toString();
+			   	applyWait.waitForElementToBeClickable(acp.sheetBottomRow, 10).sendKeys(bottomRow);
+			}
+			
 			String header= jsonObject.get("markFirstRecordAsHeader").toString();
 			
 			applyExplicitWaitsUntilElementVisible(acp.sheetToReadDropdown, 10);
 			dropdown.selectByVisibleText(acp.sheetToReadDropdown, sheetName);
-			applyWait.waitForElementToBeClickable(acp.sheetTopRow, 10).sendKeys(rowValue);
-			applyWait.waitForElementToBeClickable(acp.sheetBottomRow, 10).sendKeys(bottomRow);
+		//	applyWait.waitForElementToBeClickable(acp.sheetTopRow, 10).sendKeys(rowValue);
+		//	applyWait.waitForElementToBeClickable(acp.sheetBottomRow, 10).sendKeys(bottomRow);
 		
 		}
 	   
@@ -834,11 +844,26 @@ public class Module_DesignTestCases extends BaseClass{
 	   
 	   public void mapColumnToValue(String destination, String source) throws InterruptedException {
 		   By src = By.xpath("//div[normalize-space()='"+destination+"']//input[contains(@class,'colDiv')]");
+		   Thread.sleep(1000);
 		   applyWaitForDynamicWebElement(src, 10);
 		   WebElement dest=driver.findElement(src);
-		   dest.clear();
-		   dest.sendKeys(source,Keys.TAB.toString());
-		   Thread.sleep(1000);
+	//	   dest.clear();
+	//	   dest.sendKeys(source,Keys.TAB.toString());
+		//   Thread.sleep(1000);
+		   String data = dest.getAttribute("value");
+		   System.out.println(dest.getAttribute("value"));
+		   System.out.println(source);
+		 if(!dest.getAttribute("value").equals(source))
+		 {
+			 dest.clear();
+			 dest.sendKeys(source,Keys.TAB.toString()); 
+		 }
+//		 else
+//		 {
+//			 dest.clear();
+//			 dest.sendKeys(source,Keys.TAB.toString());
+//		 }
+		  
 }
 
 
@@ -1748,9 +1773,19 @@ public void addRecordForstateModel(String data) throws MalformedURLException, In
 
 
 
-			public void selectConflictRecords(String conflictRecord) {
+			public void selectConflictRecords(String conflict_Record) throws InterruptedException {
+				driver.findElement(By.xpath("//span[starts-with(text(),'Conflicts')]/following-sibling::span/u")).click();
+				Thread.sleep(2000);
+				WebElement conflictRecord = driver.findElement(By.xpath("//span[normalize-space()='"+conflict_Record+"']/ancestor::div[@col-id='sNo']/preceding-sibling::div[@col-id='_resolve']//div[contains(@class,'custom-control')]"));
+				Thread.sleep(2000);
+				applyWait.waitForElementToBeClickable(conflictRecord, 30).click();
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("//span[normalize-space()='Done']")).click();
+				applyWait.waitForElementToBeClickable(acp.next, 30).click();
+				Thread.sleep(1000);
+				applyWait.waitForElementToBeClickable(acp.here, 30).click();
 				
-			}
+			    }
 
 
 

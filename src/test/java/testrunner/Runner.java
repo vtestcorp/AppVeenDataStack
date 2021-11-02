@@ -10,6 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 				dryRun = false,
 				glue={"stepdefinitions","cucumberHooks"},
 				monochrome=true,
+
 				strict = true,
 				plugin = { "pretty", "html:report/htmlReport" 
 						,"json:report/jsonReport/jsonReport.json" 

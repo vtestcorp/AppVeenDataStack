@@ -286,7 +286,7 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath = "//div[@class='ng-star-inserted']//*[contains(@class,'add-new')]")
 	public List<WebElement> addNewButtons;
 	
-	@FindBy(xpath = "//span[@class='fas fa-cloud-upload-alt text-white ng-tns-c86-2']")
+	@FindBy(xpath = "//span[contains(@class,'fas fa-cloud')]")
 	public WebElement importfile;
 	
 	@FindBy(xpath = "//label/input[@id='logoFile']")
@@ -335,4 +335,6 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath = "//span[starts-with(text(),'Valid Records')]/following-sibling::span//u")
 	public WebElement validRecords;
 	
+
 }
+

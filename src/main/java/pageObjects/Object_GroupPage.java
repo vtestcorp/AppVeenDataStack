@@ -110,7 +110,6 @@ public WebElement addUsers;
 @FindBy(xpath="//ngb-modal-window[@role='dialog']//div[@name='center']//div[@role='rowgroup']//div[1]//div[1]")
 public WebElement userEmail;
 
-
 @FindBy(xpath="//button[normalize-space()='Done']")
 public WebElement done;
 
