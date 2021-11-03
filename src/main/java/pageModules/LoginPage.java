@@ -545,19 +545,19 @@ public class LoginPage extends BaseClass{
 			//Thread.sleep(10000);
 			
 			
-			if(isRelation) {
-				By anotherDataService1=By.xpath("//span[@id='serviceManagerCardTitle' and @title='"+anotherDataService+"']");
-				WebElement dsStart=driver.findElement(anotherDataService1);
-				WebElement toggler=dsStart.findElement(By.xpath("./ancestor::div[3]/following-sibling::div[2]/div/div[@class='toggler']"));
-				toggler.click();
-				WebElement startButton=toggler.findElement(By.xpath("./following-sibling::div[6]/span[2]"));
-				Thread.sleep(1000);
-				if(startButton.getText().equals("Start")) {
-				startButton.click();
-				Thread.sleep(1000);
-				applyWait.waitforElementToBeDisplayed(ap.yes, 10).click();
-				}
-			}
+//			if(isRelation) {
+//				By anotherDataService1=By.xpath("//span[@id='serviceManagerCardTitle' and @title='"+anotherDataService+"']");
+//				WebElement dsStart=driver.findElement(anotherDataService1);
+//				WebElement toggler=dsStart.findElement(By.xpath("./ancestor::div[3]/following-sibling::div[2]/div/div[@class='toggler']"));
+//				toggler.click();
+//				WebElement startButton=toggler.findElement(By.xpath("./following-sibling::div[6]/span[2]"));
+//				Thread.sleep(1000);
+//				if(startButton.getText().equals("Start")) {
+//				startButton.click();
+//				Thread.sleep(1000);
+//				applyWait.waitforElementToBeDisplayed(ap.yes, 10).click();
+//				}
+//			}
 		}
 	
 

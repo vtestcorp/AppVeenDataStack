@@ -50,8 +50,6 @@ public class BaseClass {
 		if (browser == null) {
 			browser = "chrome";
 		}
-		
-		
 		if(headless==null) {
 			isHeadLess=false;
 		}
@@ -72,12 +70,14 @@ public class BaseClass {
 			DownloadFilepath = path + "\\Test_Data\\Download";
 			driver = new ChromeDriver(options);
 			driver.manage().window().maximize();
+			
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 			capabilities.setCapability("marionette", true);
 			driver = new FirefoxDriver(capabilities);
 			driver.manage().window().maximize();
+			
 		} else if (browser.equalsIgnoreCase("internetExplorer")) {
 			
 			WebDriverManager.iedriver().setup();
@@ -100,8 +100,6 @@ public class BaseClass {
 		else {
 			System.out.println("Please pass the correct browser value");
 		}
-
-		//     -Durl = https://qa.ds.appveen.com
 		
 		if (url == null) {
 			url = "https://bifrost.ds.appveen.com";
