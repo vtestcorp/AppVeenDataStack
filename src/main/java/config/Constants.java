@@ -5,10 +5,19 @@ import base.BaseClass;
 public class Constants extends BaseClass{
 
 	public static final String User_Email_Id="deepak@appveen.com";
-	public static final String User_Password="123123123";
-
 	
-	// Explicit Wait Time
+	public static final String User_Password="123123123";
+	
+	public static final String authorURLSuffix = "/author";
+	
+	public static final String appcenterURLSuffix = "/appcenter";
+
+	public static final String bifrostInstance = "https://bifrost.ds.appveen.com"	;
+	
+	public static final String qaInstance = "https://qa.ds.appveen.com"	;
+	
+	public static final String stagingInstance = "https://staging.appveen.com"	;
+	
 	public static final int explicitWait_10 = 10;
 	
 	public static final int explicitWait_20 = 20;

@@ -23,6 +23,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
+import config.Constants;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
@@ -50,6 +51,7 @@ public class BaseClass {
 		if (browser == null) {
 			browser = "chrome";
 		}
+		
 		if(headless==null) {
 			isHeadLess=false;
 		}
@@ -66,8 +68,6 @@ public class BaseClass {
 			options.addArguments("--headless");
 			}
 
-			String path = System.getProperty("user.dir");
-			DownloadFilepath = path + "\\Test_Data\\Download";
 			driver = new ChromeDriver(options);
 			driver.manage().window().maximize();
 			
@@ -98,27 +98,32 @@ public class BaseClass {
 			}
 		
 		else {
-			System.out.println("Please pass the correct browser value");
+			System.err.println("Please pass the correct browser value");
 		}
 		
 		if (url == null) {
-			url = "https://bifrost.ds.appveen.com";
-			url="https://qa.ds.appveen.com";
+			url = Constants.bifrostInstance ;
+//			url=Constants.qaInstance;
 
 		}
 
-		if (url.equalsIgnoreCase("https://staging.appveen.com")) {
-			author_URL = "https://staging.appveen.com/author";
-			app_center_URL = "https://staging.appveen.com/appcenter";
+		if (url.equalsIgnoreCase(Constants.stagingInstance)) {
+			
+			author_URL = Constants.stagingInstance + Constants.authorURLSuffix;
+			app_center_URL = Constants.stagingInstance + Constants.appcenterURLSuffix;
+			
 		}
 
-		else if (url.equalsIgnoreCase("https://bifrost.ds.appveen.com")) {
-			author_URL = "https://bifrost.ds.appveen.com/author";
-			app_center_URL = "https://bifrost.ds.appveen.com/appcenter";
+		else if (url.equalsIgnoreCase(Constants.bifrostInstance)) {
+			
+			author_URL = Constants.bifrostInstance + Constants.authorURLSuffix;
+			app_center_URL = Constants.bifrostInstance + Constants.appcenterURLSuffix;
+			
 		}
 		else {
-			author_URL = url+"/author";
-			app_center_URL = url+"/appcenter";
+			
+			author_URL = url+ Constants.authorURLSuffix;
+			app_center_URL = url+ Constants.appcenterURLSuffix;
 		}
 	}
 

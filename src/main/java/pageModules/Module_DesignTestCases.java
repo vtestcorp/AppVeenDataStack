@@ -61,13 +61,11 @@ public class Module_DesignTestCases extends BaseClass{
 		ap=new Object_AuthorPage();
 		gp=new Object_GroupPage();
 		lp=new LoginPage(driver);
-//		assertCheck=new SoftAssert();
 		javascriptClick=new JavascriptClick(driver);
 	}
 
 	public void dataServiceShouldDeployed() throws Exception {
 		String dataService="String";
-		
 		driver.get(author_URL);
 		applyWait.waitForElementToBeClickable(ap.emailIDTextBox, 30).sendKeys(Constants.User_Email_Id);
 		applyWait.waitForElementToBeClickable(ap.nextButton, 30).click();
@@ -79,6 +77,7 @@ public class Module_DesignTestCases extends BaseClass{
 	}
 
 	public void groupexist(String groupName) throws Exception {
+		
 
 		try {
 			applyWait.waitForElementToBeClickable(ap.groups, 30).click();
@@ -139,6 +138,9 @@ public class Module_DesignTestCases extends BaseClass{
 		applyExplicitWaitsUntilElementVisible(gp.appCenterRoles, 10);
 		javascriptClick.click(gp.appCenterRoles);
 		Thread.sleep(1000);
+		
+		if(url.equals(Constants.qaInstance)) {
+		
 		applyExplicitWaitsUntilElementVisible(gp.dsArrow, 10);
 		WebElement dsArrow=driver.findElement(By.xpath("//span[normalize-space()='"+dataServiceName+"']/parent::div/following-sibling::span[2]/child::span"));
 		applyWait.waitForElementToBeClickable(dsArrow, 30).click();
@@ -178,6 +180,33 @@ public class Module_DesignTestCases extends BaseClass{
 				WebElement toggler=driver.findElement(By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[2]/child::label/child::span[2]"));
 				applyWait.waitForElementToBeClickable(toggler, 30).click();
 				}
+		}
+		}
+		else if(url.equals(Constants.bifrostInstance)){
+			By dataService1 = By.xpath("//div[contains(@class,'ds-name')]//span[normalize-space()='"+dataServiceName+"']");
+			Actions action =new Actions(driver);
+			action.moveToElement(driver.findElement(dataService1));
+			applyWaitForDynamicWebElement(dataService1, 20);
+			WebElement dataService = driver.findElement(dataService1);
+			applyWait.waitForElementToBeClickable(dataService, 30).click();
+			By toggler=By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[2]/child::label/child::span[2]");
+			applyWaitForDynamicWebElement(toggler, 20);
+			WebElement roleToggler = driver.findElement(toggler);
+			applyWait.waitForElementToBeClickable(roleToggler, 30).click();
+			
+			if(lp.isRelation) {
+				By data = By.xpath("//div[contains(@class,'ds-name')]//span[normalize-space()='"+lp.anotherDataService+"']");
+				action.moveToElement(driver.findElement(data));
+				applyWaitForDynamicWebElement(data, 20);
+				WebElement dataServiceRelate = driver.findElement(data);
+				applyWait.waitForElementToBeClickable(dataServiceRelate, 30).click();
+				applyWaitForDynamicWebElement(toggler, 20);
+				WebElement roleToggler1 = driver.findElement(toggler);
+				applyWait.waitForElementToBeClickable(roleToggler1, 30).click();
+				
+				
+			}
+			
 		}
 		applyWait.waitForElementToBeClickable(gp.members, 30).click();
 		applyWait.waitForElementToBeClickable(gp.addUsers, 30).click();
