@@ -75,10 +75,6 @@ public class DesignTestCases extends BaseClass{
 	public void user_navigates_to_File_setting_page() {
 		
 	}
-//	@Then("^Add record  \"(.*?)\" to stateModel data service$")
-//	public void add__record_for_stateModel(String data) throws Exception {
-//		design.addDataForstateModel(data);
-//	}
 	
 	@Then("^Add record \"(.*?)\" to stateModel data service$")
 	public void add_record_to_stateModel_data_service(String data) throws MalformedURLException, InterruptedException {

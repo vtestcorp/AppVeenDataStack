@@ -24,6 +24,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.aventstack.extentreports.ExtentTest;
 import com.google.gson.JsonObject;
 import base.BaseClass;
+import config.Constants;
 import helperMethods.DropDown;
 import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
@@ -59,6 +60,7 @@ public class LoginPage extends BaseClass{
 	public static boolean isUserType;
 	
 	public LoginPage(WebDriver driver) {
+		
 		PageFactory.initElements(driver, this);
 		this.applyWait = new WaitTypes(driver);
 		javascriptClick=new JavascriptClick(driver);
@@ -66,6 +68,7 @@ public class LoginPage extends BaseClass{
 		scroll=new ScrollTypes(driver);
 		ap=new Object_AuthorPage();
 		gp=new Object_GroupPage();
+		
 	}
 	
 	
@@ -117,7 +120,7 @@ public class LoginPage extends BaseClass{
 	    	  applyWait.waitForElementToBeClickable(ap.nameOfLibrary, 30).sendKeys(libraryName);
 	    	  Thread.sleep(1000);
 	    	  applyWait.waitForElementToBeClickable(ap.createNewLibraryButton, 30).click();
-	    	  String libName=path+"\\testData" + "\\" +library+".json";
+	    	  String libName = Constants.testData_Folder  +library + Constants.json_File_Suffix;
 	  		try {
 	  			FileReader reader = new FileReader(libName);
 	  		}
@@ -183,7 +186,7 @@ public class LoginPage extends BaseClass{
 		verifyDataServiceExist(dataService);
 		if(flag==false) {
 			
-			String dataName=path+"\\testData" + "\\" + ""+dataService+".json";
+			String dataName=Constants.testData_Folder  +dataService + Constants.json_File_Suffix;
 			
 			try {
 				FileReader reader = new FileReader(dataName);
@@ -205,7 +208,7 @@ public class LoginPage extends BaseClass{
 		if(flag==false) {
 			
 			 dataServiceName = library;
-			String dataName=path+"\\testData" + "\\" + ""+library+".json";
+			String dataName=Constants.testData_Folder  +library + Constants.json_File_Suffix;
 			
 			try {
 				FileReader reader = new FileReader(dataName);
@@ -317,14 +320,6 @@ public class LoginPage extends BaseClass{
 				String attributeName = attribute.get("type").toString();
 				String keyName = attribute.get("key").toString();
 				
-//<<<<<<< HEAD
-//				if(!keyName.equals("_id")) {
-//
-//				applyWait.applyExplicitWaitsUntilElementVisible(ap.newAttributeButton, 30);	
-//				applyWait.waitForElementToBeClickable(ap.newAttributeButton, 30).click();
-//				
-//				switch(attributeName) {
-//=======
 				if(!keyName.equals("_id") ) {
                 if(i==0) {
                 	 if(!libraryflag1)
@@ -339,7 +334,6 @@ public class LoginPage extends BaseClass{
 				    
                  }
 			switch(attributeName) {
-//>>>>>>> data
 			
 			case "String" : 
 				jsonProperties = (JSONObject) attribute.get("properties");
@@ -530,41 +524,19 @@ public class LoginPage extends BaseClass{
 			       
 				}
 			}
-//<<<<<<< HEAD
-//			function_ExperienceTab();
-//			function_RolesTab();
-//			applyWait.waitForElementToBeClickable(ap.submitAndDeploy, 30).click();;
-//=======
+
 			if(!libraryflag1)
 			   {	
 			        function_ExperienceTab();
 		         	function_RolesTab();
 		         	applyWait.waitForElementToBeClickable(ap.submitAndDeploy, 30).click();
 			   }
-			
-			//Thread.sleep(10000);
-			
-			
-//			if(isRelation) {
-//				By anotherDataService1=By.xpath("//span[@id='serviceManagerCardTitle' and @title='"+anotherDataService+"']");
-//				WebElement dsStart=driver.findElement(anotherDataService1);
-//				WebElement toggler=dsStart.findElement(By.xpath("./ancestor::div[3]/following-sibling::div[2]/div/div[@class='toggler']"));
-//				toggler.click();
-//				WebElement startButton=toggler.findElement(By.xpath("./following-sibling::div[6]/span[2]"));
-//				Thread.sleep(1000);
-//				if(startButton.getText().equals("Start")) {
-//				startButton.click();
-//				Thread.sleep(1000);
-//				applyWait.waitforElementToBeDisplayed(ap.yes, 10).click();
-//				}
-//			}
 		}
 	
 
 
 	private void function_ExperienceTab() {
-		String path=System.getProperty("user.dir");
-		String dataName=path+"\\testData"+ "\\" + ""+dataServiceName+".json";
+		String dataName=Constants.testData_Folder  +dataServiceName + Constants.json_File_Suffix;
 		JSONArray array =JsonUtils.getArrayValues(dataName, "wizard");
 		
 		if(array.size()>0) {
@@ -607,7 +579,7 @@ public class LoginPage extends BaseClass{
 
 	public void function_RolesTab() throws Exception {
 		
-		String dataName=path+"\\testData" + "\\" +dataServiceName+".json";
+		String dataName=Constants.testData_Folder  +dataServiceName + Constants.json_File_Suffix;
 		JSONObject role=(JSONObject) JsonUtils.getJSONObject(dataName).get("role");
 		JSONArray roles=(JSONArray) role.get("roles");
 	if(roles.size()>3) {
@@ -1492,18 +1464,6 @@ public class LoginPage extends BaseClass{
 						public void makeAppAdmin(String userEmail) throws Exception {
 							System.out.println(userEmail);
 							Thread.sleep(2000);
-//							By userElement=By.xpath("//div[@name='right']//div[@row-id='"+userEmail+"']//button[normalize-space()='View']");
-//							applyWaitForDynamicWebElement(userElement, 30);
-//							driver.findElement(userElement).click();;
-//							applyWait.waitForElementToBeClickable(gp.moreActions, 30).click();
-//							Thread.sleep(500);
-//							applyWait.waitForElementToBeClickable(gp.makeAppAdmin, 30).click();
-//							applyWait.waitForElementToBeClickable(gp.listOfUsers, 30).click();
-							
-							
-//							By listOfUsers=By.xpath("//div[@col-id='username']/odp-user-list-cell-renderer");
-//							applyWaitForDynamicWebElement(listOfUsers, 30);
-//							List<WebElement> userList=driver.findElements(listOfUsers);
 							int countForUser=1;
 							applyExplicitWaitsUntilElementVisible(gp.listUsers, 30);
 							for(WebElement user : gp.listUsers) {
@@ -1525,8 +1485,6 @@ public class LoginPage extends BaseClass{
 							applyWait.waitForElementToBeClickable(gp.makeAppAdmin, 30).click();
 						}
 							applyWait.waitForElementToBeClickable(gp.listOfUsers, 30).click();
-							
-							
 							
 						}
    }

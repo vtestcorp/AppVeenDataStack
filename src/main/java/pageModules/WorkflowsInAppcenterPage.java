@@ -134,11 +134,7 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 			applyWait.waitForElementToBeClickable(acp.enterApproveComment, 30).sendKeys(Property.getProperty("approveMessage"));;
 			applyWait.waitForElementToBeClickable(acp.approveButton, 30).click();;
 		}
-		
-		
-		
 	}
-
 
 	public void verifyDataIsAvailableWithStatusApproved() throws Exception {
 		Thread.sleep(1000);
@@ -148,7 +144,6 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 
 
 	public void addDataAndSaveAsDraft() throws Exception {
-		
 		
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 		List<WebElement> textBoxes = acp.textBoxes;

@@ -47,7 +47,8 @@ public class BaseClass {
 
 	@SuppressWarnings("deprecation")
 	public void start() {
-
+		//browser="headless";
+		//		headless="true";
 		if (browser == null) {
 			browser = "chrome";
 		}
@@ -61,15 +62,20 @@ public class BaseClass {
 		
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
+			
+//			System.setProperty("webdriver.chrome.driver","/home/ubuntu/ds-ui-automation/drivers/chromedriver");
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--start-maximized");
-			options.addArguments("window-size=1280,1024");
+//			options.addArguments("window-size=1280,1024");
+//			options.setBinary("/home/ubuntu/ds-ui-automation/chromedriver/chrome.exe");
+//			options.setBinary("/home/ubuntu/ds-ui-automation/drivers/chromedriver");
+//			options.addArguments("--headless", "--window-size=1296,696", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage");
+			
 			if(isHeadLess) {
-			options.addArguments("--headless");
+				options.addArguments("--headless", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage");
 			}
-
+			
 			driver = new ChromeDriver(options);
-			driver.manage().window().maximize();
 			
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
@@ -103,7 +109,7 @@ public class BaseClass {
 		
 		if (url == null) {
 			url = Constants.bifrostInstance ;
-//			url=Constants.qaInstance;
+			url=Constants.qaInstance;
 
 		}
 

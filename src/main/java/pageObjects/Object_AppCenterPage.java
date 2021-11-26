@@ -9,14 +9,10 @@ import org.openqa.selenium.support.PageFactory;
 import base.BaseClass;
 
 public class Object_AppCenterPage extends BaseClass{
-	
-
 
 	public Object_AppCenterPage() {
 		PageFactory.initElements(driver, this);
 	}
-	
-	
 
 	@FindBy(xpath="//input[@id='username']")
 	public WebElement username;
@@ -313,10 +309,6 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath = "//span[@class='slider']")
 	public WebElement recoredHeader;
 	
-//	@FindBy(xpath = "//button[normalize-space()='Next']")
-//	public WebElement next;
-	
-	
 	@FindBy(xpath = "//button[normalize-space()='Next' and contains(@class,'btn-min-width')]")
 	public WebElement next;
 	
@@ -334,7 +326,5 @@ public class Object_AppCenterPage extends BaseClass{
 		
 	@FindBy(xpath = "//span[starts-with(text(),'Valid Records')]/following-sibling::span//u")
 	public WebElement validRecords;
-	
 
 }
-

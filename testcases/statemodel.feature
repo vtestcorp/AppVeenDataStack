@@ -101,5 +101,5 @@ Examples:
 |id|data|
 |NUM1001|{"_id": "NUM1001","dsNumberListOfValues1001": 123,"dsNumberListOfValues1002": 2,"dsNumberListOfValues1003": 123,"dsNumberListOfValues1004": 123,"dsNumberListOfValues1005": 501,"dsNumberListOfValues1007": 123, "dsNumberListOfValues1008": 211, "dsNumberListOfValues1010": 123,  "dsNumberListOfValues1013": 123, "dsNumberListOfValues1014": 4569, "dsNumberListOfValues1015": 211, "dsNumberListOfValues1018": 456,  "dsNumberListOfValues1020": 4569, "Onboarding Status":"In Progress"}|
 
-#Scenario: Log out of App Center
-#	Given User log out from AppCenter
+Scenario: Log out of App Center
+	Given User log out from AppCenter

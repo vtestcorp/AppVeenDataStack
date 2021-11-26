@@ -38,6 +38,8 @@ public class Constants extends BaseClass{
 	
 	public static final String testData_Suffix = ".data.json";
 	
+	public static final String json_File_Suffix = ".json";
+	
 	public static final String excelFile_Suffix = ".xlsx";
 	
 	

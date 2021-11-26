@@ -9,16 +9,16 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|test_appadmin@appveen.com|123123123|
+|test_ui_appadmin@appveen.com|Veen@99%win|
 
 Scenario: Delete data service
 	Given Data service "group1" exists
 	Then Remove the data service
 
+
 Scenario: Create data service
 	Given Data service "group1" does not exist
 	Then Create new data service "group1"
- #Under testData, picks up strings.json create the JSON
 
 Scenario Outline: Assign to Appcenter Group
  	Then Group "DS Group" does not exist
@@ -27,7 +27,7 @@ Scenario Outline: Assign to Appcenter Group
 	
 	Examples:
 	|user|
-	|test_ac_ds_manage@appveen.com|
+	|test_ui_ac_ds_manage@appveen.com|
 
 
 Scenario: Log out of Author
@@ -42,10 +42,9 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|test_ac_ds_manage@appveen.com|123123123|
+|test_ui_ac_ds_manage@appveen.com|Veen@99%win|
 
 
-# INSERT/UPDATE
 Scenario: Add data to data service
 	Given Data service "group1"
 	Then Add data to the data service for Group
@@ -55,7 +54,7 @@ Scenario: Add data to data service
 Scenario Outline: Add record to data service
 	Given Data service "group1"
 	Then Add record "<data>" to the data service	
-	And Expect error "ID STR1001 already exists." on save
+	And Expect error "ID DS1001 already exists." on save
 	Examples:
 		|data|
 	  |{  "_id" : "DS1001", "dsGroup1001" : { "dsString" : "String 1111" }, "dsGroup1002" : { "dsString" : "String 122" }, "dsGroup1003" : { "dsString" : "String 1333" }, "dsGroup1004" : { "dsString" : "String 1444" }, "dsGroup1005" : { "dsString" : "String 1555" }, "dsGroup1006" : { "dsString" : "String 1666" }}|

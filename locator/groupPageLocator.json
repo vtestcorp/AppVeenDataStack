@@ -25,6 +25,4 @@
 "profileIcon" : "//div[starts-with(@class,'profile-icon')]",
 "logout" : "//button[normalize-space()='Logout']",
 "save" : "//button[normalize-space()='Save']"
-
-
 }

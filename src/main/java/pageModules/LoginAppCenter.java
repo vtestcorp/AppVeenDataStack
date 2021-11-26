@@ -85,7 +85,7 @@ public class LoginAppCenter extends BaseClass {
 					} catch (Exception e1) {
 						Thread.sleep(1000);
 						driver.navigate().refresh();
-						Thread.sleep(3000);
+						Thread.sleep(10000);
 						WebElement data = driver.findElement(ds);
 						action.moveToElement(data).perform();
 						data.click();
@@ -103,8 +103,6 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.uploadFile, 30).sendKeys(filePath);
 
 	}
-	
-	
 
 	public void userEnterData() throws Exception {
 		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
@@ -472,7 +470,6 @@ public class LoginAppCenter extends BaseClass {
 		
 		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 	}
-
 	
 	public void userEnterDataforCollection() throws Exception {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();

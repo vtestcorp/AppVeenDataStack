@@ -14,5 +14,4 @@
 "delete" :  "//*[@id='deleteRecordBtn']/span[2]",
 "yes" : "//button[normalize-space()='Yes']"
 
-
 }

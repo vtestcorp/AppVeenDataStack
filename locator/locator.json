@@ -63,6 +63,4 @@
   "dropdownCollection" : "//div[@class='px-3 schemaProperties-body ng-untouched ng-pristine ng-valid ng-star-inserted']//span[@class='fas fa-angle-down text-accent ng-star-inserted']",
   "submitAndDeploy" : "//button[@id='sbButtonSaveAndDeploy']",
   "groups" : "//span[normalize-space()='Groups']"
- 
-  
 }
