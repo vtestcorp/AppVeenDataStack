@@ -61,19 +61,24 @@ public class BaseClass {
 		}
 		
 		if (browser.equalsIgnoreCase("chrome")) {
-			WebDriverManager.chromedriver().setup();
-			
-//			System.setProperty("webdriver.chrome.driver","/home/ubuntu/ds-ui-automation/drivers/chromedriver");
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--start-maximized");
-//			options.addArguments("window-size=1280,1024");
+			if(System.getProperty("os.name").equals("Linux")) {
+				System.setProperty("webdriver.chrome.driver","/home/ubuntu/ds-ui-automation/drivers/chromedriver");
+//				System.setProperty("webdriver.chrome.driver","/home/ubuntu/ds-ui-automation/drivers/chromedriver");
+				options.addArguments("--headless", "--window-size=1296,696", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage");
+			}
+			else {
+				WebDriverManager.chromedriver().setup();
+				options.addArguments("--start-maximized");
+				if(isHeadLess) {
+					options.addArguments("--headless", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage");
+				}
+			}
+			
+	//ds-ui-automation\report\screenshots\11292021161217430.png'		
+
 //			options.setBinary("/home/ubuntu/ds-ui-automation/chromedriver/chrome.exe");
 //			options.setBinary("/home/ubuntu/ds-ui-automation/drivers/chromedriver");
-//			options.addArguments("--headless", "--window-size=1296,696", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage");
-			
-			if(isHeadLess) {
-				options.addArguments("--headless", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage");
-			}
 			
 			driver = new ChromeDriver(options);
 			
@@ -98,7 +103,7 @@ public class BaseClass {
 		} 
 		 else if (browser.equalsIgnoreCase("headless")) {
 			 
-			  driver=new HtmlUnitDriver(true);
+			 	driver=new HtmlUnitDriver(true);
 				driver.manage().window().maximize();
 				System.out.println("Running in headless mode");
 			}

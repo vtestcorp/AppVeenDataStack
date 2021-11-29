@@ -11,7 +11,7 @@ public class Property {
 		Properties prop=new Properties();
 		String path=System.getProperty("user.dir");
 		try {
-			FileInputStream file=new FileInputStream(path+"\\configs\\dataStack.properties");
+			FileInputStream file=new FileInputStream(path+"/configs/dataStack.properties");
 			prop.load(file);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

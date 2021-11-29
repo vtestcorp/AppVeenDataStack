@@ -26,15 +26,15 @@ public class Constants extends BaseClass{
 
 	public static final int explicitWait_60 = 60;
 
-	public static final String PROJECT_PATH = System.getProperty("user.dir")+"\\";
+	public static final String PROJECT_PATH = System.getProperty("user.dir")+"/";
 
 	public static final String PROJECT_OS = System.getProperty("os.name");
 
-	public static final String testData_Folder = path+"\\testData\\";
+	public static final String testData_Folder = path+"/testData/";
 	
-	public static final String file_Folder = path+"\\files\\";
+	public static final String file_Folder = path+"/files/";
 	
-	public static final String locator_Folder = path+"\\locator\\";
+	public static final String locator_Folder = path+"/locator/";
 	
 	public static final String testData_Suffix = ".data.json";
 	

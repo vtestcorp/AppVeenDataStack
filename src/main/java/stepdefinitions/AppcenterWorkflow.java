@@ -47,30 +47,22 @@ public class AppcenterWorkflow extends BaseClass{
 	
 	@Then("User logs out of AppCenter")
 	public void user_logs_out_of_AppCenter() throws IOException, ClassNotFoundException {
-		ExtentReportListener.test = extent.createTest(Feature.class, "DS GROUP");
-		ExtentReportListener.test=ExtentReportListener.test.createNode(Scenario.class, "Log out AppCenter");						
-		logInfo=ExtentReportListener.test.createNode(new GherkinKeyword("Given"), "Successful log out AppCenter page");
 		workflow.logoutFromAppcenter();
-		logInfo.addScreenCaptureFromPath(ExtentReportListener.captureScreenShot(driver));
 	}
 
 	@Given("User navigate to AppCenter login page")
 	public void user_navigate_to_AppCenter_login_page() {
-		
 		workflow.userNavigateToAppCenter();
 	}
 
 	@Then("Approve the Record created in previous step")
 	public void approve_the_Record_created_in_previous_step() throws Exception {
 		workflow.approveTheRecord();
-	    
 	}
 
 	@Then("Verify data is available in the workflow listing page under New Records with status Approved")
 	public void verify_data_is_available_in_the_workflow_listing_page_under_New_Records_with_status_Approved() throws Exception {
 	    workflow.verifyDataIsAvailableWithStatusApproved();
-	    
-	    
 	}
 	
 	@Then("Add data to the data service and save as draft")
@@ -81,13 +73,13 @@ public class AppcenterWorkflow extends BaseClass{
 	@Then("Verify data is available in the workflow listing page under Draft with status Draft")
 	public void verify_data_is_available_in_the_workflow_listing_page_under_Draft_with_status_Draft() {
 		workflow.verifyDataAvailableUnderDraft();;
-	  
 	}
 	
 	@Then("Update the above draft record and Proceed")
 	public void update_the_above_draft_record_and_Proceed() throws Exception {
 	    workflow.updateDraftRecord();
 	}
+	
 	@Then("Add data to the data service and save as drafts")
 	public void add_data_to_the_data_service_and_save_as_drafts() throws Exception {
 	    workflow.editDataService();

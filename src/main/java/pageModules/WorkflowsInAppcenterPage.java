@@ -8,6 +8,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import base.BaseClass;
+import config.Constants;
 import helperMethods.DropDown;
 import helperMethods.JsonUtils;
 import helperMethods.Property;
@@ -48,8 +49,7 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 		Thread.sleep(2000);
 		List<WebElement> textBoxes = acp.textBoxes;
-		String path= System.getProperty("user.dir");
-		JSONArray jsonArray = JsonUtils.getJSONArray(path+"\\testData\\"+data_Service+".data.json");
+		JSONArray jsonArray = JsonUtils.getJSONArray(Constants.testData_Folder + data_Service + Constants.testData_Suffix);
 		for(int i=0;i<jsonArray.size();i++) {
 			Thread.sleep(1000);
 			JSONObject jsonObject=(JSONObject) jsonArray.get(i);
@@ -79,9 +79,7 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 				if(textBox.getAttribute("type").equals("number")) {
 					applyWait.waitForElementToBeClickable(textBox,30).sendKeys(((Long)jsonObject.get(id1)).toString());;
 					}
-				
-			}
-				
+				}
 			}
 			if((jsonArray.size()-1) > i) {
 			applyWait.waitForElementToBeClickable(acp.proceedAndCreateAnother, 30).click();
@@ -147,8 +145,7 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 		
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 		List<WebElement> textBoxes = acp.textBoxes;
-		String path= System.getProperty("user.dir");
-		JSONArray jsonArray = JsonUtils.getJSONArray(path+"\\testData\\"+data_Service+".data.json");
+		JSONArray jsonArray = JsonUtils.getJSONArray(Constants.testData_Folder + data_Service + Constants.testData_Suffix);
 		for(int i=0;i<jsonArray.size();i++) {
 			JSONObject jsonObject=(JSONObject) jsonArray.get(i);
 			
@@ -202,8 +199,7 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(acp.viewTab, 30).click();	
 		
 		List<WebElement> textBoxes = acp.textBoxes;
-		String path= System.getProperty("user.dir");
-		JSONArray jsonArray = JsonUtils.getJSONArray(path+"\\testData\\"+data_Service+".data.json");
+		JSONArray jsonArray = JsonUtils.getJSONArray(Constants.testData_Folder + data_Service + Constants.testData_Suffix);
 		for(int i=0;i<jsonArray.size();i++) {
 			JSONObject jsonObject=(JSONObject) jsonArray.get(i);
 			

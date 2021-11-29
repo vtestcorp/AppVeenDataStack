@@ -63,7 +63,7 @@ public class ExcelUtils {
 	
 	public static void readExcel(String filePath,String fileName,String sheetName) throws IOException{
 
-	    File file =    new File(filePath+"\\"+fileName);
+	    File file =    new File(filePath+"/"+fileName);
 	    FileInputStream inputStream = new FileInputStream(file);
 	    Workbook book = null;
 	    String fileExtensionName = fileName.substring(fileName.indexOf("."));
@@ -92,11 +92,5 @@ public class ExcelUtils {
 	    } 
 
 	    }  
-
-	    //Main function is calling readExcel function to read data from excel file
-
-	   
-	
-	
 
 }

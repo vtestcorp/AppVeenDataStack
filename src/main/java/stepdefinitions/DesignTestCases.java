@@ -22,9 +22,7 @@ public class DesignTestCases extends BaseClass{
 
 	@Given("Data service should be saved and deployed")
 	public void data_service_should_be_saved_and_deployed() throws Exception {
-		
 		design.dataServiceShouldDeployed();
-	   
 	}
 	@Given("All attributes and properties should be same as user declared")
 	public void all_attributes_and_properties_should_be_same_as_user_declared() {
@@ -64,7 +62,6 @@ public class DesignTestCases extends BaseClass{
 	public void add_record_to_the_data_service_for_Date(String jsonFile) throws Exception {
 		design.addRecordForDate(jsonFile);
 	}
-	
 
 	@Then("^Add record \"(.*?)\" to the data service$")
 	public void add_record(String string) throws Exception {
@@ -86,7 +83,6 @@ public class DesignTestCases extends BaseClass{
 	   design.userNextStateAvailable(nextState);		
 	}
 	
-	
 	@And("^Verify \"(.*?)\" is not available$")
 	public void verify_InvalidState(String invalidState) throws InterruptedException {
 	   design.verifyInvalidState(invalidState);		
@@ -106,7 +102,6 @@ public class DesignTestCases extends BaseClass{
 	public void user_navigates_to_validate_record() throws MalformedURLException, InterruptedException {
 	   design.userNavigateToValidateRecord();		
 	}
-	
 	
 	@Given("^Verify Valid record \"(.*?)\" is correct$")
 	public void verify_valid_record(String count) throws MalformedURLException, InterruptedException {
@@ -184,20 +179,17 @@ public class DesignTestCases extends BaseClass{
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-
 	}
 	
 	@Then("^Add records to \"(.*?)\"$")
 	public void add_records_to_And_Expect_error_on_save(String json) throws Exception {
 	    design.addNewRecords();
 	}
-	
 		
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the data service$")
 	public void update_record_with_to_the_data_service(String id, String jsonFile) throws Exception {
 	    design.updateRecord(id,jsonFile);
 	}
-	
 
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the data service for group$")
 	public void update_record_with_to_the_data_service_for_group(String id, String jsonFile) throws Exception {
@@ -208,7 +200,6 @@ public class DesignTestCases extends BaseClass{
 	public void update_record_with_to_the_data_RichTextservice(String id, String jsonFile) throws Exception {
 	    design.updateRecordForRichText(id,jsonFile);
 	}
-	
 
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the boolean data service$")
 	public void update_record_with__boolean_data_service(String id, String jsonFile) throws InterruptedException, MalformedURLException {
@@ -230,7 +221,6 @@ public class DesignTestCases extends BaseClass{
 		design.updateRecords(id,attribute);
 	}
 	
-	
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the User$")
 	public void update_record_with_User_data_service(String id, String jsonFile) throws Exception {
 	    design.updateRecordforUser(id, jsonFile);
@@ -239,7 +229,6 @@ public class DesignTestCases extends BaseClass{
 	@Then("^Update record \"(.*?)\" with \"(.*?)\" to the Location$")
 	public void update_record_with_dsLocation_data_service(String id, String jsonFile) throws Exception {
 	    design.updateLocationRecord(id, jsonFile);
-	    
 	}
 	
 	@Then("Fetch record {string} from the data service")
@@ -274,40 +263,37 @@ public class DesignTestCases extends BaseClass{
 	@Then("^Match it to \"(.*?)\"$")
 	public void match_it_to(String jsonFile) throws Exception {
 		design.matchToRecord(jsonFile);	
-}
+	}
 	
 	@Then("^Match it to \"(.*?)\" for RichText$")
 	public void match_it_to_RichText(String jsonFile) throws Exception {
 		design.matchToRecordToRichText(jsonFile);	
-}
+	}
 	
 	
 	@Then("^Match it to \"(.*?)\" for Relation$")
 	public void match_this_Relation_to(String jsonFile) throws Exception {
 		design.matchToRecord(jsonFile);	
-}
+	}
 	
 	@Then("^Match this Location data to \"(.*?)\"$")
 	public void match_this_Location_to(String jsonFile) throws Exception {
 		design.matchLocationData(jsonFile);
-}
-	
+	}
 	
 	@Then("^Match it to \"(.*?)\" for File type$")
 	public void match_it_to_for_File_type(String jsonFile) throws Exception {
 		design.matchToRecordForFileType(jsonFile);	
-}
+	}
+	
 	@Then("^Match it to \"(.*?)\" boolean$")
-
 	public void match_it_to__boolean(String string) throws Exception {
 		design.matchRecordforBoolean(string);
 	}
-
 		
 	@Then("Fetch record by searching {string} with {string} from the data service")
 	public void fetch_record_by_searching_with_from_the_data_service(String string, String string2) throws Exception {
 		design.fetchRecordBySearchingData(string,string2);
-	   
 	}
 	
 	@Then("Delete record {string} from the data service")
@@ -324,6 +310,7 @@ public class DesignTestCases extends BaseClass{
 	public void delete_record_by_searching_with_from_the_data_service(String string, String string2) throws Exception {
 		design.deleteRecordFromViewPage(string , string2);
 	}
+	
 	@Then("Deleting from listing page")
 	public void deleting_from_listing_page() {
 	    

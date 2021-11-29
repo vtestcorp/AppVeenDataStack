@@ -51,8 +51,6 @@ public class LoginToAppCenter extends BaseClass{
 //		loginAppCenter.uploadDatafile(file);
 //	}
 	
-	
-	
 	@Then("Add data to the data service for Collection")
 	public void add_data_to_the_data_service_for_Collection() throws Exception {
 		loginAppCenter.userEnterDataforCollection();
@@ -61,7 +59,6 @@ public class LoginToAppCenter extends BaseClass{
 	@Then("Add data to the data service for boolean")
 	public void add_data_to_the_data_service_for_boolean() throws InterruptedException {
 		loginAppCenter.userEnterDataforBoolean();
-	    
 	}
 
 	@Then("Add data to the data service for Date")
@@ -85,8 +82,6 @@ public class LoginToAppCenter extends BaseClass{
 		loginAppCenter.verifyState(text);
 	}
 	
-		
-	
 	@Then("Add data to the data service for Relation")
 	public void add_data_to_the_data_service_for_Relation() throws Exception {
 		loginAppCenter.addDataForRelation();
@@ -96,7 +91,6 @@ public class LoginToAppCenter extends BaseClass{
 	public void add_data_to_the_richTextdata_service() throws Exception {
 		loginAppCenter.userEnterDataForRichText();
 	}
-	
 	
 	@Then("Add data to the data service for Group")
 	public void add_data_to_the_data_service_for_Group() throws Exception {
@@ -125,7 +119,6 @@ public class LoginToAppCenter extends BaseClass{
 	
 	@Then("On the listing page it should show the total count of documents as {int}")
 	public void on_the_listing_page_it_should_show_the_total_count_of_documents_as(Integer documentCount) throws Exception {
-	   
 		loginAppCenter.verifyTotalCountOfDocuments(documentCount);
 	}
 	

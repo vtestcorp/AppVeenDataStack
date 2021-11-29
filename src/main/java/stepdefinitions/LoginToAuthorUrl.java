@@ -3,6 +3,7 @@ package stepdefinitions;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import base.BaseClass;
+import config.Constants;
 import helperMethods.JsonUtils;
 import helperMethods.WaitTypes;
 import io.cucumber.datatable.DataTable;
@@ -21,8 +22,6 @@ public class LoginToAuthorUrl extends BaseClass {
 	public static String data_Service;
 	public static String data_library;
 
-	
-
 	@Before("@Author")
 	public void setUp() {
 		start();
@@ -34,12 +33,10 @@ public class LoginToAuthorUrl extends BaseClass {
 		loginPage = new LoginPage(driver);
 	}
 	
-	
 	@Given("User navigate to Author login page")
 	public void user_Navigate_to_LogIn_Page() throws Exception {
 		loginPage.loginToPage();
 		}
-
 	
 	@Given("User enters {string} and {string} in Author login page")
 	public void user_enters_UserName_and_Password(String username,String password) throws Exception {
@@ -85,7 +82,7 @@ public class LoginToAuthorUrl extends BaseClass {
 	public void create_new_Data_Service(String dataService) throws Exception  {
 			data_Service=dataService;
 		
-		String dataName=path+"\\testData" + "\\" + dataService+".json";
+		String dataName=Constants.testData_Folder + dataService+Constants.json_File_Suffix;
 		
 		try {
 			FileReader reader = new FileReader(dataName);
@@ -101,10 +98,10 @@ public class LoginToAuthorUrl extends BaseClass {
 		}
 		loginPage.createNewDataServices(JsonUtils.getArrayValues(dataName, "definition"),dataService);
 	}
+	
 	@Then("Create new data service {string} for State_Model")
 	public void create_DateServiceFor_StateModel(String dataService) throws Exception {
           loginPage.createDataServiceForStateModel(dataService);		
-
 	}
 	
 	@Then("Add attributes {string} and type {string}")
@@ -116,6 +113,7 @@ public class LoginToAuthorUrl extends BaseClass {
 	public void clickOnExperienceTab() throws InterruptedException {
 		loginPage.clickOnExperienceTab();
 	}
+	
 	@Then("Create a State Model for the field {string}")
 	public void configureStateModelStatus(String status) throws InterruptedException {
 		loginPage.configureStateModel(status);
@@ -145,7 +143,6 @@ public class LoginToAuthorUrl extends BaseClass {
 	@Given("Group sampleGroup {string} exists")
 	public void group_sampleGroup_exists(String groupName) throws Exception {
 		loginPage.verifyGroupExists(groupName);
-	    
 	}
 
 	@Then("Remove group {string}")
@@ -166,7 +163,6 @@ public class LoginToAuthorUrl extends BaseClass {
 	@Then("Create group {string} and enable role {string} of {string}")
 	public void create_group_and_enable_role_of(String groupName, String role, String dataservice) throws Exception {
 		loginPage.createGroupAndEnableRole(groupName,role,dataservice);
-	  
 	}
 	@Given("Group {string} exists")
 	public void group_exists(String groupName) {
@@ -181,7 +177,6 @@ public class LoginToAuthorUrl extends BaseClass {
 	@Given("Add {string} and {string} if not present")
 	public void add_if_not_present(String username,String password) throws Exception {
 		userEmail=username;
-		
 		loginPage.addUser(username,password);
 	}
 	
@@ -189,8 +184,6 @@ public class LoginToAuthorUrl extends BaseClass {
 	public void make_App_Admin() throws Exception {
 		loginPage.makeAppAdmin(userEmail);
 	}
-
-	
 
 	@Then("Add {string} to {string}")
 	public void add_to(String userEmail, String group) throws Exception {
@@ -215,7 +208,6 @@ public class LoginToAuthorUrl extends BaseClass {
 	@Then("Search given Data Service")
 	public void search_given_Data_Service() throws Exception {
 		loginPage.searchDataService();
-		
 		loginPage.logsOutOfAuthor();
 	}
 

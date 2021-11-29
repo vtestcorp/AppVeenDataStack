@@ -9,7 +9,7 @@ Feature: DS NUMBER-NUMBER
 
     Examples: 
       | username          | password  |
-      | vtest@appveen.com | 123123123 |
+      | test_ui_appadmin@appveen.com | Veen@99%win |
 
   Scenario: Delete data service
     Given Data service "number_Number" exists
@@ -21,14 +21,14 @@ Feature: DS NUMBER-NUMBER
 
   #Under testData, picks up strings.json create the JSON
   Scenario Outline: Assign to Appcenter Group
-    Given Add "<user>" if not present
+    #Given Add "<user>" if not present
     Then Group "Number-Group" does not exist
     Then Create new group "Number-Group"
     And Assign appcenter permissions for "number_Number" dataservice to "<user>"
 
     Examples: 
       | user                          |
-      | test2_ac_ds_manage@appveen.com |
+      | test_ui_ac_ds_manage@appveen.com |
 
   Scenario: Log out of Author
     Given User logged into Author
@@ -42,7 +42,7 @@ Feature: DS NUMBER-NUMBER
 
     Examples: 
       | username                      | password  |
-      | test2_ac_ds_manage@appveen.com | 123123123 |
+      | test_ui_ac_ds_manage@appveen.com | Veen@99%win |
 
   #INSERT/UPDATE
   Scenario: Add data to data service

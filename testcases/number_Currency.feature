@@ -9,7 +9,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|test_appadmin@appveen.com|123123123|
+|test_ui_appadmin@appveen.com|Veen@|
 
 Scenario: Delete data service
 	Given Data service "number_Currency" exists

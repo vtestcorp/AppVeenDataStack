@@ -9,7 +9,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|test_appadmin@appveen.com|123123123|
+|test_ui_appadmin@appveen.com|Veen@99%win|
 
 Scenario: Delete data service
 	Given Data service "string_Email" exists
@@ -28,7 +28,7 @@ Scenario Outline: Assign to Appcenter Group
 	
 	Examples:
 	|user|
-	|test_ac_ds_manage@appveen.com|
+	|test_ui_ac_ds_manage@appveen.com|
 
 Scenario: Log out of Author
 	Given User logged into Author
@@ -42,7 +42,7 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|test_ac_ds_manage@appveen.com|123123123|
+|test_ui_ac_ds_manage@appveen.com|Veen@99%win|
 
 
  #INSERT/UPDATE

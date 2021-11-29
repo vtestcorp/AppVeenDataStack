@@ -77,7 +77,7 @@ public class LoginAppCenter extends BaseClass {
 		} catch (Exception e) {
 			Thread.sleep(1000);
 			driver.navigate().refresh();
-			Thread.sleep(3000);
+			Thread.sleep(10000);
 					try {
 						WebElement data = driver.findElement(ds);
 						action.moveToElement(data).perform();
@@ -85,7 +85,7 @@ public class LoginAppCenter extends BaseClass {
 					} catch (Exception e1) {
 						Thread.sleep(1000);
 						driver.navigate().refresh();
-						Thread.sleep(10000);
+						Thread.sleep(19000);
 						WebElement data = driver.findElement(ds);
 						action.moveToElement(data).perform();
 						data.click();
