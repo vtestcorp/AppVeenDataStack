@@ -47,8 +47,7 @@ public class BaseClass {
 
 	@SuppressWarnings("deprecation")
 	public void start() {
-		//browser="headless";
-		//		headless="true";
+//				headless="true";
 		if (browser == null) {
 			browser = "chrome";
 		}
@@ -71,7 +70,7 @@ public class BaseClass {
 				WebDriverManager.chromedriver().setup();
 				options.addArguments("--start-maximized");
 				if(isHeadLess) {
-					options.addArguments("--headless", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage");
+					options.addArguments("--headless","--window-size=1296,696", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage");
 				}
 			}
 			

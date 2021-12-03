@@ -105,7 +105,8 @@ public class LoginAppCenter extends BaseClass {
 	}
 
 	public void userEnterData() throws Exception {
-		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
+		Thread.sleep(2000);
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton,30);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
 		List<WebElement> textBoxes = acp.textBoxes;
@@ -462,7 +463,7 @@ public class LoginAppCenter extends BaseClass {
 		if(json!=null) {
 			JSONObject value2=(JSONObject) json.get("metadata");
 			String value=(String) value2.get("filename");
-			String absolutePath=new File("files\\"+value).getAbsolutePath();
+			String absolutePath=new File("files/"+value).getAbsolutePath();
 			textBox.sendKeys(absolutePath);
 			Thread.sleep(1000);
 		}}
@@ -607,8 +608,6 @@ public class LoginAppCenter extends BaseClass {
 //------------------------------------------------------------Boolean----------------------------------------------------------------------------
 			
 				else if (textBox.getAttribute("type").equals("checkbox")) {
-					
-					
 
 				      WebElement parent = textBox.findElement(By.xpath("./.."));
 				      String v1 =  JsonUtils.getJsonValue(filePath, id1);
@@ -629,11 +628,12 @@ public class LoginAppCenter extends BaseClass {
 					Thread.sleep(500);
 				String json1=JsonUtils.getJsonValue(filePath, id1+".metadata.filename");
 					if(json1!=null) {
-						String absolutePath=new File("files\\"+json1).getAbsolutePath();
+						String absolutePath=new File("files/"+json1).getAbsolutePath();
 						textBox.sendKeys(absolutePath);
 						Thread.sleep(500);
 					}
 				}
+				
 //------------------------------------------------------------Location----------------------------------------------------------------------------				
 			
 				else if (textBox.getAttribute("type").equals("email")) {
@@ -862,7 +862,7 @@ public class LoginAppCenter extends BaseClass {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		applyWait.applyExplicitWaitsUntilElementVisible(acp.groupTextBoxes, 10);
 		List<WebElement> textBoxes = acp.groupTextBoxes;
-		String filePath=path + "\\testData\\" + data_Service + Constants.testData_Suffix;
+		String filePath=Constants.testData_Folder + data_Service + Constants.testData_Suffix;
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 
 		for (int j = 1; j <= textBoxes.size(); j++) {

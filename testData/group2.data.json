@@ -84,7 +84,7 @@
   },
   "dsGroupUser" : {
     "user" : {
-      "_id" : "test_ui@appveen.com",
+      "_id" : "test_ui_appadmin@appveen.com",
       "_href" : "/api/a/rbac/usr/maker@appveen.com"
     }
   },

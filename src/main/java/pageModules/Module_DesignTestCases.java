@@ -226,6 +226,7 @@ public class Module_DesignTestCases extends BaseClass{
 			user.click();
 		}
 		applyWait.waitForElementToBeClickable(gp.done, 30).click();
+		Thread.sleep(500);
 		applyWait.waitForElementToBeClickable(gp.save, 30).click();
 		
 	}
@@ -443,7 +444,7 @@ public class Module_DesignTestCases extends BaseClass{
 		Thread.sleep(2000);
 		List<WebElement> textBoxes = acp.textBoxes;
 		String path= System.getProperty("user.dir");
-		JSONArray jsonArray = JsonUtils.getJSONArray(path+"\\testData\\string2.json");
+		JSONArray jsonArray = JsonUtils.getJSONArray(Constants.testData_Folder + "string2.json");
 		for(int i=0;i<jsonArray.size();i++) {
 			Thread.sleep(1000);
 			JSONObject jsonObject=(JSONObject) jsonArray.get(i);
@@ -649,8 +650,8 @@ public class Module_DesignTestCases extends BaseClass{
 		applyWait.waitForElementToBeClickable(acp.yes, 30).click();
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 		List<WebElement> textBoxes = acp.textBoxes;
-		JSONArray jsonArray = JsonUtils.getJSONArray(path +"\\testData\\string3.json");
-		for(int i=0;i<jsonArray.size();i++) {
+		JSONArray jsonArray = JsonUtils.getJSONArray(Constants.testData_Folder + "string3.json");
+		for(int i=0;i<jsonArray.size();i++) { 
 			JSONObject jsonObject=(JSONObject) jsonArray.get(i);
 
 			List<WebElement> stepNames=driver.findElements(By.xpath("//div[@class='step-name high-zIndex text-truncate']"));
@@ -1145,7 +1146,7 @@ public class Module_DesignTestCases extends BaseClass{
 		if(jsonObject.get(id1)!=null && textBox.isEnabled()) {
 			String value=(String) jsonObject.get(id1);
 			Thread.sleep(200);
-			String absolutePath=new File("files\\"+value).getAbsolutePath();
+			String absolutePath=new File("files/"+value).getAbsolutePath();
 			textBox.sendKeys(absolutePath);
 			Thread.sleep(500);
 		}}
@@ -1466,7 +1467,7 @@ public void addRecordForGroup(String string) throws Exception {
 				Thread.sleep(500);
 			String json1=JsonPath.read(string, "$."+id1+".metadata.filename").toString();
 				if(json1!=null) {
-					String absolutePath=new File("files\\"+json1).getAbsolutePath();
+					String absolutePath=new File("files/"+json1).getAbsolutePath();
 					textBox.sendKeys(absolutePath);
 					Thread.sleep(500);
 				}

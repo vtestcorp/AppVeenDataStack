@@ -221,5 +221,12 @@ public class LoginToAuthorUrl extends BaseClass {
 	public void clone_Given_Data_Service() throws Exception {
 		loginPage.cloneGivenDataService();
 	}
+	
+	@Then("Close Browser")
+	public void close_Browser() {
+		driver.quit();
+		
+	    
+	}
 
 }

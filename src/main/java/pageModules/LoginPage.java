@@ -283,6 +283,7 @@ public class LoginPage extends BaseClass{
 		if(!libraryflag1)
 		{
 		 dataServiceName=dataService1;
+		 Thread.sleep(500);
 		 applyWait.waitForElementToBeClickable(ap.servicesTab, 30).click();
 		 Thread.sleep(2000); 
 		 applyExplicitWaitsUntilElementVisible(ap.dataServiceName1, 10);
@@ -411,7 +412,7 @@ public class LoginPage extends BaseClass{
 				case "Object" : 
 					jsonProperties = (JSONObject) attribute.get("properties");
 					applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(jsonProperties.get("name").toString());
-													
+					Thread.sleep(1000);				
 					if(jsonProperties.containsKey("password")) {
 						
 						applyWait.waitForElementToBeClickable(ap.dropdown, 30).click();
@@ -1378,7 +1379,7 @@ public class LoginPage extends BaseClass{
 							try {
 							applyWait.waitForElementToBeClickable(gp.profileIcon, 30).click();
 							}
-							catch(ElementClickInterceptedException e) {
+							catch(Exception e) {
 								Thread.sleep(2000);
 								handleElementClickException(gp.profileIcon);
 							}
