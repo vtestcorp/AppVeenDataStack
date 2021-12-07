@@ -119,13 +119,13 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(acp.workflowTab, 30).click();
 		List <WebElement> workflows=acp.respondWorkflows;
 		for(WebElement workflow : workflows) {
-			applyExplicitWaitsUntilElementVisible(acp.respond1,10);
+			applyExplicitWaitsUntilElementVisible(acp.respond1,30);
 			Thread.sleep(1000);
 			try {
 				acp.respond1.click();
 			}
 			catch(StaleElementReferenceException e) {
-				applyExplicitWaitsUntilElementVisible(acp.respond1,10);
+				applyExplicitWaitsUntilElementVisible(acp.respond1,30);
 				acp.respond1.click();
 			}
 			applyWait.waitForElementToBeClickable(acp.approve, 30).click();
@@ -270,12 +270,12 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(acp.workflowTab, 30).click();
 		List <WebElement> workflows=acp.respondWorkflows;
 		for(WebElement workflow : workflows) {
-			applyExplicitWaitsUntilElementVisible(acp.respond1,10);
+			applyExplicitWaitsUntilElementVisible(acp.respond1,30);
 			try {
 				acp.respond1.click();
 			}
 			catch(StaleElementReferenceException e) {
-				applyExplicitWaitsUntilElementVisible(acp.respond1,10);
+				applyExplicitWaitsUntilElementVisible(acp.respond1,30);
 				acp.respond1.click();
 			}
 			applyWait.waitForElementToBeClickable(acp.reject, 30).click();
@@ -283,26 +283,20 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 			applyWait.waitForElementToBeClickable(acp.rejectButton, 30).click();;
 		}
 		
-		
-		
-	
-		
 	}
-
 
 	public void reworkTheRecord() throws Exception {
 		
 		applyWait.waitForElementToBeClickable(acp.workflowTab, 30).click();
 		List <WebElement> workflows=acp.respondWorkflows;
 		for(WebElement workflow : workflows) {
-			applyExplicitWaitsUntilElementVisible(acp.respond1,10);
+			applyExplicitWaitsUntilElementVisible(acp.respond1,30);
 			try {
 				applyWait.waitForElementToBeClickable(acp.respond1, 30).click();;
-				
 			}
 			
 			catch(StaleElementReferenceException e) {
-				applyExplicitWaitsUntilElementVisible(acp.respond1,10);
+				applyExplicitWaitsUntilElementVisible(acp.respond1,30);
 				acp.respond1.click();
 			}
 			applyWait.waitForElementToBeClickable(acp.rework1, 30).click();

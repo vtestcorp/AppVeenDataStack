@@ -245,10 +245,11 @@ public class LoginAppCenter extends BaseClass {
 
 
 	public void userEnterDataInLocationField() throws InterruptedException, Exception {
-		applyExplicitWaitsUntilElementVisible(acp.addDataButton, 20);
+		Thread.sleep(1500);
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton, 30);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		Thread.sleep(5000);
-		applyExplicitWaitsUntilElementVisible(acp.textBoxesLocation, 20);
+		applyExplicitWaitsUntilElementVisible(acp.textBoxesLocation, 30);
 		List<WebElement> textBoxes = acp.textBoxesLocation;
 		
 		String filePath=Constants.testData_Folder + data_Service + Constants.testData_Suffix;
@@ -333,7 +334,7 @@ public class LoginAppCenter extends BaseClass {
 	}
 					
 			public void userEnterDataforBoolean() throws InterruptedException {
-				
+				Thread.sleep(1500);
 				applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 				Thread.sleep(1000);
 				List<WebElement> buttons = acp.buttons;
@@ -368,6 +369,7 @@ public class LoginAppCenter extends BaseClass {
 			
 
 			public void userEnterDataForRichText() throws InterruptedException {
+				Thread.sleep(2000);
 				applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 				Thread.sleep(5000);
 				List<WebElement> textBoxes = acp.richtextBoxes;
@@ -424,7 +426,7 @@ public class LoginAppCenter extends BaseClass {
 	}
 
 	public void verifyTotalCountOfDocuments(Integer documentCount) throws Exception {
-		applyExplicitWaitsUntilElementVisible(acp.documentList,10);
+		applyExplicitWaitsUntilElementVisible(acp.documentList,30);
 		String documentList = acp.documentList.getText();
 		Integer documentListCount = Integer.parseInt(documentList.trim().split("of")[1].trim());
 	}
@@ -433,7 +435,7 @@ public class LoginAppCenter extends BaseClass {
 		Thread.sleep(1000);
 		for (int i = 0; i < int1; i++) {
 			WebElement checkbox = acp.checkbox;
-			applyExplicitWaitsUntilElementVisible(acp.checkbox,10);
+			applyExplicitWaitsUntilElementVisible(acp.checkbox,30);
 			checkbox.click();
 			acp.delete.click();
 			acp.yes.click();
@@ -441,10 +443,10 @@ public class LoginAppCenter extends BaseClass {
 	}
 
 	public void addDataForFile() throws Exception {
-		
-		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
+		Thread.sleep(1500);
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton,30);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
+		applyExplicitWaitsUntilElementVisible(acp.textBox1,30);
 		List<WebElement> textBoxes = driver.findElements(By.xpath("//input[@class='invisible position-absolute' or @id='_id']"));
 		String filePath=Constants.testData_Folder + data_Service + Constants.testData_Suffix;
 
@@ -473,9 +475,10 @@ public class LoginAppCenter extends BaseClass {
 	}
 	
 	public void userEnterDataforCollection() throws Exception {
+		Thread.sleep(1500);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		JSONObject jsonObject = JsonUtils.getJSONObject(Constants.testData_Folder + data_Service + Constants.testData_Suffix);
-		applyExplicitWaitsUntilElementVisible(acp.addNewButtons, 20);
+		applyExplicitWaitsUntilElementVisible(acp.addNewButtons, 30);
 		List<WebElement> addNew = acp.addNewButtons;
 		System.out.println(addNew.size());
 			for (int j = 1; j <= addNew.size(); j++) {
@@ -530,10 +533,10 @@ public class LoginAppCenter extends BaseClass {
 	
 
 	public void addDataForGroups() throws MalformedURLException, Exception {
-		
-		applyExplicitWaitsUntilElementVisible(acp.addDataButton,20);
+		Thread.sleep(1500);
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton,30);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-		applyExplicitWaitsUntilElementVisible(acp.textBox1,20);
+		applyExplicitWaitsUntilElementVisible(acp.textBox1,30);
 		List<WebElement> textBoxes = acp.groupTextBoxes;
 		String filePath=Constants.testData_Folder + data_Service + Constants.testData_Suffix;
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
@@ -663,7 +666,7 @@ public class LoginAppCenter extends BaseClass {
 					selectDate.click();
 					dropdown.selectByValue(acp.yearDropDown, year);
 					dropdown.selectByIndex(acp.monthDropDown, Integer.parseInt(month)-1);
-					applyExplicitWaitsUntilElementVisible(acp.day,10);
+					applyExplicitWaitsUntilElementVisible(acp.day,30);
 					WebElement date1=driver.findElement(By.xpath("//span[contains(@class,'disabled')=false and @id='_day']["+date+"]"));
 					date1.click();
 					if(lp.isDateTime) {
@@ -685,10 +688,10 @@ public class LoginAppCenter extends BaseClass {
 	}
 
 	public void addDataForDate() throws Exception {
-		
-		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
+		Thread.sleep(1500);
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton,30);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-		applyExplicitWaitsUntilElementVisible(acp.textBox1,20);
+		applyExplicitWaitsUntilElementVisible(acp.textBox1,30);
 		List<WebElement> textBoxes = acp.dateFields;
 		String filePath=Constants.testData_Folder + data_Service + Constants.testData_Suffix;
 
@@ -732,7 +735,7 @@ public class LoginAppCenter extends BaseClass {
 					selectDate.click();
 					dropdown.selectByValue(acp.yearDropDown, year);
 					dropdown.selectByIndex(acp.monthDropDown, Integer.parseInt(month)-1);
-					applyExplicitWaitsUntilElementVisible(acp.day,10);
+					applyExplicitWaitsUntilElementVisible(acp.day,30);
 					WebElement date1=driver.findElement(By.xpath("//span[contains(@class,'disabled')=false and @id='_day']["+date+"]"));
 					date1.click();
 					
@@ -756,9 +759,10 @@ public class LoginAppCenter extends BaseClass {
 	}
 
 	public void addDataForRelation() throws Exception {
-		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
+		Thread.sleep(1500);
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton,30);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
+		applyExplicitWaitsUntilElementVisible(acp.textBox1,30);
 		List<WebElement> textBoxes = acp.textBoxes;
 		String filePath=Constants.testData_Folder + data_Service + Constants.testData_Suffix;
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
@@ -858,9 +862,9 @@ public class LoginAppCenter extends BaseClass {
 	}
 
 	public void userEnterDataForStateModel() throws MalformedURLException, InterruptedException {
-		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton,30);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-		applyWait.applyExplicitWaitsUntilElementVisible(acp.groupTextBoxes, 10);
+		applyWait.applyExplicitWaitsUntilElementVisible(acp.groupTextBoxes, 30);
 		List<WebElement> textBoxes = acp.groupTextBoxes;
 		String filePath=Constants.testData_Folder + data_Service + Constants.testData_Suffix;
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
@@ -908,7 +912,7 @@ public class LoginAppCenter extends BaseClass {
 
 	public void verifyState(String currentState) throws MalformedURLException {
 		applyWait.waitForElementToBeClickable(acp.record, 30).click();
-		applyExplicitWaitsUntilElementVisible(acp.onBoardingStatus,10);
+		applyExplicitWaitsUntilElementVisible(acp.onBoardingStatus,30);
 		WebElement expected = acp.onBoardingStatus;
 		String value = expected.getText();
 		Assert.assertEquals(value, currentState);

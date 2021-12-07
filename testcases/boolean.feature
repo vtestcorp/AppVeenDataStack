@@ -9,7 +9,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|test_ui_appadmin@appveen.com|Veen@99%win|
+|test_ui_appadmin@appveen.com | Veen@99%win |
 
 Scenario: Delete data service
 	Given Data service "boolean" exists
@@ -26,13 +26,12 @@ Scenario Outline: Assign to Appcenter Group
 	
 	Examples:
 	|user|
-	|test_ui_ac_ds_manage@appveen.com|
+	|test_ui_ac_ds_manage@appveen.com |
 
 Scenario: Log out of Author
 	Given User logged into Author
 	Then User logs out of Author
 	
-
 
 @AppCenter
 Scenario Outline: Log into AppCenter
@@ -41,11 +40,14 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|test_ui_ac_ds_manage@appveen.com|Veen@99%win|
+|test_ui_ac_ds_manage@appveen.com   |Veen@99%win|
 
+
+ #INSERT/UPDATE
 Scenario: Add data to data service
 	Given Data service "boolean"
 	Then Add data to the data service for boolean
+
 
 Scenario Outline: Add record to data service
 	Given Data service "boolean"
@@ -71,7 +73,6 @@ Examples:
 |id|data|
 |DS1001|{"dsBoolean1001" : false, "dsBoolean1002" : true, "dsBoolean1003" : false, "dsBoolean1004" : false, "dsBoolean1005" : false, "dsBoolean1006" : true, "dsBoolean1008" : true, "dsBoolean1010" : true, "dsBoolean1011" : false, "dsBoolean1012" : false,"dsBoolean1013" : true, "dsBoolean1014" : true, "dsBoolean1015" : false}|
 
-
 Scenario Outline: Fetch record from the data service
 	Given Data service "boolean"
 	Then Fetch record "<id>" from the data service
@@ -88,7 +89,7 @@ Examples:
 |id|
 |DS1001|
 
-
 Scenario: Log out of App Center
 Given User log out from AppCenter
+
 

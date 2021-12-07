@@ -58,7 +58,7 @@ public class BaseClass {
 		else if(headless.equals("true")){
 			isHeadLess=true;
 		}
-		
+		System.out.println();
 		if (browser.equalsIgnoreCase("chrome")) {
 			ChromeOptions options = new ChromeOptions();
 			if(System.getProperty("os.name").equals("Linux")) {
@@ -73,11 +73,6 @@ public class BaseClass {
 					options.addArguments("--headless","--window-size=1296,696", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage");
 				}
 			}
-			
-	//ds-ui-automation\report\screenshots\11292021161217430.png'		
-
-//			options.setBinary("/home/ubuntu/ds-ui-automation/chromedriver/chrome.exe");
-//			options.setBinary("/home/ubuntu/ds-ui-automation/drivers/chromedriver");
 			
 			driver = new ChromeDriver(options);
 			

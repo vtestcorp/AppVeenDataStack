@@ -9,7 +9,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|test_ui_appadmin@appveen.com|Veen@99%win|
+|test_ui_appadmin@appveen.com	|Veen@99%win|
 
 Scenario: Delete data service
 	Given Data service "location" exists
@@ -23,17 +23,15 @@ Scenario Outline: Assign to Appcenter Group
  	Then Group "String-Group" does not exist
 	Then Create new group "String-Group" 
 	And Assign appcenter permissions for "location" dataservice to "<user>"
-	
-	Examples:
-	|user|
-	|test_ui_ac_ds_manage@appveen.com|
+Examples:
+|user|
+|test_ui_ac_ds_manage@appveen.com |
 
 Scenario: Log out of Author
 	Given User logged into Author
 	Then User logs out of Author
-	
 
-@AppCenter
+#@AppCenter
 Scenario Outline: Log into AppCenter
 	Given User navigate to AppCenter login page
 	And User enters "<username>" and "<password>" in AppCenter login page
@@ -42,13 +40,11 @@ Examples:
 |username|password|
 |test_ui_ac_ds_manage@appveen.com|Veen@99%win|
 
-
 Scenario: Add data to data service
 	Given Data service "location"
 	Then Add data to the data service for Location
 	
-	
-	Scenario Outline: Add record to data service
+Scenario Outline: Add record to data service
 	Given Data service "location"
 	Then Add record "<data>" to the Location data service
 	And Expect error "DS-LOCATION 1002 Error" on label "DS-LOCATION 1002 Label"
@@ -61,21 +57,19 @@ Scenario Outline: Add record to data service
 	Given Data service "location"
 	Then Add record "<data>" to the Location data service	
 	And Expect error "ID DS1001 already exists." on save
-	Examples:
-		|data|
-	  |{ "_id": "DS1001", "dsLocation1001": "Satara, Maharashtra, India", "dsLocation1002": "Mumbai, Maharashtra, India", "dsLocation1003": "Kolhapur, Maharashtra, India", "dsLocation1006": "Sangli, Maharashtra, India", "dsLocation1007": "Nanded, Maharashtra, India", "dsLocation1008": "Dhule, Maharashtra, India", "dsLocation1009": "Ratnagiri, Maharashtra, India" }|
+Examples:
+|data|
+|{ "_id": "DS1001", "dsLocation1001": "Satara, Maharashtra, India", "dsLocation1002": "Mumbai, Maharashtra, India", "dsLocation1003": "Kolhapur, Maharashtra, India", "dsLocation1006": "Sangli, Maharashtra, India", "dsLocation1007": "Nanded, Maharashtra, India", "dsLocation1008": "Dhule, Maharashtra, India", "dsLocation1009": "Ratnagiri, Maharashtra, India" }|
 	
-	Scenario Outline: Fetch record from the data service
+Scenario Outline: Fetch record from the data service
 	Given Data service "location"
 	Then Fetch record "<id>" from the data service
 	And  Match this Location data to "<data>" 
-
 Examples:
 |id|data|
 |DS1001|{"_id": "DS1001","dsLocation1001": "Pune, Maharashtra, India","dsLocation1002": "Pimpri-Chinchwad, Maharashtra, India","dsLocation1003": "Bangalore, Karnataka, India","dsLocation1006": "Chennai, Tamil Nadu, India","dsLocation1007": "Gujrat, Pakistan", "dsLocation1008": "Satara, Maharashtra, India","dsLocation1009":"Mumbai, Maharashtra, India"}|
 
-
-	Scenario Outline: Update record to data service
+Scenario Outline: Update record to data service
 	Given Data service "location"
 	Then Update record "<id>" with "<data>" to the Location 
 Examples:

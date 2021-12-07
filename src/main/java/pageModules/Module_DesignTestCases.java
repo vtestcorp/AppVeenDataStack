@@ -85,7 +85,7 @@ public class Module_DesignTestCases extends BaseClass{
 			Thread.sleep(3000);
 			handleElementClickException(ap.groups);
 		}
-		applyExplicitWaitsUntilElementVisible(gp.groups, 10);
+		applyExplicitWaitsUntilElementVisible(gp.groups, 30);
 		groups=new ArrayList<String>();
 		for(WebElement group : gp.groups) {
 			String group1=group.getText();
@@ -108,7 +108,7 @@ public class Module_DesignTestCases extends BaseClass{
 	}
 
 	public void createGroup(String groupName) throws Exception {
-		applyExplicitWaitsUntilElementVisible(gp.group1,10);
+		applyExplicitWaitsUntilElementVisible(gp.group1,30);
 		List<WebElement> groupNames=gp.groups;
 		ArrayList<String> groups=new ArrayList<String>();
 			for(WebElement group : groupNames) {
@@ -118,6 +118,7 @@ public class Module_DesignTestCases extends BaseClass{
 			if(!groups.contains(groupName)) {
 				applyWait.waitForElementToBeClickable(gp.newGroup, 30).click();
 				applyWait.waitForElementToBeClickable(gp.groupName, 30).sendKeys(groupName);;
+				Thread.sleep(500);
 				applyWait.waitForElementToBeClickable(gp.createButton, 30).click();
 			}
 	}
@@ -134,89 +135,85 @@ public class Module_DesignTestCases extends BaseClass{
 			applyWait.waitForElementToBeClickable(gp.blocked, 30).click();
 			applyWait.waitForElementToBeClickable(gp.view, 30).click();
 		}
-		Thread.sleep(2000);
-		applyExplicitWaitsUntilElementVisible(gp.appCenterRoles, 10);
+		Thread.sleep(3000);
+		applyExplicitWaitsUntilElementVisible(gp.appCenterRoles, 30);
 		javascriptClick.click(gp.appCenterRoles);
 		Thread.sleep(1000);
-		url=Constants.bifrostInstance;
 		
-		if(url.equals(Constants.qaInstance)) {
-		
-		applyExplicitWaitsUntilElementVisible(gp.dsArrow, 10);
-		WebElement dsArrow=driver.findElement(By.xpath("//span[normalize-space()='"+dataServiceName+"']/parent::div/following-sibling::span[2]/child::span"));
-		applyWait.waitForElementToBeClickable(dsArrow, 30).click();
-		
-		if(role.equalsIgnoreCase("SkipReview")) {
-			applyWait.waitForElementToBeClickable(gp.skipReviewToggler, 30).click();
-			}
-		else if(role.equalsIgnoreCase("Manage")) {
-			applyWait.waitForElementToBeClickable(gp.manageToggler, 30).click();
-		}
-		
-		else if(role.equalsIgnoreCase("View")) {
-			applyWait.waitForElementToBeClickable(gp.viewToggler, 30).click();
-			}
-		
-		else {
-			WebElement toggler=driver.findElement(By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[2]/child::label/child::span[2]"));
-			applyWait.waitForElementToBeClickable(toggler, 30).click();
-			}
-		
-		if(lp.isRelation) {
-			WebElement dsArrow1=driver.findElement(By.xpath("//span[normalize-space()='"+lp.anotherDataService+"']/parent::div/following-sibling::span[2]/child::span"));
-			applyWait.waitForElementToBeClickable(dsArrow1, 30).click();
-			
-			if(role.equalsIgnoreCase("SkipReview")) {
-				applyWait.waitForElementToBeClickable(gp.skipReviewToggler, 30).click();
-				}
-			else if(role.equalsIgnoreCase("Manage")) {
-				applyWait.waitForElementToBeClickable(gp.manageToggler, 30).click();
-			}
-			
-			else if(role.equalsIgnoreCase("View")) {
-				applyWait.waitForElementToBeClickable(gp.viewToggler, 30).click();
-				}
-			
-			else {
-				WebElement toggler=driver.findElement(By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[2]/child::label/child::span[2]"));
-				applyWait.waitForElementToBeClickable(toggler, 30).click();
-				}
-		}
-		}
-		else if(url.equals(Constants.bifrostInstance)){
+//		if(url.equals(Constants.qaInstance)) {
+//		
+//		applyExplicitWaitsUntilElementVisible(gp.dsArrow, 30);
+//		WebElement dsArrow=driver.findElement(By.xpath("//span[normalize-space()='"+dataServiceName+"']/parent::div/following-sibling::span[2]/child::span"));
+//		applyWait.waitForElementToBeClickable(dsArrow, 30).click();
+//		
+//		if(role.equalsIgnoreCase("SkipReview")) {
+//			applyWait.waitForElementToBeClickable(gp.skipReviewToggler, 30).click();
+//			}
+//		else if(role.equalsIgnoreCase("Manage")) {
+//			applyWait.waitForElementToBeClickable(gp.manageToggler, 30).click();
+//		}
+//		
+//		else if(role.equalsIgnoreCase("View")) {
+//			applyWait.waitForElementToBeClickable(gp.viewToggler, 30).click();
+//			}
+//		
+//		else {
+//			WebElement toggler=driver.findElement(By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[2]/child::label/child::span[2]"));
+//			applyWait.waitForElementToBeClickable(toggler, 30).click();
+//			}
+//		
+//		if(lp.isRelation) {
+//			WebElement dsArrow1=driver.findElement(By.xpath("//span[normalize-space()='"+lp.anotherDataService+"']/parent::div/following-sibling::span[2]/child::span"));
+//			applyWait.waitForElementToBeClickable(dsArrow1, 30).click();
+//			
+//			if(role.equalsIgnoreCase("SkipReview")) {
+//				applyWait.waitForElementToBeClickable(gp.skipReviewToggler, 30).click();
+//				}
+//			else if(role.equalsIgnoreCase("Manage")) {
+//				applyWait.waitForElementToBeClickable(gp.manageToggler, 30).click();
+//			}
+//			
+//			else if(role.equalsIgnoreCase("View")) {
+//				applyWait.waitForElementToBeClickable(gp.viewToggler, 30).click();
+//				}
+//			
+//			else {
+//				WebElement toggler=driver.findElement(By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[2]/child::label/child::span[2]"));
+//				applyWait.waitForElementToBeClickable(toggler, 30).click();
+//				}
+//		}
+//		}
+		if(url.equals(Constants.bifrostInstance)  ||  url.equals(Constants.qaInstance)){
 			By dataService1 = By.xpath("//div[contains(@class,'ds-name')]//span[normalize-space()='"+dataServiceName+"']");
 			Actions action =new Actions(driver);
 			action.moveToElement(driver.findElement(dataService1));
-			applyWaitForDynamicWebElement(dataService1, 20);
+			applyWaitForDynamicWebElement(dataService1, 30);
 			WebElement dataService = driver.findElement(dataService1);
 			applyWait.waitForElementToBeClickable(dataService, 30).click();
 			By toggler=By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[2]/child::label/child::span[2]");
-			applyWaitForDynamicWebElement(toggler, 20);
+			applyWaitForDynamicWebElement(toggler, 30);
 			WebElement roleToggler = driver.findElement(toggler);
 			applyWait.waitForElementToBeClickable(roleToggler, 30).click();
 			
 			if(lp.isRelation) {
 				By data = By.xpath("//div[contains(@class,'ds-name')]//span[normalize-space()='"+lp.anotherDataService+"']");
 				action.moveToElement(driver.findElement(data));
-				applyWaitForDynamicWebElement(data, 20);
+				applyWaitForDynamicWebElement(data, 30);
 				WebElement dataServiceRelate = driver.findElement(data);
 				applyWait.waitForElementToBeClickable(dataServiceRelate, 30).click();
-				applyWaitForDynamicWebElement(toggler, 20);
+				applyWaitForDynamicWebElement(toggler, 30);
 				WebElement roleToggler1 = driver.findElement(toggler);
 				applyWait.waitForElementToBeClickable(roleToggler1, 30).click();
-				
-				
 			}
-			
 		}
 		applyWait.waitForElementToBeClickable(gp.members, 30).click();
 		applyWait.waitForElementToBeClickable(gp.addUsers, 30).click();
-		applyExplicitWaitsUntilElementVisible(gp.userEmail, 10);
+		applyExplicitWaitsUntilElementVisible(gp.userEmail, 30);
 		Thread.sleep(1000);
 		
 		By ele=By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']");
 		
-		applyWaitForDynamicWebElement(ele, 20);
+		applyWaitForDynamicWebElement(ele, 30);
 		WebElement user=driver.findElement(ele);
 		try {
 		user.click();
@@ -226,7 +223,7 @@ public class Module_DesignTestCases extends BaseClass{
 			user.click();
 		}
 		applyWait.waitForElementToBeClickable(gp.done, 30).click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		applyWait.waitForElementToBeClickable(gp.save, 30).click();
 		
 	}
@@ -243,7 +240,7 @@ public class Module_DesignTestCases extends BaseClass{
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
 		Thread.sleep(2000);
-		applyExplicitWaitsUntilElementVisible(acp.idTextBox1, 10);
+		applyExplicitWaitsUntilElementVisible(acp.idTextBox1, 30);
 
 		List<WebElement> textBoxes = acp.textBoxes;
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
@@ -529,7 +526,7 @@ public class Module_DesignTestCases extends BaseClass{
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
 		    }
 		Thread.sleep(5000);
-		applyExplicitWaitsUntilElementVisible(acp.textBoxesLocation, 20);
+		applyExplicitWaitsUntilElementVisible(acp.textBoxesLocation, 30);
 		List<WebElement> textBoxes = acp.textBoxesLocation;
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
 	   	for (int j = 1; j <= textBoxes.size(); j++) {
@@ -786,17 +783,17 @@ public class Module_DesignTestCases extends BaseClass{
 			if(!(jsonObject.get("rowsToSkipFromTop")==null))
 			{
 			  	String rowValue = jsonObject.get("rowsToSkipFromTop").toString();
-			   	applyWait.waitForElementToBeClickable(acp.sheetTopRow, 10).sendKeys(rowValue);
+			   	applyWait.waitForElementToBeClickable(acp.sheetTopRow, 30).sendKeys(rowValue);
 			}
 			if(!(jsonObject.get("rowsToSkipFromBottom")==null))
 			{
 				String bottomRow = jsonObject.get("rowsToSkipFromBottom").toString();
-			   	applyWait.waitForElementToBeClickable(acp.sheetBottomRow, 10).sendKeys(bottomRow);
+			   	applyWait.waitForElementToBeClickable(acp.sheetBottomRow, 30).sendKeys(bottomRow);
 			}
 			
 			String header= jsonObject.get("markFirstRecordAsHeader").toString();
 			
-			applyExplicitWaitsUntilElementVisible(acp.sheetToReadDropdown, 10);
+			applyExplicitWaitsUntilElementVisible(acp.sheetToReadDropdown, 30);
 			dropdown.selectByVisibleText(acp.sheetToReadDropdown, sheetName);
 		
 		}
@@ -811,7 +808,7 @@ public class Module_DesignTestCases extends BaseClass{
 			 applyWait.waitForElementToBeClickable(acp.here, 30).click();
 			 Thread.sleep(1000);
 			 applyWait.waitForElementToBeClickable(acp.notification, 30).click();
-			 applyWait.waitForElementToBeClickable(acp.notification_body, 10).click();
+			 applyWait.waitForElementToBeClickable(acp.notification_body, 30).click();
 			 Thread.sleep(500);
 		}
 	   
@@ -820,7 +817,7 @@ public class Module_DesignTestCases extends BaseClass{
 	   public void mapColumnToValue(String destination, String source) throws InterruptedException {
 		   By src = By.xpath("//div[normalize-space()='"+destination+"']//input[contains(@class,'colDiv')]");
 		   Thread.sleep(1000);
-		   applyWaitForDynamicWebElement(src, 10);
+		   applyWaitForDynamicWebElement(src, 30);
 		   WebElement dest=driver.findElement(src);
 	
 		   String data = dest.getAttribute("value");
@@ -966,12 +963,12 @@ public class Module_DesignTestCases extends BaseClass{
 	public void matchToRecord(String jsonFile) throws Exception {
 		
 		LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
-		applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
+		applyExplicitWaitsUntilElementVisible(acp.dataService, 30);
 		WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
 		record.click();
 		Thread.sleep(1000);
 		int q=1;
-		applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPage, 10);
+		applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPage, 30);
 		for(WebElement attribute : acp.attributesOnViewPage) {
 			
 			WebElement value=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])["+q+"]"));
@@ -991,11 +988,11 @@ public class Module_DesignTestCases extends BaseClass{
 	
    public void matchRecordforBoolean(String jsonFile) throws Exception {
 		LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
-		applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
+		applyExplicitWaitsUntilElementVisible(acp.dataService, 30);
 		WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
 		record.click();
 		int q=1;
-		applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPage, 10);
+		applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPage, 30);
 		for(WebElement attribute : acp.attributesOnViewPage) {
 			WebElement t=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])["+q+"]/parent::div/following-sibling::odp-view-separator/descendant::div/child::*)[last()]"));
 			String a=attribute.getAttribute("for");
@@ -1071,10 +1068,10 @@ public class Module_DesignTestCases extends BaseClass{
 	public void matchDataCurrency(String jsonFile) throws Exception {
 
 		LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
-		applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
+		applyExplicitWaitsUntilElementVisible(acp.dataService, 30);
 		WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
 		record.click();
-		applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPage, 10);
+		applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPage, 30);
 		int q=1;
 		for(WebElement attribute : acp.attributesOnViewPage) {
 			WebElement t=driver.findElement(By.xpath("(//label[starts-with(@class,'label-width d-flex')])["+q+"]/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()]"));
@@ -1093,12 +1090,12 @@ public class Module_DesignTestCases extends BaseClass{
 	public void matchGroupData(String jsonFile) throws Exception {
 		
 		LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
-		applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
+		applyExplicitWaitsUntilElementVisible(acp.dataService, 30);
 		WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
 		record.click();
 		Thread.sleep(1000);
 		int q=1;
-		applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPageForGroups, 10);
+		applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPageForGroups, 30);
 		for(WebElement attribute : acp.attributesOnViewPageForGroups) {
 			
 			WebElement value=driver.findElement(By.xpath("(//*[contains(@class,'value-wrapper')]//span[(last() and not(contains(@class, 'mr-2')) and not(contains(@class, 'ml-2')))] | //odp-view-date//div[@class='font-weight-bold value-wrapper'] | //span[text()='Raw location']/ancestor::div[contains(@class,'label-wrapper')]/following-sibling::div | //odp-view-user//a[@class='ng-star-inserted'])["+q+"]"));
@@ -1122,10 +1119,10 @@ public class Module_DesignTestCases extends BaseClass{
 	    }
 		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
-			applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
+			applyExplicitWaitsUntilElementVisible(acp.addDataButton,30);
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
-		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
+		applyExplicitWaitsUntilElementVisible(acp.textBox1,30);
 		
 		List<WebElement> textBoxes = driver.findElements(By.xpath("//input[@class='invisible position-absolute' or @id='_id']"));
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
@@ -1161,7 +1158,7 @@ public class Module_DesignTestCases extends BaseClass{
 	    }
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
 		applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);;
-		applyExplicitWaitsUntilElementVisible(acp.record, 10);
+		applyExplicitWaitsUntilElementVisible(acp.record, 30);
 		WebElement record=driver.findElement(By.xpath("//a[normalize-space()='"+id+"']"));
 		record.click();
 		applyWait.waitForElementToBeClickable(acp.edit, 30).click();
@@ -1172,11 +1169,11 @@ public class Module_DesignTestCases extends BaseClass{
 	public void matchToRecordForFileType(String jsonFile) throws Exception {
 		
 		LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
-		applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
+		applyExplicitWaitsUntilElementVisible(acp.dataService, 30);
 		WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
 		record.click();
 		int q=1;
-		applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPage, 10);
+		applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPage, 30);
 		for(WebElement attribute : acp.attributesOnViewPage) {
 			WebElement t=driver.findElement(By.xpath("(//label[starts-with(@class,'label-width d-flex')])["+q+"]/parent::div/following-sibling::odp-view-separator/descendant::*[contains(@class,'text') or contains(@class,'value-width')]"));
 
@@ -1201,7 +1198,7 @@ public void addRecordForDate(String jsonFile) throws Exception {
 	    }
 		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
-			applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
+			applyExplicitWaitsUntilElementVisible(acp.addDataButton,30);
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
 	    }
 		Thread.sleep(2000);
@@ -1230,7 +1227,7 @@ public void addRecordForDate(String jsonFile) throws Exception {
 					if(dateValue.equals("")) {
 						WebElement selectDate=driver.findElement(By.id(id1));
 						selectDate.click();
-						applyExplicitWaitsUntilElementVisible(acp.cancelButton, 20);
+						applyExplicitWaitsUntilElementVisible(acp.cancelButton, 30);
 						acp.cancelButton.click();
 						
 					}
@@ -1256,7 +1253,7 @@ public void addRecordForDate(String jsonFile) throws Exception {
 					selectDate.click();
 					dropdown.selectByValue(acp.yearDropDown, year);
 					dropdown.selectByIndex(acp.monthDropDown, Integer.parseInt(month)-1);
-					applyExplicitWaitsUntilElementVisible(acp.day,10);
+					applyExplicitWaitsUntilElementVisible(acp.day,30);
 					WebElement date1=driver.findElement(By.xpath("//span[contains(@class,'disabled')=false and @id='_day']["+date+"]"));
 					date1.click();
 					
@@ -1281,11 +1278,11 @@ public void addRecordForDate(String jsonFile) throws Exception {
 public void matchDateData(String jsonFile) throws Exception {
 
 	LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
-	applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
+	applyExplicitWaitsUntilElementVisible(acp.dataService, 30);
 	WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
 	record.click();
 	int q=1;
-	applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPage, 10);
+	applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPage, 30);
 	for(WebElement attribute : acp.attributesOnViewPage) {
 		WebElement t=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])["+q+"]/parent::div/following-sibling::odp-view-separator/descendant::*[contains(@class,'value')])[last()]"));
 		
@@ -1307,7 +1304,7 @@ public void updateRecordForDate(String id, String jsonFile) throws Exception {
     }
 	applyWait.waitForElementToBeClickable(acp.idTab, 30).clear();
 	applyWait.waitForElementToBeClickable(acp.idTab, 30).sendKeys(id);;
-	applyExplicitWaitsUntilElementVisible(acp.record, 10);
+	applyExplicitWaitsUntilElementVisible(acp.record, 30);
 	WebElement record=driver.findElement(By.xpath("//a[normalize-space()='"+id+"']"));
 	record.click();
 	applyWait.waitForElementToBeClickable(acp.edit, 30).click();
@@ -1318,11 +1315,11 @@ public void updateRecordForDate(String id, String jsonFile) throws Exception {
 public void matchLocationData(String jsonFile) throws Exception {
 	
 	LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
-	applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
+	applyExplicitWaitsUntilElementVisible(acp.dataService, 30);
 	WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
 	record.click();
 	
-	applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPageForLocation, 10);
+	applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPageForLocation, 30);
 	for(int q=1;q<=acp.attributesOnViewPageForLocation.size();q++) {
 		WebElement value = null;
 		WebElement key = null;
@@ -1359,11 +1356,11 @@ public void addRecordForGroup(String string) throws Exception {
     }
 	Thread.sleep(2000);
 	if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
-		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton,30);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
     }
 	Thread.sleep(2000);
-	applyExplicitWaitsUntilElementVisible(acp.textBox1,20);
+	applyExplicitWaitsUntilElementVisible(acp.textBox1,30);
 	List<WebElement> textBoxes = acp.groupTextBoxes;
 	JSONObject jsonObject = JsonUtils.fetchJSONObject(string);
 
@@ -1502,7 +1499,7 @@ public void addRecordForGroup(String string) throws Exception {
 				selectDate.click();
 				dropdown.selectByValue(acp.yearDropDown, year);
 				dropdown.selectByIndex(acp.monthDropDown, Integer.parseInt(month)-1);
-				applyExplicitWaitsUntilElementVisible(acp.day,10);
+				applyExplicitWaitsUntilElementVisible(acp.day,30);
 				WebElement date1=driver.findElement(By.xpath("//span[contains(@class,'disabled')=false and @id='_day']["+date+"]"));
 				date1.click();
 				if(lp.isDateTime) {
@@ -1540,12 +1537,12 @@ public void updateRecordForGroup(String id2, String jsonFile) throws Exception {
 
 public void matchRelationData(String jsonFile) throws Exception {
 	LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
-	applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
+	applyExplicitWaitsUntilElementVisible(acp.dataService, 30);
 	WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
 	record.click();
 	Thread.sleep(1000);
 	int q=1;
-	applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPage, 10);
+	applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPage, 30);
 	for(WebElement attribute : acp.attributesOnViewPage) {
 		WebElement value=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])["+q+"]"));
 		WebElement key=driver.findElement(By.xpath("((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])["+q+"]/ancestor::odp-view-separator/preceding-sibling::div//label"));
@@ -1563,12 +1560,12 @@ public void matchRelationData(String jsonFile) throws Exception {
 
 public void matchToRecordToRichText(String jsonFile) throws Exception {
 	LinkedHashMap<String, String> actualData=new LinkedHashMap<>();
-	applyExplicitWaitsUntilElementVisible(acp.dataService, 10);
+	applyExplicitWaitsUntilElementVisible(acp.dataService, 30);
 	WebElement record=driver.findElement(By.xpath("//a[@class='ng-star-inserted']"));
 	record.click();
 	Thread.sleep(1000);
 	int q=1;
-	applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPageForRichText, 10);
+	applyExplicitWaitsUntilElementVisible(acp.attributesOnViewPageForRichText, 30);
 	for(WebElement attribute : acp.attributesOnViewPageForRichText) {
 		
 		WebElement value=driver.findElement(By.xpath("(((//label[starts-with(@class,'label-width d-flex')])/parent::div/following-sibling::odp-view-separator/descendant::div/child::*[last()])/p | //span[@class='value-width ng-star-inserted'])["+q+"]"));
@@ -1606,14 +1603,14 @@ public void expectErrorOnSave(String errorMessage) throws InterruptedException {
 	if(errorMessage.contains("ID"))
 	{
 		By error = By.xpath("//div[@role='alertdialog']");
-		applyWaitForDynamicWebElement(error, 10);
+		applyWaitForDynamicWebElement(error, 30);
 		String expectedError = driver.findElement(error).getText();
 		Assert.assertEquals(errorMessage, expectedError);
 	}
 	if(errorMessage.contains("Unique"))
 	{
 		By error = By.xpath("//div[@role='alertdialog']");
-		applyWaitForDynamicWebElement(error, 10);
+		applyWaitForDynamicWebElement(error, 30);
 		String expectedError = driver.findElement(error).getText();
 		Assert.assertTrue( expectedError.contains("Unique check validation failed"));  	
 	}
@@ -1622,9 +1619,9 @@ public void expectErrorOnSave(String errorMessage) throws InterruptedException {
 
 
 public void addRecordForstateModel(String data) throws MalformedURLException, InterruptedException {
-		applyExplicitWaitsUntilElementVisible(acp.addDataButton,10);
+		applyExplicitWaitsUntilElementVisible(acp.addDataButton,30);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
-		applyWait.applyExplicitWaitsUntilElementVisible(acp.groupTextBoxes, 10);
+		applyWait.applyExplicitWaitsUntilElementVisible(acp.groupTextBoxes, 30);
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(data);
 		for (int j = 1; j <= acp.groupTextBoxes.size(); j++) {
 			WebElement textBox = driver.findElement(By.xpath("(//*[contains(@class,'form-control') or @type='checkbox' or @type='file' or contains(@class,'btn btn-link mr-2 p-0') or contains(@class,'searchInput')])["+j+"]"));

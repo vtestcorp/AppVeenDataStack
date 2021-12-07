@@ -66,7 +66,6 @@ public WebElement importUsers;
 @FindBy(xpath="//div[@col-id='username']/odp-user-list-cell-renderer")
 public List<WebElement> listUsers;
 
-
 @FindBy(xpath="//div[text()='More actions']")
 public WebElement moreActions;
 

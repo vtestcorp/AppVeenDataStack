@@ -11,6 +11,9 @@ Examples:
 |username|password|
 |test_ui_appadmin@appveen.com	|Veen@99%win|
 
+Scenario: Create Library
+	Given Library "Address" exist
+	
 Scenario: Delete data service
 	Given Data service "library" exists
 	Then Remove the data service

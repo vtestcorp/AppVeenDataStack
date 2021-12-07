@@ -102,7 +102,7 @@ public class LoginPage extends BaseClass{
 		applyWait.waitForElementToBeClickable(ap.library_Tab, 30).click();
 		libraryName=library;
 		Thread.sleep(1000);
-		applyExplicitWaitsUntilElementVisible(ap.listOfLibrary, 20);
+		applyExplicitWaitsUntilElementVisible(ap.listOfLibrary, 30);
 		for(WebElement library1 : ap.listOfLibrary) {
 			String lib=library1.getText();
 			if(lib.equalsIgnoreCase(libraryName)) {
@@ -131,7 +131,7 @@ public class LoginPage extends BaseClass{
 	  		 JSONObject obj = (JSONObject) js.get(0);
 	  		 JSONArray array = (JSONArray) obj.get("definition");
 	  		  createNewLibrary(array,library);
-	  		applyWait.waitForElementToBeClickable(ap.saveLibrary, 10).click();
+	  		applyWait.waitForElementToBeClickable(ap.saveLibrary, 30).click();
 	  		
 	      }
 		 libraryflag1=false;
@@ -146,7 +146,7 @@ public class LoginPage extends BaseClass{
 		Thread.sleep(1000);
 		dataServiceName=dataService;
 		applyWait.waitForElementToBeClickable(ap.servicesTab, 30).click();
-		applyExplicitWaitsUntilElementVisible(ap.listOfDataService, 20);
+		applyExplicitWaitsUntilElementVisible(ap.listOfDataService, 30);
 		for(WebElement dataService1 : ap.listOfDataService) {
 			String data=dataService1.getText();
 			if(data.equalsIgnoreCase(dataServiceName)) {
@@ -238,7 +238,7 @@ public class LoginPage extends BaseClass{
 	
 	public void addAttributes(String attributeName, String attributeType ) throws InterruptedException {
 		
-		applyWait.waitForElementToBeClickable(ap.newAttributeButton, 10).click();
+		applyWait.waitForElementToBeClickable(ap.newAttributeButton, 30).click();
 		applyWait.waitForElementToBeClickable(ap.attributeNameTextbox, 30).sendKeys(attributeName);
 	   if(attributeType.equals("Text"))
 	   {
@@ -263,7 +263,7 @@ public class LoginPage extends BaseClass{
 		Thread.sleep(3000);
 		Actions action = new Actions(driver);
 		action.moveToElement(ap.experienceTab);
-		applyWait.waitForElementToBeClickable(ap.experienceTab, 10).click();
+		applyWait.waitForElementToBeClickable(ap.experienceTab, 30).click();
 		
 
 	}
@@ -286,7 +286,7 @@ public class LoginPage extends BaseClass{
 		 Thread.sleep(500);
 		 applyWait.waitForElementToBeClickable(ap.servicesTab, 30).click();
 		 Thread.sleep(2000); 
-		 applyExplicitWaitsUntilElementVisible(ap.dataServiceName1, 10);
+		 applyExplicitWaitsUntilElementVisible(ap.dataServiceName1, 30);
 		 List<WebElement> dataServices=driver.findElements(By.id("serviceManagerCardTitle"));
 		 data_Services=new ArrayList<String>();
 		for(WebElement dataService : dataServices) {
@@ -1106,7 +1106,7 @@ public class LoginPage extends BaseClass{
 									By dataService=By.xpath("//button[@role='option']//span[text()='"+anotherDataService+"']");
 									if(!driver.findElements(dataService).isEmpty()) {
 										
-										applyWaitForDynamicWebElement(dataService, 10);
+										applyWaitForDynamicWebElement(dataService, 30);
 									driver.findElement(dataService).click();
 									}
 								}
@@ -1251,7 +1251,7 @@ public class LoginPage extends BaseClass{
 						}
 
 						public void removeGroup(String groupName) throws Exception {
-							applyExplicitWaitsUntilElementVisible(ap.groupNames, 10);
+							applyExplicitWaitsUntilElementVisible(ap.groupNames, 30);
 							if(groups.contains(groupName)) {
 								WebElement group=driver.findElement(By.xpath("//div[normalize-space()='"+groupName+"']/parent::div"));
 								group.click();
@@ -1263,7 +1263,7 @@ public class LoginPage extends BaseClass{
 						}
 
 						public void verifyGroupDoesNotExist(String groupName) throws Exception {
-							applyExplicitWaitsUntilElementVisible(ap.groupNames, 10);
+							applyExplicitWaitsUntilElementVisible(ap.groupNames, 30);
 							List<WebElement> groupNames=gp.groups;
 							groups=new ArrayList<String>();
 								for(WebElement group : groupNames) {
@@ -1283,7 +1283,7 @@ public class LoginPage extends BaseClass{
 						}
 
 						public void createGroupAndEnableRole(String groupName, String role, String dataservice) throws Exception {
-							applyExplicitWaitsUntilElementVisible(ap.groupNames, 10);
+							applyExplicitWaitsUntilElementVisible(ap.groupNames, 30);
 							List<WebElement> groupNames=gp.groups;
 							ArrayList<String> groups=new ArrayList<String>();
 								for(WebElement group : groupNames) {
@@ -1295,7 +1295,7 @@ public class LoginPage extends BaseClass{
 									applyWait.waitForElementToBeClickable(gp.groupName, 30).sendKeys(groupName);;
 									applyWait.waitForElementToBeClickable(gp.createButton, 30).click();
 									applyWait.waitForElementToBeClickable(gp.appCenterRoles, 30).click();
-									applyExplicitWaitsUntilElementVisible(gp.dsArrow, 10);
+									applyExplicitWaitsUntilElementVisible(gp.dsArrow, 30);
 									WebElement dsArrow=driver.findElement(By.xpath("//span[normalize-space()='"+dataservice+"']/parent::div/following-sibling::span[2]/child::span"));
 									applyWait.waitForElementToBeClickable(dsArrow, 30).click();
 									
@@ -1348,7 +1348,7 @@ public class LoginPage extends BaseClass{
 						public void addUserToGroup(String userEmail, String group) throws Exception {
 							
 							applyWait.waitForElementToBeClickable(ap.groups, 30).click();
-							applyExplicitWaitsUntilElementVisible(ap.groupNames, 10);
+							applyExplicitWaitsUntilElementVisible(ap.groupNames, 30);
 							WebElement groupName=driver.findElement(By.xpath("//div[normalize-space()='"+group+"']/parent::div"));
 							try {
 							applyWait.waitForElementToBeClickable(groupName, 30).click();
@@ -1359,14 +1359,14 @@ public class LoginPage extends BaseClass{
 							}
 							applyWait.waitForElementToBeClickable(gp.members, 30).click();
 							applyWait.waitForElementToBeClickable(gp.addUsers, 30).click();
-							applyExplicitWaitsUntilElementVisible(gp.userEmail, 10);
+							applyExplicitWaitsUntilElementVisible(gp.userEmail, 30);
 							WebElement user=driver.findElement(By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']"));
-							applyExplicitWaitsUntilElementVisible(user,10);
+							applyExplicitWaitsUntilElementVisible(user,30);
 							try {
 							user.click();
 							}
 							catch(ElementClickInterceptedException e) {
-								applyExplicitWaitsUntilElementVisible(gp.userEmail, 10);
+								applyExplicitWaitsUntilElementVisible(gp.userEmail, 30);
 								user=driver.findElement(By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']"));
 								user.click();
 							}
@@ -1388,7 +1388,7 @@ public class LoginPage extends BaseClass{
 						}
 
 						public void logsOutOfAuthor() throws Exception {
-							applyExplicitWaitsUntilElementVisible(ap.signIn, 10);
+							applyExplicitWaitsUntilElementVisible(ap.signIn, 30);
 							WebElement signInText=ap.signIn;
 							Boolean verify=signInText.isDisplayed();
 							if(verify) {
@@ -1486,6 +1486,25 @@ public class LoginPage extends BaseClass{
 							applyWait.waitForElementToBeClickable(gp.makeAppAdmin, 30).click();
 						}
 							applyWait.waitForElementToBeClickable(gp.listOfUsers, 30).click();
+							
+						}
+
+
+						public void selectApp(String appName) {
+							String actualAppName=applyWait.waitForElementToBeClickable(ap.appName, 30).getText();
+							System.out.println("Actual : "+actualAppName);
+							System.out.println("Expected : "+appName);
+
+							if(!actualAppName.equals(appName)) {
+								
+								applyWait.waitForElementToBeClickable(ap.appName, 30).click();
+								
+								By app = By.xpath("//div[contains(text(),'"+appName+"') and contains(@class,'app-name')]");
+								applyWaitForDynamicWebElement(app, 30);
+								driver.findElement(app).click();
+								
+							}
+							
 							
 						}
    }

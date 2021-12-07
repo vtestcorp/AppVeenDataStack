@@ -18,20 +18,18 @@ Scenario: Delete data service
 Scenario: Create data service
 	Given Data service "string_RichText" does not exist
 	Then Create new data service "string_RichText"
- #Under testData, picks up strings.json create the JSON
 
 Scenario Outline: Assign to Appcenter Group
  Then Group "Rich-text-Group" does not exist
  Then Create new group "Rich-text-Group" 
  And Assign appcenter permissions for "string_RichText" dataservice to "<user>"
-	Examples:
-	|user|
-	|test_ui_ac_ds_manage@appveen.com|
+Examples:
+|user|
+|test_ui_ac_ds_manage@appveen.com |
 
 Scenario: Log out of Author
 	Given User logged into Author
 	Then User logs out of Author 
-	
 
 #@AppCenter
 Scenario Outline: Log into AppCenter
@@ -40,14 +38,12 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|test_ui_ac_ds_manage@appveen.com|Veen@99%win|
-
+|test_ui_ac_ds_manage@appveen.com |Veen@99%win|
 
  #INSERT/UPDATE
 Scenario: Add data to data service
 	Given Data service "string_RichText"
 	Then Add data to the stringRichText data service
-	
 	
 Scenario Outline: Add record to data service
 	Given Data service "string_RichText"
@@ -58,16 +54,14 @@ Examples:
 |data|
 |{"_id": "STR1002","dsStringRichText1001": "Amazon","dsStringRichText1002": "","dsStringRichText1003": "Flipkart","dsStringRichText1004": "Myntra","dsStringText1005": "StarBazaar","dsStringRichText1007": "Dmart", "dsStringRichText1008": "BigBazar", "dsStringRichText1010": "BigBasket", "dsStringRichText1011": "Mango", "dsStringRichText1013": "Online Shopping", "dsStringRichText1014": "", "dsStringRichText1015": "",  "dsStringRichText1018": "Hello"}|
 
-
 Scenario Outline: Add record to data service
 	Given Data service "string_RichText"
 	Then Add record "<data>" to the stringRichText data service	
 	And Expect error "ID STR1001 already exists." on save
-	Examples:
-		|data|
-	|{"_id": "STR1001","dsStringRichText1001": "Mango","dsStringRichText1002": "Apple","dsStringRichText1003": "Banana","dsStringRichText1004": "Grapes","dsStringRichText1005": "Pineapple","dsStringRichText1007": "Guava", "dsStringRichText1008": "Apricot", "dsStringRichText1010": "Black Current","dsStringRichText1011": "Mango", "dsStringRichText1013": "Black Berry", "dsStringRichText1014": "Blue Berry", "dsStringRichText1015": "Custard Apple",  "dsStringRichText1018": "Coconut"}|
+Examples:
+|data|
+|{"_id": "STR1001","dsStringRichText1001": "Mango","dsStringRichText1002": "Apple","dsStringRichText1003": "Banana","dsStringRichText1004": "Grapes","dsStringRichText1005": "Pineapple","dsStringRichText1007": "Guava", "dsStringRichText1008": "Apricot", "dsStringRichText1010": "Black Current","dsStringRichText1011": "Mango", "dsStringRichText1013": "Black Berry", "dsStringRichText1014": "Blue Berry", "dsStringRichText1015": "Custard Apple",  "dsStringRichText1018": "Coconut"}|
 	
-
 Scenario Outline: Add record to data service
 	Given Data service "string_RichText"
 	Then Add record "<data>" to the stringRichText data service		
@@ -76,8 +70,7 @@ Examples:
 |data|
 |{"_id": "STR1003","dsStringRichText1001": "Mango","dsStringRichText1002": "Hello","dsStringRichText1003": "Banana","dsStringRichText1004": "Grapes","dsStringRichText1005": "Pineapple","dsStringRichText1007": "Guava", "dsStringRichText1008": "Apricot", "dsStringRichText1010": "Black Current",  "dsStringRichText1013": "Black Berry", "dsStringRichText1014": "Blue Berry", "dsStringRichText1015": "Custard Apple",  "dsStringRichText1018": "Coconut"}|
 
-	
-	Scenario Outline: Fetch record from the data service
+Scenario Outline: Fetch record from the data service
 	Given Data service "string_RichText"
 	Then Fetch record "<id>" from the data service
 	And Match it to "<data>" for RichText
@@ -85,11 +78,10 @@ Examples:
 |id|data|
 |STR1001|{"_id": "STR1001","dsStringRichText1001": "Flipkart","dsStringRichText1002": "Hello","dsStringRichText1003": "Amazon","dsStringRichText1004": "BigBazar","dsStringRichText1005":"BigBasket","dsStringRichText1007": "Dmart", "dsStringRichText1008": "StarBazaar", "dsStringRichText1010": "Walmart","dsStringRichText1013":"Pantaloon","dsStringRichText1014":"Reliance", "dsStringRichText1015":"Dcathlon","dsStringRichText1018" : "Seasons"}|
 
-	Scenario Outline: Update record to data service
+Scenario Outline: Update record to data service
 	Given Data service "string_RichText"
 	Then Update record "<id>" with "<data>" to the stringRichText data service
 Examples:
-
 |id|data|
 |STR1001|{"_id": "STR1001","dsStringRichText1001": "Amazon","dsStringRichText1002": "Season","dsStringRichText1003": "Shopify","dsStringRichText1004": "Myntra","dsStringRichText1005": "Dmart","dsStringRichText1007": "BigBazar", "dsStringRichText1008": "Swiggy", "dsStringRichText1010": "BigBasket",  "dsStringRichText1013": "Walmart", "dsStringRichText1014": "Pantaloon", "dsStringRichText1015": "Star Bazar",  "dsStringRichText1018" : "Dcathlon"}|
 
@@ -101,7 +93,6 @@ Examples:
 |id|data|
 |STR1001|{"_id": "STR1001","dsStringRichText1001": "Amazon","dsStringRichText1002": "Hello","dsStringRichText1003": "Shopify","dsStringRichText1004": "BigBazar","dsStringRichText1005": "Dmart","dsStringRichText1007": "Dmart", "dsStringRichText1008": "Swiggy", "dsStringRichText1010": "Walmart",  "dsStringRichText1013": "Walmart", "dsStringRichText1014": "Pantaloon", "dsStringRichText1015": "Star Bazar",  "dsStringRichText1018" : "Dcathlon"}|
 
-	
 Scenario Outline: Delete record from the data service
 	Given Data service "string_RichText"
 	Then Delete record "<id>" from the data service
@@ -112,4 +103,3 @@ Examples:
 
 Scenario: Log out of App Center
 Given User log out from AppCenter
-

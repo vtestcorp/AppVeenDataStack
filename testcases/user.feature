@@ -9,7 +9,8 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|test_appadmin@appveen.com|123123123|
+|test_ui_appadmin@appveen.com|Veen@99%win|
+
 
 Scenario: Delete data service
 	Given Data service "user" exists
@@ -28,7 +29,7 @@ Scenario Outline: Assign to Appcenter Group
 	
 	Examples:
 	|user|
-	|test_ac_ds_manage@appveen.com|
+	|test_ui_ac_ds_manage@appveen.com |
 
 Scenario: Log out of Author
 	Given User logged into Author
@@ -42,7 +43,7 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|test_ac_ds_manage@appveen.com|123123123|
+|test_ui_ac_ds_manage@appveen.com |Veen@99%win|
 
 
  #INSERT/UPDATE
@@ -67,7 +68,7 @@ Scenario: Add data to data service
 	And Expect error "ID DS1001 already exists." on save
 	Examples:
 		|data|
-	|{"_id":"DS1001", "dsUser1001": "suchita@appveen.com", "dsUser1002": "deepak@appveen.com", "dsUser1003": "test_manage@appveen.com", "dsUser1004": "test_readonly@appveen.com", "dsUser1005": "test_manage@appveen.com", "dsUser1006": "deepak@appveen.com", "dsUser1007": "suchita@appveen.com", "dsUser1008": "maker@appveen.com", "dsUser1009": "test_readonly@appveen.com","dsUser1010": "reviewer@appveen.com", "dsUser1011": "deepak@appveen.com", "dsUser1012": "test_manage@appveen.com", "dsUser1013": "suchita@appveen.com", "dsUser1014": "deepak@appveen.com", "dsUser1015": "test_manage@appveen.com", "dsUser1016": "maker@appveen.com", "dsUser1017": "deepak@appveen.com", "dsUser1018": "reviewer@appveen.com", "dsUser1019": "test_manage@appveen.com"}|
+	|{"_id":"DS1001", "dsUser1001": "vtest@appveen.com", "dsUser1002": "vtest@appveen.com", "dsUser1003": "test_ui_ac_ds_manage@appveen.com", "dsUser1004": "vtest@appveen.com", "dsUser1005": "test_ui_appadmin@appveen.com", "dsUser1006": "test_ui_ac_ds_manage@appveen.com", "dsUser1007": "test_ui_ac_ds_manage@appveen.com", "dsUser1008": "vtest@appveen.com", "dsUser1009": "test_ui_ac_ds_manage@appveen.com","dsUser1010": "vtest@appveen.com", "dsUser1011": "test_ui_appadmin@appveen.com", "dsUser1012": "vtest@appveen.com", "dsUser1013": "test_ui_ac_ds_manage@appveen.com", "dsUser1014": "test_ui_appadmin@appveen.com", "dsUser1015": "test_ui_ac_ds_manage@appveen.com", "dsUser1016": "test_ui_ac_ds_manage@appveen.com", "dsUser1017": "vtest@appveen.com", "dsUser1018": "test_ui_appadmin@appveen.com", "dsUser1019": "vtest@appveen.com"}|
 	
 	
 	Scenario Outline: Add record to data service
@@ -76,7 +77,7 @@ Scenario: Add data to data service
 	And Expect error "Unique check validation failed for dsUser1002" on save
 Examples:
 |data|
-|{"_id":"DS1002", "dsUser1001": "suchita@appveen.com", "dsUser1002": "deepak@appveen.com", "dsUser1003": "test_manage@appveen.com", "dsUser1004": "test_readonly@appveen.com", "dsUser1005": "test_manage@appveen.com", "dsUser1006": "deepak@appveen.com", "dsUser1007": "suchita@appveen.com", "dsUser1008": "maker@appveen.com", "dsUser1009": "test_readonly@appveen.com","dsUser1010": "reviewer@appveen.com", "dsUser1011": "deepak@appveen.com", "dsUser1012": "test_manage@appveen.com", "dsUser1013": "suchita@appveen.com", "dsUser1014": "deepak@appveen.com", "dsUser1015": "test_manage@appveen.com", "dsUser1016": "maker@appveen.com", "dsUser1017": "deepak@appveen.com", "dsUser1018": "reviewer@appveen.com", "dsUser1019": "test_manage@appveen.com"}|
+|{"_id":"DS1002", "dsUser1001": "vtest@appveen.com", "dsUser1002": "test_ui_appadmin@appveen.com", "dsUser1003": "test_ui_ac_ds_manage@appveen.com", "dsUser1004": "test_ui_ac_ds_manage@appveen.com", "dsUser1005": "vtest@appveen.com", "dsUser1006": "test_ui_ac_ds_manage@appveen.com", "dsUser1007": "test_ui_ac_ds_manage@appveen.com", "dsUser1008": "vtest@appveen.com", "dsUser1009": "test_ui_ac_ds_manage@appveen.com","dsUser1010": "vtest@appveen.com", "dsUser1011": "test_ui_ac_ds_manage@appveen.com", "dsUser1012": "vtest@appveen.com", "dsUser1013": "test_ui_appadmin@appveen.com", "dsUser1014": "test_ui_ac_ds_manage@appveen.com", "dsUser1015": "test_ui_ac_ds_manage@appveen.com", "dsUser1016": "test_ui_ac_ds_manage@appveen.com", "dsUser1017": "test_ui_appadmin@appveen.com", "dsUser1018": "vtest@appveen.com", "dsUser1019": "test_ui_appadmin@appveen.com"}|
 
 	
 	Scenario Outline: Fetch record from the data service
@@ -95,7 +96,7 @@ Examples:
 	Then Update record "<id>" with "<data>" to the User
 Examples:
 |id|data|
-|DS1001|{"_id":"DS1001", "dsUser1001": "deepak@appveen.com", "dsUser1002": "maker@appveen.com", "dsUser1003": "suchita@appveen.com", "dsUser1004": "reviewer@appveen.com", "dsUser1005": "maker@appveen.com", "dsUser1006": "test_manage@appveen.com", "dsUser1007": "test_readonly@appveen.com", "dsUser1008": "deepak@appveen.com", "dsUser1009": "suchita@appveen.com","dsUser1010": "maker@appveen.com", "dsUser1011": "test_manage@appveen.com", "dsUser1012": "suchita@appveen.com", "dsUser1013": "deepak@appveen.com", "dsUser1014": "test_manage@appveen.com", "dsUser1015": "maker@appveen.com", "dsUser1016": "test_readonly@appveen.com", "dsUser1017": "suchita@appveen.com", "dsUser1018": "test_manage@appveen@.com", "dsUser1019": "maker@appveen.com"}|
+|DS1001|{"_id":"DS1001", "dsUser1001": "vtest@appveen.com", "dsUser1002": "test_ui_ac_ds_manage@appveen.com", "dsUser1003": "test_ui_appadmin@appveen.com", "dsUser1004": "test_ui_ac_ds_manage@appveen.com", "dsUser1005": "test_ui_ac_ds_manage@appveen.com", "dsUser1006": "vtest@appveen.com", "dsUser1007": "test_ui_ac_ds_manage@appveen.com", "dsUser1008": "vtest@appveen.com", "dsUser1009": "test_ui_ac_ds_manage@appveen.com","dsUser1010": "test_ui_ac_ds_manage@appveen.com", "dsUser1011": "vtest@appveen.com", "dsUser1012": "test_ui_appadmin@appveen.com", "dsUser1013": "test_ui_ac_ds_manage@appveen.com", "dsUser1014": "test_ui_ac_ds_manage@appveen.com", "dsUser1015": "vtest@appveen.com", "dsUser1016": "test_ui_ac_ds_manage@appveen.com", "dsUser1017": "test_ui_appadmin@appveen.com", "dsUser1018": "vtest@appveen.com", "dsUser1019": "vtest@appveen.com"}|
 
 
 Scenario Outline: Fetch record from the data service
@@ -110,11 +111,11 @@ Examples:
 Scenario Outline: Delete record from the data service
 	Given Data service "user"
 	Then Delete record "<id>" from the data service
-  And Deleting from listing page
+	And Deleting from listing page
 Examples:
 |id|
 |DS1001|
 
+
 Scenario: Log out of App Center
 	Given User log out from AppCenter
-

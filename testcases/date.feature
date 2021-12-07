@@ -9,7 +9,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|test_ui_appadmin@appveen.com|Veen@99%win|
+|test_ui_appadmin@appveen.com 	| Veen@99%win|
 
 Scenario: Delete data service
    	Given Data service "date" exists
@@ -42,7 +42,7 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|test_ui_ac_ds_manage@appveen.com|Veen@99%win|
+|test_ui_ac_ds_manage@appveen.com |Veen@99%win|
 
 
 #INSERT/UPDATE
@@ -103,6 +103,6 @@ Examples:
 |id|
 |DAT1001|
 
-Scenario: Log out of App Center
-	Given User log out from AppCenter
+#Scenario: Log out of App Center
+#	Given User log out from AppCenter
 

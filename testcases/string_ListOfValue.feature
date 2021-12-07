@@ -9,7 +9,7 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|test_appadmin@appveen.com|123123123|
+|test_ui_appadmin@appveen.com	|Veen@99%win|
 
 Scenario: Delete data service
 	Given Data service "string_ListOfValue" exists
@@ -18,22 +18,18 @@ Scenario: Delete data service
 Scenario: Create data service
 	Given Data service "string_ListOfValue" does not exist
 	Then Create new data service "string_ListOfValue"
- #Under testData, picks up strings.json create the JSON
 
 Scenario Outline: Assign to Appcenter Group
  	Then Group "String-ListOfValue" does not exist
 	Then Create new group "String-ListOfValue" 
 	And Assign appcenter permissions for "string_ListOfValue" dataservice to "<user>"
-	
-	Examples:
-	|user|
-	|test_ac_ds_manage@appveen.com|
-
+Examples:
+|user|
+|test_ui_ac_ds_manage@appveen.com |
 
 Scenario: Log out of Author
 	Given User logged into Author
 	Then User logs out of Author
-	
 
 @AppCenter
 Scenario Outline: Log into AppCenter
@@ -42,14 +38,12 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|test_ac_ds_manage@appveen.com|123123123|
-
+|test_ui_ac_ds_manage@appveen.com|Veen@99%win|
 
  #INSERT/UPDATE
 Scenario: Add data to data service
 	Given Data service "string_ListOfValue"
 	Then Add data to the data service
-	
 	
 Scenario Outline: Add record to data service
 	Given Data service "string_ListOfValue"
@@ -60,16 +54,14 @@ Examples:
 |data|
 |{"_id": "STR1001","dsStringListOfValues1001": "LIST 1","dsStringListOfValues1002": "","dsStringListOfValues1003": "LIST 1","dsStringListOfValues1004": "LIST 1","dsStringListOfValues1005": "LIST 1","dsStringListOfValues1007": "LIST 1", "dsStringListOfValues1008": "LIST 1", "dsStringListOfValues1010": "LIST 1",  "dsStringListOfValues1013": "LIST 1", "dsStringListOfValues1014": "", "dsStringListOfValues1015": "",  "dsStringListOfValues1018": "", "dsStringListOfValues1020":"LIST 1"}|
 
-
 Scenario Outline: Add record to data service
 	Given Data service "string_ListOfValue"
 	Then Add record "<data>" to the data service	
 	And Expect error "ID STR1001 already exists." on save
-	Examples:
-		|data|
-  |{"_id" : "STR1001","dsStringListOfValues1001" : "LIST 1","dsStringListOfValues1002" : "LIST 2", "dsStringListOfValues1003" : "LIST 2","dsStringListOfValues1004" : "LIST 1","dsStringListOfValues1005" : "LIST 2","dsStringListOfValues1007" : "LIST 2","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1010" : "LIST 1","dsStringListOfValues1013" : "LIST 1","dsStringListOfValues1014" : "LIST 1","dsStringListOfValues1015" : "LIST 1", "dsStringListOfValues1018" : "LIST 2","dsStringListOfValues1020" : "LIST 1"}| 	
+Examples:
+|data|
+|{"_id" : "STR1001","dsStringListOfValues1001" : "LIST 1","dsStringListOfValues1002" : "LIST 2", "dsStringListOfValues1003" : "LIST 2","dsStringListOfValues1004" : "LIST 1","dsStringListOfValues1005" : "LIST 2","dsStringListOfValues1007" : "LIST 2","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1010" : "LIST 1","dsStringListOfValues1013" : "LIST 1","dsStringListOfValues1014" : "LIST 1","dsStringListOfValues1015" : "LIST 1", "dsStringListOfValues1018" : "LIST 2","dsStringListOfValues1020" : "LIST 1"}| 	
     
-
 Scenario Outline: Add record to data service
 	Given Data service "string_ListOfValue"
 	Then Add record "<data>" to the data service		
@@ -78,9 +70,7 @@ Examples:
 |data|
 |{"_id" : "STR1003","dsStringListOfValues1001" : "LIST 1","dsStringListOfValues1002" : "LIST 1", "dsStringListOfValues1003" : "LIST 1","dsStringListOfValues1004" : "LIST 1","dsStringListOfValues1005" : "LIST 1","dsStringListOfValues1007" : "LIST 1","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1010" : "LIST 1","dsStringListOfValues1013" : "LIST 1","dsStringListOfValues1014" : "LIST 1","dsStringListOfValues1015" : "LIST 1", "dsStringListOfValues1018" : "LIST 2","dsStringListOfValues1020" : "LIST 1"}| 	
 
-	
-	
-	Scenario Outline: Fetch record from the data service
+Scenario Outline: Fetch record from the data service
 	Given Data service "string_ListOfValue"
 	Then Fetch record "<id>" from the data service 
 	And Match it to "<data>"
@@ -88,11 +78,10 @@ Examples:
 |id|data|
 |STR1001|{"_id" : "STR1001","dsStringListOfValues1001" : "LIST 1","dsStringListOfValues1002" : "LIST 1", "dsStringListOfValues1003" : "LIST 1","dsStringListOfValues1004" : "LIST 1","dsStringListOfValues1005" : "LIST 1","dsStringListOfValues1007" : "LIST 1","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1010" : "LIST 1","dsStringListOfValues1013" : "LIST 1","dsStringListOfValues1014" : "LIST 1","dsStringListOfValues1015" : "LIST 1", "dsStringListOfValues1018" : "LIST 2","dsStringListOfValues1020" : "LIST 1"}| 	
 
-	Scenario Outline: Update record to data service
+Scenario Outline: Update record to data service
 	Given Data service "string_ListOfValue"
 	Then Update record "<id>" with "<data>" to the data service
 Examples:
-
 |id|data|
 |STR1001|{"_id" : "STR1001","dsStringListOfValues1001" : "LIST 2","dsStringListOfValues1002" : "LIST 2", "dsStringListOfValues1003" : "LIST 2","dsStringListOfValues1004" : "LIST 2","dsStringListOfValues1005" : "LIST 2","dsStringListOfValues1007" : "LIST 1","dsStringListOfValues1008" : "LIST 1","dsStringListOfValues1010" : "LIST 2","dsStringListOfValues1013" : "LIST 2","dsStringListOfValues1014" : "LIST 2","dsStringListOfValues1015" : "LIST 2", "dsStringListOfValues1018" : "LIST 2","dsStringListOfValues1020" : "LIST 2"}| 
 

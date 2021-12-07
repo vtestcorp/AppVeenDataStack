@@ -23,7 +23,7 @@ public class ExtentReportListener extends BaseClass{
 	
 	public static ExtentReports setUp(String featureName) {
 
-		String reportLocation = "./report/extentReport/"+featureName+".html";
+		String reportLocation = path+"/report/extentReport/"+featureName+".html";
 		report = new ExtentSparkReporter(reportLocation);		
 		report.config().setDocumentTitle("DataStack Test Report");
 		report.config().setReportName("DataStack Report");

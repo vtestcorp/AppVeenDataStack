@@ -48,6 +48,11 @@ public class LoginToAuthorUrl extends BaseClass {
 		loginPage.verifyListOfDataServices();
 	}
 	
+	@Then("Select {string} app")
+	public void select_app(String appName) {
+	   loginPage.selectApp(appName);
+	}
+	
 	@Given("Library {string} exist")
 	public void data_Library_exist(String library) throws Exception {
 		 loginPage.verifyLibraryExist(library);

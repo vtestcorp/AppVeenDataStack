@@ -45,6 +45,9 @@ public class Object_AuthorPage extends BaseClass{
 	
 	@FindBy(xpath="//*[text()='New Data Service']")
 	public WebElement newDataService;
+	
+	@FindBy(xpath="//div[@ngbtooltip='Current App']")
+	public WebElement appName;
 
 	@FindBy(xpath="//input[@id='name']")
 	public WebElement dataServiceName;
