@@ -292,6 +292,7 @@ public class LoginAppCenter extends BaseClass {
 	public void userEnterDataInUserField() throws InterruptedException {
 		Thread.sleep(2000);
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		Thread.sleep(2000);
 		List<WebElement> textBoxes = acp.textBoxes;
 		
 		String filePath=Constants.testData_Folder + data_Service + Constants.testData_Suffix;
@@ -320,8 +321,9 @@ public class LoginAppCenter extends BaseClass {
 					   	if (val != null) {
 
 								if (textBox.getAttribute("type").equals("text")|| textBox.getAttribute("type").equals("textarea")) {
-		                            	applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(val);
-		                            	
+										applyWait.waitForElementToBeClickable(textBox,30).clear();	
+										applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(val);
+		                            	Thread.sleep(200);
 		                            	applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(Keys.DOWN);
 		                            	Thread.sleep(500);
 		                            	applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(Keys.ENTER);

@@ -417,7 +417,6 @@ public class Module_DesignTestCases extends BaseClass{
 		
 		for(WebElement error : errors) {
 		String errorMessage=error.getText();
-		System.err.println(errorMessage);
 	}
 		if(acp.errorMessages.isEmpty()) {
 			errorMessage=string+" - Custom Error Expected";

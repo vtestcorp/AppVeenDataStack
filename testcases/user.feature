@@ -68,7 +68,7 @@ Scenario: Add data to data service
 	And Expect error "ID DS1001 already exists." on save
 	Examples:
 		|data|
-	|{"_id":"DS1001", "dsUser1001": "vtest@appveen.com", "dsUser1002": "vtest@appveen.com", "dsUser1003": "test_ui_ac_ds_manage@appveen.com", "dsUser1004": "vtest@appveen.com", "dsUser1005": "test_ui_appadmin@appveen.com", "dsUser1006": "test_ui_ac_ds_manage@appveen.com", "dsUser1007": "test_ui_ac_ds_manage@appveen.com", "dsUser1008": "vtest@appveen.com", "dsUser1009": "test_ui_ac_ds_manage@appveen.com","dsUser1010": "vtest@appveen.com", "dsUser1011": "test_ui_appadmin@appveen.com", "dsUser1012": "vtest@appveen.com", "dsUser1013": "test_ui_ac_ds_manage@appveen.com", "dsUser1014": "test_ui_appadmin@appveen.com", "dsUser1015": "test_ui_ac_ds_manage@appveen.com", "dsUser1016": "test_ui_ac_ds_manage@appveen.com", "dsUser1017": "vtest@appveen.com", "dsUser1018": "test_ui_appadmin@appveen.com", "dsUser1019": "vtest@appveen.com"}|
+	|{"_id":"DS1001", "dsUser1001": "test_ui_ac_ds_manage@appveen.com", "dsUser1002": "test_ui_appadmin@appveen.com", "dsUser1003": "test_ui_ac_ds_manage@appveen.com", "dsUser1004": "test_ui_ac_ds_manage@appveen.com", "dsUser1005": "test_ui_appadmin@appveen.com", "dsUser1006": "test_ui_ac_ds_manage@appveen.com", "dsUser1007": "test_ui_ac_ds_manage@appveen.com", "dsUser1008": "vtest@appveen.com", "dsUser1009": "test_ui_ac_ds_manage@appveen.com","dsUser1010": "test_ui_appadmin@appveen.com", "dsUser1011": "test_ui_appadmin@appveen.com", "dsUser1012": "test_ui_ac_ds_manage@appveen.com", "dsUser1013": "test_ui_ac_ds_manage@appveen.com", "dsUser1014": "test_ui_appadmin@appveen.com", "dsUser1015": "test_ui_ac_ds_manage@appveen.com", "dsUser1016": "test_ui_ac_ds_manage@appveen.com", "dsUser1017": "test_ui_appadmin@appveen.com", "dsUser1018": "test_ui_appadmin@appveen.com", "dsUser1019": "test_ui_ac_ds_manage@appveen.com"}|
 	
 	
 	Scenario Outline: Add record to data service
@@ -87,7 +87,7 @@ Examples:
 
 Examples:
 |id|data|
-|DS1001|{"_id":"DS1001", "dsUser1001": "test_readonly@appveen.com", "dsUser1002": "deepak@appveen.com", "dsUser1003": "maker@appveen.com", "dsUser1004": "test_manage@appveen.com", "dsUser1005": "suchita@appveen.com",  "dsUser1007": "deepak@appveen.com", "dsUser1008": "maker@appveen.com", "dsUser1009": "test_readonly@appveen.com","dsUser1010": "test_readonly@appveen.com", "dsUser1011": "deepak@appveen.com", "dsUser1012": "test_manage@appveen.com", "dsUser1013": "test_manage@appveen.com", "dsUser1014": "reviewer@appveen.com", "dsUser1015": "suchita@appveen.com", "dsUser1016": "deepak@appveen.com", "dsUser1017": "maker@appveen.com", "dsUser1018": "test_readonly@appveen.com", "dsUser1019": "test_manage@appveen.com"}|
+|DS1001|{"_id":"DS1001", "dsUser1001": "test_ui_ac_ds_manage@appveen.com", "dsUser1002": "Test_ui_appadmin", "dsUser1003": "test_ui_appadmin@appveen.com", "dsUser1004": "test_ui_ac_ds_manage@appveen.com", "dsUser1005": "test_ui_appadmin@appveen.com",  "dsUser1007": "test_ui_ac_ds_manage@appveen.com", "dsUser1008": "test_ui_appadmin@appveen.com", "dsUser1010": "test_ui_appadmin@appveen.com",  "dsUser1013": "test_ui_appadmin@appveen.com", "dsUser1014": "test_ui_ac_ds_manage@appveen.com", "dsUser1015": "test_ui_appadmin@appveen.com", "dsUser1016": "Test_ui_ac_ds_manage", "dsUser1017": "Test_ui_ac_ds_manage", "dsUser1018": "test_ui_appadmin@appveen.com", "dsUser1019": "test_ui_appadmin@appveen.com"}|
 
 
 
@@ -105,7 +105,7 @@ Scenario Outline: Fetch record from the data service
 	And Match it to "<data>"
 Examples:
 |id|data|
-|DS1001|{"_id":"DS1001", "dsUser1001": "deepak@appveen.com", "dsUser1002": "maker@appveen.com", "dsUser1003": "suchita@appveen", "dsUser1004": "reviewer@appveen.com", "dsUser1005": "maker@appveen.com", "dsUser1006": "test_manage@appveen.com", "dsUser1007": "test_readonly@appveen.com", "dsUser1008": "deepak@appveen.com", "dsUser1009": "suchita@appveen.com","dsUser1010": "maker@appveen.com", "dsUser1011": "test_manage@appveen.com", "dsUser1012": "suchita@appveen.com", "dsUser1013": "deepak@appveen.com", "dsUser1014": "test_manage@appveen.com", "dsUser1015": "maker@appveen.com", "dsUser1016": "test_readonly@appveen.com", "dsUser1017": "suchita@appveen.com", "dsUser1018": "test_manage@appveen.com", "dsUser1019": "maker@appveen.com"}|
+|DS1001|{"_id":"DS1001", "dsUser1001": "vtest@appveen.com", "dsUser1002": "Test_ui_appadmin", "dsUser1003": "test_ui_appadmin@appveen.com", "dsUser1004": "test_ui_ac_ds_manage@appveen.com", "dsUser1005": "test_ui_ac_ds_manage@appveen.com",  "dsUser1007": "test_ui_ac_ds_manage@appveen.com", "dsUser1008": "vtest@appveen.com","dsUser1010": "test_ui_appadmin@appveen.com",  "dsUser1013": "test_ui_ac_ds_manage@appveen.com", "dsUser1014": "test_ui_ac_ds_manage@appveen.com", "dsUser1015": "vtest@appveen.com", "dsUser1016": "Test_ui_ac_ds_manage", "dsUser1017": "Test_ui_appadmin", "dsUser1018": "vtest@appveen.com", "dsUser1019": "vtest@appveen.com"}|
 
 
 Scenario Outline: Delete record from the data service
