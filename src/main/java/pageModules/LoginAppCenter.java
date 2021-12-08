@@ -75,20 +75,45 @@ public class LoginAppCenter extends BaseClass {
 			action.moveToElement(data).perform();
 			data.click();
 		} catch (Exception e) {
-			Thread.sleep(1000);
+			Thread.sleep(5000);
 			driver.navigate().refresh();
-			Thread.sleep(10000);
+			Thread.sleep(2000);
 					try {
 						WebElement data = driver.findElement(ds);
 						action.moveToElement(data).perform();
 						data.click();
 					} catch (Exception e1) {
-						Thread.sleep(1000);
+						Thread.sleep(10000);
 						driver.navigate().refresh();
-						Thread.sleep(19000);
+						Thread.sleep(2000);
+						
+						try {
 						WebElement data = driver.findElement(ds);
 						action.moveToElement(data).perform();
 						data.click();
+						}
+						catch(Exception e2) {
+							
+							Thread.sleep(15000);
+							driver.navigate().refresh();
+							Thread.sleep(2000);
+							
+							try {
+							WebElement data = driver.findElement(ds);
+							action.moveToElement(data).perform();
+							data.click();
+							}
+							catch(Exception e3) {
+								
+								Thread.sleep(15000);
+								driver.navigate().refresh();
+								Thread.sleep(2000);
+								WebElement data = driver.findElement(ds);
+								action.moveToElement(data).perform();
+								data.click();
+								
+						}
+					}
 				}
 			}
 		}
@@ -469,7 +494,7 @@ public class LoginAppCenter extends BaseClass {
 			String value=(String) value2.get("filename");
 			String absolutePath=new File("files/"+value).getAbsolutePath();
 			textBox.sendKeys(absolutePath);
-			Thread.sleep(1000);
+			Thread.sleep(1500);
 		}}
 		}
 		
