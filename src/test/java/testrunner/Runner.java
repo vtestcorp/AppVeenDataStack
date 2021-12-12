@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="C:\\Users\\DELL\\eclipse-workspace\\ds-dev-ui-automation-framework\\testcases\\file.feature",
+@CucumberOptions(features="C:\\Users\\DELL\\eclipse-workspace\\ds-dev-ui-automation-framework\\test\\file.feature",
 //				dryRun = true,
 				glue={"stepdefinitions","cucumberHooks"},
 				monochrome=true,

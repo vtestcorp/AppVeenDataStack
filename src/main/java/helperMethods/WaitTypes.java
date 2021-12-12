@@ -20,8 +20,8 @@ public class WaitTypes extends BaseClass{
 
 		try {
 			wait = new WebDriverWait(driver, timeout);
-//			wait.until(ExpectedConditions.elementToBeClickable(Element));
 			wait.until(ExpectedConditions.visibilityOf(Element));
+			wait.until(ExpectedConditions.elementToBeClickable(Element));
 
 		} catch (Exception e) {
 			e.getMessage();

@@ -1144,6 +1144,7 @@ public class Module_DesignTestCases extends BaseClass{
 			Thread.sleep(200);
 			String absolutePath=new File("files/"+value).getAbsolutePath();
 			textBox.sendKeys(absolutePath);
+//			applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(absolutePath);;
 			Thread.sleep(1000);
 		}}
 		}

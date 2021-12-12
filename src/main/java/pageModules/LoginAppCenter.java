@@ -493,6 +493,7 @@ public class LoginAppCenter extends BaseClass {
 			JSONObject value2=(JSONObject) json.get("metadata");
 			String value=(String) value2.get("filename");
 			String absolutePath=new File("files/"+value).getAbsolutePath();
+//			applyWait.waitForElementToBeClickable(textBox, 30).sendKeys(absolutePath);;
 			textBox.sendKeys(absolutePath);
 			Thread.sleep(1500);
 		}}
