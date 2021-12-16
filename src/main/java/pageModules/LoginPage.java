@@ -536,9 +536,15 @@ public class LoginPage extends BaseClass{
 	
 
 
-	private void function_ExperienceTab() {
+	private void function_ExperienceTab() throws InterruptedException {
 		String dataName=Constants.testData_Folder  +dataServiceName + Constants.json_File_Suffix;
 		JSONArray array =JsonUtils.getArrayValues(dataName, "wizard");
+		boolean isWorkFlowAvailable = false;
+		JSONObject obj =JsonUtils.getJSONObject(dataName);
+		if(obj.containsKey("workflowConfig")) {
+		
+			isWorkFlowAvailable = Boolean.parseBoolean(JsonUtils.getJsonValue(dataName, "workflowConfig.enabled"));
+		}
 		
 		if(array.size()>0) {
 		applyWait.waitForElementToBeClickable(ap.experienceTab, 30).click();
@@ -575,6 +581,32 @@ public class LoginPage extends BaseClass{
 			applyWait.waitForElementToBeClickable(ap.addStep, 30).click();
 				}
 			}
+		}
+		
+		if(isWorkFlowAvailable) {
+			JSONArray jsonArray=JsonUtils .fetchJSONArray(JsonUtils.getJsonValue(dataName, "workflowConfig.makerCheckers[0].steps"));
+			applyWait.waitForElementToBeClickable(ap.experienceTab, 30).click();
+			applyWait.waitForElementToBeClickable(ap.makerCheckerButton, 30).click();
+			applyWait.waitForElementToBeClickable(ap.addNewMakerChecker, 30).click();
+			
+			
+			for (int i = 0; i < jsonArray.size(); i++) {
+				applyWait.waitForElementToBeClickable(ap.addMakerCheckerStep, 30).click();
+				
+				JSONObject ds=	(JSONObject) jsonArray.get(i);
+				String workFlowName = (String) ds.get("name");
+				System.out.println(workFlowName);
+				applyWait.waitForElementToBeClickable(ap.makerCheckerStepName, 30).clear();
+				applyWait.waitForElementToBeClickable(ap.makerCheckerStepName, 30).sendKeys(workFlowName);;
+				
+				String workFlowApprovals = ds.get("approvals").toString();
+				System.out.println(workFlowApprovals);
+				applyWait.waitForElementToBeClickable(ap.makerCheckerApprovals, 30).clear();
+				applyWait.waitForElementToBeClickable(ap.makerCheckerApprovals, 30).sendKeys(workFlowApprovals);;
+				System.out.println();
+					Thread.sleep(1000);
+				}
+			
 		}
 	}
 
@@ -1505,6 +1537,12 @@ public class LoginPage extends BaseClass{
 								
 							}
 							
+							
+						}
+
+
+						public void stopDataservice(String string) {
+							// TODO Auto-generated method stub
 							
 						}
    }

@@ -1265,7 +1265,8 @@ public void addRecordForDate(String jsonFile) throws Exception {
 						
 					}
 					
-					applyWait.waitForElementToBeClickable(acp.doneButton, 30).click();
+//					applyWait.waitForElementToBeClickable(acp.doneButton, 30).click();
+					JavascriptClick.click(acp.doneButton);
 					Thread.sleep(500);
 					}
 				}

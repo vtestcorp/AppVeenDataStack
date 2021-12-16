@@ -47,7 +47,7 @@ public class BaseClass {
 
 	@SuppressWarnings("deprecation")
 	public void start() {
-//				headless="true";
+				headless="true";
 		if (browser == null) {
 			browser = "chrome";
 		}

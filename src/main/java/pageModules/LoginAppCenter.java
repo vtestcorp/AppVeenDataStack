@@ -15,6 +15,7 @@ import com.aventstack.extentreports.ExtentTest;
 import base.BaseClass;
 import config.Constants;
 import helperMethods.DropDown;
+import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
 import helperMethods.Property;
 import helperMethods.ScrollTypes;
@@ -777,7 +778,8 @@ public class LoginAppCenter extends BaseClass {
 						
 					}
 					
-					applyWait.waitForElementToBeClickable(acp.doneButton, 30).click();
+//					applyWait.waitForElementToBeClickable(acp.doneButton, 30).click();
+					JavascriptClick.click(acp.doneButton);
 					Thread.sleep(500);
 					
 				}

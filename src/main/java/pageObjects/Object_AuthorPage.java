@@ -290,6 +290,21 @@ public class Object_AuthorPage extends BaseClass{
 	@FindBy(xpath="//button[normalize-space()='Customize']")
 	public WebElement customize;
 	
+	@FindBy(xpath="//span[normalize-space()='Maker Checker']")
+	public WebElement makerCheckerButton;
+	
+	@FindBy(id="AddNewMakerChecker")
+	public WebElement addNewMakerChecker;
+	
+	@FindBy(xpath="//span[normalize-space()='Add Step']")
+	public WebElement addMakerCheckerStep;
+	
+	@FindBy(xpath="(//div[@formarrayname='steps']//input[@formcontrolname='name'])[last()]")
+	public WebElement makerCheckerStepName;
+	
+	@FindBy(xpath="(//div[@formarrayname='steps']//input[@formcontrolname='approvals'])[last()]")
+	public WebElement makerCheckerApprovals;
+	
 	@FindBy(xpath="//input[@id='stepName']")
 	public WebElement stepNameTextBox;
 	

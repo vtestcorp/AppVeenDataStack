@@ -35,7 +35,9 @@ public class LoginToAuthorUrl extends BaseClass {
 	
 	@Given("User navigate to Author login page")
 	public void user_Navigate_to_LogIn_Page() throws Exception {
+		
 		loginPage.loginToPage();
+		
 		}
 	
 	@Given("User enters {string} and {string} in Author login page")
@@ -51,6 +53,11 @@ public class LoginToAuthorUrl extends BaseClass {
 	@Then("Select {string} app")
 	public void select_app(String appName) {
 	   loginPage.selectApp(appName);
+	}
+	
+	@Given("Stop dataservice {string}")
+	public void stop_dataservice(String string) {
+	  loginPage.stopDataservice(string);
 	}
 	
 	@Given("Library {string} exist")

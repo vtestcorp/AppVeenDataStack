@@ -6,15 +6,15 @@ import org.openqa.selenium.WebElement;
 
 public class JavascriptClick {
 
-	private WebDriver driver;
-	private JavascriptExecutor javascriptExecutor;
+	private static WebDriver driver;
+	private static JavascriptExecutor javascriptExecutor;
 
 	public JavascriptClick(WebDriver driver) {
 		this.driver = driver;
 
 	}
 
-	public void click(WebElement element) {
+	public static void click(WebElement element) {
 		
 		javascriptExecutor = (JavascriptExecutor) driver;
 		javascriptExecutor.executeScript("arguments[0].click()", element);
