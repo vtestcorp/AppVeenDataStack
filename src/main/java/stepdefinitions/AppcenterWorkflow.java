@@ -54,6 +54,8 @@ public class AppcenterWorkflow extends BaseClass{
 	public void user_navigate_to_AppCenter_login_page() {
 		workflow.userNavigateToAppCenter();
 	}
+	
+	
 
 	@Then("Approve the Record created in previous step")
 	public void approve_the_Record_created_in_previous_step() throws Exception {

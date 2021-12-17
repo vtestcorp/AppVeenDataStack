@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import base.BaseClass;
 import config.Constants;
 import helperMethods.DropDown;
+import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
 import helperMethods.Property;
 import helperMethods.ScrollTypes;
@@ -46,7 +47,13 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 	public void addDataToDataService() throws InterruptedException {
 		
 		Thread.sleep(1000);
-		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
+		try {
+			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		}
+		catch(Exception e) {
+			Thread.sleep(1000);
+			JavascriptClick.click(acp.addDataButton);
+		}	
 		Thread.sleep(2000);
 		List<WebElement> textBoxes = acp.textBoxes;
 		JSONArray jsonArray = JsonUtils.getJSONArray(Constants.testData_Folder + data_Service + Constants.testData_Suffix);
@@ -143,7 +150,13 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 
 	public void addDataAndSaveAsDraft() throws Exception {
 		
-		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
+		try {
+			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		}
+		catch(Exception e) {
+			Thread.sleep(1000);
+			JavascriptClick.click(acp.addDataButton);
+		}
 		List<WebElement> textBoxes = acp.textBoxes;
 		JSONArray jsonArray = JsonUtils.getJSONArray(Constants.testData_Folder + data_Service + Constants.testData_Suffix);
 		for(int i=0;i<jsonArray.size();i++) {

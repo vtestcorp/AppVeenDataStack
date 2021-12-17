@@ -31,6 +31,7 @@ import helperMethods.JsonUtils;
 import helperMethods.Log;
 import helperMethods.Property;
 import helperMethods.ScrollTypes;
+import helperMethods.SwitchWindow;
 import helperMethods.WaitTypes;
 import io.cucumber.datatable.DataTable;
 import pageObjects.Object_AuthorPage;
@@ -1541,8 +1542,36 @@ public class LoginPage extends BaseClass{
 						}
 
 
-						public void stopDataservice(String string) {
-							// TODO Auto-generated method stub
+						public void stopDataservice(String dataService) throws Exception {
+							
+							Thread.sleep(1000);
+							dataServiceName=dataService;
+							applyWait.waitForElementToBeClickable(ap.servicesTab, 30).click();
+							applyExplicitWaitsUntilElementVisible(ap.listOfDataService, 30);
+							WebElement dataservice= driver.findElement(By.xpath("//span[@id='serviceManagerCardTitle' and text()='"+dataServiceName+"']/parent::div/parent::div/parent::div/following-sibling::div[2]/div/div[@class='toggler']"));
+							dataservice.click();
+							By stopDataService=By.xpath("//span[@id='serviceManagerCardTitle' and text()='"+dataService+"']/ancestor::div[@id='serviceManagerCard']//span[normalize-space()='Stop']");
+							applyWaitForDynamicWebElement(stopDataService, 30);
+							driver.findElement(stopDataService).click();
+							applyWait.waitForElementToBeClickable(ap.yes, 30).click();
+//							for(WebElement dataService1 : ap.listOfDataService) {
+//								String data=dataService1.getText();
+//								if(data.equalsIgnoreCase(dataServiceName)) {
+//									 data_serviceToggler=driver.findElement(By.xpath("//span[@id='serviceManagerCardTitle' and text()='"+data+"']/parent::div/parent::div/parent::div/following-sibling::div[2]/div/div[@class='toggler']"));
+//									flag=true;
+//									break;
+//								}
+//							}
+							
+							
+						}
+
+
+						public void loginToAuthor() {
+							
+							SwitchWindow.openNewTab(driver);
+							driver.get(author_URL);
+							driver.manage().window().maximize();
 							
 						}
    }

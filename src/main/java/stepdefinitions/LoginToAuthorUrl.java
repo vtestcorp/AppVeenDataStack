@@ -40,6 +40,11 @@ public class LoginToAuthorUrl extends BaseClass {
 		
 		}
 	
+	@Given("User navigate to Author login page again")
+	public void user_navigate_to_Author_login_page_again() {
+		loginPage.loginToAuthor();
+	}
+	
 	@Given("User enters {string} and {string} in Author login page")
 	public void user_enters_UserName_and_Password(String username,String password) throws Exception {
 			loginPage.enterUserNameAndPassword(username, password);
@@ -56,7 +61,7 @@ public class LoginToAuthorUrl extends BaseClass {
 	}
 	
 	@Given("Stop dataservice {string}")
-	public void stop_dataservice(String string) {
+	public void stop_dataservice(String string) throws Exception {
 	  loginPage.stopDataservice(string);
 	}
 	

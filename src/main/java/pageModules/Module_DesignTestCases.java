@@ -17,7 +17,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.asserts.SoftAssert;
 
 import com.google.common.collect.MapDifference;
 import com.google.common.collect.MapDifference.ValueDifference;
@@ -29,14 +28,11 @@ import config.Constants;
 import helperMethods.DropDown;
 import helperMethods.JavascriptClick;
 import helperMethods.JsonUtils;
-import helperMethods.Property;
 import helperMethods.ScrollTypes;
 import helperMethods.WaitTypes;
-import io.cucumber.datatable.DataTable;
 import pageObjects.Object_AppCenterPage;
 import pageObjects.Object_AuthorPage;
 import pageObjects.Object_GroupPage;
-import org.assertj.core.api.SoftAssertions;
 
 public class Module_DesignTestCases extends BaseClass{
 	private WaitTypes applyWait;
@@ -140,49 +136,7 @@ public class Module_DesignTestCases extends BaseClass{
 		javascriptClick.click(gp.appCenterRoles);
 		Thread.sleep(1000);
 		
-//		if(url.equals(Constants.qaInstance)) {
-//		
-//		applyExplicitWaitsUntilElementVisible(gp.dsArrow, 30);
-//		WebElement dsArrow=driver.findElement(By.xpath("//span[normalize-space()='"+dataServiceName+"']/parent::div/following-sibling::span[2]/child::span"));
-//		applyWait.waitForElementToBeClickable(dsArrow, 30).click();
-//		
-//		if(role.equalsIgnoreCase("SkipReview")) {
-//			applyWait.waitForElementToBeClickable(gp.skipReviewToggler, 30).click();
-//			}
-//		else if(role.equalsIgnoreCase("Manage")) {
-//			applyWait.waitForElementToBeClickable(gp.manageToggler, 30).click();
-//		}
-//		
-//		else if(role.equalsIgnoreCase("View")) {
-//			applyWait.waitForElementToBeClickable(gp.viewToggler, 30).click();
-//			}
-//		
-//		else {
-//			WebElement toggler=driver.findElement(By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[2]/child::label/child::span[2]"));
-//			applyWait.waitForElementToBeClickable(toggler, 30).click();
-//			}
-//		
-//		if(lp.isRelation) {
-//			WebElement dsArrow1=driver.findElement(By.xpath("//span[normalize-space()='"+lp.anotherDataService+"']/parent::div/following-sibling::span[2]/child::span"));
-//			applyWait.waitForElementToBeClickable(dsArrow1, 30).click();
-//			
-//			if(role.equalsIgnoreCase("SkipReview")) {
-//				applyWait.waitForElementToBeClickable(gp.skipReviewToggler, 30).click();
-//				}
-//			else if(role.equalsIgnoreCase("Manage")) {
-//				applyWait.waitForElementToBeClickable(gp.manageToggler, 30).click();
-//			}
-//			
-//			else if(role.equalsIgnoreCase("View")) {
-//				applyWait.waitForElementToBeClickable(gp.viewToggler, 30).click();
-//				}
-//			
-//			else {
-//				WebElement toggler=driver.findElement(By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[2]/child::label/child::span[2]"));
-//				applyWait.waitForElementToBeClickable(toggler, 30).click();
-//				}
-//		}
-//		}
+
 		if(url.equals(Constants.bifrostInstance)  ||  url.equals(Constants.qaInstance)){
 			By dataService1 = By.xpath("//div[contains(@class,'ds-name')]//span[normalize-space()='"+dataServiceName+"']");
 			Actions action =new Actions(driver);
@@ -237,7 +191,13 @@ public class Module_DesignTestCases extends BaseClass{
 	    }
 		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
-			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
+			try {
+				applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+			}
+			catch(Exception e) {
+				Thread.sleep(1000);
+				JavascriptClick.click(acp.addDataButton);
+			}
 	    }
 		Thread.sleep(2000);
 		applyExplicitWaitsUntilElementVisible(acp.idTextBox1, 30);
@@ -404,7 +364,13 @@ public class Module_DesignTestCases extends BaseClass{
 				}
 
 	public void addNewRecord(String string, String string2) throws Exception {
-		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
+		try {
+			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		}
+		catch(Exception e) {
+			Thread.sleep(1000);
+			JavascriptClick.click(acp.addDataButton);
+		}	
 		List<WebElement> textBoxes = acp.textBoxes;
 		WebElement textBox=driver.findElement(By.xpath("//span[normalize-space()='DS STRING TEXT 1002 Label']/parent::label/parent::div/following-sibling::odp-form-control//descendant::input"));
 		textBox.click();
@@ -436,7 +402,13 @@ public class Module_DesignTestCases extends BaseClass{
 	public void addRecordForRepeatedId() throws Exception {
 
 		applyWait.waitForElementToBeClickable(acp.yes, 30).click();
-		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
+		try {
+			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		}
+		catch(Exception e) {
+			Thread.sleep(1000);
+			JavascriptClick.click(acp.addDataButton);
+		}	
 		Thread.sleep(2000);
 		List<WebElement> textBoxes = acp.textBoxes;
 		String path= System.getProperty("user.dir");
@@ -522,7 +494,13 @@ public class Module_DesignTestCases extends BaseClass{
 	    }
 		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
-			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+			try {
+				applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+			}
+			catch(Exception e) {
+				Thread.sleep(1000);
+				JavascriptClick.click(acp.addDataButton);
+			}
 		    }
 		Thread.sleep(5000);
 		applyExplicitWaitsUntilElementVisible(acp.textBoxesLocation, 30);
@@ -561,7 +539,13 @@ public class Module_DesignTestCases extends BaseClass{
 	    }
 		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
-			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
+			try {
+				applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+			}
+			catch(Exception e) {
+				Thread.sleep(1000);
+				JavascriptClick.click(acp.addDataButton);
+			}	
 	    }
 		Thread.sleep(1000);
 		List<WebElement> textBoxes = acp.textBoxes;
@@ -602,7 +586,13 @@ public class Module_DesignTestCases extends BaseClass{
 				    }
 					Thread.sleep(2000);
 					if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
-						applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
+						try {
+							applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+						}
+						catch(Exception e) {
+							Thread.sleep(1000);
+							JavascriptClick.click(acp.addDataButton);
+						}
 				    }
 					Thread.sleep(5000);
 					List<WebElement> textBoxes = acp.richtextBoxes;
@@ -644,7 +634,13 @@ public class Module_DesignTestCases extends BaseClass{
 	public void addNewRecords() throws Exception {
 		
 		applyWait.waitForElementToBeClickable(acp.yes, 30).click();
-		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
+		try {
+			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		}
+		catch(Exception e) {
+			Thread.sleep(1000);
+			JavascriptClick.click(acp.addDataButton);
+		}	
 		List<WebElement> textBoxes = acp.textBoxes;
 		JSONArray jsonArray = JsonUtils.getJSONArray(Constants.testData_Folder + "string3.json");
 		for(int i=0;i<jsonArray.size();i++) { 
@@ -725,7 +721,13 @@ public class Module_DesignTestCases extends BaseClass{
 		    }
 		    
 		      if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
-					applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		    	  try {
+						applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+					}
+					catch(Exception e) {
+						Thread.sleep(1000);
+						JavascriptClick.click(acp.addDataButton);
+					}
 			    }
 		    Thread.sleep(2000);
 		    try {
@@ -734,7 +736,13 @@ public class Module_DesignTestCases extends BaseClass{
 				driver.navigate().refresh();
 				 Thread.sleep(3000);
 				if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
-					applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+					try {
+						applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+					}
+					catch(Exception e) {
+						Thread.sleep(1000);
+						JavascriptClick.click(acp.addDataButton);
+					}
 				    }
 				applyExplicitWaitsUntilElementVisible(acp.idTextBox, 5);
 			}
@@ -1118,8 +1126,13 @@ public class Module_DesignTestCases extends BaseClass{
 	    }
 		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
-			applyExplicitWaitsUntilElementVisible(acp.addDataButton,30);
-			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
+			try {
+				applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+			}
+			catch(Exception e) {
+				Thread.sleep(1000);
+				JavascriptClick.click(acp.addDataButton);
+			}
 	    }
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,30);
 		
@@ -1198,8 +1211,13 @@ public void addRecordForDate(String jsonFile) throws Exception {
 	    }
 		Thread.sleep(2000);
 		if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
-			applyExplicitWaitsUntilElementVisible(acp.addDataButton,30);
-			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
+			try {
+				applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+			}
+			catch(Exception e) {
+				Thread.sleep(1000);
+				JavascriptClick.click(acp.addDataButton);
+			}
 	    }
 		Thread.sleep(2000);
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,30);
@@ -1228,7 +1246,8 @@ public void addRecordForDate(String jsonFile) throws Exception {
 						WebElement selectDate=driver.findElement(By.id(id1));
 						selectDate.click();
 						applyExplicitWaitsUntilElementVisible(acp.cancelButton, 30);
-						acp.cancelButton.click();
+//						acp.cancelButton.click();
+						JavascriptClick.click(acp.cancelButton);
 						
 					}
 					else {
@@ -1357,8 +1376,13 @@ public void addRecordForGroup(String string) throws Exception {
     }
 	Thread.sleep(2000);
 	if(!driver.findElements(By.xpath("//button[@id='addDataBtn']")).isEmpty()){
-		applyExplicitWaitsUntilElementVisible(acp.addDataButton,30);
-		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();	
+		try {
+			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+		}
+		catch(Exception e) {
+			Thread.sleep(1000);
+			JavascriptClick.click(acp.addDataButton);
+		}
     }
 	Thread.sleep(2000);
 	applyExplicitWaitsUntilElementVisible(acp.textBox1,30);
@@ -1620,8 +1644,13 @@ public void expectErrorOnSave(String errorMessage) throws InterruptedException {
 
 
 public void addRecordForstateModel(String data) throws MalformedURLException, InterruptedException {
-		applyExplicitWaitsUntilElementVisible(acp.addDataButton,30);
+	try {
 		applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
+	}
+	catch(Exception e) {
+		Thread.sleep(1000);
+		JavascriptClick.click(acp.addDataButton);
+	}
 		applyWait.applyExplicitWaitsUntilElementVisible(acp.groupTextBoxes, 30);
 		JSONObject jsonObject = JsonUtils.fetchJSONObject(data);
 		for (int j = 1; j <= acp.groupTextBoxes.size(); j++) {
