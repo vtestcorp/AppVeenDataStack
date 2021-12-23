@@ -1,5 +1,7 @@
 package stepdefinitions;
 
+import java.net.MalformedURLException;
+
 import com.aventstack.extentreports.ExtentTest;
 import base.BaseClass;
 import io.cucumber.java.Before;
@@ -57,7 +59,7 @@ public class LoginToAppCenter extends BaseClass{
 	}
     
 	@Then("Add data to the data service for boolean")
-	public void add_data_to_the_data_service_for_boolean() throws InterruptedException {
+	public void add_data_to_the_data_service_for_boolean() throws InterruptedException, MalformedURLException {
 		loginAppCenter.userEnterDataforBoolean();
 	}
 
@@ -103,7 +105,7 @@ public class LoginToAppCenter extends BaseClass{
 	}
 	
 	@Then("^Add data to the data service for user$")
-	public void add_data_to_the_data_service_for_user() throws InterruptedException {
+	public void add_data_to_the_data_service_for_user() throws InterruptedException, MalformedURLException {
 	   loginAppCenter.userEnterDataInUserField();
 	}
 	

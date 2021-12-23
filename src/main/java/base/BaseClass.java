@@ -107,6 +107,7 @@ public class BaseClass {
 		}
 		
 		if (url == null) {
+			
 			url = Constants.bifrostInstance ;
 			url=Constants.qaInstance;
 

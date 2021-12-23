@@ -201,6 +201,13 @@ public class LoginToAuthorUrl extends BaseClass {
 	public void make_App_Admin() throws Exception {
 		loginPage.makeAppAdmin(userEmail);
 	}
+	
+	
+	@Given("Make {string} as App admin")
+	public void make_as_App_admin(String string) throws Exception {
+		loginPage.makeAppAdmin(string);
+	}
+
 
 	@Then("Add {string} to {string}")
 	public void add_to(String userEmail, String group) throws Exception {

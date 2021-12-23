@@ -11,6 +11,9 @@ Examples:
 |username|password|
 |test_ui_appadmin@appveen.com | Veen@99%win |
 
+#Scenario: Stop Data Service
+#Given Stop dataservice "boolean"
+
 Scenario: Delete data service
 	Given Data service "boolean" exists
 	Then Remove the data service
@@ -43,7 +46,6 @@ Examples:
 |test_ui_ac_ds_manage@appveen.com   |Veen@99%win|
 
 
- #INSERT/UPDATE
 Scenario: Add data to data service
 	Given Data service "boolean"
 	Then Add data to the data service for boolean
@@ -88,6 +90,17 @@ Scenario Outline: Delete record from the data service
 Examples:
 |id|
 |DS1001|
+
+Scenario Outline: Log into Author
+	Given User navigate to Author login page again 
+	And User enters "<username>" and "<password>" in Author login page
+	And Verify User has Logged in successfully in Author Url
+Examples:
+|username|password|
+|test_ui_appadmin@appveen.com | Veen@99%win |
+
+Scenario: Stop Data Service
+Given Stop dataservice "boolean"
 
 Scenario: Log out of App Center
 Given User log out from AppCenter

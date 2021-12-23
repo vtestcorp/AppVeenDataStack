@@ -12,12 +12,19 @@ Feature: Add user
       
 Scenario Outline: Add users
  Given Add "<username>" and "<password>" if not present
- When Make App Admin
+ #When Make App Admin
  
  Examples: 
       | username                            |password|
       | test_ui_appadmin@appveen.com		    |Veen@99%win|
       | test_ui_ac_ds_manage@appveen.com   |Veen@99%win|
+   
+Scenario Outline: Make App admin
+Given Make "<user>" as App admin
+Examples:
+	|user|
+	|test_ui_appadmin@appveen.com|
+   
    
   Scenario: Log out of Author
     Given User logged into Author

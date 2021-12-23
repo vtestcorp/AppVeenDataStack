@@ -271,7 +271,11 @@ public class LoginAppCenter extends BaseClass {
 				}
 			}
 		}
-		applyWait.waitForElementToBeClickable(acp.save, 30).click();
+//		applyWait.waitForElementToBeClickable(acp.save, 30).click();
+		
+		applyExplicitWaitsUntilElementVisible(acp.save, 30);
+		Thread.sleep(1000);
+		JavascriptClick.click(acp.save);
 	}
 
 
@@ -321,11 +325,12 @@ public class LoginAppCenter extends BaseClass {
 				}
 			}
 		}
+				applyExplicitWaitsUntilElementVisible(acp.save, 30);
 				Thread.sleep(2000);
-				applyWait.waitForElementToBeClickable(acp.save, 30).click();
+				JavascriptClick.click(acp.save);
 	}
 				
-	public void userEnterDataInUserField() throws InterruptedException {
+	public void userEnterDataInUserField() throws InterruptedException, MalformedURLException {
 		Thread.sleep(2000);
 		try {
 			applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
@@ -374,10 +379,14 @@ public class LoginAppCenter extends BaseClass {
 		            	}
 	            	}
 		     }
-				applyWait.waitForElementToBeClickable(acp.save, 30).click();
+//				applyWait.waitForElementToBeClickable(acp.save, 30).click();
+		
+		applyExplicitWaitsUntilElementVisible(acp.save, 30);
+		Thread.sleep(1000);
+		JavascriptClick.click(acp.save);
 	}
 					
-			public void userEnterDataforBoolean() throws InterruptedException {
+			public void userEnterDataforBoolean() throws InterruptedException, MalformedURLException {
 				Thread.sleep(1500);
 				try {
 					applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
@@ -414,11 +423,14 @@ public class LoginAppCenter extends BaseClass {
 						      }
 					      }
 					   	}
-			     	applyWait.waitForElementToBeClickable(acp.save, 30).click();
+//			     	applyWait.waitForElementToBeClickable(acp.save, 30).click();
+				applyExplicitWaitsUntilElementVisible(acp.save, 30);
+				Thread.sleep(1000);
+				JavascriptClick.click(acp.save);
 				}
 			
 
-			public void userEnterDataForRichText() throws InterruptedException {
+			public void userEnterDataForRichText() throws InterruptedException, MalformedURLException {
 				Thread.sleep(2000);
 				try {
 					applyWait.waitForElementToBeClickable(acp.addDataButton, 30).click();
@@ -460,7 +472,11 @@ public class LoginAppCenter extends BaseClass {
 					   	 }
 						}
 			
-				applyWait.waitForElementToBeClickable(acp.save, 30).click();
+//				applyWait.waitForElementToBeClickable(acp.save, 30).click();
+				
+				applyExplicitWaitsUntilElementVisible(acp.save, 30);
+				Thread.sleep(2000);
+				JavascriptClick.click(acp.save);
 			
 			}
 	
@@ -533,7 +549,11 @@ public class LoginAppCenter extends BaseClass {
 		}}
 		}
 		
-		applyWait.waitForElementToBeClickable(acp.save, 30).click();
+//		applyWait.waitForElementToBeClickable(acp.save, 30).click();
+		
+		applyExplicitWaitsUntilElementVisible(acp.save, 30);
+		Thread.sleep(1000);
+		JavascriptClick.click(acp.save);
 	}
 	
 	public void userEnterDataforCollection() throws Exception {
@@ -595,7 +615,11 @@ public class LoginAppCenter extends BaseClass {
 
 		}
 	
-		applyWait.waitForElementToBeClickable(acp.save, 30).click();
+//		applyWait.waitForElementToBeClickable(acp.save, 30).click();
+			
+			applyExplicitWaitsUntilElementVisible(acp.save, 30);
+			Thread.sleep(1000);
+			JavascriptClick.click(acp.save);
 	}
 
 	
@@ -757,7 +781,11 @@ public class LoginAppCenter extends BaseClass {
 			}
 		}
 	
-		applyWait.waitForElementToBeClickable(acp.save, 30).click();
+//		applyWait.waitForElementToBeClickable(acp.save, 30).click();
+		
+		applyExplicitWaitsUntilElementVisible(acp.save, 30);
+		Thread.sleep(1000);
+		JavascriptClick.click(acp.save);
 	}
 
 	public void addDataForDate() throws Exception {
@@ -834,7 +862,11 @@ public class LoginAppCenter extends BaseClass {
 				}
 			}
 			}
-		applyWait.waitForElementToBeClickable(acp.save, 30).click();
+//		applyWait.waitForElementToBeClickable(acp.save, 30).click();
+		
+		applyExplicitWaitsUntilElementVisible(acp.save, 30);
+		Thread.sleep(1000);
+		JavascriptClick.click(acp.save);
 	}
 
 	public void addDataForRelation() throws Exception {
@@ -942,7 +974,11 @@ public class LoginAppCenter extends BaseClass {
 				}
 			}
 		}
-	applyWait.waitForElementToBeClickable(acp.save, 30).click();
+//	applyWait.waitForElementToBeClickable(acp.save, 30).click();
+		
+		applyExplicitWaitsUntilElementVisible(acp.save, 30);
+		Thread.sleep(1000);
+		JavascriptClick.click(acp.save);
 	}
 
 	public void userEnterDataForStateModel() throws MalformedURLException, InterruptedException {
@@ -996,7 +1032,11 @@ public class LoginAppCenter extends BaseClass {
 				}
 			}
 		}
-		applyWait.waitForElementToBeClickable(acp.save, 30).click();
+//		applyWait.waitForElementToBeClickable(acp.save, 30).click();
+		
+		applyExplicitWaitsUntilElementVisible(acp.save, 30);
+		Thread.sleep(1000);
+		JavascriptClick.click(acp.save);
 	}
 
 	public void verifyState(String currentState) throws MalformedURLException {
