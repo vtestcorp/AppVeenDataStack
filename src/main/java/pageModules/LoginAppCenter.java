@@ -271,9 +271,8 @@ public class LoginAppCenter extends BaseClass {
 				}
 			}
 		}
-//		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 		
-		applyExplicitWaitsUntilElementVisible(acp.save, 30);
+		applyExplicitWaitsUntilElementClickable(acp.save,30);
 		Thread.sleep(1000);
 		JavascriptClick.click(acp.save);
 	}
@@ -325,7 +324,7 @@ public class LoginAppCenter extends BaseClass {
 				}
 			}
 		}
-				applyExplicitWaitsUntilElementVisible(acp.save, 30);
+				applyExplicitWaitsUntilElementClickable(acp.save,30);
 				Thread.sleep(2000);
 				JavascriptClick.click(acp.save);
 	}
@@ -379,9 +378,8 @@ public class LoginAppCenter extends BaseClass {
 		            	}
 	            	}
 		     }
-//				applyWait.waitForElementToBeClickable(acp.save, 30).click();
 		
-		applyExplicitWaitsUntilElementVisible(acp.save, 30);
+		applyExplicitWaitsUntilElementClickable(acp.save,30);
 		Thread.sleep(1000);
 		JavascriptClick.click(acp.save);
 	}
@@ -423,8 +421,8 @@ public class LoginAppCenter extends BaseClass {
 						      }
 					      }
 					   	}
-//			     	applyWait.waitForElementToBeClickable(acp.save, 30).click();
-				applyExplicitWaitsUntilElementVisible(acp.save, 30);
+//			     	
+				applyExplicitWaitsUntilElementClickable(acp.save,30);
 				Thread.sleep(1000);
 				JavascriptClick.click(acp.save);
 				}
@@ -471,12 +469,9 @@ public class LoginAppCenter extends BaseClass {
 						  	 }
 					   	 }
 						}
-			
-//				applyWait.waitForElementToBeClickable(acp.save, 30).click();
 				
-				applyExplicitWaitsUntilElementVisible(acp.save, 30);
 				Thread.sleep(2000);
-				JavascriptClick.click(acp.save);
+				applyWait.waitForElementToBeClickable(acp.save, 30).click();
 			
 			}
 	
@@ -549,9 +544,8 @@ public class LoginAppCenter extends BaseClass {
 		}}
 		}
 		
-//		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 		
-		applyExplicitWaitsUntilElementVisible(acp.save, 30);
+		applyExplicitWaitsUntilElementClickable(acp.save,30);
 		Thread.sleep(1000);
 		JavascriptClick.click(acp.save);
 	}
@@ -614,10 +608,8 @@ public class LoginAppCenter extends BaseClass {
 			}
 
 		}
-	
-//		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 			
-			applyExplicitWaitsUntilElementVisible(acp.save, 30);
+			applyExplicitWaitsUntilElementClickable(acp.save,30);
 			Thread.sleep(1000);
 			JavascriptClick.click(acp.save);
 	}
@@ -781,9 +773,7 @@ public class LoginAppCenter extends BaseClass {
 			}
 		}
 	
-//		applyWait.waitForElementToBeClickable(acp.save, 30).click();
-		
-		applyExplicitWaitsUntilElementVisible(acp.save, 30);
+		applyExplicitWaitsUntilElementClickable(acp.save,30);
 		Thread.sleep(1000);
 		JavascriptClick.click(acp.save);
 	}
@@ -862,9 +852,7 @@ public class LoginAppCenter extends BaseClass {
 				}
 			}
 			}
-//		applyWait.waitForElementToBeClickable(acp.save, 30).click();
-		
-		applyExplicitWaitsUntilElementVisible(acp.save, 30);
+		applyExplicitWaitsUntilElementClickable(acp.save,30);
 		Thread.sleep(1000);
 		JavascriptClick.click(acp.save);
 	}
@@ -974,9 +962,8 @@ public class LoginAppCenter extends BaseClass {
 				}
 			}
 		}
-//	applyWait.waitForElementToBeClickable(acp.save, 30).click();
 		
-		applyExplicitWaitsUntilElementVisible(acp.save, 30);
+		applyExplicitWaitsUntilElementClickable(acp.save,30);
 		Thread.sleep(1000);
 		JavascriptClick.click(acp.save);
 	}
@@ -1032,9 +1019,8 @@ public class LoginAppCenter extends BaseClass {
 				}
 			}
 		}
-//		applyWait.waitForElementToBeClickable(acp.save, 30).click();
 		
-		applyExplicitWaitsUntilElementVisible(acp.save, 30);
+		applyExplicitWaitsUntilElementClickable(acp.save,30);
 		Thread.sleep(1000);
 		JavascriptClick.click(acp.save);
 	}

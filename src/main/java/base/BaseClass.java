@@ -143,6 +143,14 @@ public class BaseClass {
 		wait.until(ExpectedConditions.visibilityOf(element));
 
 	}
+	
+	public static void applyExplicitWaitsUntilElementClickable(WebElement element, int time)throws MalformedURLException {
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.until(ExpectedConditions.visibilityOf(element));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+
+	}
+
 
 	public void applyWaitForDynamicWebElement(By locator, int time) {
 
