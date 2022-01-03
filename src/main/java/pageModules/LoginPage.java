@@ -615,18 +615,20 @@ public class LoginPage extends BaseClass{
 		
 		String dataName=Constants.testData_Folder  +dataServiceName + Constants.json_File_Suffix;
 		JSONObject role=(JSONObject) JsonUtils.getJSONObject(dataName).get("role");
+		
+		if(role!=null) {
 		JSONArray roles=(JSONArray) role.get("roles");
-	if(roles.size()>3) {
-		applyWait.waitForElementToBeClickable(ap.roles, 30).click();
-		applyWait.waitForElementToBeClickable(ap.addNew, 30).click();
-	}
+		if(roles.size()>3) {
+			applyWait.waitForElementToBeClickable(ap.roles, 30).click();
+			applyWait.waitForElementToBeClickable(ap.addNew, 30).click();
+		}
 		
 		for (int i = 0; i < roles.size(); i++) {
 			if(i>2) {
 				
 			JSONObject jsonObject= (JSONObject) roles.get(i);
 			String roleName=(String) jsonObject.get("name");
-			applyWait.waitForElementToBeClickable(ap.roleNameTextBox, 30).sendKeys(roleName);;
+			applyWait.waitForElementToBeClickable(ap.roleNameTextBox, 30).sendKeys(roleName);
 			JSONArray operations=(JSONArray) jsonObject.get("operations");
 			ArrayList<String> operationList=new ArrayList<String>();
 				for (int j = 0; j < operations.size(); j++) {
@@ -689,6 +691,7 @@ public class LoginPage extends BaseClass{
 				}
 			}
 		}
+	}
 	}
 
 	public void createDataService(String dataServicName) throws Exception {
