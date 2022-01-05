@@ -144,7 +144,7 @@ public class Module_DesignTestCases extends BaseClass{
 			applyWaitForDynamicWebElement(dataService1, 30);
 			WebElement dataService = driver.findElement(dataService1);
 			applyWait.waitForElementToBeClickable(dataService, 30).click();
-			By toggler=By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[2]/child::label/child::span[2]");
+			By toggler=By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[@class='toggle font-sm']/child::label/child::span[2]");
 			applyWaitForDynamicWebElement(toggler, 30);
 			WebElement roleToggler = driver.findElement(toggler);
 			applyWait.waitForElementToBeClickable(roleToggler, 30).click();

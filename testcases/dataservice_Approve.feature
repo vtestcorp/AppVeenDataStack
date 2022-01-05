@@ -61,22 +61,22 @@ Scenario: Log out of Author
 	Then User logs out of Author
 	
 
-#Scenario Outline: Log into AppCenter as Maker1
-#	Given User navigate to AppCenter loginpage
-#	And User enters "<username>" and "<password>" in AppCenter login page
-#	And Verify User has Logged in Successfully 
-#Examples:
-#|username|password|
-#|maker@appveen.com|123123123|
-#
-#
-#Scenario: Add data to the dataservice workflow  for Approval
-#	Given Data Service "users"
-#	Then Add data to the data service workflow  for Approval
-#	And Verify data is available in the workflow listing page under New Records with status Pending Review
-#	Then User logs out of AppCenter
-#	
-#	
+Scenario Outline: Log into AppCenter as Maker1
+	Given User navigate to AppCenter loginpage
+	And User enters "<username>" and "<password>" in AppCenter login page
+	And Verify User has Logged in Successfully 
+Examples:
+|username|password|
+|maker@appveen.com|123123123|
+
+
+Scenario: Add data to the dataservice workflow  for Approval
+	Given Data Service "users"
+	Then Add data to the data service workflow  for Approval
+	And Verify data is available in the workflow listing page under New Records with status Pending Review
+	Then User logs out of AppCenter
+	
+
 #Scenario Outline: Log into AppCenter as Checker1
 #	Given User navigate to AppCenter login page
 #	And User enters "<username>" and "<password>" in AppCenter login page

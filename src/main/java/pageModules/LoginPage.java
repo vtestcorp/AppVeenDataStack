@@ -1331,25 +1331,36 @@ public class LoginPage extends BaseClass{
 									applyWait.waitForElementToBeClickable(gp.groupName, 30).sendKeys(groupName);;
 									applyWait.waitForElementToBeClickable(gp.createButton, 30).click();
 									applyWait.waitForElementToBeClickable(gp.appCenterRoles, 30).click();
-									applyExplicitWaitsUntilElementVisible(gp.dsArrow, 30);
-									WebElement dsArrow=driver.findElement(By.xpath("//span[normalize-space()='"+dataservice+"']/parent::div/following-sibling::span[2]/child::span"));
-									applyWait.waitForElementToBeClickable(dsArrow, 30).click();
+//									applyExplicitWaitsUntilElementVisible(gp.dsArrow, 30);
+//									WebElement dsArrow=driver.findElement(By.xpath("//span[normalize-space()='"+dataservice+"']/parent::div/following-sibling::span[2]/child::span"));
+//									applyWait.waitForElementToBeClickable(dsArrow, 30).click();
 									
-									if(role.equalsIgnoreCase("SkipReview")) {
-										applyWait.waitForElementToBeClickable(gp.skipReviewToggler, 30).click();
-										}
-									else if(role.equalsIgnoreCase("Manage")) {
-										applyWait.waitForElementToBeClickable(gp.manageToggler, 30).click();
-									}
+									By dataService1 = By.xpath("//div[contains(@class,'ds-name')]//span[normalize-space()='"+dataServiceName+"']");
+									Actions action =new Actions(driver);
+									action.moveToElement(driver.findElement(dataService1));
+									applyWaitForDynamicWebElement(dataService1, 30);
+									WebElement dataService = driver.findElement(dataService1);
+									applyWait.waitForElementToBeClickable(dataService, 30).click();
+									By toggler=By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[@class='toggle font-sm']/child::label/child::span[2]");
+									applyWaitForDynamicWebElement(toggler, 30);
+									WebElement roleToggler = driver.findElement(toggler);
+									applyWait.waitForElementToBeClickable(roleToggler, 30).click();
 									
-									else if(role.equalsIgnoreCase("View")) {
-										applyWait.waitForElementToBeClickable(gp.viewToggler, 30).click();
-										}
-									
-									else {
-										WebElement toggler=driver.findElement(By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[2]/child::label/child::span[2]"));
-										applyWait.waitForElementToBeClickable(toggler, 30).click();
-										}
+//									if(role.equalsIgnoreCase("SkipReview")) {
+//										applyWait.waitForElementToBeClickable(gp.skipReviewToggler, 30).click();
+//										}
+//									else if(role.equalsIgnoreCase("Manage")) {
+//										applyWait.waitForElementToBeClickable(gp.manageToggler, 30).click();
+//									}
+//									
+//									else if(role.equalsIgnoreCase("View")) {
+//										applyWait.waitForElementToBeClickable(gp.viewToggler, 30).click();
+//										}
+//									
+//									else {
+//										WebElement toggler=driver.findElement(By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[2]/child::label/child::span[2]"));
+//										applyWait.waitForElementToBeClickable(toggler, 30).click();
+//										}
 									
 									applyWait.waitForElementToBeClickable(gp.saveDataService, 30).click();
 								}
