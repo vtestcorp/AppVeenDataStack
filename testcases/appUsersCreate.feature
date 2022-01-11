@@ -6,9 +6,11 @@ Feature: Add user
     And User enters "<username>" and "<password>" in Author login page
     And Verify User has Logged in successfully in Author Url
     Then Select "vTest" app
+    #Then Select "vTEST" app
    Examples: 
       | username          | password  |
        | admin | u?5k167v13w5 |
+       #|admin@appveen.com|u?5k167v13w5|
       
 Scenario Outline: Add users
  Given Add "<username>" and "<password>" if not present

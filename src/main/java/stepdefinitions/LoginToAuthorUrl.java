@@ -178,9 +178,10 @@ public class LoginToAuthorUrl extends BaseClass {
 	}
 	
 	@Then("Create group {string} and enable role {string} of {string}")
-	public void create_group_and_enable_role_of(String groupName, String role, String dataservice) throws Exception {
+	public void create_group_and_enable_role_of(String groupName,String role,String dataservice) throws Exception {
 		loginPage.createGroupAndEnableRole(groupName,role,dataservice);
 	}
+	
 	@Given("Group {string} exists")
 	public void group_exists(String groupName) {
 		loginPage.groupExists(groupName);

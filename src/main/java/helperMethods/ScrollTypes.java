@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 public class ScrollTypes {
 
-	WebDriver driver;
+	static WebDriver driver;
 
 	public ScrollTypes(WebDriver driver) {
 		this.driver = driver;
@@ -26,7 +26,7 @@ public class ScrollTypes {
 		((JavascriptExecutor) driver).executeScript("window.scrollBy(" + x + "," + y + ")");
 	}
 
-	public void scrollInToView(WebElement element) {
+	public static void scrollInToView(WebElement element) {
 		JavascriptExecutor je = (JavascriptExecutor) driver;
 		je.executeScript("arguments[0].scrollIntoView(true);", element);
 	}

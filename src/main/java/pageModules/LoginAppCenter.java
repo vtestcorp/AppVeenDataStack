@@ -141,6 +141,7 @@ public class LoginAppCenter extends BaseClass {
 		}
 		applyExplicitWaitsUntilElementVisible(acp.textBox1,10);
 		List<WebElement> textBoxes = acp.textBoxes;
+		System.out.println(textBoxes.size());
 		String filePath=Constants.testData_Folder + data_Service + Constants.testData_Suffix;
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 		

@@ -17,6 +17,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import com.google.common.collect.MapDifference;
 import com.google.common.collect.MapDifference.ValueDifference;
@@ -137,7 +138,7 @@ public class Module_DesignTestCases extends BaseClass{
 		Thread.sleep(1000);
 		
 
-		if(url.equals(Constants.bifrostInstance)  ||  url.equals(Constants.qaInstance)){
+		if(url.equals(Constants.bifrostInstance)  ||  url.equals(Constants.qaInstance) || url.equals(Constants.stagingInstance)){
 			By dataService1 = By.xpath("//div[contains(@class,'ds-name')]//span[normalize-space()='"+dataServiceName+"']");
 			Actions action =new Actions(driver);
 			action.moveToElement(driver.findElement(dataService1));
@@ -167,8 +168,15 @@ public class Module_DesignTestCases extends BaseClass{
 		
 		By ele=By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']");
 		
+		Actions action=new Actions(driver);
+		
 		applyWaitForDynamicWebElement(ele, 30);
 		WebElement user=driver.findElement(ele);
+//		ScrollTypes.scrollInToView(user);
+//		EventFiringWebDriver event = new EventFiringWebDriver(driver);
+		
+//		event.executeScript("document.querySelector(\"div:nth-child(14) div:nth-child(2) odp-user-list-cell-renderer:nth-child(1)\").scrollTop=500");
+		action.moveToElement(user).perform();
 		try {
 		user.click();
 		}
@@ -181,8 +189,6 @@ public class Module_DesignTestCases extends BaseClass{
 		applyWait.waitForElementToBeClickable(gp.save, 30).click();
 		
 	}
-
-	
 
 	public void addRecord(String string) throws Exception {
 		Thread.sleep(2000);

@@ -11,9 +11,6 @@ Examples:
 |username|password|
 |test_ui_appadmin@appveen.com | Veen@99%win |
 
-#Scenario: Stop Data Service
-#Given Stop dataservice "boolean"
-
 Scenario: Delete data service
 	Given Data service "boolean" exists
 	Then Remove the data service

@@ -9,38 +9,66 @@ Scenario Outline: Log into Author
 	And Verify User has Logged in successfully in Author Url
 Examples:
 |username|password|
-|deepak@appveen.com|123123123|
+|test_ui_appadmin@appveen.com|Veen@99%win|
 
 Scenario: Delete data service
-	Given Data service "string_StateModel" exists
+	Given Data service "stringStateModel" exists
 	Then Remove the data service
 
-Scenario Outline: Create data service
-	Given Data service "string_StateModel" does not exist
-	Then Create new data service "string_StateModel" with attributes "<attribute name>" and type "<attribute type>"
-	And Click on Experience tab to create a State Model for the field "Onboarding Status"
-	And Set Current State "<from state>" and "<next state>"
-Examples:
-	|attribute name|attribute type|from state|next state|
-	|Name|Text|Open|In Progress,Rejected,Deferred,Config Issue,Cannot Reproduce,Working as Expected|
-	|DOB|Date|In Progress|Ready for QA,Open|
-	|Salary|Number|Ready for QA|Ready for Release,Re-open|
-	|Onboarding Status|Text|Re-open|In Progress|
-	|||Ready for Release|Closed|
-	|||Rejected|Open|
-	|||Deferred|Open|
+Scenario: Create data service
+	Given Data service "stringStateModel" does not exist
+	Then Create new data service "stringStateModel" for State_Model 
+	
 
-#Examples:
-#|from state|next state|
+Scenario Outline: Add Attributes to data service
+Given Add attributes "<attributeName>" and type "<attributeType>"
+
+#And Save button is not clicked	
+Examples:
+	|attributeName|attributeType|
+	|Name|Text|
+	|DOB|Date|
+	|Salary|Number|
+	|Onboarding Status|Text|
+
+Scenario: Configure State model
+Given Click on Experience tab to create a State Model 
+Then Create a State Model for the field "Onboarding Status"
+
+Scenario Outline: Create State for State Model
+Then Create states "<state_name>"
+Examples:
+|state_name|
+|Open|
+|In Progress|
+|Rejected|
+|Deffered|
+|Config Issue|
+|Cannot Reproduce|
+|Working as Expected|
+|Ready for QA|
+|Re-open|
+|Ready for Release|
+
+Scenario: Create State for State Model
+And Set Current State with from state to next state
+|Open|In Progress,Rejected,Deffered,Config Issue,Cannot Reproduce,Working as Expected|
+|In Progress|Ready for QA,Open|
+|Ready for QA|Ready for Release,Re-open|
+|Re-open|In Progress|
+|Ready for Release|Closed|
+|Rejected|Open|
+|Deffered|Open|
+Then Save and Deploy data service
 
 Scenario Outline: Assign to Appcenter Group
- 	Then Group "string_StateModel" does not exist
-	Then Create new group "string_StateModel" 
-	And Assign appcenter permissions for "string_StateModel" dataservice to "<user>"
+	Then Group "stringStateModel" does not exist
+	Then Create new group "stringStateModel" 
+	And Assign appcenter permissions for "stringStateModel" dataservice to "<user>"
 	
 	Examples:
 	|user|
-	|maker@appveen.com|
+	|test_ui_ac_ds_manage@appveen.com|
 
 
 Scenario: Log out of Author
@@ -54,52 +82,36 @@ Scenario Outline: Log into AppCenter
 	And Verify User has Logged in Successfully 
 Examples:
 |username|password|
-|maker@appveen.com|123123123|
+|test_ui_ac_ds_manage@appveen.com|Veen@99%win|
 
 
-# INSERT/UPDATE
+ #INSERT/UPDATE
 Scenario Outline: Add data to data service
-	Given Data service "string_StateModel"
-	Then Add data to the data service
+	Given Data service "stringStateModel"
+	Then Add data to the stateModel data service
 	And Verify the State is "<Current State>"
 	Examples:
-	|Current State|Open|
+	|Current State|
+	|Open|
 	
-Scenario Outline: Add record to data service and verify available next states
-	Given Data service "number_ListOfValue"
-	Then Add record "<data>" to the data service
+Scenario Outline: Edit record to data service and verify available next states
+	Given Data service "stringStateModel"
+	Then Add record "<data>" to stateModel data service
 	And Verify "<Next State>" is available
-
+	And Verify "<Invalid State>" is not available
+	And update "<Update State>" and save the record
 Examples:
-|Next State|
-|In Progress|
-|Rejected|
-|Deferred|
+|data|Next State|Invalid State|Update State|
+|{"_id": "STR1002","name": "Shyam","dob": "2000-05-21T10:20:30Z", "salary": 400000,"onboardingStatus": "Rejected"}|In Progress,Rejected,Deffered,Config Issue,Cannot Reproduce,Working as Expected|Closed,Ready for QA|Deffered|
 
-Scenario Outline: Add record to data service and verify invalid next states are not displayed
-	Given Data service "number_ListOfValue"
-	Then Add record "<data>" to the data service
-	And Verify "<Next State>" is not available
-Examples:
-|Next State|
-|Closed|
-|Ready for QA|
-
-Scenario Outline: Add record to data service
-	Given Data service "number_ListOfValue"
-	Then Add record "<data>" to the data service
-	And update "<Next State>" and save the record
-Examples:
-|data|Next State|
-|{"_id":"NUM1001","dsNumberListOfValues1001": 123,"dsNumberListOfValues1002": "","dsNumberListOfValues1003": 4569,"dsNumberListOfValues1004": 23,"dsNumberListOfValues1005": 123,"dsNumberListOfValues1007":123, "dsNumberListOfValues1008": 211, "dsNumberListOfValues1010": 4569,  "dsNumberListOfValues1013": 123, "dsNumberListOfValues1014": "", "dsNumberListOfValues1015": "",  "dsNumberListOfValues1016": 123,"dsNumberListOfValues1017":"","dsNumberListOfValues1018":"",  "dsNumberListOfValues1020":4569}|In Progress|
 
 Scenario Outline: Fetch record from the data service
-	Given Data service "number_ListOfValue"
+	Given Data service "stringStateModel"
 	Then Fetch record "<id>" from the data service
-	And Match it to "<data>"
+	And Match it to "<data>" Date Type
 Examples:
 |id|data|
-|NUM1001|{"_id": "NUM1001","dsNumberListOfValues1001": 123,"dsNumberListOfValues1002": 2,"dsNumberListOfValues1003": 123,"dsNumberListOfValues1004": 123,"dsNumberListOfValues1005": 501,"dsNumberListOfValues1007": 123, "dsNumberListOfValues1008": 211, "dsNumberListOfValues1010": 123,  "dsNumberListOfValues1013": 123, "dsNumberListOfValues1014": 4569, "dsNumberListOfValues1015": 211, "dsNumberListOfValues1018": 456,  "dsNumberListOfValues1020": 4569, "Onboarding Status":"In Progress"}|
+|STR1001|{"_id": "STR1001","name": "Ram","dob": "Thursday, November 30, 1995 (Zulu)", "salary": 100000}|
 
 Scenario: Log out of App Center
 	Given User log out from AppCenter

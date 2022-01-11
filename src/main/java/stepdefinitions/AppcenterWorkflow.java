@@ -14,6 +14,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import listeners.ExtentReportListener;
+import pageModules.LoginAppCenter;
 import pageModules.WorkflowsInAppcenterPage;
 
 public class AppcenterWorkflow extends BaseClass{
@@ -23,21 +24,26 @@ public class AppcenterWorkflow extends BaseClass{
 	public ExtentReportListener test1;
 	public ExtentReports extent;
 	public ExtentTest logInfo=null;
-	
+	public LoginAppCenter loginAppCenter;
+	public static String data_Service;
 	@Before
 	public void initilization() {
 		workflow = new WorkflowsInAppcenterPage(driver);
-
+		loginAppCenter = new LoginAppCenter(driver, test);
 	}
 	
 	@Given("Data Service {string}")
 	public void data_Service(String string) throws Exception {
+		data_Service=string;
 	  workflow.dataService(string);
 	}
 	
 	@Then("Add data to the data service workflow  for Approval")
 	public void add_data_to_the_data_service_workflow_for_Approval() throws Exception {
 		workflow.addDataToDataService();
+//		loginAppCenter.userEnterData();
+
+		
 	}
 	
 	@Then("Verify data is available in the workflow listing page under New Records with status Pending Review")

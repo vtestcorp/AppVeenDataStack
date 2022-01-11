@@ -54,20 +54,14 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 			Thread.sleep(1000);
 			JavascriptClick.click(acp.addDataButton);
 		}	
-		Thread.sleep(2000);
-		List<WebElement> textBoxes = acp.textBoxes;
-		JSONArray jsonArray = JsonUtils.getJSONArray(Constants.testData_Folder + data_Service + Constants.testData_Suffix);
-		for(int i=0;i<jsonArray.size();i++) {
-			Thread.sleep(1000);
-			JSONObject jsonObject=(JSONObject) jsonArray.get(i);
-			
-			List<WebElement> stepNames=driver.findElements(By.xpath("//div[@class='step-name high-zIndex text-truncate']"));
-			for(WebElement stepName : stepNames) {
-				stepName.click();
-			
+		applyExplicitWaitsUntilElementVisible(acp.groupTextBoxes, 30);
+		List<WebElement> textBoxes = acp.groupTextBoxes;
+		System.out.println(data_Service+"+++++++++++++++++++++");
+		String filePath=Constants.testData_Folder + data_Service + Constants.testData_Suffix;
+		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 			
 				for(int j=1;j<=textBoxes.size();j++) {
-				WebElement textBox=driver.findElement(By.xpath("(//input[contains(@class,'form-control')])["+j+"]"));
+					WebElement textBox = driver.findElement(By.xpath("(//*[contains(@class,'form-control') or @type='checkbox' or @type='file' or contains(@class,'btn btn-link mr-2 p-0') or contains(@class,'searchInput')])[" + j + "]"));
 		
 				String id1 =textBox.getAttribute("id");
 				
@@ -87,18 +81,13 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 					applyWait.waitForElementToBeClickable(textBox,30).sendKeys(((Long)jsonObject.get(id1)).toString());;
 					}
 				}
-			}
-			if((jsonArray.size()-1) > i) {
-			applyWait.waitForElementToBeClickable(acp.proceedAndCreateAnother, 30).click();
-				}
-				else {
-					applyWait.waitForElementToBeClickable(acp.proceed, 30).click();
-				}
+
+			applyWait.waitForElementToBeClickable(acp.proceed, 30).click();
 			applyWait.waitForElementToBeClickable(acp.comments, 30).sendKeys("Check");;
 			applyWait.waitForElementToBeClickable(acp.submit, 30).click();
 				
 		}
-	}
+	
 
 	public void logoutFromAppcenter() {
 		

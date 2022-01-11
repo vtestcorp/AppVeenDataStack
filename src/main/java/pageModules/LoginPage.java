@@ -1318,7 +1318,7 @@ public class LoginPage extends BaseClass{
 							
 						}
 
-						public void createGroupAndEnableRole(String groupName, String role, String dataservice) throws Exception {
+						public void createGroupAndEnableRole(String groupName,String role,String dataservice ) throws Exception {
 							applyExplicitWaitsUntilElementVisible(ap.groupNames, 30);
 							List<WebElement> groupNames=gp.groups;
 							ArrayList<String> groups=new ArrayList<String>();
@@ -1331,17 +1331,15 @@ public class LoginPage extends BaseClass{
 									applyWait.waitForElementToBeClickable(gp.groupName, 30).sendKeys(groupName);;
 									applyWait.waitForElementToBeClickable(gp.createButton, 30).click();
 									applyWait.waitForElementToBeClickable(gp.appCenterRoles, 30).click();
-//									applyExplicitWaitsUntilElementVisible(gp.dsArrow, 30);
-//									WebElement dsArrow=driver.findElement(By.xpath("//span[normalize-space()='"+dataservice+"']/parent::div/following-sibling::span[2]/child::span"));
-//									applyWait.waitForElementToBeClickable(dsArrow, 30).click();
 									
-									By dataService1 = By.xpath("//div[contains(@class,'ds-name')]//span[normalize-space()='"+dataServiceName+"']");
+									By dataService1 = By.xpath("//div[contains(@class,'ds-name')]//span[normalize-space()='"+dataservice+"']");
+									applyWaitForDynamicWebElement(dataService1, 30);
 									Actions action =new Actions(driver);
 									action.moveToElement(driver.findElement(dataService1));
-									applyWaitForDynamicWebElement(dataService1, 30);
 									WebElement dataService = driver.findElement(dataService1);
 									applyWait.waitForElementToBeClickable(dataService, 30).click();
 									By toggler=By.xpath("//span[contains(text(),'"+role+"')]/parent::div/following-sibling::span[@class='toggle font-sm']/child::label/child::span[2]");
+									ScrollTypes.scrollInToView(driver.findElement(toggler));
 									applyWaitForDynamicWebElement(toggler, 30);
 									WebElement roleToggler = driver.findElement(toggler);
 									applyWait.waitForElementToBeClickable(roleToggler, 30).click();
@@ -1407,15 +1405,21 @@ public class LoginPage extends BaseClass{
 							applyWait.waitForElementToBeClickable(gp.members, 30).click();
 							applyWait.waitForElementToBeClickable(gp.addUsers, 30).click();
 							applyExplicitWaitsUntilElementVisible(gp.userEmail, 30);
-							WebElement user=driver.findElement(By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']"));
-							applyExplicitWaitsUntilElementVisible(user,30);
+							By user =By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']");
+//							applyExplicitWaitsUntilElementVisible(user,30);
+							applyWaitForDynamicWebElement(user, 30);
+							WebElement user1=driver.findElement(user);
+							
 							try {
-							user.click();
+								
+								user1.click();
 							}
 							catch(ElementClickInterceptedException e) {
 								applyExplicitWaitsUntilElementVisible(gp.userEmail, 30);
-								user=driver.findElement(By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']"));
-								user.click();
+								user1=driver.findElement(By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']"));
+//								user.click();
+								Thread.sleep(2000);
+								javascriptClick.click(user1);
 							}
 							applyWait.waitForElementToBeClickable(gp.done, 30).click();
 							applyWait.waitForElementToBeClickable(gp.save, 30).click();
