@@ -13,6 +13,7 @@ import org.json.simple.JSONObject;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -168,21 +169,34 @@ public class Module_DesignTestCases extends BaseClass{
 		
 		By ele=By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']");
 		
+		WebElement user12=null;;
+		try {
+			applyWaitForDynamicWebElement(ele, 10);
+			 user12=driver.findElement(ele);
+		}
+		
+		catch(Exception e) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollTop = arguments[1];",driver.findElement(By.xpath("(//div[contains(@class,'ag-body-viewport')])[2]")), 1000);
+		applyWaitForDynamicWebElement(ele, 30);
+		 user12=driver.findElement(ele);
+		}
+		
 		Actions action=new Actions(driver);
 		
-		applyWaitForDynamicWebElement(ele, 30);
-		WebElement user=driver.findElement(ele);
+//		applyWaitForDynamicWebElement(ele, 30);
+//		WebElement user=driver.findElement(ele);
 //		ScrollTypes.scrollInToView(user);
 //		EventFiringWebDriver event = new EventFiringWebDriver(driver);
 		
 //		event.executeScript("document.querySelector(\"div:nth-child(14) div:nth-child(2) odp-user-list-cell-renderer:nth-child(1)\").scrollTop=500");
-		action.moveToElement(user).perform();
+		action.moveToElement(user12).perform();
 		try {
-		user.click();
+		user12.click();
 		}
 		catch(ElementClickInterceptedException e) {
-			user=driver.findElement(By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']"));
-			user.click();
+			user12=driver.findElement(By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']"));
+			user12.click();
 		}
 		applyWait.waitForElementToBeClickable(gp.done, 30).click();
 		Thread.sleep(1000);

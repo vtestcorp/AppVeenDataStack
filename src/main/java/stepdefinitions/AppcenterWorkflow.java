@@ -43,7 +43,11 @@ public class AppcenterWorkflow extends BaseClass{
 		workflow.addDataToDataService();
 //		loginAppCenter.userEnterData();
 
-		
+	}
+	
+	@Then("Verify data is available in the listing page")
+	public void verify_data_is_available_in_the_listing_page() {
+	  
 	}
 	
 	@Then("Verify data is available in the workflow listing page under New Records with status Pending Review")

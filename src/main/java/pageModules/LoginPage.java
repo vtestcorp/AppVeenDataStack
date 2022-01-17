@@ -18,6 +18,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -1330,6 +1331,7 @@ public class LoginPage extends BaseClass{
 									applyWait.waitForElementToBeClickable(gp.newGroup, 30).click();
 									applyWait.waitForElementToBeClickable(gp.groupName, 30).sendKeys(groupName);;
 									applyWait.waitForElementToBeClickable(gp.createButton, 30).click();
+									Thread.sleep(200);
 									applyWait.waitForElementToBeClickable(gp.appCenterRoles, 30).click();
 									
 									By dataService1 = By.xpath("//div[contains(@class,'ds-name')]//span[normalize-space()='"+dataservice+"']");
@@ -1402,13 +1404,28 @@ public class LoginPage extends BaseClass{
 								groupName=driver.findElement(By.xpath("//div[normalize-space()='"+group+"']/parent::div"));
 								applyWait.waitForElementToBeClickable(groupName, 30).click();
 							}
+							Thread.sleep(500);
 							applyWait.waitForElementToBeClickable(gp.members, 30).click();
 							applyWait.waitForElementToBeClickable(gp.addUsers, 30).click();
 							applyExplicitWaitsUntilElementVisible(gp.userEmail, 30);
 							By user =By.xpath("//odp-user-list-cell-renderer[normalize-space()='"+userEmail+"']");
+//							Thread.sleep(3000);
 //							applyExplicitWaitsUntilElementVisible(user,30);
+//							EventFiringWebDriver d=new EventFiringWebDriver(driver);
+//							d.executeScript("document.querySelector('div[class=\"ag-body-viewport ag-layout-normal ag-row-animation\"]').scrollTop=500");
+						
+							WebElement user1=null;;
+							try {
+								applyWaitForDynamicWebElement(user, 10);
+								 user1=driver.findElement(user);
+							}
+							
+							catch(Exception e) {
+							JavascriptExecutor js = (JavascriptExecutor) driver;
+							js.executeScript("arguments[0].scrollTop = arguments[1];",driver.findElement(By.xpath("(//div[contains(@class,'ag-body-viewport')])[2]")), 1000);
 							applyWaitForDynamicWebElement(user, 30);
-							WebElement user1=driver.findElement(user);
+							 user1=driver.findElement(user);
+							}
 							
 							try {
 								

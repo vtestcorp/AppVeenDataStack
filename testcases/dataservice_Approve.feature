@@ -23,7 +23,7 @@ Scenario: Create data service
 #	Examples:
 #	|step name|no of approvals|
 #	|Production|1|
-#	|Qaulity|2|
+#	|Quality|2|
 
 Scenario Outline: Delete group
 	Given Group sampleGroup "<group>" exists
@@ -32,7 +32,7 @@ Scenario Outline: Delete group
 		| group |
 		| MakerChecker|
 		| Production |
-		| Qaulity|
+		| Quality|
 
 Scenario Outline: Add group
 	Given Group sampleGroup "<group>" does not exists
@@ -42,7 +42,7 @@ Scenario Outline: Add group
 		| group | dataservice | role |
 		| MakerChecker | makerchecker | Manage |
 		| Production|makerchecker|Production|
-		| Qaulity|makerchecker|Qaulity|
+		| Quality|makerchecker|Quality|
 		
 Scenario Outline: Assign permissions
 	Given Data service "<dataservice>"  exists
@@ -51,10 +51,10 @@ Scenario Outline: Assign permissions
 	Then Add "<user>" to "<group>"
 	Examples:
 		| group | dataservice | user |
-		| MakerChecker | makerchecker | test_ui_ac_ds_manage@appveen.com|
+		| MakerChecker | makerchecker | test_ui_ac_ds_manage@appveen.com |
 		| Production|makerchecker|reviewer1@appveen.com|
-			| Qaulity|makerchecker|reviewer2@appveen.com|
-			| Qaulity|makerchecker|reviewer3@appveen.com|
+			| Quality|makerchecker|reviewer2@appveen.com|
+			| Quality|makerchecker|reviewer3@appveen.com|
 
 Scenario: Log out of Author
 	Given User logged into Author
@@ -88,18 +88,46 @@ Examples:
 Scenario: Approve the data created 
 	Given Data Service "makerchecker"
 	Then Approve the Record created in previous step
-#	And Verify data is available in the workflow listing page under New Records with status Approved
-#	And Verify data is available in the listing page
+	And Verify data is available in the workflow listing page under New Records with status Approved
+	And Verify data is available in the listing page
 	Then User logs out of AppCenter
 
-#Scenario Outline: Log into AppCenter as Maker1
-#	Given User navigate to AppCenter login page
-#	And User enters "<username>" and "<password>" in AppCenter login page
-#	And Verify User has Logged in Successfully 
-#Examples:
-#|username|password|
-#|maker@appveen.com|123123123|
-#
+Scenario Outline: Log into AppCenter as Checker2
+	Given User navigate to AppCenter login page
+	And User enters "<username>" and "<password>" in AppCenter login page
+	And Verify User has Logged in Successfully 
+Examples:
+|username|password|
+|reviewer2@appveen.com|Veen@99%win|
+
+Scenario: Approve the data created 
+	Given Data Service "makerchecker"
+	Then Approve the Record created in previous step
+	And Verify data is available in the workflow listing page under New Records with status Approved
+	And Verify data is available in the listing page
+	Then User logs out of AppCenter
+	
+	Scenario Outline: Log into AppCenter as Checker3
+	Given User navigate to AppCenter login page
+	And User enters "<username>" and "<password>" in AppCenter login page
+	And Verify User has Logged in Successfully 
+Examples:
+|username|password|
+|reviewer3@appveen.com|Veen@99%win|
+
+Scenario: Approve the data created 
+	Given Data Service "makerchecker"
+	Then Approve the Record created in previous step
+	And Verify data is available in the workflow listing page under New Records with status Approved
+	And Verify data is available in the listing page
+	Then User logs out of AppCenter
+	
+	
+	
+	
+	
+
+
 #Scenario: Add data to the dataservice workflow  for Draft to Approval
 #	Given Data Service "users"
 #	Then Add data to the data service and save as draft

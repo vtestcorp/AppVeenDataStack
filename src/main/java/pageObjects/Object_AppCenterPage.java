@@ -140,7 +140,7 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//button[starts-with(@class,'btn respond-btn rework')]/span")
 	public WebElement rework1;
 	
-	@FindBy(xpath="//textarea[@placeholder='Enter comments to justify your response. Attach document if necessary']")
+	@FindBy(xpath="//textarea[@placeholder='Type here']")
 	public WebElement enterApproveComment;
 	
 	@FindBy(xpath="//textarea[@placeholder='Comments are required to justify your response. Attach document if necessary.']")

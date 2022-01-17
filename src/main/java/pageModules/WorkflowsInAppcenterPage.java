@@ -113,6 +113,7 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 
 	public void approveTheRecord() throws Exception {
 		applyWait.waitForElementToBeClickable(acp.workflowTab, 30).click();
+		applyExplicitWaitsUntilElementVisible(acp.respondWorkflows, 30);
 		List <WebElement> workflows=acp.respondWorkflows;
 		for(WebElement workflow : workflows) {
 			applyExplicitWaitsUntilElementVisible(acp.respond1,30);
@@ -124,15 +125,16 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 				applyExplicitWaitsUntilElementVisible(acp.respond1,30);
 				acp.respond1.click();
 			}
-			applyWait.waitForElementToBeClickable(acp.approve, 30).click();
+			Thread.sleep(500);
+			applyWait.waitForElementToBeClickable(acp.respond, 30).click();
 			applyWait.waitForElementToBeClickable(acp.enterApproveComment, 30).sendKeys(Property.getProperty("approveMessage"));;
 			applyWait.waitForElementToBeClickable(acp.approveButton, 30).click();;
 		}
 	}
 
 	public void verifyDataIsAvailableWithStatusApproved() throws Exception {
-		Thread.sleep(1000);
-		Boolean verify=applyWait.waitForElementToBeClickable(acp.approved, 30).isDisplayed();
+//		Thread.sleep(1000);
+//		Boolean verify=applyWait.waitForElementToBeClickable(acp.approved, 30).isDisplayed();
 		
 	}
 
