@@ -233,7 +233,12 @@ public class LoginPage extends BaseClass{
 	
 	public void createDataServiceForStateModel(String data_ServicName) throws Exception {
 		dataServiceName = data_ServicName;
-		applyWait.waitForElementToBeClickable(ap.newDataService, 30).click();
+		try {
+			applyWait.waitForElementToBeClickable(ap.newDataService, 30).click();
+		} catch (Exception e) {
+			Thread.sleep(1000);
+			JavascriptClick.click(ap.newDataService);
+		}
 		applyWait.waitForElementToBeClickable(ap.dataServiceName, 30).sendKeys(data_ServicName);
 		applyWait.waitForElementToBeClickable(ap.createButton, 30).click();
 	}
@@ -518,7 +523,9 @@ public class LoginPage extends BaseClass{
 						for (int a = 0; a < searchArray.size(); a++) {
 							JSONObject searchObject = (JSONObject) searchArray.get(a);
 							String  field=(String) searchObject.get("name");
+							
 							dropdown.selectByVisibleText(ap.viewField, field);
+							
 						}
 						isUserType=true;
 						requiredAttributes(jsonProperties);
@@ -1273,8 +1280,10 @@ public class LoginPage extends BaseClass{
 						}
 
 						public void verifyGroupExists(String groupName) throws Exception {
+							Thread.sleep(500);
 							applyWait.waitForElementToBeClickable(ap.groups, 30).click();
-							Thread.sleep(2000);
+//							Thread.sleep(2000);
+							applyExplicitWaitsUntilElementVisible(gp.groups, 30);
 							List<WebElement> groupNames=gp.groups;
 						
 						groups=new ArrayList<String>();

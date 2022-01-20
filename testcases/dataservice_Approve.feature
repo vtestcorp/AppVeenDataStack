@@ -70,9 +70,9 @@ Examples:
 |test_ui_ac_ds_manage@appveen.com|Veen@99%win|
 
 
-Scenario: Add data to the dataservice workflow  for Approval
+Scenario: Add data to the dataservice workflow for Approval
 	Given Data Service "makerchecker"
-	Then Add data to the data service workflow  for Approval
+	Then Add data to the data service workflow for Approval
 	And Verify data is available in the workflow listing page under New Records with status Pending Review
 	Then User logs out of AppCenter
 	

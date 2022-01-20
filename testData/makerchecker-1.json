@@ -1,0 +1,204 @@
+{
+  "workflowHooks" : {
+    "postHooks" : {
+      "submit" : [ ],
+      "rework" : [ ],
+      "discard" : [ ],
+      "approve" : [ ],
+      "reject" : [ ]
+    }
+  },
+  "_metadata" : {
+    "version" : {
+      "document" : 5,
+      "release" : "2.0.0"
+    },
+    "deleted" : false,
+    "lastUpdated" : "2022-01-20T08:25:35.483Z",
+    "createdAt" : "2022-01-20T08:12:03.681Z",
+    "lastUpdatedBy" : "vtest@appveen.com"
+  },
+  "_id" : "SRVC2039",
+  "allowedFileTypes" : [ "jpeg", "ppt", "xls", "csv", "doc", "jpg", "png", "gif", "zip", "tar", "rar", "gz", "bz2", "7z", "mp4", "mp3", "pdf", "ico", "docx", "pptx", "xlsx", "ods", "xml", "txt" ],
+  "version" : 2,
+  "instances" : 1,
+  "versionValidity" : {
+    "validityType" : "count",
+    "validityValue" : -1
+  },
+  "permanentDeleteData" : true,
+  "disableInsights" : false,
+  "status" : "Active",
+  "enableSearchIndex" : false,
+  "attributeCount" : 4,
+  "type" : null,
+  "name" : "makerchecker",
+  "description" : null,
+  "app" : "vTest",
+  "api" : "/makerchecker",
+  "port" : 20022,
+  "wizard" : [ ],
+  "webHooks" : [ ],
+  "preHooks" : [ ],
+  "collectionName" : "makerchecker",
+  "__v" : 0,
+  "definition" : [ {
+    "_id" : "61e91c7fec91e1fa168e3709",
+    "key" : "_id",
+    "type" : "String",
+    "prefix" : "MAK",
+    "suffix" : null,
+    "padding" : null,
+    "counter" : 1001,
+    "properties" : {
+      "label" : null,
+      "readonly" : false,
+      "errorMessage" : null,
+      "name" : "ID",
+      "required" : false,
+      "fieldLength" : 10,
+      "_description" : null,
+      "_typeChanged" : "id",
+      "_isParrentArray" : null,
+      "_isGrpParentArray" : null,
+      "dataPath" : "_id",
+      "_detailedType" : "",
+      "dataKey" : "_id"
+    }
+  }, {
+    "_id" : "61e91c7fec91e151a58e370a",
+    "type" : "String",
+    "key" : "name",
+    "properties" : {
+      "name" : "Name",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "dataKey" : "name",
+      "dataPath" : "name"
+    }
+  }, {
+    "_id" : "61e91c7fec91e185ec8e370b",
+    "type" : "Number",
+    "key" : "mobileNo",
+    "properties" : {
+      "name" : "Mobile No.",
+      "fieldLength" : 10,
+      "_typeChanged" : "Number",
+      "precision" : 2,
+      "dataKey" : "mobileNo",
+      "dataPath" : "mobileNo"
+    }
+  }, {
+    "_id" : "61e91c7fec91e1c0518e370c",
+    "type" : "String",
+    "key" : "address",
+    "properties" : {
+      "name" : "Address",
+      "fieldLength" : 10,
+      "_typeChanged" : "String",
+      "longText" : true,
+      "dataKey" : "address",
+      "dataPath" : "address"
+    }
+  } ],
+  "headers" : [ ],
+  "relatedSchemas" : {
+    "internal" : {
+      "users" : [ ]
+    },
+    "outgoing" : [ ]
+  },
+  "role" : {
+    "_id" : "SRVC2039",
+    "_metadata" : {
+      "version" : {
+        "document" : 1,
+        "release" : "2.0.0"
+      },
+      "deleted" : false,
+      "lastUpdated" : "2022-01-20T08:12:03.722Z",
+      "createdAt" : "2022-01-20T08:12:03.718Z"
+    },
+    "app" : "vTest",
+    "entity" : "SRVC2039",
+    "entityName" : "makerchecker",
+    "roles" : [ {
+      "manageRole" : true,
+      "id" : "P1332540886",
+      "name" : "Manage",
+      "operations" : [ {
+        "method" : "POST"
+      }, {
+        "method" : "PUT"
+      }, {
+        "method" : "DELETE"
+      }, {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to create, update or delete a record"
+    }, {
+      "viewRole" : true,
+      "id" : "P7001799377",
+      "name" : "View",
+      "operations" : [ {
+        "method" : "GET"
+      } ],
+      "description" : "This role entitles an authorized user to view the record"
+    } ],
+    "type" : "appcenter",
+    "fields" : {
+      "_id" : {
+        "_t" : "String",
+        "_p" : {
+          "P1332540886" : "R",
+          "P7001799377" : "R"
+        }
+      },
+      "name" : {
+        "_t" : "String",
+        "_p" : {
+          "P1332540886" : "R",
+          "P7001799377" : "R"
+        }
+      },
+      "mobileNo" : {
+        "_t" : "Number",
+        "_p" : {
+          "P1332540886" : "R",
+          "P7001799377" : "R"
+        }
+      },
+      "address" : {
+        "_t" : "String",
+        "_p" : {
+          "P1332540886" : "R",
+          "P7001799377" : "R"
+        }
+      }
+    },
+    "__v" : 0
+  },
+  "stateModel" : {
+    "attribute" : "",
+    "initialStates" : [ ],
+    "enabled" : false
+  },
+  "workflowConfig" : {
+    "enabled" : true,
+    "makerCheckers" : [ {
+      "steps" : [ {
+        "id" : "C3299499651",
+        "name" : "Production",
+        "approvals" : 3
+      }, {
+        "id" : "C8676909300",
+        "name" : "Quality",
+        "approvals" : 2
+      }, {
+        "id" : "C6817113871",
+        "name" : "Pdi",
+        "approvals" : 1
+      } ]
+    } ]
+  }
+}

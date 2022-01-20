@@ -143,7 +143,7 @@ public class Object_AppCenterPage extends BaseClass{
 	@FindBy(xpath="//textarea[@placeholder='Type here']")
 	public WebElement enterApproveComment;
 	
-	@FindBy(xpath="//textarea[@placeholder='Comments are required to justify your response. Attach document if necessary.']")
+	@FindBy(xpath="//textarea[@placeholder='Type here']")
 	public WebElement enterRejectComment;
 	
 	@FindBy(xpath="//span[@class='font-bold text-dark ml-2 ng-star-inserted']")

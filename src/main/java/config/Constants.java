@@ -13,8 +13,11 @@ public class Constants extends BaseClass{
 	public static final String appcenterURLSuffix = "/appcenter";
 
 	public static final String bifrostInstance = "https://bifrost.ds.appveen.com"	;
+//	public static final String bifrostInstance = "https://3.110.109.26:32001"	;
+//	https://3.110.109.26:32001/author
 	
 	public static final String qaInstance = "https://qa.ds.appveen.com"	;
+	
 	
 	public static final String stagingInstance = "https://staging.appveen.com"	;
 	

@@ -56,7 +56,6 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 		}	
 		applyExplicitWaitsUntilElementVisible(acp.groupTextBoxes, 30);
 		List<WebElement> textBoxes = acp.groupTextBoxes;
-		System.out.println(data_Service+"+++++++++++++++++++++");
 		String filePath=Constants.testData_Folder + data_Service + Constants.testData_Suffix;
 		JSONObject jsonObject = JsonUtils.getJSONObject(filePath);
 			
@@ -272,7 +271,9 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 		
 
 		applyWait.waitForElementToBeClickable(acp.workflowTab, 30).click();
+		applyExplicitWaitsUntilElementVisible(acp.respondWorkflows, 30);
 		List <WebElement> workflows=acp.respondWorkflows;
+		System.out.println(workflows.size());
 		for(WebElement workflow : workflows) {
 			applyExplicitWaitsUntilElementVisible(acp.respond1,30);
 			try {
@@ -282,9 +283,11 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 				applyExplicitWaitsUntilElementVisible(acp.respond1,30);
 				acp.respond1.click();
 			}
-			applyWait.waitForElementToBeClickable(acp.reject, 30).click();
+			applyWait.waitForElementToBeClickable(acp.respond, 30).click();
 			applyWait.waitForElementToBeClickable(acp.enterRejectComment, 30).sendKeys(Property.getProperty("rejectMessage"));;
-			applyWait.waitForElementToBeClickable(acp.rejectButton, 30).click();;
+			applyWait.waitForElementToBeClickable(acp.reject, 30).click();
+			
+//			applyWait.waitForElementToBeClickable(acp.rejectButton, 30).click();;
 		}
 		
 	}
@@ -292,6 +295,7 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 	public void reworkTheRecord() throws Exception {
 		
 		applyWait.waitForElementToBeClickable(acp.workflowTab, 30).click();
+		applyExplicitWaitsUntilElementVisible(acp.respondWorkflows, 30);
 		List <WebElement> workflows=acp.respondWorkflows;
 		for(WebElement workflow : workflows) {
 			applyExplicitWaitsUntilElementVisible(acp.respond1,30);
@@ -303,9 +307,12 @@ public class WorkflowsInAppcenterPage extends BaseClass{
 				applyExplicitWaitsUntilElementVisible(acp.respond1,30);
 				acp.respond1.click();
 			}
-			applyWait.waitForElementToBeClickable(acp.rework1, 30).click();
-			applyWait.waitForElementToBeClickable(acp.enterRejectComment, 30).sendKeys(Property.getProperty("reworkMessage"));;
-			applyWait.waitForElementToBeClickable(acp.reworkButton, 30).click();;
+			
+			applyWait.waitForElementToBeClickable(acp.respond, 30).click();
+			applyWait.waitForElementToBeClickable(acp.enterRejectComment, 30).sendKeys(Property.getProperty("reworkMessage"));
+			applyWait.waitForElementToBeClickable(acp.rework, 30).click();
+		;
+//			applyWait.waitForElementToBeClickable(acp.reworkButton, 30).click();;
 			
 		}
 	}

@@ -38,7 +38,7 @@ public class AppcenterWorkflow extends BaseClass{
 	  workflow.dataService(string);
 	}
 	
-	@Then("Add data to the data service workflow  for Approval")
+	@Then("Add data to the data service workflow for Approval")
 	public void add_data_to_the_data_service_workflow_for_Approval() throws Exception {
 		workflow.addDataToDataService();
 //		loginAppCenter.userEnterData();

@@ -8,6 +8,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import junit.framework.Assert;
 import pageModules.Module_DesignTestCases;
 
 public class DesignTestCases extends BaseClass{
@@ -66,6 +67,7 @@ public class DesignTestCases extends BaseClass{
 	@Then("^Add record \"(.*?)\" to the data service$")
 	public void add_record(String string) throws Exception {
 	    design.addRecord(string);
+	    
 	}
 	
 	@Given("User navigates to File setting page")
